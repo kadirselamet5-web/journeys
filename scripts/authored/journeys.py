@@ -7,7 +7,15 @@ Every stop cites the provided source that attests it. Dates are given as the sou
   'inferred' - the model inferred the date/place from the sequence of stated events (flagged)
   'disputed' - provided sources give different dates
 Source shorthand: 'B26 p.NN' = L.S. Quackenbush, Bulletin AMNH vol. 26 (1909), page NN, AS QUOTED OR
-SUMMARISED IN THE PI'S TIMELINE (the Bulletin text itself was not provided)."""
+SUMMARISED IN THE PI'S TIMELINE (the Bulletin text itself was not provided).
+A stop may carry naming=True (flag, not a status): its place has two attested names for one gazetteer
+point; see places.py.
+
+Segments may carry via=[dict(place, status, quote, ref)]: an OUT-AND-BACK — a side trip whose return passes
+through a named place before the next stop, so that the connector is drawn through that place instead of
+asserting a through-route the sources deny. status 'stated' means a provided text states the return (quote,
+verified at build; ref = document id or 'pi_timeline'); 'inferred' means the model inferred it from the
+sequence (no quote; drawn with the inferred dash)."""
 
 STOPS = [
  # ----------------------------------------------------------------------------------- 1907
@@ -63,7 +71,7 @@ STOPS = [
       status="verified", story="story_17_seattle_umatilla", why="Arrival stated; departure inferred as immediate ('I left Nome in such a hurry')."),
  dict(id="s1908_05", journey="1908", seq=5, place="pl_lanes_landing", label="Lane's Landing / Shelton — head of the railroad", date_start="1908-06-24", date_end="1908-06-24", date_text="letter headed Lane's Landing, 24 June 1908", date_precision="stated",
       sources=[("d_19080624_quackenbush_bumpus","'I am now at the head of the railroad and on my way across the Seward Peninsula to Candle'"),("pub_bamnh26","p.90 via PI: 'Crosses Seward Pen by train to Shelton, wagon to Candle'"),("d_19081001_quackenbush_bumpus_report","'the head of the Seward Peninsula R.R. at Lane's Landing'")],
-      status="disputed", story="story_18_crossing", why="Place carries two attested names (see place record)."),
+      status="verified", naming=True, story="story_18_crossing", why="The place carries two attested names for one gazetteer point (see place record); the flag records naming variance, not a dispute about position."),
  dict(id="s1908_06", journey="1908", seq=6, place="pl_candle", label="Candle — Hoffman and his dory engaged", date_start="1908-06-25", date_end="1908-06-29", date_text="c. 25/26–29 June 1908 (crossing 'four and one half days' from Nome; rowed to Keewalik 29 June)", date_precision="inferred",
       sources=[("d_19081001_quackenbush_bumpus_report","'The crossing from Nome to Candle occupied four and one half days'; 'At Candle I engaged a man to act as cook and assistant and also hired his fishing dory'; 'On June 29th we rowed down the Keewalik River to Keewalik'"),("d_19080624_quackenbush_bumpus","'Candle where I hope to be in four or five days'")],
       status="inferred", story="story_18_crossing", why="Arrival at Candle computed from the report's 4.5-day crossing; LSQ's letter of 24 June expected 4–5 more days from Lane's Landing, which does not agree (see findings)."),
@@ -120,11 +128,14 @@ SEGMENTS = [
  dict(id="g1907_05", journey="1907", frm="s1907_05", to="s1907_06", mode="steamer", mode_status="stated", geometry="schematic", source=("pub_bamnh26","p.89 via PI: 'LSQ steams to St Michaels'"), note="The PI's verb 'steams' is taken as the mode."),
  dict(id="g1907_06", journey="1907", frm="s1907_06", to="s1907_07", mode="tug (15 hours)", mode_status="stated", geometry="schematic", source=("pub_bamnh26","p.89 via PI"), note=None),
  dict(id="g1907_07", journey="1907", frm="s1907_07", to="s1907_08", mode="not stated (side trip, 30 miles)", mode_status="not_stated", geometry="schematic", source=("pub_bamnh26","p.89 via PI"), note="Return to Nome implied."),
- dict(id="g1907_08", journey="1907", frm="s1907_08", to="s1907_09", mode="steamer 'Corwin' (from Nome)", mode_status="stated", geometry="schematic", source=("pub_bamnh26","p.89 via PI: 'LSQ leaves Nome on “Corwin,”'"), note="Drawn from the Solomon River side trip back through Nome schematically."),
+ dict(id="g1907_08", journey="1907", frm="s1907_08", to="s1907_09", mode="steamer 'Corwin' (from Nome)", mode_status="stated", geometry="schematic", source=("pub_bamnh26","p.89 via PI: 'LSQ leaves Nome on “Corwin,”'"), note="Out-and-back: drawn from the Solomon River side trip back through Nome, where the Corwin was boarded; no direct Solomon River–Keewalik passage is asserted.",
+      via=[dict(place="pl_nome", status="stated", quote="LSQ leaves Nome on “Corwin,”", ref="pi_timeline")]),
  dict(id="g1907_09", journey="1907", frm="s1907_09", to="s1907_10", mode="not stated ('a few miles up Keewalik River')", mode_status="not_stated", geometry="schematic", source=("pub_bamnh26","p.89 via PI"), note="Return “to ‘the spit.’” implied."),
- dict(id="g1907_10", journey="1907", frm="s1907_10", to="s1907_11", mode="Hoffman's fishing boat (sail, no centerboard) with canoe", mode_status="stated", geometry="schematic", source=("pub_bamnh26","p.89 via PI"), note="Coastal passage across Eschscholtz Bay; not traced."),
+ dict(id="g1907_10", journey="1907", frm="s1907_10", to="s1907_11", mode="Hoffman's fishing boat (sail, no centerboard) with canoe", mode_status="stated", geometry="schematic", source=("pub_bamnh26","p.89 via PI"), note="Out-and-back: the PI's timeline has LSQ return from Candle “to ‘the spit.’” before the passage to Elephant Point; drawn Candle → Keewalik → Elephant Point. Coastal passage across Eschscholtz Bay; not traced.",
+      via=[dict(place="pl_keewalik", status="stated", quote="returned “to ‘the spit.’”", ref="pi_timeline")]),
  dict(id="g1907_11", journey="1907", frm="s1907_11", to="s1907_12", mode="boat / canoe (not specified)", mode_status="not_stated", geometry="schematic", source=("pub_bamnh26","p.89 via PI: 'enter Buckland R, only go 15 mi'"), note=None),
- dict(id="g1907_12", journey="1907", frm="s1907_12", to="s1907_13", mode="boat (return via Elephant Point implied)", mode_status="inferred", geometry="schematic", source=("pub_bamnh26","p.90 via PI"), note="The 19 September description of ice around the Bay and the frozen bluff implies a return to Elephant Point before Keewalik; not drawn as a separate stop."),
+ dict(id="g1907_12", journey="1907", frm="s1907_12", to="s1907_13", mode="boat (return via Elephant Point implied)", mode_status="inferred", geometry="schematic", source=("pub_bamnh26","p.90 via PI"), note="Out-and-back (inferred): the 19 September description of ice around the Bay and the frozen bluff implies a return to Elephant Point before Keewalik; drawn through Elephant Point with the inferred dash, not as a separate stop.",
+      via=[dict(place="pl_elephant_point", status="inferred", quote=None, ref=None)]),
  dict(id="g1907_13", journey="1907", frm="s1907_13", to="s1907_14", mode="steamer 'Corwin'", mode_status="stated", geometry="schematic", source=("pub_bamnh26","p.90 via PI: 'Takes Corwin back to Nome'"), note=None),
  dict(id="g1907_14", journey="1907", frm="s1907_14", to="s1907_15", mode="'first boat to Seattle'", mode_status="stated", geometry="schematic", source=("pub_bamnh26","p.90 via PI"), note=None),
  dict(id="g1907_15", journey="1907", frm="s1907_15", to="s1907_16", mode="not stated (rail implied)", mode_status="not_stated", geometry="schematic", source=("pub_bamnh26","p.90 via PI: reaches NY 2 November"), note=None),

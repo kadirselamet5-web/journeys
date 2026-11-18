@@ -18,13 +18,40 @@ inference from the described route), 'approximate' (placed from distances/direct
 (sources disagree), 'unlocated' (cannot be placed from the sources).
 radius_km: uncertainty radius drawn on the map (halo). Point features from GNIS get a nominal radius
 describing the feature's extent, not a positional error.
+naming (flag, not a status): True when two attested names denote one gazetteer point (Lane's Landing /
+Shelton); the chip records naming variance, not a dispute about where the traveller was.
+short_label: the model's display normalisation of the attested label for map labels only (SHORT_LABELS
+below); tooltips, popups and records keep the full attested label.
+
+Places with lat=None carry unlocated_kind, one of
+  'withheld'      the location was deliberately not disclosed in the sources
+  'contradictory' the provided statements place it differently
+  'ambiguous'     the name has several gazetteer homonyms, or the reading is uncertain
+  'not_geocoded'  outside the journey; no gazetteer consulted in this build
+and may carry constraints[] — spatial statements a provided text makes about the place, each with
+  kind      'distance' (a stated distance in miles from a located anchor; drawn as a dashed ring, no point)
+            'near'     (a stated nearness with no distance; drawn as a leader label, no radius)
+            'identity' (a statement equating it with a located place; drawn as a bracket, no point)
+  anchor    id of the located place the statement refers to; miles (distance only); quote (verbatim,
+  verified at build); ref (document id, 'tale', 'pi_timeline'); speaker; model_note (the model's statement
+  of what the geometry can and cannot show).
+candidates[] — gazetteer records bearing the attested name (GNIS id, name, class, county, map, lat, lon);
+drawn as equal hollow squares, none asserted; candidates_note says so. The build checks every candidate
+against the GNIS file when it is present.
 """
 
 GNIS_FILE = "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18"
 
-def gnis(fid, name, fclass, lat, lon, map_name=None):
-    return dict(authority="USGS GNIS", id=str(fid), name=name, feature_class=fclass, lat=lat, lon=lon,
-                url=f"https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/{fid}", file=GNIS_FILE, map=map_name)
+def gnis(fid, name, fclass, lat, lon, map_name=None, county=None, note=None):
+    r = dict(authority="USGS GNIS", id=str(fid), name=name, feature_class=fclass, lat=lat, lon=lon,
+             url=f"https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/{fid}", file=GNIS_FILE, map=map_name)
+    if county: r["county"] = county
+    if note: r["note"] = note
+    return r
+
+def constraint(kind, anchor, quote, ref, speaker, model_note, miles=None):
+    """A spatial statement in a provided text about an unlocated place (see the module docstring)."""
+    return dict(kind=kind, anchor=anchor, miles=miles, quote=quote, ref=ref, speaker=speaker, model_note=model_note)
 
 def wd(q, label, lat, lon):
     return dict(authority="Wikidata (cross-check only)", id=q, name=label, lat=lat, lon=lon, url=f"https://www.wikidata.org/wiki/{q}")
@@ -63,10 +90,10 @@ PLACES = [
       crosscheck=[geonames(6943713,"Dawson City",64.0601,-139.4332), wd("Q372324","Dawson City",64.0608,-139.4317)],
       why="The route from Seattle to Dawson is NOT described in the provided documents (only arrival on 19 July 1907). The connector Seattle→Dawson is therefore schematic with mode unknown."),
  dict(id="pl_fortgibbon", label="Fort Gibbon", attested=[("Fort Gibbon","B.AMNH 26 p.89 via PI timeline")], role="1907: LSQ continues to Fort Gibbon, 25 July; Grant to Fairbanks",
-      lat=65.1714, lon=-152.0532, tier=2, precision="settlement", status="verified", radius_km=3,
-      coord_source=wd("Q16981229","Fort Gibbon",65.1714,-152.0532), crosscheck=[gnis(1410629,"Tanana","Populated Place",65.1719444,-152.0788889)],
-      gnis_note="No GNIS Domestic Name 'Fort Gibbon' found in the Alaska file; Wikidata Q16981229 supplies the point, which lies ~1 km from GNIS 'Tanana' (Populated Place). Used as the primary source for this one point and flagged.",
-      why="Only arrival is attested. Equivalence of Fort Gibbon with the settlement of Tanana is NOT asserted by the sources; the GNIS Tanana record is given as a cross-check only."),
+      lat=65.1719444, lon=-152.0788889, tier=2, precision="settlement", status="inferred", radius_km=3,
+      coord_source=gnis(1410629,"Tanana","Populated Place",65.1719444,-152.0788889,"Tanana A-5 NE"), crosscheck=[wd("Q16981229","Fort Gibbon",65.1714,-152.0532)],
+      gnis_note="No GNIS Domestic Name 'Fort Gibbon' in the Alaska file; placed at GNIS Tanana, about 1 km from the Wikidata cross-check point; the identification Fort Gibbon ≈ Tanana is the model's inference.",
+      why="Only arrival is attested. No provided source equates Fort Gibbon with the settlement of Tanana; the point is the GNIS Tanana record and the identification is the model's inference, so the place is marked inferred."),
  dict(id="pl_palisades", label="The Palisades (Yukon)", attested=[("the Palisades","PI timeline"),("'a high cut bank' on the Yukon 35 miles below mouth of Tanana","B.AMNH 26 p.89 as summarised by PI")],
       role="1907: examined by LSQ, 25 July", lat=65.1081, lon=-153.3378, tier=2, precision="feature-centroid", status="verified", radius_km=8,
       coord_source=gnis(1410830,"The Palisades","Cliff",65.1080556,-153.3377778,"Melozitna A-1 SW"), crosscheck=[],
@@ -146,10 +173,10 @@ PLACES = [
       why="Gazetteer match on the lake; which parts of the south shore were examined is not stated."),
  # ------------------------------------------------------------------ 1908 overland crossing
  dict(id="pl_lanes_landing", label="Lane's Landing / Shelton (head of the Seward Peninsula R.R.)", attested=[("Lane's Landing","LSQ to Bumpus 24 June 1908 ('the head of the railroad'); LSQ report 1908"),("Shelton","PI timeline summarising B.AMNH 26 p.90 ('train to Shelton')")],
-      role="1908: railhead reached from Nome, c. 24 June", lat=65.2264, lon=-164.8181, tier=2, precision="settlement", status="disputed", radius_km=10,
+      role="1908: railhead reached from Nome, c. 24 June", lat=65.2264, lon=-164.8181, tier=2, precision="settlement", status="verified", naming=True, radius_km=10,
       coord_source=gnis(1409420,"Shelton (historical)","Populated Place",65.2263889,-164.8180556,"Bendeleben A-6 NW"), crosscheck=[],
       gnis_note="GNIS has 'Shelton (historical)' but no entry for Lane's Landing in the Alaska file.",
-      why="Two names are attested for the railhead by two provided sources (LSQ's letter: Lane's Landing; the Bulletin via the PI: Shelton). Whether they denote the same place is not stated in the provided material; the point uses the GNIS Shelton record and is flagged 'disputed' until the Bulletin text is checked."),
+      why="LSQ's letter is headed 'Lane's Landing'; the Bulletin (via the PI) says 'Shelton'; the PI's terse timeline writes 'LSQ writes from Shelton' for the Lane's Landing letter, so at least one provided source treats the names as one place. GNIS has 'Shelton (historical)'. The point is the GNIS record; the chip records the naming variance, not a dispute about where he was."),
  dict(id="pl_fairbanks", label="Fairbanks", attested=[("Fairbanks","PI timeline: 'Grant to Fairbanks' (B.AMNH 26 p.89)")], role="1907: Madison Grant's destination when the two parted at Fort Gibbon (not an LSQ stop)",
       lat=64.8378, lon=-147.7164, tier=2, precision="settlement", status="verified", radius_km=4,
       coord_source=gnis(1401958,"Fairbanks","Populated Place",64.8377778,-147.7163889), crosscheck=[],
@@ -159,21 +186,41 @@ PLACES = [
  dict(id="pl_norton_bay", label="Norton Bay / Koyuk River (mentioned)", attested=[("'The Koyuk River, flowing into Norton Bay, is another promising locality'","LSQ 27 Mar 1908")], role="mentioned only; not visited", lat=64.7061, lon=-161.2389, tier=2, precision="feature-centroid", status="verified", radius_km=25,
       coord_source=gnis(1407261,"Norton Bay","Bay",64.7061111,-161.2388889), crosscheck=[gnis(1404983,"Koyuk River","Stream",64.9291667,-161.1341667)], why="Attested as a prospective locality only.", mentioned_only=True),
  # ------------------------------------------------------------------ unlocated places (findings)
- dict(id="pl_reported_mammoth", label="Site of the reported frozen mammoth (UNLOCATED)", attested=[("'imbedded in a glacier in a kind of cavern ... in the rocks in the hill side'; 'The country is heavily timbered'","Startsman and Graham 30 Dec 1906"),("'some two hundred miles up the Yukon River from Nome'","Bumpus to Jesup 28 June 1907"),("'you might feel that for the present at least you would not want to disclose the place'","Reed to Startsman 18 Oct 1906")],
-      role="object of the 1907 reconnaissance; never shown to Quackenbush", lat=None, lon=None, tier=None, precision="unlocated", status="unlocated", radius_km=None, coord_source=None,
-      why="The location was deliberately withheld by the claimants and the AMNH offered to 'guarantee under bond ... not to reveal the locality'. No coordinate is possible or appropriate; the map shows a label, not a point."),
- dict(id="pl_stones_camp", label="'Stone's camp' (UNLOCATED)", attested=[("'This locality [Eschscholtz Bay] is only 30 miles from Stone's camp'","Osborn to Bumpus 20 June 1907"),("'Mr. Grants camp on big bone beach'","Bumpus instructions 29 June 1907 (pencil insertion)"),("'his ranch near Nome'","Tale (PI) on Grant")],
-      role="Taylor Creek Ditch Co. operation; Grant's destination", lat=None, lon=None, tier=None, precision="unlocated", status="disputed", radius_km=None, coord_source=None,
-      why="Three provided statements place Grant's/Stone's base differently (30 miles from Eschscholtz Bay; on 'big bone beach' itself; 'near Nome'). The company name matches a GNIS 'Taylor Creek' on the Seward Peninsula, but no source links them; not placed."),
- dict(id="pl_coffee_creek", label="Coffee Creek, Alaska (1914 hair sample; UNLOCATED)", attested=[("'hairs of Mammoth | Coffee Creek Alaska'","envelope with LSQ to Grant 2 Aug 1914"),("'I know the location of Coffee Creek'","Grant to Lucas 10 Aug 1914")],
-      role="source of the 1914 hair sample", lat=None, lon=None, tier=None, precision="unlocated", status="unlocated", radius_km=None, coord_source=None,
+ dict(id="pl_reported_mammoth", label="Site of the reported frozen mammoth", attested=[("'imbedded in a glacier in a kind of cavern ... in the rocks in the hill side'; 'The country is heavily timbered'","Startsman and Graham 30 Dec 1906"),("'some two hundred miles up the Yukon River from Nome'","Bumpus to Jesup 28 June 1907"),("'you might feel that for the present at least you would not want to disclose the place'","Reed to Startsman 18 Oct 1906")],
+      role="object of the 1907 reconnaissance; never shown to Quackenbush", lat=None, lon=None, tier=None, precision="unlocated", status="unlocated", radius_km=None, coord_source=None, unlocated_kind="withheld",
+      constraints=[constraint("distance", "pl_nome", "some two hundred miles up the Yukon River from Nome", "d_19070628_bumpus_jesup", "Bumpus to Jesup, 28 June 1907",
+                              "Nome is not on the Yukon; the statement cannot be made geometric. The ring shows only the stated distance from Nome; no point is asserted.", miles=200)],
+      why="The location was deliberately withheld by the claimants and the AMNH offered to 'guarantee under bond ... not to reveal the locality'. No coordinate is possible or appropriate; the map draws the stated distance as a ring; no point."),
+ dict(id="pl_stones_camp", label="'Stone's camp'", attested=[("'This locality [Eschscholtz Bay] is only 30 miles from Stone's camp'","Osborn to Bumpus 20 June 1907"),("'Mr. Grants camp on big bone beach'","Bumpus instructions 29 June 1907 (pencil insertion)"),("'his ranch near Nome'","Tale (PI) on Grant")],
+      role="Taylor Creek Ditch Co. operation; Grant's destination", lat=None, lon=None, tier=None, precision="unlocated", status="disputed", radius_km=None, coord_source=None, unlocated_kind="contradictory",
+      constraints=[constraint("distance", "pl_eschscholtz_bay", "only 30 miles from Stone's camp", "d_19070620_osborn_bumpus", "Osborn to Bumpus, 20 June 1907",
+                              "The anchor is the GNIS centroid of Eschscholtz Bay (halo 25 km); the ring's centre is uncertain by that much.", miles=30),
+                   constraint("identity", "pl_elephant_point", "Mr. Grants camp on big bone beach", "d_19070629_bumpus_quackenbush_instructions", "Bumpus, instructions of 29 June 1907 (pencil insertion)",
+                              "Osborn equates 'big bone beach' with Eschscholtz Bay; the bracket points to the bay's bluff, Elephant Point, and asserts nothing."),
+                   constraint("near", "pl_nome", "his ranch near Nome", "tale", "PI, Tale", "No distance is given; a leader label, no radius.")],
+      why="Three provided statements place Grant's/Stone's base differently (30 miles from Eschscholtz Bay; on 'big bone beach' itself; 'near Nome'). The company name matches a GNIS 'Taylor Creek' on the Seward Peninsula, but no source links them; not placed. Each statement is drawn as a constraint, none as a point."),
+ dict(id="pl_coffee_creek", label="Coffee Creek, Alaska (1914 hair sample)", attested=[("'hairs of Mammoth | Coffee Creek Alaska'","envelope with LSQ to Grant 2 Aug 1914"),("'I know the location of Coffee Creek'","Grant to Lucas 10 Aug 1914")],
+      role="source of the 1914 hair sample", lat=None, lon=None, tier=None, precision="unlocated", status="unlocated", radius_km=None, coord_source=None, unlocated_kind="ambiguous",
       gnis_note="GNIS lists six streams named Coffee Creek in Alaska (Copper River; Matanuska-Susitna; Nome CA; Lake and Peninsula; Kenai Peninsula; Yukon-Koyukuk CA).",
-      why="The sources do not say which Coffee Creek; Grant 'know[s] the location' but does not state it. Not placed."),
- dict(id="pl_long_island", label="Long Island (LSQ's summer home)", attested=[("'his summer home on Long Island'","Matthew to Osborn [17 Apr 1907]")], role="condition of LSQ's availability in 1907", lat=None, lon=None, tier=None, precision="unlocated", status="unlocated", radius_km=None, coord_source=None, why="Region only; not geocoded.", mentioned_only=True),
- dict(id="pl_maine_1914", label="Brassua Lake Camp / Tarratine / Somerset Junction, Maine (1914)", attested=[("Brassua Lake Camp, Maine","LSQ to Grant 2 Aug 1914"),("c/o A.H. Woods, Tarratine, Maine","same"),("telegraph to Somerset Junction","same")], role="LSQ's whereabouts, August 1914", lat=None, lon=None, tier=None, precision="unlocated", status="unlocated", radius_km=None, coord_source=None, why="Outside the journey scope; not geocoded in this build (GNIS Maine file not downloaded).", mentioned_only=True),
- dict(id="pl_seward_uncertain", label="'Seward(?)' — Anderson's letter of 18 May [1907] (place uncertain)", attested=[("Seward(?)","PI header for Anderson to Stone, 18 May; the query mark is the PI's")], role="place of writing of Anderson's withdrawal (uncertain)", lat=None, lon=None, tier=None, precision="unlocated", status="disputed", radius_km=None, coord_source=None,
+      candidates=[gnis(1400546,"Coffee Creek","Stream",61.0797222,-142.2330556,"McCarthy A-4 SE","Copper River"),
+                  gnis(1400549,"Coffee Creek","Stream",62.5163889,-151.4691667,"Talkeetna C-3 SW","Matanuska-Susitna"),
+                  gnis(1400550,"Coffee Creek","Stream",65.3141667,-164.6205556,"Bendeleben B-6 SE","Nome (CA)"),
+                  gnis(1400551,"Coffee Creek","Stream",58.9033333,-156.9669444,"Naknek D-3 NW","Lake and Peninsula"),
+                  gnis(1400552,"Coffee Creek","Stream",61.2297222,-151.1416667,"Tyonek A-4 NE","Kenai Peninsula"),
+                  gnis(1400553,"Coffee Creek","Stream",63.5625,-157.2769444,"Ophir C-3 SW","Yukon-Koyukuk (CA)")],
+      candidates_note="Six streams named Coffee Creek in the GNIS Alaska file; the sources do not say which; none is asserted.",
+      why="The sources do not say which Coffee Creek; Grant 'know[s] the location' but does not state it. Not placed; the six gazetteer homonyms are drawn as candidates, none chosen."),
+ dict(id="pl_long_island", label="Long Island (LSQ's summer home)", attested=[("'his summer home on Long Island'","Matthew to Osborn [17 Apr 1907]")], role="condition of LSQ's availability in 1907", lat=None, lon=None, tier=None, precision="unlocated", status="unlocated", radius_km=None, coord_source=None, unlocated_kind="not_geocoded",
+      why="Region only; not geocoded in this build; outside the journey; the GNIS New York file was not consulted.", mentioned_only=True),
+ dict(id="pl_maine_1914", label="Brassua Lake Camp / Tarratine / Somerset Junction, Maine (1914)", attested=[("Brassua Lake Camp, Maine","LSQ to Grant 2 Aug 1914"),("c/o A.H. Woods, Tarratine, Maine","same"),("telegraph to Somerset Junction","same")], role="LSQ's whereabouts, August 1914", lat=None, lon=None, tier=None, precision="unlocated", status="unlocated", radius_km=None, coord_source=None, unlocated_kind="not_geocoded",
+      why="Not geocoded in this build; outside the journey; the GNIS Maine file was not consulted.", mentioned_only=True),
+ dict(id="pl_seward_uncertain", label="'Seward(?)' — Anderson's letter of 18 May [1907]", attested=[("Seward(?)","PI header for Anderson to Stone, 18 May; the query mark is the PI's")], role="place of writing of Anderson's withdrawal (uncertain)", lat=None, lon=None, tier=None, precision="unlocated", status="disputed", radius_km=None, coord_source=None, unlocated_kind="ambiguous",
       gnis_note="GNIS 1414598 'Seward' (Populated Place, Kenai Peninsula) exists, but the PI could not read the place-name with confidence; the letter is on Northwestern Steamship Co. (Seattle) letterhead.",
-      why="Not placed: the reading is uncertain and the letterhead points elsewhere.", mentioned_only=True),
+      candidates=[gnis(1414598,"Seward","Populated Place",60.1041667,-149.4422222,"Seward A-7 SW","Kenai Peninsula", note="the PI's reading of the place-name carries a query mark; the record is a candidate, not an identification")],
+      candidates_note="One GNIS record bears the name the PI read with a query mark; the letterhead names Seattle; neither is asserted as the place of writing.",
+      constraints=[constraint("near", "pl_seattle", "On Northwestern Steamship Co. (Seattle) letterhead", "d_19070518_anderson_stone", "PI, editorial note on Anderson to Stone, 18 May [1907]",
+                              "A letterhead names the company's seat, not the place of writing; a leader label at Seattle, no radius.")],
+      why="Not placed: the reading is uncertain and the letterhead points elsewhere. The GNIS Seward record is drawn as a candidate and the Seattle letterhead as a leader label; neither is asserted.", mentioned_only=True),
  # ------------------------------------------------------------------ prologue context (Tale §1), off by default
  dict(id="pl_lena_mouth", label="Mouth of the Lena River (Adams mammoth, 1799–1806)", attested=[("'near the mouth of the Lena River in Siberia'","Tale §1"),("'The narrow peninsula'","Tale §1")], role="context: find-site of the Adams mammoth (Tale §1)", lat=72.98, lon=126.19, tier=2, precision="approximate", status="approximate", radius_km=120,
       coord_source=geonames(2056283,"Lena Delta",72.9648,126.1853), crosscheck=[wd("Q2298744","Lena Delta",72.9776,126.0681)], scope="prologue",
@@ -183,3 +230,25 @@ PLACES = [
  dict(id="pl_stpetersburg", label="St Petersburg", attested=[("St Petersburg","Tale §1")], role="context: destination of the Adams mammoth; Academy of Science", lat=59.95, lon=30.3167, tier=2, precision="settlement", status="verified", radius_km=10,
       coord_source=geonames(498817,"Saint Petersburg",59.9386,30.3141), crosscheck=[wd("Q656","Saint Petersburg",59.95,30.3167)], scope="prologue", why="Gazetteer match."),
 ]
+
+# Map labels: the model's display normalisation of each attested label (short, no parentheses, no dash clauses).
+# Tooltips, popups, records and tables keep the full attested label. The build requires an entry for every place.
+SHORT_LABELS = {
+ "pl_newyork": "New York", "pl_seattle": "Seattle", "pl_montreal": "Montreal", "pl_washington": "Washington, D.C.", "pl_garrison": "Garrison",
+ "pl_dawson": "Dawson", "pl_fortgibbon": "Fort Gibbon", "pl_palisades": "The Palisades", "pl_stmichael": "St Michael", "pl_nome": "Nome",
+ "pl_solomon_river": "Solomon River", "pl_keewalik": "Keewalik", "pl_candle": "Candle", "pl_keewalik_river": "Keewalik River", "pl_kotzebue_sound": "Kotzebue Sound",
+ "pl_elephant_point": "Elephant Point", "pl_eschscholtz_bay": "Eschscholtz Bay", "pl_choris_bluff": "Choris bluff", "pl_buckland_mouth": "Buckland mouth",
+ "pl_buckland_8mi": "8 mi up Buckland", "pl_buckland_62mi": "62 mi up Buckland", "pl_buckland_86mi": "86 mi (disputed)", "pl_buckland_westfork": "West Fork",
+ "pl_eschscholtz_east_end": "Eschscholtz Bay, E end", "pl_hotham_peninsula": "Hotham Pen.", "pl_hotham_inlet": "Hotham Inlet", "pl_selawik_lake": "Selawik Lake",
+ "pl_lanes_landing": "Lane's Landing / Shelton", "pl_fairbanks": "Fairbanks", "pl_juneau": "Juneau", "pl_norton_bay": "Norton Bay",
+ "pl_reported_mammoth": "Reported mammoth", "pl_stones_camp": "Stone's camp", "pl_coffee_creek": "Coffee Creek?", "pl_long_island": "Long Island",
+ "pl_maine_1914": "Maine, 1914", "pl_seward_uncertain": "Seward(?)",
+ "pl_lena_mouth": "Lena mouth", "pl_yakutsk": "Yakutsk", "pl_stpetersburg": "St Petersburg",
+}
+for _p in PLACES:
+    _p.setdefault("short_label", SHORT_LABELS.get(_p["id"]))
+    _p.setdefault("naming", False)
+    _p.setdefault("constraints", [])
+    _p.setdefault("candidates", [])
+    _p.setdefault("candidates_note", None)
+    _p.setdefault("unlocated_kind", None)

@@ -48,7 +48,11 @@
   "edges": 186,
   "published": 35,
   "findings": 39,
-  "verified_quotations": 450,
+  "unlocated_places": 6,
+  "unlocated_constraints": 5,
+  "gazetteer_candidates": 7,
+  "out_and_back_legs": 3,
+  "verified_quotations": 458,
   "funding_edges": 30,
   "coattestation_pairs": 72,
   "mention_edges": 120
@@ -64,7 +68,19 @@
   "inferred": "identification or date is a model inference from the described route or sequence",
   "approximate": "placed from Quackenbush's distance/direction statements or a described relation to a named feature",
   "disputed": "provided sources disagree",
-  "unlocated": "cannot be placed from the sources"
+  "unlocated": "cannot be placed from the sources",
+  "naming": "flag, not a status: two attested names denote one gazetteer point; records naming variance, not a dispute about position"
+ },
+ "unlocated_kinds": {
+  "withheld": "the location was deliberately not disclosed in the sources",
+  "contradictory": "the provided statements place it differently and cannot be reconciled",
+  "ambiguous": "the attested name has several gazetteer homonyms, or the reading of the name is uncertain",
+  "not_geocoded": "outside the journey; no gazetteer was consulted for it in this build"
+ },
+ "constraint_kinds": {
+  "distance": "a stated distance in miles from a located anchor — drawn as a dashed ring around the anchor; no point",
+  "near": "a stated nearness without a distance — drawn as a leader label at the anchor; no radius",
+  "identity": "a statement equating the place with a located one — drawn as a bracket at that place; nothing asserted"
  },
  "geocoding_tiers": {
   "1": "published coordinates in the sources — none exist",
@@ -73,11 +89,12 @@
   "4": "Quackenbush's distance/direction statements",
   "5": "approximate placement with large uncertainty radius"
  },
+ "gnis_candidates_checked_against_file": true,
  "quotation_classes": {
   "tie evidence": "every quotation on a stated / PI / affiliation tie is found verbatim in the sources (build fails otherwise)",
   "funding": "every funding edge quotes a sum or promise verbatim",
   "Tale excerpts": "every story excerpt is an exact substring of the Tale and ends at a sentence or quotation boundary",
   "Cast lines and characterisations": "every pi_characterisation and characterisation is a verbatim line of the PI's texts",
-  "quoted fragments in authored prose": "450 quoted spans in model notes, place/stop/segment fields, findings, roles, variants, addresses, institutions, published excerpts and notes, tie labels, and record notes are verified (allow-list of quoted vocabulary, none of it currently needed: approximate, disputed, inferred, model, unlocated, verified, via PI)"
+  "quoted fragments in authored prose": "458 quoted spans in model notes, place/stop/segment fields, findings, roles, variants, addresses, institutions, published excerpts and notes, tie labels, and record notes are verified (allow-list of quoted vocabulary, none of it currently needed: approximate, disputed, inferred, model, unlocated, verified, via PI)"
  }
 }

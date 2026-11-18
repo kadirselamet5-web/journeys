@@ -3,6 +3,7 @@
 and absences (what the file does not contain). Each finding points to the records it concerns.
 kind: 'discrepancy' | 'absence' | 'naming' | 'unlocated' | 'authorship'
 Optional 'people' lists the prosopographical records on whose pages the finding is shown.
+Optional 'related' lists other findings that bear on the same question (rendered as links).
 Every quoted span in 'title' and 'text' is verified against the provided texts at build time.
 The register may compare figures (that is its purpose); the funding view never does."""
 
@@ -21,7 +22,7 @@ FINDINGS = [
  dict(id="f_nome_five_days", kind="discrepancy", title="'Five days' in Nome between 4 and 13 August 1907",
       text="The PI's summary of B.AMNH 26, p.89 has LSQ arriving at Nome 4 August, staying 'five days' and leaving on the Corwin 13 August. The interval is nine days; the Solomon River trip may account for part of it, but the Bulletin's wording was not available.", refs=["pub_bamnh26"], stories=["story_11_stmichael_nome"], stops=["s1907_07","s1907_08"]),
  dict(id="f_lanes_landing_shelton", kind="naming", title="Railhead: 'Lane's Landing' (LSQ) vs 'Shelton' (Bulletin via PI)",
-      text="Two names for the head of the Seward Peninsula Railroad occur in two provided sources. GNIS records 'Shelton (historical)' but has no entry for Lane's Landing. Whether the names denote one place is not stated in the provided material.", refs=["d_19080624_quackenbush_bumpus","pub_bamnh26"], stories=["story_18_crossing"], places=["pl_lanes_landing"]),
+      text="Two names for the head of the Seward Peninsula Railroad occur in two provided sources: LSQ's letter of 24 June 1908 is headed Lane's Landing; the Bulletin (via the PI) has 'train to Shelton'. GNIS records 'Shelton (historical)' and has no entry for Lane's Landing. The PI's terse timeline writes 'LSQ writes from Shelton' for the Lane's Landing letter, so one provided source treats the names as one place. The place record is therefore placed on the GNIS point as verified and flagged 'naming' for the variance; it is not a dispute about where he was.", refs=["d_19080624_quackenbush_bumpus","pub_bamnh26","pi_timeline"], stories=["story_18_crossing"], places=["pl_lanes_landing"], related=["f_shelton_equation"]),
  dict(id="f_hotham_peninsula", kind="naming", title="'Hotham Peninsula' has no modern gazetteer entry",
       text="LSQ crossed 'Hotham Peninsula' on foot between Eschscholtz Bay and Hotham Inlet. GNIS names that land Baldwin Peninsula. The identification is the model's inference from the described route and is marked 'inferred'.", refs=["d_19081001_quackenbush_bumpus_report"], stories=["story_21_bay_survey"], places=["pl_hotham_peninsula"]),
  dict(id="f_keewalik_spelling", kind="naming", title="Keewalik / Kiwalik; 'the spit'",
@@ -40,7 +41,7 @@ FINDINGS = [
       refs=["d_19090115_sherwood_pyne","d_19090121_sherwood_morgan","d_19090122_morgan_sherwood"], stories=["story_23_accounts"], people=["p_morgan","p_pyne_percy","p_sherwood"]),
  dict(id="f_shelton_equation", kind="naming", title="The PI's timeline writes 'LSQ writes from Shelton' for the letter headed Lane's Landing",
       text="Quackenbush's letter of 24 June 1908 is headed Lane's Landing; the PI's terse timeline entry for the same letter reads 'LSQ writes from Shelton'. One provided source therefore treats the two names as one place, while the letter and the Bulletin (via the PI) use different names. The equation is the PI's reading and is recorded as such; the place record keeps both attested names.",
-      refs=["d_19080624_quackenbush_bumpus","pi_timeline"], stories=["story_18_crossing"], places=["pl_lanes_landing"]),
+      refs=["d_19080624_quackenbush_bumpus","pi_timeline"], stories=["story_18_crossing"], places=["pl_lanes_landing"], related=["f_lanes_landing_shelton"]),
  dict(id="f_eastern_hemisphere", kind="discrepancy", title="Grant, 1930: 'the only mammoth ever found in the flesh in the Eastern Hemisphere'",
       text="Grant's form slip to Osborn (7 June 1930) says of the Alaska find, 'This is the only mammoth ever found in the flesh in the Eastern Hemisphere.' The whole file places the find in Alaska; the slip's hemisphere stands against it. The wording is recorded as written and is not corrected.",
       refs=["d_19300607_grant_osborn"], stories=["story_24_afterlife"], people=["p_grant"]),

@@ -273,27 +273,110 @@ for d in docs:
                             "a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.")
 
 # ----------------------------------------------------------------------------- 3. places
+UNLOCATED_KINDS = {'withheld': 'the location was deliberately not disclosed in the sources',
+                   'contradictory': 'the provided statements place it differently and cannot be reconciled',
+                   'ambiguous': 'the attested name has several gazetteer homonyms, or the reading of the name is uncertain',
+                   'not_geocoded': 'outside the journey; no gazetteer was consulted for it in this build'}
+CONSTRAINT_KINDS = {'distance': 'a stated distance in miles from a located anchor — drawn as a dashed ring around the anchor; no point',
+                    'near': 'a stated nearness without a distance — drawn as a leader label at the anchor; no radius',
+                    'identity': 'a statement equating the place with a located one — drawn as a bracket at that place; nothing asserted'}
 places = []
 for pl in PL.PLACES:
     q = dict(pl)
     q['attested'] = [dict(form=a, source=b) for a, b in pl['attested']]
     q['has_coords'] = q.get('lat') is not None
     q.setdefault('scope', 'hunt'); q.setdefault('mentioned_only', False); q.setdefault('crosscheck', [])
+    q.setdefault('naming', False); q.setdefault('constraints', []); q.setdefault('candidates', []); q.setdefault('candidates_note', None); q.setdefault('unlocated_kind', None)
+    if 'UNLOCATED' in q['label']: err(f"place {q['id']}: label carries the '(UNLOCATED)' suffix; unlocated_kind carries that now")
+    if not q.get('short_label'): err(f"place {q['id']}: no short_label (add it to places.SHORT_LABELS)")
+    if q['has_coords'] and q['unlocated_kind']: err(f"place {q['id']}: unlocated_kind on a place with coordinates")
+    if not q['has_coords'] and q['unlocated_kind'] not in UNLOCATED_KINDS: err(f"place {q['id']}: unlocated place without a valid unlocated_kind")
+    if q['constraints'] and q['has_coords']: err(f"place {q['id']}: constraints on a located place")
+    for c in q['constraints']:
+        if c.get('kind') not in CONSTRAINT_KINDS: err(f"place {q['id']}: constraint kind {c.get('kind')!r} unknown")
+        if c['kind'] == 'distance' and not c.get('miles'): err(f"place {q['id']}: distance constraint without miles")
+        if c['kind'] != 'distance' and c.get('miles'): err(f"place {q['id']}: miles on a {c['kind']} constraint")
+        if not c.get('quote'): err(f"place {q['id']}: constraint without a quotation (a constraint is a statement in a provided text)")
+        elif not quote_ok(c['quote']): err(f"place {q['id']}: constraint quote not found verbatim: {c['quote'][:70]}")
+        if not c.get('speaker') or not c.get('model_note'): err(f"place {q['id']}: constraint needs speaker and model_note")
+    for cand in q['candidates']:
+        if cand.get('authority') != 'USGS GNIS' or not cand.get('id') or cand.get('lat') is None: err(f"place {q['id']}: candidate must be a GNIS record with id, lat, lon")
+    if q['candidates'] and not q.get('candidates_note'): err(f"place {q['id']}: candidates without candidates_note")
     places.append(q)
 plid = {p['id'] for p in places}
+place_by_id = {p['id']: p for p in places}
+for q in places:
+    for c in q['constraints']:
+        a = place_by_id.get(c.get('anchor'))
+        if not a: err(f"place {q['id']}: constraint anchor {c.get('anchor')} unknown")
+        elif not a['has_coords']: err(f"place {q['id']}: constraint anchor {c['anchor']} has no coordinates")
+        c['anchor_label'] = a['label'] if a else None
+
+# gazetteer records are checked against the GNIS Alaska file when it is present (env GNIS_AK_FILE or the scratchpad copy);
+# candidates must match id, name, class, county and coordinates; a homonym set must be complete (every row of that name).
+GNIS_AK_FILE = os.environ.get('GNIS_AK_FILE') or '/tmp/claude-0/-home-user-journeys/63137abf-387a-5196-816b-790a93984fb7/scratchpad/gaz/Text/DomesticNames_AK.txt'
+def gnis_scan(ids, names):
+    """{feature_id: row} for the given ids plus every row whose feature_name is in names; None when the file is absent."""
+    if not os.path.exists(GNIS_AK_FILE): return None
+    out = {}
+    with open(GNIS_AK_FILE, encoding='utf-8-sig') as fh:
+        col = {k: i for i, k in enumerate(fh.readline().rstrip('\n').split('|'))}
+        for line in fh:
+            f = line.rstrip('\n').split('|')
+            if f[0] in ids or f[col['feature_name']] in names:
+                out[f[0]] = dict(id=f[0], name=f[col['feature_name']], feature_class=f[col['feature_class']], county=f[col['county_name']], map=f[col['map_name']], lat=float(f[col['prim_lat_dec']]), lon=float(f[col['prim_long_dec']]))
+    return out
+_cands = [(q, c) for q in places for c in q['candidates']]
+_gnis = gnis_scan({c['id'] for _, c in _cands}, {c['name'] for _, c in _cands})
+gnis_checked = 0
+if _gnis is None:
+    print(f"WARNING: GNIS Alaska file not found at {GNIS_AK_FILE}; candidate records not re-checked (set GNIS_AK_FILE)")
+else:
+    for q, c in _cands:
+        row = _gnis.get(c['id'])
+        if not row: err(f"place {q['id']}: candidate GNIS {c['id']} not in the Alaska file"); continue
+        for k in ('name', 'feature_class', 'county', 'map'):
+            if c.get(k) and c[k] != row[k]: err(f"place {q['id']}: candidate GNIS {c['id']} {k} {c[k]!r} != file {row[k]!r}")
+        if abs(c['lat'] - row['lat']) > 1e-7 or abs(c['lon'] - row['lon']) > 1e-7: err(f"place {q['id']}: candidate GNIS {c['id']} coordinates differ from the file")
+        gnis_checked += 1
+    for q in places:
+        if len(q['candidates']) > 1:
+            name = q['candidates'][0]['name']
+            in_file = sorted(r['id'] for r in _gnis.values() if r['name'] == name)
+            if in_file != sorted(c['id'] for c in q['candidates']): err(f"place {q['id']}: GNIS rows named {name!r} are {in_file}, candidates list {[c['id'] for c in q['candidates']]}")
 
 # ----------------------------------------------------------------------------- 4. stops / segments
 stops = []
 for s in JJ.STOPS:
     q = dict(s); q['sources'] = [dict(ref=a, locator=b) for a, b in s['sources']]
+    q.setdefault('naming', False)
     if q['place'] not in plid: err(f"stop {q['id']} -> unknown place {q['place']}")
+    elif q['naming'] != place_by_id[q['place']]['naming']: err(f"stop {q['id']}: naming flag disagrees with its place")
     stops.append(q)
 sid = {s['id'] for s in stops}
+stop_by_id = {s['id']: s for s in stops}
 segments = []
 for g in JJ.SEGMENTS:
     q = dict(g); q['source'] = dict(ref=g['source'][0], locator=g['source'][1])
     for k in ('frm', 'to'):
         if q[k] not in sid: err(f"segment {q['id']} -> unknown stop {q[k]}")
+    # out-and-back legs: every via place must resolve, lie between the endpoints, and a stated via must quote a provided text
+    via = []
+    ends = {stop_by_id[q[k]]['place'] for k in ('frm', 'to') if q[k] in stop_by_id}
+    for v in g.get('via', []) or []:
+        v = dict(v); v.setdefault('quote', None); v.setdefault('ref', None)
+        if v.get('place') not in plid: err(f"segment {q['id']}: via place {v.get('place')} unknown")
+        elif not place_by_id[v['place']]['has_coords']: err(f"segment {q['id']}: via place {v['place']} has no coordinates")
+        elif v['place'] in ends: err(f"segment {q['id']}: via place {v['place']} is an endpoint")
+        if v.get('status') not in ('stated', 'inferred'): err(f"segment {q['id']}: via status must be stated | inferred")
+        if v.get('status') == 'stated':
+            if not v['quote']: err(f"segment {q['id']}: stated via without a quotation")
+            elif not quote_exists(v['quote']): err(f"segment {q['id']}: via quote not found verbatim: {v['quote'][:70]}")
+            if v['ref'] not in ('tale', 'pi_timeline') and v['ref'] not in doc_by_id: err(f"segment {q['id']}: via ref {v['ref']} unknown")
+        elif v['quote']: err(f"segment {q['id']}: an inferred via carries a quotation; make it stated")
+        v['place_label'] = place_by_id[v['place']]['label'] if v.get('place') in place_by_id else None
+        via.append(v)
+    q['via'] = via
     segments.append(q)
 context_arcs = []
 for a in JJ.CONTEXT_ARCS:
@@ -382,6 +465,9 @@ for f in findings:
     f.setdefault('people', [])
     for x in f['people']:
         if x not in pid: err(f"finding {f['id']}: unknown person {x}")
+    f.setdefault('related', [])
+    for x in f['related']:
+        if x not in fid or x == f['id']: err(f"finding {f['id']}: unknown related finding {x}")
 for s in stops:
     for sr in s['sources']:
         if sr['ref'] not in doc_by_id and sr['ref'] not in pubid and sr['ref'] not in ('tale', 'pi_timeline'): err(f"stop {s['id']}: unknown source {sr['ref']}")
@@ -597,9 +683,17 @@ meta = dict(
     },
     counts=dict(documents=len(docs), blocks=sum(len(d['blocks']) for d in docs), people=len(people), institutions=len(institutions), places=len(places), stops=len(stops), segments=len(segments), stories=len(stories), timeline=len(timeline), itinerary=len(itinerary), edges=len(edges), published=len(published), findings=len(findings)),
     block_types={'verbatim': 'words of the historical writer, as transcribed', 'summary': "the PI's paraphrase of a document", 'editorial': "the PI's description of the physical document, archival context, or dated research note", 'annotation': 'a marginal or interlinear annotation on the original, as transcribed'},
-    status_chips={'verified': 'attested name matched to an authoritative gazetteer record', 'inferred': 'identification or date is a model inference from the described route or sequence', 'approximate': "placed from Quackenbush's distance/direction statements or a described relation to a named feature", 'disputed': 'provided sources disagree', 'unlocated': 'cannot be placed from the sources'},
+    status_chips={'verified': 'attested name matched to an authoritative gazetteer record', 'inferred': 'identification or date is a model inference from the described route or sequence', 'approximate': "placed from Quackenbush's distance/direction statements or a described relation to a named feature", 'disputed': 'provided sources disagree', 'unlocated': 'cannot be placed from the sources',
+                  'naming': 'flag, not a status: two attested names denote one gazetteer point; records naming variance, not a dispute about position'},
+    unlocated_kinds=UNLOCATED_KINDS,
+    constraint_kinds=CONSTRAINT_KINDS,
     geocoding_tiers={1: 'published coordinates in the sources — none exist', 2: 'authoritative gazetteers (GNIS, CGNDB, GeoNames; Wikidata cross-check)', 3: 'historical maps/charts — none available (1906 Post Route Map not provided)', 4: "Quackenbush's distance/direction statements", 5: 'approximate placement with large uncertainty radius'},
 )
+meta['counts']['unlocated_places'] = sum(1 for p in places if not p['has_coords'])
+meta['counts']['unlocated_constraints'] = sum(len(p['constraints']) for p in places)
+meta['counts']['gazetteer_candidates'] = sum(len(p['candidates']) for p in places)
+meta['counts']['out_and_back_legs'] = sum(len(g['via']) for g in segments)
+meta['gnis_candidates_checked_against_file'] = (_gnis is not None)
 
 # ----------------------------------------------------------------------------- 11b. every quoted fragment in authored free text must exist in the sources
 # Spans between “…”, ‘…’, straight '…' and straight "…" whose opening quote follows start-of-string, whitespace, a bracket,
@@ -647,6 +741,8 @@ for pl in places:
     gz = {r.get('name') for r in ([pl.get('coord_source')] if pl.get('coord_source') else []) + list(pl.get('crosscheck') or []) + list(pl.get('candidates') or []) if r and r.get('name')}
     for f_ in ('why', 'role', 'gnis_note', 'distance_check', 'candidates_note'): check_quotes('places', pl['id'], f_, pl.get(f_), gz)
     for a in pl['attested']: check_quotes('places', pl['id'], 'attested.form', a['form'], gz)
+    for c in pl['constraints']: check_quotes('places', pl['id'], 'constraints.model_note', c.get('model_note'), gz)
+    for c in pl['candidates']: check_quotes('places', pl['id'], 'candidates.note', c.get('note'), gz)
 for st in stops:
     for f_ in ('label', 'date_text', 'why'): check_quotes('stops', st['id'], f_, st.get(f_))
     for sr in st['sources']: check_quotes('stops', st['id'], 'sources.locator', sr['locator'])
@@ -710,9 +806,9 @@ def write_csv(name, rows, cols):
     with open(os.path.join(OUT, 'csv', name + '.csv'), 'w', encoding='utf-8', newline='') as fh:
         w = csv.writer(fh); w.writerow(cols)
         for r in rows: w.writerow([r.get(c, '') if not isinstance(r.get(c), (list, dict)) else json.dumps(r.get(c), ensure_ascii=False) for c in cols])
-write_csv('places', places, ['id', 'label', 'lat', 'lon', 'tier', 'precision', 'status', 'radius_km', 'role', 'attested', 'coord_source', 'crosscheck', 'gnis_note', 'distance_check', 'why', 'scope', 'mentioned_only', 'stops', 'stories'])
-write_csv('stops', stops, ['id', 'journey', 'seq', 'place', 'label', 'date_start', 'date_end', 'date_text', 'date_precision', 'status', 'story', 'sources', 'why'])
-write_csv('segments', segments, ['id', 'journey', 'frm', 'to', 'mode', 'mode_status', 'geometry', 'source', 'note'])
+write_csv('places', places, ['id', 'label', 'short_label', 'lat', 'lon', 'tier', 'precision', 'status', 'naming', 'radius_km', 'role', 'attested', 'coord_source', 'crosscheck', 'gnis_note', 'distance_check', 'why', 'unlocated_kind', 'constraints', 'candidates', 'candidates_note', 'scope', 'mentioned_only', 'stops', 'stories'])
+write_csv('stops', stops, ['id', 'journey', 'seq', 'place', 'label', 'date_start', 'date_end', 'date_text', 'date_precision', 'status', 'naming', 'story', 'sources', 'why'])
+write_csv('segments', segments, ['id', 'journey', 'frm', 'to', 'via', 'mode', 'mode_status', 'geometry', 'source', 'note'])
 write_csv('documents', docs, ['id', 'order', 'date', 'date_text', 'precision', 'title', 'senders', 'recipients', 'form', 'place', 'archive', 'enclosed_in', 'enclosures', 'block_counts', 'word_count', 'mentions', 'stories', 'timeline', 'note'])
 blocks_rows = [dict(doc=d['id'], block=b['id'], type=b['type'], speaker=b['speaker'], text=b['text']) for d in docs for b in d['blocks']]
 write_csv('document_blocks', blocks_rows, ['doc', 'block', 'type', 'speaker', 'text'])
@@ -725,7 +821,7 @@ write_csv('network_mentions', mention_edges, ['id', 'source', 'target', 'kind', 
 write_csv('network_nodes', nodes, ['id', 'label', 'type', 'kind', 'scope', 'metrics'])
 write_csv('timeline', timeline, ['id', 'order', 'date', 'stream', 'text', 'docs', 'stops', 'stories', 'findings', 'note'])
 write_csv('itinerary', itinerary, ['id', 'date', 'text', 'source'])
-write_csv('findings', findings, ['id', 'kind', 'title', 'text', 'refs', 'stories', 'stops', 'places', 'people'])
+write_csv('findings', findings, ['id', 'kind', 'title', 'text', 'refs', 'stories', 'stops', 'places', 'people', 'related'])
 write_csv('published', published, ['id', 'short', 'citation_as_given', 'author', 'year', 'type', 'cited_in', 'note', 'excerpts'])
 write_csv('stories', stories, ['id', 'order', 'phase', 'title', 'subtitle', 'places', 'stops', 'docs', 'people', 'published', 'findings', 'model_note'])
 
@@ -742,8 +838,14 @@ cells are JSON-encoded.
 ## Block types (documents.blocks[].type) — rendered differently in the Archive reader
 {chr(10).join('- `' + k + '` — ' + v for k, v in meta['block_types'].items())}
 
-## Source-status chips (places.status, stops.status)
+## Source-status chips (places.status, stops.status) and the `naming` flag
 {chr(10).join('- `' + k + '` — ' + v for k, v in meta['status_chips'].items())}
+
+## Unlocated places (places.unlocated_kind) — the three silences kept apart
+{chr(10).join('- `' + k + '` — ' + v for k, v in meta['unlocated_kinds'].items())}
+
+## Constraints on unlocated places (places.constraints[].kind) — drawn without asserting a point
+{chr(10).join('- `' + k + '` — ' + v for k, v in meta['constraint_kinds'].items())}
 
 ## Geocoding hierarchy (places.tier)
 {chr(10).join('- tier ' + str(k) + ' — ' + v for k, v in meta['geocoding_tiers'].items())}
@@ -782,16 +884,34 @@ letterhead, address, permit, or the place in its name; `inferred` when the model
 Historical gazetteer. `attested[]` (form, source) — the name as it appears and where; `lat`, `lon` (WGS84 decimal; null when unlocated);
 `tier`, `precision`, `status`, `radius_km` (uncertainty halo drawn on the map); `coord_source` (authority, id, name, feature_class,
 lat, lon, url, file); `crosscheck[]` (other gazetteers); `gnis_note`, `distance_check` (tier-4 consistency check against Quackenbush's own distances);
-`why` — "why this point is here"; `scope` hunt | prologue; `mentioned_only`; `stops`, `stories`.
+`why` — "why this point is here" (for an unlocated place: why no point is drawn); `scope` hunt | prologue; `mentioned_only`; `stops`, `stories`.
+- `short_label` — the model's display normalisation of the attested label, used for map and globe labels only (`places.SHORT_LABELS`);
+  tooltips, popups, records and tables keep `label`.
+- `naming` — flag (true for Lane's Landing / Shelton): two attested names denote one gazetteer point; rendered as a `naming` chip beside the status;
+  it records naming variance, not a dispute about where the traveller was. Stops at the place carry the same flag.
+- `unlocated_kind` — on every place with `lat` null: withheld | contradictory | ambiguous | not_geocoded (vocabulary above).
+- `constraints[]` — spatial statements a provided text makes about an unlocated place: `kind` distance | near | identity, `anchor`
+  (id of the located place the statement refers to) and `anchor_label`, `miles` (distance only), `quote` (verbatim, verified at build),
+  `ref` (document id, `tale` or `pi_timeline`), `speaker`, `model_note` (the model's statement of what the drawn geometry can and cannot show).
+  The map draws each constraint around its anchor and never a point; the finding register carries the disagreement.
+- `candidates[]` — gazetteer records bearing the attested name (authority USGS GNIS, id, name, feature_class, county, map, lat, lon, url,
+  optional note); drawn as equal hollow squares, none asserted; `candidates_note` says so. When the GNIS Alaska file is present at build
+  (`GNIS_AK_FILE` or the scratchpad copy; `meta.gnis_candidates_checked_against_file`) every candidate is checked against it and a homonym set
+  must list every row of that name.
 
 ### stops
-`journey` 1907 | 1908; `seq`; `place`; `date_start`, `date_end` (ISO bounds of the attested or inferred window); `date_text`;
-`date_precision` stated | window | inferred | disputed; `sources[]` (ref = document id, `pub_*`, `tale` or `pi_timeline`; locator = page/quotation);
-`status` chip; `story`; `why`.
+`journey` 1907 | 1908; `seq` (the numeral shown on the map badge and in the stop list); `place`; `date_start`, `date_end` (ISO bounds of the
+attested or inferred window); `date_text`; `date_precision` stated | window | inferred | disputed; `sources[]` (ref = document id, `pub_*`,
+`tale` or `pi_timeline`; locator = page/quotation); `status` chip; `naming` flag (see places); `story`; `why`.
 
 ### segments
 Connectors between consecutive stops. `mode` as named in a source; `mode_status` stated | not_stated | inferred; `geometry` is
 `schematic` for every segment (no route was traced); `source`; `note`.
+- `via[]` — **out-and-back**: a side trip whose return passes through a named place before the next stop. The connector is drawn
+  through that place (legs a → via → b) instead of asserting a through-route the sources deny. Each entry: `place`, `place_label`,
+  `status` stated (a provided text states the return; `quote` verified at build; `ref`) | inferred (the model inferred it from the
+  sequence; no quote; drawn with the inferred dash). Three segments carry a via: g1907_08 (Solomon River → Nome → Keewalik, stated),
+  g1907_10 (Candle → Keewalik → Elephant Point, stated), g1907_12 (Buckland mouth → Elephant Point → Keewalik, inferred).
 
 ### stories
 `phase`; `title`, `subtitle`; `places`, `stops`, `docs`, `people`, `published`, `findings`; `tale_excerpts[]` (verbatim PI prose with the Tale paragraph id);
@@ -831,7 +951,7 @@ no record was completed from outside knowledge; no full text was provided.
 
 ### findings
 Register of `discrepancy`, `absence`, `naming`, `unlocated`, `authorship` findings with `refs` and the records they concern
-(`stories`, `stops`, `places`, `people`).
+(`stories`, `stops`, `places`, `people`); `related[]` links findings that bear on the same question.
 
 ## Verified quotation classes (meta.quotation_classes)
 {chr(10).join('- **' + k + '** — ' + v for k, v in meta['quotation_classes'].items())}

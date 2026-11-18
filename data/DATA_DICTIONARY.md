@@ -17,12 +17,24 @@ cells are JSON-encoded.
 - `editorial` — the PI's description of the physical document, archival context, or dated research note
 - `annotation` — a marginal or interlinear annotation on the original, as transcribed
 
-## Source-status chips (places.status, stops.status)
+## Source-status chips (places.status, stops.status) and the `naming` flag
 - `verified` — attested name matched to an authoritative gazetteer record
 - `inferred` — identification or date is a model inference from the described route or sequence
 - `approximate` — placed from Quackenbush's distance/direction statements or a described relation to a named feature
 - `disputed` — provided sources disagree
 - `unlocated` — cannot be placed from the sources
+- `naming` — flag, not a status: two attested names denote one gazetteer point; records naming variance, not a dispute about position
+
+## Unlocated places (places.unlocated_kind) — the three silences kept apart
+- `withheld` — the location was deliberately not disclosed in the sources
+- `contradictory` — the provided statements place it differently and cannot be reconciled
+- `ambiguous` — the attested name has several gazetteer homonyms, or the reading of the name is uncertain
+- `not_geocoded` — outside the journey; no gazetteer was consulted for it in this build
+
+## Constraints on unlocated places (places.constraints[].kind) — drawn without asserting a point
+- `distance` — a stated distance in miles from a located anchor — drawn as a dashed ring around the anchor; no point
+- `near` — a stated nearness without a distance — drawn as a leader label at the anchor; no radius
+- `identity` — a statement equating the place with a located one — drawn as a bracket at that place; nothing asserted
 
 ## Geocoding hierarchy (places.tier)
 - tier 1 — published coordinates in the sources — none exist
@@ -65,16 +77,34 @@ letterhead, address, permit, or the place in its name; `inferred` when the model
 Historical gazetteer. `attested[]` (form, source) — the name as it appears and where; `lat`, `lon` (WGS84 decimal; null when unlocated);
 `tier`, `precision`, `status`, `radius_km` (uncertainty halo drawn on the map); `coord_source` (authority, id, name, feature_class,
 lat, lon, url, file); `crosscheck[]` (other gazetteers); `gnis_note`, `distance_check` (tier-4 consistency check against Quackenbush's own distances);
-`why` — "why this point is here"; `scope` hunt | prologue; `mentioned_only`; `stops`, `stories`.
+`why` — "why this point is here" (for an unlocated place: why no point is drawn); `scope` hunt | prologue; `mentioned_only`; `stops`, `stories`.
+- `short_label` — the model's display normalisation of the attested label, used for map and globe labels only (`places.SHORT_LABELS`);
+  tooltips, popups, records and tables keep `label`.
+- `naming` — flag (true for Lane's Landing / Shelton): two attested names denote one gazetteer point; rendered as a `naming` chip beside the status;
+  it records naming variance, not a dispute about where the traveller was. Stops at the place carry the same flag.
+- `unlocated_kind` — on every place with `lat` null: withheld | contradictory | ambiguous | not_geocoded (vocabulary above).
+- `constraints[]` — spatial statements a provided text makes about an unlocated place: `kind` distance | near | identity, `anchor`
+  (id of the located place the statement refers to) and `anchor_label`, `miles` (distance only), `quote` (verbatim, verified at build),
+  `ref` (document id, `tale` or `pi_timeline`), `speaker`, `model_note` (the model's statement of what the drawn geometry can and cannot show).
+  The map draws each constraint around its anchor and never a point; the finding register carries the disagreement.
+- `candidates[]` — gazetteer records bearing the attested name (authority USGS GNIS, id, name, feature_class, county, map, lat, lon, url,
+  optional note); drawn as equal hollow squares, none asserted; `candidates_note` says so. When the GNIS Alaska file is present at build
+  (`GNIS_AK_FILE` or the scratchpad copy; `meta.gnis_candidates_checked_against_file`) every candidate is checked against it and a homonym set
+  must list every row of that name.
 
 ### stops
-`journey` 1907 | 1908; `seq`; `place`; `date_start`, `date_end` (ISO bounds of the attested or inferred window); `date_text`;
-`date_precision` stated | window | inferred | disputed; `sources[]` (ref = document id, `pub_*`, `tale` or `pi_timeline`; locator = page/quotation);
-`status` chip; `story`; `why`.
+`journey` 1907 | 1908; `seq` (the numeral shown on the map badge and in the stop list); `place`; `date_start`, `date_end` (ISO bounds of the
+attested or inferred window); `date_text`; `date_precision` stated | window | inferred | disputed; `sources[]` (ref = document id, `pub_*`,
+`tale` or `pi_timeline`; locator = page/quotation); `status` chip; `naming` flag (see places); `story`; `why`.
 
 ### segments
 Connectors between consecutive stops. `mode` as named in a source; `mode_status` stated | not_stated | inferred; `geometry` is
 `schematic` for every segment (no route was traced); `source`; `note`.
+- `via[]` — **out-and-back**: a side trip whose return passes through a named place before the next stop. The connector is drawn
+  through that place (legs a → via → b) instead of asserting a through-route the sources deny. Each entry: `place`, `place_label`,
+  `status` stated (a provided text states the return; `quote` verified at build; `ref`) | inferred (the model inferred it from the
+  sequence; no quote; drawn with the inferred dash). Three segments carry a via: g1907_08 (Solomon River → Nome → Keewalik, stated),
+  g1907_10 (Candle → Keewalik → Elephant Point, stated), g1907_12 (Buckland mouth → Elephant Point → Keewalik, inferred).
 
 ### stories
 `phase`; `title`, `subtitle`; `places`, `stops`, `docs`, `people`, `published`, `findings`; `tale_excerpts[]` (verbatim PI prose with the Tale paragraph id);
@@ -114,13 +144,13 @@ no record was completed from outside knowledge; no full text was provided.
 
 ### findings
 Register of `discrepancy`, `absence`, `naming`, `unlocated`, `authorship` findings with `refs` and the records they concern
-(`stories`, `stops`, `places`, `people`).
+(`stories`, `stops`, `places`, `people`); `related[]` links findings that bear on the same question.
 
 ## Verified quotation classes (meta.quotation_classes)
 - **tie evidence** — every quotation on a stated / PI / affiliation tie is found verbatim in the sources (build fails otherwise)
 - **funding** — every funding edge quotes a sum or promise verbatim
 - **Tale excerpts** — every story excerpt is an exact substring of the Tale and ends at a sentence or quotation boundary
 - **Cast lines and characterisations** — every pi_characterisation and characterisation is a verbatim line of the PI's texts
-- **quoted fragments in authored prose** — 450 quoted spans in model notes, place/stop/segment fields, findings, roles, variants, addresses, institutions, published excerpts and notes, tie labels, and record notes are verified (allow-list of quoted vocabulary, none of it currently needed: approximate, disputed, inferred, model, unlocated, verified, via PI)
+- **quoted fragments in authored prose** — 458 quoted spans in model notes, place/stop/segment fields, findings, roles, variants, addresses, institutions, published excerpts and notes, tie labels, and record notes are verified (allow-list of quoted vocabulary, none of it currently needed: approximate, disputed, inferred, model, unlocated, verified, via PI)
 
-`meta.counts.verified_quotations` = 450 quoted fragments verified in this build; the build fails on any miss.
+`meta.counts.verified_quotations` = 458 quoted fragments verified in this build; the build fails on any miss.

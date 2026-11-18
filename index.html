@@ -43,8 +43,9 @@
     --globe-sea:#1b2028; --globe-land:#2c3138; --globe-coast:#4a515b; --net-node:#c9c4b9; --net-halo:#1c1f23;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9)} :root:not([data-theme="light"]) .leaflet-container{background:#1b2028} :root:not([data-theme="light"]) .lbl{text-shadow:0 0 3px #15171a,0 0 3px #15171a,0 0 6px #15171a} }
-:root[data-theme="dark"] .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9)} :root[data-theme="dark"] .leaflet-container{background:#1b2028}
+/* dark scheme: the flat basemap switches to Esri's dark-gray canvas tiles (no CSS inversion, which falsified the relief colours); relief keeps its tiles, dimmed */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .leaflet-container{background:var(--globe-sea)} :root:not([data-theme="light"]) .leaflet-container.relief .leaflet-tile-pane{filter:brightness(.8)} :root:not([data-theme="light"]) .lbl{text-shadow:0 0 3px var(--paper),0 0 3px var(--paper),0 0 6px var(--paper)} }
+:root[data-theme="dark"] .leaflet-container{background:var(--globe-sea)} :root[data-theme="dark"] .leaflet-container.relief .leaflet-tile-pane{filter:brightness(.8)} :root[data-theme="dark"] .lbl{text-shadow:0 0 3px var(--paper),0 0 3px var(--paper),0 0 6px var(--paper)}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
 a{color:var(--j1907);text-decoration:none}a:hover{text-decoration:underline}
@@ -88,6 +89,7 @@ nav.tabs a:hover{text-decoration:none;background:var(--surface-2)}nav.tabs a.act
 .chip.approximate{color:var(--approximate);border-style:dashed}.chip.approximate::before{background:transparent;border:1px dashed currentColor}
 .chip.disputed{color:var(--disputed);border-color:var(--disputed)}.chip.disputed::before{border-radius:0;transform:rotate(45deg);width:.42rem;height:.42rem}
 .chip.unlocated{color:var(--unlocated);border-style:dotted}.chip.unlocated::before{background:repeating-linear-gradient(45deg,currentColor 0 1px,transparent 1px 3px);border-radius:0}
+.chip.naming{color:var(--inferred);border-color:var(--inferred);border-style:double}.chip.naming::before{background:transparent;border-top:2px solid currentColor;border-bottom:2px solid currentColor;border-radius:0;height:.38rem;width:.5rem}
 .chip.stated,.chip.day{color:var(--verified);border-color:var(--verified)}.chip.window{color:var(--inferred);border-color:var(--inferred)}.chip.bracketed,.chip.month{color:var(--inferred)}.chip.undated{color:var(--approximate);border-style:dashed}
 .chip.plain::before{display:none}
 .tag{display:inline-block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;padding:.1rem .4rem;border-radius:3px;background:var(--surface-2);color:var(--ink-2);vertical-align:middle}
@@ -154,22 +156,57 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
 .seg button+button{border-left:1px solid var(--rule-2)}
 .seg button.active{background:var(--ink);color:var(--paper)}
 #stoplist{list-style:none;margin:0;padding:0;font-size:.88rem}
-#stoplist li{display:grid;grid-template-columns:5.6rem 1fr;gap:.4rem;padding:.3rem .3rem;border-radius:var(--radius);cursor:pointer;border-left:3px solid transparent}
+#stoplist li{display:grid;grid-template-columns:5.9rem 1fr;gap:.4rem;padding:.3rem .3rem;border-radius:var(--radius);cursor:pointer;border-left:3px solid transparent}
 #stoplist li:hover{background:var(--surface-2)}
 #stoplist li.active{background:var(--surface-2)}
 #stoplist li.j1907{border-left-color:var(--j1907)}#stoplist li.j1908{border-left-color:var(--j1908)}
-#stoplist .d{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.8rem;padding-top:.1rem}
-#stoplist .grp{display:block;margin:.6rem 0 .2rem;font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
-#stoplist .grp.j1907{color:var(--j1907)}#stoplist .grp.j1908{color:var(--j1908)}
+#stoplist .d{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.8rem;padding-top:.1rem;white-space:nowrap}
+#stoplist li.grp{display:block;margin:.6rem 0 .2rem;padding:0 .3rem;font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;cursor:default;border-left:none;background:none}
+#stoplist li.grp.j1907{color:var(--j1907)}#stoplist li.grp.j1908{color:var(--j1908)}
+/* sequence badges: the numeral of the stop in its journey; 1907 round, 1908 square-cornered (shape is the non-colour channel) */
+.seq{display:inline-flex;align-items:center;justify-content:center;min-width:17px;height:17px;padding:0 4px;font:600 10.5px/1 var(--sans);letter-spacing:0;border-radius:50%;color:var(--surface);background:var(--ink-2);box-shadow:0 0 0 1.5px var(--surface);vertical-align:middle;white-space:nowrap}
+.seq.j1907{background:var(--j1907)}.seq.j1908{background:var(--j1908);border-radius:2px}
+.badgewrap{background:none;border:none;width:0;height:0}
+.badgewrap .seq{position:absolute;right:8px;top:-8px}
+.badgewrap.of2.slot0 .seq{top:-17px}.badgewrap.of2.slot1 .seq{top:1px}
+.arrowwrap{background:none;border:none}
+.arrow{display:block;width:14px;height:14px;transform-origin:50% 50%;transition:opacity .2s}
+.arrow path{stroke-width:1.5;stroke-linejoin:round}.arrow.j1907 path{stroke:var(--j1907);fill:var(--surface)}.arrow.j1908 path{stroke:var(--j1908);fill:var(--j1908)}
+.arrow.dim{opacity:.25}
+#panel .row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem;margin:.2rem 0}
+#panel .steps{display:inline-flex;align-items:center;gap:.2rem}
+#panel .steps button[disabled]{opacity:.4;cursor:default}
+#panel .frames{margin-top:.4rem}
+#panel .frames .pill{cursor:pointer;line-height:1.3}
+.pill.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.stopcard{margin:.4rem 0 0;padding:.6rem .7rem;font-size:.86rem}
+.stopcard h4{margin:.2rem 0 .4rem;font-family:var(--serif);font-size:1rem;line-height:1.3}
+.stopcard .kv{grid-template-columns:6.4rem 1fr;gap:.2rem .6rem;font-size:.82rem}
+.stopcard .phase{margin-bottom:.1rem}
+.stopcard.start p{margin:.3rem 0}
+ul.unlocated{list-style:none;margin:0;padding:0}
+ul.unlocated li{border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);padding:.5rem .6rem;margin:.4rem 0;font-size:.84rem}
+ul.unlocated .head{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem}
+ul.unlocated .head .draw{margin-left:auto;display:inline-flex;gap:.3rem;align-items:center;cursor:pointer}
+ul.unlocated .block{margin:.35rem 0;padding:.3rem .6rem;font-size:.86rem}
+ul.unlocated .block.verbatim{font-size:.92rem}
+#panel label .sw.dashed{border-top:2px dashed var(--unlocated);height:0;background:none}
 #panelToggle{position:absolute;top:.6rem;left:0;z-index:950;background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-left:none;border-radius:0 var(--radius) var(--radius) 0;padding:.35rem .5rem;cursor:pointer;box-shadow:var(--shadow);transition:left .2s ease}
-#mapstage{flex:1;position:relative;background:#e9eef2}
+#mapstage{flex:1;position:relative;background:var(--surface-2)}
 #leaflet{position:absolute;inset:0}
 #globe{position:absolute;inset:0;background:var(--paper)}
 #globe svg{width:100%;height:100%;display:block;cursor:grab}
-#maplegend{position:absolute;right:.8rem;bottom:1.6rem;background:var(--surface);opacity:.96;color:var(--ink);border:1px solid var(--rule);border-radius:var(--radius);padding:.6rem .8rem;font-size:.78rem;z-index:800;max-width:260px;box-shadow:var(--shadow)}
-#maplegend .row{display:flex;align-items:center;gap:.5rem;margin:.15rem 0}
-#maplegend svg{flex:none}
-#mapnote{position:absolute;left:.8rem;bottom:.6rem;font-size:.72rem;color:var(--muted);z-index:800;background:var(--surface);opacity:.9;padding:.1rem .4rem;border-radius:3px;max-width:60%}
+#globe svg:focus-visible{outline:2px solid var(--j1907);outline-offset:-2px}
+/* legend: one disclosure, top-right under the zoom control; below 900 px the same HTML sits at the end of the panel */
+#maplegend{position:absolute;top:3.4rem;right:.8rem;max-height:calc(100% - 6rem);overflow:auto;z-index:800;max-width:300px}
+details.legend{background:var(--surface);opacity:.97;color:var(--ink);border:1px solid var(--rule);border-radius:var(--radius);padding:.4rem .65rem .45rem;font-size:.74rem;box-shadow:var(--shadow)}
+details.legend summary{cursor:pointer;font-weight:600;font-size:.76rem;color:var(--ink-2);list-style-position:inside}
+details.legend .row{display:flex;align-items:center;gap:.4rem;margin:.12rem 0;line-height:1.25}
+details.legend .row b{margin-top:.25rem}
+details.legend svg{flex:none}
+#panellegend{display:none;margin:0 0 1rem}
+#panellegend details.legend{box-shadow:none;opacity:1}
+#mapnote{position:absolute;left:.8rem;bottom:2.4rem;font-size:.72rem;color:var(--muted);z-index:800;background:var(--surface);opacity:.9;padding:.1rem .4rem;border-radius:3px;max-width:60%}
 .leaflet-container{font-family:var(--sans);background:#e3e9ee}
 .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--surface);color:var(--ink)}
 .leaflet-popup-content-wrapper{border-radius:var(--radius);box-shadow:var(--shadow);font-family:var(--sans)}
@@ -178,10 +215,23 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
 .leaflet-popup-content .why{color:var(--ink-2);font-size:.82rem;margin:.3rem 0}
 .leaflet-popup-content ul{margin:.3rem 0;padding-left:1rem}
 .leaflet-control-attribution{font-size:.68rem}
-.lbl{background:transparent;border:none;box-shadow:none;font-family:var(--sans);font-size:.76rem;color:var(--ink-2);text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 6px #fff;white-space:nowrap}
-.lbl.j1907{color:var(--j1907)}.lbl.j1908{color:var(--j1908)}
-.marker-disputed{width:14px;height:14px;transform:rotate(45deg);border:2px solid var(--disputed);background:#fff;}
-.minimap{height:260px;border:1px solid var(--rule);border-radius:var(--radius);margin:.5rem 0 1rem;z-index:1}
+.lbl{background:transparent;border:none;box-shadow:none;font-family:var(--sans);font-size:.76rem;color:var(--ink-2);text-shadow:0 0 3px var(--paper),0 0 3px var(--paper),0 0 6px var(--paper);white-space:nowrap}
+.lbl.j1907{color:var(--j1907)}.lbl.j1908{color:var(--j1908)}.lbl.both{color:var(--ink)}.lbl.ctx{color:var(--model)}
+.lbl.left{text-align:right}
+.lbl.active{background:var(--surface);border:1px solid var(--rule-2);border-radius:3px;padding:0 .3rem;text-shadow:none;color:var(--ink);font-weight:600;line-height:1.3}
+.lbl.ulbl{color:var(--unlocated);font-style:italic;cursor:pointer;font-size:.72rem}
+.lbl.ulbl.candlbl{color:var(--muted);font-style:normal}
+.lbl.tip{background:var(--surface);border:1px solid var(--rule);box-shadow:var(--shadow);color:var(--ink);text-shadow:none;padding:.3rem .5rem;white-space:normal;max-width:300px;font-size:.78rem}
+.lbl.tip::before{display:none}
+.cand{width:8px;height:8px;border:1.5px solid var(--unlocated);background:transparent;box-sizing:border-box}
+.marker-disputed{width:14px;height:14px;transform:rotate(45deg);border:2px solid var(--disputed);background:var(--surface)}
+.marker-disputed.j1907{border-color:var(--j1907)}.marker-disputed.j1908{border-color:var(--j1908)}.marker-disputed.both{border-color:var(--j1907);background:var(--j1908)}
+.leaflet-popup-content .visits{margin:.3rem 0;padding:0;list-style:none}
+.leaflet-popup-content .visits li{margin:.15rem 0}
+.leaflet-popup-content .visits li.cur{font-weight:600}
+.leaflet-popup-content .block{font-size:.86rem;padding:.3rem .6rem}
+.minimap{height:260px;border:1px solid var(--rule);border-radius:var(--radius);margin:.5rem 0 .2rem;z-index:1}
+.minimap-caption{font-size:.8rem;color:var(--muted);margin:0 0 1rem}
 /* archive */
 #archive{display:grid;grid-template-columns:360px 1fr;height:100%}
 #archive .list{border-right:1px solid var(--rule);background:var(--surface);overflow:auto;padding:.8rem}
@@ -250,6 +300,8 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
   #network{grid-template-rows:60vh 1fr}
   #netside{border-left:none;border-top:1px solid var(--rule)}
   #panel{position:absolute;top:0;bottom:0;left:0}
+  #maplegend{display:none}
+  #panellegend{display:block}
   .toc{columns:1}
   #topbar .brand span{display:none}
 }
@@ -257,7 +309,7 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
   html{font-size:15px}
   .page{padding:1rem 1rem 3rem}
   .kv{grid-template-columns:1fr}
-  #maplegend{display:none}
+  .leaflet-top.leaflet-right .leaflet-control-zoom{margin-top:3.8rem}
 }
 </style>
 </head>
@@ -335,7 +387,7 @@ const page = document.getElementById('pageview'), mapview=document.getElementByI
 function setTab(name){ document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('active', a.dataset.tab===name)); }
 function render(route){
   const seg=route.split('/').filter(Boolean); const t=seg[0]||'map';
-  if(t==='map'){ page.classList.add('hidden'); mapview.classList.remove('hidden'); setTab('map'); MapView.show(seg[1]); return; }
+  if(t==='map'){ page.classList.add('hidden'); mapview.classList.remove('hidden'); setTab('map'); MapView.show(seg[1], seg[2]); return; }
   mapview.classList.add('hidden'); page.classList.remove('hidden'); page.scrollTop=0;
   const tabFor={stories:'story',story:'story',archive:'archive',network:'network',person:'network',timeline:'timeline',published:'published',method:'method',place:'map',tale:'story',cast:'network'};
   setTab(tabFor[t]||'');
@@ -374,13 +426,27 @@ function docCard(id, opts={}){
 }
 function trunc(html, n){ const tmp=document.createElement('div'); tmp.innerHTML=html; const txt=tmp.textContent||''; if(txt.length<=n) return html; return esc(txt.slice(0,n))+'…'; }
 function expandDoc(id){ const el=document.getElementById('full-'+id); const d=IDX.doc[id]; if(!el||!d) return; if(!el.classList.contains('hidden')){ el.classList.add('hidden'); return; } el.innerHTML=d.blocks.map(blockHTML).join(''); el.classList.remove('hidden'); }
+function refLinkShort(r){ return IDX.doc[r]? docLink(r) : IDX.pub[r]? `<a href="#/published/${r}">${esc(IDX.pub[r].short)}</a>` : r==='tale'? '<a href="#/tale">Tale</a>' : r==='pi_timeline'? '<a href="#/timeline">PI timeline</a>' : r==='cast'? '<a href="#/cast">Cast</a>' : esc(r); }
+/* a place card branches on has_coords: a located place explains its point; an unlocated one explains why no point is drawn,
+   lists the spatial statements the sources make (constraints) and the gazetteer homonyms (candidates), none asserted */
 function placeCard(id){
   const p=IDX.place[id]; if(!p) return '';
   const cs=p.coord_source||{};
-  const coords = p.has_coords? `${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}`:'no coordinate (unlocated)';
-  return `<div class="card"><h4>${esc(p.label)} ${chip(p.status)} ${p.tier?`<span class="tag">tier ${p.tier}</span>`:''}</h4>
+  const chips = `${chip(p.status)}${p.naming?' '+chip('naming'):''} ${p.has_coords? (p.tier?`<span class="tag">tier ${p.tier}</span>`:'') : `<span class="tag" title="${esc((D.meta.unlocated_kinds||{})[p.unlocated_kind]||'')}">unlocated · ${esc(p.unlocated_kind||'')}</span>`}`;
+  const drawn = (p.constraints||[]).length || (p.candidates||[]).length;
+  if(!p.has_coords){
+    return `<div class="card"><h4>${esc(p.label)} ${chips}</h4>
     <dl class="kv"><dt>Attested as</dt><dd>${p.attested.map(a=>`“${esc(a.form)}” <span class="muted small">(${esc(a.source)})</span>`).join('; ')}</dd>
-    <dt>Coordinates</dt><dd>${coords}${p.radius_km?` · halo ${p.radius_km} km`:''} · <span class="muted">${esc(p.precision)}</span></dd>
+    <dt>Coordinates</dt><dd>none · gazetteer tier: none · <span class="muted">${esc(p.precision)}</span></dd>
+    ${p.gnis_note?`<dt>Gazetteer note</dt><dd>${esc(p.gnis_note)}</dd>`:''}
+    <dt>Why no point is drawn</dt><dd>${esc(p.why)}</dd></dl>
+    ${(p.constraints||[]).length?`<h5 class="small caps" style="margin:.6rem 0 .2rem">Spatial statements in the sources — drawn as constraints, not as a point</h5>${p.constraints.map(c=>`<div class="block verbatim" style="margin:.3rem 0"><span class="who">${esc(c.speaker)} — verbatim · ${esc(c.kind)}${c.miles?` · ${c.miles} mi from ${esc((IDX.place[c.anchor]||{}).short_label||c.anchor)}`:` · anchor ${esc((IDX.place[c.anchor]||{}).short_label||c.anchor)}`} · ${refLinkShort(c.ref)}</span>“${esc(c.quote)}”</div>${modelBlock(c.model_note)}`).join('')}`:''}
+    ${(p.candidates||[]).length?`<h5 class="small caps" style="margin:.6rem 0 .2rem">Gazetteer records bearing the name — candidates, none asserted</h5><table class="data small"><thead><tr><th>GNIS id</th><th>Name</th><th>Class</th><th>County</th><th>Map</th><th>Lat, lon</th></tr></thead><tbody>${p.candidates.map(c=>`<tr><td><a href="${esc(c.url)}" rel="noopener">${esc(c.id)}</a></td><td>${esc(c.name)}</td><td>${esc(c.feature_class)}</td><td>${esc(c.county||'')}</td><td>${esc(c.map||'')}</td><td>${c.lat.toFixed(4)}, ${c.lon.toFixed(4)}${c.note?`<div class="muted">${esc(c.note)}</div>`:''}</td></tr>`).join('')}</tbody></table>${modelBlock(p.candidates_note)}`:''}
+    <div class="small">${drawn?`<a href="#/map/${id}">Show constraints on map</a> · `:''}<a href="#/place/${id}">Place record</a></div></div>`;
+  }
+  return `<div class="card"><h4>${esc(p.label)} ${chips}</h4>
+    <dl class="kv"><dt>Attested as</dt><dd>${p.attested.map(a=>`“${esc(a.form)}” <span class="muted small">(${esc(a.source)})</span>`).join('; ')}</dd>
+    <dt>Coordinates</dt><dd>${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}${p.radius_km?` · halo ${p.radius_km} km`:''} · <span class="muted">${esc(p.precision)}</span></dd>
     ${cs.authority? `<dt>Source</dt><dd>${esc(cs.authority)}${cs.id?` · ${esc(cs.name||'')} (${esc(cs.feature_class||'')}) id ${cs.url?`<a href="${esc(cs.url)}" target="_blank" rel="noopener">${esc(cs.id)}</a>`:esc(cs.id)}`:''}${cs.note?` · ${esc(cs.note)}`:''}</dd>`:''}
     ${(p.crosscheck||[]).length? `<dt>Cross-check</dt><dd>${p.crosscheck.map(c=>`${esc(c.authority)} ${c.url?`<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.id)}</a>`:esc(c.id||'')}${c.lat!=null?` (${c.lat.toFixed(3)}, ${c.lon.toFixed(3)})`:''}`).join('; ')}</dd>`:''}
     ${p.gnis_note?`<dt>Gazetteer note</dt><dd>${esc(p.gnis_note)}</dd>`:''}
@@ -388,45 +454,48 @@ function placeCard(id){
     <dt>Why this point is here</dt><dd>${esc(p.why)}</dd></dl>
     <div class="small"><a href="#/map/${id}">Show on map</a> · <a href="#/place/${id}">Place record</a></div></div>`;
 }
-function findingCard(id){ const f=IDX.finding[id]; if(!f) return ''; return `<div class="finding ${esc(f.kind)}"><span class="tag">${esc(f.kind)}</span> <b>${esc(f.title)}</b><div>${esc(f.text)}</div>${(f.refs||[]).length?`<div class="small muted">Refs: ${f.refs.map(r=>IDX.doc[r]?docLink(r):IDX.pub[r]?`<a href="#/published/${r}">${esc(IDX.pub[r].short)}</a>`:esc(r)).join('; ')}</div>`:''}</div>`; }
+function findingCard(id){ const f=IDX.finding[id]; if(!f) return ''; return `<div class="finding ${esc(f.kind)}" id="fc-${esc(f.id)}"><span class="tag">${esc(f.kind)}</span> <b>${esc(f.title)}</b><div>${esc(f.text)}</div>${(f.refs||[]).length?`<div class="small muted">Refs: ${f.refs.map(refLinkShort).join('; ')}</div>`:''}${(f.related||[]).length?`<div class="small muted">See also: ${f.related.map(r=>IDX.finding[r]?`<a href="#/method/findings/${r}" onclick="event.preventDefault();App.go('/method/findings/${r}')">${esc(IDX.finding[r].title)}</a>`:esc(r)).join('; ')}</div>`:''}</div>`; }
 
-window.App = { go, back:goBack, expandDoc, D, IDX, esc, fmtDate, chip, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, navbar, personLabel, journeyClass, JCOLOR, routeTitle };
+window.App = { go, back:goBack, expandDoc, D, IDX, esc, fmtDate, chip, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, refLinkShort, navbar, personLabel, journeyClass, JCOLOR, routeTitle };
 window.Pages = {};
 document.addEventListener('DOMContentLoaded', ()=>{ const h=currentHash(); stack.push(h); render(h); });
 })();
 </script>
 <script>
 /* ============================================================================
-   Map view: Leaflet (flat, relief) and D3 orthographic globe; collapsible panel
+   Map view: Leaflet (flat, relief) and D3 orthographic globe; collapsible panel with a step-through
+   ('Follow the journey'), sequence badges and direction arrows, out-and-back legs drawn through their via
+   place, coincident connectors offset, unlocated places drawn as constraints and candidates (never as points).
+   Colours come from the CSS tokens (var(--j1907) …) so the dark scheme follows without filters.
    ============================================================================ */
 (function(){
 'use strict';
-const {D, IDX, esc, chip, JCOLOR} = App;
-const state = { mode:'flat', layers:{j1907:true, j1908:true, trail:true, halos:true, routes:true, labels:true, context:false}, highlight:null, inited:false, globeInited:false };
-let map, tileFlat, tileRelief, tileLabels, groups={}, globe=null;
-const panel=document.getElementById('panel'), toggle=document.getElementById('panelToggle');
-toggle.addEventListener('click', ()=>{ panel.classList.toggle('collapsed'); toggle.style.left = panel.classList.contains('collapsed')? '0':'330px'; setTimeout(()=>{ if(map) map.invalidateSize(); if(globe) globe.resize(); }, 220); });
-toggle.style.left='330px';
-
-const placesOf = (journey)=>{ const seen=new Map(); D.stops.filter(s=>s.journey===journey).forEach(s=>{ const p=IDX.place[s.place]; if(!p||!p.has_coords) return; if(!seen.has(p.id)) seen.set(p.id,{place:p, stops:[]}); seen.get(p.id).stops.push(s); }); return [...seen.values()]; };
+const {D, IDX, esc, chip, fmtDate} = App;
+const REDUCE = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const JVAR = {'1907':'var(--j1907)', '1908':'var(--j1908)'};
+const MI = 1609.344;                                   // international mile in metres (for the stated-distance rings)
+const TOP8 = ['pl_newyork','pl_seattle','pl_nome','pl_dawson','pl_elephant_point','pl_keewalik','pl_stmichael','pl_montreal'];
 const TRAIL_PLACES = ['pl_newyork','pl_seattle','pl_washington','pl_garrison'];
+const CTX_PLACES = ['pl_lena_mouth','pl_yakutsk','pl_stpetersburg'];
+const UNLOCATED_DEFAULT = D.places.filter(p=>!p.has_coords && !p.mentioned_only && ((p.constraints||[]).length || (p.candidates||[]).length)).map(p=>p.id);
+const state = { mode:'flat', layers:{j1907:true, j1908:true, trail:true, halos:true, routes:true, labels:true, context:false, unlocated:true}, highlight:null, journey:'1907',
+                inited:false, legs:[], constraintCount:0, candidateCount:0, showUnlocated:new Set(UNLOCATED_DEFAULT), unlocatedOff:new Set(), frame:null };
+let map, tileFlat=null, tileFlatRef=null, tileRelief, tileLabels, groups={}, globe=null, labelList=[], badgeList=[], legLines=[], arrowMarkers=[], popup=null, pendingPopup=null;
+const panel=document.getElementById('panel'), toggle=document.getElementById('panelToggle'), leafletEl=document.getElementById('leaflet'), mapviewEl=document.getElementById('mapview');
+toggle.addEventListener('click', ()=>{ const c=panel.classList.toggle('collapsed'); toggle.style.left = c? '0':'330px'; toggle.setAttribute('aria-expanded', String(!c)); setTimeout(()=>{ if(map) map.invalidateSize(); if(globe) globe.resize(); }, 220); });
+toggle.style.left='330px'; toggle.setAttribute('aria-expanded','true');
 
-function initMap(){
-  map = L.map('leaflet', {zoomControl:true, attributionControl:true, worldCopyJump:true}).setView([62, -140], 3);
-  tileFlat = L.layerGroup([
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {attribution:'Basemap: Esri Light Gray Canvas (Esri, HERE, Garmin, © OpenStreetMap contributors)', maxZoom:16}),
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {maxZoom:16, pane:'shadowPane', opacity:.85})]);
-  tileRelief = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {attribution:'Relief: Esri, USGS, NOAA', maxZoom:13});
-  tileLabels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {maxZoom:13, pane:'shadowPane', opacity:.8});
-  tileFlat.addTo(map);
-  groups = { halos:L.layerGroup().addTo(map), routes:L.layerGroup().addTo(map), markers:L.layerGroup().addTo(map), labels:L.layerGroup().addTo(map), context:L.layerGroup() };
-  drawAll();
-  const pts=D.stops.map(st=>IDX.place[st.place]).filter(p=>p&&p.has_coords).map(p=>[p.lat,p.lon]); if(pts.length) map.fitBounds(pts,{padding:[40,40]});
-  map.on('zoomend', ()=>updateLabelVisibility());
-}
+/* ---------------------------------------------------------------- data helpers (also used by the story minimap) */
+const placesOf = (journey)=>{ const seen=new Map(); D.stops.filter(s=>s.journey===journey).forEach(s=>{ const p=IDX.place[s.place]; if(!p||!p.has_coords) return; if(!seen.has(p.id)) seen.set(p.id,{place:p, stops:[]}); seen.get(p.id).stops.push(s); }); return [...seen.values()]; };
+const stopsOf = (journey)=>D.stops.filter(s=>s.journey===journey);
+const jc = j=>j==='1907'?'j1907': j==='1908'?'j1908':'';
+function labelTier(place){ if(TOP8.includes(place.id)) return 0; if(place.status==='verified') return 4; if(place.status==='approximate' && /buckland|eschscholtz_east/.test(place.id)) return 6; return 8; }
+/* marker style per source status; journey 'both' = outer ring 1907, inner disc 1908; null = paper-trail node */
 function styleFor(place, journey){
-  const c = JCOLOR[journey] || '#6b6760';
-  const base = {color:c, weight:2, fillColor:c, fillOpacity:.9, radius:7};
+  if(journey==='both') return {className:'mk both', color:JVAR['1907'], weight:2.5, fillColor:JVAR['1908'], fillOpacity:.95, radius:7};
+  if(!journey) return {className:'mk trail', color:'var(--paper-trail)', weight:1.5, fillColor:'var(--surface)', fillOpacity:1, radius:5};
+  const c = journey==='ctx'? 'var(--model)' : JVAR[journey];
+  const base = {className:'mk '+jc(journey), color:c, weight:2, fillColor:c, fillOpacity:.9, radius:7};
   switch(place.status){
     case 'verified': return base;
     case 'inferred': return {...base, fillOpacity:.15, weight:2.5};
@@ -435,128 +504,387 @@ function styleFor(place, journey){
     default: return base;
   }
 }
-function popupFor(place){
-  const stops = D.stops.filter(s=>s.place===place.id);
-  const stories = [...new Set(stops.map(s=>s.story).concat(place.stories||[]))];
-  return `<h4>${esc(place.label)}</h4>${chip(place.status)} ${place.tier?`<span class="tag">tier ${place.tier}</span>`:''} <span class="tag">${esc(place.precision)}</span>
-    <div class="why">${esc(place.why)}</div>
-    ${stops.length?`<ul>${stops.map(s=>`<li><span class="tag ${App.journeyClass(s.journey)}">${s.journey}</span> ${esc(s.date_text)} — ${esc(s.label)} <span class="chip plain ${esc(s.date_precision)}">${esc(s.date_precision)}</span></li>`).join('')}</ul>`:''}
-    <div>${stories.map(id=>`<button class="primary small" onclick="App.go('/story/${id}')">Open story: ${esc(IDX.story[id].title.split(':')[0])}</button>`).join(' ')} <a class="small" href="#/place/${place.id}">place record</a></div>`;
+/* great-circle path sampled for Leaflet (schematic connector) */
+function gcPath(a,b){ const toR=Math.PI/180, toD=180/Math.PI; const [lat1,lon1]=[a[0]*toR,a[1]*toR],[lat2,lon2]=[b[0]*toR,b[1]*toR]; const d=2*Math.asin(Math.sqrt(Math.sin((lat2-lat1)/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin((lon2-lon1)/2)**2)); if(d<1e-6) return [a,b]; const n=Math.max(2,Math.ceil(d*toD/1.5)); const pts=[]; for(let i=0;i<=n;i++){ const f=i/n; const A=Math.sin((1-f)*d)/Math.sin(d), B=Math.sin(f*d)/Math.sin(d); const x=A*Math.cos(lat1)*Math.cos(lon1)+B*Math.cos(lat2)*Math.cos(lon2), y=A*Math.cos(lat1)*Math.sin(lon1)+B*Math.cos(lat2)*Math.sin(lon2), z=A*Math.sin(lat1)+B*Math.sin(lat2); pts.push([Math.atan2(z,Math.sqrt(x*x+y*y))*toD, Math.atan2(y,x)*toD]); } return pts; }
+const segDash = g => g.mode_status==='stated'? null : g.mode_status==='not_stated'? '8 6' : '2 6';
+/* a segment becomes one leg, or several when it carries via (out-and-back) entries: a → via1 → … → b */
+function legsOf(g){
+  const A=IDX.stop[g.frm], B=IDX.stop[g.to]; if(!A||!B) return [];
+  const via=g.via||[]; const chain=[IDX.place[A.place], ...via.map(v=>IDX.place[v.place]), IDX.place[B.place]];
+  const legs=[];
+  for(let i=1;i<chain.length;i++){ const a=chain[i-1], b=chain[i]; if(!a||!b||!a.has_coords||!b.has_coords||a.id===b.id) continue;
+    const vias=via.slice(Math.max(0,i-2), Math.min(via.length,i)); const inferred=vias.some(v=>v.status==='inferred');
+    legs.push({seg:g, journey:g.journey, a, b, vias, inferred, dash: inferred? '2 6' : segDash(g), posUnsure: ['approximate','disputed'].includes(a.status)||['approximate','disputed'].includes(b.status), idx:i-1, n:chain.length-1}); }
+  return legs;
 }
+function viaText(g){ return (g.via||[]).map(v=>`via ${IDX.place[v.place].short_label} (${v.status==='stated'? 'stated: “'+v.quote+'”' : 'inferred'})`).join('; '); }
+/* sequence badge for one (place, journey): several visits by one journey → '3·7'; 1907 round, 1908 square-cornered */
+function badgeHTML(stops, journey, placeId){ return `<span class="seq ${jc(journey)}" data-place="${esc(placeId)}" title="${esc(journey)}: stop${stops.length>1?'s':''} ${stops.map(s=>s.seq).join(', ')}">${stops.map(s=>s.seq).join('·')}</span>`; }
+/* the badge sits wholly to the left of the point (CSS anchors its right edge), so it never covers the label that starts to the right; two badges stack */
+function badge(place, journey, stops, slot=0, count=1){ return L.marker([place.lat,place.lon], {icon:L.divIcon({className:`badgewrap of${count} slot${slot}`, html:badgeHTML(stops, journey, place.id), iconSize:null, iconAnchor:[0,0]}), interactive:false, keyboard:false, zIndexOffset:400}); }
+/* direction arrow at the midpoint of a drawn leg; 1907 open (stroke only), 1908 filled */
+function arrowFor(leg, latlngs, mapRef){
+  const m=mapRef||map; const n=latlngs.length; const mi=Math.floor(n/2); const p0=m.latLngToLayerPoint(latlngs[Math.max(0,mi-1)]), p1=m.latLngToLayerPoint(latlngs[Math.min(n-1,mi+1)]);
+  const deg=Math.atan2(p1.y-p0.y, p1.x-p0.x)*180/Math.PI;
+  const html=`<svg class="arrow ${jc(leg.journey)} ${leg.journey==='1907'?'open':'filled'}" viewBox="0 0 14 14" width="14" height="14" aria-hidden="true" style="transform:rotate(${deg.toFixed(1)}deg)"><path d="M2.5 2.5 L12 7 L2.5 11.5 Z"/></svg>`;
+  return L.marker(latlngs[mi], {icon:L.divIcon({className:'arrowwrap', html, iconSize:[14,14], iconAnchor:[7,7]}), interactive:false, keyboard:false, zIndexOffset:300});
+}
+/* status glyphs for legend and popups (ink, not hue: hue is reserved for the journeys) */
+function glyph(kind){
+  const c='var(--ink-2)', s=`width="16" height="16" aria-hidden="true" style="vertical-align:middle"`;
+  switch(kind){
+    case 'verified': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" stroke-width="2"/></svg>`;
+    case 'inferred': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" fill-opacity=".15" stroke-width="2.5"/></svg>`;
+    case 'approximate': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" fill-opacity=".1" stroke-width="2" stroke-dasharray="3 3"/></svg>`;
+    case 'disputed': return `<svg ${s}><rect x="4" y="4" width="8" height="8" style="fill:var(--surface);stroke:${c}" stroke-width="2" transform="rotate(45 8 8)"/></svg>`;
+    case 'unlocated': return `<svg ${s}><circle cx="8" cy="8" r="6" fill="none" style="stroke:var(--unlocated)" stroke-width="1.5" stroke-dasharray="2 4"/></svg>`;
+    case 'candidate': return `<svg ${s}><rect x="4.5" y="4.5" width="7" height="7" fill="none" style="stroke:var(--unlocated)" stroke-width="1.5"/></svg>`;
+    case 'halo': return `<svg ${s}><circle cx="8" cy="8" r="7" style="fill:${c};stroke:${c}" fill-opacity=".08" stroke-width="1" stroke-dasharray="3 3"/></svg>`;
+    case 'trail': return `<svg ${s}><circle cx="8" cy="8" r="4.5" style="fill:var(--surface);stroke:var(--paper-trail)" stroke-width="1.5"/></svg>`;
+    case 'both': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:var(--j1908);stroke:var(--j1907)" stroke-width="2.5"/></svg>`;
+    case 'naming': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" stroke-width="2"/><rect x="2" y="7" width="12" height="2" style="fill:var(--surface)"/></svg>`;
+    default: return '';
+  }
+}
+const line = (color, dash, w=2.5)=>`<svg width="28" height="8" aria-hidden="true" style="vertical-align:middle"><line x1="0" y1="4" x2="28" y2="4" style="stroke:${color}" stroke-width="${w}" ${dash?`stroke-dasharray="${dash}"`:''}/></svg>`;
+const arrowGlyph = j=>`<svg class="arrow ${jc(j)} ${j==='1907'?'open':'filled'}" viewBox="0 0 14 14" width="14" height="14" aria-hidden="true" style="display:inline-block;vertical-align:middle"><path d="M2.5 2.5 L12 7 L2.5 11.5 Z"/></svg>`;
+
+/* ---------------------------------------------------------------- frames (derived from stop coordinates; no new facts) */
+const stopPlaces = [...new Set(D.stops.map(s=>s.place))].map(id=>IDX.place[id]).filter(p=>p&&p.has_coords);
+const EP = IDX.place['pl_elephant_point'];
+const FRAMES = [
+  {id:'whole', label:'Whole route', pts: stopPlaces},
+  {id:'alaska', label:'Alaska', pts: stopPlaces.filter(p=>p.lon < -130 && p.lat > 55)},
+  {id:'kotzebue', label:'Kotzebue Sound', pts: stopPlaces.filter(p=>Math.abs(p.lat-EP.lat)<=1.5 && Math.abs(p.lon-EP.lon)<=1.5)},
+  {id:'buckland', label:'Buckland River', pts: stopPlaces.filter(p=>p.id.startsWith('pl_buckland_'))},
+].map(f=>({...f, bounds: f.pts.map(p=>[p.lat,p.lon])}));
+function setFrame(id){ const f=FRAMES.find(x=>x.id===id); if(!f||!map) return; state.frame=id; closePopup(); if(state.mode==='globe'){ const c=L.latLngBounds(f.bounds).getCenter(); globe.focus({lat:c.lat, lon:c.lng}); } else map.fitBounds(f.bounds, {padding:[40,40], animate:!REDUCE}); document.querySelectorAll('#frames .pill').forEach(b=>b.classList.toggle('active', b.dataset.frame===id)); }
+
+/* ---------------------------------------------------------------- tiles */
+function isDark(){ const t=document.documentElement.dataset.theme; return t==='dark' || (t!=='light' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches); }
+const ESRI='https://server.arcgisonline.com/ArcGIS/rest/services/';
+function buildFlat(){
+  const dark=isDark();
+  if(tileFlat){ if(map.hasLayer(tileFlat)) map.removeLayer(tileFlat); if(map.hasLayer(tileFlatRef)) map.removeLayer(tileFlatRef); }
+  tileFlat = L.tileLayer(ESRI+`Canvas/${dark?'World_Dark_Gray_Base':'World_Light_Gray_Base'}/MapServer/tile/{z}/{y}/{x}`, {attribution:`Basemap: Esri ${dark?'Dark':'Light'} Gray Canvas (Esri, HERE, Garmin, © OpenStreetMap contributors)`, maxZoom:16});
+  tileFlatRef = L.tileLayer(ESRI+`Canvas/${dark?'World_Dark_Gray_Reference':'World_Light_Gray_Reference'}/MapServer/tile/{z}/{y}/{x}`, {maxZoom:16, pane:'shadowPane', opacity:.5});
+}
+/* the reference (place-name) tiles are shown in flat mode only from zoom 6, dimmed, so that they do not compete with the attested labels */
+function syncReference(){ if(!map) return; const want = state.mode==='flat' && map.getZoom()>=6; if(want && !map.hasLayer(tileFlatRef)) tileFlatRef.addTo(map); if(!want && map.hasLayer(tileFlatRef)) map.removeLayer(tileFlatRef); }
+function schemeChanged(){ if(!map) return; buildFlat(); if(state.mode==='flat'){ tileFlat.addTo(map); syncReference(); } renderLegend(); }
+
+function initMap(openOnAlaska){
+  map = L.map('leaflet', {zoomControl:false, attributionControl:true, worldCopyJump:true}).setView([62, -140], 3);
+  L.control.zoom({position:'topright'}).addTo(map);
+  L.control.scale({imperial:true, metric:true, position:'bottomleft'}).addTo(map);
+  buildFlat();
+  tileRelief = L.tileLayer(ESRI+'World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {attribution:'Relief: Esri, USGS, NOAA', maxZoom:13});
+  tileLabels = L.tileLayer(ESRI+'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {maxZoom:13, pane:'shadowPane', opacity:.8});
+  tileFlat.addTo(map);
+  groups = { halos:L.layerGroup().addTo(map), constraints:L.layerGroup().addTo(map), candidates:L.layerGroup().addTo(map), routes:L.layerGroup().addTo(map), arrows:L.layerGroup().addTo(map), markers:L.layerGroup().addTo(map), badges:L.layerGroup().addTo(map), labels:L.layerGroup().addTo(map), context:L.layerGroup() };
+  drawAll();
+  if(openOnAlaska) setFrame('alaska');
+  map.on('zoomend', ()=>{ drawRoutes(); drawUnlocated(); syncReference(); updateLabelVisibility(); });
+  // a popup requested before a move opens once the move has ended; any newer move, close or clear cancels it (no stale openers)
+  map.on('moveend', ()=>{ const f=pendingPopup; pendingPopup=null; if(f) f(); updateLabelVisibility(); });
+  map.on('popupclose', ()=>{ popup=null; });
+  if(window.matchMedia){ try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', schemeChanged); }catch(e){} }
+  new MutationObserver(schemeChanged).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
+}
+
+/* ---------------------------------------------------------------- popups (compact; the evidence lives in the panel card) */
+function closePopup(){ pendingPopup=null; if(popup && map){ map.closePopup(popup); popup=null; } }
+function popupFor(place, journey, stopId){
+  const visits = journey? D.stops.filter(s=>s.place===place.id && s.journey===journey) : [];
+  const other = journey? (journey==='1907'?'1908':'1907') : null; const otherN = other? D.stops.filter(s=>s.place===place.id && s.journey===other).length : 0;
+  const story = (visits.find(v=>v.id===stopId)||visits[0]||{}).story || (place.stories||[])[0];
+  return `<h4>${esc(place.short_label)}</h4>
+    <div class="small">${glyph(place.status)} ${esc(place.status)}${place.naming?` · ${glyph('naming')} naming`:''}${journey?` · <span class="tag ${jc(journey)}">${esc(journey)}</span>`:''}${place.radius_km&&place.status!=='verified'?` · halo ${place.radius_km} km`:''}</div>
+    ${visits.length?`<ul class="visits">${visits.map(v=>`<li class="${v.id===stopId?'cur':''}"><b class="seq ${jc(journey)}">${v.seq}</b> ${esc(fmtDate(v.date_start))} · ${esc(v.label)}</li>`).join('')}</ul>`:''}
+    ${otherN?`<div class="small muted">also visited in ${other} (${otherN} stop${otherN>1?'s':''}) — <a href="#/map/${place.id}" onclick="event.preventDefault();MapView.popupJourney('${place.id}','${other}')">show</a></div>`:''}
+    <div class="small">${story?`<a href="#/story/${story}">Open story</a> · `:''}<a href="#/place/${place.id}">Place record</a>${stopId?` · <a href="#/map/stop/${stopId}" onclick="event.preventDefault();MapView.focusCard()">More in panel</a>`:''}</div>`;
+}
+function openPopupFor(place, journey, stopId){
+  closePopup();
+  if(!map || window.innerWidth<=600 || state.mode==='globe') return;   // at phone widths the card in the panel carries the evidence; no popup
+  popup = L.popup({maxWidth:300, autoPanPaddingTopLeft:[0,60], className:'stoppopup'}).setLatLng([place.lat,place.lon]).setContent(popupFor(place, journey, stopId)).openOn(map);
+}
+function popupJourney(placeId, journey){ const p=IDX.place[placeId]; const s=D.stops.find(x=>x.place===placeId && x.journey===journey); if(s) stepTo(s.id, {move:false, popup:false}); openPopupFor(p, journey, s? s.id : null); }
+function focusCard(){ const c=document.getElementById('stopcard'); if(!c) return; if(panel.classList.contains('collapsed')) toggle.click(); c.scrollIntoView({block:'nearest'}); const h=c.querySelector('h4'); if(h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); } }
+
+/* ---------------------------------------------------------------- drawing */
 function drawAll(){
-  Object.values(groups).forEach(g=>g.clearLayers());
-  const drawn=new Set();
-  ['1907','1908'].forEach(j=>{
-    if(!state.layers['j'+j]) return;
-    // routes
-    if(state.layers.routes){
-      D.segments.filter(g=>g.journey===j).forEach(g=>{
-        const a=IDX.place[IDX.stop[g.frm].place], b=IDX.place[IDX.stop[g.to].place]; if(!a||!b||!a.has_coords||!b.has_coords) return;
-        if(a.id===b.id) return;
-        const dash = g.mode_status==='stated'? null : g.mode_status==='not_stated'? '8 6' : '2 6';
-        const posUnsure = a.status==='approximate'||b.status==='approximate'||a.status==='disputed'||b.status==='disputed';
-        const line=L.polyline(gcPath([a.lat,a.lon],[b.lat,b.lon]), {color:JCOLOR[j], weight: posUnsure?1.6:2.4, opacity:.85, dashArray: dash, lineCap:'round'});
-        line.bindTooltip(`<b>${esc(IDX.stop[g.frm].label)} → ${esc(IDX.stop[g.to].label)}</b><br>mode: ${esc(g.mode)} <i>(${esc(g.mode_status.replace('_',' '))})</i><br>geometry: ${esc(g.geometry)} — not traced<br><span class="small">source: ${esc(g.source.ref)} ${esc(g.source.locator||'')}</span>`, {sticky:true, className:'lbl', opacity:1});
-        groups.routes.addLayer(line);
-      });
-    }
-    placesOf(j).forEach(({place, stops})=>{
-      if(state.layers.halos && place.radius_km && place.status!=='verified'){
-        groups.halos.addLayer(L.circle([place.lat,place.lon], {radius:place.radius_km*1000, color:JCOLOR[j], weight:1, opacity:.5, fillColor:JCOLOR[j], fillOpacity:.08, dashArray:'4 4', interactive:false}));
-      }
-      const key=place.id+j;
-      const both = drawn.has(place.id);
-      const st=styleFor(place,j); if(both){ st.radius=4; st.weight=1.5; }
-      let m;
-      if(place.status==='disputed'){ m=L.marker([place.lat,place.lon],{icon:L.divIcon({className:'', html:`<div class="marker-disputed" style="border-color:${JCOLOR[j]};${both?'width:10px;height:10px':''}"></div>`, iconSize:[14,14], iconAnchor:[7,7]})}); }
-      else m=L.circleMarker([place.lat,place.lon], st);
-      m.bindPopup(popupFor(place), {maxWidth:340});
-      m.on('click', ()=>highlightStop(stops[0].id, false));
-      groups.markers.addLayer(m); drawn.add(place.id);
-      if(state.layers.labels && !both){
-        const lab=L.marker([place.lat,place.lon],{icon:L.divIcon({className:'lbl '+App.journeyClass(j), html:esc(place.label.replace(/\s*\(.*$/,'').replace(/ — .*$/,'')), iconAnchor:[-9,8]}), interactive:false, keyboard:false});
-        lab._minZoom = place.status==='verified' && ['pl_newyork','pl_seattle','pl_nome','pl_dawson','pl_elephant_point','pl_keewalik','pl_stmichael','pl_montreal'].includes(place.id)? 0 : 5;
-        groups.labels.addLayer(lab);
-      }
+  Object.values(groups).forEach(g=>g.clearLayers()); labelList=[]; badgeList=[];
+  const drawn=new Map();          // placeId -> {place, byJ:{1907:[stops],1908:[stops]}}
+  ['1907','1908'].forEach(j=>{ if(!state.layers['j'+j]) return;
+    placesOf(j).forEach(({place, stops})=>{ if(!drawn.has(place.id)) drawn.set(place.id,{place, byJ:{}}); drawn.get(place.id).byJ[j]=stops;
+      if(state.layers.halos && place.radius_km && place.status!=='verified') groups.halos.addLayer(L.circle([place.lat,place.lon], {className:'halo '+jc(j), radius:place.radius_km*1000, color:JVAR[j], weight:1, opacity:.5, fillColor:JVAR[j], fillOpacity:.08, dashArray:'4 4', interactive:false}));
     });
   });
+  drawn.forEach(({place, byJ})=>{
+    const js=Object.keys(byJ).sort(); const key = js.length===2? 'both' : js[0];
+    const st=styleFor(place,key);
+    let m;
+    if(place.status==='disputed') m=L.marker([place.lat,place.lon],{icon:L.divIcon({className:'', html:`<div class="marker-disputed ${key==='both'?'both':jc(key)}" data-place="${esc(place.id)}" title="${esc(place.label)}"></div>`, iconSize:[14,14], iconAnchor:[7,7]}), keyboard:false});
+    else m=L.circleMarker([place.lat,place.lon], st);
+    m.on('add', ()=>{ const el=m.getElement(); if(el){ el.setAttribute('data-place', place.id); el.setAttribute('aria-label', place.label); } });
+    m.on('click', ()=>{ const j = js.includes(state.journey)? state.journey : js[0]; const s=byJ[j][0]; stepTo(s.id, {move:false, popup:false}); openPopupFor(place, j, s.id); });
+    m.bindTooltip(esc(place.label), {direction:'top', offset:[0,-8], className:'lbl tip'});
+    groups.markers.addLayer(m);
+    js.forEach((j,slot)=>{ const b=badge(place, j, byJ[j], slot, js.length); b._placeId=place.id; groups.badges.addLayer(b); badgeList.push(b); });
+    if(state.layers.labels){ const lab=L.marker([place.lat,place.lon],{icon:L.divIcon({className:'lbl '+(key==='both'?'both':jc(key)), html:esc(place.short_label), iconSize:null, iconAnchor:[-9,8]}), interactive:false, keyboard:false});
+      lab._minZoom=labelTier(place); lab._prio=[js.reduce((n,j)=>n+byJ[j].length,0), place.status==='verified'?1:0]; lab._placeId=place.id; groups.labels.addLayer(lab); labelList.push(lab); }
+  });
   if(state.layers.trail){
-    TRAIL_PLACES.forEach(id=>{ const p=IDX.place[id]; if(!p||drawn.has(id)) { if(p && !drawn.has(id)){} else return; }
-      if(drawn.has(id)) return;
-      const m=L.circleMarker([p.lat,p.lon], {color:'#6b6760', weight:1.5, fillColor:'#fff', fillOpacity:1, radius:5}); m.bindPopup(popupFor(p),{maxWidth:340}); groups.markers.addLayer(m); drawn.add(id);
-      if(state.layers.labels) groups.labels.addLayer(L.marker([p.lat,p.lon],{icon:L.divIcon({className:'lbl', html:esc(p.label), iconAnchor:[-8,8]}), interactive:false}));
+    TRAIL_PLACES.forEach(id=>{ const p=IDX.place[id]; if(!p||drawn.has(id)) return;
+      const m=L.circleMarker([p.lat,p.lon], styleFor(p,null)); m.on('add', ()=>{ const el=m.getElement(); if(el){ el.setAttribute('data-place', id); el.setAttribute('aria-label', p.label); } });
+      m.on('click', ()=>openPopupFor(p, null, null)); m.bindTooltip(esc(p.label), {direction:'top', offset:[0,-8], className:'lbl tip'}); groups.markers.addLayer(m); drawn.set(id,{place:p, byJ:{}});
+      if(state.layers.labels){ const lab=L.marker([p.lat,p.lon],{icon:L.divIcon({className:'lbl trail', html:esc(p.short_label), iconSize:null, iconAnchor:[-8,8]}), interactive:false, keyboard:false}); lab._minZoom=labelTier(p); lab._prio=[0, 1]; lab._placeId=id; groups.labels.addLayer(lab); labelList.push(lab); }
     });
   }
   if(state.layers.context){
-    D.context_arcs.forEach(a=>{ const p=IDX.place[a.frm], q=IDX.place[a.to]; groups.context.addLayer(L.polyline(gcPath([p.lat,p.lon],[q.lat,q.lon]), {color:'#6d4c9f', weight:1.5, dashArray:'6 6', opacity:.8}).bindTooltip(esc(a.label)+' — context (Tale §1); schematic', {sticky:true,className:'lbl'})); });
-    ['pl_lena_mouth','pl_yakutsk','pl_stpetersburg'].forEach(id=>{ const p=IDX.place[id]; const m=L.circleMarker([p.lat,p.lon],{color:'#6d4c9f',weight:2,fillColor:'#6d4c9f',fillOpacity:p.status==='verified'?.9:.1, dashArray:p.status==='approximate'?'3 3':null, radius:6}); m.bindPopup(popupFor(p),{maxWidth:340}); groups.context.addLayer(m); if(p.radius_km>20) groups.context.addLayer(L.circle([p.lat,p.lon],{radius:p.radius_km*1000,color:'#6d4c9f',weight:1,fillOpacity:.06,dashArray:'4 4',interactive:false})); groups.context.addLayer(L.marker([p.lat,p.lon],{icon:L.divIcon({className:'lbl',html:esc(p.label.split(' (')[0]),iconAnchor:[-8,8]}),interactive:false})); });
+    D.context_arcs.forEach(a=>{ const p=IDX.place[a.frm], q=IDX.place[a.to]; groups.context.addLayer(L.polyline(gcPath([p.lat,p.lon],[q.lat,q.lon]), {className:'route ctx', color:'var(--model)', weight:1.5, dashArray:'6 6', opacity:.8}).bindTooltip(esc(a.label)+' — context (Tale §1); schematic', {sticky:true,className:'lbl tip'})); });
+    CTX_PLACES.forEach(id=>{ const p=IDX.place[id]; const m=L.circleMarker([p.lat,p.lon], {...styleFor(p,'ctx'), radius:6}); m.on('click', ()=>openPopupFor(p, null, null)); groups.context.addLayer(m); if(p.radius_km>20) groups.context.addLayer(L.circle([p.lat,p.lon],{className:'halo ctx', radius:p.radius_km*1000, color:'var(--model)', weight:1, fillColor:'var(--model)', fillOpacity:.06, dashArray:'4 4', interactive:false}));
+      const lab=L.marker([p.lat,p.lon],{icon:L.divIcon({className:'lbl ctx', html:esc(p.short_label), iconSize:null, iconAnchor:[-8,8]}), interactive:false, keyboard:false}); lab._minZoom=0; lab._prio=[0,0]; lab._placeId=id; groups.context.addLayer(lab); labelList.push(lab); });
     if(!map.hasLayer(groups.context)) groups.context.addTo(map);
   } else if(map.hasLayer(groups.context)) map.removeLayer(groups.context);
-  updateLabelVisibility();
+  drawRoutes(); drawUnlocated(); updateLabelVisibility();
 }
-function updateLabelVisibility(){ if(!map) return; const z=map.getZoom(); groups.labels.eachLayer(l=>{ const el=l.getElement(); if(!el) return; el.style.display = (l._minZoom==null || z>=l._minZoom)? '':'none'; }); }
-/* great-circle path sampled for Leaflet (schematic connector) */
-function gcPath(a,b){ const toR=Math.PI/180, toD=180/Math.PI; const [lat1,lon1]=[a[0]*toR,a[1]*toR],[lat2,lon2]=[b[0]*toR,b[1]*toR]; const d=2*Math.asin(Math.sqrt(Math.sin((lat2-lat1)/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin((lon2-lon1)/2)**2)); if(d<1e-6) return [a,b]; const n=Math.max(2,Math.ceil(d*toD/1.5)); const pts=[]; for(let i=0;i<=n;i++){ const f=i/n; const A=Math.sin((1-f)*d)/Math.sin(d), B=Math.sin(f*d)/Math.sin(d); const x=A*Math.cos(lat1)*Math.cos(lon1)+B*Math.cos(lat2)*Math.cos(lon2), y=A*Math.cos(lat1)*Math.sin(lon1)+B*Math.cos(lat2)*Math.sin(lon2), z=A*Math.sin(lat1)+B*Math.sin(lat2); pts.push([Math.atan2(z,Math.sqrt(x*x+y*y))*toD, Math.atan2(y,x)*toD]); } return pts; }
+/* perpendicular screen-space offset of a sampled path (k-th of n coincident legs), recomputed on zoomend */
+function offsetPath(pts, off){
+  if(!off) return pts;
+  const P=pts.map(ll=>map.latLngToLayerPoint(L.latLng(ll[0],ll[1]))); const out=[];
+  for(let i=0;i<P.length;i++){ const p0=P[Math.max(0,i-1)], p1=P[Math.min(P.length-1,i+1)]; const dx=p1.x-p0.x, dy=p1.y-p0.y, len=Math.hypot(dx,dy)||1; out.push(map.layerPointToLatLng(L.point(P[i].x - dy/len*off, P[i].y + dx/len*off))); }
+  return out;
+}
+function drawRoutes(){
+  groups.routes.clearLayers(); groups.arrows.clearLayers(); legLines=[]; arrowMarkers=[]; state.legs=[];
+  if(!state.layers.routes) return;
+  const legs=[];
+  ['1907','1908'].forEach(j=>{ if(!state.layers['j'+j]) return; D.segments.filter(g=>g.journey===j).forEach(g=>legsOf(g).forEach(l=>legs.push(l))); });
+  // coincident legs (same unordered endpoint pair) are spread 4 px apart: 1907 outward, 1907 return, 1908 outward, 1908 return
+  const bykey=new Map(); legs.forEach(l=>{ const k=[l.a.id,l.b.id].sort().join('|'); if(!bykey.has(k)) bykey.set(k,[]); bykey.get(k).push(l); });
+  bykey.forEach(arr=>{ arr.sort((x,y)=> x.journey.localeCompare(y.journey) || (IDX.stop[x.seg.frm].seq - IDX.stop[y.seg.frm].seq) || (x.idx-y.idx)); arr.forEach((l,k)=>{ l.k=k; l.n=arr.length; }); });
+  legs.forEach(l=>{
+    const g=l.seg; const pts=gcPath([l.a.lat,l.a.lon],[l.b.lat,l.b.lon]); const latlngs=offsetPath(pts, (l.k-(l.n-1)/2)*4);
+    const lineL=L.polyline(latlngs, {className:'route '+jc(l.journey)+(l.inferred?' inferred':''), color:JVAR[l.journey], weight: l.posUnsure?1.6:2.4, opacity:.85, dashArray:l.dash, lineCap:'round'});
+    const legTxt = l.n>1 || (g.via||[]).length ? `<br><span class="small">leg ${l.idx+1} of ${l.n}: ${esc(l.a.short_label)} → ${esc(l.b.short_label)}${(g.via||[]).length?` · ${esc(viaText(g))}`:''}</span>` : '';
+    lineL.bindTooltip(`<b>${esc(IDX.stop[g.frm].label)} → ${esc(IDX.stop[g.to].label)}</b> <span class="tag ${jc(l.journey)}">${l.journey}</span>${legTxt}<br>mode: ${esc(g.mode)} <i>(${esc(g.mode_status.replace('_',' '))}${l.inferred&&g.mode_status!=='inferred'?'; this leg inferred':''})</i><br>geometry: ${esc(g.geometry)} — not traced<br><span class="small">source: ${esc(g.source.ref)} ${esc(g.source.locator||'')}</span>`, {sticky:true, className:'lbl tip', opacity:1});
+    lineL.on('add', ()=>{ const el=lineL.getElement(); if(el){ el.setAttribute('data-seg', g.id); el.setAttribute('data-leg', `${l.a.id}>${l.b.id}`); } });
+    groups.routes.addLayer(lineL); const ar=arrowFor(l, latlngs); groups.arrows.addLayer(ar);
+    l.line=lineL; l.arrow=ar; legLines.push(l); arrowMarkers.push(ar);
+    state.legs.push({seg:g.id, journey:l.journey, a:l.a.id, b:l.b.id, via_status: l.vias.length? l.vias.map(v=>v.status).join('+') : null, inferred:l.inferred, k:l.k, n:l.n});
+  });
+  emphasise(state.highlight);
+}
+/* the incoming leg(s) of the selected stop are weight 4 / opacity 1; every other connector recedes to .25 */
+function emphasise(stopId){
+  legLines.forEach(l=>{ const incoming = stopId && l.seg.to===stopId; l.line.setStyle({weight: incoming? 4 : (l.posUnsure?1.6:2.4), opacity: stopId? (incoming? 1 : .25) : .85}); const el=l.arrow.getElement(); if(el) el.classList.toggle('dim', !!stopId && !incoming); });
+}
+/* unlocated places: each stated constraint is drawn around its located anchor; gazetteer homonyms as equal hollow squares; never a point */
+function drawUnlocated(){
+  groups.constraints.clearLayers(); groups.candidates.clearLayers(); state.constraintCount=0; state.candidateCount=0;
+  labelList = labelList.filter(l=>!l._unloc);
+  if(!state.layers.unlocated) return;
+  const px=(ll, dx, dy)=>map.layerPointToLatLng(map.latLngToLayerPoint(ll).add(L.point(dx,dy)));
+  D.places.filter(p=>!p.has_coords && state.showUnlocated.has(p.id) && !state.unlocatedOff.has(p.id)).forEach(p=>{
+    const finding = D.findings.find(f=>(f.places||[]).includes(p.id));
+    const pop = (c)=>`<h4>${esc(p.label)}</h4><div class="small">${glyph('unlocated')} ${esc(p.status)} · <span class="tag">${esc(p.unlocated_kind)}</span> · constraint: ${esc(c.kind)}</div>
+      <div class="block verbatim" style="margin:.4rem 0"><span class="who">${esc(c.speaker)} — verbatim</span>“${esc(c.quote)}”</div>${App.modelBlock(c.model_note)}
+      <div class="small"><a href="#/place/${p.id}">Place record</a>${finding?` · <a href="#/method/findings/${finding.id}">Finding</a>`:''}</div>`;
+    const addLabel=(ll, text, c, minZoom=0, leftFirst=false)=>{ const lab=L.marker(ll,{icon:L.divIcon({className:'lbl ulbl', html:esc(text), iconSize:null, iconAnchor:[-6,8]}), keyboard:false}); lab._minZoom=minZoom; lab._prio=[-1,0]; lab._unloc=true; lab._leftFirst=leftFirst; lab._placeId=p.id; if(c) lab.bindPopup(pop(c),{maxWidth:360}); groups.constraints.addLayer(lab); labelList.push(lab); return lab; };
+    (p.constraints||[]).forEach(c=>{ const a=IDX.place[c.anchor]; if(!a||!a.has_coords) return; const all=L.latLng(a.lat,a.lon);
+      if(c.kind==='distance'){ const ring=L.circle(all, {className:'constraint dist', radius:c.miles*MI, color:'var(--unlocated)', weight:1.5, dashArray:'2 6', fill:false}); ring.bindPopup(pop(c),{maxWidth:360}); ring.bindTooltip(`stated distance, not a position: “${esc(c.quote)}”`, {sticky:true, className:'lbl tip'}); groups.constraints.addLayer(ring); ring._placeId=p.id;
+        const north=L.latLng(a.lat + (c.miles*MI)/111195, a.lon); const centre = a.radius_km>=20? ` (centre ±${a.radius_km} km)`:''; addLabel(north, `≈${c.miles} mi from ${a.short_label}${centre} — ${c.speaker} — no point asserted`, c, 3); state.constraintCount++; }
+      else if(c.kind==='near'){ const end=px(all, 28, -28); const lead=L.polyline([all,end], {className:'constraint leader', color:'var(--unlocated)', weight:1.2, dashArray:'2 4', interactive:false}); groups.constraints.addLayer(lead); addLabel(end, `near ${a.short_label} — ${c.speaker} — no radius given`, c, 5); }
+      else if(c.kind==='identity'){ const br=L.polyline([px(all,-13,-11),px(all,-19,-11),px(all,-19,11),px(all,-13,11)], {className:'constraint bracket', color:'var(--unlocated)', weight:1.2, dashArray:'2 3', interactive:false}); groups.constraints.addLayer(br); addLabel(px(all,-20,14), `= ‘${c.quote.replace(/^Mr\. Grants camp on /,'')}’? — ${c.speaker}`, c, 6, true); }
+    });
+    if((p.candidates||[]).length){
+      const shared=`<h4>${esc(p.label)}</h4><div class="small">${glyph('candidate')} ${p.candidates.length} gazetteer record${p.candidates.length>1?'s':''} bearing the name — candidates, none asserted</div>
+        <ul class="small">${p.candidates.map(c=>`<li>GNIS <a href="${esc(c.url)}" rel="noopener">${esc(c.id)}</a> · ${esc(c.name)} (${esc(c.feature_class)}) · ${esc(c.county||'')} · ${c.lat.toFixed(4)}, ${c.lon.toFixed(4)}${c.note?` <span class="muted">— ${esc(c.note)}</span>`:''}</li>`).join('')}</ul>
+        ${App.modelBlock(p.candidates_note)}<div class="small"><a href="#/place/${p.id}">Place record</a>${finding?` · <a href="#/method/findings/${finding.id}">Finding</a>`:''}</div>`;
+      p.candidates.forEach(c=>{ const m=L.marker([c.lat,c.lon],{icon:L.divIcon({className:'', html:`<div class="cand" data-place="${esc(p.id)}" data-gnis="${esc(c.id)}"></div>`, iconSize:[8,8], iconAnchor:[4,4]}), keyboard:false}); m.bindPopup(shared,{maxWidth:380}); m._placeId=p.id; groups.candidates.addLayer(m); state.candidateCount++;
+        const lab=L.marker([c.lat,c.lon],{icon:L.divIcon({className:'lbl ulbl candlbl', html:esc(`${p.short_label} — GNIS ${c.id}, ${c.county||c.feature_class}`), iconSize:null, iconAnchor:[-7,8]}), keyboard:false}); lab._minZoom=4; lab._prio=[-1,0]; lab._unloc=true; lab._placeId=p.id; lab.bindPopup(shared,{maxWidth:380}); groups.candidates.addLayer(lab); labelList.push(lab); });
+    }
+  });
+}
+/* bounds of everything drawn for one unlocated place (rings, leaders, candidates) */
+function unlocatedBounds(placeId){ let b=null; const add=l=>{ const bb = l.getBounds? l.getBounds() : (l.getLatLng? L.latLngBounds([l.getLatLng()]) : null); if(!bb) return; b = b? b.extend(bb) : L.latLngBounds(bb); }; groups.constraints.eachLayer(l=>{ if(l._placeId===placeId) add(l); }); groups.candidates.eachLayer(l=>{ if(l._placeId===placeId) add(l); }); return b; }
+/* labels: zoom tiers, then a greedy collision pass in priority order (stop count desc, verified first); a label that collides is tried on the left of its point, then hidden */
+function updateLabelVisibility(){
+  if(!map) return; const z=map.getZoom();
+  // the legend, the zoom control, the scale bar and the panel toggle are obstacles: no label is placed under them
+  const placed=['#maplegend details','.leaflet-control-zoom','.leaflet-control-scale','#panelToggle'].map(q=>document.querySelector(q)).filter(e=>e && e.offsetParent!==null).map(e=>e.getBoundingClientRect()).filter(r=>r.width);
+  const hit=(r)=>placed.some(q=>!(r.right<=q.left||r.left>=q.right||r.bottom<=q.top||r.top>=q.bottom));
+  const order=[...labelList].sort((a,b)=> (b._prio[0]-a._prio[0]) || (b._prio[1]-a._prio[1]) || (a._minZoom-b._minZoom));
+  // the selected stop's label, or the labels of the unlocated place whose constraints were asked for, are placed first
+  const first = l=> (l._placeId===state.highlightPlace || (state.focusUnlocated && l._placeId===state.focusUnlocated))? 1 : 0;
+  order.sort((a,b)=> first(b)-first(a));
+  const shown=new Set();
+  // a place's badges are reserved together with its label, so a neighbour's numeral never covers a placed label
+  const badgesOf=new Map(); badgeList.forEach(b=>{ if(!badgesOf.has(b._placeId)) badgesOf.set(b._placeId,[]); badgesOf.get(b._placeId).push(b); });
+  order.forEach(l=>{ const el=l.getElement(); if(!el) return;
+    const on = (l._unloc || state.layers.labels) && (l._minZoom==null || z>=l._minZoom);
+    el.classList.toggle('active', !!state.highlightPlace && l._placeId===state.highlightPlace && !l._unloc);
+    if(!on){ el.style.display='none'; return; }
+    const bEls = (!l._unloc && z>=5)? (badgesOf.get(l._placeId)||[]).map(b=>b.getElement()).filter(Boolean) : [];
+    bEls.forEach(e=>{ e.style.display=''; }); const bRects=bEls.map(e=>(e.querySelector('.seq')||e).getBoundingClientRect());
+    const right=()=>{ el.classList.remove('left'); el.style.marginLeft=''; }, left=()=>{ el.classList.add('left'); el.style.marginLeft=`${-(el.offsetWidth+9)}px`; };
+    el.style.display=''; right();
+    if(!el.getBoundingClientRect().width){ placed.push(el.getBoundingClientRect()); return; }
+    let r=null;
+    for(const side of (l._leftFirst? [left,right] : [right,left])){ side(); const rr=el.getBoundingClientRect(); if(!hit(rr) && !bRects.some(hit)){ r=rr; break; } }
+    if(!r){ el.style.display='none'; right(); return; }
+    placed.push(r, ...bRects); if(!l._unloc) shown.add(l._placeId);
+  });
+  // badges from zoom 5; below zoom 7 only where the place's label could be placed (or labels are off), so that a cluster does not pile numerals
+  badgeList.forEach(b=>{ const el=b.getElement(); if(!el) return; const on = z>=5 && (z>=7 || !state.layers.labels || shown.has(b._placeId) || b._placeId===state.highlightPlace); el.style.display = on? '' : 'none'; });
+}
 
 function setMode(mode){
-  state.mode=mode; document.querySelectorAll('#modeSeg button').forEach(b=>b.classList.toggle('active', b.dataset.mode===mode));
-  const g=document.getElementById('globe'), l=document.getElementById('leaflet');
+  state.mode=mode; document.querySelectorAll('#modeSeg button').forEach(b=>{ b.classList.toggle('active', b.dataset.mode===mode); b.setAttribute('aria-pressed', String(b.dataset.mode===mode)); });
+  const g=document.getElementById('globe'), l=document.getElementById('leaflet'); const gz=document.getElementById('globeZoom'); if(gz) gz.classList.toggle('hidden', mode!=='globe');
+  closePopup();
   if(mode==='globe'){ l.classList.add('hidden'); g.classList.remove('hidden'); initGlobe(); globe.resize(); globe.draw(); }
-  else { g.classList.add('hidden'); l.classList.remove('hidden'); if(mode==='relief'){ if(map.hasLayer(tileFlat)) map.removeLayer(tileFlat); tileRelief.addTo(map); tileLabels.addTo(map); } else { if(map.hasLayer(tileRelief)) map.removeLayer(tileRelief); if(map.hasLayer(tileLabels)) map.removeLayer(tileLabels); tileFlat.addTo(map); } setTimeout(()=>map.invalidateSize(),50); }
+  else { g.classList.add('hidden'); l.classList.remove('hidden'); leafletEl.classList.toggle('relief', mode==='relief');
+    if(mode==='relief'){ if(map.hasLayer(tileFlat)) map.removeLayer(tileFlat); if(map.hasLayer(tileFlatRef)) map.removeLayer(tileFlatRef); tileRelief.addTo(map); tileLabels.addTo(map); }
+    else { if(map.hasLayer(tileRelief)) map.removeLayer(tileRelief); if(map.hasLayer(tileLabels)) map.removeLayer(tileLabels); tileFlat.addTo(map); syncReference(); }
+    setTimeout(()=>map.invalidateSize(),50); }
   renderLegend();
 }
-function highlightStop(stopId, fly=true){
-  state.highlight=stopId; document.querySelectorAll('#stoplist li').forEach(li=>li.classList.toggle('active', li.dataset.stop===stopId));
-  const s=IDX.stop[stopId]; if(!s) return; const p=IDX.place[s.place]; if(!p||!p.has_coords) return;
-  if(state.mode==='globe'){ globe.focus(p); return; }
-  if(fly) map.flyTo([p.lat,p.lon], Math.max(map.getZoom(), p.radius_km>40?6:8), {duration:.8});
-  groups.markers.eachLayer(m=>{ const ll=m.getLatLng(); if(Math.abs(ll.lat-p.lat)<1e-6 && Math.abs(ll.lng-p.lon)<1e-6 && fly) m.openPopup(); });
+
+/* ---------------------------------------------------------------- step-through: 'Follow the journey' */
+function stepTo(stopId, opts={}){
+  const s=IDX.stop[stopId]; if(!s) return; const p=IDX.place[s.place];
+  state.highlight=stopId; state.highlightPlace=s.place; state.journey=s.journey; state.focusUnlocated=null;
+  document.querySelectorAll('#stoplist li').forEach(li=>{ const on=li.dataset.stop===stopId; li.classList.toggle('active', on); li.setAttribute('aria-current', on?'true':'false'); if(on) li.scrollIntoView({block:'nearest'}); });
+  renderFollow(); renderStopCard(s); emphasise(stopId); updateLabelVisibility();
+  if(!p||!p.has_coords) return;
+  if(state.mode==='globe'){ if(opts.move!==false) globe.focus(p); return; }
+  const ll=L.latLng(p.lat,p.lon), z = p.radius_km>40? 6 : 8;
+  const sz=map.getSize(); if(!sz.x||!sz.y) map.invalidateSize(false);
+  const same = map.getZoom()===z && map.getCenter().distanceTo(ll)<50;
+  if(opts.move!==false && !same){ if(REDUCE) map.setView(ll, z, {animate:false}); else map.flyTo(ll, z, {duration:.8}); }
+  if(opts.popup!==false){ if(opts.move===false || same) openPopupFor(p, s.journey, s.id); else pendingPopup=()=>{ if(state.highlight===stopId) openPopupFor(p, s.journey, s.id); }; }
+}
+function highlightStop(stopId, fly=true){ stepTo(stopId, {move:fly, popup:fly}); }
+function clearStop(){ state.highlight=null; state.highlightPlace=null; document.querySelectorAll('#stoplist li.active').forEach(li=>{ li.classList.remove('active'); li.setAttribute('aria-current','false'); }); emphasise(null); updateLabelVisibility(); closePopup(); renderFollow(); const c=document.getElementById('stopcard'); if(c) c.innerHTML=startCard(); }
+function step(dir){ const list=stopsOf(state.journey); let i=list.findIndex(s=>s.id===state.highlight); if(i<0) i = dir>0? -1 : list.length; i=Math.max(0, Math.min(list.length-1, i+dir)); stepTo(list[i].id); }
+function follow(journey){ state.journey=journey; const list=stopsOf(journey); const cur=IDX.stop[state.highlight]; if(cur && cur.journey===journey) { renderFollow(); return; } stepTo(list[0].id); }
+function renderFollow(){
+  const list=stopsOf(state.journey); const i=list.findIndex(s=>s.id===state.highlight);
+  document.querySelectorAll('#followSeg button').forEach(b=>{ const on=b.dataset.j===state.journey; b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on)); });
+  const pos=document.getElementById('stepPos'); if(pos) pos.textContent = i>=0? `Stop ${i+1} of ${list.length}` : `${list.length} stops`;
+  const prev=document.getElementById('prevStop'), next=document.getElementById('nextStop'); if(prev) prev.disabled = i<=0; if(next) next.disabled = i>=list.length-1;
+}
+function startCard(){ return `<div class="card stopcard start"><h4>Follow the journey</h4><p class="small">Choose 1907 or 1908 and step through the stops with <b>Next ›</b> (or the ← → keys while the panel or the map has focus). Each step selects the stop, moves the map to it, thickens the connector that leads into it, and shows its evidence here. The sequence numerals on the map match the stop list; 1907 badges are round, 1908 badges square-cornered.</p><p class="small muted">The paper-trail part of each journey (New York, Montreal, Seattle) lies outside the Alaska frame; the <b>Whole route</b> frame shows it.</p></div>`; }
+function renderStopCard(s){
+  const el=document.getElementById('stopcard'); if(!el) return; const p=IDX.place[s.place]; const list=stopsOf(s.journey); const i=list.indexOf(s);
+  const inc=D.segments.filter(g=>g.to===s.id); const visits=D.stops.filter(x=>x.place===s.place);
+  const src=sr=>`${IDX.doc[sr.ref]? App.docLink(sr.ref) : IDX.pub[sr.ref]? `<a href="#/published/${sr.ref}">${esc(IDX.pub[sr.ref].short)}</a>` : sr.ref==='tale'? '<a href="#/tale">Tale</a>' : sr.ref==='pi_timeline'? '<a href="#/timeline">PI timeline</a>' : esc(sr.ref)}: <span class="serif">${esc(sr.locator)}</span>`;
+  el.innerHTML=`<div class="card stopcard"><div class="phase">selected stop · <span class="tag ${jc(s.journey)}">${s.journey}</span> · stop ${i+1} of ${list.length}</div>
+    <h4><b class="seq ${jc(s.journey)}">${s.seq}</b> ${esc(s.label)} ${chip(s.status)}${s.naming?' '+chip('naming'):''}</h4>
+    <dl class="kv"><dt>Date as attested</dt><dd>${esc(s.date_text)} <span class="chip plain ${esc(s.date_precision)}">${esc(s.date_precision)}</span></dd>
+    <dt>Place</dt><dd>${esc(p.label)} ${chip(p.status)} <span class="muted">${esc(p.precision)}${p.radius_km?` · halo ${p.radius_km} km`:''}</span></dd>
+    <dt>Why this point</dt><dd class="small">${esc(p.why)}</dd>
+    <dt>Why this date</dt><dd class="small">${esc(s.why)}</dd>
+    ${inc.length?`<dt>Arrived by</dt><dd class="small">${inc.map(g=>`${esc(g.mode)} <i>(${esc(g.mode_status.replace('_',' '))})</i>${(g.via||[]).length?`; out-and-back ${esc(viaText(g))}`:''}`).join('<br>')}</dd>`:''}
+    <dt>Sources</dt><dd class="small">${s.sources.map(src).join('<br>')}</dd></dl>
+    <div class="small"><a href="#/story/${s.story}">Open story</a> · <a href="#/place/${p.id}">Place record</a> · <a href="#/map/stop/${s.id}" title="address of this stop on the map">#/map/stop/${s.id}</a></div>
+    ${visits.length>1?`<div class="small" style="margin-top:.4rem"><b>All visits here</b>${['1907','1908'].map(j=>{ const v=visits.filter(x=>x.journey===j); return v.length? `<div><span class="tag ${jc(j)}">${j}</span> ${v.map(x=>`<a href="#/map/stop/${x.id}" onclick="event.preventDefault();MapView.stepTo('${x.id}')" ${x.id===s.id?'style="font-weight:600"':''}>${x.seq} · ${esc(fmtDate(x.date_start))}</a>`).join(' · ')}</div>`:''; }).join('')}</div>`:''}
+  </div>`;
+}
+document.addEventListener('keydown', e=>{
+  if(mapviewEl.classList.contains('hidden')) return; const t=e.target; if(t && /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName)) return;
+  const inGlobe = globe && document.getElementById('globe').contains(document.activeElement); if(inGlobe) return;   // the globe has its own keys
+  const inScope = panel.contains(document.activeElement) || leafletEl.contains(document.activeElement) || document.activeElement===leafletEl;
+  if(!inScope) return;
+  if(e.key==='ArrowRight'){ e.preventDefault(); step(1); } else if(e.key==='ArrowLeft'){ e.preventDefault(); step(-1); }
+});
+
+/* ---------------------------------------------------------------- panel */
+function unlocatedCards(){
+  const items=D.places.filter(p=>!p.has_coords && !p.mentioned_only);
+  return items.map(p=>{ const f=D.findings.find(x=>(x.places||[]).includes(p.id));
+    const drawn=[...(p.constraints||[]).map(c=>{ const a=IDX.place[c.anchor]||{short_label:c.anchor}; return c.kind==='distance'? `a dashed ring of ${c.miles} mi around ${a.short_label}` : c.kind==='near'? `a leader label at ${a.short_label}` : `a bracket at ${a.short_label}`; }), ...((p.candidates||[]).length? [`${p.candidates.length} hollow squares, one per gazetteer homonym, none chosen`]:[])];
+    return `<li data-place="${p.id}"><div class="head"><b>${esc(p.label)}</b> ${chip(p.status)} <span class="tag" title="${esc((D.meta.unlocated_kinds||{})[p.unlocated_kind]||'')}">${esc(p.unlocated_kind)}</span>${drawn.length?`<label class="small draw"><input type="checkbox" data-unloc="${p.id}" ${state.unlocatedOff.has(p.id)?'':'checked'}>draw</label>`:''}</div>
+      ${(p.constraints||[]).map(c=>`<div class="block verbatim"><span class="who">${esc(c.speaker)} — verbatim</span>“${esc(c.quote)}”</div>`).join('')}
+      ${(p.candidates||[]).length?`<div class="small">${p.candidates.length} GNIS record${p.candidates.length>1?'s':''} named ‘${esc(p.candidates[0].name)}’ — ${esc(p.candidates_note)}</div>`:''}
+      <div class="small"><span class="tag model">model</span> What is drawn: ${drawn.length? esc(drawn.join('; '))+'.' : 'nothing.'} No point is asserted.</div>
+      <div class="small"><a href="#/place/${p.id}">Place record</a>${f?` · <a href="#/method/findings/${f.id}">${esc(f.title)}</a>`:''}</div></li>`; }).join('');
 }
 function renderPanel(){
   const el=document.getElementById('panelInner');
-  const stopsHTML = ['1907','1908'].map(j=>`<span class="grp ${App.journeyClass(j)}">${j} journey</span>`+D.stops.filter(s=>s.journey===j).map(s=>`<li data-stop="${s.id}" class="${App.journeyClass(j)}" onclick="MapView.highlight('${s.id}')" title="${esc(s.date_text)}"><span class="d">${esc(App.fmtDate(s.date_start))}</span><span>${esc(s.label)} ${chip(s.status,'')}</span></li>`).join('')).join('');
+  const stopsHTML = ['1907','1908'].map(j=>`<li class="grp ${jc(j)}" role="presentation">${j} journey</li>`+stopsOf(j).map(s=>`<li data-stop="${s.id}" class="${jc(j)}" onclick="MapView.stepTo('${s.id}')" title="${esc(s.date_text)}"><span class="d"><b class="seq ${jc(j)}">${s.seq}</b> ${esc(fmtDate(s.date_start))}</span><span>${esc(s.label)} ${chip(s.status,'')}${s.naming?chip('naming',''):''}</span></li>`).join('')).join('');
   el.innerHTML=`
-   <div class="section"><h3>View</h3><div class="seg" id="modeSeg"><button data-mode="flat" class="active" onclick="MapView.setMode('flat')">Flat</button><button data-mode="relief" onclick="MapView.setMode('relief')">Relief</button><button data-mode="globe" onclick="MapView.setMode('globe')">Globe</button></div></div>
+   <div class="section follow"><h3>Follow the journey</h3>
+     <div class="row"><div class="seg" id="followSeg" role="group" aria-label="Journey to follow"><button data-j="1907" class="active" aria-pressed="true" onclick="MapView.follow('1907')">1907</button><button data-j="1908" aria-pressed="false" onclick="MapView.follow('1908')">1908</button></div>
+       <span class="steps"><button class="ghost" id="prevStop" onclick="MapView.step(-1)" aria-label="Previous stop">‹ Previous</button><span id="stepPos" class="small muted"></span><button class="ghost" id="nextStop" onclick="MapView.step(1)" aria-label="Next stop">Next ›</button></span></div>
+     <div id="stopcard">${startCard()}</div></div>
+   <div class="section"><h3>View</h3><div class="row"><div class="seg" id="modeSeg" role="group" aria-label="Map mode"><button data-mode="flat" class="active" aria-pressed="true" onclick="MapView.setMode('flat')">Flat</button><button data-mode="relief" aria-pressed="false" onclick="MapView.setMode('relief')">Relief</button><button data-mode="globe" aria-pressed="false" onclick="MapView.setMode('globe')">Globe</button></div>
+     <span id="globeZoom" class="seg hidden" role="group" aria-label="Globe zoom"><button onclick="MapView.globeZoom(1.25)" aria-label="Zoom the globe in">+</button><button onclick="MapView.globeZoom(0.8)" aria-label="Zoom the globe out">−</button></span></div>
+     <div class="frames" id="frames">${FRAMES.map(f=>`<button class="pill ${f.id===state.frame?'active':''}" data-frame="${f.id}" onclick="MapView.setFrame('${f.id}')">${esc(f.label)}</button>`).join('')}</div></div>
    <div class="section"><h3>Layers</h3>
-     <label><input type="checkbox" data-layer="j1907" checked><span class="sw" style="background:${JCOLOR['1907']}"></span>1907 reconnaissance (Yukon route)</label>
-     <label><input type="checkbox" data-layer="j1908" checked><span class="sw" style="background:${JCOLOR['1908']}"></span>1908 excavation (overland route)</label>
-     <label><input type="checkbox" data-layer="trail" checked><span class="sw" style="background:#6b6760;height:.2rem"></span>Paper-trail nodes (New York, Seattle, Washington, Garrison)</label>
-     <label><input type="checkbox" data-layer="routes" checked>Route connectors (schematic)</label>
+     <label><input type="checkbox" data-layer="j1907" checked><span class="sw" style="background:var(--j1907)"></span>1907 reconnaissance (Yukon route)</label>
+     <label><input type="checkbox" data-layer="j1908" checked><span class="sw" style="background:var(--j1908)"></span>1908 excavation (overland route)</label>
+     <label><input type="checkbox" data-layer="trail" checked><span class="sw" style="background:var(--paper-trail)"></span>Paper-trail nodes (New York, Seattle, Washington, Garrison)</label>
+     <label><input type="checkbox" data-layer="routes" checked>Route connectors (schematic) with arrows</label>
      <label><input type="checkbox" data-layer="halos" checked>Uncertainty halos</label>
      <label><input type="checkbox" data-layer="labels" checked>Place labels</label>
-     <label><input type="checkbox" data-layer="context"><span class="sw" style="background:#6d4c9f"></span>Context: Adams mammoth, Lena → St Petersburg (Tale §1)</label>
+     <label><input type="checkbox" data-layer="unlocated" checked><span class="sw dashed"></span>Unlocated — constraints and candidates (no point asserted)</label>
+     <label><input type="checkbox" data-layer="context"><span class="sw" style="background:var(--model)"></span>Context: Adams mammoth, Lena → St Petersburg (Tale §1)</label>
    </div>
-   <div class="section"><h3>Unlocated (not drawn)</h3><div class="small">${D.places.filter(p=>!p.has_coords && !p.mentioned_only).map(p=>`<a href="#/place/${p.id}">${esc(p.label)}</a>`).join('<br>')}</div></div>
+   <div class="section"><h3>Unlocated — constraints drawn, no point asserted</h3><ul class="unlocated">${unlocatedCards()}</ul></div>
    <div class="section"><h3>Chronological stops</h3><ul id="stoplist">${stopsHTML}</ul></div>
-   <div class="section small muted">Marker style encodes source status; halos show the uncertainty radius recorded for each place. Click a stop for its evidence and story.</div>`;
+   <div id="panellegend"></div>
+   <div class="section small muted">Marker style encodes source status; hue and badge shape encode the journey; halos show the uncertainty radius recorded for each place. Click a stop for its evidence and story.</div>`;
   el.querySelectorAll('input[data-layer]').forEach(cb=>cb.addEventListener('change', ()=>{ state.layers[cb.dataset.layer]=cb.checked; drawAll(); if(globe) globe.draw(); }));
+  el.querySelectorAll('input[data-unloc]').forEach(cb=>cb.addEventListener('change', ()=>{ if(cb.checked) state.unlocatedOff.delete(cb.dataset.unloc); else state.unlocatedOff.add(cb.dataset.unloc); drawUnlocated(); updateLabelVisibility(); }));
+  renderFollow();
 }
+/* one legend, rendered twice: as a disclosure top-right (≥ 900 px) and at the end of the panel (below 900 px); CSS shows one */
 function renderLegend(){
-  const sw=(fill,stroke,dash,extra='')=>`<svg width="18" height="18"><circle cx="9" cy="9" r="6" fill="${fill}" stroke="${stroke}" stroke-width="2" ${dash?`stroke-dasharray="${dash}"`:''} ${extra}/></svg>`;
-  document.getElementById('maplegend').innerHTML=`
-    <div class="row"><b>Source status of a place</b></div>
-    <div class="row">${sw('#1f6fa3','#1f6fa3')} verified — gazetteer match on the attested name</div>
-    <div class="row">${sw('rgba(31,111,163,.15)','#1f6fa3')} inferred — identification inferred from the described route</div>
-    <div class="row">${sw('rgba(31,111,163,.1)','#1f6fa3','3 3')} approximate — placed from distances/directions</div>
-    <div class="row"><svg width="18" height="18"><rect x="5" y="5" width="8" height="8" fill="#fff" stroke="#a23b3b" stroke-width="2" transform="rotate(45 9 9)"/></svg> disputed — sources disagree</div>
-    <div class="row"><svg width="18" height="18"><circle cx="9" cy="9" r="7" fill="rgba(31,111,163,.08)" stroke="#1f6fa3" stroke-dasharray="3 3"/></svg> halo — uncertainty radius (km in record)</div>
-    <div class="row" style="margin-top:.3rem"><b>Connectors (all schematic)</b></div>
-    <div class="row"><svg width="28" height="8"><line x1="0" y1="4" x2="28" y2="4" stroke="#c0603a" stroke-width="2.5"/></svg> mode stated in a source</div>
-    <div class="row"><svg width="28" height="8"><line x1="0" y1="4" x2="28" y2="4" stroke="#c0603a" stroke-width="2.5" stroke-dasharray="8 6"/></svg> mode not stated</div>
-    <div class="row"><svg width="28" height="8"><line x1="0" y1="4" x2="28" y2="4" stroke="#c0603a" stroke-width="2.5" stroke-dasharray="2 6"/></svg> mode inferred from sequence</div>
-    <div class="row"><span class="sw" style="background:#1f6fa3;width:14px;height:3px;display:inline-block"></span> 1907 &nbsp; <span class="sw" style="background:#c0603a;width:14px;height:3px;display:inline-block"></span> 1908</div>`;
+  const relief = state.mode==='relief', globeMode = state.mode==='globe';
+  const html=`<details class="legend" open><summary>Legend — connectors are schematic; no route was traced</summary>
+    <div class="row"><b>Journeys</b> <span class="muted">(hue, badge shape, arrowhead)</span></div>
+    <div class="row">${line('var(--j1907)')} <span class="seq j1907">7</span> ${arrowGlyph('1907')} 1907 reconnaissance — round badge, open arrowhead</div>
+    <div class="row">${line('var(--j1908)')} <span class="seq j1908">7</span> ${arrowGlyph('1908')} 1908 excavation — square badge, filled arrowhead</div>
+    <div class="row">${glyph('both')} visited in both years — ring 1907, disc 1908; both badges stacked</div>
+    <div class="row">${glyph('trail')} paper-trail node — correspondence only, no stop</div>
+    <div class="row"><b>Source status of a place</b> <span class="muted">(marker form)</span></div>
+    <div class="row">${glyph('verified')} verified — gazetteer match on the attested name</div>
+    <div class="row">${glyph('inferred')} inferred — identification inferred from the described route</div>
+    <div class="row">${glyph('approximate')} approximate — placed from distances or directions</div>
+    <div class="row">${glyph('disputed')} disputed — sources disagree</div>
+    <div class="row">${glyph('naming')} naming — two attested names, one gazetteer point</div>
+    <div class="row">${glyph('halo')} halo — uncertainty radius (km in the record)</div>
+    <div class="row">${glyph('unlocated')} unlocated — constraint drawn, no point</div>
+    <div class="row">${glyph('candidate')} gazetteer homonym — candidate, not asserted</div>
+    <div class="row"><b>Connectors</b> <span class="muted">(all schematic; the arrow gives the direction of travel)</span></div>
+    <div class="row">${line('var(--ink-2)')} mode stated in a source</div>
+    <div class="row">${line('var(--ink-2)','8 6')} mode not stated</div>
+    <div class="row">${line('var(--ink-2)','2 6')} mode inferred from the sequence</div>
+    <div class="row"><svg width="28" height="8" aria-hidden="true" style="vertical-align:middle"><line x1="0" y1="4" x2="28" y2="4" style="stroke:var(--ink-2)" stroke-width="2.5"/><circle cx="14" cy="4" r="3" style="fill:var(--surface);stroke:var(--ink-2)" stroke-width="1.5"/></svg> out-and-back — side trip drawn through its return place</div>
+    <div class="row">${line('var(--model)','6 6',1.5)} context arc — Adams mammoth (Tale §1)</div>
+    ${relief?'<div class="row muted">Relief: Esri shaded relief with reference labels.</div>':''}${globeMode?'<div class="row muted">Globe: the same stops and connectors on an orthographic projection; drag to rotate, + / − to zoom.</div>':''}
+    <div class="row"><a href="#/method/geocoding">All stops and connectors as tables → Method › Geocoding</a></div></details>`;
+  const a=document.getElementById('maplegend'), b=document.getElementById('panellegend'); if(a) a.innerHTML=html; if(b) b.innerHTML=html;
 }
+
 /* ------------------------------------------------------------ globe (D3 orthographic) */
 function initGlobe(){
   if(globe) return;
   const el=document.getElementById('globe');
-  const svg=d3.select(el).append('svg');
+  const svg=d3.select(el).append('svg').attr('role','img').attr('tabindex',0).attr('aria-label','Orthographic globe of the same stops');
+  svg.append('title').text('Orthographic globe of the same stops'); svg.append('desc').text('The chronological stop list carries the same information.');
   const projection=d3.geoOrthographic().rotate([150, -58]).clipAngle(90);
   const path=d3.geoPath(projection);
   let land=null, W=0,H=0, scale0=1;
   const gSphere=svg.append('g'), gLand=svg.append('g'), gGrat=svg.append('g'), gData=svg.append('g');
   const grat=d3.geoGraticule10();
   function resize(){ W=el.clientWidth; H=el.clientHeight; if(!W||!H) return; scale0=Math.min(W,H)/2.15; projection.translate([W/2,H/2]); if(!projection._userScale) projection.scale(scale0); draw(); }
+  const kNow=()=>projection.scale()/scale0;
+  const tierOn = p=>{ const t=labelTier(p), k=kNow(); return t===0 || (t===4 && k>=1.8) || (t===6 && k>=3) || (t===8 && k>=5); };
   function draw(){
     if(!W) return;
     gSphere.selectAll('path').data([{type:'Sphere'}]).join('path').attr('d', path).style('fill','var(--globe-sea)').style('stroke','var(--globe-coast)');
@@ -564,44 +892,60 @@ function initGlobe(){
     if(land) gLand.selectAll('path').data([land]).join('path').attr('d', path).style('fill','var(--globe-land)').style('stroke','var(--globe-coast)').attr('stroke-width',.6);
     const feats=[];
     ['1907','1908'].forEach(j=>{ if(!state.layers['j'+j]) return;
-      if(state.layers.routes) D.segments.filter(g=>g.journey===j).forEach(g=>{ const a=IDX.place[IDX.stop[g.frm].place], b=IDX.place[IDX.stop[g.to].place]; if(!a||!b||!a.has_coords||!b.has_coords||a.id===b.id) return; feats.push({type:'Feature', kind:'route', j, g, geometry:{type:'LineString', coordinates:[[a.lon,a.lat],[b.lon,b.lat]]}}); });
+      if(state.layers.routes) D.segments.filter(g=>g.journey===j).forEach(g=>legsOf(g).forEach(l=>feats.push({type:'Feature', kind:'route', j, l, geometry:{type:'LineString', coordinates:[[l.a.lon,l.a.lat],[l.b.lon,l.b.lat]]}})));
     });
     if(state.layers.context) D.context_arcs.forEach(a=>{ const p=IDX.place[a.frm], q=IDX.place[a.to]; feats.push({type:'Feature', kind:'ctx', a, geometry:{type:'LineString', coordinates:[[p.lon,p.lat],[q.lon,q.lat]]}}); });
     gData.selectAll('path.route').data(feats, (d,i)=>i).join('path').attr('class','route').attr('d', path).attr('fill','none')
-      .attr('stroke', d=>d.kind==='ctx'?'#6d4c9f':JCOLOR[d.j]).attr('stroke-width', d=>d.kind==='ctx'?1.4:2)
-      .attr('stroke-dasharray', d=>d.kind==='ctx'?'6 5': d.g.mode_status==='stated'?null: d.g.mode_status==='not_stated'?'7 5':'2 5').attr('opacity',.9)
-      .append('title').text(d=>d.kind==='ctx'? d.a.label+' (context, schematic)' : `${IDX.stop[d.g.frm].label} → ${IDX.stop[d.g.to].label}: ${d.g.mode} (${d.g.mode_status}); schematic`);
-    // halos
-    const halos=[]; const pts=[]; const seen=new Set();
-    ['1907','1908'].forEach(j=>{ if(!state.layers['j'+j]) return; placesOf(j).forEach(({place,stops})=>{ if(seen.has(place.id)) return; seen.add(place.id); pts.push({place,j,stops}); if(state.layers.halos && place.radius_km && place.status!=='verified') halos.push({place,j}); }); });
-    if(state.layers.trail) TRAIL_PLACES.forEach(id=>{ const p=IDX.place[id]; if(p&&!seen.has(id)){ seen.add(id); pts.push({place:p,j:null,stops:[]}); } });
-    if(state.layers.context) ['pl_lena_mouth','pl_yakutsk','pl_stpetersburg'].forEach(id=>{ const p=IDX.place[id]; pts.push({place:p,j:'ctx',stops:[]}); if(p.radius_km>20) halos.push({place:p,j:'ctx'}); });
+      .style('stroke', d=>d.kind==='ctx'?'var(--model)':JVAR[d.j]).attr('stroke-width', d=>d.kind==='ctx'?1.4: (d.l.seg.to===state.highlight? 3.2 : 2))
+      .attr('stroke-dasharray', d=>d.kind==='ctx'?'6 5': d.l.dash? d.l.dash.replace('8 6','7 5').replace('2 6','2 5') : null).attr('opacity', d=>d.kind==='ctx'? .9 : (state.highlight? (d.l.seg.to===state.highlight? 1 : .3) : .9))
+      .append('title').text(d=>d.kind==='ctx'? d.a.label+' (context, schematic)' : `${IDX.stop[d.l.seg.frm].label} → ${IDX.stop[d.l.seg.to].label}${(d.l.seg.via||[]).length?' · '+viaText(d.l.seg):''}: ${d.l.seg.mode} (${d.l.seg.mode_status}); schematic`);
+    // halos and points
+    const halos=[]; const pts=[]; const seen=new Map();
+    ['1907','1908'].forEach(j=>{ if(!state.layers['j'+j]) return; placesOf(j).forEach(({place,stops})=>{ if(!seen.has(place.id)) seen.set(place.id,{place,js:[],stops:[]}); const e=seen.get(place.id); e.js.push(j); e.stops=e.stops.concat(stops); if(state.layers.halos && place.radius_km && place.status!=='verified' && e.js.length===1) halos.push({place,j}); }); });
+    seen.forEach(e=>pts.push({place:e.place, j: e.js.length===2?'both':e.js[0], stops:e.stops}));
+    if(state.layers.trail) TRAIL_PLACES.forEach(id=>{ const p=IDX.place[id]; if(p&&!seen.has(id)){ seen.set(id,1); pts.push({place:p,j:null,stops:[]}); } });
+    if(state.layers.context) CTX_PLACES.forEach(id=>{ const p=IDX.place[id]; pts.push({place:p,j:'ctx',stops:[]}); if(p.radius_km>20) halos.push({place:p,j:'ctx'}); });
     const circle=d3.geoCircle();
-    gData.selectAll('path.halo').data(halos,(d)=>d.place.id).join('path').attr('class','halo').attr('d', d=>path(circle.center([d.place.lon,d.place.lat]).radius(d.place.radius_km/111.2)())).attr('fill', d=>d.j==='ctx'?'rgba(109,76,159,.08)':(d.j==='1907'?'rgba(31,111,163,.1)':'rgba(192,96,58,.1)')).attr('stroke', d=>d.j==='ctx'?'#6d4c9f':JCOLOR[d.j]).attr('stroke-dasharray','3 3').attr('stroke-width',.8);
+    gData.selectAll('path.halo').data(halos,(d)=>d.place.id).join('path').attr('class','halo').attr('d', d=>path(circle.center([d.place.lon,d.place.lat]).radius(d.place.radius_km/111.2)())).style('fill', d=>d.j==='ctx'?'var(--model)':JVAR[d.j]).attr('fill-opacity',.1).style('stroke', d=>d.j==='ctx'?'var(--model)':JVAR[d.j]).attr('stroke-dasharray','3 3').attr('stroke-width',.8);
     const vis = d=>{ const r=projection.rotate(); const c=[-r[0],-r[1]]; return d3.geoDistance([d.place.lon,d.place.lat], c) < Math.PI/2; };
-    const sel=gData.selectAll('g.pt').data(pts, d=>d.place.id).join(enter=>{ const g=enter.append('g').attr('class','pt').style('cursor','pointer'); g.append('circle'); g.append('text'); return g; });
+    const sel=gData.selectAll('g.pt').data(pts, d=>d.place.id).join(enter=>{ const g=enter.append('g').attr('class','pt').style('cursor','pointer'); g.append('circle'); g.append('text'); g.append('title'); return g; });
     sel.attr('display', d=>vis(d)?null:'none').attr('transform', d=>{ const xy=projection([d.place.lon,d.place.lat]); return xy?`translate(${xy[0]},${xy[1]})`:null; })
-      .on('click', (ev,d)=>{ const s=D.stops.find(x=>x.place===d.place.id); const story = s? s.story : (d.place.stories||[])[0]; if(story) App.go('/story/'+story); })
-      .select('circle').attr('r', d=>d.j==='ctx'?5: d.j? (d.place.status==='verified'?5.5:6):4).attr('fill', d=>{ const c=d.j==='ctx'?'#6d4c9f':d.j?JCOLOR[d.j]:'#fff'; return d.place.status==='verified'||!d.j? c : 'rgba(255,255,255,.6)'; }).attr('stroke', d=>d.j==='ctx'?'#6d4c9f':d.j?JCOLOR[d.j]:'#6b6760').attr('stroke-width',2).attr('stroke-dasharray', d=>d.place.status==='approximate'?'2 2':null);
-    sel.select('text').text(d=>d.place.label.replace(/\s*\(.*$/,'').replace(/ — .*$/,'')).attr('x',8).attr('y',4).attr('font-size',11).attr('font-family','var(--sans)').style('fill','var(--ink-2)').attr('paint-order','stroke').style('stroke','var(--paper)').attr('stroke-width',3)
-      .attr('display', d=> (projection.scale()/scale0>1.8 || ['pl_newyork','pl_seattle','pl_nome','pl_dawson','pl_elephant_point','pl_stpetersburg','pl_lena_mouth','pl_keewalik'].includes(d.place.id))? null:'none');
-    sel.select('circle').append('title');
-    sel.selectAll('title').text(d=>`${d.place.label} — ${d.place.status}; ${d.place.precision}${d.place.radius_km?`; halo ${d.place.radius_km} km`:''}`);
+      .on('click', (ev,d)=>{ const s = d.stops.find(x=>x.journey===state.journey) || d.stops[0]; if(s) stepTo(s.id, {move:false}); })
+      .select('circle').attr('r', d=>d.j==='ctx'?5: d.j? (d.place.status==='verified'?5.5:6):4)
+      .style('fill', d=>{ if(d.j==='both') return 'var(--j1908)'; const c=d.j==='ctx'?'var(--model)':d.j?JVAR[d.j]:'var(--surface)'; return d.place.status==='verified'||!d.j? c : 'var(--surface)'; }).attr('fill-opacity', d=>(d.j&&d.j!=='both'&&d.place.status!=='verified')? .7 : 1)
+      .style('stroke', d=>d.j==='both'?'var(--j1907)': d.j==='ctx'?'var(--model)':d.j?JVAR[d.j]:'var(--paper-trail)').attr('stroke-width', d=>d.j==='both'?2.5: (d.stops.some(s=>s.id===state.highlight)? 3.5 : 2)).attr('stroke-dasharray', d=>d.place.status==='approximate'?'2 2':null);
+    sel.select('text').text(d=>d.place.short_label).attr('x',8).attr('y',4).attr('font-size',11).attr('font-family','var(--sans)').style('fill','var(--ink-2)').attr('paint-order','stroke').style('stroke','var(--paper)').attr('stroke-width',3)
+      .attr('display', d=> (tierOn(d.place) || d.place.id===state.highlightPlace || ['pl_stpetersburg','pl_lena_mouth'].includes(d.place.id))? null:'none');
+    sel.select('title').text(d=>`${d.place.label} — ${d.place.status}; ${d.place.precision}${d.place.radius_km?`; halo ${d.place.radius_km} km`:''}${d.stops.length?`; stops ${d.stops.map(s=>s.journey+' #'+s.seq).join(', ')}`:''}`);
   }
   svg.call(d3.drag().on('start', ()=>svg.style('cursor','grabbing')).on('drag', (ev)=>{ const r=projection.rotate(); const k=75/projection.scale(); projection.rotate([r[0]+ev.dx*k, Math.max(-90,Math.min(90, r[1]-ev.dy*k))]); draw(); }).on('end', ()=>svg.style('cursor','grab')));
-  svg.call(d3.zoom().scaleExtent([.7,8]).on('zoom', (ev)=>{ projection._userScale=true; projection.scale(scale0*ev.transform.k); draw(); }).filter(ev=>ev.type==='wheel'||ev.type==='dblclick'));
-  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-110m.json').then(topo=>{ land=topojson.feature(topo, topo.objects.land); draw(); }).catch(()=>{ gLand.append('text').attr('x',12).attr('y',24).attr('fill','#a23b3b').attr('font-size',12).text('Land outlines could not be loaded (world-atlas CDN unavailable); routes and points are still drawn.'); });
-  function focus(p){ d3.transition().duration(900).tween('rotate', ()=>{ const r=d3.interpolate(projection.rotate(), [-p.lon, -p.lat]); return t=>{ projection.rotate(r(t)); draw(); }; }); }
-  globe={resize, draw, focus};
+  const zoomB=d3.zoom().scaleExtent([.7,8]).on('zoom', (ev)=>{ projection._userScale=true; projection.scale(scale0*ev.transform.k); draw(); }).filter(ev=>ev.type==='wheel'||ev.type==='dblclick'||/^touch/.test(ev.type));
+  svg.call(zoomB);
+  function zoomBy(f){ const k=Math.max(.7, Math.min(8, kNow()*f)); svg.call(zoomB.scaleTo, k); }
+  function rotateBy(dlon, dlat){ const r=projection.rotate(); projection.rotate([r[0]+dlon, Math.max(-90,Math.min(90, r[1]+dlat))]); draw(); }
+  svg.on('keydown', (ev)=>{ const k=ev.key; if(k==='ArrowLeft'){ rotateBy(5,0); } else if(k==='ArrowRight'){ rotateBy(-5,0); } else if(k==='ArrowUp'){ rotateBy(0,5); } else if(k==='ArrowDown'){ rotateBy(0,-5); } else if(k==='+'||k==='='){ zoomBy(1.25); } else if(k==='-'||k==='_'){ zoomBy(.8); } else return; ev.preventDefault(); });
+  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-110m.json').then(topo=>{ land=topojson.feature(topo, topo.objects.land); draw(); }).catch(()=>{ gLand.append('text').attr('x',12).attr('y',24).style('fill','var(--disputed)').attr('font-size',12).text('Land outlines could not be loaded (world-atlas CDN unavailable); routes and points are still drawn.'); });
+  function focus(p){ const target=[-p.lon, -p.lat]; if(REDUCE){ projection.rotate(target); draw(); return; } d3.transition().duration(900).tween('rotate', ()=>{ const r=d3.interpolate(projection.rotate(), target); return t=>{ projection.rotate(r(t)); draw(); }; }); }
+  globe={resize, draw, focus, zoomBy, rotateBy, scale:()=>projection.scale()};
   window.addEventListener('resize', resize);
   resize();
 }
-function show(placeId){
-  if(!state.inited){ state.inited=true; if(typeof L==='undefined'){ document.getElementById('leaflet').innerHTML='<div class="page notice">Leaflet could not be loaded from the CDN; the map requires network access. The Archive, Timeline, Network and Story tabs work offline.</div>'; return; } initMap(); renderPanel(); renderLegend(); }
+
+/* ---------------------------------------------------------------- routes: #/map, #/map/<placeId>, #/map/stop/<stopId> */
+function show(a, b){
+  if(!state.inited){ state.inited=true; if(typeof L==='undefined'){ document.getElementById('leaflet').innerHTML='<div class="page notice">Leaflet could not be loaded from the CDN; the map requires network access. The Archive, Timeline, Network and Story tabs work offline.</div>'; return; } initMap(!a); renderPanel(); renderLegend(); }
+  if(!map) return;
+  map.invalidateSize(false);   // the container may have been hidden until this render; measure it before any flyTo
   setTimeout(()=>{ if(map) map.invalidateSize(); if(globe) globe.resize(); }, 30);
-  if(placeId && IDX.place[placeId]){ const p=IDX.place[placeId]; if(p.has_coords){ const s=D.stops.find(x=>x.place===placeId); if(s) highlightStop(s.id); else if(map){ map.flyTo([p.lat,p.lon], 6); } } }
+  if(a==='stop' && b && IDX.stop[b]){ stepTo(b); return; }
+  if(a && IDX.place[a]){ const p=IDX.place[a];
+    if(p.has_coords){ const s=D.stops.find(x=>x.place===a); if(s) stepTo(s.id); else { closePopup(); if(REDUCE) map.setView([p.lat,p.lon], 6); else map.flyTo([p.lat,p.lon], 6); pendingPopup=()=>openPopupFor(p, null, null); } }
+    else { closePopup(); state.focusUnlocated=a; state.showUnlocated.add(a); if(!state.layers.unlocated){ state.layers.unlocated=true; const cb=document.querySelector('input[data-layer="unlocated"]'); if(cb) cb.checked=true; } drawUnlocated(); const bb=unlocatedBounds(a); if(bb && bb.isValid()) map.fitBounds(bb.pad(.15), {animate:!REDUCE, maxZoom:8}); updateLabelVisibility(); }
+  }
 }
-window.MapView = { show, setMode, highlight:highlightStop, pauseGlobe(){}, state };
+window.MapView = { show, setMode, highlight:highlightStop, stepTo, step, follow, clearStop, setFrame, styleFor, gcPath, badge, badgeHTML, arrowFor, legsOf, labelTier, glyph, popupJourney, focusCard,
+  zoom(){ return map? map.getZoom() : null; }, setView(ll, z){ if(map){ closePopup(); map.setView(ll, z, {animate:false}); } },
+  globeZoom(f){ if(globe) globe.zoomBy(f); }, globeScale(){ return globe? globe.scale() : null; }, pauseGlobe(){}, state, FRAMES };
 })();
 </script>
 <script>
@@ -636,8 +980,8 @@ Pages.story = function([id]){
     ${navbar({extra: `${s.prev?`<button class="ghost" onclick="App.go('/story/${s.prev}')">‹ Previous</button>`:''}${s.next?`<button class="ghost" onclick="App.go('/story/${s.next}')">Next ›</button>`:''}<a class="small" href="#/stories">Story index</a>`, right: mapLink?`<button onclick="App.go('/map/${mapLink.id}')">Open on map</button>`:''})}
     <div class="phase ${esc(s.phase).replace('journey-','j')}">${esc(s.phase.replace('journey-','journey '))} · page ${s.order+1} of ${D.stories.length}</div>
     <h1>${esc(s.title)}</h1><p class="subtitle">${esc(s.subtitle)}${dateRange?` · <span class="muted">${esc(dateRange)}</span>`:''}</p>
-    ${places.some(p=>p.has_coords)?`<div class="minimap" id="minimap"></div>`:''}
-    ${stops.length?`<h2>When</h2><table class="data"><thead><tr><th>Stop</th><th>Date as attested</th><th>Precision</th><th>Status</th><th>Sources</th></tr></thead><tbody>${stops.map(st=>`<tr><td><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span> ${esc(st.label)}</td><td>${esc(st.date_text)}</td><td><span class="chip plain ${esc(st.date_precision)}">${esc(st.date_precision)}</span></td><td>${chip(st.status)}</td><td class="small">${st.sources.map(sr=>`${IDX.doc[sr.ref]?docLink(sr.ref):IDX.pub[sr.ref]?`<a href="#/published/${sr.ref}">${esc(IDX.pub[sr.ref].short)}</a>`:esc(sr.ref)}: ${esc(sr.locator)}`).join('<br>')}<br><span class="muted">${esc(st.why)}</span></td></tr>`).join('')}</tbody></table>`:''}
+    ${places.some(p=>p.has_coords)?`<div class="minimap" id="minimap"></div><p class="minimap-caption">Symbols as on the main map; see <a href="#/map">Legend</a>. Numerals are the stop's sequence in its journey; connectors are schematic.</p>`:''}
+    ${stops.length?`<h2>When</h2><table class="data"><thead><tr><th>Stop</th><th>Date as attested</th><th>Precision</th><th>Status</th><th>Sources</th></tr></thead><tbody>${stops.map(st=>`<tr><td><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span> <b class="seq ${App.journeyClass(st.journey)}">${st.seq}</b> ${esc(st.label)}<div class="small"><a href="#/map/stop/${st.id}">on the map</a></div></td><td>${esc(st.date_text)}</td><td><span class="chip plain ${esc(st.date_precision)}">${esc(st.date_precision)}</span></td><td>${chip(st.status)}${st.naming?' '+chip('naming'):''}</td><td class="small">${st.sources.map(sr=>`${IDX.doc[sr.ref]?docLink(sr.ref):IDX.pub[sr.ref]?`<a href="#/published/${sr.ref}">${esc(IDX.pub[sr.ref].short)}</a>`:esc(sr.ref)}: ${esc(sr.locator)}`).join('<br>')}<br><span class="muted">${esc(st.why)}</span></td></tr>`).join('')}</tbody></table>`:''}
     ${places.length?`<h2>Where</h2><div class="grid2">${places.map(p=>placeCard(p.id)).join('')}</div>`:''}
     <h2>The principal investigator’s narrative</h2>
     ${s.tale_excerpts.length? s.tale_excerpts.map(e=>piBlock(e.text, e.para)).join('') : `<div class="notice">The Tale does not narrate this part of the journey. The page rests on the correspondence and the PI’s timeline alone.</div>`}
@@ -649,11 +993,20 @@ Pages.story = function([id]){
     <div class="footer-nav">${s.prev?`<a href="#/story/${s.prev}">‹ ${esc(IDX.story[s.prev].title)}</a>`:'<span></span>'}${s.next?`<a href="#/story/${s.next}" style="text-align:right">${esc(IDX.story[s.next].title)} ›</a>`:'<span></span>'}</div>
   </div>`;
   if(places.some(p=>p.has_coords) && typeof L!=='undefined'){
-    miniTimer=setTimeout(()=>{ miniTimer=null; const el=document.getElementById('minimap'); if(!el || el._leaflet_id) return; minimap=L.map(el,{zoomControl:false, attributionControl:false, scrollWheelZoom:false, dragging:true});
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16}).addTo(minimap);
-      const b=[]; places.filter(p=>p.has_coords).forEach(p=>{ const j = (stops.find(st=>st.place===p.id)||{}).journey; const c=App.JCOLOR[j]||'#6b6760'; if(p.radius_km&&p.status!=='verified') L.circle([p.lat,p.lon],{radius:p.radius_km*1000,color:c,weight:1,fillOpacity:.08,dashArray:'4 4'}).addTo(minimap); L.circleMarker([p.lat,p.lon],{color:c,fillColor:c,fillOpacity:p.status==='verified'?.9:.15,radius:6,weight:2,dashArray:p.status==='approximate'?'3 3':null}).bindTooltip(p.label).addTo(minimap); b.push([p.lat,p.lon]); });
-      // schematic connectors between consecutive stops on this page
-      for(let i=1;i<stops.length;i++){ const a=IDX.place[stops[i-1].place], c=IDX.place[stops[i].place]; if(a&&c&&a.has_coords&&c.has_coords&&a.id!==c.id) L.polyline([[a.lat,a.lon],[c.lat,c.lon]],{color:App.JCOLOR[stops[i].journey]||'#6b6760',weight:2,dashArray:'6 4',opacity:.7}).addTo(minimap); }
+    // the minimap reuses the main map's symbology (MapView.styleFor, gcPath, badge, legsOf) so that it cannot contradict the legend
+    miniTimer=setTimeout(()=>{ miniTimer=null; const el=document.getElementById('minimap'); if(!el || el._leaflet_id) return; minimap=L.map(el,{zoomControl:false, attributionControl:false, scrollWheelZoom:false, dragging:true, keyboard:false});
+      const dark = document.documentElement.dataset.theme==='dark' || (document.documentElement.dataset.theme!=='light' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+      L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/${dark?'World_Dark_Gray_Base':'World_Light_Gray_Base'}/MapServer/tile/{z}/{y}/{x}`,{maxZoom:16}).addTo(minimap);
+      const MV=window.MapView; const b=[]; const JV={'1907':'var(--j1907)','1908':'var(--j1908)'};
+      // legs of the segments that join this page's stops (out-and-back legs included), in the stop's journey colour with the segment's dash
+      const stopIds=new Set(stops.map(st=>st.id));
+      D.segments.filter(g=>stopIds.has(g.frm)&&stopIds.has(g.to)).forEach(g=>MV.legsOf(g).forEach(l=>{ const pts=MV.gcPath([l.a.lat,l.a.lon],[l.b.lat,l.b.lon]); L.polyline(pts,{color:JV[l.journey],weight:l.posUnsure?1.6:2.4,dashArray:l.dash,opacity:.85,interactive:false}).addTo(minimap); pts.forEach(q=>b.push(q)); }));
+      places.filter(p=>p.has_coords).forEach(p=>{ const here=stops.filter(st=>st.place===p.id); const js=[...new Set(here.map(st=>st.journey))].sort(); const key = js.length===2?'both': js[0]||null;
+        if(p.radius_km&&p.status!=='verified'&&key&&key!=='both') L.circle([p.lat,p.lon],{radius:p.radius_km*1000,color:JV[key],weight:1,fillColor:JV[key],fillOpacity:.08,dashArray:'4 4',interactive:false}).addTo(minimap);
+        L.circleMarker([p.lat,p.lon], MV.styleFor(p,key)).bindTooltip(esc(p.label)).addTo(minimap);
+        js.forEach((j,slot)=>MV.badge(p, j, here.filter(st=>st.journey===j), slot, js.length).addTo(minimap));
+        L.marker([p.lat,p.lon],{icon:L.divIcon({className:'lbl '+(key==='both'?'both':App.journeyClass(key)), html:esc(p.short_label), iconSize:null, iconAnchor:[-9,8]}), interactive:false, keyboard:false}).addTo(minimap);
+        b.push([p.lat,p.lon]); });
       if(b.length===1) minimap.setView(b[0], 7); else minimap.fitBounds(b,{padding:[30,30],maxZoom:8});
     },30);
   }
@@ -663,8 +1016,9 @@ Pages.place = function([id]){
   destroyMini();
   const p=IDX.place[id]; if(!p){ page.innerHTML='<div class="page">'+navbar()+'<h1>Place not found</h1></div>'; return; }
   const stops=D.stops.filter(s=>s.place===id); const docs=D.documents.filter(d=>(d.place||'').toLowerCase().includes(p.label.split(' ')[0].toLowerCase()) );
-  page.innerHTML=`<div class="page">${navbar({right: p.has_coords?`<button onclick="App.go('/map/${id}')">Show on map</button>`:''})}
-    <div class="phase">place record · gazetteer tier ${p.tier||'—'}</div><h1>${esc(p.label)}</h1>
+  const drawable = p.has_coords || (p.constraints||[]).length || (p.candidates||[]).length;
+  page.innerHTML=`<div class="page">${navbar({right: drawable?`<button onclick="App.go('/map/${id}')">${p.has_coords?'Show on map':'Show constraints on map'}</button>`:''})}
+    <div class="phase">place record · gazetteer tier ${p.has_coords? (p.tier||'—') : 'none'}${p.has_coords?'':' · unlocated: '+esc(p.unlocated_kind||'')}</div><h1>${esc(p.label)}</h1>
     ${placeCard(id)}
     ${stops.length?`<h2>Stops at this place</h2><table class="data"><thead><tr><th>Journey</th><th>Stop</th><th>Date as attested</th><th>Precision</th><th>Status</th><th>Story</th></tr></thead><tbody>${stops.map(st=>`<tr><td><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span></td><td>${esc(st.label)}</td><td>${esc(st.date_text)}</td><td><span class="chip plain ${esc(st.date_precision)}">${esc(st.date_precision)}</span></td><td>${chip(st.status)}</td><td>${storyLink(st.story)}</td></tr>`).join('')}</tbody></table>`:'<p class="notice">No itinerary stop is recorded at this place; it appears in the record as a correspondence node, a mention, or an unlocated reference.</p>'}
     ${p.stories.length?`<h2>Story pages</h2><ul>${p.stories.map(s=>`<li>${storyLink(s)}</li>`).join('')}</ul>`:''}
@@ -1218,10 +1572,14 @@ Pages.method = function(seg){
      <h2>Not received</h2><p class="small">The lab’s earlier map models and the previously designed primary-source interface were not among the supplied files and the repository was empty; the Archive tab was therefore designed afresh on the same typed-block logic and can be exchanged for the lab’s own interface, since it reads from <code>data/documents.json</code>.</p>`;
   } else if(sub==='geocoding'){
     body=`<h2>Hierarchy applied</h2><ol>${Object.entries(D.meta.geocoding_tiers).map(([k,v])=>`<li><b>Tier ${k}</b> — ${esc(v)}</li>`).join('')}</ol>
-      <p class="small">GNIS = USGS Geographic Names Information System, Alaska domestic-names file (retrieved 18 Nov 2026); CGNDB = Canadian Geographical Names Database; GeoNames for places outside the US and Canada; Wikidata only as a cross-check and never as sole authority. Every connector is schematic (great-circle or straight) because no route was traced from a historical map. Upriver points on the Buckland are projections of Quackenbush’s river-mile estimates along a schematic axis and carry wide halos.</p>
-      <h2>Every place, with its decision</h2><table class="data"><thead><tr><th>Place (attested)</th><th>Status</th><th>Tier</th><th>Precision</th><th>Lat, lon</th><th>Halo km</th><th>Authority / id</th><th>Why this point is here</th></tr></thead><tbody>${D.places.map(p=>`<tr><td><a href="#/place/${p.id}">${esc(p.label)}</a><div class="small muted">${p.attested.map(a=>'“'+esc(a.form)+'”').join('; ')}</div></td><td>${chip(p.status)}</td><td>${p.tier||'—'}</td><td class="small">${esc(p.precision)}</td><td class="small">${p.has_coords?`${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}`:'—'}</td><td class="small">${p.radius_km||'—'}</td><td class="small">${p.coord_source?`${esc(p.coord_source.authority)}${p.coord_source.id?` · ${p.coord_source.url?`<a href="${esc(p.coord_source.url)}" target="_blank" rel="noopener">${esc(p.coord_source.id)}</a>`:esc(p.coord_source.id)}`:''}`:'—'}</td><td class="small">${esc(p.why)}</td></tr>`).join('')}</tbody></table>
-      <h2>Stops and their dates</h2><table class="data"><thead><tr><th>Stop</th><th>Place</th><th>Date as attested</th><th>Precision</th><th>Status</th><th>Why</th></tr></thead><tbody>${D.stops.map(s=>`<tr><td><span class="tag ${App.journeyClass(s.journey)}">${s.journey}</span> ${esc(s.label)}</td><td><a href="#/place/${s.place}">${esc(IDX.place[s.place].label.split(' (')[0])}</a></td><td class="small">${esc(s.date_text)}</td><td><span class="chip plain ${esc(s.date_precision)}">${esc(s.date_precision)}</span></td><td>${chip(s.status)}</td><td class="small">${esc(s.why)}</td></tr>`).join('')}</tbody></table>
-      <h2>Connectors</h2><table class="data"><thead><tr><th>Segment</th><th>Mode</th><th>Mode status</th><th>Geometry</th><th>Source</th></tr></thead><tbody>${D.segments.map(g=>`<tr><td><span class="tag ${App.journeyClass(g.journey)}">${g.journey}</span> ${esc(IDX.stop[g.frm].label)} → ${esc(IDX.stop[g.to].label)}</td><td>${esc(g.mode)}</td><td class="small">${esc(g.mode_status.replace('_',' '))}</td><td class="small">${esc(g.geometry)}</td><td class="small">${esc(g.source.ref)}: ${esc(g.source.locator||'')}${g.note?`<div class="muted">${esc(g.note)}</div>`:''}</td></tr>`).join('')}</tbody></table>`;
+      <p class="small">GNIS = USGS Geographic Names Information System, Alaska domestic-names file (retrieved 18 Nov 2026); CGNDB = Canadian Geographical Names Database; GeoNames for places outside the US and Canada; Wikidata only as a cross-check and never as sole authority. Every connector is schematic (great-circle or straight) because no route was traced from a historical map. Upriver points on the Buckland are projections of Quackenbush’s river-mile estimates along a schematic axis and carry wide halos. The scale bar on the map is Leaflet’s; the distances quoted by the sources (30, 62, 86, 200 miles) are the writers’ estimates and were not measured here.</p>
+      <p class="small">Map labels use a short form of each attested label (<code>short_label</code>, the model’s display normalisation); records, tooltips and these tables keep the full attested label. A place carrying two attested names for one gazetteer point is flagged ${chip('naming')} beside its status; the flag records naming variance, not a dispute about position. Places without a coordinate carry a sub-kind (${Object.entries(D.meta.unlocated_kinds||{}).map(([k,v])=>`<i>${esc(k)}</i> — ${esc(v)}`).join('; ')}) and are drawn only as the constraints the sources state and the gazetteer homonyms the name has — never as a point.</p>
+      <h2>Every place, with its decision</h2><table class="data"><thead><tr><th>Place (attested)</th><th>Status</th><th>Tier</th><th>Precision</th><th>Lat, lon</th><th>Halo km</th><th>Authority / id</th><th>Why this point is here (or why none is drawn)</th></tr></thead><tbody>${D.places.map(p=>`<tr><td><a href="#/place/${p.id}">${esc(p.label)}</a><div class="small muted">${p.attested.map(a=>'“'+esc(a.form)+'”').join('; ')}</div></td><td>${chip(p.status)}${p.naming?' '+chip('naming'):''}${p.unlocated_kind?` <span class="tag">${esc(p.unlocated_kind)}</span>`:''}</td><td>${p.has_coords?(p.tier||'—'):'none'}</td><td class="small">${esc(p.precision)}</td><td class="small">${p.has_coords?`${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}`:'—'}</td><td class="small">${p.radius_km||'—'}</td><td class="small">${p.coord_source?`${esc(p.coord_source.authority)}${p.coord_source.id?` · ${p.coord_source.url?`<a href="${esc(p.coord_source.url)}" target="_blank" rel="noopener">${esc(p.coord_source.id)}</a>`:esc(p.coord_source.id)}`:''}`:'—'}</td><td class="small">${esc(p.why)}</td></tr>`).join('')}</tbody></table>
+      <h2>Unlocated places: constraints drawn and candidates listed</h2><p class="small">A constraint is a spatial statement a provided text makes about a place that cannot be located; it is drawn around its located anchor (a dashed ring for a stated distance, a leader label for ‘near’, a bracket for an equation with a located place) and never as a point. Candidates are the gazetteer records that bear the attested name; all are drawn alike and none is chosen.</p>
+      <table class="data"><thead><tr><th>Place</th><th>Sub-kind</th><th>Constraint</th><th>Statement (verbatim)</th><th>Source</th><th>Model note</th></tr></thead><tbody>${D.places.filter(p=>!p.has_coords).flatMap(p=>{ const rows=(p.constraints||[]).map(c=>`<tr><td><a href="#/place/${p.id}">${esc(p.label)}</a></td><td><span class="tag">${esc(p.unlocated_kind)}</span></td><td class="small">${esc(c.kind)}${c.miles?` · ${c.miles} mi from`:' ·'} ${esc((IDX.place[c.anchor]||{}).short_label||c.anchor)}</td><td class="serif">“${esc(c.quote)}”</td><td class="small">${esc(c.speaker)} · ${App.refLinkShort(c.ref)}</td><td class="small">${esc(c.model_note)}</td></tr>`); if((p.candidates||[]).length) rows.push(`<tr><td><a href="#/place/${p.id}">${esc(p.label)}</a></td><td><span class="tag">${esc(p.unlocated_kind)}</span></td><td class="small">candidates</td><td class="small">${p.candidates.map(c=>`GNIS <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.id)}</a> ${esc(c.name)} (${esc(c.feature_class)}; ${esc(c.county||'')}) ${c.lat.toFixed(4)}, ${c.lon.toFixed(4)}`).join('<br>')}</td><td class="small">USGS GNIS, Alaska file${D.meta.gnis_candidates_checked_against_file?' — re-checked against the file at build':''}</td><td class="small">${esc(p.candidates_note)}</td></tr>`); if(!rows.length) rows.push(`<tr><td><a href="#/place/${p.id}">${esc(p.label)}</a></td><td><span class="tag">${esc(p.unlocated_kind)}</span></td><td class="small">—</td><td class="small muted">no spatial statement in the sources</td><td></td><td class="small">${esc(p.why)}</td></tr>`); return rows; }).join('')}</tbody></table>
+      <h2>Stops and their dates</h2><table class="data"><thead><tr><th>Stop</th><th>Place</th><th>Date as attested</th><th>Precision</th><th>Status</th><th>Why</th></tr></thead><tbody>${D.stops.map(s=>`<tr><td><span class="tag ${App.journeyClass(s.journey)}">${s.journey}</span> <b class="seq ${App.journeyClass(s.journey)}">${s.seq}</b> ${esc(s.label)} <a class="small" href="#/map/stop/${s.id}">on the map</a></td><td><a href="#/place/${s.place}">${esc(IDX.place[s.place].label.split(' (')[0])}</a></td><td class="small">${esc(s.date_text)}</td><td><span class="chip plain ${esc(s.date_precision)}">${esc(s.date_precision)}</span></td><td>${chip(s.status)}${s.naming?' '+chip('naming'):''}</td><td class="small">${esc(s.why)}</td></tr>`).join('')}</tbody></table>
+      <h2>Connectors</h2><p class="small">An <i>out-and-back</i> is a side trip whose return passes through a named place before the next stop; the connector is drawn through that place (via) instead of asserting a through-route the sources deny. Where two or more connectors share the same pair of places (Seattle–Nome in both years, for instance) they are drawn side by side, 4 px apart, in the order 1907 outward, 1907 return, 1908 outward, 1908 return.</p>
+      <table class="data"><thead><tr><th>Segment</th><th>Via (out-and-back)</th><th>Mode</th><th>Mode status</th><th>Geometry</th><th>Source</th></tr></thead><tbody>${D.segments.map(g=>`<tr><td><span class="tag ${App.journeyClass(g.journey)}">${g.journey}</span> ${esc(IDX.stop[g.frm].label)} → ${esc(IDX.stop[g.to].label)}</td><td class="small">${(g.via||[]).length? g.via.map(v=>`via ${esc((IDX.place[v.place]||{}).short_label||v.place)} (${v.status==='stated'?`stated: <span class="serif">“${esc(v.quote)}”</span> · ${App.refLinkShort(v.ref)}`:'inferred'})`).join('<br>') : '—'}</td><td>${esc(g.mode)}</td><td class="small">${esc(g.mode_status.replace('_',' '))}</td><td class="small">${esc(g.geometry)}</td><td class="small">${esc(g.source.ref)}: ${esc(g.source.locator||'')}${g.note?`<div class="muted">${esc(g.note)}</div>`:''}</td></tr>`).join('')}</tbody></table>`;
   } else if(sub==='network'){
     const views=D.network.views||[];
     body=`<h2>Views</h2><p class="small">Five views over one data set. The rule and caveat printed here are the same strings the view header and the side panel show (<code>network.views</code> in the data), so the three cannot diverge. Views marked <span class="tag model">derived</span> are computed from the asserted edges or from name matching and assert no tie.</p>

@@ -11,7 +11,8 @@
    "ref": "tale",
    "locator": "'left for Nome, Alaska, by way of Seattle'"
   },
-  "note": "Rail is implied by LSQ's 1907 fare inquiry ('Return RR fare to Seattle'), but the actual conveyance is not stated."
+  "note": "Rail is implied by LSQ's 1907 fare inquiry ('Return RR fare to Seattle'), but the actual conveyance is not stated.",
+  "via": []
  },
  {
   "id": "g1907_02",
@@ -25,7 +26,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.88 via PI: arrives Dawson 19 July"
   },
-  "note": "No provided source describes how LSQ reached Dawson from Seattle. Drawn as a schematic great-circle line only."
+  "note": "No provided source describes how LSQ reached Dawson from Seattle. Drawn as a schematic great-circle line only.",
+  "via": []
  },
  {
   "id": "g1907_03",
@@ -39,7 +41,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI: 'continues on to Fort Gibbon'"
   },
-  "note": "Dawson and Fort Gibbon both lie on the Yukon; river travel is inferred from the sequence, not stated."
+  "note": "Dawson and Fort Gibbon both lie on the Yukon; river travel is inferred from the sequence, not stated.",
+  "via": []
  },
  {
   "id": "g1907_04",
@@ -53,7 +56,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1907_05",
@@ -67,7 +71,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI: 'LSQ steams to St Michaels'"
   },
-  "note": "The PI's verb 'steams' is taken as the mode."
+  "note": "The PI's verb 'steams' is taken as the mode.",
+  "via": []
  },
  {
   "id": "g1907_06",
@@ -81,7 +86,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1907_07",
@@ -95,7 +101,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI"
   },
-  "note": "Return to Nome implied."
+  "note": "Return to Nome implied.",
+  "via": []
  },
  {
   "id": "g1907_08",
@@ -109,7 +116,16 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI: 'LSQ leaves Nome on “Corwin,”'"
   },
-  "note": "Drawn from the Solomon River side trip back through Nome schematically."
+  "note": "Out-and-back: drawn from the Solomon River side trip back through Nome, where the Corwin was boarded; no direct Solomon River–Keewalik passage is asserted.",
+  "via": [
+   {
+    "place": "pl_nome",
+    "status": "stated",
+    "quote": "LSQ leaves Nome on “Corwin,”",
+    "ref": "pi_timeline",
+    "place_label": "Nome"
+   }
+  ]
  },
  {
   "id": "g1907_09",
@@ -123,7 +139,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI"
   },
-  "note": "Return “to ‘the spit.’” implied."
+  "note": "Return “to ‘the spit.’” implied.",
+  "via": []
  },
  {
   "id": "g1907_10",
@@ -137,7 +154,16 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI"
   },
-  "note": "Coastal passage across Eschscholtz Bay; not traced."
+  "note": "Out-and-back: the PI's timeline has LSQ return from Candle “to ‘the spit.’” before the passage to Elephant Point; drawn Candle → Keewalik → Elephant Point. Coastal passage across Eschscholtz Bay; not traced.",
+  "via": [
+   {
+    "place": "pl_keewalik",
+    "status": "stated",
+    "quote": "returned “to ‘the spit.’”",
+    "ref": "pi_timeline",
+    "place_label": "Keewalik ('the spit')"
+   }
+  ]
  },
  {
   "id": "g1907_11",
@@ -151,7 +177,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI: 'enter Buckland R, only go 15 mi'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1907_12",
@@ -165,7 +192,16 @@
    "ref": "pub_bamnh26",
    "locator": "p.90 via PI"
   },
-  "note": "The 19 September description of ice around the Bay and the frozen bluff implies a return to Elephant Point before Keewalik; not drawn as a separate stop."
+  "note": "Out-and-back (inferred): the 19 September description of ice around the Bay and the frozen bluff implies a return to Elephant Point before Keewalik; drawn through Elephant Point with the inferred dash, not as a separate stop.",
+  "via": [
+   {
+    "place": "pl_elephant_point",
+    "status": "inferred",
+    "quote": null,
+    "ref": null,
+    "place_label": "Elephant Point"
+   }
+  ]
  },
  {
   "id": "g1907_13",
@@ -179,7 +215,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.90 via PI: 'Takes Corwin back to Nome'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1907_14",
@@ -193,7 +230,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.90 via PI"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1907_15",
@@ -207,7 +245,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.90 via PI: reaches NY 2 November"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_01",
@@ -221,7 +260,8 @@
    "ref": "d_19080519_quackenbush_bumpus",
    "locator": "'via Montreal and the Canadian Pacific'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_02",
@@ -235,7 +275,8 @@
    "ref": "d_19080519_quackenbush_bumpus",
    "locator": "as above"
   },
-  "note": "Great-circle line, not the railway alignment."
+  "note": "Great-circle line, not the railway alignment.",
+  "via": []
  },
  {
   "id": "g1908_03",
@@ -249,7 +290,8 @@
    "ref": "d_19080624_quackenbush_bumpus",
    "locator": "'the trip from Seattle to Nome occupied seventeen days'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_04",
@@ -263,7 +305,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'the head of the Seward Peninsula R.R. at Lane's Landing'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_05",
@@ -277,7 +320,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'crossed the peninsula by wagon to Candle'"
   },
-  "note": "The 1908 plan (27 Mar) had anticipated 'rail and on horseback'; the report says wagon."
+  "note": "The 1908 plan (27 Mar) had anticipated 'rail and on horseback'; the report says wagon.",
+  "via": []
  },
  {
   "id": "g1908_06",
@@ -291,7 +335,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'On June 29th we rowed down the Keewalik River to Keewalik'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_07",
@@ -305,7 +350,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'Kotzebue Sound and Eschscholtz Bay were still packed with ice but we fortunately found a way through'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_08",
@@ -319,7 +365,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'I crossed Eschscholtz Bay to a cut bluff on the north side'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_09",
@@ -333,7 +380,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'I returned to Keewalik'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_10",
@@ -347,7 +395,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'with the canoe in tow, on July 20th'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_11",
@@ -361,7 +410,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'the dory was anchored 8 miles up the river'"
   },
-  "note": "Along the river, not traced."
+  "note": "Along the river, not traced.",
+  "via": []
  },
  {
   "id": "g1908_12",
@@ -375,7 +425,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'this necessitated much portaging and made progress slow'"
   },
-  "note": "Positions of both ends approximate."
+  "note": "Positions of both ends approximate.",
+  "via": []
  },
  {
   "id": "g1908_13",
@@ -389,7 +440,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "as above"
   },
-  "note": "Positions approximate."
+  "note": "Positions approximate.",
+  "via": []
  },
  {
   "id": "g1908_14",
@@ -403,7 +455,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'On the return trip I ascended the West Fork a few miles'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_15",
@@ -417,7 +470,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'on August 5th reached the mouth of the river'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_16",
@@ -431,7 +485,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'crossed the Buckland estuary to the extreme eastern end of Eschscholtz Bay'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_17",
@@ -445,7 +500,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'cruised along the south shore of Eschscholtz Bay'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_18",
@@ -459,7 +515,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'On August 11th I crossed to the north shore ... set out on foot with likght [sic] packs'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_19",
@@ -473,7 +530,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'crossed Hotham Peninsula to Hotham Inlet'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_20",
@@ -487,7 +545,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'On August 17th we recrossed Hotham Peninsula to Eschscholtz Bay'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_21",
@@ -501,7 +560,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.91 via PI: 'LSQ & Hoffman sail back to Keewalik'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_22",
@@ -515,7 +575,8 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'took the first boat for Nome (on August 29th)'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_23",
@@ -529,7 +590,8 @@
    "ref": "pub_bamnh26",
    "locator": "p.91 via PI: 'LSQ boats back to Nome, Seattle'"
   },
-  "note": null
+  "note": null,
+  "via": []
  },
  {
   "id": "g1908_24",
@@ -543,6 +605,7 @@
    "ref": "d_19081001_quackenbush_bumpus_report",
    "locator": "'reached New York on September 23rd'"
   },
-  "note": null
+  "note": null,
+  "via": []
  }
 ]

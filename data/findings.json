@@ -11,7 +11,8 @@
   "stories": [
    "story_06_anderson"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_reed_startsman_date",
@@ -25,7 +26,8 @@
   "stories": [
    "story_03_claim"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_departure_1908",
@@ -43,7 +45,8 @@
   "stops": [
    "s1908_01"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_crossing_days",
@@ -61,7 +64,8 @@
    "s1908_05",
    "s1908_06"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_buckland_miles",
@@ -78,7 +82,8 @@
   "stops": [
    "s1908_14"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_nome_five_days",
@@ -95,22 +100,27 @@
    "s1907_07",
    "s1907_08"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_lanes_landing_shelton",
   "kind": "naming",
   "title": "Railhead: 'Lane's Landing' (LSQ) vs 'Shelton' (Bulletin via PI)",
-  "text": "Two names for the head of the Seward Peninsula Railroad occur in two provided sources. GNIS records 'Shelton (historical)' but has no entry for Lane's Landing. Whether the names denote one place is not stated in the provided material.",
+  "text": "Two names for the head of the Seward Peninsula Railroad occur in two provided sources: LSQ's letter of 24 June 1908 is headed Lane's Landing; the Bulletin (via the PI) has 'train to Shelton'. GNIS records 'Shelton (historical)' and has no entry for Lane's Landing. The PI's terse timeline writes 'LSQ writes from Shelton' for the Lane's Landing letter, so one provided source treats the names as one place. The place record is therefore placed on the GNIS point as verified and flagged 'naming' for the variance; it is not a dispute about where he was.",
   "refs": [
    "d_19080624_quackenbush_bumpus",
-   "pub_bamnh26"
+   "pub_bamnh26",
+   "pi_timeline"
   ],
   "stories": [
    "story_18_crossing"
   ],
   "places": [
    "pl_lanes_landing"
+  ],
+  "related": [
+   "f_shelton_equation"
   ],
   "people": []
  },
@@ -128,7 +138,8 @@
   "places": [
    "pl_hotham_peninsula"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_keewalik_spelling",
@@ -141,7 +152,8 @@
   "places": [
    "pl_keewalik"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_name_variants",
@@ -152,7 +164,8 @@
    "d_19070629_bumpus_quackenbush_instructions",
    "d_19061230_startsman_graham_reed"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_grants_camp",
@@ -173,7 +186,8 @@
   "people": [
    "p_grant",
    "p_stone"
-  ]
+  ],
+  "related": []
  },
  {
   "id": "f_travel_with_grant",
@@ -193,7 +207,8 @@
   "people": [
    "p_grant",
    "p_quackenbush"
-  ]
+  ],
+  "related": []
  },
  {
   "id": "f_chambers_date",
@@ -207,7 +222,8 @@
   "stories": [
    "story_02_frozen_meat"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_inventory",
@@ -221,7 +237,8 @@
   "stories": [
    "story_19_excavation"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "f_1909_halves",
@@ -240,7 +257,8 @@
    "p_morgan",
    "p_pyne_percy",
    "p_sherwood"
-  ]
+  ],
+  "related": []
  },
  {
   "id": "f_shelton_equation",
@@ -257,6 +275,9 @@
   "places": [
    "pl_lanes_landing"
   ],
+  "related": [
+   "f_lanes_landing_shelton"
+  ],
   "people": []
  },
  {
@@ -272,7 +293,8 @@
   ],
   "people": [
    "p_grant"
-  ]
+  ],
+  "related": []
  },
  {
   "id": "f_schubert_struck",
@@ -287,7 +309,8 @@
   ],
   "people": [
    "p_schubert"
-  ]
+  ],
+  "related": []
  },
  {
   "id": "f_removal_slip_wording",
@@ -303,7 +326,8 @@
   ],
   "people": [
    "p_quackenbush"
-  ]
+  ],
+  "related": []
  },
  {
   "id": "f_1906_folder",
@@ -318,7 +342,8 @@
   ],
   "people": [
    "p_osborn"
-  ]
+  ],
+  "related": []
  },
  {
   "id": "f_varnum_struck",
@@ -334,7 +359,8 @@
   "people": [
    "p_varnum",
    "p_grant"
-  ]
+  ],
+  "related": []
  },
  {
   "id": "a_osborn_first_page",
@@ -347,7 +373,8 @@
   "stories": [
    "story_06_anderson"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_margin_note",
@@ -360,7 +387,8 @@
   "stories": [
    "story_05_newyork_deliberation"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_removal_slip",
@@ -375,7 +403,8 @@
    "story_07_funding",
    "story_15_interlude"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_no_enclosure",
@@ -388,7 +417,8 @@
   "stories": [
    "story_07_funding"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_paper_granger",
@@ -402,7 +432,8 @@
   "stories": [
    "story_15_interlude"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_ms_untranscribed",
@@ -415,7 +446,8 @@
   "stories": [
    "story_15_interlude"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_bulletin_text",
@@ -425,7 +457,8 @@
   "refs": [
    "pub_bamnh26"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_letters_referenced_missing",
@@ -439,7 +472,8 @@
    "d_19140810_grant_lucas",
    "d_nd_note_morgan_acknowledgment"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_conversations",
@@ -455,7 +489,8 @@
    "d_19140804_grant_osborn",
    "d_19081010_grant_bumpus"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_unnamed_people",
@@ -468,7 +503,8 @@
    "d_190802_memorandum_1908_expedition",
    "d_19080225_unsigned_osborn"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_location_withheld",
@@ -487,7 +523,8 @@
    "story_03_claim",
    "story_11_stmichael_nome"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_coffee_creek",
@@ -504,7 +541,8 @@
   "stories": [
    "story_24_afterlife"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_the_map",
@@ -519,7 +557,8 @@
    "story_08_departure_1907",
    "story_23_accounts"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_folders_unknown",
@@ -531,7 +570,8 @@
    "d_19140811_quackenbush_lucas",
    "d_19160502_quackenbush_osborn"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_copies_provenance",
@@ -546,7 +586,8 @@
   "stories": [
    "story_04_seattle_offer"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_two_pi_copies",
@@ -557,7 +598,8 @@
    "d_19070629_bumpus_quackenbush_instructions",
    "d_19070425_bumpus_rathbun"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_tale_fn46",
@@ -567,7 +609,8 @@
   "refs": [
    "tale"
   ],
-  "people": []
+  "people": [],
+  "related": []
  },
  {
   "id": "a_who_is_speaking",
@@ -575,6 +618,7 @@
   "title": "Whose prose is on this site",
   "text": "Verbatim blocks: the historical writers, as transcribed by the PI (Rebecca J. H. Woods), with her [sic], [?], [illeg] and colour marks preserved. Summary blocks: the PI's paraphrases. Editorial blocks: the PI's descriptions of the physical documents and her dated research notes. Story backbone: the PI's talk text (2019), quoted verbatim. Gazetteer coordinates: USGS GNIS, CGNDB, GeoNames, with Wikidata cross-checks. Everything else on the site — the selection and ordering of quotations, the typing of blocks, the geocoding decisions, the network rules, the connective labels — is the model's work and is labelled 'model'.",
   "refs": [],
-  "people": []
+  "people": [],
+  "related": []
  }
 ]

@@ -25,7 +25,8 @@
   ],
   "status": "verified",
   "story": "story_08_departure_1907",
-  "why": "Date stated in the Bulletin (via PI) and in the instructions; LSQ's note of the same day survives."
+  "why": "Date stated in the Bulletin (via PI) and in the instructions; LSQ's note of the same day survives.",
+  "naming": false
  },
  {
   "id": "s1907_02",
@@ -49,7 +50,8 @@
   ],
   "status": "inferred",
   "story": "story_08_departure_1907",
-  "why": "Seattle is attested as the way-point but no arrival/departure dates are given. Window bounded by the stated NY departure and Dawson arrival."
+  "why": "Seattle is attested as the way-point but no arrival/departure dates are given. Window bounded by the stated NY departure and Dawson arrival.",
+  "naming": false
  },
  {
   "id": "s1907_03",
@@ -69,7 +71,8 @@
   ],
   "status": "verified",
   "story": "story_09_dawson",
-  "why": "Arrival and duration stated (via PI). How LSQ travelled from Seattle to Dawson is not described in the provided material."
+  "why": "Arrival and duration stated (via PI). How LSQ travelled from Seattle to Dawson is not described in the provided material.",
+  "naming": false
  },
  {
   "id": "s1907_04",
@@ -89,7 +92,8 @@
   ],
   "status": "verified",
   "story": "story_10_fortgibbon_palisades",
-  "why": "Stated via PI. The PI's phrasing ('continues on to') leaves the exact arrival day open; 25 July is the PI's entry date."
+  "why": "Stated via PI. The PI's phrasing ('continues on to') leaves the exact arrival day open; 25 July is the PI's entry date.",
+  "naming": false
  },
  {
   "id": "s1907_05",
@@ -109,7 +113,8 @@
   ],
   "status": "verified",
   "story": "story_10_fortgibbon_palisades",
-  "why": "Place verified by GNIS and by LSQ's distance statement; the day of the examination is not separately stated."
+  "why": "Place verified by GNIS and by LSQ's distance statement; the day of the examination is not separately stated.",
+  "naming": false
  },
  {
   "id": "s1907_06",
@@ -129,7 +134,8 @@
   ],
   "status": "verified",
   "story": "story_11_stmichael_nome",
-  "why": "Both dates stated (via PI)."
+  "why": "Both dates stated (via PI).",
+  "naming": false
  },
  {
   "id": "s1907_07",
@@ -153,7 +159,8 @@
   ],
   "status": "verified",
   "story": "story_11_stmichael_nome",
-  "why": "'Five days' and the 13 August departure do not quite fill 4–13 August; the Bulletin's own wording was not available to resolve this. Flagged in findings."
+  "why": "'Five days' and the 13 August departure do not quite fill 4–13 August; the Bulletin's own wording was not available to resolve this. Flagged in findings.",
+  "naming": false
  },
  {
   "id": "s1907_08",
@@ -173,7 +180,8 @@
   ],
   "status": "verified",
   "story": "story_11_stmichael_nome",
-  "why": "Side trip from Nome; day unstated."
+  "why": "Side trip from Nome; day unstated.",
+  "naming": false
  },
  {
   "id": "s1907_09",
@@ -193,7 +201,8 @@
   ],
   "status": "verified",
   "story": "story_12_keewalik_1907",
-  "why": "Arrival day at Keewalik is not stated; the window runs from the Nome departure to the stated Keewalik departure."
+  "why": "Arrival day at Keewalik is not stated; the window runs from the Nome departure to the stated Keewalik departure.",
+  "naming": false
  },
  {
   "id": "s1907_10",
@@ -213,7 +222,8 @@
   ],
   "status": "verified",
   "story": "story_12_keewalik_1907",
-  "why": "Side trip; day unstated."
+  "why": "Side trip; day unstated.",
+  "naming": false
  },
  {
   "id": "s1907_11",
@@ -237,7 +247,8 @@
   ],
   "status": "verified",
   "story": "story_13_elephant_point_1907",
-  "why": "Arrival date at the Point is not stated; the Buckland excursion (1 Sept) interrupts the stay. The excavation spot within the bluff is not located."
+  "why": "Arrival date at the Point is not stated; the Buckland excursion (1 Sept) interrupts the stay. The excavation spot within the bluff is not located.",
+  "naming": false
  },
  {
   "id": "s1907_12",
@@ -261,7 +272,8 @@
   ],
   "status": "approximate",
   "story": "story_13_elephant_point_1907",
-  "why": "Entry date stated; the 15-mile limit is LSQ's figure; the turning point is not plotted separately."
+  "why": "Entry date stated; the 15-mile limit is LSQ's figure; the turning point is not plotted separately.",
+  "naming": false
  },
  {
   "id": "s1907_13",
@@ -281,7 +293,8 @@
   ],
   "status": "verified",
   "story": "story_14_return_1907",
-  "why": "Return date stated; departure on the Corwin undated."
+  "why": "Return date stated; departure on the Corwin undated.",
+  "naming": false
  },
  {
   "id": "s1907_14",
@@ -301,7 +314,8 @@
   ],
   "status": "inferred",
   "story": "story_14_return_1907",
-  "why": "Only the sequence is attested."
+  "why": "Only the sequence is attested.",
+  "naming": false
  },
  {
   "id": "s1907_15",
@@ -321,7 +335,8 @@
   ],
   "status": "verified",
   "story": "story_14_return_1907",
-  "why": "Presence in Seattle on this date attested by the addressed copy."
+  "why": "Presence in Seattle on this date attested by the addressed copy.",
+  "naming": false
  },
  {
   "id": "s1907_16",
@@ -345,7 +360,8 @@
   ],
   "status": "verified",
   "story": "story_14_return_1907",
-  "why": "Stated via PI."
+  "why": "Stated via PI.",
+  "naming": false
  },
  {
   "id": "s1908_01",
@@ -381,7 +397,8 @@
   ],
   "status": "disputed",
   "story": "story_16_permits_departure",
-  "why": "Three archival statements give 19 May; the Bulletin (as summarised by the PI) says 'toward the end of May'. Both are shown."
+  "why": "Three archival statements give 19 May; the Bulletin (as summarised by the PI) says 'toward the end of May'. Both are shown.",
+  "naming": false
  },
  {
   "id": "s1908_02",
@@ -401,7 +418,8 @@
   ],
   "status": "inferred",
   "story": "story_16_permits_departure",
-  "why": "Routing attested; no stop is described."
+  "why": "Routing attested; no stop is described.",
+  "naming": false
  },
  {
   "id": "s1908_03",
@@ -429,7 +447,8 @@
   ],
   "status": "verified",
   "story": "story_17_seattle_umatilla",
-  "why": "Arrival day in Seattle not stated; departure stated three times."
+  "why": "Arrival day in Seattle not stated; departure stated three times.",
+  "naming": false
  },
  {
   "id": "s1908_04",
@@ -457,7 +476,8 @@
   ],
   "status": "verified",
   "story": "story_17_seattle_umatilla",
-  "why": "Arrival stated; departure inferred as immediate ('I left Nome in such a hurry')."
+  "why": "Arrival stated; departure inferred as immediate ('I left Nome in such a hurry').",
+  "naming": false
  },
  {
   "id": "s1908_05",
@@ -483,9 +503,10 @@
     "locator": "'the head of the Seward Peninsula R.R. at Lane's Landing'"
    }
   ],
-  "status": "disputed",
+  "status": "verified",
+  "naming": true,
   "story": "story_18_crossing",
-  "why": "Place carries two attested names (see place record)."
+  "why": "The place carries two attested names for one gazetteer point (see place record); the flag records naming variance, not a dispute about position."
  },
  {
   "id": "s1908_06",
@@ -509,7 +530,8 @@
   ],
   "status": "inferred",
   "story": "story_18_crossing",
-  "why": "Arrival at Candle computed from the report's 4.5-day crossing; LSQ's letter of 24 June expected 4–5 more days from Lane's Landing, which does not agree (see findings)."
+  "why": "Arrival at Candle computed from the report's 4.5-day crossing; LSQ's letter of 24 June expected 4–5 more days from Lane's Landing, which does not agree (see findings).",
+  "naming": false
  },
  {
   "id": "s1908_07",
@@ -537,7 +559,8 @@
   ],
   "status": "verified",
   "story": "story_18_crossing",
-  "why": "Both dates stated."
+  "why": "Both dates stated.",
+  "naming": false
  },
  {
   "id": "s1908_08",
@@ -565,7 +588,8 @@
   ],
   "status": "verified",
   "story": "story_19_excavation",
-  "why": "Start stated; the end of the excavation is bounded only by the 20 July departure from Keewalik."
+  "why": "Start stated; the end of the excavation is bounded only by the 20 July departure from Keewalik.",
+  "naming": false
  },
  {
   "id": "s1908_09",
@@ -585,7 +609,8 @@
   ],
   "status": "approximate",
   "story": "story_19_excavation",
-  "why": "Position approximate (see place); day unstated."
+  "why": "Position approximate (see place); day unstated.",
+  "naming": false
  },
  {
   "id": "s1908_10",
@@ -609,7 +634,8 @@
   ],
   "status": "verified",
   "story": "story_20_buckland",
-  "why": "Departure stated; arrival inferred."
+  "why": "Departure stated; arrival inferred.",
+  "naming": false
  },
  {
   "id": "s1908_11",
@@ -629,7 +655,8 @@
   ],
   "status": "verified",
   "story": "story_20_buckland",
-  "why": "Stated."
+  "why": "Stated.",
+  "naming": false
  },
  {
   "id": "s1908_12",
@@ -653,7 +680,8 @@
   ],
   "status": "approximate",
   "story": "story_20_buckland",
-  "why": "Date stated; position approximate (river miles)."
+  "why": "Date stated; position approximate (river miles).",
+  "naming": false
  },
  {
   "id": "s1908_13",
@@ -673,7 +701,8 @@
   ],
   "status": "approximate",
   "story": "story_20_buckland",
-  "why": "Position approximate; day unstated."
+  "why": "Position approximate; day unstated.",
+  "naming": false
  },
  {
   "id": "s1908_14",
@@ -697,7 +726,8 @@
   ],
   "status": "disputed",
   "story": "story_20_buckland",
-  "why": "Date stated; distance disputed between the two provided sources (86 vs 'about 80')."
+  "why": "Date stated; distance disputed between the two provided sources (86 vs 'about 80').",
+  "naming": false
  },
  {
   "id": "s1908_15",
@@ -717,7 +747,8 @@
   ],
   "status": "approximate",
   "story": "story_20_buckland",
-  "why": "Day unstated."
+  "why": "Day unstated.",
+  "naming": false
  },
  {
   "id": "s1908_16",
@@ -737,7 +768,8 @@
   ],
   "status": "verified",
   "story": "story_21_bay_survey",
-  "why": "Stated."
+  "why": "Stated.",
+  "naming": false
  },
  {
   "id": "s1908_17",
@@ -757,7 +789,8 @@
   ],
   "status": "approximate",
   "story": "story_21_bay_survey",
-  "why": "Stream unnamed; placed approximately."
+  "why": "Stream unnamed; placed approximately.",
+  "naming": false
  },
  {
   "id": "s1908_18",
@@ -777,7 +810,8 @@
   ],
   "status": "approximate",
   "story": "story_21_bay_survey",
-  "why": "A coastal traverse, represented by its named landmark."
+  "why": "A coastal traverse, represented by its named landmark.",
+  "naming": false
  },
  {
   "id": "s1908_19",
@@ -797,7 +831,8 @@
   ],
   "status": "inferred",
   "story": "story_21_bay_survey",
-  "why": "Dates stated; the peninsula's identification is inferred (see place)."
+  "why": "Dates stated; the peninsula's identification is inferred (see place).",
+  "naming": false
  },
  {
   "id": "s1908_20",
@@ -817,7 +852,8 @@
   ],
   "status": "verified",
   "story": "story_21_bay_survey",
-  "why": "Duration stated; exact shores examined not located."
+  "why": "Duration stated; exact shores examined not located.",
+  "naming": false
  },
  {
   "id": "s1908_21",
@@ -837,7 +873,8 @@
   ],
   "status": "inferred",
   "story": "story_21_bay_survey",
-  "why": "Return crossing stated; storm duration bounded by the 20 August arrival at Keewalik."
+  "why": "Return crossing stated; storm duration bounded by the 20 August arrival at Keewalik.",
+  "naming": false
  },
  {
   "id": "s1908_22",
@@ -861,7 +898,8 @@
   ],
   "status": "verified",
   "story": "story_22_return_1908",
-  "why": "Both dates stated."
+  "why": "Both dates stated.",
+  "naming": false
  },
  {
   "id": "s1908_23",
@@ -885,7 +923,8 @@
   ],
   "status": "inferred",
   "story": "story_22_return_1908",
-  "why": "Only the sequence is attested."
+  "why": "Only the sequence is attested.",
+  "naming": false
  },
  {
   "id": "s1908_24",
@@ -909,7 +948,8 @@
   ],
   "status": "inferred",
   "story": "story_22_return_1908",
-  "why": "Passage through Seattle attested by the freight statement."
+  "why": "Passage through Seattle attested by the freight statement.",
+  "naming": false
  },
  {
   "id": "s1908_25",
@@ -933,6 +973,7 @@
   ],
   "status": "verified",
   "story": "story_22_return_1908",
-  "why": "Stated."
+  "why": "Stated.",
+  "naming": false
  }
 ]

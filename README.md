@@ -12,7 +12,7 @@ A single-file copy is in `dist/quackenbush-journeys-standalone.html`.
 
 | Tab | What it does |
 |---|---|
-| Map | Flat, relief and globe views of the 1907 and 1908 journeys; left panel with layers and a chronological stop list; marker style = source status, halos = uncertainty radius, line style = whether the mode of travel is attested. All connectors are schematic. |
+| Map | Flat, relief and globe views of the 1907 and 1908 journeys. **Follow the journey** steps through the stops (Previous / Next, ← →, route `#/map/stop/<stopId>`) and shows a selected-stop card with the evidence; every stop carries a sequence badge (1907 round, 1908 square-cornered) and every connector a direction arrow; out-and-back side trips are drawn through their return place (`via`), coincident connectors are offset side by side; frame presets (Whole route · Alaska · Kotzebue Sound · Buckland River); legend as a disclosure; scale bar. Unlocated places are never drawn as points: the map draws the constraints the sources state (dashed distance rings, leader labels, brackets, each with its verbatim quotation) and the gazetteer homonyms of an ambiguous name (equal hollow squares, none chosen). Marker form = source status, hue and badge shape = journey, halos = uncertainty radius, line style = whether the mode of travel is attested. All connectors are schematic. |
 | Story | 25 pages; backbone = the PI's prose quoted verbatim; enrichment = typed correspondence blocks; people, documents, findings and sources cross-linked; previous/next navigation. |
 | Network | Five views over one nominalist data set, each with its evidence rule and caveat printed in the header, the side panel and Method › Network: **Persons** (correspondence · relation stated in a document · PI's writing · affiliation, told apart by hue and dash pattern; the Years filter dates correspondence and stated ties by their document), **Institutions** (person–institution bipartite graph; each affiliation carries one verified quotation and is *stated* or *inferred by the model*), **Funding** (every sum or promise of one that a provided text states, amounts exactly as written, no total computed), **Co-attestation** (derived: how many kinds of evidence attest each pair; a 'PI only' filter shows ties no document states) and **Mentions** (derived: sender → person named in the text, by name matching). Node search, ego views; letterhead-based ties are tagged; every tie carries its quotation. |
 | Archive | Primary-source reader: 99 archival items, 402 blocks typed verbatim / researcher's summary / editorial note / annotation, with the PI's marks and colour coding preserved. |
@@ -25,6 +25,11 @@ A single-file copy is in `dist/quackenbush-journeys-standalone.html`.
 `data/*.json`, `data/csv/*.csv`, `data/bundle.js` (same content, for the page), `data/DATA_DICTIONARY.md`.
 `network.json` carries, besides nodes and edges, `views` (rule and caveats of each view), `funding`
 (`data/csv/funding.csv`), the derived `pairs` (`network_pairs.csv`) and `mentions` (`network_mentions.csv`).
+`places.json` carries, for every place, the model's `short_label` (map labels only) and, for places without a
+coordinate, `unlocated_kind` (withheld | contradictory | ambiguous | not_geocoded), `constraints[]` (the spatial
+statements a provided text makes, each with its verified quotation and a model note on what the geometry can show)
+and `candidates[]` (GNIS records bearing the attested name, re-checked against the GNIS file at build).
+`segments.json` carries `via[]` for out-and-back legs (status stated with a verified quotation, or inferred).
 Inputs are identified by SHA-256 in `data/source/input_files_sha256.jsonl`.
 
 ## Rebuilding
@@ -42,7 +47,11 @@ are verified: tie and funding evidence, Tale excerpts (which must also end at a 
 boundary), the PI's Cast lines and characterisations, and every quoted fragment inside the model's own
 prose (model notes, place/stop/segment fields, findings, roles, labels, record notes: about 450 spans;
 the count is printed as `verified_quotations` and shown on Method › Data). Changing one letter inside any
-quoted span makes the build exit 1 naming the table, record and field.
+quoted span makes the build exit 1 naming the table, record and field. Constraint quotations and stated `via`
+quotations are verified in the same way, and every gazetteer candidate (id, name, class, county, map, coordinates)
+is re-checked against the GNIS Alaska file when it is present (`GNIS_AK_FILE`, or the scratchpad copy; a warning,
+not an error, when absent). After editing an authored module in place, clear `scripts/authored/__pycache__` if a
+file was restored with its old size and mtime, or Python may import stale bytecode.
 
 `tests/smoke.js` renders every route headlessly and asserts the behaviour of each feature (network views,
 filters, search, person pages, Method tables); it exits non-zero on any JavaScript error, crawl failure or
