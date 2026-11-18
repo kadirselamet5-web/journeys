@@ -49,7 +49,7 @@
   "mentions": [
    "p_chilberg"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_03_claim",
    "story_04_seattle_offer"
@@ -79,7 +79,7 @@
   "form": "copy",
   "place": null,
   "title": "Startsman and E.W. Graham to Reed",
-  "note": "Osborn's draft of 16 April 1907 calls this 'their letter from Nome of December 30, 1906'; the PI header itself gives no place.",
+  "note": "Osborn's draft of 16 April 1907 calls this 'their letter from Nome of Decemver [sic] 30, 1906' (as transcribed); the PI header itself gives no place.",
   "paragraph_index": 17,
   "collection": "Central Archives 590, Box 162. Folder: “Alaska Mammoth Exp. 1906”",
   "archive": "Central Archives 590, Box 162. Folder: “Alaska Mammoth Exp. 1906”",
@@ -172,7 +172,7 @@
   "mentions": [
    "p_old_indian"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_03_claim"
   ],
@@ -228,7 +228,7 @@
   "mentions": [
    "p_startsman"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_03_claim",
    "story_04_seattle_offer"
@@ -335,7 +335,7 @@
   "mentions": [
    "p_harlan_smith"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_04_seattle_offer"
   ],
@@ -504,7 +504,7 @@
    "p_sherwood",
    "p_startsman"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_05_newyork_deliberation"
   ],
@@ -556,7 +556,7 @@
   "mentions": [
    "p_osborn"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_04_seattle_offer"
   ],
@@ -782,7 +782,7 @@
    "p_schubert",
    "p_startsman"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_05_newyork_deliberation"
   ],
@@ -790,6 +790,7 @@
    "tl020"
   ],
   "findings": [
+   "f_schubert_struck",
    "a_margin_note"
   ]
  },
@@ -946,7 +947,7 @@
    "p_quackenbush",
    "p_startsman"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_05_newyork_deliberation"
   ],
@@ -1061,7 +1062,7 @@
    "p_meany",
    "p_startsman"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_05_newyork_deliberation"
   ],
@@ -1148,7 +1149,7 @@
   },
   "order": 9,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_05_newyork_deliberation",
    "story_08_departure_1907"
@@ -1209,7 +1210,7 @@
   "mentions": [
    "p_anderson"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_06_anderson"
   ],
@@ -1259,7 +1260,7 @@
   "mentions": [
    "p_osborn"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_06_anderson"
   ],
@@ -1356,7 +1357,7 @@
   },
   "order": 12,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_05_newyork_deliberation"
   ],
@@ -1404,7 +1405,7 @@
   },
   "order": 13,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_06_anderson"
   ],
@@ -1454,7 +1455,7 @@
   "mentions": [
    "p_bumpus"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_06_anderson"
   ],
@@ -1512,7 +1513,7 @@
   },
   "order": 15,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_06_anderson"
   ],
@@ -1647,7 +1648,7 @@
    "p_reed",
    "p_startsman"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_06_anderson"
   ],
@@ -1723,7 +1724,7 @@
   },
   "order": 17,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_06_anderson"
   ],
@@ -1883,7 +1884,7 @@
    "p_ripley",
    "p_stone"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_06_anderson"
   ],
@@ -1892,6 +1893,7 @@
   ],
   "findings": [
    "f_grants_camp",
+   "f_1906_folder",
    "a_osborn_first_page"
   ]
  },
@@ -2023,7 +2025,7 @@
    "p_grant",
    "p_varnum"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_06_anderson"
   ],
@@ -2032,6 +2034,7 @@
   ],
   "findings": [
    "f_reed_startsman_date",
+   "f_varnum_struck",
    "a_copies_provenance"
   ]
  },
@@ -2088,7 +2091,7 @@
    "p_pyne_percy",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -2151,7 +2154,7 @@
    "p_morgan",
    "p_osborn"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -2233,7 +2236,7 @@
    "p_chilberg",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding",
    "story_11_stmichael_nome"
@@ -2344,7 +2347,7 @@
    "p_pyne_percy",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding",
    "story_11_stmichael_nome"
@@ -2530,7 +2533,7 @@
    "p_osborn",
    "p_sherwood"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding",
    "story_08_departure_1907",
@@ -2624,7 +2627,7 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -2684,12 +2687,13 @@
   },
   "order": 26,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
   "timeline": [],
   "findings": [
+   "f_removal_slip_wording",
    "a_removal_slip"
   ]
  },
@@ -2744,7 +2748,7 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -2814,7 +2818,7 @@
    "p_grant",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -2863,7 +2867,7 @@
    "p_reed",
    "p_startsman"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding",
    "story_08_departure_1907"
@@ -2915,7 +2919,7 @@
   "mentions": [
    "p_morgan"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -2975,7 +2979,7 @@
   "mentions": [
    "p_morgan"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -3021,7 +3025,7 @@
   },
   "order": 32,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -3069,7 +3073,7 @@
   },
   "order": 33,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -3139,7 +3143,7 @@
   "mentions": [
    "p_morgan"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -3191,7 +3195,7 @@
    "p_morgan",
    "p_sturgis"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -3241,7 +3245,7 @@
   "mentions": [
    "p_osborn"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_07_funding"
   ],
@@ -3300,7 +3304,7 @@
   },
   "order": 37,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_14_return_1907"
   ],
@@ -3350,7 +3354,7 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_14_return_1907"
   ],
@@ -3399,7 +3403,7 @@
   },
   "order": 39,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_14_return_1907"
   ],
@@ -3467,7 +3471,7 @@
    "p_osborn",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -3549,7 +3553,7 @@
    "p_grant",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_13_elephant_point_1907",
    "story_15_interlude"
@@ -3609,7 +3613,7 @@
   },
   "order": 42,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_13_elephant_point_1907",
    "story_15_interlude"
@@ -3669,7 +3673,7 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_13_elephant_point_1907",
    "story_15_interlude"
@@ -3736,7 +3740,7 @@
   },
   "order": 44,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -3805,7 +3809,7 @@
   "mentions": [
    "p_granger"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -4297,7 +4301,7 @@
   "mentions": [
    "p_maddren"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_12_keewalik_1907",
    "story_13_elephant_point_1907",
@@ -4360,7 +4364,7 @@
   },
   "order": 47,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -4406,7 +4410,7 @@
   },
   "order": 48,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -4501,7 +4505,7 @@
   },
   "order": 49,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -4559,7 +4563,7 @@
   },
   "order": 50,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -4623,7 +4627,7 @@
   },
   "order": 51,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude",
    "story_20_buckland"
@@ -4670,7 +4674,7 @@
   },
   "order": 52,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -4799,7 +4803,7 @@
   },
   "order": 53,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude",
    "story_19_excavation"
@@ -4850,7 +4854,7 @@
   },
   "order": 54,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -4909,7 +4913,7 @@
   },
   "order": 55,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_15_interlude"
   ],
@@ -4970,7 +4974,7 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5020,7 +5024,7 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5068,7 +5072,7 @@
   },
   "order": 58,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5135,7 +5139,7 @@
   },
   "order": 59,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5196,7 +5200,7 @@
   },
   "order": 60,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5255,7 +5259,7 @@
   },
   "order": 61,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5312,7 +5316,7 @@
   },
   "order": 62,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5372,7 +5376,7 @@
    "d_19080520_permit_merriam"
   ],
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5420,7 +5424,7 @@
   },
   "order": 64,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5475,7 +5479,7 @@
   },
   "order": 65,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_16_permits_departure"
   ],
@@ -5533,7 +5537,7 @@
   },
   "order": 66,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_17_seattle_umatilla"
   ],
@@ -5591,7 +5595,7 @@
   },
   "order": 67,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_17_seattle_umatilla",
    "story_18_crossing"
@@ -5601,7 +5605,8 @@
   ],
   "findings": [
    "f_crossing_days",
-   "f_lanes_landing_shelton"
+   "f_lanes_landing_shelton",
+   "f_shelton_equation"
   ]
  },
  {
@@ -5663,7 +5668,7 @@
   },
   "order": 68,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_18_crossing",
    "story_19_excavation"
@@ -5712,7 +5717,7 @@
   },
   "order": 69,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_18_crossing"
   ],
@@ -5916,7 +5921,7 @@
    "p_quinn",
    "p_settlements_unnamed"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_17_seattle_umatilla",
    "story_18_crossing",
@@ -5977,7 +5982,7 @@
   },
   "order": 71,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_22_return_1908"
   ],
@@ -6025,7 +6030,7 @@
   },
   "order": 72,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_22_return_1908"
   ],
@@ -6096,7 +6101,7 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_22_return_1908"
   ],
@@ -6150,7 +6155,7 @@
    "p_morgan",
    "p_pyne_percy"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6200,7 +6205,7 @@
   "mentions": [
    "p_pyne_percy"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6252,7 +6257,7 @@
    "p_osborn",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6260,7 +6265,8 @@
    "tl144"
   ],
   "findings": [
-   "f_departure_1908"
+   "f_departure_1908",
+   "f_1909_halves"
   ]
  },
  {
@@ -6305,14 +6311,16 @@
    "p_lanier",
    "p_pyne_percy"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
   "timeline": [
    "tl144"
   ],
-  "findings": []
+  "findings": [
+   "f_1909_halves"
+  ]
  },
  {
   "id": "d_19090121_sherwood_pyne",
@@ -6353,7 +6361,7 @@
   },
   "order": 78,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6411,7 +6419,7 @@
   },
   "order": 79,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6469,14 +6477,16 @@
   },
   "order": 80,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
   "timeline": [
    "tl144"
   ],
-  "findings": []
+  "findings": [
+   "f_1909_halves"
+  ]
  },
  {
   "id": "d_19090123_sherwood_pyne",
@@ -6517,7 +6527,7 @@
   },
   "order": 81,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6565,7 +6575,7 @@
   },
   "order": 82,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6623,7 +6633,7 @@
   },
   "order": 83,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6671,7 +6681,7 @@
   },
   "order": 84,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6717,7 +6727,7 @@
   },
   "order": 85,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6774,7 +6784,7 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_23_accounts"
   ],
@@ -6832,7 +6842,7 @@
   "mentions": [
    "p_andrews"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -6891,7 +6901,7 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7006,7 +7016,7 @@
    "p_mathews_jf",
    "p_woods_ah"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7102,7 +7112,7 @@
   "mentions": [
    "p_lucas"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7224,10 +7234,11 @@
   "order": 91,
   "mentions": [
    "p_gilmore",
+   "p_matthew",
    "p_osborn",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7333,7 +7344,7 @@
    "p_matthew",
    "p_osborn"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7428,7 +7439,7 @@
    "p_mathews_jf",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7533,7 +7544,7 @@
   },
   "order": 94,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7618,11 +7629,12 @@
   "order": 95,
   "mentions": [
    "p_gilmore",
+   "p_matthew",
    "p_nelson",
    "p_peale",
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7686,7 +7698,7 @@
   },
   "order": 96,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7752,7 +7764,7 @@
   },
   "order": 97,
   "mentions": [],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
@@ -7819,11 +7831,13 @@
   "mentions": [
    "p_quackenbush"
   ],
-  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded",
+  "mentions_method": "automatic name-variant match on the transcription text (model); senders and recipients excluded; recall is incomplete. Guards: 'Doctor Matthew' / 'Dr. Matthew(s)' is routed to W. D. Matthew whatever the year; a bare 'Matthews' / 'Mathews' goes to J. F. Mathews in items dated 1914 or later and to W. D. Matthew before; a bare 'Lucas' in items dated before 1910 is routed to the 1907 Brooklyn Museum mention, not to F. A. Lucas; 'Pyne' with 'Momo' in the text adds M. T. Pyne.",
   "stories": [
    "story_24_afterlife"
   ],
   "timeline": [],
-  "findings": []
+  "findings": [
+   "f_eastern_hemisphere"
+  ]
  }
 ]

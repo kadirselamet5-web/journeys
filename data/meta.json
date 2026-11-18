@@ -45,9 +45,13 @@
   "stories": 25,
   "timeline": 73,
   "itinerary": 27,
-  "edges": 190,
+  "edges": 186,
   "published": 35,
-  "findings": 32
+  "findings": 39,
+  "verified_quotations": 450,
+  "funding_edges": 30,
+  "coattestation_pairs": 72,
+  "mention_edges": 120
  },
  "block_types": {
   "verbatim": "words of the historical writer, as transcribed",
@@ -68,5 +72,12 @@
   "3": "historical maps/charts — none available (1906 Post Route Map not provided)",
   "4": "Quackenbush's distance/direction statements",
   "5": "approximate placement with large uncertainty radius"
+ },
+ "quotation_classes": {
+  "tie evidence": "every quotation on a stated / PI / affiliation tie is found verbatim in the sources (build fails otherwise)",
+  "funding": "every funding edge quotes a sum or promise verbatim",
+  "Tale excerpts": "every story excerpt is an exact substring of the Tale and ends at a sentence or quotation boundary",
+  "Cast lines and characterisations": "every pi_characterisation and characterisation is a verbatim line of the PI's texts",
+  "quoted fragments in authored prose": "450 quoted spans in model notes, place/stop/segment fields, findings, roles, variants, addresses, institutions, published excerpts and notes, tie labels, and record notes are verified (allow-list of quoted vocabulary, none of it currently needed: approximate, disputed, inferred, model, unlocated, verified, via PI)"
  }
 }

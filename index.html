@@ -198,17 +198,30 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
 .docmeta b{color:var(--muted);font-weight:600;display:block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
 /* network */
 #network{display:grid;grid-template-columns:1fr 380px;height:100%}
-#netstage{position:relative;background:var(--surface)}
-#netstage svg{width:100%;height:100%;display:block}
-#netcontrols{position:absolute;top:.6rem;left:.6rem;background:var(--surface);opacity:.97;border:1px solid var(--rule);border-radius:var(--radius);padding:.6rem .8rem;font-size:.84rem;z-index:5;box-shadow:var(--shadow);max-width:330px}
+#netstage{position:relative;background:var(--surface);display:grid;grid-template-rows:auto auto minmax(0,1fr);min-height:0;overflow:hidden}
+#netsvg{width:100%;height:100%;min-height:0;display:block}
+#netcontrols{position:static;background:var(--surface);border-bottom:1px solid var(--rule);padding:.45rem .8rem .35rem;font-size:.84rem}
 #netcontrols label{display:inline-flex;align-items:center;gap:.35rem;margin:.1rem .6rem .1rem 0}
-#netcontrols .row{margin:.2rem 0}
+#netcontrols .row{margin:.15rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .6rem}
+#netcontrols .row b{margin-right:.1rem}
+#netcontrols .row>span,#netcontrols .row>label,#netcontrols .row>b{flex:none;white-space:nowrap}
+#netcontrols .row>span.muted{white-space:normal}
+#netcontrols .find{margin-left:auto}
+#netcontrols .find input{min-width:12rem}
+#netviewhead{padding:.35rem .8rem;border-bottom:1px solid var(--rule);font-size:.84rem;background:var(--paper);display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem .6rem}
+#netviewhead .rule{color:var(--ink-2)}
 #netside{border-left:1px solid var(--rule);overflow:auto;padding:1rem 1.1rem 3rem;background:var(--paper)}
+#netside details.rules summary{cursor:pointer;font-weight:600;font-family:var(--sans);font-size:.95rem;margin:1rem 0 .4rem}
 .netnode{cursor:pointer}
 .netnode text{font-family:var(--sans);font-size:11px;fill:var(--ink-2);pointer-events:none;paint-order:stroke;stroke:var(--net-halo);stroke-width:3px}
+.netlabel{font-family:var(--sans);font-size:10px;fill:var(--ink-2);paint-order:stroke;stroke:var(--net-halo);stroke-width:3px}
+.netlabel.pi{fill:var(--model)}
 .netedge{fill:none;stroke-opacity:.55}
-.netedge.correspondence{stroke:var(--j1907)}.netedge.stated{stroke:var(--j1908)}.netedge.pi{stroke:var(--model);stroke-dasharray:4 3}.netedge.affiliation{stroke:#9a9a9a;stroke-dasharray:1 3}
-.netedge.dim{stroke-opacity:.08}.netnode.dim{opacity:.18}
+.netedge.correspondence{stroke:var(--j1907)}.netedge.stated{stroke:var(--j1908);stroke-dasharray:7 3}.netedge.pi{stroke:var(--model);stroke-dasharray:4 3}.netedge.affiliation{stroke:var(--muted);stroke-dasharray:1 3}.netedge.affiliation.inferred{stroke-opacity:.35}
+.netedge.mention{stroke:var(--muted);stroke-dasharray:2 3;stroke-opacity:.5}
+.netedge.funding{stroke:var(--ink-2);stroke-opacity:.7}.netedge.funding.pi{stroke:var(--model)}
+.netedge.strand{stroke-opacity:.75}
+.netedge.dim,.netlabel.dim{stroke-opacity:.08;opacity:.25}.netnode.dim{opacity:.18}
 /* timeline */
 .tl{position:relative;margin-left:.5rem;padding-left:1.6rem;border-left:2px solid var(--rule-2)}
 .tl .yr{position:relative;margin:1.6rem 0 .6rem;font-family:var(--serif);font-size:1.3rem}
@@ -674,7 +687,7 @@ Pages.tale = function([para]){
 Pages.cast = function(){
   destroyMini();
   const match = name=>{ const n=name.toLowerCase(); return D.people.find(p=>n.includes(p.sort.toLowerCase().split(',')[0]) || p.label.toLowerCase().includes(n.split(' ').pop().toLowerCase())); };
-  page.innerHTML=`<div class="page">${navbar()}<div class="phase">principal investigator’s document · verbatim</div><h1>Cast of Characters</h1><p class="notice">The PI’s one-line characterisations, reproduced as written. Each name links to the prosopographical record built from the correspondence, where the PI’s line is quoted again beside the attested roles.</p>
+  page.innerHTML=`<div class="page">${navbar()}<div class="phase">principal investigator — Cast of Characters: working notes (unpublished, 2019), quoted verbatim</div><h1>Cast of Characters</h1><p class="notice">The principal investigator’s working notes (unpublished, 2019): one-line characterisations in an informal register, reproduced exactly as written and verified against her file at build. They are her reading aids, not publication prose. Each name links to the prosopographical record built from the correspondence, where the line is quoted again, apart from the attested roles and offices.</p>
    <dl class="kv" style="grid-template-columns:200px 1fr">${D.cast.map(c=>{ const p=match(c.name); return `<dt><b>${p?`<a href="#/person/${p.id}">${esc(c.name)}</a>`:esc(c.name)}</b></dt><dd class="serif">${esc(c.text)}</dd>`; }).join('')}</dl></div>`;
 };
 })();
@@ -770,71 +783,139 @@ function renderReader(id){
 }
 
 /* ---------------- person / institution pages ---------------- */
+const PI_CAST_WHO = 'principal investigator — Cast of Characters: working notes (unpublished, 2019), quoted verbatim';
+const FUND = D.network.funding || {nodes:[], edges:[], rule:'', caveats:[], statuses:{}};
+function evKind(e){ return e.evidence_kind? ` <span class="tag" title="printed letterhead officer list, not a sentence written by the signer">${esc(e.evidence_kind)}</span>`:''; }
+function refLink(ref){ return IDX.doc[ref]? docLink(ref) : ref==='tale'? '<a href="#/tale">Tale</a>' : ref==='cast'? '<a href="#/cast">Cast of Characters</a>' : ref==='pi_timeline'? '<a href="#/timeline">PI timeline</a>' : `<span class="tag">${esc(ref)}</span>`; }
+function evidenceCell(e){ return `${e.date?`<span class="muted">${esc(fmtDate(e.date))}</span><br>`:''}${(e.evidence||[]).map(v=>`${refLink(v.ref)}${v.quote&&e.kind!=='correspondence'?`: <span class="serif">“${esc(v.quote)}”</span>`:''}`).join('<br>')}${e.note?`<div class="muted">${esc(e.note)}</div>`:''}`; }
+function fundLabel(x){ const n=FUND.nodes.find(q=>q.id===x); return n? n.label : personLabel(x); }
+function fundNodeLink(x){ return x.startsWith('x_')? `<a class="pill inst" href="#/network/view/funding" title="funding view">${esc(fundLabel(x))}</a>` : personPill(x); }
+function fundingRows(id){ return FUND.edges.filter(e=>e.source===id||e.target===id); }
+function fundingTable(rows){ return `<table class="data"><thead><tr><th>From</th><th>To</th><th>Amount as written</th><th>Status</th><th>Date</th><th>Evidence</th></tr></thead><tbody>${rows.map(e=>`<tr><td>${fundNodeLink(e.source)}</td><td>${fundNodeLink(e.target)}</td><td class="serif">${esc(e.amount_as_written)}</td><td><span class="tag ${e.kind==='pi'?'model':''}" title="${esc(FUND.statuses[e.status]||'')}">${esc(e.kind==='pi'?'PI: '+e.status:e.status)}</span></td><td class="small">${esc(e.date?fmtDate(e.date):'undated')}</td><td class="small">${refLink(e.doc)}: <span class="serif">“${esc(e.quote)}”</span>${e.note?`<div class="muted">${esc(e.note)}</div>`:''}</td></tr>`).join('')}</tbody></table>`; }
+App.fundingTable = fundingTable; App.PI_CAST_WHO = PI_CAST_WHO;
+
 Pages.person = function([id]){
   const p=IDX.person[id]; if(!p){ page.innerHTML='<div class="page">'+navbar()+'<h1>Record not found</h1></div>'; return; }
   const edges=D.network.edges.filter(e=>e.source===id||e.target===id);
   const byKind=k=>edges.filter(e=>e.kind===k);
   const isInst = !id.startsWith('p_') && !id.startsWith('o_');
-  const tieRow=e=>{ const other=e.source===id?e.target:e.source; const dir = e.directed? (e.source===id? '→':'←') : '↔'; return `<tr><td>${dir} ${personPill(other)}</td><td>${esc(e.label)}</td><td class="small">${e.evidence.map(v=>`${IDX.doc[v.ref]?docLink(v.ref, IDX.doc[v.ref].title):`<span class="muted">${esc(v.ref)}</span>`}${v.quote&&v.ref!=='roles'&&!IDX.doc[v.ref]?`: <span class="serif">“${esc(v.quote)}”</span>`: (v.quote&&v.ref!=='roles'&&IDX.doc[v.ref]&&e.kind!=='correspondence'?`: <span class="serif">“${esc(v.quote)}”</span>`:'')}`).join('<br>')}</td></tr>`; };
-  const affiliated = isInst? D.people.filter(q=>(q.institutions||[]).includes(id)) : [];
+  const tieRow=e=>{ const other=e.source===id?e.target:e.source; const dir = e.directed? (e.source===id? '→':'←') : '↔'; return `<tr><td>${dir} ${personPill(other)}</td><td>${esc(e.label)}${evKind(e)}</td><td class="small">${evidenceCell(e)}</td></tr>`; };
+  const tieTable=rows=>`<table class="data"><thead><tr><th>With</th><th>Relation</th><th>Evidence · date of the document</th></tr></thead><tbody>${rows.map(tieRow).join('')}</tbody></table>`;
+  const affStated=byKind('affiliation').filter(e=>e.affiliation_status==='stated'), affInf=byKind('affiliation').filter(e=>e.affiliation_status==='inferred');
+  const affiliatedStated = isInst? D.people.filter(q=>(q.institutions||[]).some(a=>a.id===id&&a.status==='stated')) : [];
+  const affiliatedInf = isInst? D.people.filter(q=>(q.institutions||[]).some(a=>a.id===id&&a.status==='inferred')) : [];
+  const instStated=(p.institutions||[]).filter(a=>a.status==='stated'), instInf=(p.institutions||[]).filter(a=>a.status==='inferred');
+  const fr=fundingRows(id);
   page.innerHTML=`<div class="page">${navbar({right:`<button onclick="App.go('/network/focus/${id}')">Ego network</button>`})}
    <div class="phase">${isInst? (p.kind||'institution') : 'prosopographical record · '+esc(p.kind)+' · scope: '+esc(p.scope)}</div>
    <h1>${esc(p.label)}</h1>
    ${p.identity_note? modelBlock('Identity note: '+p.identity_note):''}
-   ${p.pi_characterisation? `<div class="block pi"><span class="who">principal investigator — Cast of Characters, verbatim</span>${esc(p.pi_characterisation)}</div>`:''}
+   ${p.pi_characterisation? `<div class="block pi"><span class="who">${PI_CAST_WHO}</span>${esc(p.pi_characterisation)}</div>`:''}
+   ${(p.characterisations||[]).length? `<h3>Characterisations (PI)</h3>${p.characterisations.map(c=>`<div class="block pi"><span class="who">${esc(c.source)} — verbatim</span>${esc(c.text)}</div>`).join('')}`:''}
    ${p.note? `<div class="notice">${esc(p.note)}</div>`:''}
-   ${isInst? `<dl class="kv">${p.units?`<dt>Units named</dt><dd>${p.units.map(esc).join('; ')}</dd>`:''}<dt>Attested in</dt><dd>${(p.attestations||[]).map(esc).join('<br>')}</dd>${p.place?`<dt>Place</dt><dd><a href="#/place/${p.place}">${esc(IDX.place[p.place].label)}</a></dd>`:''}</dl>
-      ${affiliated.length?`<h2>People affiliated (as attested)</h2><div>${affiliated.map(q=>personPill(q.id)).join(' ')}</div>`:''}` : `
+   ${isInst? `<dl class="kv">${p.units?`<dt>Units named</dt><dd>${p.units.map(esc).join('; ')}</dd>`:''}<dt>Attested in</dt><dd>${(p.attestations||[]).map(esc).join('<br>')}</dd>${p.place?`<dt>Place</dt><dd><a href="#/place/${p.place}">${esc(IDX.place[p.place].label)}</a> <span class="chip plain ${p.place_status==='stated'?'stated':'inferred'}" title="place_status: ${p.place_status==='stated'?'a provided text puts the institution at this place':'the model placed it'}">place ${esc(p.place_status||'')}</span></dd>`:''}</dl>
+      ${affiliatedStated.length?`<h2>People affiliated (stated in a provided text)</h2><div>${affiliatedStated.map(q=>personPill(q.id)).join(' ')}</div>`:''}
+      ${affiliatedInf.length?`<h2>People affiliated — inferred by the model</h2><div class="block model"><span class="who">model note — affiliations read from context, not stated in the sources</span>${affiliatedInf.map(q=>{ const a=q.institutions.find(x=>x.id===id); return `<div>${personPill(q.id)} <span class="small">${esc(a.note||'')}</span></div>`; }).join('')}</div>`:''}` : `
    <h2>Names as written</h2><table class="data"><thead><tr><th>Form</th><th>Where</th></tr></thead><tbody>${(p.variants||[]).map(v=>`<tr><td class="serif">${esc(v.form)}</td><td class="small">${esc(v.source)}</td></tr>`).join('')}</tbody></table>
    <h2>Roles and offices (as attested)</h2><table class="data"><thead><tr><th>Role</th><th>Source</th></tr></thead><tbody>${(p.roles||[]).map(v=>`<tr><td>${esc(v.role)}</td><td class="small">${esc(v.source)}</td></tr>`).join('')}</tbody></table>
    ${(p.addresses||[]).length?`<h2>Addresses</h2><ul>${p.addresses.map(a=>`<li>${esc(a.address)} <span class="muted small">(${esc(a.source)})</span></li>`).join('')}</ul>`:''}
-   ${(p.institutions||[]).length?`<h2>Institutions</h2><div>${p.institutions.map(personPill).join(' ')}</div>`:''}`}
+   ${instStated.length?`<h2>Institutions (stated in a provided text)</h2><ul>${instStated.map(a=>`<li>${personPill(a.id)} <span class="small">— ${refLink(a.evidence.ref)}: <span class="serif">“${esc(a.evidence.quote)}”</span>${evKind(a)}${a.note?` <span class="muted">(${esc(a.note)})</span>`:''}</span></li>`).join('')}</ul>`:''}
+   ${instInf.length?`<h2>Affiliations inferred by the model</h2><div class="block model"><span class="who">model note — read from context; no provided text names the person in this institution</span>${instInf.map(a=>`<div>${personPill(a.id)} <span class="small">${esc(a.note||'')}</span></div>`).join('')}</div>`:''}`}
    <h2>Correspondence <span class="muted small">(${(p.sent||[]).length} sent · ${(p.received||[]).length} received · named in ${(p.mentioned_in||[]).length})</span></h2>
    <div class="grid2">
      <div><h4>Sent</h4>${(p.sent||[]).length? `<ul class="small">${p.sent.map(x=>`<li>${docLink(x)} <span class="muted">${esc(IDX.doc[x].date_text)}</span></li>`).join('')}</ul>`:'<p class="muted small">none in the file</p>'}</div>
      <div><h4>Received</h4>${(p.received||[]).length? `<ul class="small">${p.received.map(x=>`<li>${docLink(x)} <span class="muted">${esc(IDX.doc[x].date_text)}</span></li>`).join('')}</ul>`:'<p class="muted small">none in the file</p>'}</div>
    </div>
-   ${(p.mentioned_in||[]).length?`<h4>Named in</h4><div class="small">${p.mentioned_in.map(x=>docLink(x)).join(' · ')}</div><div class="small muted">automatic name-variant match (model); check the text.</div>`:''}
+   ${(p.mentioned_in||[]).length?`<h4>Named in <span class="tag model">derived</span></h4><div class="small">${p.mentioned_in.map(x=>docLink(x)).join(' · ')}</div><div class="small muted">automatic name-variant match (model); not an asserted tie; check the text.</div>`:''}
    <h2>Ties</h2>
-   ${['stated','pi','affiliation'].map(k=>byKind(k).length?`<h4>${{stated:'Relations stated in documents',pi:'Relations asserted by the principal investigator',affiliation:'Affiliations (from roles)'}[k]}</h4><table class="data"><thead><tr><th>With</th><th>Relation</th><th>Evidence</th></tr></thead><tbody>${byKind(k).map(tieRow).join('')}</tbody></table>`:'').join('')}
+   ${byKind('stated').length?`<h4>Relations stated in documents</h4>${tieTable(byKind('stated'))}`:''}
+   ${byKind('pi').length?`<h4>Relations asserted by the principal investigator <span class="tag model">PI</span></h4>${tieTable(byKind('pi'))}`:''}
+   ${affStated.length?`<h4>Affiliations (stated)</h4>${tieTable(affStated)}`:''}
+   ${affInf.length?`<h4>Affiliations inferred by the model <span class="tag model">model</span></h4>${tieTable(affInf)}`:''}
+   ${!edges.length?'<p class="muted small">No tie touches this record under the nominalist rules.</p>':''}
+   ${fr.length?`<h2>Funding <span class="muted small">(sums stated in the file; amounts as written; no total is computed)</span></h2>${fundingTable(fr)}<p class="small"><a href="#/network/view/funding">Open the funding view</a></p>`:''}
+   ${(p.findings||[]).length?`<h2>Discrepancies and absences concerning this record</h2>${p.findings.map(findingCard).join('')}`:''}
    ${p.stories&&p.stories.length?`<h2>Story pages</h2><ul>${p.stories.map(s=>`<li>${storyLink(s)}</li>`).join('')}</ul>`:''}
   </div>`;
 };
 
 /* ---------------- network ---------------- */
-const NS = { kinds:{correspondence:true, stated:true, pi:true, affiliation:false}, types:{person:true, office:true, institution:true}, scope:'hunt', focus:null, doc:null, yearMin:1906, yearMax:1930, labels:'auto', sel:null };
+/* Five views over one data set. 'persons' is the asserted graph (correspondence, stated, PI, affiliation); 'institutions' is
+   the person–institution bipartite graph; 'funding' the stated sums; 'coattestation' and 'mentions' are derived layers and
+   are labelled so. Each view's rule and caveats come from D.network.views, the same strings Method › Network prints. */
+const VIEWS = D.network.views || [];
+const viewById = Object.fromEntries(VIEWS.map(v=>[v.id,v]));
+const NS = { view:'persons', kinds:{correspondence:true, stated:true, pi:true, affiliation:false}, types:{person:true, office:true, institution:true}, focus:null, doc:null, yearMin:1906, yearMax:1930, labels:'auto', sel:null, coFilter:'all', coSort:'n_kinds', graph:null };
 let sim=null;
+const KIND_LABEL={correspondence:'correspondence (solid, arrow)', stated:'stated in a document (dash 7 3)', pi:'PI’s writing (dash 4 3)', affiliation:'affiliation (dash 1 3; inferred faint)'};
+const KIND_DASH={correspondence:'', stated:'7 3', pi:'4 3', affiliation:'1 3', mention:'2 3'};
+const KIND_COLOR={correspondence:'var(--j1907)', stated:'var(--j1908)', pi:'var(--model)', affiliation:'var(--muted)', mention:'var(--muted)'};
+const FUND_DASH={paid:'', acknowledged:'', promised:'6 4', requested:'3 3', budgeted:'1 3', ceiling:'8 3 2 3', offered:'2 6'};
+const FUND_WIDTH={paid:2.6, acknowledged:1.4, promised:2, requested:1.6, budgeted:1.4, ceiling:2, offered:1.4};
+const inScope=n=>n && (n.scope==='hunt'||n.scope==='research');
+const nodeById=Object.fromEntries(D.network.nodes.map(n=>[n.id,n]));
+function swatch(dash, color, w){ return `<svg width="26" height="8" aria-hidden="true" style="vertical-align:middle"><line x1="1" y1="4" x2="25" y2="4" style="stroke:${color};stroke-width:${w||2}" ${dash?`stroke-dasharray="${dash}"`:''}></line></svg>`; }
+function labelSelect(){ return `<select id="nlab" aria-label="Which node labels to show"><option value="auto" ${NS.labels==='auto'?'selected':''}>main nodes</option><option value="all" ${NS.labels==='all'?'selected':''}>all</option><option value="none" ${NS.labels==='none'?'selected':''}>none</option></select>`; }
+function shortLabel(s){ return s.replace(/\s*\(.*?\)\s*/g,' ').replace(/^'|'$/g,'').trim(); }
+
 Pages.network = function(seg){
-  if(seg[0]==='focus'){ NS.focus=seg[1]; NS.doc=null; } else if(seg[0]==='doc'){ NS.doc=seg[1]; NS.focus=null; } else if(seg.length===0){ NS.focus=null; NS.doc=null; }
+  if(seg[0]==='view'){ NS.view = viewById[seg[1]]? seg[1] : 'persons'; NS.focus=null; NS.doc=null; }
+  else if(seg[0]==='focus'){ NS.view='persons'; NS.focus=seg[1]; NS.doc=null; }
+  else if(seg[0]==='doc'){ NS.view='persons'; NS.doc=seg[1]; NS.focus=null; }
+  else { NS.view='persons'; NS.focus=null; NS.doc=null; }
+  NS.sel=null;
+  const v=viewById[NS.view]||{label:'Persons',derived:false,rule:'',caveats:[]};
+  const yearOpts=(sel,ys)=>ys.map(y=>`<option ${y===sel?'selected':''}>${y}</option>`).join('');
+  let rows='';
+  if(NS.view==='persons'){
+    rows=`<div class="row"><b>Evidence</b> ${['correspondence','stated','pi','affiliation'].map(k=>`<label><input type="checkbox" data-k="${k}" ${NS.kinds[k]?'checked':''}>${swatch(KIND_DASH[k],KIND_COLOR[k])} ${KIND_LABEL[k]}</label>`).join('')}</div>
+      <div class="row"><b>Nodes</b> <label><input type="checkbox" data-t="person" ${NS.types.person?'checked':''}>persons</label><label><input type="checkbox" data-t="office" ${NS.types.office?'checked':''}>unnamed offices</label><label><input type="checkbox" data-t="institution" ${NS.types.institution?'checked':''}>institutions</label>
+        <b>Years</b> <select id="nyMin" aria-label="Earliest year">${yearOpts(NS.yearMin,[1906,1907,1908,1909,1910,1914,1916,1930])}</select> – <select id="nyMax" aria-label="Latest year">${yearOpts(NS.yearMax,[1907,1908,1909,1910,1914,1916,1930])}</select> <span class="muted">(correspondence and stated ties; PI ties are undated)</span>
+        <b>Labels</b> ${labelSelect()}
+        ${NS.focus?`<span class="tag">ego: ${esc(personLabel(NS.focus))}</span> <button class="ghost small" onclick="App.go('/network')">clear</button>`:''}${NS.doc?`<span class="tag">item: ${esc((IDX.doc[NS.doc]||{}).title||NS.doc)}</span> <button class="ghost small" onclick="App.go('/network')">clear</button>`:''}</div>`;
+  } else if(NS.view==='coattestation'){
+    rows=`<div class="row"><b>Pairs</b> <select id="ncofilter" aria-label="Which pairs to show"><option value="all" ${NS.coFilter==='all'?'selected':''}>all pairs</option><option value="three" ${NS.coFilter==='three'?'selected':''}>all three kinds</option><option value="docs" ${NS.coFilter==='docs'?'selected':''}>documents only (no PI tie)</option><option value="pi" ${NS.coFilter==='pi'?'selected':''}>PI only (no document states it)</option></select> <b>Labels</b> ${labelSelect()} <span class="muted">strands: ${swatch('',KIND_COLOR.correspondence)} correspondence · ${swatch(KIND_DASH.stated,KIND_COLOR.stated)} stated · ${swatch(KIND_DASH.pi,KIND_COLOR.pi)} PI</span></div>`;
+  } else if(NS.view==='funding'){
+    rows=`<div class="row"><b>Status</b> ${Object.keys(FUND_DASH).map(s=>`<span title="${esc(FUND.statuses[s]||'')}">${swatch(FUND_DASH[s],'var(--ink-2)',FUND_WIDTH[s])} ${s}</span>`).join(' ')} <span>${swatch('4 3','var(--model)')} PI’s assertion</span></div>`;
+  } else {
+    rows=`<div class="row"><b>Labels</b> ${labelSelect()} ${NS.view==='mentions'?`<span class="muted">${swatch(KIND_DASH.mention,KIND_COLOR.mention)} sender → person named in the text (derived)</span>`:`<span class="muted">squares = institutions, sized by persons attested in them; ${swatch('1 3','var(--muted)')} affiliation (faint = inferred)</span>`}</div>`;
+  }
   page.innerHTML=`<div id="network"><div id="netstage">
      <div id="netcontrols">
-       <div class="row"><button class="ghost" onclick="App.back()">← Back</button> <b>Evidence</b>
-         <label><input type="checkbox" data-k="correspondence" ${NS.kinds.correspondence?'checked':''}><span style="color:var(--j1907)">■</span> correspondence</label>
-         <label><input type="checkbox" data-k="stated" ${NS.kinds.stated?'checked':''}><span style="color:var(--j1908)">■</span> stated in a document</label>
-         <label><input type="checkbox" data-k="pi" ${NS.kinds.pi?'checked':''}><span style="color:var(--model)">■</span> PI’s writing</label>
-         <label><input type="checkbox" data-k="affiliation" ${NS.kinds.affiliation?'checked':''}><span style="color:#999">■</span> affiliation</label></div>
-       <div class="row"><b>Nodes</b> <label><input type="checkbox" data-t="person" ${NS.types.person?'checked':''}>persons</label><label><input type="checkbox" data-t="office" ${NS.types.office?'checked':''}>unnamed offices</label><label><input type="checkbox" data-t="institution" ${NS.types.institution?'checked':''}>institutions</label></div>
-       <div class="row"><b>Years</b> <select id="nyMin">${[1906,1907,1908,1909,1910,1914,1916,1930].map(y=>`<option ${y===NS.yearMin?'selected':''}>${y}</option>`).join('')}</select> – <select id="nyMax">${[1907,1908,1909,1910,1914,1916,1930].map(y=>`<option ${y===NS.yearMax?'selected':''}>${y}</option>`).join('')}</select> <span class="muted">(correspondence only)</span></div>
-       <div class="row"><b>Labels</b> <select id="nlab"><option value="auto" ${NS.labels==='auto'?'selected':''}>main nodes</option><option value="all" ${NS.labels==='all'?'selected':''}>all</option><option value="none" ${NS.labels==='none'?'selected':''}>none</option></select>
-         ${NS.focus?`<span class="tag">ego: ${esc(personLabel(NS.focus))}</span> <button class="ghost small" onclick="App.go('/network')">clear</button>`:''}${NS.doc?`<span class="tag">item: ${esc(IDX.doc[NS.doc].title)}</span> <button class="ghost small" onclick="App.go('/network')">clear</button>`:''}</div>
+       <div class="row"><button class="ghost" onclick="App.back()">← Back</button> <b>View</b> <div class="seg" role="group" aria-label="Network view">${VIEWS.map(x=>`<button class="${x.id===NS.view?'active':''}" aria-pressed="${x.id===NS.view}" onclick="App.go('/network/view/${x.id}')">${esc(x.label)}${x.derived?' <span class="tag model" style="font-size:.6rem">derived</span>':''}</button>`).join('')}</div>
+         <span class="find"><input id="netfind" type="search" list="netnodes" aria-label="Find a node" placeholder="Find a node…" autocomplete="off"><datalist id="netnodes"></datalist></span></div>
+       ${rows}
        <div class="row small muted" id="netstat"></div>
-     </div><svg id="netsvg"></svg></div>
+     </div>
+     <div id="netviewhead"><span class="tag ${v.derived?'model':''}">${v.derived?'derived':'asserted'}</span> <b>${esc(v.label)}</b> <span class="rule">${esc(v.rule)}</span>${(v.caveats||[]).length?` <span class="caveat muted">Caveat: ${esc(v.caveats[0])}</span>`:''}${(v.caveats||[]).length>1?` <a href="#/network/view/${v.id}" onclick="event.preventDefault();Pages._netCaveat()">all ${v.caveats.length} caveats</a>`:''}</div>
+     <svg id="netsvg" role="img" aria-label="${esc(v.label)} network under the current filters; the side panel lists the same ties as text"></svg></div>
      <div id="netside"></div></div>`;
   document.querySelectorAll('#netcontrols input[data-k]').forEach(cb=>cb.addEventListener('change', ()=>{NS.kinds[cb.dataset.k]=cb.checked; drawNet();}));
   document.querySelectorAll('#netcontrols input[data-t]').forEach(cb=>cb.addEventListener('change', ()=>{NS.types[cb.dataset.t]=cb.checked; drawNet();}));
-  document.getElementById('nyMin').addEventListener('change', e=>{NS.yearMin=+e.target.value; drawNet();});
-  document.getElementById('nyMax').addEventListener('change', e=>{NS.yearMax=+e.target.value; drawNet();});
-  document.getElementById('nlab').addEventListener('change', e=>{NS.labels=e.target.value; drawNet();});
+  const on=(id,ev,fn)=>{ const el=document.getElementById(id); if(el) el.addEventListener(ev,fn); };
+  on('nyMin','change', e=>{NS.yearMin=+e.target.value; drawNet();});
+  on('nyMax','change', e=>{NS.yearMax=+e.target.value; drawNet();});
+  on('nlab','change', e=>{NS.labels=e.target.value; drawNet();});
+  on('ncofilter','change', e=>{NS.coFilter=e.target.value; drawNet(); sidePanel(null);});
+  const find=document.getElementById('netfind');
+  find.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); gotoNode(findNode(find.value)); } });
+  find.addEventListener('change', ()=>{ const n=findNode(find.value); if(n && n.label.toLowerCase()===find.value.trim().toLowerCase()) gotoNode(n); });
   drawNet(); sidePanel(NS.focus||null);
 };
+Pages._netCaveat=function(){ sidePanel(null); const det=document.querySelector('#netside details.rules'); if(det) det.open=true; const el=document.getElementById('netcaveats'); if(el){ el.scrollIntoView({block:'start'}); el.style.outline='2px solid var(--inferred)'; setTimeout(()=>el.style.outline='',1600);} };
+
+function findNode(q){ q=(q||'').trim().toLowerCase(); if(!q||!NS.graph) return null; const ns=NS.graph.nodes; return ns.find(n=>n.label.toLowerCase()===q) || ns.find(n=>n.label.toLowerCase().startsWith(q)) || ns.find(n=>n.label.toLowerCase().includes(q)) || null; }
+function gotoNode(n){ if(!n||!NS.graph) return; NS.sel=n.id; if(n.id.startsWith('x_')) sideFundNode(n.id); else sidePanel(n.id); NS.graph.highlight(n.id); const {svg,zoom,W,H}=NS.graph; const k=1.25; if(n.x!=null) svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity.translate(W/2-n.x*k, H/2-n.y*k).scale(k)); }
+function fillDatalist(){ const dl=document.getElementById('netnodes'); if(!dl||!NS.graph) return; dl.innerHTML=[...new Set(NS.graph.nodes.map(n=>n.label))].sort().map(l=>`<option value="${esc(l)}"></option>`).join(''); }
+function netstat(t){ const el=document.getElementById('netstat'); if(el) el.textContent=t; }
+
 function netData(){
-  const nodeById=Object.fromEntries(D.network.nodes.map(n=>[n.id,n]));
   let edges=D.network.edges.filter(e=>NS.kinds[e.kind]);
-  edges=edges.filter(e=>{ if(e.kind!=='correspondence') return true; const y=e.date? +e.date.slice(0,4): null; return y==null || (y>=NS.yearMin && y<=NS.yearMax); });
-  edges=edges.filter(e=>{ const a=nodeById[e.source], b=nodeById[e.target]; return a&&b&&NS.types[a.type]&&NS.types[b.type]&&(a.scope==='hunt'||a.scope==='research')&&(b.scope==='hunt'||b.scope==='research'); });
+  // the year range applies to correspondence and stated ties by the date of their document; undated ties (PI, Cast, undated items) always pass
+  edges=edges.filter(e=>{ if(e.kind!=='correspondence' && e.kind!=='stated') return true; const y=e.date? +e.date.slice(0,4): null; return y==null || (y>=NS.yearMin && y<=NS.yearMax); });
+  edges=edges.filter(e=>{ const a=nodeById[e.source], b=nodeById[e.target]; return a&&b&&NS.types[a.type]&&NS.types[b.type]&&inScope(a)&&inScope(b); });
   if(NS.focus) edges=edges.filter(e=>e.source===NS.focus||e.target===NS.focus);
   if(NS.doc) edges=edges.filter(e=>e.doc===NS.doc || (e.kind!=='correspondence' && e.evidence.some(v=>v.ref===NS.doc)));
-  // aggregate parallel edges
   const agg=new Map();
   edges.forEach(e=>{ const key=[e.kind, e.directed?e.source+'>'+e.target: [e.source,e.target].sort().join('|')].join('#'); if(!agg.has(key)) agg.set(key,{...e, weight:0, items:[]}); const a=agg.get(key); a.weight++; a.items.push(e); });
   const E=[...agg.values()];
@@ -846,51 +927,233 @@ function netData(){
 }
 function drawNet(){
   const svgEl=document.getElementById('netsvg'); if(!svgEl) return;
-  const {N,E}=netData();
-  document.getElementById('netstat').textContent=`${N.length} nodes · ${E.length} ties (${E.reduce((s,e)=>s+e.weight,0)} attestations) · rules: Method & Data › Network`;
+  if(sim){ sim.stop(); sim=null; }
   const svg=d3.select(svgEl); svg.selectAll('*').remove();
   const W=svgEl.clientWidth||800, H=svgEl.clientHeight||600;
   svg.attr('viewBox',`0 0 ${W} ${H}`);
   const defs=svg.append('defs');
-  defs.append('marker').attr('id','arrow').attr('viewBox','0 -4 8 8').attr('refX',8).attr('markerWidth',6).attr('markerHeight',6).attr('orient','auto').append('path').attr('d','M0,-3L8,0L0,3').attr('fill','#1f6fa3').attr('opacity',.7);
+  [['arrow','var(--j1907)'],['arrow-ink','var(--ink-2)'],['arrow-model','var(--model)'],['arrow-muted','var(--muted)']].forEach(([id,col])=>defs.append('marker').attr('id',id).attr('viewBox','0 -4 8 8').attr('refX',8).attr('markerWidth',6).attr('markerHeight',6).attr('orient','auto').append('path').attr('d','M0,-3L8,0L0,3').style('fill',col).attr('opacity',.75));
   const g=svg.append('g');
-  svg.call(d3.zoom().scaleExtent([.4,4]).on('zoom', ev=>g.attr('transform', ev.transform)));
-  const link=g.append('g').selectAll('path').data(E).join('path').attr('class', d=>'netedge '+d.kind).attr('stroke-width', d=>Math.min(1+Math.sqrt(d.weight)*1.1, 7)).attr('marker-end', d=>d.kind==='correspondence'&&d.directed?'url(#arrow)':null).style('cursor','pointer').on('click',(ev,d)=>{ ev.stopPropagation(); sideEdge(d); });
-  link.append('title').text(d=>`${personLabel(d.source)} ${d.directed?'→':'↔'} ${personLabel(d.target)} · ${d.kind} · ${d.weight} attestation${d.weight>1?'s':''}`);
+  const zoom=d3.zoom().scaleExtent([.4,4]).on('zoom', ev=>g.attr('transform', ev.transform)); svg.call(zoom);
+  NS.graph={svg, g, zoom, W, H, nodes:[], highlight:()=>{}};
+  svg.on('click', ()=>{ NS.sel=null; NS.graph.highlight(null); sidePanel(NS.focus||null); });
+  ({persons:drawPersons, institutions:drawInstitutions, funding:drawFunding, coattestation:drawCoattestation, mentions:drawMentions}[NS.view]||drawPersons)(g,W,H);
+  fillDatalist();
+}
+/* shared node behaviour: click = side panel + highlight; double-click = full record; drag */
+function nodeBehaviour(node, simRef){
+  node.on('click',(ev,d)=>{ ev.stopPropagation(); NS.sel=d.id; if(d.id.startsWith('x_')) sideFundNode(d.id); else sidePanel(d.id); NS.graph.highlight(d.id); }).on('dblclick',(ev,d)=>{ if(!d.id.startsWith('x_')) App.go('/person/'+d.id); });
+  if(simRef) node.call(d3.drag().on('start',(ev,d)=>{ simRef().alphaTarget(.3).restart(); d.fx=d.x; d.fy=d.y; }).on('drag',(ev,d)=>{ d.fx=ev.x; d.fy=ev.y; }).on('end',(ev,d)=>{ simRef().alphaTarget(0); d.fx=null; d.fy=null; }));
+}
+function labelVisible(d, N){ return NS.labels==='none'?'none': NS.labels==='all'?null: (d.deg>=4||N.length<=30?null:'none'); }
+function neighbourHighlight(node, link, E){
+  return function(id){ if(!id){ link.classed('dim',false); node.classed('dim',false); return; } const nb=new Set([id]); E.forEach(e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; if(s===id) nb.add(t); if(t===id) nb.add(s); }); node.classed('dim', d=>!nb.has(d.id)); link.classed('dim', e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; return s!==id&&t!==id; }); };
+}
+function curvePath(d, rTarget, off){ const sx=d.source.x, sy=d.source.y, tx=d.target.x, ty=d.target.y; const dx=tx-sx, dy=ty-sy, dr=Math.hypot(dx,dy)||1; const rt=rTarget+2; const ex=tx-dx/dr*rt, ey=ty-dy/dr*rt; if(!off) return `M${sx},${sy}L${ex},${ey}`; const mx=(sx+ex)/2 - dy/dr*off, my=(sy+ey)/2 + dx/dr*off; return `M${sx},${sy}Q${mx},${my} ${ex},${ey}`; }
+
+function drawPersons(g,W,H){
+  const {N,E}=netData();
+  netstat(`${N.length} nodes · ${E.length} ties (${E.reduce((s,e)=>s+e.weight,0)} attestations) · asserted ties only · rules: Method & Data › Network`);
+  const link=g.append('g').selectAll('path').data(E).join('path').attr('class', d=>'netedge '+d.kind+(d.affiliation_status==='inferred'?' inferred':'')).attr('stroke-width', d=>Math.min(1+Math.sqrt(d.weight)*1.1, 7)).attr('marker-end', d=>d.kind==='correspondence'&&d.directed?'url(#arrow)':null).style('cursor','pointer').on('click',(ev,d)=>{ ev.stopPropagation(); sideEdge(d); });
+  link.append('title').text(d=>`${personLabel(d.source)} ${d.directed?'→':'↔'} ${personLabel(d.target)} · ${d.kind}${d.evidence_kind?' ('+d.evidence_kind+')':''}${d.affiliation_status?' ('+d.affiliation_status+')':''} · ${d.weight} attestation${d.weight>1?'s':''}`);
   const r=d=>4+Math.sqrt(d.deg)*2.2;
-  const node=g.append('g').selectAll('g').data(N).join('g').attr('class','netnode').on('click',(ev,d)=>{ ev.stopPropagation(); NS.sel=d.id; sidePanel(d.id); highlight(d.id); }).on('dblclick',(ev,d)=>App.go('/person/'+d.id));
+  const node=g.append('g').selectAll('g').data(N).join('g').attr('class','netnode');
   node.append('circle').attr('r',r).style('fill', d=>d.type==='institution'?'var(--surface)':d.type==='office'?'var(--surface-2)':'var(--net-node)').style('stroke','var(--net-node)').attr('stroke-width', d=>d.type==='institution'?2:1).attr('stroke-dasharray', d=>d.type==='office'?'2 2':null);
-  node.append('text').attr('dx', d=>r(d)+3).attr('dy',4).text(d=>d.label.replace(/\s*\(.*?\)\s*/g,' ').trim()).attr('display', d=> NS.labels==='none'?'none': NS.labels==='all'?null: (d.deg>=4||N.length<=30?null:'none'));
+  node.append('text').attr('dx', d=>r(d)+3).attr('dy',4).text(d=>shortLabel(d.label)).attr('display', d=>labelVisible(d,N));
   node.append('title').text(d=>`${d.label}\n${d.type} · degree ${d.deg}\nclick: details · double-click: full record`);
   sim=d3.forceSimulation(N).force('link', d3.forceLink(E).id(d=>d.id).distance(d=>60+Math.max(0,30-d.weight*4)).strength(.4)).force('charge', d3.forceManyBody().strength(-220)).force('center', d3.forceCenter(W/2,H/2)).force('collide', d3.forceCollide(d=>r(d)+6));
-  sim.on('tick', ()=>{ link.attr('d', d=>{ const sx=d.source.x, sy=d.source.y, tx=d.target.x, ty=d.target.y; const dx=tx-sx, dy=ty-sy, dr=Math.hypot(dx,dy)||1; const rt=r(d.target)+2; const ex=tx-dx/dr*rt, ey=ty-dy/dr*rt; const off = d.kind==='pi'? 16 : d.kind==='stated'? -14 : 0; if(!off) return `M${sx},${sy}L${ex},${ey}`; const mx=(sx+ex)/2 - dy/dr*off, my=(sy+ey)/2 + dx/dr*off; return `M${sx},${sy}Q${mx},${my} ${ex},${ey}`; }); node.attr('transform', d=>`translate(${d.x},${d.y})`); });
-  node.call(d3.drag().on('start',(ev,d)=>{ sim.alphaTarget(.3).restart(); d.fx=d.x; d.fy=d.y; }).on('drag',(ev,d)=>{ d.fx=ev.x; d.fy=ev.y; }).on('end',(ev,d)=>{ sim.alphaTarget(0); d.fx=null; d.fy=null; }));
-  svg.on('click', ()=>{ NS.sel=null; highlight(null); sidePanel(NS.focus||null); });
-  function highlight(id){ if(!id){ link.classed('dim',false); node.classed('dim',false); return; } const nb=new Set([id]); E.forEach(e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; if(s===id) nb.add(t); if(t===id) nb.add(s); }); node.classed('dim', d=>!nb.has(d.id)); link.classed('dim', e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; return s!==id&&t!==id; }); }
-  if(NS.sel) highlight(NS.sel);
+  sim.on('tick', ()=>{ link.attr('d', d=>curvePath(d, r(d.target), d.kind==='pi'? 16 : d.kind==='stated'? -14 : 0)); node.attr('transform', d=>`translate(${d.x},${d.y})`); });
+  nodeBehaviour(node, ()=>sim);
+  NS.graph.nodes=N; NS.graph.highlight=neighbourHighlight(node, link, E);
+  if(NS.sel) NS.graph.highlight(NS.sel);
 }
+function drawInstitutions(g,W,H){
+  const E=D.network.edges.filter(e=>e.kind==='affiliation').filter(e=>inScope(nodeById[e.source])&&inScope(nodeById[e.target])).map(e=>({...e, weight:1, items:[e]}));
+  const ids=new Set(E.flatMap(e=>[e.source,e.target]));
+  const N=D.network.nodes.filter(n=>ids.has(n.id)).map(n=>({...n}));
+  const cnt=new Map(); E.forEach(e=>{ cnt.set(e.target,(cnt.get(e.target)||0)+(e.affiliation_status==='stated'?1:0)); cnt.set(e.source,(cnt.get(e.source)||0)+1); });
+  N.forEach(n=>n.deg=cnt.get(n.id)||0);
+  const nInst=N.filter(n=>n.type==='institution').length;
+  netstat(`${nInst} institutions · ${N.length-nInst} persons · ${E.length} affiliations (${E.filter(e=>e.affiliation_status==='stated').length} stated, ${E.filter(e=>e.affiliation_status==='inferred').length} inferred by the model) · bipartite layout`);
+  const link=g.append('g').selectAll('path').data(E).join('path').attr('class', d=>'netedge affiliation'+(d.affiliation_status==='inferred'?' inferred':'')).attr('stroke-width',1.6).style('cursor','pointer').on('click',(ev,d)=>{ ev.stopPropagation(); sideEdge(d); });
+  link.append('title').text(d=>`${personLabel(d.source)} → ${personLabel(d.target)} · affiliation (${d.affiliation_status})${d.evidence_kind?' · '+d.evidence_kind:''}`);
+  // role labels on every edge would overprint in the AMNH cluster: 'main nodes' shows them only for small institutions, 'all' for every edge
+  const lbl=g.append('g').selectAll('text').data(E).join('text').attr('class','netlabel').text(d=>d.affiliation_status==='stated'? (d.evidence[0].quote.length>34? d.evidence[0].quote.slice(0,32)+'…':d.evidence[0].quote) : 'inferred (model)').attr('display', d=>NS.labels==='none'?'none': NS.labels==='all'?null: ((cnt.get(d.target)||0)<=3?null:'none')).attr('text-anchor','middle');
+  const size=d=>d.type==='institution'? 9+Math.sqrt(d.deg)*5 : 5;
+  const node=g.append('g').selectAll('g').data(N).join('g').attr('class','netnode');
+  node.filter(d=>d.type==='institution').append('rect').attr('x',d=>-size(d)).attr('y',d=>-size(d)).attr('width',d=>2*size(d)).attr('height',d=>2*size(d)).style('fill','var(--surface)').style('stroke','var(--net-node)').attr('stroke-width',2);
+  node.filter(d=>d.type!=='institution').append('circle').attr('r',size).style('fill','var(--net-node)').style('stroke','var(--net-node)');
+  node.append('text').attr('dx', d=>size(d)+3).attr('dy',4).text(d=>shortLabel(d.label)).attr('display', d=>NS.labels==='none'?'none':null);
+  node.append('title').text(d=>`${d.label}\n${d.type==='institution'?d.deg+' person(s) attested in it':'person'}\nclick: details · double-click: full record`);
+  sim=d3.forceSimulation(N).force('link', d3.forceLink(E).id(d=>d.id).distance(90).strength(.5)).force('charge', d3.forceManyBody().strength(-260)).force('x', d3.forceX(d=>d.type==='institution'? W*.68 : W*.3).strength(.12)).force('y', d3.forceY(H/2).strength(.05)).force('collide', d3.forceCollide(d=>size(d)+8));
+  sim.on('tick', ()=>{ link.attr('d', d=>`M${d.source.x},${d.source.y}L${d.target.x},${d.target.y}`); lbl.attr('x', d=>(d.source.x+d.target.x)/2).attr('y', d=>(d.source.y+d.target.y)/2-3); node.attr('transform', d=>`translate(${d.x},${d.y})`); });
+  nodeBehaviour(node, ()=>sim);
+  NS.graph.nodes=N; const hl=neighbourHighlight(node, link, E); NS.graph.highlight=id=>{ hl(id); lbl.classed('dim', d=>id && d.source.id!==id && d.target.id!==id); };
+}
+function drawFunding(g,W,H){
+  const nodes=FUND.nodes.map(n=>({...n})); const byId=Object.fromEntries(nodes.map(n=>[n.id,n]));
+  const E=FUND.edges.map(e=>({...e, source:byId[e.source], target:byId[e.target]})).filter(e=>e.source&&e.target);
+  const m=100, colX=l=>m + l*(W-2*m)/3;
+  [0,1,2,3].forEach(l=>{ const col=nodes.filter(n=>n.layer===l).sort((a,b)=>(a.year||0)-(b.year||0) || a.label.localeCompare(b.label)); col.forEach((n,i)=>{ n.x=colX(l); n.y=H*(i+1)/(col.length+1); n.deg=E.filter(e=>e.source===n||e.target===n).length; }); });
+  // parallel edges between the same pair are spread so their labels do not overprint
+  const groups=new Map(); E.forEach(e=>{ const k=[e.source.id,e.target.id].sort().join('|'); if(!groups.has(k)) groups.set(k,[]); groups.get(k).push(e); });
+  groups.forEach(arr=>arr.sort((a,b)=>(a.date||'').localeCompare(b.date||'')).forEach((e,i)=>{ e.k=i; e.n=arr.length; }));
+  const path=e=>{ const sx=e.source.x+ (e.target.x>e.source.x? 14:-14), tx=e.target.x+(e.target.x>e.source.x? -16:16), sy=e.source.y, ty=e.target.y; const off=(e.k-(e.n-1)/2)*34; const mx=(sx+tx)/2; return `M${sx},${sy} C${mx},${sy+off} ${mx},${ty+off} ${tx},${ty}`; };
+  const mid=e=>{ const sx=e.source.x, tx=e.target.x, sy=e.source.y, ty=e.target.y; const off=(e.k-(e.n-1)/2)*34; return [(sx+tx)/2, (sy+ty)/2 + off*0.75]; };
+  netstat(`${nodes.length} nodes · ${E.length} funding edges (${E.filter(e=>e.kind!=='pi').length} stated sums or promises; ${E.filter(e=>e.kind==='pi').length} PI assertions) · left to right: funders → the Museum's fund → expeditions → the field · amounts as written; no total is computed`);
+  const link=g.append('g').selectAll('path').data(E).join('path').attr('class', d=>'netedge funding '+d.status+(d.kind==='pi'?' pi':'')).attr('d',path).attr('stroke-width', d=>FUND_WIDTH[d.status]||1.6).style('stroke-dasharray', d=>d.kind==='pi'?'4 3':(FUND_DASH[d.status]||null)).attr('marker-end', d=>d.kind==='pi'?'url(#arrow-model)':'url(#arrow-ink)').style('cursor','pointer').on('click',(ev,d)=>{ ev.stopPropagation(); sideFunding(d); });
+  link.append('title').text(d=>`${d.source.label} → ${d.target.label}: ${d.amount_as_written} · ${d.kind==='pi'?'PI: ':''}${d.status} · ${d.date?fmtDate(d.date):'undated'}`);
+  const lbl=g.append('g').selectAll('text').data(E).join('text').attr('class', d=>'netlabel'+(d.kind==='pi'?' pi':'')).attr('x', d=>mid(d)[0]).attr('y', d=>mid(d)[1]-4).attr('text-anchor','middle').text(d=>d.amount_as_written).style('cursor','pointer').on('click',(ev,d)=>{ ev.stopPropagation(); sideFunding(d); });
+  const node=g.append('g').selectAll('g').data(nodes).join('g').attr('class','netnode').attr('transform', d=>`translate(${d.x},${d.y})`);
+  node.filter(d=>d.type!=='person').append('rect').attr('x',-12).attr('y',-12).attr('width',24).attr('height',24).attr('rx', d=>d.type==='fund'?12:2).style('fill','var(--surface)').style('stroke','var(--net-node)').attr('stroke-width',2);
+  node.filter(d=>d.type==='person').append('circle').attr('r',8).style('fill','var(--net-node)').style('stroke','var(--net-node)');
+  node.append('text').attr('dy', d=>d.layer===1||d.layer===2? -16 : 4).attr('dx', d=>d.layer===0? -12 : d.layer===3? 12 : 0).attr('text-anchor', d=>d.layer===0?'end': d.layer===3?'start':'middle').text(d=>shortLabel(d.label).replace('AMNH — Treasurer / Department of Vertebrate Palaeontology fund','AMNH fund (Treasurer / Dept of VP)'));
+  node.append('title').text(d=>`${d.label}${d.note?'\n'+d.note:''}\n${d.deg} funding edge(s)`);
+  nodeBehaviour(node, null);
+  NS.graph.nodes=nodes;
+  NS.graph.highlight=id=>{ if(!id){ link.classed('dim',false); lbl.classed('dim',false); node.classed('dim',false); return; } const nb=new Set([id]); E.forEach(e=>{ if(e.source.id===id) nb.add(e.target.id); if(e.target.id===id) nb.add(e.source.id); }); node.classed('dim', d=>!nb.has(d.id)); link.classed('dim', e=>e.source.id!==id&&e.target.id!==id); lbl.classed('dim', e=>e.source.id!==id&&e.target.id!==id); };
+}
+function coPairs(){ const P=D.network.pairs||[]; const f=NS.coFilter; return P.filter(p=>inScope(nodeById[p.a])&&inScope(nodeById[p.b])).filter(p=> f==='three'? p.n_kinds===3 : f==='docs'? (!p.pi && (p.correspondence||p.stated)) : f==='pi'? (p.pi && !p.correspondence && !p.stated) : true); }
+function drawCoattestation(g,W,H){
+  const P=coPairs();
+  const E=P.map(p=>({source:p.a, target:p.b, pair:p, weight:p.n_edges, kinds:['correspondence','stated','pi'].filter(k=>p[k])}));
+  const ids=new Set(E.flatMap(e=>[e.source,e.target]));
+  const N=D.network.nodes.filter(n=>ids.has(n.id)).map(n=>({...n}));
+  const deg=new Map(); E.forEach(e=>{ deg.set(e.source,(deg.get(e.source)||0)+e.kinds.length); deg.set(e.target,(deg.get(e.target)||0)+e.kinds.length); }); N.forEach(n=>n.deg=deg.get(n.id)||0);
+  netstat(`${N.length} nodes · ${E.length} pairs (${E.filter(e=>e.kinds.length>=2).length} attested by two or more kinds of evidence) · derived from the asserted edges; adds no tie`);
+  const strands=E.flatMap(e=>e.kinds.map((k,i)=>({e,k,i,n:e.kinds.length})));
+  const link=g.append('g').selectAll('path').data(strands).join('path').attr('class', d=>'netedge strand '+d.k).attr('stroke-width',2).style('cursor','pointer').on('click',(ev,d)=>{ ev.stopPropagation(); sidePair(d.e.pair); NS.graph.highlightPair(d.e.pair); });
+  link.append('title').text(d=>`${personLabel(d.e.source)} ↔ ${personLabel(d.e.target)} · ${d.k}: ${d.e.pair[d.k]} edge(s) · ${d.n} kind(s) in all`);
+  const r=d=>4+Math.sqrt(d.deg)*2;
+  const node=g.append('g').selectAll('g').data(N).join('g').attr('class','netnode');
+  node.append('circle').attr('r',r).style('fill', d=>d.type==='office'?'var(--surface-2)':'var(--net-node)').style('stroke','var(--net-node)').attr('stroke-dasharray', d=>d.type==='office'?'2 2':null);
+  node.append('text').attr('dx', d=>r(d)+3).attr('dy',4).text(d=>shortLabel(d.label)).attr('display', d=>labelVisible(d,N));
+  node.append('title').text(d=>`${d.label}\n${d.deg} strand(s)`);
+  sim=d3.forceSimulation(N).force('link', d3.forceLink(E).id(d=>d.id).distance(80).strength(.5)).force('charge', d3.forceManyBody().strength(-240)).force('center', d3.forceCenter(W/2,H/2)).force('collide', d3.forceCollide(d=>r(d)+6));
+  sim.on('tick', ()=>{ link.attr('d', d=>{ const s=d.e.source, t=d.e.target; const dx=t.x-s.x, dy=t.y-s.y, dr=Math.hypot(dx,dy)||1; const off=(d.i-(d.n-1)/2)*4.5; const nx=-dy/dr*off, ny=dx/dr*off; return `M${s.x+nx},${s.y+ny}L${t.x+nx},${t.y+ny}`; }); node.attr('transform', d=>`translate(${d.x},${d.y})`); });
+  nodeBehaviour(node, ()=>sim);
+  NS.graph.nodes=N;
+  NS.graph.highlight=id=>{ if(!id){ link.classed('dim',false); node.classed('dim',false); return; } const nb=new Set([id]); E.forEach(e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; if(s===id) nb.add(t); if(t===id) nb.add(s); }); node.classed('dim', d=>!nb.has(d.id)); link.classed('dim', d=>{ const s=d.e.source.id||d.e.source, t=d.e.target.id||d.e.target; return s!==id&&t!==id; }); };
+  NS.graph.highlightPair=p=>{ node.classed('dim', d=>d.id!==p.a&&d.id!==p.b); link.classed('dim', d=>d.e.pair!==p); };
+}
+function drawMentions(g,W,H){
+  const agg=new Map(); (D.network.mentions.edges||[]).forEach(e=>{ if(!inScope(nodeById[e.source])||!inScope(nodeById[e.target])) return; const k=e.source+'>'+e.target; if(!agg.has(k)) agg.set(k,{source:e.source,target:e.target,kind:'mention',weight:0,docs:[]}); const a=agg.get(k); a.weight++; a.docs.push(e.doc); });
+  const E=[...agg.values()]; const ids=new Set(E.flatMap(e=>[e.source,e.target]));
+  const N=D.network.nodes.filter(n=>ids.has(n.id)).map(n=>({...n}));
+  const deg=new Map(); E.forEach(e=>{ deg.set(e.source,(deg.get(e.source)||0)+e.weight); deg.set(e.target,(deg.get(e.target)||0)+e.weight); }); N.forEach(n=>n.deg=deg.get(n.id)||0);
+  netstat(`${N.length} nodes · ${E.length} sender → named-person edges (${E.reduce((s,e)=>s+e.weight,0)} mentions in ${new Set(E.flatMap(e=>e.docs)).size} items) · derived — not asserted`);
+  const link=g.append('g').selectAll('path').data(E).join('path').attr('class','netedge mention').attr('stroke-width', d=>Math.min(1+Math.sqrt(d.weight), 5)).attr('marker-end','url(#arrow-muted)').style('cursor','pointer').on('click',(ev,d)=>{ ev.stopPropagation(); sideMention(d); });
+  link.append('title').text(d=>`${personLabel(d.source)} names ${personLabel(d.target)} in ${d.weight} item(s) · derived by name matching`);
+  const r=d=>4+Math.sqrt(d.deg)*1.8;
+  const node=g.append('g').selectAll('g').data(N).join('g').attr('class','netnode');
+  node.append('circle').attr('r',r).style('fill', d=>d.type==='office'?'var(--surface-2)':'var(--net-node)').style('stroke','var(--net-node)').attr('stroke-dasharray', d=>d.type==='office'?'2 2':null);
+  node.append('text').attr('dx', d=>r(d)+3).attr('dy',4).text(d=>shortLabel(d.label)).attr('display', d=>labelVisible(d,N));
+  node.append('title').text(d=>`${d.label}\n${d.deg} mention(s)`);
+  sim=d3.forceSimulation(N).force('link', d3.forceLink(E).id(d=>d.id).distance(70).strength(.3)).force('charge', d3.forceManyBody().strength(-200)).force('center', d3.forceCenter(W/2,H/2)).force('collide', d3.forceCollide(d=>r(d)+5));
+  sim.on('tick', ()=>{ link.attr('d', d=>curvePath(d, r(d.target), 10)); node.attr('transform', d=>`translate(${d.x},${d.y})`); });
+  nodeBehaviour(node, ()=>sim);
+  NS.graph.nodes=N; NS.graph.highlight=neighbourHighlight(node, link, E);
+}
+
+/* ---------------- side panel ---------------- */
+function ruleBlock(v){ return `<div id="netcaveats" class="card"><div class="small"><span class="tag ${v.derived?'model':''}">${v.derived?'derived':'asserted'}</span> <b>Rule.</b> ${esc(v.rule)}</div>${(v.caveats||[]).length?`<div class="small" style="margin-top:.4rem"><b>Caveat${v.caveats.length>1?'s':''}.</b><ul style="margin:.2rem 0 0;padding-left:1.1rem">${v.caveats.map(c=>`<li>${esc(c)}</li>`).join('')}</ul></div>`:''}</div>`; }
 function sideEdge(e){
   const side=document.getElementById('netside'); if(!side) return;
-  side.innerHTML=`<div class="phase">tie · ${esc(e.kind)}</div><h2 style="margin-top:0">${esc(personLabel(e.source.id||e.source))} ${e.directed?'→':'↔'} ${esc(personLabel(e.target.id||e.target))}</h2>
+  const items=e.items||[e];
+  side.innerHTML=`<div class="phase">tie · ${esc(e.kind)}${e.evidence_kind?' · '+esc(e.evidence_kind):''}${e.affiliation_status?' · '+esc(e.affiliation_status):''}</div><h2 style="margin-top:0">${esc(personLabel(e.source.id||e.source))} ${e.directed?'→':'↔'} ${esc(personLabel(e.target.id||e.target))}</h2>
     <p class="small muted">${esc(D.network.rules[e.kind]||'')}</p>
-    <h4>${e.items.length} attestation${e.items.length>1?'s':''}</h4>
-    ${e.items.map(it=>`<div class="card"><b>${esc(it.label)}</b>${it.date?` <span class="muted small">${esc(fmtDate(it.date))}</span>`:''}<ul class="small">${it.evidence.map(v=>`<li>${IDX.doc[v.ref]?docLink(v.ref):`<span class="tag">${esc(v.ref)}</span>`}${v.quote&&it.kind!=='correspondence'?`: <span class="serif">“${esc(v.quote)}”</span>`:''}</li>`).join('')}</ul></div>`).join('')}`;
+    ${e.evidence_kind?`<p class="small"><span class="tag">letterhead</span> The quotation is a printed letterhead officer list, not a sentence written by the signer.</p>`:''}
+    ${e.affiliation_status==='inferred'?`<div class="block model" style="margin:.4rem 0"><span class="who">model note — inferred affiliation</span>${esc(e.note||'Read from context; no provided text names the person in this institution.')}</div>`:''}
+    <h4>${items.length} attestation${items.length>1?'s':''}</h4>
+    ${items.map(it=>`<div class="card"><b>${esc(it.label)}</b>${it.date?` <span class="muted small">${esc(fmtDate(it.date))}</span>`:' <span class="muted small">undated</span>'}<ul class="small">${(it.evidence||[]).map(v=>`<li>${refLink(v.ref)}${v.quote&&it.kind!=='correspondence'?`: <span class="serif">“${esc(v.quote)}”</span>`:''}</li>`).join('')}</ul>${it.note&&it.affiliation_status!=='inferred'?`<div class="small muted">${esc(it.note)}</div>`:''}</div>`).join('')}`;
 }
+function sideFunding(e){
+  const side=document.getElementById('netside'); if(!side) return;
+  const v=viewById.funding;
+  side.innerHTML=`<div class="phase">funding edge · ${e.kind==='pi'?'PI’s assertion':esc(e.status)}</div><h2 style="margin-top:0">${esc(e.source.label||fundLabel(e.source))} → ${esc(e.target.label||fundLabel(e.target))}</h2>
+    <p class="serif" style="font-size:1.4rem;margin:.2rem 0">${esc(e.amount_as_written)}</p>
+    <dl class="kv small"><dt>status</dt><dd><span class="tag ${e.kind==='pi'?'model':''}">${esc(e.kind==='pi'?'PI: '+e.status:e.status)}</span> ${esc(e.kind==='pi'?"the principal investigator's own statement, not a document":(FUND.statuses[e.status]||''))}</dd><dt>date</dt><dd>${esc(e.date?fmtDate(e.date):'undated')} <span class="muted">(the document's date)</span></dd><dt>document</dt><dd>${refLink(e.doc)}</dd></dl>
+    <div class="block ${e.kind==='pi'?'pi':'verbatim'}"><span class="who">${e.kind==='pi'?PI_CAST_WHO:'quoted from the item, verbatim (verified at build)'}</span>${esc(e.quote)}</div>
+    ${e.note?modelBlock(e.note):''}
+    <p class="small muted">${esc(v?v.rule:FUND.rule)}</p>`;
+}
+function sideFundNode(id){
+  const side=document.getElementById('netside'); if(!side) return;
+  const n=FUND.nodes.find(x=>x.id===id); const rows=fundingRows(id);
+  side.innerHTML=`<div class="phase">funding node · ${esc(n?n.type:'')}</div><h2 style="margin-top:0">${esc(n?n.label:id)}</h2>${n&&n.note?`<p class="small">${esc(n.note)}</p>`:''}
+    <h4>${rows.length} funding edge${rows.length!==1?'s':''} <span class="muted small">(amounts as written; no total)</span></h4>${fundingTable(rows)}`;
+}
+function sidePair(p){
+  const side=document.getElementById('netside'); if(!side) return;
+  const byId=Object.fromEntries(D.network.edges.map(e=>[e.id,e]));
+  const edges=p.edges.map(id=>byId[id]).filter(Boolean);
+  side.innerHTML=`<div class="phase">co-attested pair · <span class="tag model">derived</span></div><h2 style="margin-top:0">${esc(personLabel(p.a))} ↔ ${esc(personLabel(p.b))}</h2>
+    <dl class="kv small"><dt>correspondence</dt><dd>${p.correspondence} item${p.correspondence!==1?'s':''}</dd><dt>stated</dt><dd>${p.stated}</dd><dt>PI</dt><dd>${p.pi}</dd><dt>kinds</dt><dd>${p.n_kinds} of 3</dd></dl>
+    <p class="small muted">${esc(D.network.coattestation.caveat)}</p>
+    <h4>The edges counted</h4><ul class="small">${edges.map(e=>`<li><span class="tag ${e.kind==='pi'?'model':''}">${e.kind}</span> ${esc(personLabel(e.source))} ${e.directed?'→':'↔'} ${esc(personLabel(e.target))} — ${esc(e.label)}${e.date?` <span class="muted">(${esc(fmtDate(e.date))})</span>`:''}${e.doc?` ${docLink(e.doc,'item')}`:''}</li>`).join('')}</ul>
+    <p><a href="#/person/${p.a}">${esc(personLabel(p.a))}</a> · <a href="#/person/${p.b}">${esc(personLabel(p.b))}</a></p>`;
+}
+function sideMention(e){
+  const side=document.getElementById('netside'); if(!side) return;
+  side.innerHTML=`<div class="phase">name mention · <span class="tag model">derived — not asserted</span></div><h2 style="margin-top:0">${esc(personLabel(e.source))} names ${esc(personLabel(e.target))}</h2>
+    <p class="small muted">${esc(D.network.mentions.rule)}</p>
+    <h4>${e.docs.length} item${e.docs.length>1?'s':''}</h4><ul class="small">${e.docs.map(d=>`<li>${docLink(d)} <span class="muted">${esc((IDX.doc[d]||{}).date_text||'')}</span></li>`).join('')}</ul>
+    <p class="small muted">${esc((IDX.doc[e.docs[0]]||{}).mentions_method||'')}</p>`;
+}
+function pairTable(){
+  const P=coPairs(); const key=NS.coSort; const sorted=[...P].sort((a,b)=> key==='name'? personLabel(a.a).localeCompare(personLabel(b.a)) : (b[key]-a[key]) || (b.n_edges-a.n_edges));
+  const th=(k,l)=>`<th><button class="ghost small" onclick="Pages._coSort('${k}')" aria-label="Sort by ${esc(l)}">${esc(l)}${NS.coSort===k?' ▾':''}</button></th>`;
+  return `<table class="data"><thead><tr>${th('name','Pair')}${th('correspondence','corr.')}${th('stated','stated')}${th('pi','PI')}${th('n_kinds','kinds')}</tr></thead><tbody>${sorted.map(p=>`<tr style="cursor:pointer" onclick="Pages._coPick('${p.a}','${p.b}')"><td>${esc(shortLabel(personLabel(p.a)))} ↔ ${esc(shortLabel(personLabel(p.b)))}</td><td>${p.correspondence||''}</td><td>${p.stated||''}</td><td>${p.pi||''}</td><td>${p.n_kinds}</td></tr>`).join('')}</tbody></table>`;
+}
+Pages._coSort=function(k){ NS.coSort=k; sidePanel(null); };
+Pages._coPick=function(a,b){ const p=(D.network.pairs||[]).find(x=>x.a===a&&x.b===b); if(!p) return; sidePair(p); if(NS.graph&&NS.graph.highlightPair) NS.graph.highlightPair(p); };
 function sidePanel(id){
   const side=document.getElementById('netside'); if(!side) return;
-  if(!id){ const top=[...D.network.nodes].filter(n=>n.scope==='hunt').sort((a,b)=>(b.metrics.total||0)-(a.metrics.total||0)).slice(0,12);
-    side.innerHTML=`<h2 style="margin-top:0">Network analysis</h2><p class="small">A nominalist network: a tie exists only where a provided text asserts it. Three kinds of evidence are kept apart and can be shown separately. Node size = number of attestations touching the node under the current filters. Click a node for its record, a tie for its evidence; double-click a node for the full prosopographical page.</p>
-    <dl class="kv small"><dt><span style="color:var(--j1907)">■</span> correspondence</dt><dd>${esc(D.network.rules.correspondence)}</dd><dt><span style="color:var(--j1908)">■</span> stated</dt><dd>${esc(D.network.rules.stated)}</dd><dt><span style="color:var(--model)">■</span> PI’s writing</dt><dd>${esc(D.network.rules.pi)}</dd><dt><span style="color:#999">■</span> affiliation</dt><dd>${esc(D.network.rules.affiliation)}</dd><dt>exclusions</dt><dd>${esc(D.network.rules.exclusions)}</dd></dl>
-    <h4>Most attested nodes (all evidence)</h4><table class="data"><thead><tr><th>Node</th><th>corr. out/in</th><th>stated</th><th>PI</th><th>total</th></tr></thead><tbody>${top.map(n=>`<tr><td><a href="#/person/${n.id}">${esc(n.label)}</a></td><td>${n.metrics.correspondence_out||0}/${n.metrics.correspondence_in||0}</td><td>${(n.metrics.stated_out||0)+(n.metrics.stated_in||0)}</td><td>${(n.metrics.pi_out||0)+(n.metrics.pi_in||0)}</td><td>${n.metrics.total||0}</td></tr>`).join('')}</tbody></table>
-    <p class="small"><a href="data/csv/network_edges.csv" download>Download edge list (CSV)</a> · <a href="data/network.json" download>network.json</a> · <a href="#/method/network">Rules in full</a></p>`; return; }
-  const p=IDX.person[id]; const n=D.network.nodes.find(x=>x.id===id)||{metrics:{}};
+  const v=viewById[NS.view];
+  if(!id){
+    if(NS.view==='persons'){
+      const top=[...D.network.nodes].filter(n=>n.scope==='hunt').sort((a,b)=>(b.metrics.total||0)-(a.metrics.total||0)).slice(0,12);
+      side.innerHTML=`<h2 style="margin-top:0">Network analysis</h2><p class="small">A nominalist network: a tie exists only where a provided text asserts it. Four kinds of evidence are kept apart and can be shown separately; dash pattern and hue both carry the kind. Node size = number of attestations touching the node under the current filters. Click a node for its record, a tie for its evidence; double-click a node for the full prosopographical page. The other views (Institutions, Funding, Co-attestation, Mentions) are reached from the View control; the derived ones say so.</p>
+      <h4>Most attested nodes (all evidence)</h4><table class="data"><thead><tr><th>Node</th><th>corr. out/in</th><th>stated</th><th>PI</th><th>total</th></tr></thead><tbody>${top.map(n=>`<tr><td><a href="#/person/${n.id}">${esc(n.label)}</a></td><td>${n.metrics.correspondence_out||0}/${n.metrics.correspondence_in||0}</td><td>${(n.metrics.stated_out||0)+(n.metrics.stated_in||0)}</td><td>${(n.metrics.pi_out||0)+(n.metrics.pi_in||0)}</td><td>${n.metrics.total||0}</td></tr>`).join('')}</tbody></table>
+      <details class="rules"><summary>How ties are defined</summary>
+        <dl class="kv small"><dt>${swatch('',KIND_COLOR.correspondence)} correspondence</dt><dd>${esc(D.network.rules.correspondence)}</dd><dt>${swatch(KIND_DASH.stated,KIND_COLOR.stated)} stated</dt><dd>${esc(D.network.rules.stated)}</dd><dt>${swatch(KIND_DASH.pi,KIND_COLOR.pi)} PI’s writing</dt><dd>${esc(D.network.rules.pi)}</dd><dt>${swatch(KIND_DASH.affiliation,KIND_COLOR.affiliation)} affiliation</dt><dd>${esc(D.network.rules.affiliation)}</dd><dt>exclusions</dt><dd>${esc(D.network.rules.exclusions)}</dd></dl>
+        ${ruleBlock(v)}</details>
+      <p class="small"><a href="data/csv/network_edges.csv" download>Download edge list (CSV)</a> · <a href="data/network.json" download>network.json</a> · <a href="#/method/network">Rules and views in full</a></p>`;
+    } else if(NS.view==='funding'){
+      side.innerHTML=`<h2 style="margin-top:0">Funding flow</h2>${ruleBlock(v)}
+      <p class="small">Edges run from the giver to the receiver; the label is the amount exactly as the text writes it; the dash pattern is the status (see the bar above the graph). Several edges between the same two nodes are several attestations, not several payments. Click an edge for its quotation.</p>
+      <h4>Every funding edge</h4>${fundingTable(FUND.edges)}
+      <p class="small"><a href="data/csv/funding.csv" download>Download funding edges (CSV)</a> · <a href="#/method/network">Views and rules</a></p>`;
+    } else if(NS.view==='coattestation'){
+      side.innerHTML=`<h2 style="margin-top:0">Co-attestation</h2>${ruleBlock(v)}
+      <p class="small">Each pair of persons is drawn once, with one strand per kind of evidence that attests it (correspondence · stated · PI). The table can be sorted by any column; clicking a pair highlights it in the graph. The filter above the graph keeps the pairs that all three kinds attest, those that only documents attest, or those that only the PI's writing asserts.</p>
+      ${pairTable()}
+      <p class="small"><a href="data/csv/network_pairs.csv" download>Download pairs (CSV)</a></p>`;
+    } else if(NS.view==='mentions'){
+      const agg=new Map(); (D.network.mentions.edges||[]).forEach(e=>{ agg.set(e.target,(agg.get(e.target)||0)+1); });
+      const top=[...agg.entries()].sort((a,b)=>b[1]-a[1]).slice(0,12);
+      side.innerHTML=`<h2 style="margin-top:0">Mentions <span class="tag model">derived</span></h2>${ruleBlock(v)}
+      <p class="small">${esc(D.network.mentions.method||'')}</p>
+      <h4>Most often named in others' letters</h4><table class="data"><thead><tr><th>Person</th><th>items naming them</th></tr></thead><tbody>${top.map(([p,n])=>`<tr><td><a href="#/person/${p}">${esc(personLabel(p))}</a></td><td>${n}</td></tr>`).join('')}</tbody></table>
+      <p class="small"><a href="data/csv/network_mentions.csv" download>Download mention edges (CSV)</a></p>`;
+    } else {
+      const insts=D.institutions.map(i=>({i, n:D.network.edges.filter(e=>e.kind==='affiliation'&&e.target===i.id)})).filter(x=>x.n.length).sort((a,b)=>b.n.length-a.n.length);
+      side.innerHTML=`<h2 style="margin-top:0">Persons and institutions</h2>${ruleBlock(v)}
+      <h4>Institutions by persons attested</h4><table class="data"><thead><tr><th>Institution</th><th>stated</th><th>inferred</th><th>place</th></tr></thead><tbody>${insts.map(({i,n})=>`<tr><td><a href="#/person/${i.id}">${esc(i.label)}</a></td><td>${n.filter(e=>e.affiliation_status==='stated').length}</td><td>${n.filter(e=>e.affiliation_status==='inferred').length||''}</td><td class="small">${i.place?`${esc((IDX.place[i.place]||{}).label||i.place)} <span class="muted">(${esc(i.place_status||'')})</span>`:'—'}</td></tr>`).join('')}</tbody></table>`;
+    }
+    return;
+  }
+  const p=IDX.person[id]; if(!p){ side.innerHTML=''; return; }
+  const n=nodeById[id]||{metrics:{}};
   const edges=D.network.edges.filter(e=>e.source===id||e.target===id);
+  const fr=fundingRows(id);
   side.innerHTML=`<div class="phase">${esc(n.type||'')}</div><h2 style="margin-top:0">${esc(p.label)}</h2>
-    ${p.pi_characterisation?`<div class="block pi" style="margin:.4rem 0"><span class="who">PI — Cast of Characters</span>${esc(p.pi_characterisation)}</div>`:''}
+    ${p.pi_characterisation?`<div class="block pi" style="margin:.4rem 0"><span class="who">${PI_CAST_WHO}</span>${esc(p.pi_characterisation)}</div>`:''}
+    ${(p.characterisations||[]).map(c=>`<div class="block pi" style="margin:.4rem 0"><span class="who">${esc(c.source)} — verbatim</span>${esc(c.text)}</div>`).join('')}
     ${p.identity_note?`<div class="block model" style="margin:.4rem 0"><span class="who">model note</span>${esc(p.identity_note)}</div>`:''}
-    <dl class="kv small"><dt>correspondence</dt><dd>${n.metrics.correspondence_out||0} sent · ${n.metrics.correspondence_in||0} received</dd><dt>stated relations</dt><dd>${(n.metrics.stated_out||0)+(n.metrics.stated_in||0)}</dd><dt>PI-asserted</dt><dd>${(n.metrics.pi_out||0)+(n.metrics.pi_in||0)}</dd></dl>
+    <dl class="kv small"><dt>correspondence</dt><dd>${n.metrics.correspondence_out||0} sent · ${n.metrics.correspondence_in||0} received</dd><dt>stated relations</dt><dd>${(n.metrics.stated_out||0)+(n.metrics.stated_in||0)}</dd><dt>PI-asserted</dt><dd>${(n.metrics.pi_out||0)+(n.metrics.pi_in||0)}</dd>${fr.length?`<dt>funding edges</dt><dd>${fr.length} <a href="#/network/view/funding">(view)</a></dd>`:''}</dl>
     <p><button class="primary" onclick="App.go('/person/${id}')">Full record</button> <button onclick="App.go('/network/focus/${id}')">Ego network</button></p>
-    <h4>Ties (${edges.length})</h4><ul class="small">${edges.slice(0,60).map(e=>{ const other=e.source===id?e.target:e.source; return `<li><span class="tag ${e.kind==='pi'?'model':''}">${e.kind}</span> ${e.source===id?'→':e.directed?'←':'↔'} <a href="#/person/${other}">${esc(personLabel(other))}</a> — ${esc(e.label)}${e.doc?` <span class="muted">(${esc(IDX.doc[e.doc].date_text)})</span>`:''}</li>`; }).join('')}${edges.length>60?`<li class="muted">… ${edges.length-60} more on the full record</li>`:''}</ul>`;
+    <h4>Ties (${edges.length})</h4><ul class="small">${edges.slice(0,60).map(e=>{ const other=e.source===id?e.target:e.source; return `<li><span class="tag ${e.kind==='pi'?'model':''}">${e.kind}${e.affiliation_status==='inferred'?' · inferred':''}</span>${e.evidence_kind?` <span class="tag">${esc(e.evidence_kind)}</span>`:''} ${e.source===id?'→':e.directed?'←':'↔'} <a href="#/person/${other}">${esc(personLabel(other))}</a> — ${esc(e.label)}${e.date?` <span class="muted">(${esc(fmtDate(e.date))})</span>`:''}</li>`; }).join('')}${edges.length>60?`<li class="muted">… ${edges.length-60} more on the full record</li>`:''}</ul>`;
 }
 })();
 </script>
@@ -960,21 +1223,26 @@ Pages.method = function(seg){
       <h2>Stops and their dates</h2><table class="data"><thead><tr><th>Stop</th><th>Place</th><th>Date as attested</th><th>Precision</th><th>Status</th><th>Why</th></tr></thead><tbody>${D.stops.map(s=>`<tr><td><span class="tag ${App.journeyClass(s.journey)}">${s.journey}</span> ${esc(s.label)}</td><td><a href="#/place/${s.place}">${esc(IDX.place[s.place].label.split(' (')[0])}</a></td><td class="small">${esc(s.date_text)}</td><td><span class="chip plain ${esc(s.date_precision)}">${esc(s.date_precision)}</span></td><td>${chip(s.status)}</td><td class="small">${esc(s.why)}</td></tr>`).join('')}</tbody></table>
       <h2>Connectors</h2><table class="data"><thead><tr><th>Segment</th><th>Mode</th><th>Mode status</th><th>Geometry</th><th>Source</th></tr></thead><tbody>${D.segments.map(g=>`<tr><td><span class="tag ${App.journeyClass(g.journey)}">${g.journey}</span> ${esc(IDX.stop[g.frm].label)} → ${esc(IDX.stop[g.to].label)}</td><td>${esc(g.mode)}</td><td class="small">${esc(g.mode_status.replace('_',' '))}</td><td class="small">${esc(g.geometry)}</td><td class="small">${esc(g.source.ref)}: ${esc(g.source.locator||'')}${g.note?`<div class="muted">${esc(g.note)}</div>`:''}</td></tr>`).join('')}</tbody></table>`;
   } else if(sub==='network'){
-    body=`<h2>Rules</h2><dl class="kv">${Object.entries(D.network.rules).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
-     <h2>Prosopographical method</h2><ul><li>Persons are identified by the documents, not by the model: a record exists for each name attested, with every spelling and the source of each role or office.</li><li>Unnamed actors (the “old Indian”, the Eskimos, the prospectors, the signers of office copies) have records of kind <i>unnamed</i> or <i>collective</i> so that their absence is visible in the network.</li><li>Institutions are nodes; person–institution ties come only from attested roles.</li><li>Metrics (degree by edge kind) describe the transcription file, not the historical world: a person who wrote many letters that were not kept has a low degree.</li></ul>
-     <h2>All ties with evidence</h2><table class="data"><thead><tr><th>Source</th><th></th><th>Target</th><th>Kind</th><th>Relation</th><th>Evidence</th></tr></thead><tbody>${D.network.edges.filter(e=>e.kind!=='affiliation').map(e=>`<tr><td><a href="#/person/${e.source}">${esc(App.personLabel(e.source))}</a></td><td>${e.directed?'→':'↔'}</td><td><a href="#/person/${e.target}">${esc(App.personLabel(e.target))}</a></td><td><span class="tag ${e.kind==='pi'?'model':''}">${e.kind}</span></td><td class="small">${esc(e.label)}</td><td class="small">${e.evidence.map(v=>IDX.doc[v.ref]?docLink(v.ref, IDX.doc[v.ref].date_text):esc(v.ref)).join('; ')}${e.kind!=='correspondence'?`<div class="serif">${e.evidence.map(v=>'“'+esc(v.quote)+'”').join(' / ')}</div>`:''}</td></tr>`).join('')}</tbody></table>`;
+    const views=D.network.views||[];
+    body=`<h2>Views</h2><p class="small">Five views over one data set. The rule and caveat printed here are the same strings the view header and the side panel show (<code>network.views</code> in the data), so the three cannot diverge. Views marked <span class="tag model">derived</span> are computed from the asserted edges or from name matching and assert no tie.</p>
+     <table class="data"><thead><tr><th>View</th><th>What a node is</th><th>What an edge is</th><th>Evidence rule</th><th>Caveat</th><th>Status</th></tr></thead><tbody>${views.map(v=>`<tr><td><a href="#/network/view/${v.id}">${esc(v.label)}</a></td><td class="small">${esc(v.node)}</td><td class="small">${esc(v.edge)}</td><td class="small">${esc(v.rule)}</td><td class="small">${(v.caveats||[]).map(esc).join('<br>')}</td><td><span class="tag ${v.derived?'model':''}">${v.derived?'derived':'asserted'}</span></td></tr>`).join('')}</tbody></table>
+     <h2>Rules</h2><dl class="kv">${Object.entries(D.network.rules).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+     <h2>Prosopographical method</h2><ul><li>Persons are identified by the documents, not by the model: a record exists for each name attested, with every spelling and the source of each role or office.</li><li>Unnamed actors (the “old Indian”, the Eskimos, the prospectors, the signers of office copies) have records of kind <i>unnamed</i> or <i>collective</i> so that their absence is visible in the network.</li><li>Institutions are nodes; each person–institution tie carries one quotation naming the person in that institution and is marked <i>stated</i>, or is marked <i>inferred</i> where the model read it from context and is drawn dashed and faint.</li><li>Stated and affiliation ties are dated by the document that carries their quotation; PI ties are undated. The date is the document's, not the relationship's.</li><li>Ties resting on a printed letterhead officer list are tagged <span class="tag">letterhead</span>: a letterhead is printed, not written by the signer.</li><li>Characterisations (the PI's or a writer's evaluative phrases) are kept apart from roles and offices and are shown in the writer's voice.</li><li>Metrics (degree by edge kind) describe the transcription file, not the historical world: a person who wrote many letters that were not kept has a low degree.</li></ul>
+     <h2>All ties with evidence</h2><table class="data"><thead><tr><th>Source</th><th></th><th>Target</th><th>Kind</th><th>Date of document</th><th>Relation</th><th>Evidence</th></tr></thead><tbody>${D.network.edges.filter(e=>e.kind!=='correspondence').map(e=>`<tr><td><a href="#/person/${e.source}">${esc(App.personLabel(e.source))}</a></td><td>${e.directed?'→':'↔'}</td><td><a href="#/person/${e.target}">${esc(App.personLabel(e.target))}</a></td><td><span class="tag ${e.kind==='pi'?'model':''}">${e.kind}${e.affiliation_status?' · '+e.affiliation_status:''}</span>${e.evidence_kind?` <span class="tag">${esc(e.evidence_kind)}</span>`:''}</td><td class="small">${esc(e.date?fmtDate(e.date):'undated')}</td><td class="small">${esc(e.label)}${e.note?`<div class="muted">${esc(e.note)}</div>`:''}</td><td class="small">${e.evidence.map(v=>IDX.doc[v.ref]?docLink(v.ref, IDX.doc[v.ref].date_text):esc(v.ref)).join('; ')}${e.evidence.length?`<div class="serif">${e.evidence.map(v=>'“'+esc(v.quote)+'”').join(' / ')}</div>`:'<span class="muted">none — inferred by the model</span>'}</td></tr>`).join('')}</tbody></table>
+     <h2>Funding edges <span class="muted small">(amounts as written; no total is computed)</span></h2><p class="small">${esc(D.network.funding.rule)}</p><ul class="small">${D.network.funding.caveats.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>${App.fundingTable(D.network.funding.edges)}`;
   } else if(sub==='findings'){
     const kinds=[['discrepancy','Discrepancies — where the provided sources disagree'],['absence','Absences — what the file does not contain'],['naming','Naming — variants and modern equivalents'],['unlocated','Unlocated — what cannot be placed'],['authorship','Authorship — whose words']];
     body=kinds.map(([k,lab])=>`<h2>${esc(lab)}</h2>${D.findings.filter(f=>f.kind===k).map(f=>`<div id="${f.id}">${findingCard(f.id)}${(f.stories||[]).length?`<div class="small muted" style="margin:-.3rem 0 .6rem .9rem">Story pages: ${f.stories.map(s=>storyLink(s)).join('; ')}</div>`:''}</div>`).join('')}`).join('');
   } else {
     const files=['documents','people','offices','institutions','places','stops','segments','context_arcs','stories','timeline','itinerary','tale','tale_footnotes','cast','network','published','findings','meta'];
-    const csvs=['documents','document_blocks','places','stops','segments','people','institutions','network_edges','network_nodes','timeline','itinerary','stories','published','findings'];
+    const csvs=['documents','document_blocks','places','stops','segments','people','institutions','network_edges','network_nodes','funding','network_pairs','network_mentions','timeline','itinerary','stories','published','findings'];
     body=`<h2>Exports</h2><p>The data lives outside the interface. Each table is exported as JSON and CSV; <code>data/bundle.js</code> carries the same content for this page; <code>data/DATA_DICTIONARY.md</code> defines every field. Built ${esc(D.meta.built)} from these inputs:</p>
      <table class="data"><thead><tr><th>Input file</th><th>SHA-256</th><th>bytes</th></tr></thead><tbody>${D.meta.inputs.map(i=>`<tr><td>${esc(i.file)}</td><td class="small" style="font-family:monospace">${esc(i.sha256)}</td><td class="small">${i.bytes}</td></tr>`).join('')}</tbody></table>
      <h3>JSON</h3><div class="dl">${files.map(f=>`<a href="data/${f}.json" download>${f}.json</a>`).join('')}</div>
      <h3>CSV</h3><div class="dl">${csvs.map(f=>`<a href="data/csv/${f}.csv" download>${f}.csv</a>`).join('')}</div>
      <h3>Data dictionary and pipeline</h3><p><a href="data/DATA_DICTIONARY.md" download>DATA_DICTIONARY.md</a> · <code>scripts/extract_docx.py</code> (Word → paragraphs with formatting) · <code>scripts/build_data.py</code> (typing, normalisation, cross-reference and quotation checks) · <code>scripts/authored/*.py</code> (hand-authored normalisation: document metadata, prosopography, gazetteer, stops, stories, ties, published sources, findings).</p>
-     <h2>Counts</h2><dl class="kv">${Object.entries(D.meta.counts).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${v}</dd>`).join('')}</dl>
+     <h2>Counts</h2><dl class="kv">${Object.entries(D.meta.counts).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${v}${k==='verified_quotations'?' <span class="muted small">quoted fragments in the model’s notes and fields, verified against the sources at build; the build fails on any miss</span>':''}</dd>`).join('')}</dl>
+     <h2>Verified quotation classes</h2><dl class="kv">${Object.entries(D.meta.quotation_classes||{}).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
      <h2>Vocabularies</h2><h4>Block types</h4><dl class="kv">${Object.entries(D.meta.block_types).map(([k,v])=>`<dt><span class="tag ${k}">${k}</span></dt><dd>${esc(v)}</dd>`).join('')}</dl><h4>Status chips</h4><dl class="kv">${Object.entries(D.meta.status_chips).map(([k,v])=>`<dt>${chip(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`;
   }
   page.innerHTML=`<div class="page wide">${navbar({close:false})}<h1>Method &amp; Data</h1>

@@ -6,8 +6,8 @@ g1907_04,1907,s1907_04,s1907_05,down the Yukon (conveyance not stated),inferred,
 g1907_05,1907,s1907_05,s1907_06,steamer,stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.89 via PI: 'LSQ steams to St Michaels'""}",The PI's verb 'steams' is taken as the mode.
 g1907_06,1907,s1907_06,s1907_07,tug (15 hours),stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.89 via PI""}",
 g1907_07,1907,s1907_07,s1907_08,"not stated (side trip, 30 miles)",not_stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.89 via PI""}",Return to Nome implied.
-g1907_08,1907,s1907_08,s1907_09,steamer 'Corwin' (from Nome),stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.89 via PI: 'LSQ leaves Nome on \""Corwin\""'""}",Drawn from the Solomon River side trip back through Nome schematically.
-g1907_09,1907,s1907_09,s1907_10,not stated ('a few miles up Keewalik River'),not_stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.89 via PI""}",Return 'to the spit' implied.
+g1907_08,1907,s1907_08,s1907_09,steamer 'Corwin' (from Nome),stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.89 via PI: 'LSQ leaves Nome on “Corwin,”'""}",Drawn from the Solomon River side trip back through Nome schematically.
+g1907_09,1907,s1907_09,s1907_10,not stated ('a few miles up Keewalik River'),not_stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.89 via PI""}",Return “to ‘the spit.’” implied.
 g1907_10,1907,s1907_10,s1907_11,"Hoffman's fishing boat (sail, no centerboard) with canoe",stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.89 via PI""}",Coastal passage across Eschscholtz Bay; not traced.
 g1907_11,1907,s1907_11,s1907_12,boat / canoe (not specified),not_stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.89 via PI: 'enter Buckland R, only go 15 mi'""}",
 g1907_12,1907,s1907_12,s1907_13,boat (return via Elephant Point implied),inferred,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.90 via PI""}",The 19 September description of ice around the Bay and the frozen bluff implies a return to Elephant Point before Keewalik; not drawn as a separate stop.
@@ -31,7 +31,7 @@ g1908_14,1908,s1908_14,s1908_15,canoe (return; West Fork ascended),stated,schema
 g1908_15,1908,s1908_15,s1908_16,canoe,stated,schematic,"{""ref"": ""d_19081001_quackenbush_bumpus_report"", ""locator"": ""'on August 5th reached the mouth of the river'""}",
 g1908_16,1908,s1908_16,s1908_17,dory (crossed the Buckland estuary),stated,schematic,"{""ref"": ""d_19081001_quackenbush_bumpus_report"", ""locator"": ""'crossed the Buckland estuary to the extreme eastern end of Eschscholtz Bay'""}",
 g1908_17,1908,s1908_17,s1908_18,dory (coastal cruise along the south shore),stated,schematic,"{""ref"": ""d_19081001_quackenbush_bumpus_report"", ""locator"": ""'cruised along the south shore of Eschscholtz Bay'""}",
-g1908_18,1908,s1908_18,s1908_19,"dory to the north shore, then on foot",stated,schematic,"{""ref"": ""d_19081001_quackenbush_bumpus_report"", ""locator"": ""'On August 11th I crossed to the north shore ... set out on foot with light packs'""}",
+g1908_18,1908,s1908_18,s1908_19,"dory to the north shore, then on foot",stated,schematic,"{""ref"": ""d_19081001_quackenbush_bumpus_report"", ""locator"": ""'On August 11th I crossed to the north shore ... set out on foot with likght [sic] packs'""}",
 g1908_19,1908,s1908_19,s1908_20,on foot,stated,schematic,"{""ref"": ""d_19081001_quackenbush_bumpus_report"", ""locator"": ""'crossed Hotham Peninsula to Hotham Inlet'""}",
 g1908_20,1908,s1908_20,s1908_21,on foot (recrossed),stated,schematic,"{""ref"": ""d_19081001_quackenbush_bumpus_report"", ""locator"": ""'On August 17th we recrossed Hotham Peninsula to Eschscholtz Bay'""}",
 g1908_21,1908,s1908_21,s1908_22,dory (sail),stated,schematic,"{""ref"": ""pub_bamnh26"", ""locator"": ""p.91 via PI: 'LSQ & Hoffman sail back to Keewalik'""}",

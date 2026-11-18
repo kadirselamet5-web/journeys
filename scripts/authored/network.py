@@ -8,9 +8,12 @@ Three evidence kinds (nominalist: a tie exists only where a provided text assert
   'stated'          — a relation asserted inside a document by its writer (e.g. 'my partner').
   'pi'              — a relation asserted in the PI's own writing (Tale §3, Cast of Characters,
                       timeline summaries). These are the PI's interpretations, kept separate.
-Each hand-authored tie: source, target, kind, label, directed, evidence=[(source_id, quote)].
+Each hand-authored tie: source, target, kind, label, directed, evidence=[(source_id, quote)],
+optional evidence_kind='letterhead' (the quotation is a printed letterhead officer list, not a
+sentence written by the signer; such ties are tagged in the interface).
 source_id is a document id, 'tale', 'cast', or 'pi_timeline'. Quotes are checked at build time
-against the provided texts (normalised quotes/dashes/whitespace)."""
+against the provided texts (normalised quotes/dashes/whitespace). The build dates each tie by the
+first document among its evidence refs (the date is the document's, not the relationship's)."""
 
 TIES = [
  # ---------------------------------------------------------------- stated in documents
@@ -18,9 +21,9 @@ TIES = [
       evidence=[("d_19061230_startsman_graham_reed","I immediately consulted my partner C.W. Graham [sic]")]),
  dict(source="p_old_indian", target="p_graham", kind="stated", label="guided to the animal (1898, 1899)", directed=True,
       evidence=[("d_19061230_startsman_graham_reed","in 1898 and 1899 he took my partner E.W. Graham to see the animal")]),
- dict(source="p_chilberg", target="p_startsman", kind="stated", label="conferred at Nome (1906)", directed=True,
+ dict(source="p_chilberg", target="p_startsman", kind="stated", label="conference respecting a mastodon (1906; place not stated)", directed=True,
       evidence=[("d_19061018_reed_startsman","has advised me of his conference with you respecting a mastodon")]),
- dict(source="p_reed", target="p_chilberg", kind="stated", label="acts at Chilberg's direction (A-Y-P)", directed=True,
+ dict(source="p_reed", target="p_chilberg", kind="stated", label="discussed 'the uses to which the mastodon could be put' with Chilberg", directed=True,
       evidence=[("d_19061018_reed_startsman","President Chilberg and myself today briefly discussed the uses to which the mastodon could be put")]),
  dict(source="p_meany", target="p_chilberg", kind="stated", label="first information came through Chilberg", directed=True,
       evidence=[("d_19070623_meany_bumpus","The first information of the mammoth came to us through him")]),
@@ -40,10 +43,10 @@ TIES = [
       evidence=[("d_19070427_bumpus_osborn","Says you are old intimate friend.")]),
  dict(source="p_anderson", target="p_stone", kind="stated", label="asks Stone to investigate in his place", directed=True,
       evidence=[("d_19070518_anderson_stone","Could you not make some investigations as to the reliability of the men")]),
- dict(source="p_grant", target="p_stone", kind="stated", label="co-officers, Taylor Creek Ditch Company (President / VP & GM)", directed=False,
+ dict(source="p_grant", target="p_stone", kind="stated", label="co-officers, Taylor Creek Ditch Company (President / VP & GM)", directed=False, evidence_kind="letterhead",
       evidence=[("d_19070620_stone_bumpus","Madison Grant, President"),("d_19070620_stone_bumpus","Andrew J. Stone, Vice-President and General Manager")]),
- dict(source="p_allen", target="p_grant", kind="stated", label="co-officer (Treasurer), Taylor Creek Ditch Company", directed=False, evidence=[("d_19070620_stone_bumpus","Benjamin Leach Allen, Treasurer, 66 Broadway")]),
- dict(source="p_varnum", target="p_grant", kind="stated", label="co-officer (Secretary, name struck through)", directed=False, evidence=[("d_19070620_stone_bumpus","Robert T. Varnum, Secretary.")]),
+ dict(source="p_allen", target="p_grant", kind="stated", label="co-officer (Treasurer), Taylor Creek Ditch Company", directed=False, evidence_kind="letterhead", evidence=[("d_19070620_stone_bumpus","Benjamin Leach Allen, Treasurer, 66 Broadway")]),
+ # Robert T. Varnum, Secretary, appears on the same letterhead with the name struck through: no tie is asserted (see p_varnum.identity_note and finding f_varnum_struck).
  dict(source="p_grant", target="p_pyne_percy", kind="stated", label="Pyne 'largely interested' in Grant's project (Osborn's report of Grant)", directed=False,
       evidence=[("d_19070620_osborn_bumpus","Grant thinks that Percy Pyne—who is largely interested in the [??] project—will probably put up the money for Q. to go."),("d_19070628_bumpus_jesup","Mr. Pyne (who, I believe, is financially interested in the mining enterprise with Mr. Grant)")]),
  dict(source="p_grant", target="p_morgan", kind="stated", label="asked Morgan to assist", directed=True,
@@ -75,7 +78,7 @@ TIES = [
       evidence=[("d_19140810_grant_lucas","Mathews who writes the letter to Quackenbush is in the employ of a company which I am heavily interested in, and he writes this at my request.")]),
  dict(source="p_mathews_jf", target="p_quackenbush", kind="stated", label="wrote to LSQ from Alaska with hair sample (1914)", directed=True,
       evidence=[("d_19140807_lucas_quackenbush","a communication from Mr. J. F. Matthews addressed to you")]),
- dict(source="p_grant", target="p_quackenbush", kind="stated", label="'you can get no better man' (1914)", directed=True,
+ dict(source="p_grant", target="p_quackenbush", kind="stated", label="'I do not believe that you can get a better man' (1914)", directed=True,
       evidence=[("d_19140810_grant_lucas","I do not believe that you can get a better man that [sic] Quackenbush for this purpose.")]),
  dict(source="p_bumpus", target="p_quackenbush", kind="stated", label="recommends to Bureau of Fisheries (1910)", directed=True,
       evidence=[("d_19100518_bumpus_hughsmith","He is a nice fellow, and we can give him an excellent recommendation.")]),
@@ -94,8 +97,7 @@ TIES = [
  dict(source="p_grant", target="p_stone", kind="pi", label="Stone is Grant's VP/Gen Manager; 'colleague'", directed=False, evidence=[("cast","whose VP/Gen Manager is Andrew J. Stone"),("cast","Colleague of Madison Grant")]),
  dict(source="p_matthew", target="p_quackenbush", kind="pi", label="recommends LSQ for job", directed=True, evidence=[("cast","Reports on Startsman letters, recommends LSQ for job.")]),
  dict(source="p_meany", target="p_bumpus", kind="pi", label="go-between for A-Y-P and AMNH", directed=True, evidence=[("cast","go-between for A-Y-P people and AMNH")]),
- dict(source="p_morgan", target="p_quackenbush", kind="pi", label="paid for half of both expeditions", directed=True, evidence=[("cast","Paid for half of both 1907 and 1908 expeditions.")]),
- dict(source="p_pyne_percy", target="p_quackenbush", kind="pi", label="paid for half of both expeditions", directed=True, evidence=[("cast","Paid for half of both 1907 and 1908 expeditions.")]),
+ # The PI's 'Paid for half of both 1907 and 1908 expeditions.' (Morgan, Pyne) is a tie to the expeditions, not to Quackenbush; it is carried as kind 'pi' in funding.py against the expedition nodes.
  dict(source="p_startsman", target="p_graham", kind="pi", label="partners; finders of purported mammoth", directed=False, evidence=[("cast","Finder of purported mammoth, partner of E.W. Graham")]),
  dict(source="p_stone", target="p_quackenbush", kind="pi", label="asked, but refuses, to deal with the mammoth 1907", directed=True, evidence=[("cast","asked, but refuses, to deal with the mammoth 1907")]),
  dict(source="p_osborn", target="p_morgan", kind="pi", label="'went hat in hand' for funds", directed=True, evidence=[("tale","went hat in hand to J.P. Morgan, Jr., and another wealthy financier Percy Pyne")]),
@@ -104,7 +106,7 @@ TIES = [
  dict(source="p_meany", target="p_bumpus", kind="pi", label="brought the report to the Director (March 1907)", directed=True, evidence=[("tale","brought to the Director, H.C. Bumpus, in March 1907, by Edmond S. Meany")]),
  dict(source="p_quackenbush", target="p_hoffman", kind="pi", label="concealed the find from his local assistant", directed=True, evidence=[("tale","concealing it even from his local assistant, Jim Hoffman")]),
  dict(source="p_grant", target="p_bumpus", kind="pi", label="petitioned Bumpus with LSQ for a return visit", directed=True, evidence=[("tale","with the support of Madison Grant, then Sec’y to the NY Zoological Society and notorious eugenicist, petitioned Bumpus for a return visit")]),
- dict(source="p_grant", target="p_osborn", kind="pi", label="Grant tells Bumpus HFO also working on Morgan", directed=True, evidence=[("pi_timeline","Grant tells Bumpus HFO also working on Morgan.")]),
+ dict(source="p_osborn", target="p_morgan", kind="pi", label="working on Morgan (Grant to Bumpus, 22 June 1907, as summarised by the PI)", directed=True, evidence=[("pi_timeline","Grant tells Bumpus HFO also working on Morgan.")]),
  dict(source="p_grant", target="p_quackenbush", kind="pi", label="deems LSQ's 1908 report 'an extremely barren narrative'", directed=True, evidence=[("pi_timeline","Grant deems it “an extremely barren narrative”")]),
  dict(source="p_quackenbush", target="p_maddren", kind="pi", label="given Maddren's SI report", directed=True, evidence=[("pi_timeline","gives LSQ Maddren’s SI report")]),
 ]

@@ -25,7 +25,7 @@ DOCS = {
     17:  dict(id="d_19061230_startsman_graham_reed", date="1906-12-30", date_text="30 Dec 1906", precision="day",
               senders=["p_startsman", "p_graham"], recipients=["p_reed"], form="copy", place=None,
               title="Startsman and E.W. Graham to Reed",
-              note="Osborn's draft of 16 April 1907 calls this 'their letter from Nome of December 30, 1906'; the PI header itself gives no place."),
+              note="Osborn's draft of 16 April 1907 calls this 'their letter from Nome of Decemver [sic] 30, 1906' (as transcribed); the PI header itself gives no place."),
     28:  dict(id="d_19070318_meany_bumpus", date="1907-03-18", date_text="18 March 1907", precision="day",
               senders=["p_meany"], recipients=["p_bumpus"], form="original", place=None,
               title="Edmond Meany (Univ Washington) to Bumpus (Dir. AMNH)"),

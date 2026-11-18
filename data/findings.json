@@ -10,7 +10,8 @@
   ],
   "stories": [
    "story_06_anderson"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_reed_startsman_date",
@@ -23,7 +24,8 @@
   ],
   "stories": [
    "story_03_claim"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_departure_1908",
@@ -40,7 +42,8 @@
   ],
   "stops": [
    "s1908_01"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_crossing_days",
@@ -57,7 +60,8 @@
   "stops": [
    "s1908_05",
    "s1908_06"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_buckland_miles",
@@ -73,7 +77,8 @@
   ],
   "stops": [
    "s1908_14"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_nome_five_days",
@@ -89,13 +94,14 @@
   "stops": [
    "s1907_07",
    "s1907_08"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_lanes_landing_shelton",
   "kind": "naming",
   "title": "Railhead: 'Lane's Landing' (LSQ) vs 'Shelton' (Bulletin via PI)",
-  "text": "Two names for the head of the Seward Peninsula Railroad occur in two provided sources. GNIS records 'Shelton (historical)' but no 'Lanes Landing'. Whether the names denote one place is not stated in the provided material.",
+  "text": "Two names for the head of the Seward Peninsula Railroad occur in two provided sources. GNIS records 'Shelton (historical)' but has no entry for Lane's Landing. Whether the names denote one place is not stated in the provided material.",
   "refs": [
    "d_19080624_quackenbush_bumpus",
    "pub_bamnh26"
@@ -105,7 +111,8 @@
   ],
   "places": [
    "pl_lanes_landing"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_hotham_peninsula",
@@ -120,7 +127,8 @@
   ],
   "places": [
    "pl_hotham_peninsula"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_keewalik_spelling",
@@ -132,7 +140,8 @@
   ],
   "places": [
    "pl_keewalik"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_name_variants",
@@ -142,7 +151,8 @@
   "refs": [
    "d_19070629_bumpus_quackenbush_instructions",
    "d_19061230_startsman_graham_reed"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_grants_camp",
@@ -159,6 +169,10 @@
   ],
   "places": [
    "pl_stones_camp"
+  ],
+  "people": [
+   "p_grant",
+   "p_stone"
   ]
  },
  {
@@ -175,6 +189,10 @@
   "stories": [
    "story_08_departure_1907",
    "story_10_fortgibbon_palisades"
+  ],
+  "people": [
+   "p_grant",
+   "p_quackenbush"
   ]
  },
  {
@@ -188,7 +206,8 @@
   ],
   "stories": [
    "story_02_frozen_meat"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "f_inventory",
@@ -201,6 +220,120 @@
   ],
   "stories": [
    "story_19_excavation"
+  ],
+  "people": []
+ },
+ {
+  "id": "f_1909_halves",
+  "kind": "discrepancy",
+  "title": "Paying for 1908: 'Total expense 1908 was $1,712.27' against a share of $856.14",
+  "text": "Sherwood to Pyne (15 January 1909, PI summary): 'Total expense 1908 was $1,712.27'. Sherwood to Morgan (21 January): a check 'for share, $856.14'; Morgan replies that he bears 'one-half of the cost'; Pyne 'accords with Morgan's proposal'. Two shares of $856.14 would come to $1,712.28, one cent more than the stated total. The file does not say how the halves were computed; the figures are kept as written and no total is computed in the funding view.",
+  "refs": [
+   "d_19090115_sherwood_pyne",
+   "d_19090121_sherwood_morgan",
+   "d_19090122_morgan_sherwood"
+  ],
+  "stories": [
+   "story_23_accounts"
+  ],
+  "people": [
+   "p_morgan",
+   "p_pyne_percy",
+   "p_sherwood"
+  ]
+ },
+ {
+  "id": "f_shelton_equation",
+  "kind": "naming",
+  "title": "The PI's timeline writes 'LSQ writes from Shelton' for the letter headed Lane's Landing",
+  "text": "Quackenbush's letter of 24 June 1908 is headed Lane's Landing; the PI's terse timeline entry for the same letter reads 'LSQ writes from Shelton'. One provided source therefore treats the two names as one place, while the letter and the Bulletin (via the PI) use different names. The equation is the PI's reading and is recorded as such; the place record keeps both attested names.",
+  "refs": [
+   "d_19080624_quackenbush_bumpus",
+   "pi_timeline"
+  ],
+  "stories": [
+   "story_18_crossing"
+  ],
+  "places": [
+   "pl_lanes_landing"
+  ],
+  "people": []
+ },
+ {
+  "id": "f_eastern_hemisphere",
+  "kind": "discrepancy",
+  "title": "Grant, 1930: 'the only mammoth ever found in the flesh in the Eastern Hemisphere'",
+  "text": "Grant's form slip to Osborn (7 June 1930) says of the Alaska find, 'This is the only mammoth ever found in the flesh in the Eastern Hemisphere.' The whole file places the find in Alaska; the slip's hemisphere stands against it. The wording is recorded as written and is not corrected.",
+  "refs": [
+   "d_19300607_grant_osborn"
+  ],
+  "stories": [
+   "story_24_afterlife"
+  ],
+  "people": [
+   "p_grant"
+  ]
+ },
+ {
+  "id": "f_schubert_struck",
+  "kind": "authorship",
+  "title": "'Mr. Schubert[?] of the U.S. National Yale Museum' — 'U.S. National' struck",
+  "text": "Osborn's draft terms (16 April 1907) name as a possible arbiter 'Mr. Schubert[?] of the U.S. National Yale Museum'; in the transcription 'U.S. National' is struck through, leaving the Yale Museum, and the name carries the PI's query mark. The record p_schubert follows the unstruck text (Yale) and keeps the full wording here.",
+  "refs": [
+   "d_19070416_osborn_bumpus"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ],
+  "people": [
+   "p_schubert"
+  ]
+ },
+ {
+  "id": "f_removal_slip_wording",
+  "kind": "authorship",
+  "title": "Removal slip: 'Taken by for Mr. Quackenbush', as written",
+  "text": "The removal slip of 28 April 1908 reads 'Taken by for Mr. Quackenbush'. Whether 'by' is a slip of the pen or marks a name left blank is not stated; the wording is kept as transcribed and not emended.",
+  "refs": [
+   "d_19070702_removal_slip_quackenbush"
+  ],
+  "stories": [
+   "story_07_funding",
+   "story_15_interlude"
+  ],
+  "people": [
+   "p_quackenbush"
+  ]
+ },
+ {
+  "id": "f_1906_folder",
+  "kind": "discrepancy",
+  "title": "Osborn to Bumpus, 20 June 1907, filed under 'Alaska Mammoth Exp. 1906'",
+  "text": "The PI records the location of Osborn's letter of 20 June 1907 as Central Archives 590, Box 162, Folder 'Alaska Mammoth Exp. 1906', although the letter belongs to the 1907 expedition. Whether this is the archive's filing or a slip in the PI's note is not stated; the citation is kept as recorded.",
+  "refs": [
+   "d_19070620_osborn_bumpus"
+  ],
+  "stories": [
+   "story_06_anderson"
+  ],
+  "people": [
+   "p_osborn"
+  ]
+ },
+ {
+  "id": "f_varnum_struck",
+  "kind": "authorship",
+  "title": "'Robert T. Varnum, Secretary.' — struck through on the Taylor Creek Ditch Co. letterhead",
+  "text": "The letterhead of Stone to Bumpus (20 June 1907) lists the company's officers; the last line, 'Robert T. Varnum, Secretary.', is struck through in the transcription. The struck name is recorded in the prosopography; no office is asserted and no tie to the other officers is drawn. Letterhead officer lists are printed, not written by the signer, and ties resting on them are tagged 'letterhead' in the network.",
+  "refs": [
+   "d_19070620_stone_bumpus"
+  ],
+  "stories": [
+   "story_06_anderson"
+  ],
+  "people": [
+   "p_varnum",
+   "p_grant"
   ]
  },
  {
@@ -213,7 +346,8 @@
   ],
   "stories": [
    "story_06_anderson"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_margin_note",
@@ -225,13 +359,14 @@
   ],
   "stories": [
    "story_05_newyork_deliberation"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_removal_slip",
   "kind": "absence",
   "title": "A letter to Quackenbush dated 2 July [1907] was removed from the file on 28 April 1908 and not returned",
-  "text": "The removal slip reads 'Correspondent:____ to Quackenbush. Date of Letter: July 2. Taken for Mr. Quackenbush. Date Apr 28 '08 Returned:____'. 28 April 1908 is the date of LSQ's 1908 commission. The letter's content and author are unknown.",
+  "text": "The removal slip reads 'Correspondent:_________ to “Quackenbush. Date of Letter: July 2. Taken by for Mr. Quackenbush. Date Apr 28 ’08 Returned:___________.' — as written (see f_removal_slip_wording). 28 April 1908 is the date of LSQ's 1908 commission. The letter's content and author are unknown.",
   "refs": [
    "d_19070702_removal_slip_quackenbush",
    "d_19080428_bumpus_quackenbush_commission"
@@ -239,7 +374,8 @@
   "stories": [
    "story_07_funding",
    "story_15_interlude"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_no_enclosure",
@@ -251,7 +387,8 @@
   ],
   "stories": [
    "story_07_funding"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_paper_granger",
@@ -264,7 +401,8 @@
   ],
   "stories": [
    "story_15_interlude"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_ms_untranscribed",
@@ -276,7 +414,8 @@
   ],
   "stories": [
    "story_15_interlude"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_bulletin_text",
@@ -285,7 +424,8 @@
   "text": "All itinerary dates marked 'via PI' rest on the PI's reading of pages 88–91; quotations from pp. 89–90, 107, 110 and 125 are known only through the Tale and timelines.",
   "refs": [
    "pub_bamnh26"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_letters_referenced_missing",
@@ -298,7 +438,8 @@
    "d_19080327_quackenbush_bumpus_plan",
    "d_19140810_grant_lucas",
    "d_nd_note_morgan_acknowledgment"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_conversations",
@@ -313,19 +454,21 @@
    "d_19070621_bumpus_osborn",
    "d_19140804_grant_osborn",
    "d_19081010_grant_bumpus"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_unnamed_people",
   "kind": "absence",
   "title": "People who are never named",
-  "text": "The 'old Indian' who found the reported mammoth (d. 1900); Jim Hoffman, who is 'a man' or 'the man who was with me' in every Quackenbush letter and is named only in the Bulletin (via PI) and the Tale; the 'engineer and man' Startsman proposed to hire; the men at the 'two settlements' on the 1908 crossing; 'the Eskimos' from whom specimens might be bought; the 'prospectors' who vouched for the Buckland; the signers of the Assistant Secretary's, Assistant Treasurer's and Secretary's copies; the author of the February 1908 memorandum and of the 25 February 1908 letter to Osborn.",
+  "text": "The 'old Indian' who found the reported mammoth (d. 1900); Jim Hoffman, who is 'a man' or 'the man who was with me' in every Quackenbush letter and is named only in the Bulletin (via PI) and the Tale; the 'engineer and man' Startsman proposed to hire; the men at the two settlements of the 1908 crossing ('two stops were made at settlements'); 'the Eskimos' from whom specimens might be bought; the 'prospectors' who vouched for the Buckland; the signers of the Assistant Secretary's, Assistant Treasurer's and Secretary's copies; the author of the February 1908 memorandum and of the 25 February 1908 letter to Osborn.",
   "refs": [
    "d_19061230_startsman_graham_reed",
    "d_19081001_quackenbush_bumpus_report",
    "d_190802_memorandum_1908_expedition",
    "d_19080225_unsigned_osborn"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_location_withheld",
@@ -343,7 +486,8 @@
   "stories": [
    "story_03_claim",
    "story_11_stmichael_nome"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_coffee_creek",
@@ -359,7 +503,8 @@
   ],
   "stories": [
    "story_24_afterlife"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_the_map",
@@ -373,7 +518,8 @@
   "stories": [
    "story_08_departure_1907",
    "story_23_accounts"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_folders_unknown",
@@ -384,7 +530,8 @@
    "d_19100509_hughsmith_bumpus",
    "d_19140811_quackenbush_lucas",
    "d_19160502_quackenbush_osborn"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_copies_provenance",
@@ -398,7 +545,8 @@
   ],
   "stories": [
    "story_04_seattle_offer"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_two_pi_copies",
@@ -408,7 +556,8 @@
   "refs": [
    "d_19070629_bumpus_quackenbush_instructions",
    "d_19070425_bumpus_rathbun"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_tale_fn46",
@@ -417,13 +566,15 @@
   "text": "'Werrit, Asiminogov, Koroloff, Gordin, Schultz.' — the PI's shorthand for literature on the St Petersburg Academy; no titles given.",
   "refs": [
    "tale"
-  ]
+  ],
+  "people": []
  },
  {
   "id": "a_who_is_speaking",
   "kind": "authorship",
   "title": "Whose prose is on this site",
   "text": "Verbatim blocks: the historical writers, as transcribed by the PI (Rebecca J. H. Woods), with her [sic], [?], [illeg] and colour marks preserved. Summary blocks: the PI's paraphrases. Editorial blocks: the PI's descriptions of the physical documents and her dated research notes. Story backbone: the PI's talk text (2019), quoted verbatim. Gazetteer coordinates: USGS GNIS, CGNDB, GeoNames, with Wikidata cross-checks. Everything else on the site — the selection and ordering of quotations, the typing of blocks, the geocoding decisions, the network rules, the connective labels — is the model's work and is labelled 'model'.",
-  "refs": []
+  "refs": [],
+  "people": []
  }
 ]

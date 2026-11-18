@@ -107,7 +107,7 @@
   "geometry": "schematic",
   "source": {
    "ref": "pub_bamnh26",
-   "locator": "p.89 via PI: 'LSQ leaves Nome on \"Corwin\"'"
+   "locator": "p.89 via PI: 'LSQ leaves Nome on “Corwin,”'"
   },
   "note": "Drawn from the Solomon River side trip back through Nome schematically."
  },
@@ -123,7 +123,7 @@
    "ref": "pub_bamnh26",
    "locator": "p.89 via PI"
   },
-  "note": "Return 'to the spit' implied."
+  "note": "Return “to ‘the spit.’” implied."
  },
  {
   "id": "g1907_10",
@@ -457,7 +457,7 @@
   "geometry": "schematic",
   "source": {
    "ref": "d_19081001_quackenbush_bumpus_report",
-   "locator": "'On August 11th I crossed to the north shore ... set out on foot with light packs'"
+   "locator": "'On August 11th I crossed to the north shore ... set out on foot with likght [sic] packs'"
   },
   "note": null
  },

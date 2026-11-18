@@ -925,7 +925,7 @@
     "url": "https://www.wikidata.org/wiki/Q15216772"
    }
   ],
-  "why": "Context feature. Osborn's 'big bone beach' is equated with Eschscholtz Bay by Osborn himself ('Eschscholtz Bay—\"big bone beach\"').",
+  "why": "Context feature. Osborn's 'big bone beach' is equated with Eschscholtz Bay by Osborn himself ('Eschscholtz Bay—‘big bone beach’').",
   "has_coords": true,
   "scope": "hunt",
   "mentioned_only": false,
@@ -972,7 +972,7 @@
     "url": "https://www.wikidata.org/wiki/Q5105071"
    }
   ],
-  "why": "The bluff is described only relative to Choris Peninsula; the GNIS point for the peninsula is used with a 12 km halo. LSQ notes the silt deposit is 'continuous with that on Eschscholtz Bay near Choris Peninsula'.",
+  "why": "The bluff is described only relative to Choris Peninsula; the GNIS point for the peninsula is used with a 12 km halo. LSQ notes the silt deposit is 'continuous with that on Exchscholtz [sic] Bay near CHoris [sic] Peninsula' (as transcribed).",
   "has_coords": true,
   "scope": "hunt",
   "mentioned_only": false,
@@ -1102,7 +1102,7 @@
    "lon": null,
    "url": null
   },
-  "why": "Position inferred from LSQ's river-mile estimate only. Treat as 'somewhere in the middle Buckland'.",
+  "why": "Position inferred from LSQ's river-mile estimate only. Treat the point as a position somewhere in the middle Buckland.",
   "has_coords": true,
   "scope": "hunt",
   "mentioned_only": false,
@@ -1412,7 +1412,7 @@
    "map": "Bendeleben A-6 NW"
   },
   "crosscheck": [],
-  "gnis_note": "GNIS has 'Shelton (historical)' but no 'Lanes Landing' in the Alaska file.",
+  "gnis_note": "GNIS has 'Shelton (historical)' but no entry for Lane's Landing in the Alaska file.",
   "why": "Two names are attested for the railhead by two provided sources (LSQ's letter: Lane's Landing; the Bulletin via the PI: Shelton). Whether they denote the same place is not stated in the provided material; the point uses the GNIS Shelton record and is flagged 'disputed' until the Bulletin text is checked.",
   "has_coords": true,
   "scope": "hunt",
@@ -1741,7 +1741,7 @@
     "source": "Tale §1"
    },
    {
-    "form": "'a narrow peninsula'",
+    "form": "'The narrow peninsula'",
     "source": "Tale §1"
    }
   ],

@@ -49,10 +49,17 @@ removal slip, permit, form slip; enclosures are separate items linked by `enclos
 - `enclosed_in`, `enclosures`, `stories`, `timeline`, `findings`, `note` — cross-references; `note` is a model note on the record (labelled).
 
 ### people / offices / institutions
-Prosopography. `variants[]` (form, source) records every spelling as written; `roles[]` (role, source);
-`addresses[]`; `institutions[]`; `identity_note` flags unresolved identifications; `pi_characterisation`
-quotes the PI's Cast of Characters verbatim. `scope`: hunt | prologue | research. `kind`: person | unnamed | collective.
-`sent`, `received`, `mentioned_in`, `stories` are derived cross-references.
+Prosopography. `variants[]` (form, source) records every spelling as written; `roles[]` (role, source) holds offices and
+functions only; `characterisations[]` (text, source) holds evaluative phrases from the provided texts (the PI's or a writer's),
+kept apart from roles and rendered in the writer's voice; `addresses[]`; `identity_note` flags unresolved identifications;
+`pi_characterisation` quotes the PI's Cast of Characters (working notes, unpublished, 2019) verbatim — the build verifies it.
+`institutions[]` — one record per affiliation: `id`, `status` (`stated` = a provided text names the person in that
+institution and `evidence` ('pi_timeline', 'appointed to the St Petersburg Academy of Science as an adjunct in zoology') carries the verified quotation; `inferred` = the model's reading of context, with a
+`note` and no evidence), optional `evidence_kind` `letterhead` (a printed officer list, not a sentence written by the signer).
+`scope`: hunt | prologue | research. `kind`: person | unnamed | collective.
+`sent`, `received`, `mentioned_in`, `stories`, `findings` are derived cross-references.
+Institutions carry `place` and `place_status` (`stated` when a provided text puts the institution at that place —
+letterhead, address, permit, or the place in its name; `inferred` when the model placed it).
 
 ### places
 Historical gazetteer. `attested[]` (form, source) — the name as it appears and where; `lat`, `lon` (WGS84 decimal; null when unlocated);
@@ -85,12 +92,35 @@ The PI's talk text paragraph by paragraph (`id`, `section`, `text`, `html`) and 
 
 ### network
 `nodes[]` (id, label, type person|office|institution, kind, scope, metrics by edge kind) and `edges[]`
-(`kind` correspondence | stated | pi | affiliation; `directed`; `label`; `date`; `doc`; `evidence[]` (ref, quote)).
-`rules` states the nominalist rules in full.
+(`kind` correspondence | stated | pi | affiliation; `directed`; `label`; `date`; `doc`; `evidence[]` (ref, quote);
+optional `evidence_kind` = `letterhead`; on affiliation edges `affiliation_status` stated | inferred and an optional `note`).
+`date` on a stated or affiliation edge is the date of the first evidence document (ISO or `YYYY-MM`; null for Tale, Cast,
+PI-timeline evidence or undated items): the date is the document's, not the relationship's. PI edges are undated.
+`rules` states the nominalist rules in full; `views[]` (id, label, derived, node, edge, rule, caveats) is the single source
+of the view headers in the interface and of the Views table on Method › Network.
+
+Additional networks, each with its own `rule` and `caveats`:
+- `funding` — `nodes[]` (the authored non-person nodes `x_amnh_fund`, `x_exp_1907`, `x_exp_1908`, `x_exp_1914` with `layer`, plus the
+  persons they connect) and `edges[]` (`source`, `target`, `kind` funding | pi, `amount_as_written` exactly as the text writes it,
+  `status` promised | paid | acknowledged | requested | budgeted | ceiling | offered, `date`, `doc`, `quote` verified verbatim, `note`). No total is computed anywhere. Rule: A funding edge exists only where a provided text states a sum or a promise of one; amounts are as written; no total is computed.
+- `pairs[]` — co-attestation, **derived**: for every unordered pair of nodes joined by at least one non-affiliation edge, the counts
+  per kind (`correspondence`, `stated`, `pi`), `n_kinds`, `n_edges` and the edge ids. Rule: Derived by counting the existing edges per pair; it adds no tie. Caveat: Co-attestation measures the surviving file, not the strength of a historical relationship; a kind count of 1 means one surviving voice, not a weak tie.
+- `mentions` — **derived** name-mention layer: `edges[]` sender → person named in the text of the item (`doc`, `date`), from
+  `documents[].mentions`; `method` states the matching guards. Rule: Derived automatically by name-variant matching on the transcription text (model); not an asserted tie; recall is incomplete.
 
 ### published
 Sources as CITED in the provided files (`citation_as_given`); `excerpts[]` are passages quoted inside the provided files;
 no record was completed from outside knowledge; no full text was provided.
 
 ### findings
-Register of `discrepancy`, `absence`, `naming`, `unlocated`, `authorship` findings with `refs` and the records they concern.
+Register of `discrepancy`, `absence`, `naming`, `unlocated`, `authorship` findings with `refs` and the records they concern
+(`stories`, `stops`, `places`, `people`).
+
+## Verified quotation classes (meta.quotation_classes)
+- **tie evidence** — every quotation on a stated / PI / affiliation tie is found verbatim in the sources (build fails otherwise)
+- **funding** — every funding edge quotes a sum or promise verbatim
+- **Tale excerpts** — every story excerpt is an exact substring of the Tale and ends at a sentence or quotation boundary
+- **Cast lines and characterisations** — every pi_characterisation and characterisation is a verbatim line of the PI's texts
+- **quoted fragments in authored prose** — 450 quoted spans in model notes, place/stop/segment fields, findings, roles, variants, addresses, institutions, published excerpts and notes, tie labels, and record notes are verified (allow-list of quoted vocabulary, none of it currently needed: approximate, disputed, inferred, model, unlocated, verified, via PI)
+
+`meta.counts.verified_quotations` = 450 quoted fragments verified in this build; the build fails on any miss.

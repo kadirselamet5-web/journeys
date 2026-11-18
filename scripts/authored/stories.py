@@ -3,7 +3,15 @@
 quoted VERBATIM as 'tale_excerpts' (each excerpt must be an exact substring of the Tale's plain text;
 the build fails otherwise). Enrichment is by reference to archival items ('docs') whose typed blocks
 are rendered from documents.json, never retyped. 'model_note' is the only prose written by the model
-on a story page and is rendered under an explicit 'model' label."""
+on a story page and is rendered under an explicit 'model' label.
+
+Model-note style guide (four rules, applied to every 'model_note'):
+  1. Quote, do not paraphrase: every phrase attributed to a source is a verbatim span in quotation marks, verified at build.
+  2. Mark inference: anything the model infers from the sequence of events is introduced by 'inference:'.
+  3. No evaluative adjectives: the note connects records; it does not judge people, documents or claims.
+  4. Never resolve what the PI left open: where her texts hedge ('presumably', '?'), the note carries the hedge.
+Build rules: each Tale excerpt must be an exact substring of the Tale and must end at a sentence or quotation
+boundary (one of . ! ? ; : , ” ’ " ' ) ] after stripping trailing whitespace)."""
 
 STORIES = [
  dict(id="story_00_frame", phase="prologue", title="A Tale of Two Mammoths", subtitle="The principal investigator's framing (MIT seminar, 20 September 2019)",
@@ -19,7 +27,7 @@ STORIES = [
       places=["pl_lena_mouth","pl_yakutsk","pl_stpetersburg"], stops=[], docs=[], people=["p_schoumachoff","p_adams","p_popoff","p_boultonoff","p_cuvier","p_golovkin"], published=["pub_adams_1810","pub_adams_1807_jdn","pub_cuvier_1812","pub_memoires_1809"], findings=[],
       tale_excerpts=[
         "the Adams mammoth was found not once but at least twice: First by an Tungus hunter-herder named Ossip Schoumachoff, in 1799, and then again by Adams, for whom the mammoth is called, in 1806.",
-        "When he arrived in Yakutsk, a local figure (merchant in English, négociant",
+        "When he arrived in Yakutsk, a local figure (merchant in English, négociant in French) by the name of Popoff informed him of an unusual find near the mouth of the Lena River, some 1300 kilometers to the north, described to him as an extraordinarily large animal with its skin, hair, and flesh preserved.",
         "Adams hastened up the river, “anxious to save these precious remains, which might perhaps otherwise be lost,”",
         "Adams carefully disengaged the “nerves of the joints,” collected the bones and bristles that lay about the carcass, and “three-fourths of its skin,” and prepared it for its long and arduous voyage back to St Petersburg, a distance of no less than 6,000 kilometres.",
         "The multiple “findings” of the so-called Adams mammoth—Schoumachoff’s repeated sightings, and Adams’s expedition—collapsed into one singular event.",
@@ -35,14 +43,14 @@ STORIES = [
  dict(id="story_03_claim", phase="paper-trail", title="Nome, 1898–1906: a mammoth 'imbedded in a glacier'", subtitle="The claim as it entered writing",
       places=["pl_nome","pl_reported_mammoth"], stops=[], docs=["d_19061018_reed_startsman","d_19061230_startsman_graham_reed","d_19070226_reed_chilberg"], people=["p_startsman","p_graham","p_old_indian","p_reed","p_chilberg"], published=[], findings=["a_location_withheld","f_reed_startsman_date","a_unnamed_people"],
       tale_excerpts=[
-        "Among the materials Meany forwarded to Bumpus was a copy of a letter from J. Startsman to the “director of exploitation” for the Alaska-Pacific-Yukon Exposition (1909), describing how “an old Indian” had discovered “an extraordinary big” mammoth “imbedded in a glacier” sometime towards the close of the 19",
+        "Among the materials Meany forwarded to Bumpus was a copy of a letter from J. Startsman to the “director of exploitation” for the Alaska-Pacific-Yukon Exposition (1909), describing how “an old Indian” had discovered “an extraordinary big” mammoth “imbedded in a glacier” sometime towards the close of the 19th century.",
         "In “1898 or 1899,” he took Startsman’s partner to see the animal, and Statesman, in turn, went to see it “in winter time in 1904.”",
       ],
       model_note="The only description of the animal is Startsman's, at one remove from Graham and two from the unnamed finder. Its location is a deliberate blank in the file."),
  dict(id="story_04_seattle_offer", phase="paper-trail", title="Seattle, October 1906 – March 1907: the Exposition passes the find to New York", subtitle="Reed, Chilberg, Meany",
       places=["pl_seattle"], stops=[], docs=["d_19061018_reed_startsman","d_19070226_reed_chilberg","d_19070318_meany_bumpus","d_19070326_bumpus_meany"], people=["p_reed","p_chilberg","p_meany","p_bumpus","p_harlan_smith"], published=[], findings=["a_copies_provenance","a_conversations"],
       tale_excerpts=["a seemingly credible report of a full frozen mammoth brought to the Director, H.C. Bumpus, in March 1907, by Edmond S. Meany, a University of Washington professor hoping to entice the larger, more powerful and above all better-funded institution to secure the find."],
-      model_note="Meany's price for the information was exhibition rights for 1 April–15 October 1909."),
+      model_note="Meany's condition, in his own words: 'The only return we ask for this information and for all the cooperation we can afford you is that you permit the specimen to be displayed here at the Alaska-Yukon-Pacific Exposition from 1 April to 15 Oct. 1909.'"),
  dict(id="story_05_newyork_deliberation", phase="paper-trail", title="New York and Washington, March–April 1907: the Museum weighs the report", subtitle="Matthew's valuation; Osborn's draft terms; Rathbun's 'pure fakes'",
       places=["pl_newyork","pl_washington"], stops=[], docs=["d_19070325_matthew_bumpus","d_19070416_osborn_bumpus","d_19070417_matthew_osborn","d_19070425_bumpus_rathbun","d_19070426_quackenbush_bumpus","d_19070430_rathbun_bumpus"], people=["p_matthew","p_osborn","p_bumpus","p_rathbun","p_quackenbush","p_sherwood","p_brown","p_granger","p_maddren","p_schubert","p_lucas_brooklyn_1907","p_jesup"], published=["pub_maddren","pub_pcss_folder"], findings=["a_margin_note","f_name_variants"],
       tale_excerpts=[
@@ -56,7 +64,7 @@ STORIES = [
         "Indeed, Quackenbush was almost benched at the eleventh hour, when a friend of Madison Grant offered to ”examine the entire situation without expense” to the Museum.",
         "When, at an even later hour, Anderson then bailed, writing most hastily that he found it “impossible…to visit Nome this year,”",
       ],
-      model_note="Bumpus's 30 April letter to Meany ('we have sent a man to the site') refers to Anderson, who never went; Meany was not told of the substitution in the surviving letters."),
+      model_note="Bumpus's 30 April letter to Meany ('we have sent a man to the site') refers, in the PI's reading, 'presumably' to Anderson, who never went; the surviving letters do not show Meany being told of the substitution."),
  dict(id="story_07_funding", phase="paper-trail", title="June–July 1907: Grant, Pyne, Morgan and the instructions", subtitle="$1,500, a 'free hand', and the paper trail of the money",
       places=["pl_newyork"], stops=[], docs=["d_19070621_bumpus_osborn","d_19070622_grant_bumpus","d_19070623_meany_bumpus","d_19070628_bumpus_jesup","d_19070629_bumpus_quackenbush_instructions","d_19070701_bumpus_grant","d_19070703_grant_bumpus","d_19070703_osborn_bumpus_excerpt","d_19070705_quackenbush_noaddressee","d_nd_note_morgan_acknowledgment","d_19070715_pyne_osborn","d_19070718_assttreas_pyne","d_19070722_osborn_bumpus","d_19070724_assttreas_osborn","d_19070724_assttreas_morgan","d_190707_unnamed_osborn_excerpt_631","d_19070702_removal_slip_quackenbush"], people=["p_grant","p_pyne_percy","p_morgan","p_osborn","p_bumpus","p_jesup","p_sherwood","p_sturgis","p_quackenbush"], published=["pub_measuring_worth"], findings=["a_no_enclosure","a_removal_slip","f_grants_camp"],
       tale_excerpts=[
@@ -83,12 +91,12 @@ STORIES = [
       model_note="No letter from Nome survives in the file for 1907; what happened with Startsman and Graham is known only from the Bulletin sentence the PI quotes. The instructions had told LSQ to 'communicate ... by wire'; no telegram is in the file."),
  dict(id="story_12_keewalik_1907", phase="journey-1907", title="13–24 August 1907: Keewalik, Candle, a waterlogged canoe and Jim Hoffman", subtitle="'the final outfitting point'",
       places=["pl_keewalik","pl_candle","pl_keewalik_river","pl_kotzebue_sound"], stops=["s1907_09","s1907_10"], docs=["d_19080327_quackenbush_bumpus_plan"], people=["p_quackenbush","p_hoffman"], published=["pub_bamnh26"], findings=["f_keewalik_spelling","a_unnamed_people"],
-      tale_excerpts=["Concerned about the possibility of competition, Quackenbush kept this find close to the vest—concealing it even from his local assistant, Jim Hoffman—"],
+      tale_excerpts=["Concerned about the possibility of competition, Quackenbush kept this find close to the vest—concealing it even from his local assistant, Jim Hoffman— and after he returned to New York in early November he, with the support of Madison Grant, then Sec’y to the NY Zoological Society and notorious eugenicist, petitioned Bumpus for a return visit."],
       model_note="Hoffman enters the record here (Bulletin p.89, via PI): 'cook and helper', with a fishing boat and no centerboard. In Quackenbush's own letters he remains 'the man who was with me last summer'."),
  dict(id="story_13_elephant_point_1907", phase="journey-1907", title="24 August – 19 September 1907: Elephant Point", subtitle="'portions of a mammoth skeleton together with some skin and hair'",
       places=["pl_elephant_point","pl_eschscholtz_bay","pl_buckland_mouth"], stops=["s1907_11","s1907_12","s1907_13"], docs=["d_19080225_unsigned_osborn","d_19080228_osborn_mtpyne","d_19080228_osborn_morgan","d_19080327_quackenbush_bumpus_plan"], people=["p_quackenbush","p_hoffman"], published=["pub_bamnh26"], findings=["f_inventory"],
       tale_excerpts=["Here he found “portions of a mammoth skeleton together with some skin and hair…embedded…in such a manner as to afford very good reasons for the belief that the entire skeleton, with a large part of the covering, would be found in place.”"],
-      model_note="What was taken out in 1907 is listed only retrospectively, in LSQ's 1908 report: 'an innominate bone and hind limb (minus some foot-bones) together with some flesh, skin, and hair'. The Buckland excursion of 1 September is drawn as a 15-mile spur."),
+      model_note="What was taken out in 1907 is listed only retrospectively, in LSQ's 1908 report: 'an innominate bone and hind limb (minus some foot-bones) together with some flesh, skin, and hair'. The Buckland excursion of 1 September is drawn as a single stated stop at the river mouth; the 15-mile limit is not plotted."),
  dict(id="story_14_return_1907", phase="journey-1907", title="September–November 1907: the Corwin to Nome, the first boat to Seattle, New York on 2 November", subtitle="'owing to the inevitable delays in Alaskan travel'",
       places=["pl_keewalik","pl_nome","pl_seattle","pl_newyork"], stops=["s1907_13","s1907_14","s1907_15","s1907_16"], docs=["d_19071028_bumpus_quackenbush","d_19071113_osborn_bumpus","d_19071114_secretary_pyne_morgan"], people=["p_quackenbush","p_bumpus","p_osborn","p_pyne_percy","p_morgan"], published=["pub_bamnh26"], findings=[],
       tale_excerpts=["and after he returned to New York in early November he, with the support of Madison Grant, then Sec’y to the NY Zoological Society and notorious eugenicist, petitioned Bumpus for a return visit."],
@@ -124,7 +132,7 @@ STORIES = [
  dict(id="story_20_buckland", phase="journey-1908", title="20 July – 5 August 1908: up the Buckland by canoe", subtitle="'The Buckland was found to be much smaller than reports made it'",
       places=["pl_keewalik","pl_buckland_mouth","pl_buckland_8mi","pl_buckland_62mi","pl_buckland_86mi","pl_buckland_westfork"], stops=["s1908_10","s1908_11","s1908_12","s1908_13","s1908_14","s1908_15","s1908_16"], docs=["d_19081001_quackenbush_bumpus_report","d_19080327_quackenbush_bumpus_plan","d_190804_notes_corwin_dates"], people=["p_quackenbush","p_hoffman","p_prospectors","p_maddren"], published=["pub_bamnh26","pub_maddren"], findings=["f_buckland_miles"],
       tale_excerpts=["This, too, was a disappointment. Although miners had assured Quackenbush that the Buckland was navigable for 200 miles, extremely low waters made the going difficult, and Quackenbush and Hoffman turned back about 80 miles inland."],
-      model_note="Every upriver point is placed from Quackenbush's river-mile estimates along a schematic axis; the halos are wide on purpose. Maddren's map had promised 'elevated Pleistocene, lacustrine, silts' 50–75 miles up; LSQ found silt at 62 miles and lava at 90."),
+      model_note="Every upriver point is placed from Quackenbush's river-mile estimates along a schematic axis; the halos are wide on purpose. Maddren's map marks 'an area of elevated Pleistocene, lacustrine, silts' at 'about 50 or 75 miles up the Buckland' (LSQ, 27 March 1908); LSQ found silt at 62 miles and lava at 90."),
  dict(id="story_21_bay_survey", phase="journey-1908", title="5–20 August 1908: Beechey's 'mud' banks, the south shore, Hotham Inlet and Selawik Lake", subtitle="'almost barren of fossils'",
       places=["pl_eschscholtz_east_end","pl_elephant_point","pl_hotham_peninsula","pl_hotham_inlet","pl_selawik_lake","pl_keewalik"], stops=["s1908_16","s1908_17","s1908_18","s1908_19","s1908_20","s1908_21","s1908_22"], docs=["d_19081001_quackenbush_bumpus_report"], people=["p_quackenbush","p_hoffman","p_beechey"], published=["pub_beechey_1826","pub_bamnh26"], findings=["f_hotham_peninsula"],
       tale_excerpts=[],
@@ -132,7 +140,7 @@ STORIES = [
  dict(id="story_22_return_1908", phase="journey-1908", title="29 August – 1 October 1908: 'the collection—though small—… at least some scientific value'", subtitle="Keewalik, Nome, Seattle, New York; Grant's verdict",
       places=["pl_keewalik","pl_nome","pl_seattle","pl_newyork"], stops=["s1908_22","s1908_23","s1908_24","s1908_25"], docs=["d_19081001_quackenbush_bumpus_report","d_19081008_bumpus_grant","d_19081009_grant_bumpus","d_19081010_grant_bumpus"], people=["p_quackenbush","p_quinn","p_bumpus","p_grant","p_sherwood"], published=["pub_bamnh26","pub_report_1908"], findings=["a_conversations"],
       tale_excerpts=["Overall, the expedition met with little success. “While the results of the expedition have not come up to my expectation,” Quackenbush wrote in his final report to Bumpus, “the collection—though small—and data accompanying it have at least some scientific value.”"],
-      model_note="Grant's two-sentence verdict ('an extremely barren narrative … a remarkable man, who does not do himself justice') is the only reader's response to the report in the file; its last clause is handwritten."),
+      model_note="Grant's two-sentence verdict ('an extremely barren narrative … a remarkable man.,who does not do himself justice', punctuation as transcribed) is the only reader's verdict on the report in the file (Bumpus's covering note of 8 October is the other response); its last clause is handwritten."),
  # ---------------------------------------------------------------- epilogue
  dict(id="story_23_accounts", phase="epilogue", title="January–February 1909: paying for the mammoth; the Post Route Map", subtitle="$1,712.27, halved",
       places=["pl_newyork","pl_washington"], stops=[], docs=["d_nd_osborn_sherwood","d_19090115_sherwood_osborn","d_19090115_sherwood_pyne","d_19090121_sherwood_morgan","d_19090121_sherwood_pyne","d_19090121_pyne_sherwood","d_19090122_morgan_sherwood","d_19090123_sherwood_pyne","d_19090123_sherwood_morgan","d_19090217_quackenbush_sherwood","d_19090218_sherwood_quackenbush","d_19090218_sherwood_vonhaake","d_nd_note_quackenbush_name"], people=["p_sherwood","p_pyne_percy","p_morgan","p_osborn","p_quackenbush","p_vonhaake","p_lanier"], published=["pub_post_route_map_1906","pub_measuring_worth"], findings=["a_the_map"],
@@ -144,5 +152,5 @@ STORIES = [
         "However, not unlike the Adams mammoth, the tattered remains excavated by Quackenbush and Jim Hoffman did enjoy an exhibitionary afterlife. They remained on display among the Ice Age Mammals from at least 1916 until at least 1958.",
         "Although Quackenbush thought himself unlucky, and his expeditions a failure, seen from another angle he was in fact lucky to find as much soft tissue as he did:",
       ],
-      model_note="The 1914 hair from Coffee Creek, examined by Ross MacPhee in 2019, is the one physical specimen the PI handled in the file. Grant's 1930 slip calls the 1907 find 'the only mammoth ever found in the flesh in the Eastern Hemisphere' — as written."),
+      model_note="The 1914 hair from Coffee Creek, examined by Ross MacPhee in 2019, is the one physical specimen described in the file as examined in 2019. Grant's 1930 slip calls the 1907 find 'the only mammoth ever found in the flesh in the Eastern Hemisphere' — as written."),
 ]

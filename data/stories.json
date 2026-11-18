@@ -85,7 +85,7 @@
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    },
    {
-    "text": "When he arrived in Yakutsk, a local figure (merchant in English, négociant",
+    "text": "When he arrived in Yakutsk, a local figure (merchant in English, négociant in French) by the name of Popoff informed him of an unusual find near the mouth of the Lena River, some 1300 kilometers to the north, described to him as an extraordinarily large animal with its skin, hair, and flesh preserved.",
     "para": "t018",
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    },
@@ -181,7 +181,7 @@
   ],
   "tale_excerpts": [
    {
-    "text": "Among the materials Meany forwarded to Bumpus was a copy of a letter from J. Startsman to the “director of exploitation” for the Alaska-Pacific-Yukon Exposition (1909), describing how “an old Indian” had discovered “an extraordinary big” mammoth “imbedded in a glacier” sometime towards the close of the 19",
+    "text": "Among the materials Meany forwarded to Bumpus was a copy of a letter from J. Startsman to the “director of exploitation” for the Alaska-Pacific-Yukon Exposition (1909), describing how “an old Indian” had discovered “an extraordinary big” mammoth “imbedded in a glacier” sometime towards the close of the 19th century.",
     "para": "t034",
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    },
@@ -230,7 +230,7 @@
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    }
   ],
-  "model_note": "Meany's price for the information was exhibition rights for 1 April–15 October 1909.",
+  "model_note": "Meany's condition, in his own words: 'The only return we ask for this information and for all the cooperation we can afford you is that you permit the specimen to be displayed here at the Alaska-Yukon-Pacific Exposition from 1 April to 15 Oct. 1909.'",
   "order": 4,
   "prev": "story_03_claim",
   "next": "story_05_newyork_deliberation"
@@ -343,7 +343,7 @@
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    }
   ],
-  "model_note": "Bumpus's 30 April letter to Meany ('we have sent a man to the site') refers to Anderson, who never went; Meany was not told of the substitution in the surviving letters.",
+  "model_note": "Bumpus's 30 April letter to Meany ('we have sent a man to the site') refers, in the PI's reading, 'presumably' to Anderson, who never went; the surviving letters do not show Meany being told of the substitution.",
   "order": 6,
   "prev": "story_05_newyork_deliberation",
   "next": "story_07_funding"
@@ -592,7 +592,7 @@
   ],
   "tale_excerpts": [
    {
-    "text": "Concerned about the possibility of competition, Quackenbush kept this find close to the vest—concealing it even from his local assistant, Jim Hoffman—",
+    "text": "Concerned about the possibility of competition, Quackenbush kept this find close to the vest—concealing it even from his local assistant, Jim Hoffman— and after he returned to New York in early November he, with the support of Madison Grant, then Sec’y to the NY Zoological Society and notorious eugenicist, petitioned Bumpus for a return visit.",
     "para": "t035",
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    }
@@ -640,7 +640,7 @@
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    }
   ],
-  "model_note": "What was taken out in 1907 is listed only retrospectively, in LSQ's 1908 report: 'an innominate bone and hind limb (minus some foot-bones) together with some flesh, skin, and hair'. The Buckland excursion of 1 September is drawn as a 15-mile spur.",
+  "model_note": "What was taken out in 1907 is listed only retrospectively, in LSQ's 1908 report: 'an innominate bone and hind limb (minus some foot-bones) together with some flesh, skin, and hair'. The Buckland excursion of 1 September is drawn as a single stated stop at the river mouth; the 15-mile limit is not plotted.",
   "order": 13,
   "prev": "story_12_keewalik_1907",
   "next": "story_14_return_1907"
@@ -987,7 +987,7 @@
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    }
   ],
-  "model_note": "Every upriver point is placed from Quackenbush's river-mile estimates along a schematic axis; the halos are wide on purpose. Maddren's map had promised 'elevated Pleistocene, lacustrine, silts' 50–75 miles up; LSQ found silt at 62 miles and lava at 90.",
+  "model_note": "Every upriver point is placed from Quackenbush's river-mile estimates along a schematic axis; the halos are wide on purpose. Maddren's map marks 'an area of elevated Pleistocene, lacustrine, silts' at 'about 50 or 75 miles up the Buckland' (LSQ, 27 March 1908); LSQ found silt at 62 miles and lava at 90.",
   "order": 20,
   "prev": "story_19_excavation",
   "next": "story_21_bay_survey"
@@ -1079,7 +1079,7 @@
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    }
   ],
-  "model_note": "Grant's two-sentence verdict ('an extremely barren narrative … a remarkable man, who does not do himself justice') is the only reader's response to the report in the file; its last clause is handwritten.",
+  "model_note": "Grant's two-sentence verdict ('an extremely barren narrative … a remarkable man.,who does not do himself justice', punctuation as transcribed) is the only reader's verdict on the report in the file (Bumpus's covering note of 8 October is the other response); its last clause is handwritten.",
   "order": 22,
   "prev": "story_21_bay_survey",
   "next": "story_23_accounts"
@@ -1197,7 +1197,7 @@
     "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
    }
   ],
-  "model_note": "The 1914 hair from Coffee Creek, examined by Ross MacPhee in 2019, is the one physical specimen the PI handled in the file. Grant's 1930 slip calls the 1907 find 'the only mammoth ever found in the flesh in the Eastern Hemisphere' — as written.",
+  "model_note": "The 1914 hair from Coffee Creek, examined by Ross MacPhee in 2019, is the one physical specimen described in the file as examined in 2019. Grant's 1930 slip calls the 1907 find 'the only mammoth ever found in the flesh in the Eastern Hemisphere' — as written.",
   "order": 24,
   "prev": "story_23_accounts",
   "next": null

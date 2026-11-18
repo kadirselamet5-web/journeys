@@ -1,0 +1,73 @@
+a,b,correspondence,stated,pi,n_kinds,n_edges,edges,derived
+p_grant,p_quackenbush,1,2,2,3,5,"[""e0086"", ""e0113"", ""e0127"", ""e0138"", ""e0151""]",True
+p_morgan,p_osborn,2,1,2,3,5,"[""e0043"", ""e0044"", ""e0116"", ""e0144"", ""e0150""]",True
+p_osborn,p_pyne_mt,1,1,1,3,3,"[""e0042"", ""e0114"", ""e0146""]",True
+p_bumpus,p_quackenbush,21,1,0,2,22,"[""e0010"", ""e0012"", ""e0025"", ""e0037"", ""e0046"", ""e0047"", ""e0048"", ""e0049"", ""e0050"", ""e0051"", ""e0052"", ""e0056"", ""e0057"", ""e0060"", ""e0061"", ""e0063"", ""e0064"", ""e0065"", ""e0066"", ""e0067"", ""e0068"", ""e0128""]",True
+p_bumpus,p_meany,6,0,2,2,8,"[""e0004"", ""e0006"", ""e0014"", ""e0016"", ""e0018"", ""e0023"", ""e0141"", ""e0147""]",True
+p_bumpus,p_grant,6,0,1,2,7,"[""e0022"", ""e0026"", ""e0028"", ""e0069"", ""e0070"", ""e0071"", ""e0149""]",True
+p_osborn,p_quackenbush,2,1,0,2,3,"[""e0093"", ""e0094"", ""e0106""]",True
+p_osborn,p_sherwood,2,1,0,2,3,"[""e0072"", ""e0073"", ""e0135""]",True
+p_anderson,p_osborn,0,1,1,2,2,"[""e0107"", ""e0137""]",True
+p_anderson,p_stone,1,1,0,2,2,"[""e0017"", ""e0108""]",True
+p_chilberg,p_reed,1,1,0,2,2,"[""e0003"", ""e0099""]",True
+p_graham,p_startsman,0,1,1,2,2,"[""e0096"", ""e0142""]",True
+p_grant,p_stone,0,1,1,2,2,"[""e0109"", ""e0139""]",True
+p_hoffman,p_quackenbush,0,1,1,2,2,"[""e0117"", ""e0148""]",True
+p_maddren,p_quackenbush,0,1,1,2,2,"[""e0119"", ""e0152""]",True
+p_matthew,p_quackenbush,0,1,1,2,2,"[""e0103"", ""e0140""]",True
+p_osborn,p_pyne_percy,1,0,1,2,2,"[""e0032"", ""e0145""]",True
+p_bumpus,p_osborn,8,0,0,1,8,"[""e0007"", ""e0011"", ""e0019"", ""e0021"", ""e0029"", ""e0034"", ""e0038"", ""e0045""]",True
+p_pyne_percy,p_sherwood,4,0,0,1,4,"[""e0074"", ""e0076"", ""e0077"", ""e0079""]",True
+p_bumpus,p_merriam,3,0,0,1,3,"[""e0054"", ""e0058"", ""e0062""]",True
+p_grant,p_lucas,3,0,0,1,3,"[""e0088"", ""e0090"", ""e0092""]",True
+p_morgan,p_sherwood,3,0,0,1,3,"[""e0075"", ""e0078"", ""e0080""]",True
+o_unnamed_author,p_osborn,2,0,0,1,2,"[""e0031"", ""e0041""]",True
+p_bumpus,p_hugh_smith,2,0,0,1,2,"[""e0084"", ""e0085""]",True
+p_bumpus,p_matthew,2,0,0,1,2,"[""e0005"", ""e0053""]",True
+p_bumpus,p_rathbun,2,0,0,1,2,"[""e0009"", ""e0013""]",True
+p_grant,p_osborn,2,0,0,1,2,"[""e0087"", ""e0095""]",True
+p_lucas,p_quackenbush,2,0,0,1,2,"[""e0089"", ""e0091""]",True
+p_quackenbush,p_sherwood,2,0,0,1,2,"[""e0081"", ""e0082""]",True
+p_reed,p_startsman,2,0,0,1,2,"[""e0000"", ""e0001""]",True
+i_usda,p_quackenbush,1,0,0,1,1,"[""e0059""]",True
+o_amnh_asst_secretary,p_rathbun,1,0,0,1,1,"[""e0015""]",True
+o_amnh_asst_treasurer,p_morgan,1,0,0,1,1,"[""e0036""]",True
+o_amnh_asst_treasurer,p_osborn,1,0,0,1,1,"[""e0035""]",True
+o_amnh_asst_treasurer,p_pyne_percy,1,0,0,1,1,"[""e0033""]",True
+o_amnh_secretary,p_morgan,1,0,0,1,1,"[""e0040""]",True
+o_amnh_secretary,p_pyne_percy,1,0,0,1,1,"[""e0039""]",True
+o_to_whom_it_may_concern,p_bumpus,1,0,0,1,1,"[""e0055""]",True
+o_unnamed_addressee,p_quackenbush,1,0,0,1,1,"[""e0030""]",True
+o_unnamed_author,p_quackenbush,1,0,0,1,1,"[""e0027""]",True
+p_allen,p_grant,0,1,0,1,1,"[""e0110""]",True
+p_anderson,p_quackenbush,0,0,1,1,1,"[""e0136""]",True
+p_andrews,p_hugh_smith,0,1,0,1,1,"[""e0129""]",True
+p_beechey,p_quackenbush,0,1,0,1,1,"[""e0120""]",True
+p_brown,p_matthew,0,1,0,1,1,"[""e0104""]",True
+p_bumpus,p_jesup,1,0,0,1,1,"[""e0024""]",True
+p_bumpus,p_stone,1,0,0,1,1,"[""e0020""]",True
+p_chilberg,p_meany,0,1,0,1,1,"[""e0100""]",True
+p_chilberg,p_startsman,0,1,0,1,1,"[""e0098""]",True
+p_gilmore,p_lucas,0,1,0,1,1,"[""e0122""]",True
+p_gilmore,p_osborn,0,1,0,1,1,"[""e0121""]",True
+p_graham,p_old_indian,0,1,0,1,1,"[""e0097""]",True
+p_graham,p_reed,1,0,0,1,1,"[""e0002""]",True
+p_granger,p_matthew,0,1,0,1,1,"[""e0105""]",True
+p_grant,p_mathews_jf,0,1,0,1,1,"[""e0125""]",True
+p_grant,p_morgan,0,1,0,1,1,"[""e0112""]",True
+p_grant,p_pyne_percy,0,1,0,1,1,"[""e0111""]",True
+p_harlan_smith,p_meany,0,1,0,1,1,"[""e0101""]",True
+p_lucas,p_matthew,0,1,0,1,1,"[""e0123""]",True
+p_lucas,p_nelson,0,1,0,1,1,"[""e0131""]",True
+p_lucas,p_osborn,0,1,0,1,1,"[""e0124""]",True
+p_lucas,p_peale,0,1,0,1,1,"[""e0130""]",True
+p_mathews_jf,p_quackenbush,0,1,0,1,1,"[""e0126""]",True
+p_matthew,p_osborn,1,0,0,1,1,"[""e0008""]",True
+p_matthew,p_sherwood,0,1,0,1,1,"[""e0102""]",True
+p_osborn,p_ripley,0,1,0,1,1,"[""e0132""]",True
+p_osborn,p_sturgis,0,1,0,1,1,"[""e0133""]",True
+p_pyne_mt,p_pyne_percy,0,1,0,1,1,"[""e0115""]",True
+p_quackenbush,p_quinn,0,1,0,1,1,"[""e0118""]",True
+p_quackenbush,p_stone,0,0,1,1,1,"[""e0143""]",True
+p_quackenbush,p_woods_ah,0,1,0,1,1,"[""e0134""]",True
+p_sherwood,p_vonhaake,1,0,0,1,1,"[""e0083""]",True

@@ -45,6 +45,12 @@
     "source": "Tale (PI)"
    }
   ],
+  "characterisations": [
+   {
+    "text": "a kind of contractor—a “fossil hunter” and naturalist whom the AMNH had relied on only, it seems, reluctantly",
+    "source": "Tale (PI)"
+   }
+  ],
   "addresses": [
    {
     "address": "142 West 57th St.",
@@ -69,8 +75,22 @@
   ],
   "pi_characterisation": "Collector for the AMNH. Columbia Graduate (CA 262, 1906-1912, Box 92)",
   "institutions": [
-   "i_amnh",
-   "i_columbia"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "Collector for the AMNH"
+    }
+   },
+   {
+    "id": "i_columbia",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19100518_bumpus_hughsmith",
+     "quote": "a Columbia graduate"
+    }
+   }
   ],
   "sent": [
    "d_19070426_quackenbush_bumpus",
@@ -155,6 +175,10 @@
    "story_22_return_1908",
    "story_23_accounts",
    "story_24_afterlife"
+  ],
+  "findings": [
+   "f_travel_with_grant",
+   "f_removal_slip_wording"
   ]
  },
  {
@@ -185,9 +209,17 @@
   ],
   "pi_characterisation": "Director AMNH",
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "Director AMNH"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19070326_bumpus_meany",
    "d_19070425_bumpus_rathbun",
@@ -259,7 +291,8 @@
    "story_16_permits_departure",
    "story_22_return_1908",
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_osborn",
@@ -311,8 +344,16 @@
   ],
   "pi_characterisation": "Curator of VP, AMNH.",
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "Curator of VP, AMNH."
+    }
+   }
   ],
+  "characterisations": [],
   "sent": [
    "d_19070416_osborn_bumpus",
    "d_19070620_osborn_bumpus",
@@ -359,6 +400,9 @@
    "story_15_interlude",
    "story_23_accounts",
    "story_24_afterlife"
+  ],
+  "findings": [
+   "f_1906_folder"
   ]
  },
  {
@@ -393,9 +437,18 @@
   ],
   "pi_characterisation": "Curator (?) in dept. of VP, AMNH. Reports on Startsman letters, recommends LSQ for job.",
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "evidence_kind": "letterhead",
+    "evidence": {
+     "ref": "d_19070325_matthew_bumpus",
+     "quote": "Department of Vertebrate Paleontology letterhead"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19070325_matthew_bumpus",
    "d_19070417_matthew_osborn"
@@ -406,13 +459,16 @@
   "mentioned_in": [
    "d_19070416_osborn_bumpus",
    "d_19070620_osborn_bumpus",
-   "d_19140807_lucas_quackenbush"
+   "d_19140806_lucas_grant",
+   "d_19140807_lucas_quackenbush",
+   "d_19140812_lucas_grant"
   ],
   "stories": [
    "story_05_newyork_deliberation",
    "story_15_interlude",
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_grant",
@@ -442,16 +498,36 @@
    {
     "role": "Attorney and Counsellor at Law, 11 Wall Street",
     "source": "letterhead 4 Aug 1914"
+   }
+  ],
+  "characterisations": [
+   {
+    "text": "then Sec’y to the NY Zoological Society and notorious eugenicist",
+    "source": "Tale (PI)"
    },
    {
-    "role": "'notorious eugenicist'",
-    "source": "Tale (PI characterisation)"
+    "text": "Colleague of Madison Grant",
+    "source": "Cast of Characters (PI), under Andrew J. Stone"
    }
   ],
   "pi_characterisation": "Secretary, NY Zoological Society. Goes to Alaska with LSQ 1907, assists up to Nome. Also President of the Taylor Creek Ditch Company, whose VP/Gen Manager is Andrew J. Stone",
   "institutions": [
-   "i_nyzs",
-   "i_tcdc"
+   {
+    "id": "i_nyzs",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "Secretary, NY Zoological Society"
+    }
+   },
+   {
+    "id": "i_tcdc",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "President of the Taylor Creek Ditch Company"
+    }
+   }
   ],
   "addresses": [],
   "sent": [
@@ -490,6 +566,12 @@
    "story_15_interlude",
    "story_22_return_1908",
    "story_24_afterlife"
+  ],
+  "findings": [
+   "f_grants_camp",
+   "f_travel_with_grant",
+   "f_eastern_hemisphere",
+   "f_varnum_struck"
   ]
  },
  {
@@ -524,10 +606,25 @@
   ],
   "pi_characterisation": "University of Washington professor, go-between for A-Y-P people and AMNH",
   "institutions": [
-   "i_uw",
-   "i_ayp"
+   {
+    "id": "i_uw",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19070425_bumpus_rathbun",
+     "quote": "Professor Edmond S. Meany of the University of Washington"
+    }
+   },
+   {
+    "id": "i_ayp",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19070425_bumpus_rathbun",
+     "quote": "who speaks for the Alaska-Yukon-Pacific Exposition of 1909"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19070318_meany_bumpus",
    "d_19070512_meany_bumpus",
@@ -545,7 +642,8 @@
   "stories": [
    "story_04_seattle_offer",
    "story_06_anderson"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_startsman",
@@ -581,6 +679,7 @@
   ],
   "pi_characterisation": "Finder of purported mammoth, partner of E.W. Graham",
   "institutions": [],
+  "characterisations": [],
   "sent": [
    "d_19061230_startsman_graham_reed"
   ],
@@ -599,7 +698,8 @@
   "stories": [
    "story_03_claim",
    "story_11_stmichael_nome"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_graham",
@@ -626,6 +726,7 @@
   "pi_characterisation": "Finder of purported mammoth, partner of J.H. Startsman",
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19061230_startsman_graham_reed"
   ],
@@ -637,7 +738,8 @@
   "stories": [
    "story_03_claim",
    "story_11_stmichael_nome"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_reed",
@@ -659,9 +761,17 @@
   ],
   "pi_characterisation": "Director of exploitation for 1909 Alaska-Yukon-Pacific Exposition",
   "institutions": [
-   "i_ayp"
+   {
+    "id": "i_ayp",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "Director of exploitation for 1909 Alaska-Yukon-Pacific Exposition"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19061018_reed_startsman",
    "d_19070226_reed_chilberg"
@@ -677,7 +787,8 @@
   "stories": [
    "story_03_claim",
    "story_04_seattle_offer"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_chilberg",
@@ -707,9 +818,17 @@
   ],
   "pi_characterisation": "President of 1909 Alaska-Yukon-Pacific Exposition",
   "institutions": [
-   "i_ayp"
+   {
+    "id": "i_ayp",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "President of 1909 Alaska-Yukon-Pacific Exposition"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [
    "d_19070226_reed_chilberg"
@@ -724,7 +843,8 @@
    "story_03_claim",
    "story_04_seattle_offer",
    "story_11_stmichael_nome"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_anderson",
@@ -748,9 +868,10 @@
     "source": "Bumpus telegram [27 Apr 1907], reporting Anderson's own claim"
    }
   ],
-  "pi_characterisation": "An 'old intimate friend' of HFO, usurps LSQ's role by offering to go examine claim for free, then finds it impossible to get to Nome, allowing LSQ back off the bench.",
+  "pi_characterisation": "An “old intimate friend” of HFO, usurps LSQ’s role by offering to go examine claim for free, then finds it impossible to get to Nome, allowing LSQ back off the bench.",
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19070518_anderson_stone"
   ],
@@ -762,7 +883,8 @@
   ],
   "stories": [
    "story_06_anderson"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_stone",
@@ -798,8 +920,16 @@
   ],
   "pi_characterisation": "Colleague of Madison Grant; asked, but refuses, to deal with the mammoth 1907",
   "institutions": [
-   "i_tcdc"
+   {
+    "id": "i_tcdc",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "Taylor Creek Ditch Company, whose VP/Gen Manager is Andrew J. Stone"
+    }
+   }
   ],
+  "characterisations": [],
   "sent": [
    "d_19070620_stone_bumpus"
   ],
@@ -811,6 +941,9 @@
   ],
   "stories": [
    "story_06_anderson"
+  ],
+  "findings": [
+   "f_grants_camp"
   ]
  },
  {
@@ -833,9 +966,17 @@
   ],
   "pi_characterisation": "Philanthropist and president of AMNH.",
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "Philanthropist and president of AMNH."
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [
    "d_19070628_bumpus_jesup"
@@ -846,7 +987,8 @@
   "stories": [
    "story_05_newyork_deliberation",
    "story_07_funding"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_lucas",
@@ -876,10 +1018,18 @@
   ],
   "pi_characterisation": "Director AMNH after Bumpus.",
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "cast",
+     "quote": "Director AMNH after Bumpus."
+    }
+   }
   ],
   "identity_note": "A 'Mr. Lucas of the Brooklyn Museum' is named as a possible arbiter in Osborn's draft of 16 April 1907. The provided documents do not state whether this is the same person; the two attestations are kept as separate records (see p_lucas_brooklyn_1907).",
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19140806_lucas_grant",
    "d_19140807_lucas_quackenbush",
@@ -894,7 +1044,8 @@
   ],
   "stories": [
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_lucas_brooklyn_1907",
@@ -915,10 +1066,18 @@
    }
   ],
   "institutions": [
-   "i_brooklyn"
+   {
+    "id": "i_brooklyn",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19070416_osborn_bumpus",
+     "quote": "Mr. Lucas of the Brooklyn Museum"
+    }
+   }
   ],
   "identity_note": "Possibly identical with F.A. Lucas (p_lucas); not stated in the sources.",
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -926,7 +1085,8 @@
   ],
   "stories": [
    "story_05_newyork_deliberation"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_rathbun",
@@ -948,9 +1108,17 @@
   ],
   "pi_characterisation": "SI NMNH muckety-muck.",
   "institutions": [
-   "i_nmnh"
+   {
+    "id": "i_nmnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19070430_rathbun_bumpus",
+     "quote": "Assistant Secretary in charge of National Museum"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19070430_rathbun_bumpus"
   ],
@@ -961,7 +1129,8 @@
   "mentioned_in": [],
   "stories": [
    "story_05_newyork_deliberation"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_morgan",
@@ -997,6 +1166,7 @@
   ],
   "pi_characterisation": "Paid for half of both 1907 and 1908 expeditions.",
   "institutions": [],
+  "characterisations": [],
   "sent": [
    "d_19080302_morgan_osborn",
    "d_19090122_morgan_sherwood"
@@ -1023,6 +1193,9 @@
    "story_14_return_1907",
    "story_15_interlude",
    "story_23_accounts"
+  ],
+  "findings": [
+   "f_1909_halves"
   ]
  },
  {
@@ -1054,6 +1227,7 @@
   "pi_characterisation": "Paid for half of both 1907 and 1908 expeditions.",
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19070715_pyne_osborn",
    "d_19090121_pyne_sherwood"
@@ -1078,6 +1252,9 @@
    "story_14_return_1907",
    "story_15_interlude",
    "story_23_accounts"
+  ],
+  "findings": [
+   "f_1909_halves"
   ]
  },
  {
@@ -1100,9 +1277,11 @@
    {
     "role": "brother of Percy Pyne ('your brother Percy')",
     "source": "HFO to M.T. Pyne 28 Feb 1908"
-   },
+   }
+  ],
+  "characterisations": [
    {
-    "role": "'intimate friend of Osborn'",
+    "text": "whose brother was an intimate friend of Osborn",
     "source": "Tale (PI)"
    }
   ],
@@ -1115,7 +1294,8 @@
   "mentioned_in": [],
   "stories": [
    "story_15_interlude"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_sherwood",
@@ -1148,10 +1328,19 @@
    }
   ],
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "note": "named as the Assistant Secretary in the Director's own instructions; the Museum is not spelled out in the sentence",
+    "evidence": {
+     "ref": "d_19070629_bumpus_quackenbush_instructions",
+     "quote": "Mr. Sherwood, the Assistant Secretary"
+    }
+   }
   ],
   "identity_note": "First name not given anywhere in the provided material. Whether the unsigned 'Asst Sec'y' (1907) and 'Asst. Treasurer' (1907) copies were written by Sherwood is not stated.",
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19090115_sherwood_osborn",
    "d_19090115_sherwood_pyne",
@@ -1177,6 +1366,9 @@
    "story_07_funding",
    "story_22_return_1908",
    "story_23_accounts"
+  ],
+  "findings": [
+   "f_1909_halves"
   ]
  },
  {
@@ -1207,9 +1399,11 @@
    {
     "role": "cook and assistant; owner of the fishing dory (1908)",
     "source": "LSQ report 1 Oct 1908"
-   },
+   }
+  ],
+  "characterisations": [
    {
-    "role": "local assistant from whom LSQ concealed the find",
+    "text": "concealing it even from his local assistant, Jim Hoffman",
     "source": "Tale (PI)"
    }
   ],
@@ -1227,7 +1421,8 @@
    "story_19_excavation",
    "story_20_buckland",
    "story_21_bay_survey"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_merriam",
@@ -1248,9 +1443,15 @@
    }
   ],
   "institutions": [
-   "i_usda"
+   {
+    "id": "i_usda",
+    "status": "inferred",
+    "note": "the permit was 'just received from the Department of Agriculture' (Bumpus, 21 May 1908); Merriam's office is not named in the file",
+    "evidence": null
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19080520_merriam_bumpus"
   ],
@@ -1261,7 +1462,8 @@
   "mentioned_in": [],
   "stories": [
    "story_16_permits_departure"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_hugh_smith",
@@ -1282,9 +1484,17 @@
    }
   ],
   "institutions": [
-   "i_bof"
+   {
+    "id": "i_bof",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19100509_hughsmith_bumpus",
+     "quote": "Smith writing from Dept Commerce and Labor, Bureau of Fisheries"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [
    "d_19100509_hughsmith_bumpus"
   ],
@@ -1294,7 +1504,8 @@
   "mentioned_in": [],
   "stories": [
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_andrews",
@@ -1315,9 +1526,17 @@
    }
   ],
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19100518_bumpus_hughsmith",
+     "quote": "Mr. Andrews, who you know is now in Japan, would probably prefer to remain at the American Museum"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1325,7 +1544,8 @@
   ],
   "stories": [
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_mathews_jf",
@@ -1356,6 +1576,7 @@
   "institutions": [],
   "identity_note": "Distinct from W.D. Matthew of the AMNH; the letter itself is not in the file (returned to Grant).",
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1365,7 +1586,8 @@
   ],
   "stories": [
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_woods_ah",
@@ -1387,12 +1609,14 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
    "d_19140802_quackenbush_grant"
   ],
-  "stories": []
+  "stories": [],
+  "findings": []
  },
  {
   "id": "p_quinn",
@@ -1413,9 +1637,15 @@
    }
   ],
   "institutions": [
-   "i_keewalik_hotel"
+   {
+    "id": "i_keewalik_hotel",
+    "status": "inferred",
+    "note": "the outfit was stored 'in the warehouse of the Keewalik Hotel' and 'left in charge of Mr. Ferdinand Quinn'; his connection with the hotel is not stated",
+    "evidence": null
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1423,7 +1653,8 @@
   ],
   "stories": [
    "story_22_return_1908"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_harlan_smith",
@@ -1444,9 +1675,17 @@
    }
   ],
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19070318_meany_bumpus",
+     "quote": "Mr. Harlan J. Smith of your staff at the Museum"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1454,7 +1693,8 @@
   ],
   "stories": [
    "story_04_seattle_offer"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_ripley",
@@ -1475,10 +1715,16 @@
    }
   ],
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "inferred",
+    "note": "named only as 'Through Dr. Matthews (or Miss Ripley)' in Osborn's letter to the Director",
+    "evidence": null
+   }
   ],
   "identity_note": "Affiliation inferred only from context ('Through Dr. Matthews (or Miss Ripley)'); not stated.",
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1486,7 +1732,8 @@
   ],
   "stories": [
    "story_06_anderson"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_gilmore",
@@ -1515,9 +1762,17 @@
    }
   ],
   "institutions": [
-   "i_nmnh"
+   {
+    "id": "i_nmnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19070620_osborn_bumpus",
+     "quote": "Gilmore—who is going up from the U.S. National Museum"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1528,7 +1783,8 @@
   "stories": [
    "story_06_anderson",
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_maddren",
@@ -1557,9 +1813,17 @@
    }
   ],
   "institutions": [
-   "i_nmnh"
+   {
+    "id": "i_nmnh",
+    "status": "stated",
+    "evidence": {
+     "ref": "tale",
+     "quote": "had sent a collector to the same region in 1904 (Maddren)"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1570,7 +1834,8 @@
    "story_05_newyork_deliberation",
    "story_15_interlude",
    "story_20_buckland"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_brown",
@@ -1595,9 +1860,18 @@
    }
   ],
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "note": "'from here' = the Department writing to its Director",
+    "evidence": {
+     "ref": "d_19070325_matthew_bumpus",
+     "quote": "As to who could go from here—Brown or Granger if they could be spared"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1606,7 +1880,8 @@
   ],
   "stories": [
    "story_05_newyork_deliberation"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_granger",
@@ -1631,9 +1906,18 @@
    }
   ],
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "stated",
+    "note": "'from here' = the Department writing to its Director",
+    "evidence": {
+     "ref": "d_19070325_matthew_bumpus",
+     "quote": "As to who could go from here—Brown or Granger if they could be spared"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1643,7 +1927,8 @@
   "stories": [
    "story_05_newyork_deliberation",
    "story_15_interlude"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_sturgis",
@@ -1665,6 +1950,7 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1672,7 +1958,8 @@
   ],
   "stories": [
    "story_07_funding"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_lanier",
@@ -1693,9 +1980,15 @@
    }
   ],
   "institutions": [
-   "i_amnh"
+   {
+    "id": "i_amnh",
+    "status": "inferred",
+    "note": "the 1909 cheques were to be made payable to 'Mr. Charles Lanier, Treasurer'; the institution is not named in the sentence",
+    "evidence": null
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1703,7 +1996,8 @@
   ],
   "stories": [
    "story_23_accounts"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_vonhaake",
@@ -1724,9 +2018,17 @@
    }
   ],
   "institutions": [
-   "i_pod"
+   {
+    "id": "i_pod",
+    "status": "stated",
+    "evidence": {
+     "ref": "d_19090218_sherwood_vonhaake",
+     "quote": "A. von Haake, Topographer, Post Offcie Dept"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [
    "d_19090218_sherwood_vonhaake"
@@ -1734,7 +2036,8 @@
   "mentioned_in": [],
   "stories": [
    "story_23_accounts"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_allen",
@@ -1755,15 +2058,25 @@
    }
   ],
   "institutions": [
-   "i_tcdc"
+   {
+    "id": "i_tcdc",
+    "status": "stated",
+    "evidence_kind": "letterhead",
+    "evidence": {
+     "ref": "d_19070620_stone_bumpus",
+     "quote": "Benjamin Leach Allen, Treasurer, 66 Broadway"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
    "d_19070620_stone_bumpus"
   ],
-  "stories": []
+  "stories": [],
+  "findings": []
  },
  {
   "id": "p_varnum",
@@ -1779,20 +2092,23 @@
   ],
   "roles": [
    {
-    "role": "Secretary, Taylor Creek Ditch Company (name struck through on letterhead)",
-    "source": "letterhead"
+    "role": "Secretary, Taylor Creek Ditch Company — name struck through on the letterhead",
+    "source": "letterhead of Stone to Bumpus 20 June 1907"
    }
   ],
-  "institutions": [
-   "i_tcdc"
-  ],
+  "institutions": [],
+  "identity_note": "Named as Secretary on the Taylor Creek Ditch Co. letterhead with the name struck through (Stone to Bumpus, 20 June 1907); the struck name is recorded, no office is asserted and no tie to the other officers is drawn (finding f_varnum_struck).",
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
    "d_19070620_stone_bumpus"
   ],
-  "stories": []
+  "stories": [],
+  "findings": [
+   "f_varnum_struck"
+  ]
  },
  {
   "id": "p_schubert",
@@ -1813,10 +2129,19 @@
    }
   ],
   "institutions": [
-   "i_yale"
+   {
+    "id": "i_yale",
+    "status": "stated",
+    "note": "'U.S. National' is struck through in the original; see finding f_schubert_struck",
+    "evidence": {
+     "ref": "d_19070416_osborn_bumpus",
+     "quote": "Mr. Schubert[?] of the U.S. National Yale Museum"
+    }
+   }
   ],
   "identity_note": "The PI marks the reading as uncertain. Not resolved here.",
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1824,6 +2149,9 @@
   ],
   "stories": [
    "story_05_newyork_deliberation"
+  ],
+  "findings": [
+   "f_schubert_struck"
   ]
  },
  {
@@ -1846,6 +2174,7 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1853,7 +2182,8 @@
   ],
   "stories": [
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_peale",
@@ -1875,6 +2205,7 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1882,7 +2213,8 @@
   ],
   "stories": [
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_beechey",
@@ -1904,6 +2236,7 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1911,7 +2244,8 @@
   ],
   "stories": [
    "story_21_bay_survey"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_old_indian",
@@ -1942,6 +2276,7 @@
   "institutions": [],
   "identity_note": "Never named in any document. His account reaches the file only through Startsman's letter.",
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -1950,7 +2285,8 @@
   ],
   "stories": [
    "story_03_claim"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_eskimos",
@@ -1972,12 +2308,14 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_16_permits_departure"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_prospectors",
@@ -2007,12 +2345,14 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_20_buckland"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_settlements_unnamed",
@@ -2034,6 +2374,7 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -2041,7 +2382,8 @@
   ],
   "stories": [
    "story_18_crossing"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_woods_rebecca",
@@ -2066,15 +2408,24 @@
    }
   ],
   "institutions": [
-   "i_utoronto"
+   {
+    "id": "i_utoronto",
+    "status": "stated",
+    "evidence": {
+     "ref": "tale",
+     "quote": "Rebecca Woods University of Toronto"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_00_frame"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_macphee",
@@ -2100,6 +2451,7 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [
@@ -2107,7 +2459,8 @@
   ],
   "stories": [
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_bell",
@@ -2129,12 +2482,14 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_24_afterlife"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_chu",
@@ -2156,10 +2511,12 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
-  "stories": []
+  "stories": [],
+  "findings": []
  },
  {
   "id": "p_adams",
@@ -2184,16 +2541,25 @@
    }
   ],
   "institutions": [
-   "i_spb_academy"
+   {
+    "id": "i_spb_academy",
+    "status": "stated",
+    "evidence": {
+     "ref": "tale",
+     "quote": "appointed to the St Petersburg Academy of Science as an adjunct in zoology"
+    }
+   }
   ],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_00_frame",
    "story_01_adams"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_schoumachoff",
@@ -2223,12 +2589,14 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_01_adams"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_popoff",
@@ -2250,12 +2618,14 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_01_adams"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_boultonoff",
@@ -2277,12 +2647,14 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_01_adams"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_cuvier",
@@ -2304,13 +2676,15 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_01_adams",
    "story_02_frozen_meat"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_banks",
@@ -2332,12 +2706,14 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_02_frozen_meat"
-  ]
+  ],
+  "findings": []
  },
  {
   "id": "p_golovkin",
@@ -2359,11 +2735,13 @@
   ],
   "institutions": [],
   "addresses": [],
+  "characterisations": [],
   "sent": [],
   "received": [],
   "mentioned_in": [],
   "stories": [
    "story_01_adams"
-  ]
+  ],
+  "findings": []
  }
 ]

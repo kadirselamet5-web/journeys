@@ -14,7 +14,7 @@ A single-file copy is in `dist/quackenbush-journeys-standalone.html`.
 |---|---|
 | Map | Flat, relief and globe views of the 1907 and 1908 journeys; left panel with layers and a chronological stop list; marker style = source status, halos = uncertainty radius, line style = whether the mode of travel is attested. All connectors are schematic. |
 | Story | 25 pages; backbone = the PI's prose quoted verbatim; enrichment = typed correspondence blocks; people, documents, findings and sources cross-linked; previous/next navigation. |
-| Network | Nominalist network with three evidence kinds kept apart (correspondence · relation stated in a document · PI's writing), plus affiliations; ego views; every tie carries its quotation. |
+| Network | Five views over one nominalist data set, each with its evidence rule and caveat printed in the header, the side panel and Method › Network: **Persons** (correspondence · relation stated in a document · PI's writing · affiliation, told apart by hue and dash pattern; the Years filter dates correspondence and stated ties by their document), **Institutions** (person–institution bipartite graph; each affiliation carries one verified quotation and is *stated* or *inferred by the model*), **Funding** (every sum or promise of one that a provided text states, amounts exactly as written, no total computed), **Co-attestation** (derived: how many kinds of evidence attest each pair; a 'PI only' filter shows ties no document states) and **Mentions** (derived: sender → person named in the text, by name matching). Node search, ego views; letterhead-based ties are tagged; every tie carries its quotation. |
 | Archive | Primary-source reader: 99 archival items, 402 blocks typed verbatim / researcher's summary / editorial note / annotation, with the PI's marks and colour coding preserved. |
 | Timeline | The PI's terse timeline entry by entry, with "Read the document", "On the map" and "In the story" links. |
 | Published | Every source cited in the supplied files, recorded as cited; no full text was supplied. |
@@ -23,6 +23,8 @@ A single-file copy is in `dist/quackenbush-journeys-standalone.html`.
 ## Data (exported separately from the interface)
 
 `data/*.json`, `data/csv/*.csv`, `data/bundle.js` (same content, for the page), `data/DATA_DICTIONARY.md`.
+`network.json` carries, besides nodes and edges, `views` (rule and caveats of each view), `funding`
+(`data/csv/funding.csv`), the derived `pairs` (`network_pairs.csv`) and `mentions` (`network_mentions.csv`).
 Inputs are identified by SHA-256 in `data/source/input_files_sha256.jsonl`.
 
 ## Rebuilding
@@ -35,7 +37,17 @@ node tests/smoke.js                                         # headless Chromium 
 ```
 
 The build fails if any cross-reference does not resolve or if any quoted excerpt is not found verbatim
-in the supplied texts (after normalising quotation marks, dashes and whitespace).
+in the supplied texts (after normalising quotation marks, dashes and whitespace). Four classes of quotation
+are verified: tie and funding evidence, Tale excerpts (which must also end at a sentence or quotation
+boundary), the PI's Cast lines and characterisations, and every quoted fragment inside the model's own
+prose (model notes, place/stop/segment fields, findings, roles, labels, record notes: about 450 spans;
+the count is printed as `verified_quotations` and shown on Method › Data). Changing one letter inside any
+quoted span makes the build exit 1 naming the table, record and field.
+
+`tests/smoke.js` renders every route headlessly and asserts the behaviour of each feature (network views,
+filters, search, person pages, Method tables); it exits non-zero on any JavaScript error, crawl failure or
+failed assertion. `docs/REVIEW_REPORT.md` records the three reviews behind the current work packages and
+what each package implemented.
 
 ## Authorship
 
