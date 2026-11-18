@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T16:55:50.289Z",
+ "generated": "2026-11-18T17:13:59.241Z",
  "axe_version": "4.10.2",
  "tags": [
   "wcag2a",
@@ -16,7 +16,7 @@
  "light": {
   "/map": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T16:55:56.979Z",
+   "timestamp": "2026-11-18T17:14:06.064Z",
    "violations": [],
    "incomplete": [
     {
@@ -311,7 +311,7 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 725
+     "nodes": 724
     },
     {
      "id": "scrollable-region-focusable",
@@ -384,7 +384,7 @@
   },
   "/stories": {
    "url": "file:///home/user/journeys/index.html#/stories",
-   "timestamp": "2026-11-18T16:55:58.100Z",
+   "timestamp": "2026-11-18T17:14:07.344Z",
    "violations": [],
    "incomplete": [
     {
@@ -673,7 +673,7 @@
   },
   "/story/story_19_excavation": {
    "url": "file:///home/user/journeys/index.html#/story/story_19_excavation",
-   "timestamp": "2026-11-18T16:55:59.202Z",
+   "timestamp": "2026-11-18T17:14:08.435Z",
    "violations": [],
    "incomplete": [
     {
@@ -1016,7 +1016,7 @@
   },
   "/archive/d_19070416_osborn_bumpus": {
    "url": "file:///home/user/journeys/index.html#/archive/d_19070416_osborn_bumpus",
-   "timestamp": "2026-11-18T16:56:00.384Z",
+   "timestamp": "2026-11-18T17:14:09.714Z",
    "violations": [],
    "incomplete": [
     {
@@ -1371,7 +1371,7 @@
   },
   "/network": {
    "url": "file:///home/user/journeys/index.html#/network",
-   "timestamp": "2026-11-18T16:56:03.510Z",
+   "timestamp": "2026-11-18T17:14:12.787Z",
    "violations": [],
    "incomplete": [
     {
@@ -2214,7 +2214,7 @@
   },
   "/person/p_grant": {
    "url": "file:///home/user/journeys/index.html#/person/p_grant",
-   "timestamp": "2026-11-18T16:56:04.681Z",
+   "timestamp": "2026-11-18T17:14:13.894Z",
    "violations": [],
    "incomplete": [
     {
@@ -2527,7 +2527,7 @@
   },
   "/timeline": {
    "url": "file:///home/user/journeys/index.html#/timeline",
-   "timestamp": "2026-11-18T16:56:05.887Z",
+   "timestamp": "2026-11-18T17:14:15.211Z",
    "violations": [],
    "incomplete": [
     {
@@ -2917,7 +2917,7 @@
   },
   "/published": {
    "url": "file:///home/user/journeys/index.html#/published",
-   "timestamp": "2026-11-18T16:56:07.127Z",
+   "timestamp": "2026-11-18T17:14:16.349Z",
    "violations": [],
    "incomplete": [
     {
@@ -3222,7 +3222,7 @@
   },
   "/method/geocoding": {
    "url": "file:///home/user/journeys/index.html#/method/geocoding",
-   "timestamp": "2026-11-18T16:56:08.721Z",
+   "timestamp": "2026-11-18T17:14:18.234Z",
    "violations": [],
    "incomplete": [
     {
@@ -3551,7 +3551,7 @@
   },
   "/about": {
    "url": "file:///home/user/journeys/index.html#/about",
-   "timestamp": "2026-11-18T16:56:09.838Z",
+   "timestamp": "2026-11-18T17:14:19.386Z",
    "violations": [],
    "incomplete": [
     {
@@ -3938,12 +3938,34 @@
   },
   "/network/view/funding": {
    "url": "file:///home/user/journeys/index.html#/network/view/funding",
-   "timestamp": "2026-11-18T16:56:12.666Z",
+   "timestamp": "2026-11-18T17:14:22.259Z",
    "violations": [],
    "incomplete": [
     {
      "id": "color-contrast",
-     "impact": "serious",
+     "impact": null,
+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+     "message": "Element midpoint exceeds the grid bounds",
+     "stack": "Error: Element midpoint exceeds the grid bounds\n    at E (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:90245)\n    at e.value (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:127365)\n    at Xl (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:132778)\n    at Xl (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:133044)\n    at /home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:206065\n    at Array.map (<anonymous>)\n    at js (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:206042)\n    at ch (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:377767)\n    at /home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:382682\n    at Fh (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:383792)",
+     "error": {
+      "name": "Error"
+     },
+     "errorNode": {
+      "selector": [
+       "th:nth-child(1)"
+      ],
+      "source": "<th scope=\"col\">From</th>",
+      "xpath": [
+       "/div[@id='netside']/div[2]/table/thead/tr/th"
+      ],
+      "ancestry": [
+       "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(2) > div:nth-child(5) > table > thead:nth-child(2) > tr > th:nth-child(1)"
+      ],
+      "nodeIndexes": [
+       1949
+      ],
+      "fromFrame": false
+     },
      "tags": [
       "cat.color",
       "wcag2aa",
@@ -3954,1070 +3976,9 @@
       "EN-9.1.4.3",
       "ACT"
      ],
-     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
      "help": "Elements must meet minimum color contrast ratio thresholds",
      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
-     "nodes": [
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "messageKey": "nonBmp"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element content contains only non-text characters"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span aria-hidden=\"true\">← </span>",
-       "target": [
-        "button[onclick=\"App.back()\"] > span[aria-hidden=\"true\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"373.3333333333333\" y=\"364.75\" text-anchor=\"middle\" style=\"cursor: pointer;\">$500.00</text>",
-       "target": [
-        ".netlabel[y=\"364.75\"][x=\"373.3333333333333\"]:nth-child(1)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"373.3333333333333\" y=\"275.75\" text-anchor=\"middle\" style=\"cursor: pointer;\">one-half (of $1,500.00)</text>",
-       "target": [
-        "text[y=\"275.75\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"373.08333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$75.00 per month</text>",
-       "target": [
-        ".netlabel[y=\"373.08333333333337\"][x=\"646.6666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"263\" text-anchor=\"middle\" style=\"cursor: pointer;\">$1,500.00</text>",
-       "target": [
-        ".netlabel[y=\"263\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"428.25\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750.00</text>",
-       "target": [
-        "text[y=\"428.25\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"453.75\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750</text>",
-       "target": [
-        "text[y=\"453.75\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"326.5\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750</text>",
-       "target": [
-        ".netlabel[y=\"326.5\"][x=\"236.66666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"263\" text-anchor=\"middle\" style=\"cursor: pointer;\">$250</text>",
-       "target": [
-        ".netlabel[y=\"263\"][x=\"236.66666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"352\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750.00</text>",
-       "target": [
-        ".netlabel[y=\"352\"][x=\"236.66666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"301\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750.</text>",
-       "target": [
-        "text[y=\"301\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"398.58333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">one hundred and fifty</text>",
-       "target": [
-        ".netlabel[y=\"398.58333333333337\"][x=\"646.6666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"373.08333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$1,500</text>",
-       "target": [
-        ".netlabel[y=\"373.08333333333337\"][x=\"783.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"326.5\" text-anchor=\"middle\" style=\"cursor: pointer;\">$1,500</text>",
-       "target": [
-        ".netlabel[y=\"326.5\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"398.58333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$81.50</text>",
-       "target": [
-        ".netlabel[y=\"398.58333333333337\"][x=\"783.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"424.08333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$100 per month – 3 months – 300.</text>",
-       "target": [
-        ".netlabel[y=\"424.08333333333337\"][x=\"783.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"449.58333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">add $200 less $30</text>",
-       "target": [
-        ".netlabel[y=\"449.58333333333337\"][x=\"783.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"352\" text-anchor=\"middle\" style=\"cursor: pointer;\">a sum not to exceed $2,000</text>",
-       "target": [
-        ".netlabel[y=\"352\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"424.08333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$2,000.</text>",
-       "target": [
-        ".netlabel[y=\"424.08333333333337\"][x=\"646.6666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"449.58333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$100. per month</text>",
-       "target": [
-        ".netlabel[y=\"449.58333333333337\"][x=\"646.6666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"292.6666666666667\" text-anchor=\"middle\" style=\"cursor: pointer;\">not less than $75.00</text>",
-       "target": [
-        "text[y=\"292.6666666666667\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"373.3333333333333\" y=\"339.25\" text-anchor=\"middle\" style=\"cursor: pointer;\">half the cost</text>",
-       "target": [
-        ".netlabel[y=\"339.25\"][x=\"373.3333333333333\"]:nth-child(21)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"377.5\" text-anchor=\"middle\" style=\"cursor: pointer;\">$1,712.27</text>",
-       "target": [
-        ".netlabel[y=\"377.5\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"377.5\" text-anchor=\"middle\" style=\"cursor: pointer;\">$856.14</text>",
-       "target": [
-        ".netlabel[y=\"377.5\"][x=\"236.66666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"403\" text-anchor=\"middle\" style=\"cursor: pointer;\">one-half of the cost</text>",
-       "target": [
-        "text[y=\"403\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"500.33333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$100 a month and expenses</text>",
-       "target": [
-        "text[y=\"500.33333333333337\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"441\" text-anchor=\"middle\" style=\"cursor: pointer;\">not less … than $700</text>",
-       "target": [
-        ".netlabel[y=\"441\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel pi\" x=\"373.3333333333333\" y=\"250.25\" text-anchor=\"middle\" style=\"cursor: pointer;\">half</text>",
-       "target": [
-        "text[y=\"250.25\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel pi\" x=\"373.3333333333333\" y=\"364.75\" text-anchor=\"middle\" style=\"cursor: pointer;\">half</text>",
-       "target": [
-        ".pi[y=\"364.75\"][x=\"373.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel pi\" x=\"373.3333333333333\" y=\"339.25\" text-anchor=\"middle\" style=\"cursor: pointer;\">half</text>",
-       "target": [
-        ".pi[y=\"339.25\"][x=\"373.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel pi\" x=\"373.3333333333333\" y=\"441\" text-anchor=\"middle\" style=\"cursor: pointer;\">half</text>",
-       "target": [
-        ".pi[y=\"441\"][x=\"373.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"-16\" dx=\"0\" text-anchor=\"middle\">AMNH fund (Treasurer / Dept of VP)</text>",
-       "target": [
-        ".netnode:nth-child(1) > text[dy=\"-16\"][dx=\"0\"][text-anchor=\"middle\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"-16\" dx=\"0\" text-anchor=\"middle\">Expedition 1907</text>",
-       "target": [
-        ".netnode:nth-child(2) > text[dy=\"-16\"][dx=\"0\"][text-anchor=\"middle\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"-16\" dx=\"0\" text-anchor=\"middle\">Expedition 1908</text>",
-       "target": [
-        ".netnode:nth-child(3) > text[dy=\"-16\"][dx=\"0\"][text-anchor=\"middle\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"-16\" dx=\"0\" text-anchor=\"middle\">Proposed trip, 1914</text>",
-       "target": [
-        ".netnode:nth-child(4) > text[dy=\"-16\"][dx=\"0\"][text-anchor=\"middle\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"-12\" text-anchor=\"end\">J. P. Morgan, Jr.</text>",
-       "target": [
-        "g[transform=\"translate(100,356)\"] > text[dx=\"-12\"][text-anchor=\"end\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"-12\" text-anchor=\"end\">Percy Pyne</text>",
-       "target": [
-        "g[transform=\"translate(100,534)\"] > text[dx=\"-12\"][text-anchor=\"end\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"12\" text-anchor=\"start\">L. S. Quackenbush</text>",
-       "target": [
-        ".netnode:nth-child(7) > text[dx=\"12\"][text-anchor=\"start\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"12\" text-anchor=\"start\">Ferdinand Quinn</text>",
-       "target": [
-        ".netnode:nth-child(8) > text[dx=\"12\"][text-anchor=\"start\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"-12\" text-anchor=\"end\">F. K. Sturgis</text>",
-       "target": [
-        "g[transform=\"translate(100,178)\"] > text[dx=\"-12\"][text-anchor=\"end\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      }
-     ]
+     "nodes": []
     }
    ],
    "passes": [
@@ -5100,11 +4061,6 @@
      "id": "bypass",
      "impact": null,
      "nodes": 1
-    },
-    {
-     "id": "color-contrast",
-     "impact": "serious",
-     "nodes": 55
     },
     {
      "id": "definition-list",
@@ -5234,7 +4190,7 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 711
+     "nodes": 712
     },
     {
      "id": "scope-attr-valid",
@@ -5244,7 +4200,7 @@
     {
      "id": "scrollable-region-focusable",
      "impact": null,
-     "nodes": 1
+     "nodes": 2
     },
     {
      "id": "skip-link",
@@ -5321,7 +4277,7 @@
   },
   "/map/stop/s1908_08": {
    "url": "file:///home/user/journeys/index.html#/map/stop/s1908_08",
-   "timestamp": "2026-11-18T16:56:14.892Z",
+   "timestamp": "2026-11-18T17:14:24.475Z",
    "violations": [],
    "incomplete": [
     {
@@ -5384,7 +4340,7 @@
        "html > body > main:nth-child(4) > section:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div > div:nth-child(1) > div > div:nth-child(4) > a"
       ],
       "nodeIndexes": [
-       1692
+       1687
       ],
       "fromFrame": false
      },
@@ -5531,12 +4487,12 @@
     {
      "id": "image-alt",
      "impact": null,
-     "nodes": 60
+     "nodes": 55
     },
     {
      "id": "image-redundant-alt",
      "impact": null,
-     "nodes": 60
+     "nodes": 55
     },
     {
      "id": "label-title-only",
@@ -5616,12 +4572,12 @@
     {
      "id": "presentation-role-conflict",
      "impact": null,
-     "nodes": 60
+     "nodes": 55
     },
     {
      "id": "region",
      "impact": null,
-     "nodes": 842
+     "nodes": 837
     },
     {
      "id": "scrollable-region-focusable",
@@ -5693,7 +4649,7 @@
   },
   "/map@globe": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T16:56:17.862Z",
+   "timestamp": "2026-11-18T17:14:27.573Z",
    "violations": [],
    "incomplete": [
     {
@@ -7354,7 +6310,7 @@
  "dark": {
   "/map": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T16:56:23.822Z",
+   "timestamp": "2026-11-18T17:14:32.933Z",
    "violations": [],
    "incomplete": [
     {
@@ -7475,7 +6431,7 @@
   },
   "/stories": {
    "url": "file:///home/user/journeys/index.html#/stories",
-   "timestamp": "2026-11-18T16:56:24.811Z",
+   "timestamp": "2026-11-18T17:14:33.946Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -7929,7 +6885,7 @@
   },
   "/story/story_19_excavation": {
    "url": "file:///home/user/journeys/index.html#/story/story_19_excavation",
-   "timestamp": "2026-11-18T16:56:25.815Z",
+   "timestamp": "2026-11-18T17:14:34.961Z",
    "violations": [],
    "incomplete": [
     {
@@ -8018,7 +6974,7 @@
   },
   "/archive/d_19070416_osborn_bumpus": {
    "url": "file:///home/user/journeys/index.html#/archive/d_19070416_osborn_bumpus",
-   "timestamp": "2026-11-18T16:56:26.837Z",
+   "timestamp": "2026-11-18T17:14:36.086Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -9239,7 +8195,7 @@
   },
   "/network": {
    "url": "file:///home/user/journeys/index.html#/network",
-   "timestamp": "2026-11-18T16:56:29.759Z",
+   "timestamp": "2026-11-18T17:14:38.935Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -9953,7 +8909,7 @@
   },
   "/person/p_grant": {
    "url": "file:///home/user/journeys/index.html#/person/p_grant",
-   "timestamp": "2026-11-18T16:56:30.707Z",
+   "timestamp": "2026-11-18T17:14:39.900Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -10274,7 +9230,7 @@
   },
   "/timeline": {
    "url": "file:///home/user/journeys/index.html#/timeline",
-   "timestamp": "2026-11-18T16:56:31.672Z",
+   "timestamp": "2026-11-18T17:14:40.914Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -10676,7 +9632,7 @@
   },
   "/published": {
    "url": "file:///home/user/journeys/index.html#/published",
-   "timestamp": "2026-11-18T16:56:32.644Z",
+   "timestamp": "2026-11-18T17:14:41.984Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -10827,7 +9783,7 @@
   },
   "/method/geocoding": {
    "url": "file:///home/user/journeys/index.html#/method/geocoding",
-   "timestamp": "2026-11-18T16:56:33.754Z",
+   "timestamp": "2026-11-18T17:14:43.091Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -11046,7 +10002,7 @@
   },
   "/about": {
    "url": "file:///home/user/journeys/index.html#/about",
-   "timestamp": "2026-11-18T16:56:34.831Z",
+   "timestamp": "2026-11-18T17:14:44.091Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -11362,166 +10318,69 @@
   },
   "/network/view/funding": {
    "url": "file:///home/user/journeys/index.html#/network/view/funding",
-   "timestamp": "2026-11-18T16:56:37.622Z",
-   "violations": [
-    {
-     "id": "color-contrast-enhanced",
-     "impact": "serious",
-     "tags": [
-      "cat.color",
-      "wcag2aaa",
-      "wcag146",
-      "ACT"
-     ],
-     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AAA enhanced contrast ratio thresholds",
-     "help": "Elements must meet enhanced color contrast ratio thresholds",
-     "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast-enhanced?application=axeAPI",
-     "nodes": [
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "10.2pt (13.6px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<header id=\"topbar\">",
-           "target": [
-            "#topbar"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.2pt (13.6px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span>1907–1908 · an evidence-based reconstruction</span>",
-       "target": [
-        ".brand > span"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.2pt (13.6px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "10.3pt (13.76px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<div id=\"netcontrols\">",
-           "target": [
-            "#netcontrols"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.3pt (13.76px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<div class=\"row small muted\" id=\"netstat\" aria-live=\"polite\">9 nodes · 30 funding edges (26 stated sums or promises; 4 PI assertions) · left to right: funders → the Museum's fund → expeditions → the field · amounts as written; no total is computed</div>",
-       "target": [
-        "#netstat"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.3pt (13.76px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#15171a",
-          "contrastRatio": 6.02,
-          "fontSize": "10.1pt (13.44px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<div id=\"netviewhead\">",
-           "target": [
-            "#netviewhead"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 6.02 (foreground color: #9a958b, background color: #15171a, font size: 10.1pt (13.44px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"caveat muted\">Caveat: Sturgis's $250 is 'a contribution toward the field exploration fund of your Department'; the file does not say it was for the mammoth.</span>",
-       "target": [
-        ".caveat"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 6.02 (foreground color: #9a958b, background color: #15171a, font size: 10.1pt (13.44px), font weight: normal). Expected contrast ratio of 7:1"
-      }
-     ]
-    }
-   ],
+   "timestamp": "2026-11-18T17:14:46.811Z",
+   "violations": [],
    "incomplete": [
     {
      "id": "color-contrast-enhanced",
-     "impact": "serious",
+     "impact": null,
+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AAA enhanced contrast ratio thresholds",
+     "message": "Element midpoint exceeds the grid bounds",
+     "stack": "Error: Element midpoint exceeds the grid bounds\n    at E (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:90245)\n    at e.value (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:127365)\n    at Xl (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:132778)\n    at Xl (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:133044)\n    at /home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:206065\n    at Array.map (<anonymous>)\n    at js (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:206042)\n    at ch (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:377767)\n    at /home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:382682\n    at Fh (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:383792)",
+     "error": {
+      "name": "Error"
+     },
+     "errorNode": {
+      "selector": [
+       "th:nth-child(1)"
+      ],
+      "source": "<th scope=\"col\">From</th>",
+      "xpath": [
+       "/div[@id='netside']/div[2]/table/thead/tr/th"
+      ],
+      "ancestry": [
+       "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(2) > div:nth-child(5) > table > thead:nth-child(2) > tr > th:nth-child(1)"
+      ],
+      "nodeIndexes": [
+       1949
+      ],
+      "fromFrame": false
+     },
      "tags": [
       "cat.color",
       "wcag2aaa",
       "wcag146",
       "ACT"
      ],
-     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AAA enhanced contrast ratio thresholds",
      "help": "Elements must meet enhanced color contrast ratio thresholds",
      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast-enhanced?application=axeAPI",
-     "nodes": [
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "messageKey": "nonBmp"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element content contains only non-text characters"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span aria-hidden=\"true\">← </span>",
-       "target": [
-        "button[onclick=\"App.back()\"] > span[aria-hidden=\"true\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
-      }
-     ]
+     "nodes": []
     },
     {
      "id": "color-contrast",
-     "impact": "serious",
+     "impact": null,
+     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+     "message": "Element midpoint exceeds the grid bounds",
+     "stack": "Error: Element midpoint exceeds the grid bounds\n    at E (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:90245)\n    at e.value (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:127365)\n    at Xl (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:132778)\n    at Xl (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:133044)\n    at /home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:206065\n    at Array.map (<anonymous>)\n    at js (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:206042)\n    at ch (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:377767)\n    at /home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:382682\n    at Fh (/home/user/journeys/tests/a11y/node_modules/axe-core/axe.min.js:12:383792)",
+     "error": {
+      "name": "Error"
+     },
+     "errorNode": {
+      "selector": [
+       "th:nth-child(1)"
+      ],
+      "source": "<th scope=\"col\">From</th>",
+      "xpath": [
+       "/div[@id='netside']/div[2]/table/thead/tr/th"
+      ],
+      "ancestry": [
+       "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(2) > div:nth-child(5) > table > thead:nth-child(2) > tr > th:nth-child(1)"
+      ],
+      "nodeIndexes": [
+       1949
+      ],
+      "fromFrame": false
+     },
      "tags": [
       "cat.color",
       "wcag2aa",
@@ -11532,1091 +10391,19 @@
       "EN-9.1.4.3",
       "ACT"
      ],
-     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
      "help": "Elements must meet minimum color contrast ratio thresholds",
      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
-     "nodes": [
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "messageKey": "nonBmp"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element content contains only non-text characters"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span aria-hidden=\"true\">← </span>",
-       "target": [
-        "button[onclick=\"App.back()\"] > span[aria-hidden=\"true\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"373.3333333333333\" y=\"364.75\" text-anchor=\"middle\" style=\"cursor: pointer;\">$500.00</text>",
-       "target": [
-        ".netlabel[y=\"364.75\"][x=\"373.3333333333333\"]:nth-child(1)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"373.3333333333333\" y=\"275.75\" text-anchor=\"middle\" style=\"cursor: pointer;\">one-half (of $1,500.00)</text>",
-       "target": [
-        "text[y=\"275.75\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"373.08333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$75.00 per month</text>",
-       "target": [
-        ".netlabel[y=\"373.08333333333337\"][x=\"646.6666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"263\" text-anchor=\"middle\" style=\"cursor: pointer;\">$1,500.00</text>",
-       "target": [
-        ".netlabel[y=\"263\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"428.25\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750.00</text>",
-       "target": [
-        "text[y=\"428.25\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"453.75\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750</text>",
-       "target": [
-        "text[y=\"453.75\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"326.5\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750</text>",
-       "target": [
-        ".netlabel[y=\"326.5\"][x=\"236.66666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"263\" text-anchor=\"middle\" style=\"cursor: pointer;\">$250</text>",
-       "target": [
-        ".netlabel[y=\"263\"][x=\"236.66666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"352\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750.00</text>",
-       "target": [
-        ".netlabel[y=\"352\"][x=\"236.66666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"301\" text-anchor=\"middle\" style=\"cursor: pointer;\">$750.</text>",
-       "target": [
-        "text[y=\"301\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"398.58333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">one hundred and fifty</text>",
-       "target": [
-        ".netlabel[y=\"398.58333333333337\"][x=\"646.6666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"373.08333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$1,500</text>",
-       "target": [
-        ".netlabel[y=\"373.08333333333337\"][x=\"783.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"326.5\" text-anchor=\"middle\" style=\"cursor: pointer;\">$1,500</text>",
-       "target": [
-        ".netlabel[y=\"326.5\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"398.58333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$81.50</text>",
-       "target": [
-        ".netlabel[y=\"398.58333333333337\"][x=\"783.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"424.08333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$100 per month – 3 months – 300.</text>",
-       "target": [
-        ".netlabel[y=\"424.08333333333337\"][x=\"783.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"449.58333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">add $200 less $30</text>",
-       "target": [
-        ".netlabel[y=\"449.58333333333337\"][x=\"783.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"352\" text-anchor=\"middle\" style=\"cursor: pointer;\">a sum not to exceed $2,000</text>",
-       "target": [
-        ".netlabel[y=\"352\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"424.08333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$2,000.</text>",
-       "target": [
-        ".netlabel[y=\"424.08333333333337\"][x=\"646.6666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"449.58333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$100. per month</text>",
-       "target": [
-        ".netlabel[y=\"449.58333333333337\"][x=\"646.6666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"646.6666666666666\" y=\"292.6666666666667\" text-anchor=\"middle\" style=\"cursor: pointer;\">not less than $75.00</text>",
-       "target": [
-        "text[y=\"292.6666666666667\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"373.3333333333333\" y=\"339.25\" text-anchor=\"middle\" style=\"cursor: pointer;\">half the cost</text>",
-       "target": [
-        ".netlabel[y=\"339.25\"][x=\"373.3333333333333\"]:nth-child(21)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"377.5\" text-anchor=\"middle\" style=\"cursor: pointer;\">$1,712.27</text>",
-       "target": [
-        ".netlabel[y=\"377.5\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"377.5\" text-anchor=\"middle\" style=\"cursor: pointer;\">$856.14</text>",
-       "target": [
-        ".netlabel[y=\"377.5\"][x=\"236.66666666666666\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"236.66666666666666\" y=\"403\" text-anchor=\"middle\" style=\"cursor: pointer;\">one-half of the cost</text>",
-       "target": [
-        "text[y=\"403\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"783.3333333333333\" y=\"500.33333333333337\" text-anchor=\"middle\" style=\"cursor: pointer;\">$100 a month and expenses</text>",
-       "target": [
-        "text[y=\"500.33333333333337\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel\" x=\"510\" y=\"441\" text-anchor=\"middle\" style=\"cursor: pointer;\">not less … than $700</text>",
-       "target": [
-        ".netlabel[y=\"441\"][x=\"510\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel pi\" x=\"373.3333333333333\" y=\"250.25\" text-anchor=\"middle\" style=\"cursor: pointer;\">half</text>",
-       "target": [
-        "text[y=\"250.25\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel pi\" x=\"373.3333333333333\" y=\"364.75\" text-anchor=\"middle\" style=\"cursor: pointer;\">half</text>",
-       "target": [
-        ".pi[y=\"364.75\"][x=\"373.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel pi\" x=\"373.3333333333333\" y=\"339.25\" text-anchor=\"middle\" style=\"cursor: pointer;\">half</text>",
-       "target": [
-        ".pi[y=\"339.25\"][x=\"373.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "7.5pt (10px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text class=\"netlabel pi\" x=\"373.3333333333333\" y=\"441\" text-anchor=\"middle\" style=\"cursor: pointer;\">half</text>",
-       "target": [
-        ".pi[y=\"441\"][x=\"373.3333333333333\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"-16\" dx=\"0\" text-anchor=\"middle\">AMNH fund (Treasurer / Dept of VP)</text>",
-       "target": [
-        ".netnode:nth-child(1) > text[dy=\"-16\"][dx=\"0\"][text-anchor=\"middle\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"-16\" dx=\"0\" text-anchor=\"middle\">Expedition 1907</text>",
-       "target": [
-        ".netnode:nth-child(2) > text[dy=\"-16\"][dx=\"0\"][text-anchor=\"middle\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"-16\" dx=\"0\" text-anchor=\"middle\">Expedition 1908</text>",
-       "target": [
-        ".netnode:nth-child(3) > text[dy=\"-16\"][dx=\"0\"][text-anchor=\"middle\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"-16\" dx=\"0\" text-anchor=\"middle\">Proposed trip, 1914</text>",
-       "target": [
-        ".netnode:nth-child(4) > text[dy=\"-16\"][dx=\"0\"][text-anchor=\"middle\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"-12\" text-anchor=\"end\">J. P. Morgan, Jr.</text>",
-       "target": [
-        "g[transform=\"translate(100,356)\"] > text[dx=\"-12\"][text-anchor=\"end\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"-12\" text-anchor=\"end\">Percy Pyne</text>",
-       "target": [
-        "g[transform=\"translate(100,534)\"] > text[dx=\"-12\"][text-anchor=\"end\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"12\" text-anchor=\"start\">L. S. Quackenbush</text>",
-       "target": [
-        ".netnode:nth-child(7) > text[dx=\"12\"][text-anchor=\"start\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"12\" text-anchor=\"start\">Ferdinand Quinn</text>",
-       "target": [
-        ".netnode:nth-child(8) > text[dx=\"12\"][text-anchor=\"start\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 712\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text dy=\"4\" dx=\"-12\" text-anchor=\"end\">F. K. Sturgis</text>",
-       "target": [
-        "g[transform=\"translate(100,178)\"] > text[dx=\"-12\"][text-anchor=\"end\"][dy=\"4\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      }
-     ]
+     "nodes": []
     }
    ],
-   "passes": [
-    {
-     "id": "color-contrast-enhanced",
-     "impact": "serious",
-     "nodes": 91
-    },
-    {
-     "id": "color-contrast",
-     "impact": "serious",
-     "nodes": 55
-    }
-   ],
+   "passes": [],
    "inapplicable": [
     "link-in-text-block"
    ]
   },
   "/map/stop/s1908_08": {
    "url": "file:///home/user/journeys/index.html#/map/stop/s1908_08",
-   "timestamp": "2026-11-18T16:56:39.669Z",
+   "timestamp": "2026-11-18T17:14:48.774Z",
    "violations": [],
    "incomplete": [
     {
@@ -12737,7 +10524,7 @@
   },
   "/map@globe": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T16:56:42.464Z",
+   "timestamp": "2026-11-18T17:14:51.656Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",

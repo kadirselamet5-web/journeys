@@ -332,17 +332,17 @@
  {
   "id": "f_1906_folder",
   "kind": "discrepancy",
-  "title": "Osborn to Bumpus, 20 June 1907, filed under 'Alaska Mammoth Exp. 1906'",
-  "text": "The PI records the location of Osborn's letter of 20 June 1907 as Central Archives 590, Box 162, Folder 'Alaska Mammoth Exp. 1906', although the letter belongs to the 1907 expedition. Whether this is the archive's filing or a slip in the PI's note is not stated; the citation is kept as recorded.",
+  "title": "Folder 'Alaska Mammoth Exp. 1906' holds the correspondence down to 20 June 1907",
+  "text": "The PI records the location of every item from Reed to Startsman (18 October 1906) to Osborn to Bumpus and Stone to Bumpus (both 20 June 1907) as Central Archives 590, Box 162, Folder 'Alaska Mammoth Exp. 1906': twenty items, eighteen of them dated 1907. The folder 'Alaska Mammoth Exp. 1907' begins with Bumpus to Osborn of 21 June 1907. The folder label thus does not match the year of most of its contents. Whether this reflects the archive's own arrangement or the PI's citations is not stated; the citations are kept as recorded.",
   "refs": [
-   "d_19070620_osborn_bumpus"
+   "d_19061018_reed_startsman",
+   "d_19070620_osborn_bumpus",
+   "d_19070621_bumpus_osborn"
   ],
   "stories": [
    "story_06_anderson"
   ],
-  "people": [
-   "p_osborn"
-  ],
+  "people": [],
   "related": []
  },
  {

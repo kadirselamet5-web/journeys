@@ -70,7 +70,7 @@ FUNDING_EDGES = [
       quote="with an order to sell the canoe—if possible—for not less than $75.00 which he is to forward to the Museum", note="The canoe left with Quinn at Keewalik; whether it was sold is not in the file."),
  # ---------------------------------------------------------------- 1909 settlement
  dict(source="p_morgan", target="x_exp_1908", amount_as_written="half the cost", status="promised", date=None, doc="d_nd_osborn_sherwood",
-      quote="JP Morgan Jr wants to pay half the cost of LSQ’s expedition provided Percy Pyne pays the other half.", note="Undated note from Osborn to Sherwood, filed with the January 1909 letters (PI summary)."),
+      quote="JP Morgan Jr wants to pay half the cost of LSQ’s expedition provided Percy Pyne pays the other half.", note="Undated note from Osborn to Sherwood; the PI's transcription places it in the 1908 folder immediately before the January 1909 letters (PI summary)."),
  dict(source="x_amnh_fund", target="x_exp_1908", amount_as_written="$1,712.27", status="paid", date="1909-01-15", doc="d_19090115_sherwood_pyne",
       quote="Total expense 1908 was $1,712.27.", note="The Museum's statement of the 1908 cost (PI summary)."),
  dict(source="p_morgan", target="x_amnh_fund", amount_as_written="$856.14", status="requested", date="1909-01-21", doc="d_19090121_sherwood_morgan",

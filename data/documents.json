@@ -59,6 +59,7 @@
   ],
   "findings": [
    "f_reed_startsman_date",
+   "f_1906_folder",
    "a_conversations",
    "a_location_withheld",
    "a_copies_provenance"
@@ -2099,6 +2100,7 @@
    "tl044"
   ],
   "findings": [
+   "f_1906_folder",
    "a_conversations"
   ]
  },

@@ -556,3 +556,133 @@ axe before/after (failing nodes per rule; before = `tests/a11y/axe-before.json` 
 | target-size [light] | A/AA | 3 | 0 |
 
 **Skipped or adapted, with reasons.** (a) `role="img"` on `#netsvg` → `role="group"` (A3: focusable children). (b) `<li role="presentation">` group headers → nested lists (A1: axe `list`). (c) `border-radius:2px` on `:focus-visible` omitted (A7: it would reshape pills and chips). (d) The map region's label describes the real key bindings (A2). (e) The View segment is a labelled group, not a fieldset (A5). (f) Gazetteer links keep `target="_blank"` with the sr-only warning rather than opening in the same tab, so that a reader checking a GNIS record does not lose the page (A9; the spec offered either). (g) axe's `target-size` does not measure SVG markers; their 24 px equivalents are the stop-list links on the same page (WCAG 2.5.8 'equivalent' exception), while the HTML icons (disputed, candidates) and the footnote references were enlarged to 24 px. (h) `focusHeading()` adds `tabindex="-1"` only to elements that are not natively focusable, so a link or button it focuses keeps its place in the tab order; the sr-only table captions are absolutely positioned, so `.tablewrap` and `#netside` are `position:relative` to contain them (without it the captions widened the page view by 110 px at 390 px). (i) The AAA rule `color-contrast-enhanced` (muted text at 5.5–6:1 in dark) is reported only, as the spec says; the best-practice `region` rule was 13 on the first run (the hidden definitions list sat outside the landmarks) and is 0 after moving it into `<main>`. (j) A manual 'Reduce motion' toggle stays deferred (§5).
+
+## Verification (final pass over the four packages)
+
+Checked by the final verifier on branch `claude/quackenbush-alaska-maps-f7gnj6`, 18 November 2026, starting from `6542e62`
+(the last implementer commit). Three defects in the data notes and three in the interface were corrected in this pass; everything
+else below is a record of what was run and what it found.
+
+### What was run
+
+| Step | Result |
+|---|---|
+| `python3 scripts/build_data.py` | `BUILD OK` — documents 99, blocks 402, people 57, institutions 25, places 40, stops 41, segments 39, stories 25, timeline 73, edges 186, published 35, findings 39, unlocated places 6, constraints 5, gazetteer candidates 7, out-and-back legs 3, funding edges 30, co-attestation pairs 72, mention edges 120; **verified quotations 459** (458 on `6542e62`; the rewritten `f_1906_folder` adds the span 'Alaska Mammoth Exp. 1907') |
+| `python3 scripts/make_standalone.py` | `dist/quackenbush-journeys-standalone.html` rebuilt (1,146,600 bytes) |
+| `node tests/smoke.js` | run three times (on `6542e62`, after the data corrections, after the interface corrections): **185 assertions ok, 0 failed; 395 routes crawled, 0 failures; JS errors 0** each time |
+| `node tests/a11y/axe-run.js` | run twice (on `6542e62` and after the interface corrections): exit 0; **A/AA failing nodes 35 → 0** in light and dark on the thirteen routes; `tests/a11y/axe-after.json` rewritten |
+| `node tests/final_screenshots.js` (new) | 32 captures `tests/screenshots/final-{light,dark}-*.png`, 0 page errors |
+
+axe before/after, failing nodes per rule (before = `tests/a11y/axe-before.json`, commit `50a3c59`, nine routes; after = thirteen routes, this pass):
+
+| rule [scheme] | level | before | after |
+|---|---|---|---|
+| aria-command-name [light] | A/AA | 2 | 0 |
+| color-contrast [dark] | A/AA | 2 | 0 |
+| color-contrast [light] | A/AA | 11 | 0 |
+| color-contrast-enhanced [dark] | AAA, reported only | 64 | 75 |
+| heading-order [light] | best practice | 5 | 0 |
+| landmark-complementary-is-top-level [light] | best practice | 1 | 0 |
+| link-in-text-block [dark] | A/AA | 8 | 0 |
+| list [light] | A/AA | 2 | 0 |
+| select-name [light] | A/AA | 7 | 0 |
+| target-size [light] | A/AA | 3 | 0 |
+
+The 75 AAA nodes are all `--muted` text in the dark scheme (`#9a958b` on `--surface` 5.54:1, on `--paper` 6.02:1, on the selected
+archive row 4.84:1): brand subtitle, dates in the archive list, `.phase` lines, `#netstat`, `.docmeta` labels. Left as reported:
+reaching 7:1 would make secondary text nearly as bright as body text and flatten the hierarchy that the design depends on; AA is
+met everywhere. axe's *incomplete* items (SVG text over SVG in the network and globe, text over pseudo-elements in the timeline
+pills, legend rows containing glyph images, icon-only spans inside labelled buttons, the glossary's `th[colspan]` group rows) are
+checks axe cannot decide, not violations; they were checked by eye in the captures.
+
+### Fidelity check (`git diff c1f4991 -- scripts/authored data/source`)
+
+`data/source/` is unchanged since the first commit (no diff; the SHA-256 values in `meta.inputs` are those of the five supplied
+files). Every new string of fact in the authored modules was traced:
+
+- **Quotations.** Every quoted span in the diff (tie labels, funding quotes, constraint and `via` quotations, findings, model notes,
+  characterisations, affiliation evidence, Tale excerpts) is verified by the build against the sources; the build exits 1 on a
+  one-letter change (checked earlier on `pl_montreal.why`, a `via` quotation, a constraint quotation and a candidate coordinate).
+- **Gazetteer.** The nine GNIS records cited since `c1f4991` — Tanana 1410629 (Fort Gibbon, now `inferred`), Coffee Creek 1400546,
+  1400549, 1400550, 1400551, 1400552, 1400553, Seward 1414598, Shelton (historical) 1409420 — were re-read from
+  `DomesticNames_AK.txt`: feature id, name, class, county, map name and decimal coordinates match the authored records exactly.
+  The file holds exactly six *Streams* named Coffee Creek (the seventh match, 1400554, is a Channel), so 'six streams' is right.
+- **Dates, citations and marks** behind the new findings and funding rows, checked in the transcription: `<s>U.S. National</s>` and
+  `<s>Robert T. Varnum, Secretary.</s>` are struck in the PI's markup (`f_schubert_struck`, `f_varnum_struck`); the PI's archive
+  citation of the 20 June 1907 letters reads 'Folder: “Alaska Mammoth Exp. 1906”'; the terse timeline has '24 June 1908: LSQ writes
+  from Shelton' (`f_shelton_equation`, `pl_lanes_landing`) and '22 June 1907: Grant tells Bumpus HFO also working on Morgan' (the
+  PI edge p_osborn → p_morgan); the 27 March 1908 estimate tabulates '300.' against 'Salary @ $100 per month – 3 months –'; the 1908
+  commission says '$2,000., which amount shall include your salary'; Bumpus's 17 April 1908 letter names the 'Exec Committee'; the
+  14 November 1907 Trustees' resolution names no sum; 'Ranier Grande Hotel, Seattle, Wash.' (28 October 1907); 'likght packs';
+  Grant's form slip is dated 7 June 1930; Bumpus to Grant, 8 October 1908, exists; 'Proceed to Seattle, and obtain information and
+  assistance from officials of Alaska-Yukon Pacific Exposition' (Bumpus's instructions) supports `i_ayp` at Seattle; the Tale's 'US
+  National Museum … had sent a collector to the same region in 1904 (Maddren)' supports Maddren's affiliation; 'University of
+  Toronto' is on the Tale's title page.
+- **Labels.** The 29 stated affiliations each carry a verified quotation and the four inferred ones (Ripley, Quinn, Merriam, Lanier)
+  are labelled and drawn dashed; co-attestation and mentions are headed *derived*; Fort Gibbon is `inferred`; letterhead ties are
+  tagged; every model sentence sits in a model block or a field documented as the model's (`short_label`, `model_note`,
+  `candidates_note`, constraint `model_note`).
+
+Three corrections were made (all in `scripts/authored/`, data rebuilt):
+
+1. **`f_1906_folder`** presented Osborn to Bumpus (20 June 1907) as singular ('filed under 1906 although the letter belongs to the 1907
+   expedition'). The PI's citations put *all twenty items* from Reed to Startsman (18 October 1906) to the two letters of 20 June 1907
+   — eighteen of them dated 1907 — in the folder labelled 1906, and the folder labelled 1907 begins with Bumpus to Osborn of 21 June
+   1907. The finding now says that, cites those three documents, and no longer hangs on Osborn's person record.
+2. **`i_uw` `place_status`** 'stated' → 'inferred', with a note: no provided text places the University of Washington at Seattle
+   (Meany's letter and the PI's header name only the University). Inferred institution placements are now i_usda, i_bof, i_pod,
+   i_nyzs, i_pcss, i_columbia and i_uw; the chip on the institution page and the Method › Network table say 'the model placed it'.
+3. **`funding.py`**, note on the undated Osborn–Sherwood item: 'filed with the January 1909 letters' → 'the PI's transcription places
+   it in the 1908 folder immediately before the January 1909 letters'; the archive's own filing order is not known.
+
+Thinnest cases, left as the implementers labelled them because their notes already say what the sentence does and does not state:
+p_sherwood → i_amnh 'stated' on 'Mr. Sherwood, the Assistant Secretary' (the Director's instructions; the Museum is the writer's,
+not named in the sentence); p_brown and p_granger → i_amnh 'stated' on 'who could go from here' (Matthew writing from the
+Department to its Director); the identity constraint of `pl_stones_camp` is anchored at Elephant Point although Osborn equates
+'big bone beach' with Eschscholtz Bay as a whole (the constraint's model note says the bracket 'asserts nothing'). The change of
+`pl_lanes_landing` / `s1908_05` from 'disputed' to 'verified' with the `naming` flag rests on one provided text — the PI's terse
+timeline entry equating Shelton with the letter headed Lane's Landing — and is recorded as `f_shelton_equation`; if the lab reads
+that entry otherwise, the status is one field.
+
+### Captures (`tests/screenshots/final-*.png`, read one by one)
+
+- **Journey legible and sequential.** On the Alaska frame the two journeys read as blue round badges and sienna square badges with
+  direction arrows; stacked badges ('7·14' / '4·23' at Nome, '7·10·22' at Keewalik) show repeat visits. The Kotzebue Sound frame
+  resolves the dense part: stops 6–22 and the out-and-back legs (offset, with the via place) are readable; the 30-mile ring, the
+  Buckland halos and '86 mi (disputed)' sit where the record puts them. At zoom 5 three labels in the cluster (Elephant Point,
+  Keewalik, Lane's Landing / Shelton) are partly covered by badges; the frame pills and zoom ≥ 7 resolve them.
+- **Unlocated representation.** Rings are labelled with the distance, the speaker, the date and 'no point asserted'; the identity
+  bracket reads "= 'big bone beach'? — Bumpus, instructions of 29 June 1907 (pencil insertion)"; the Tale's 'near Nome' is a leader
+  with 'no radius given'; the six Coffee Creek homonyms are equal hollow squares each naming its GNIS id and county; the panel
+  section is headed 'Unlocated — constraints drawn, no point asserted'. Nothing is drawn as a point.
+- **Legend.** Every drawn symbol class has a row: the two journeys (hue, badge shape, arrowhead), the both-years glyph, the paper-trail
+  node, the five status forms, the halo, the unlocated ring, the candidate square, the five connector styles, the context arc, and
+  a mode note for relief and globe; the legend links to the tables on Method › Geocoding.
+- **Phone (fresh 390 × 844 load).** The Alaska frame fits the viewport; the bottom sheet opens to the help card, 'Follow the journey'
+  and the 1907/1908 control; nothing overflows horizontally (smoke asserts `scrollWidth === clientWidth` at 390 and 320 px).
+- **Dark scheme.** All captures repeat in dark: Esri dark tiles, token colours throughout, the same legibility.
+
+Three defects found in the captures and fixed:
+
+1. At ≥ 900 px the legend's top edge sat under the zoom control (its summary read 'no route w… traced'): `#maplegend` top 3.4rem →
+   4.8rem (clearing the 10 px margin and two 26 px buttons), max-height adjusted so it also clears the attribution at 800 × 600.
+2. The six-column funding table was inserted raw into `#netside` and widened the panel (the Status column was cut at the window
+   edge); both side-panel funding tables now sit in `.tablewrap`, so only the table scrolls.
+3. Not a defect of the site: the first phone capture resized a desktop context, which keeps Leaflet's previous centre and zoom and
+   pushed the Kotzebue cluster off the left edge; `tests/final_screenshots.js` now loads the phone view in a fresh context, as a
+   phone would.
+
+### Residual issues
+
+- AAA contrast of muted text in the dark scheme (above); AA met everywhere.
+- Institutions view: with Labels = 'main nodes', the truncated evidence quotes drawn on the edges of small institutions overlap the
+  person labels beside them (Meany, Allen, Gilmore, von Haake); every quotation is readable on click and in the Table view. A
+  label-placement pass for that view is a later task.
+- The map legend's summary wraps to two lines at its 300 px maximum width.
+- The thinnest affiliation and constraint cases listed above remain as labelled.
+- Section 5 (deferred) is unchanged: transmission and person–place networks, time slices, objects, 'Cite this item', GNIS Maine and
+  New York, Play, a manual reduce-motion toggle.
+
+Files touched by this pass: `scripts/authored/findings.py`, `people.py`, `funding.py`; `data/*` (rebuilt); `index.html` (two
+corrections); `tests/final_screenshots.js` (new) and the 32 `final-*` captures (the smoke run also re-took a few of its own
+captures); `tests/a11y/axe-after.json`; `README.md`; this file; `dist/`.

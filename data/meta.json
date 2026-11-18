@@ -52,7 +52,7 @@
   "unlocated_constraints": 5,
   "gazetteer_candidates": 7,
   "out_and_back_legs": 3,
-  "verified_quotations": 458,
+  "verified_quotations": 459,
   "funding_edges": 30,
   "coattestation_pairs": 72,
   "mention_edges": 120
@@ -95,6 +95,6 @@
   "funding": "every funding edge quotes a sum or promise verbatim",
   "Tale excerpts": "every story excerpt is an exact substring of the Tale and ends at a sentence or quotation boundary",
   "Cast lines and characterisations": "every pi_characterisation and characterisation is a verbatim line of the PI's texts",
-  "quoted fragments in authored prose": "458 quoted spans in model notes, place/stop/segment fields, findings, roles, variants, addresses, institutions, published excerpts and notes, tie labels, and record notes are verified (allow-list of quoted vocabulary, none of it currently needed: approximate, disputed, inferred, model, unlocated, verified, via PI)"
+  "quoted fragments in authored prose": "459 quoted spans in model notes, place/stop/segment fields, findings, roles, variants, addresses, institutions, published excerpts and notes, tie labels, and record notes are verified (allow-list of quoted vocabulary, none of it currently needed: approximate, disputed, inferred, model, unlocated, verified, via PI)"
  }
 }

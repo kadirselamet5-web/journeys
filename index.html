@@ -274,7 +274,7 @@ ul.unlocated .block.verbatim{font-size:.92rem}
 #globe svg{width:100%;height:100%;display:block;cursor:grab}
 #globe svg:focus-visible{outline:2px solid var(--j1907);outline-offset:-2px}
 /* legend: one disclosure, top-right under the zoom control; below 900 px the same HTML sits at the end of the panel */
-#maplegend{position:absolute;top:3.4rem;right:.8rem;max-height:calc(100% - 6rem);overflow:auto;z-index:800;max-width:300px}
+#maplegend{position:absolute;top:4.8rem;right:.8rem;max-height:calc(100% - 7.5rem);overflow:auto;z-index:800;max-width:300px} /* top clears the zoom control (10 px margin + two 26 px buttons) */
 details.legend{background:var(--surface);opacity:.97;color:var(--ink);border:1px solid var(--rule);border-radius:var(--radius);padding:.4rem .65rem .45rem;font-size:.74rem;box-shadow:var(--shadow)}
 details.legend summary{cursor:pointer;font-weight:600;font-size:.76rem;color:var(--ink-2);list-style-position:inside}
 details.legend .row{display:flex;align-items:center;gap:.4rem;margin:.12rem 0;line-height:1.25}
@@ -1720,7 +1720,7 @@ function sideFundNode(id){
   const side=document.getElementById('netside'); if(!side) return;
   const n=FUND.nodes.find(x=>x.id===id); const rows=fundingRows(id);
   side.innerHTML=`<div class="phase">funding node · ${esc(n?n.type:'')}</div><h2 style="margin-top:0">${esc(n?n.label:id)}</h2>${n&&n.note?`<p class="small">${esc(n.note)}</p>`:''}
-    <h3>${rows.length} funding edge${rows.length!==1?'s':''} <span class="muted small">(amounts as written; no total)</span></h3>${fundingTable(rows, `Funding edges touching ${n?n.label:id}`)}`;
+    <h3>${rows.length} funding edge${rows.length!==1?'s':''} <span class="muted small">(amounts as written; no total)</span></h3><div class="tablewrap">${fundingTable(rows, `Funding edges touching ${n?n.label:id}`)}</div>`;
 }
 function sidePair(p){
   const side=document.getElementById('netside'); if(!side) return;
@@ -1769,7 +1769,7 @@ function sidePanel(id){
     } else if(NS.view==='funding'){
       side.innerHTML=`<h2 style="margin-top:0">Funding flow</h2>${ruleBlock(v)}
       <p class="small">Edges run from the giver to the receiver; the label is the amount exactly as the text writes it; the dash pattern is the status (see the bar above the graph). Several edges between the same two nodes are several attestations, not several payments. Click an edge for its quotation.</p>
-      <h3>Every funding edge</h3>${fundingTable(FUND.edges, 'Every funding edge: giver, receiver, amount as written, status, date, evidence')}
+      <h3>Every funding edge</h3><div class="tablewrap">${fundingTable(FUND.edges, 'Every funding edge: giver, receiver, amount as written, status, date, evidence')}</div>
       <p class="small"><a href="data/csv/funding.csv" download>Download funding edges (CSV)</a> · <a href="#/method/network">Views and rules</a></p>`;
     } else if(NS.view==='coattestation'){
       side.innerHTML=`<h2 style="margin-top:0">Co-attestation</h2>${ruleBlock(v)}

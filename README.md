@@ -83,6 +83,7 @@ python3 scripts/extract_docx.py <the five .docx files>      # -> data/source/tra
 python3 scripts/build_data.py                               # -> data/*.json, data/csv, data/bundle.js, DATA_DICTIONARY.md
 python3 scripts/make_standalone.py                          # -> dist/
 node tests/smoke.js                                         # headless Chromium smoke + integrity test
+node tests/final_screenshots.js                             # -> tests/screenshots/final-{light,dark}-*.png (verification captures)
 ```
 
 The build fails if any cross-reference does not resolve or if any quoted excerpt is not found verbatim
@@ -101,8 +102,11 @@ file was restored with its old size and mtime, or Python may import stale byteco
 filters, search, person pages, Method tables, the Start-here page and glossary, navigation, phone / 320 px / 200 %-text
 layouts, dark-scheme contrast of the typed blocks, keyboard operation of the map, the archive list and the network,
 focus management and live announcements, popup dialogs, table captions, and a reduced-motion context); it exits
-non-zero on any JavaScript error, crawl failure or failed assertion. `docs/REVIEW_REPORT.md` records the three reviews behind the current work packages and
-what each package implemented.
+non-zero on any JavaScript error, crawl failure or failed assertion. `tests/final_screenshots.js` renders the
+verification captures (`tests/screenshots/final-<scheme>-<name>.png`): the map in flat, relief and globe modes, the
+Kotzebue Sound frame, an unlocated place with its constraints, a story page, the five network views, the archive, the
+timeline and the method page at 1400 × 900 in both colour schemes, and the map on a fresh 390 × 844 load. `docs/REVIEW_REPORT.md`
+records the three reviews behind the current work packages, what each package implemented, and the final verification.
 
 ## Authorship
 

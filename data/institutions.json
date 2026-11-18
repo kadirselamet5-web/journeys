@@ -44,10 +44,11 @@
   "label": "University of Washington",
   "kind": "university",
   "place": "pl_seattle",
-  "place_status": "stated",
+  "place_status": "inferred",
   "attestations": [
    "Meany to Bumpus 18 Mar 1907 ('the museum of this University')"
-  ]
+  ],
+  "note": "No provided text places the University at Seattle (Meany's letter and the PI's header name only the University); the model placed it there."
  },
  {
   "id": "i_nyzs",
