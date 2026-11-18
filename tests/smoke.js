@@ -25,6 +25,16 @@ const path = require('path');
   const markers = await page.locator('#leaflet path.leaflet-interactive').count();
   console.log('map markers+lines drawn:', markers);
   await page.screenshot({ path: 'tests/screenshots/01-map-flat.png' });
+  // WCAG contrast of an element's computed text colour against a computed background colour
+  const contrastOf = (fgSel, bgSel) => page.evaluate(([f, b]) => { const p = s => (s.match(/[\d.]+/g) || []).map(Number); const lum = c => { const [r, g, bl] = p(c).slice(0, 3).map(v => v / 255).map(v => v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4); return .2126 * r + .7152 * g + .0722 * bl; }; const fe = document.querySelector(f), be = b ? document.querySelector(b) : fe; if (!fe || !be) return -1; const fg = getComputedStyle(fe).color, bg = getComputedStyle(be).backgroundColor; const x = lum(fg), y = lum(bg); return +((Math.max(x, y) + .05) / (Math.min(x, y) + .05)).toFixed(2); }, [fgSel, bgSel]);
+
+  // ---------------------------------------------------------------- D1 / D2 / D6: top bar, help card, stop list as links
+  check('#topbar links to #/about (Start here and ?)', (await page.locator('#topbar a[href="#/about"]').count()) >= 2);
+  const tabsTxt = await text('#tabs');
+  check('#tabs says "Sources cited", not "Published"', /Sources cited/.test(tabsTxt) && !/Published/.test(tabsTxt));
+  check('help card shown on first visit at the top of the panel', (await page.locator('#panelInner > #helpcard').count()) === 1);
+  check('#stoplist has 41 stop links', (await page.locator('#stoplist a[data-stop]').count()) === 41);
+  check('stop list rows carry a status glyph and an sr-only status word', (await page.locator('#stoplist a svg.glyph').count()) >= 41 && (await page.locator('#stoplist a .sr-only.st').count()) === 41);
 
   // ---------------------------------------------------------------- B1 controls
   check('zoom control sits in .leaflet-top.leaflet-right', (await page.locator('.leaflet-top.leaflet-right .leaflet-control-zoom').count()) === 1);
@@ -73,6 +83,7 @@ const path = require('path');
   // ---------------------------------------------------------------- B4 step-through, card, popups, route
   await go('/map/stop/s1908_08', 1600);
   check('#/map/stop/s1908_08 marks the stop active in the list', (await page.locator('#stoplist li.active[data-stop="s1908_08"]').count()) === 1);
+  check('aria-current follows MapView.highlight (one link, the highlighted stop)', (await page.evaluate(() => { const a = [...document.querySelectorAll('#stoplist a[aria-current="true"]')]; return a.length === 1 && a[0].dataset.stop === MapView.state.highlight; })));
   check('selected-stop card names Elephant Point', /Elephant Point/.test(await text('#stopcard')));
   check('popup has no button.primary', (await page.locator('.leaflet-popup-content button.primary').count()) === 0 && (await page.locator('.leaflet-popup-content').count()) === 1);
   await page.focus('#nextStop'); await page.keyboard.press('ArrowRight'); await page.waitForTimeout(1300);
@@ -106,7 +117,8 @@ const path = require('path');
   await page.screenshot({ path: 'tests/screenshots/03-map-globe.png' });
   await page.click('#modeSeg button[data-mode="flat"]'); await page.waitForTimeout(500);
   // stop list click opens popup; story opens from the popup link
-  await page.click('#stoplist li[data-stop="s1908_08"]'); await page.waitForTimeout(1600);
+  await page.click('#stoplist a[data-stop="s1908_08"]'); await page.waitForTimeout(1600);
+  check('stop link navigates to its #/map/stop address', (await page.evaluate(() => location.hash)) === '#/map/stop/s1908_08');
   const popup = await page.locator('.leaflet-popup-content').count(); console.log('popup open:', popup);
   await page.click('.leaflet-popup-content a:text("Open story")'); await page.waitForTimeout(800);
   console.log('route after popup click:', await page.evaluate(() => location.hash));
@@ -118,6 +130,22 @@ const path = require('path');
   const afterBack = await page.evaluate(() => location.hash);
   console.log('next ->', afterNext, '| back ->', afterBack);
   check('story Back returns to the previous story', afterBack === '#/story/story_19_excavation');
+  // ---------------------------------------------------------------- D2 / D6 / D7 on the story page
+  check('story page has no "✕ Close" and shows "↑ Story index" and a breadcrumb', !(await text('#pageview')).includes('✕ Close') && (await page.locator('#pageview .pagenav a.up:has-text("Story index")').count()) === 1 && (await page.locator('#pageview nav.phase[aria-label="Breadcrumb"] a[href="#/stories"]').count()) === 1);
+  check('"When" table has exactly four columns (Stop · Date · Evidence · Sources)', (await page.locator('#pageview table.when thead th').count()) === 4);
+  check('"When" table is followed by an evidence legend linking to the glossary', (await page.locator('#pageview .evidence-legend a[href="#/about#glossary-status"]').count()) === 1 && (await page.locator('#pageview .evidence-legend svg.glyph').count()) >= 1);
+  const fn47 = await page.evaluate(() => { const s = window.JOURNEYS_DATA.stories.find(x => x.id === 'story_05_newyork_deliberation'); return s.tale_excerpts.some(e => (e.footnotes || []).some(f => f.n === 47)); });
+  check('stories.json: story_05 excerpt carries PI footnote 47', fn47);
+  await go('/story/story_05_newyork_deliberation', 300);
+  const s05 = await text('#pageview');
+  check('story_05 shows "PI\'s footnote 47" with its text', /PI's footnote 47/.test(s05) && /Matthew to Bumpus 25 March 1907/.test(s05));
+  await page.screenshot({ path: 'tests/screenshots/review-after-story-footnotes.png' });
+  await page.setViewportSize({ width: 1060, height: 900 });
+  const whereStory = await page.evaluate(() => { const s = window.JOURNEYS_DATA.stories.filter(x => x.places.length >= 3).sort((a, b) => b.places.length - a.places.length)[0]; return s.id; });
+  await go('/story/' + whereStory, 400);
+  const whereCols = await page.evaluate(() => { const g = document.querySelector('#pageview .grid2.where'); return g ? getComputedStyle(g).gridTemplateColumns.split(' ').length : -1; });
+  check('"Where" grid has at most two columns at 1060 px', whereCols >= 1 && whereCols <= 2, whereCols + ' columns on ' + whereStory);
+  await page.setViewportSize({ width: 1400, height: 900 });
   // ---------------------------------------------------------------- B9 story minimap, B6 place records, B3/B11 Method
   await go('/story/story_20_buckland', 1800);
   check('story_20 minimap draws sequence badges', (await page.locator('#minimap .seq').count()) >= 4);
@@ -230,15 +258,47 @@ const path = require('path');
   await page.screenshot({ path: 'tests/screenshots/18-method-network.png' });
   await go('/method/data', 300);
   check('Method › Data shows verified_quotations', /verified_quotations/.test(await text('#pageview')));
-  await go('/timeline', 200); await page.screenshot({ path: 'tests/screenshots/09-timeline.png' });
+  // ---------------------------------------------------------------- D8 Method › Approach
+  await go('/method/overview', 300);
+  const mo = await text('#pageview');
+  check('Method › Approach: no design-literature citations, one model-labelled design sentence', !/Visualizing Emancipation|St Olaf|DHQ/.test(mo) && /cite no literature/.test(mo));
+  check('Method › Approach: "What the lab can supply next" with ≥ 8 finding cards', /What the lab can supply next/.test(mo) && (await page.locator('#pageview .finding').count()) >= 8 && /Bulletin’s own wording would also settle/.test(mo));
+  await page.screenshot({ path: 'tests/screenshots/review-after-method-overview.png' });
+  // ---------------------------------------------------------------- D9 Timeline
+  await go('/timeline', 300); await page.screenshot({ path: 'tests/screenshots/09-timeline.png' });
+  check('timeline has a sticky year rail with ≥ 6 links', (await page.locator('#pageview nav.yr-rail a').count()) >= 6 && (await page.evaluate(() => getComputedStyle(document.querySelector('nav.yr-rail')).position)) === 'sticky');
+  const longPills = await page.evaluate(() => [...document.querySelectorAll('.tlentry .links a')].filter(a => /^(Read the document|On the map:)/.test(a.textContent.trim())).length);
+  check('timeline pills are short (no "Read the document" / "On the map:" text); targets kept in aria-label', longPills === 0 && (await page.locator('.tlentry .links a[aria-label^="Read the document"]').count()) > 0 && (await page.locator('.tlentry .links a[aria-label^="On the map"]').count()) > 0);
+  await page.evaluate(() => { document.getElementById('pageview').scrollTop = 1200; });
+  await page.evaluate(() => { Pages._tl('itin'); }); await page.waitForTimeout(100);
+  await page.evaluate(() => { Pages._tl('terse'); }); await page.waitForTimeout(100);
+  const tlScroll = await page.evaluate(() => document.getElementById('pageview').scrollTop);
+  check('switching timeline streams and back preserves scrollTop (± 50 px)', Math.abs(tlScroll - 1200) <= 50, tlScroll);
+  // ---------------------------------------------------------------- D2 Sources cited
   await go('/published', 200); await page.screenshot({ path: 'tests/screenshots/10-published.png' });
+  check('Sources cited: h1 and route title renamed', /^Sources cited/.test(await text('#pageview h1')) && (await page.evaluate(() => App.routeTitle('/published') + '|' + App.routeTitle('/published/pub_bamnh26'))) === 'Sources cited|Source cited');
+  // ---------------------------------------------------------------- D1 Start here
+  await go('/about', 300);
+  const about = await text('#pageview');
+  check('#/about renders (no "not found"), with abstract, inputs and reading order', !/Not found/.test(about) && /Start here/.test(about) && /SHA-256/.test(about) && (await page.locator('#pageview .reading-order li').count()) === 5 && (await page.locator('#pageview table.inputs tbody tr').count()) === 5);
+  check('#/about quotes the Tale\'s "Plan:" paragraph in PI voice', (await page.locator('#pageview .block.pi:has-text("Plan:")').count()) === 1);
+  const glossaryRows = await page.locator('#pageview table.glossary tbody tr[id^="glossary-"]:not(.grp)').count();
+  check('glossary has ≥ 25 term rows with #glossary-<term> anchors', glossaryRows >= 25, glossaryRows + ' rows');
+  check('glossary renders the chip and tag components and the status anchor', (await page.locator('#pageview table.glossary .chip.verified').count()) === 1 && (await page.locator('#pageview table.glossary .tag.model').count()) >= 2 && (await page.locator('#pageview #glossary-status').count()) === 1);
+  await page.screenshot({ path: 'tests/screenshots/19-about.png' });
+  await page.evaluate(() => document.getElementById('glossary-status').scrollIntoView({ block: 'start' })); await page.waitForTimeout(100);
+  await page.screenshot({ path: 'tests/screenshots/review-after-about-glossary.png' });
+  check('timeline year rail lists each year once', await (async () => { await go('/timeline', 200); const ys = await page.evaluate(() => [...document.querySelectorAll('nav.yr-rail a')].map(a => a.textContent)); return new Set(ys).size === ys.length && ys.length >= 6; })());
   await go('/tale/t035', 300);
   // integrity crawl: every route of every record renders without "not found"
   const routes = await page.evaluate(() => { const D = window.JOURNEYS_DATA; return [
     ...D.stories.map(s => '/story/' + s.id), ...D.documents.map(d => '/archive/' + d.id), ...D.people.map(p => '/person/' + p.id), ...D.institutions.map(i => '/person/' + i.id), ...D.offices.map(o => '/person/' + o.id),
     ...D.places.map(p => '/place/' + p.id), ...D.published.map(p => '/published/' + p.id), ...D.timeline.slice(0, 10).map(t => '/timeline/' + t.id), '/method/overview', '/method/network', '/method/findings', '/method/data', '/stories', '/cast', '/tale', '/network/focus/p_quackenbush', '/network/doc/d_19070325_matthew_bumpus', ...D.network.views.map(v => '/network/view/' + v.id)]; });
-  let bad = 0;
-  for (const r of routes) { await go(r); const txt = await page.evaluate(() => document.getElementById('pageview').innerText.slice(0, 400)); if (/\b(story|record|item|place) not found\b/i.test(txt)) { bad++; console.log('NOT FOUND at', r); } }
+  routes.push('/about', '/about/glossary-status');
+  let bad = 0, closeBtns = 0, legendless = 0;
+  for (const r of routes) { await go(r); const [txt, hasClose, noLegend] = await page.evaluate(() => { const pv = document.getElementById('pageview'); return [pv.innerText.slice(0, 400), pv.innerText.includes('✕ Close'), !!pv.querySelector('table.when') && !pv.querySelector('.evidence-legend')]; }); if (/\b(story|record|item|place) not found\b/i.test(txt)) { bad++; console.log('NOT FOUND at', r); } if (hasClose) closeBtns++; if (noLegend) legendless++; }
+  check('no page contains "✕ Close"', closeBtns === 0, closeBtns + ' pages');
+  check('every story page with a "When" table has an evidence legend', legendless === 0, legendless + ' pages without');
   // map routes: every stop and every place resolve on the map without error
   const mapRoutes = await page.evaluate(() => { const D = window.JOURNEYS_DATA; return [...D.stops.map(s => '/map/stop/' + s.id), ...D.places.map(p => '/map/' + p.id)]; });
   for (const r of mapRoutes) await go(r, 20);
@@ -255,6 +315,51 @@ const path = require('path');
   check('390×844: panel toggle not overlapped', await toggleFree());
   await go('/map/stop/s1908_08', 1500);
   check('390×844: stepping opens no popup (card only)', (await page.locator('.leaflet-popup-content').count()) === 0 && /Elephant Point/.test(await text('#stopcard')));
+  // ---------------------------------------------------------------- D3 phone layout (390×844)
+  const sheet = await page.evaluate(() => { const p = document.getElementById('panel'); const r = p.getBoundingClientRect(); return { collapsed: p.classList.contains('collapsed'), top: r.top, width: r.width, handle: getComputedStyle(document.getElementById('panelHandle')).display }; });
+  check('390×844: panel is a bottom sheet (full width, lower half) with a visible handle, collapsed by default', sheet.handle !== 'none' && sheet.width === 390 && sheet.top >= .4 * 844 && sheet.collapsed, JSON.stringify(sheet));
+  if (sheet.collapsed) { await page.click('#panelHandle'); await page.waitForTimeout(400); }
+  const open = await page.evaluate(() => { const r = document.getElementById('panel').getBoundingClientRect(); return { top: r.top, h: window.innerHeight, collapsed: document.getElementById('panel').classList.contains('collapsed') }; });
+  check('390×844: open sheet top ≥ 40 % of the viewport height', !open.collapsed && open.top >= .4 * open.h, JSON.stringify(open));
+  check('390×844: #modeSeg not intersected by the zoom control', !(await boxes('#modeSeg', '.leaflet-control-zoom')));
+  await page.screenshot({ path: 'tests/screenshots/review-after-p-map.png' });
+  await page.click('#panelHandle'); await page.waitForTimeout(400);
+  check('390×844: handle collapses the sheet to a strip', (await page.evaluate(() => document.getElementById('panel').getBoundingClientRect().height)) < 60);
+  await page.screenshot({ path: 'tests/screenshots/review-after-p-map-collapsed.png' });
+  const noHScroll = async () => page.evaluate(() => { const pv = document.getElementById('pageview'); return [pv.scrollWidth, pv.clientWidth]; });
+  await go('/story/story_19_excavation', 1500); let [sw, cw] = await noHScroll();
+  check('390×844: story page has no horizontal overflow', sw <= cw, `${sw} ≤ ${cw}`);
+  check('390×844: "When" table rows stack (cells display:block with data-label)', (await page.evaluate(() => getComputedStyle(document.querySelector('table.when td')).display)) === 'block');
+  await page.screenshot({ path: 'tests/screenshots/review-after-p-story.png' });
+  await go('/method/geocoding', 600); [sw, cw] = await noHScroll();
+  check('390×844: Method › Geocoding has no horizontal overflow (tables wrapped)', sw <= cw && (await page.locator('#pageview .tablewrap').count()) >= 3, `${sw} ≤ ${cw}`);
+  check('390×844: Method segmented control is one scrollable strip', (await page.evaluate(() => { const s = document.querySelector('.methodseg'); return getComputedStyle(s).overflowX === 'auto' && s.getBoundingClientRect().height < 60; })));
+  await page.screenshot({ path: 'tests/screenshots/review-after-p-method.png' });
+  await go('/tale/t035', 400);
+  const pnum = await page.evaluate(() => document.querySelector('#t035 .pnum').getBoundingClientRect().left);
+  check('390×844: Tale ¶ numbers sit inline (left ≥ 0)', pnum >= 0, pnum);
+  await page.screenshot({ path: 'tests/screenshots/review-after-p-tale.png' });
+  await go('/network', 1200);
+  check('390×844: network filter rows sit in a closed disclosure', (await page.evaluate(() => { const d = document.querySelector('#netcontrols details.netmore'); return d && !d.open && getComputedStyle(d.querySelector('summary')).display !== 'none'; })));
+  await page.screenshot({ path: 'tests/screenshots/review-after-p-network.png' });
+  await go('/archive/d_19070416_osborn_bumpus', 400); await page.screenshot({ path: 'tests/screenshots/review-after-p-archive.png' });
+  // ---------------------------------------------------------------- D4 reflow: 320 px wide, and 200 % text at 1400×900
+  await page.setViewportSize({ width: 320, height: 600 }); await go('/map', 600);
+  check('320×600: panel no wider than the viewport', (await page.evaluate(() => document.getElementById('panel').getBoundingClientRect().width <= window.innerWidth)));
+  await go('/archive', 400);
+  check('320×600: archive list has no horizontal overflow', (await page.evaluate(() => { const l = document.querySelector('#archive .list'); return l.scrollWidth <= l.clientWidth; })));
+  await page.setViewportSize({ width: 1400, height: 900 }); await go('/map', 600);
+  if (await page.evaluate(() => document.getElementById('panel').classList.contains('collapsed'))) { await page.click('#panelToggle'); await page.waitForTimeout(400); }
+  await page.evaluate(() => { document.documentElement.style.fontSize = '32px'; }); await page.waitForTimeout(400);
+  const zoomed = await page.evaluate(() => { const tb = document.getElementById('topbar'), tabs = document.querySelector('nav.tabs'), inner = document.querySelector('#panel .inner'); return { tbS: tb.scrollHeight, tbC: tb.clientHeight, tabsS: tabs.scrollWidth, tabsC: tabs.clientWidth, inS: inner.scrollWidth, inC: inner.clientWidth, appTop: document.getElementById('app').getBoundingClientRect().top, tbBottom: tb.getBoundingClientRect().bottom }; });
+  check('200 % text: top bar grows instead of clipping, and #app starts below it', zoomed.tbS <= zoomed.tbC + 1 && Math.abs(zoomed.appTop - zoomed.tbBottom) < 2, JSON.stringify(zoomed));
+  check('200 % text: no tab clipped, panel content not wider than the panel', zoomed.tabsS <= zoomed.tabsC && zoomed.inS <= zoomed.inC, JSON.stringify(zoomed));
+  await page.screenshot({ path: 'tests/screenshots/review-after-zoom200-map.png' });
+  await page.evaluate(() => { document.documentElement.style.fontSize = ''; });
+  // ---------------------------------------------------------------- D5 light-scheme contrast of the inferred chip
+  await go('/method/geocoding', 400);
+  const chipC = await contrastOf('#pageview .chip.inferred', '#pageview .chip.inferred');
+  check('light: .chip.inferred text ≥ 4.5:1 on its surface', chipC >= 4.5, chipC);
   await page.setViewportSize({ width: 1400, height: 900 });
 
   // ---------------------------------------------------------------- dark scheme: Esri dark-gray tiles, no CSS inversion
@@ -267,7 +372,35 @@ const path = require('path');
   await dpage.screenshot({ path: 'tests/screenshots/13-map-dark.png' });
   await dpage.evaluate(() => App.go('/archive/d_19070416_osborn_bumpus')); await dpage.waitForTimeout(400);
   await dpage.screenshot({ path: 'tests/screenshots/12-archive-dark.png' });
+  // ---------------------------------------------------------------- D5 dark scheme: the four typed blocks are legible (the Archive landing shows one of each); hovered rows take the dark token
+  const dEd = await dpage.evaluate(() => { const el = document.querySelector('#reader .block.editorial'); const p = s => (s.match(/[\d.]+/g) || []).map(Number); const lum = c => { const [r, g, b] = p(c).slice(0, 3).map(v => v / 255).map(v => v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4); return .2126 * r + .7152 * g + .0722 * b; }; const cs = getComputedStyle(el); const x = lum(cs.color), y = lum(cs.backgroundColor); return +((Math.max(x, y) + .05) / (Math.min(x, y) + .05)).toFixed(2); });
+  check('dark: Osborn 16 Apr 1907 editorial block text ≥ 4.5:1', dEd >= 4.5, dEd);
+  await dpage.evaluate(() => App.go('/archive')); await dpage.waitForTimeout(400);
+  const dContrast = await dpage.evaluate(() => { const p = s => (s.match(/[\d.]+/g) || []).map(Number); const lum = c => { const [r, g, b] = p(c).slice(0, 3).map(v => v / 255).map(v => v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4); return .2126 * r + .7152 * g + .0722 * b; }; const out = {}; ['editorial', 'summary', 'annotation', 'model'].forEach(k => { const el = document.querySelector('#reader .block.' + k); if (!el) { out[k] = null; return; } const cs = getComputedStyle(el); const x = lum(cs.color), y = lum(cs.backgroundColor); out[k] = +((Math.max(x, y) + .05) / (Math.min(x, y) + .05)).toFixed(2); }); return out; });
+  check('dark: editorial / summary / annotation / model block text ≥ 4.5:1 on its background', Object.values(dContrast).every(v => v !== null && v >= 4.5), JSON.stringify(dContrast));
+  await dpage.evaluate(() => App.go('/method/geocoding')); await dpage.waitForTimeout(500);
+  await dpage.hover('#pageview table.data tbody tr:first-child td:first-child'); await dpage.waitForTimeout(100);
+  const hoverBg = await dpage.evaluate(() => getComputedStyle(document.querySelector('#pageview table.data tbody tr:first-child td:first-child')).backgroundColor);
+  check('dark: hovered table row background is rgb(38, 42, 47)', hoverBg === 'rgb(38, 42, 47)', hoverBg);
+  await dpage.screenshot({ path: 'tests/screenshots/review-after-dark-method-table.png' });
+  await dpage.evaluate(() => App.go('/story/story_05_newyork_deliberation')); await dpage.waitForTimeout(500);
+  await dpage.screenshot({ path: 'tests/screenshots/review-after-dark-story.png' });
   await dctx.close();
+
+  // ---------------------------------------------------------------- D1 help card dismissal persists; D2 fresh load of a story goes up to the index
+  const fctx = await browser.newContext({ viewport: { width: 1400, height: 900 }, ignoreHTTPSErrors: true });
+  const fpage = await fctx.newPage(); hook(fpage);
+  await fpage.goto(url + '#/map', { waitUntil: 'load' }); await fpage.waitForFunction(() => window.App && window.MapView, null, { timeout: 15000 }); await fpage.waitForTimeout(1500);
+  check('fresh context: help card present', (await fpage.locator('#helpcard').count()) === 1);
+  await fpage.click('#helpcard .dismiss'); await fpage.waitForTimeout(100);
+  await fpage.reload({ waitUntil: 'load' }); await fpage.waitForFunction(() => window.App && window.MapView, null, { timeout: 15000 }); await fpage.waitForTimeout(1500);
+  check('after dismissal and reload: help card absent (localStorage flag)', (await fpage.locator('#helpcard').count()) === 0 && (await fpage.evaluate(() => localStorage.getItem('qj_help_dismissed'))) === '1');
+  await fpage.goto(url + '#/story/story_19_excavation', { waitUntil: 'load' }); await fpage.waitForFunction(() => window.App, null, { timeout: 15000 }); await fpage.waitForTimeout(600);
+  await fpage.reload({ waitUntil: 'load' }); await fpage.waitForFunction(() => window.App, null, { timeout: 15000 }); await fpage.waitForTimeout(600);
+  const backLabel = await fpage.evaluate(() => (document.querySelector('#pageview .pagenav button.ghost') || {}).textContent || '');
+  await fpage.click('#pageview .pagenav button.ghost'); await fpage.waitForTimeout(300);
+  check('fresh load of a story: Back goes up to #/stories', /Back to Story index/.test(backLabel) && (await fpage.evaluate(() => location.hash)) === '#/stories', backLabel + ' → ' + await fpage.evaluate(() => location.hash));
+  await fctx.close();
 
   console.log('warnings (network):', warnings.length, warnings.slice(0, 3));
   console.log('ASSERTIONS failed:', failed.length, failed);

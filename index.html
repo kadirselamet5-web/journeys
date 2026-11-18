@@ -15,9 +15,14 @@
   --paper:#f7f4ee; --surface:#fffdf9; --surface-2:#f1ede4; --ink:#1d1d1b; --ink-2:#4a4741; --muted:#6b6760; --rule:#e2dccf; --rule-2:#cfc7b7;
   --j1907:#1f6fa3; --j1907-soft:#dce9f2; --j1908:#c0603a; --j1908-soft:#f3e2da; --paper-trail:#6b6760;
   --model:#6d4c9f; --model-soft:#eee8f6;
-  --verbatim:#1d1d1b; --summary:#5a5e6b; --summary-soft:#eceef2; --editorial:#6b6a3f; --editorial-soft:#f1efe1; --annotation:#8a6d1f; --annotation-soft:#f5efdd;
+  --verbatim:#1d1d1b; --summary:#5a5e6b; --summary-soft:#eceef2; --editorial:#6b6a3f; --editorial-soft:#f1efe1; --annotation:#7d6219; --annotation-soft:#f5efdd;
   --verified:#2b8a57; --inferred:#c08a1e; --approximate:#6b7280; --disputed:#a23b3b; --unlocated:#3b3b3b;
-  --pc-red:#c0392b; --pc-blue:#0070c0; --pc-purple:#7030a0; --pc-magenta:#d040d0;
+  --pc-red:#c0392b; --pc-blue:#0070c0; --pc-purple:#7030a0; --pc-magenta:#b02bb0;
+  /* text-safe variants (>= 4.5:1 on --surface, --paper and the soft backgrounds); the base tokens stay for fills, strokes and halos */
+  --verified-text:#1f7a48; --inferred-text:#8a6210; --j1907-text:#1a5f8c; --j1908-text:#a44e2c;
+  --summary-text:#2e3140; --editorial-text:#4d4c2d; --annotation-text:#5a4712; --model-text:#3f2d5f;
+  --struck:#737373; --ms-insert:#2f5f3f; --row-hover:#fbf9f3; --primary-hover:#333; --verbatim-soft:#e9e7e1; --stage:#e9eef2; --control-border:#8f8676;
+  --panel-w:min(330px,100vw);
   --serif:"Source Serif 4", Georgia, "Times New Roman", serif; --sans:"Source Sans 3", "Helvetica Neue", Arial, sans-serif;
   --radius:4px; --shadow:0 1px 2px rgba(30,25,15,.08), 0 6px 20px rgba(30,25,15,.06);
   --topbar:52px;
@@ -31,6 +36,9 @@
     --verified:#5fc48e; --inferred:#e0b04a; --approximate:#9aa0aa; --disputed:#e07a7a; --unlocated:#c8c8c8;
     --pc-red:#ff7b6b; --pc-blue:#6fb0e0; --pc-purple:#c58cff; --pc-magenta:#ff7bff;
     --globe-sea:#1b2028; --globe-land:#2c3138; --globe-coast:#4a515b; --net-node:#c9c4b9; --net-halo:#1c1f23;
+    --verified-text:#5fc48e; --inferred-text:#e0b04a; --j1907-text:#6fb0e0; --j1908-text:#e8956e;
+    --summary-text:#dfe3ee; --editorial-text:#e2dfb6; --annotation-text:#ecd9a6; --model-text:#e4dcf4;
+    --struck:#a39f95; --ms-insert:#8fd0a8; --row-hover:#262a2f; --primary-hover:#d8d3c8; --verbatim-soft:#2e3238; --stage:#1b2028; --control-border:#7a8089;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
   }
 }
@@ -41,6 +49,9 @@
     --verified:#5fc48e; --inferred:#e0b04a; --approximate:#9aa0aa; --disputed:#e07a7a; --unlocated:#c8c8c8;
     --pc-red:#ff7b6b; --pc-blue:#6fb0e0; --pc-purple:#c58cff; --pc-magenta:#ff7bff;
     --globe-sea:#1b2028; --globe-land:#2c3138; --globe-coast:#4a515b; --net-node:#c9c4b9; --net-halo:#1c1f23;
+    --verified-text:#5fc48e; --inferred-text:#e0b04a; --j1907-text:#6fb0e0; --j1908-text:#e8956e;
+    --summary-text:#dfe3ee; --editorial-text:#e2dfb6; --annotation-text:#ecd9a6; --model-text:#e4dcf4;
+    --struck:#a39f95; --ms-insert:#8fd0a8; --row-hover:#262a2f; --primary-hover:#d8d3c8; --verbatim-soft:#2e3238; --stage:#1b2028; --control-border:#7a8089;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
 }
 /* dark scheme: the flat basemap switches to Esri's dark-gray canvas tiles (no CSS inversion, which falsified the relief colours); relief keeps its tiles, dimmed */
@@ -48,10 +59,11 @@
 :root[data-theme="dark"] .leaflet-container{background:var(--globe-sea)} :root[data-theme="dark"] .leaflet-container.relief .leaflet-tile-pane{filter:brightness(.8)} :root[data-theme="dark"] .lbl{text-shadow:0 0 3px var(--paper),0 0 3px var(--paper),0 0 6px var(--paper)}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+body{display:flex;flex-direction:column}
 a{color:var(--j1907);text-decoration:none}a:hover{text-decoration:underline}
 button{font:inherit;color:inherit;background:none;border:1px solid var(--rule-2);border-radius:var(--radius);padding:.3rem .7rem;cursor:pointer}
 button:hover{background:var(--surface-2)}
-button.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}button.primary:hover{background:#333}
+button.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}button.primary:hover{background:var(--primary-hover);border-color:var(--primary-hover)}
 button.ghost{border-color:transparent;padding:.2rem .4rem}
 select,input[type=search],input[type=text]{font:inherit;padding:.3rem .5rem;border:1px solid var(--rule-2);border-radius:var(--radius);background:var(--surface);color:var(--ink);max-width:100%}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.2;margin:0 0 .5rem}
@@ -62,14 +74,19 @@ p{margin:.4rem 0 .9rem}
 .hidden{display:none!important}
 .sr-only{position:absolute;left:-9999px}
 /* top bar */
-#topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar);display:flex;align-items:center;gap:1rem;padding:0 1rem;background:var(--surface);border-bottom:1px solid var(--rule);z-index:1200}
+/* the top bar is a flex-column child of body: it grows when the text wraps (200 % zoom, narrow screens) and #app takes the rest */
+#topbar{position:relative;flex:none;min-height:var(--topbar);display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1rem;padding:.3rem 1rem;background:var(--surface);border-bottom:1px solid var(--rule);z-index:1200}
+#topbar .start{font-size:.9rem;white-space:nowrap;padding:.3rem .55rem;border:1px solid var(--control-border);border-radius:999px;color:var(--ink-2)}
+#topbar .start:hover{background:var(--surface-2);text-decoration:none}
+#topbar .help{display:inline-flex;align-items:center;justify-content:center;width:1.7rem;height:1.7rem;border:1px solid var(--control-border);border-radius:50%;font-weight:600;font-size:.9rem;color:var(--ink-2);flex:none}
+#topbar .help:hover{background:var(--surface-2);text-decoration:none}
 #topbar .brand{font-family:var(--serif);font-weight:600;font-size:1.05rem;white-space:nowrap}
 #topbar .brand span{color:var(--muted);font-weight:400;font-size:.85rem;margin-left:.5rem}
-nav.tabs{display:flex;gap:.1rem;margin-left:auto;overflow-x:auto}
+nav.tabs{display:flex;gap:.1rem;margin-left:auto;overflow-x:auto;max-width:100%}
 nav.tabs a{padding:.35rem .7rem;border-radius:var(--radius);color:var(--ink-2);white-space:nowrap;font-size:.95rem}
 nav.tabs a.active{background:var(--ink);color:var(--paper)}
 nav.tabs a:hover{text-decoration:none;background:var(--surface-2)}nav.tabs a.active:hover{background:var(--ink)}
-#app{position:absolute;top:var(--topbar);left:0;right:0;bottom:0;overflow:hidden}
+#app{position:relative;flex:1;min-height:0;overflow:hidden}
 .view{position:absolute;inset:0;overflow:auto;-webkit-overflow-scrolling:touch}
 .page{max-width:1060px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
 .page.wide{max-width:1400px}
@@ -78,23 +95,26 @@ nav.tabs a:hover{text-decoration:none;background:var(--surface-2)}nav.tabs a.act
 .pagenav .spacer{flex:1}
 .pagenav button{padding:.25rem .6rem}
 .crumb{color:var(--muted)}
+.pagenav .up{font-size:.9rem;color:var(--ink-2);padding:.25rem .5rem;border:1px solid transparent;border-radius:var(--radius)}
+.pagenav .up:hover{background:var(--surface-2);text-decoration:none}
 .phase{display:inline-block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
-.phase.j1907{color:var(--j1907)}.phase.j1908{color:var(--j1908)}.phase.prologue,.phase.epilogue{color:var(--model)}
+.phase.j1907{color:var(--j1907-text)}.phase.j1908{color:var(--j1908-text)}.phase.prologue,.phase.epilogue{color:var(--model-text)}
+nav.phase a{color:inherit;text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:.15em}nav.phase a:hover{text-decoration-color:currentColor}
 .subtitle{font-family:var(--serif);font-style:italic;color:var(--ink-2);font-size:1.05rem;margin-top:-.2rem}
 /* chips */
 .chip{display:inline-flex;align-items:center;gap:.3rem;font-size:.74rem;line-height:1;padding:.22rem .5rem;border-radius:999px;border:1px solid var(--rule-2);color:var(--ink-2);background:var(--surface);white-space:nowrap;vertical-align:middle;font-family:var(--sans);text-transform:lowercase}
 .chip::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:currentColor;flex:none}
-.chip.verified{color:var(--verified);border-color:var(--verified)}
-.chip.inferred{color:var(--inferred);border-color:var(--inferred)}.chip.inferred::before{background:transparent;border:2px solid currentColor;width:.3rem;height:.3rem}
+.chip.verified{color:var(--verified-text);border-color:var(--verified)}
+.chip.inferred{color:var(--inferred-text);border-color:var(--inferred)}.chip.inferred::before{background:transparent;border:2px solid currentColor;width:.3rem;height:.3rem}
 .chip.approximate{color:var(--approximate);border-style:dashed}.chip.approximate::before{background:transparent;border:1px dashed currentColor}
 .chip.disputed{color:var(--disputed);border-color:var(--disputed)}.chip.disputed::before{border-radius:0;transform:rotate(45deg);width:.42rem;height:.42rem}
 .chip.unlocated{color:var(--unlocated);border-style:dotted}.chip.unlocated::before{background:repeating-linear-gradient(45deg,currentColor 0 1px,transparent 1px 3px);border-radius:0}
-.chip.naming{color:var(--inferred);border-color:var(--inferred);border-style:double}.chip.naming::before{background:transparent;border-top:2px solid currentColor;border-bottom:2px solid currentColor;border-radius:0;height:.38rem;width:.5rem}
-.chip.stated,.chip.day{color:var(--verified);border-color:var(--verified)}.chip.window{color:var(--inferred);border-color:var(--inferred)}.chip.bracketed,.chip.month{color:var(--inferred)}.chip.undated{color:var(--approximate);border-style:dashed}
+.chip.naming{color:var(--inferred-text);border-color:var(--inferred);border-style:double}.chip.naming::before{background:transparent;border-top:2px solid currentColor;border-bottom:2px solid currentColor;border-radius:0;height:.38rem;width:.5rem}
+.chip.stated,.chip.day{color:var(--verified-text);border-color:var(--verified)}.chip.window{color:var(--inferred-text);border-color:var(--inferred)}.chip.bracketed,.chip.month{color:var(--inferred-text)}.chip.undated{color:var(--approximate);border-style:dashed}
 .chip.plain::before{display:none}
 .tag{display:inline-block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;padding:.1rem .4rem;border-radius:3px;background:var(--surface-2);color:var(--ink-2);vertical-align:middle}
-.tag.j1907{background:var(--j1907-soft);color:var(--j1907)}.tag.j1908{background:var(--j1908-soft);color:var(--j1908)}.tag.model{background:var(--model-soft);color:var(--model)}
-.tag.verbatim{background:#e9e7e1;color:var(--verbatim)}.tag.summary{background:var(--summary-soft);color:var(--summary)}.tag.editorial{background:var(--editorial-soft);color:var(--editorial)}.tag.annotation{background:var(--annotation-soft);color:var(--annotation)}
+.tag.j1907{background:var(--j1907-soft);color:var(--j1907-text)}.tag.j1908{background:var(--j1908-soft);color:var(--j1908-text)}.tag.model{background:var(--model-soft);color:var(--model-text)}
+.tag.verbatim{background:var(--verbatim-soft);color:var(--verbatim)}.tag.summary{background:var(--summary-soft);color:var(--summary-text)}.tag.editorial{background:var(--editorial-soft);color:var(--editorial-text)}.tag.annotation{background:var(--annotation-soft);color:var(--annotation-text)}
 .pill{display:inline-block;border:1px solid var(--rule-2);border-radius:999px;padding:.15rem .6rem;font-size:.84rem;margin:.15rem .2rem .15rem 0;background:var(--surface)}
 .pill:hover{background:var(--surface-2);text-decoration:none}
 .pill.person::before{content:"◦ ";color:var(--muted)}.pill.inst::before{content:"▪ ";color:var(--muted)}
@@ -102,12 +122,13 @@ nav.tabs a:hover{text-decoration:none;background:var(--surface-2)}nav.tabs a.act
 .card{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);padding:.9rem 1rem;margin:.6rem 0}
 .card h4{margin-top:0}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.8rem}
-.kv{display:grid;grid-template-columns:minmax(120px,160px) 1fr;gap:.25rem .8rem;font-size:.9rem}
-.kv dt{color:var(--muted)}.kv dd{margin:0}
+.kv{display:grid;grid-template-columns:minmax(120px,160px) minmax(0,1fr);gap:.25rem .8rem;font-size:.9rem}
+.kv dt{color:var(--muted)}.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
 table.data{width:100%;border-collapse:collapse;font-size:.86rem;background:var(--surface)}
 table.data th,table.data td{border-bottom:1px solid var(--rule);padding:.4rem .5rem;text-align:left;vertical-align:top}
 table.data th{font-weight:600;color:var(--ink-2);background:var(--surface-2);position:sticky;top:0}
-table.data tr:hover td{background:#fbf9f3}
+table.data tr:hover td{background:var(--row-hover)}
+.tablewrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
 /* typed blocks */
 .block{position:relative;margin:.55rem 0;padding:.45rem .9rem .45rem 1rem;border-left:3px solid var(--rule-2);border-radius:0 var(--radius) var(--radius) 0}
 .block .who{display:block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem;font-family:var(--sans)}
@@ -119,22 +140,31 @@ table.data tr:hover td{background:#fbf9f3}
 .block.annotation{color:var(--ink-2)}
 .block.model{color:var(--ink)}
 .block.verbatim.tabular{white-space:pre-wrap;tab-size:10;font-size:.95rem}
-.block.summary{font-family:var(--sans);background:var(--summary-soft);border-left-color:var(--summary);color:#2e3140}
-.block.editorial{font-family:var(--sans);font-size:.9rem;font-style:italic;background:var(--editorial-soft);border-left-color:var(--editorial);color:#4d4c2d}
-.block.annotation{font-family:var(--sans);font-size:.92rem;background:var(--annotation-soft);border-left-color:var(--annotation);color:#5a4712;border-left-style:dashed}
-.block.model{font-family:var(--sans);font-size:.92rem;background:var(--model-soft);border-left-color:var(--model);color:#3f2d5f}
+.block.summary{font-family:var(--sans);background:var(--summary-soft);border-left-color:var(--summary);color:var(--summary-text)}
+.block.editorial{font-family:var(--sans);font-size:.9rem;font-style:italic;background:var(--editorial-soft);border-left-color:var(--editorial);color:var(--editorial-text)}
+.block.annotation{font-family:var(--sans);font-size:.92rem;background:var(--annotation-soft);border-left-color:var(--annotation);color:var(--annotation-text);border-left-style:dashed}
+.block.model{font-family:var(--sans);font-size:.92rem;background:var(--model-soft);border-left-color:var(--model);color:var(--model-text)}
 .block.pi{font-family:var(--serif);font-size:1.02rem;background:var(--surface);border-left-color:var(--model)}
-.block s{text-decoration:line-through;color:#7a7a7a}.block u{text-decoration:underline}
-.block ins.ms-insert{text-decoration:none;color:#2f5f3f;border-bottom:1px dotted #2f5f3f}
-.block ins.ms-insert::before{content:"^";font-size:.7em;vertical-align:super;color:#2f5f3f}
+.block s{text-decoration:line-through;color:var(--struck)}.block u{text-decoration:underline}
+.block ins.ms-insert{text-decoration:none;color:var(--ms-insert);border-bottom:1px dotted var(--ms-insert)}
+.block ins.ms-insert::before{content:"^";font-size:.7em;vertical-align:super;color:var(--ms-insert)}
+/* PI footnotes carried into a story excerpt (D7): markers at the end of the excerpt, the notes beneath in the PI's voice */
+.block.pi .fnmarks{margin-left:.15rem}.block.pi .fnmarks a{color:var(--j1907-text);font-size:.72em;vertical-align:super;margin-left:1px}
+.block.pi .fnotes{margin:.4rem 0 0;padding:.3rem 0 0;border-top:1px dotted var(--rule-2);font-size:.86rem;line-height:1.45}
+.block.pi .fnotes div{margin:.1rem 0}.block.pi .fnotes .n{color:var(--muted);font-family:var(--sans);font-size:.78rem;margin-right:.3rem}.block.pi .fnotes p{display:inline;margin:0}
 .block .ed-inline{color:var(--editorial);font-family:var(--sans);font-size:.85em;font-style:italic}
 .block .ann-inline{color:var(--annotation);font-family:var(--sans);font-size:.9em;border-bottom:1px dashed var(--annotation)}
 .block .pi-color{border-bottom:2px solid currentColor;padding-bottom:1px}
 .pc-FF0000{color:var(--pc-red)}.pc-0070C0{color:var(--pc-blue)}.pc-7030A0{color:var(--pc-purple)}.pc-FF40FF{color:var(--pc-magenta)}
-sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
+/* evidence legend line under a 'When' table (D7) and the Where grid (D6) */
+.evidence-legend{font-size:.8rem;color:var(--muted);margin:.3rem 0 .8rem;display:flex;flex-wrap:wrap;gap:.2rem .9rem;align-items:center}
+.evidence-legend span{display:inline-flex;align-items:center;gap:.25rem}
+.grid2.where{grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr))}
+sup.fnref{color:var(--j1907-text);cursor:pointer;font-size:.7em;margin-left:1px}
+.pnum{position:absolute;left:-3.2rem;font-family:var(--sans)}
 .legend-colors{font-size:.84rem;margin:.4rem 0 .8rem}
-.legend-colors span{display:inline-block;margin-right:1rem}
-.legend-colors i{display:inline-block;width:1.4rem;height:.15rem;vertical-align:middle;margin-right:.3rem}
+.legend-colors span{display:inline-block;margin-right:1rem}.legend-colors span span{display:inline;margin:0}
+.legend-colors i{display:inline-block;width:1.4rem;height:.15rem;vertical-align:middle;margin-right:.3rem;background:currentColor}
 /* document cards in stories */
 .doccard{border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);margin:.6rem 0;padding:.7rem .9rem}
 .doccard .head{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:baseline;font-size:.92rem}
@@ -144,9 +174,10 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
 .doccard .actions{display:flex;gap:.6rem;flex-wrap:wrap;font-size:.86rem;margin-top:.3rem}
 /* MAP */
 #mapview{display:flex;flex-direction:row}
-#panel{width:330px;flex:none;background:var(--surface);border-right:1px solid var(--rule);display:flex;flex-direction:column;transition:width .2s ease;overflow:hidden;position:relative;z-index:900}
+#panel{width:var(--panel-w);flex:none;background:var(--surface);border-right:1px solid var(--rule);display:flex;flex-direction:column;transition:width .2s ease;overflow:hidden;position:relative;z-index:900}
 #panel.collapsed{width:0;border-right:none}
-#panel .inner{width:330px;overflow:auto;padding:.9rem 1rem 2rem;height:100%}
+#panel .inner{width:100%;overflow:auto;padding:.9rem 1rem 2rem;height:100%}
+#panelHandle{display:none}
 #panel h3{margin:.2rem 0 .5rem;font-size:.95rem;font-family:var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
 #panel .section{margin-bottom:1.1rem}
 #panel label{display:flex;align-items:center;gap:.45rem;font-size:.93rem;margin:.25rem 0;cursor:pointer}
@@ -156,13 +187,24 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
 .seg button+button{border-left:1px solid var(--rule-2)}
 .seg button.active{background:var(--ink);color:var(--paper)}
 #stoplist{list-style:none;margin:0;padding:0;font-size:.88rem}
-#stoplist li{display:grid;grid-template-columns:5.9rem 1fr;gap:.4rem;padding:.3rem .3rem;border-radius:var(--radius);cursor:pointer;border-left:3px solid transparent}
-#stoplist li:hover{background:var(--surface-2)}
-#stoplist li.active{background:var(--surface-2)}
-#stoplist li.j1907{border-left-color:var(--j1907)}#stoplist li.j1908{border-left-color:var(--j1908)}
+/* one link per stop (its #/map/stop/<id> address); numeral · date · label · status glyph; the status word is read by screen readers and shown on hover, focus and for the selected stop */
+#stoplist li{margin:0;padding:0}
+#stoplist a{display:grid;grid-template-columns:minmax(4.2rem,auto) minmax(0,1fr);gap:.15rem .4rem;padding:.3rem .3rem;border-radius:var(--radius);border-left:3px solid transparent;color:var(--ink);text-decoration:none}
+#stoplist a:hover{background:var(--surface-2);text-decoration:none}
+#stoplist a[aria-current="true"],#stoplist li.active a{background:var(--surface-2)}
+#stoplist a.j1907{border-left-color:var(--j1907)}#stoplist a.j1908{border-left-color:var(--j1908)}
 #stoplist .d{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.8rem;padding-top:.1rem;white-space:nowrap}
+#stoplist .l{display:flex;flex-wrap:wrap;align-items:center;gap:.15rem .35rem;min-width:0;overflow-wrap:anywhere}
+#stoplist .l svg{flex:none}
+#stoplist a:hover .st,#stoplist a:focus-visible .st,#stoplist a[aria-current="true"] .st{position:static;left:auto;width:auto;height:auto;clip:auto;clip-path:none;overflow:visible;margin:0;white-space:nowrap;font-size:.74rem;color:var(--muted)}
 #stoplist li.grp{display:block;margin:.6rem 0 .2rem;padding:0 .3rem;font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;cursor:default;border-left:none;background:none}
-#stoplist li.grp.j1907{color:var(--j1907)}#stoplist li.grp.j1908{color:var(--j1908)}
+#stoplist li.grp.j1907{color:var(--j1907-text)}#stoplist li.grp.j1908{color:var(--j1908-text)}
+/* first-visit help card (D1) */
+.helpcard{position:relative;border:1px solid var(--rule-2);background:var(--paper);border-radius:var(--radius);padding:.6rem 2rem .6rem .8rem;margin:0 0 1rem;font-size:.84rem}
+.helpcard h2{font-family:var(--sans);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:0 0 .3rem}
+.helpcard ul{margin:0;padding-left:1.1rem}.helpcard li{margin:.15rem 0}
+.helpcard .dismiss{position:absolute;top:.3rem;right:.3rem;padding:.1rem .4rem;font-size:.9rem;line-height:1.2}
+.helpcard .seq{min-width:14px;height:14px;font-size:9px}
 /* sequence badges: the numeral of the stop in its journey; 1907 round, 1908 square-cornered (shape is the non-colour channel) */
 .seq{display:inline-flex;align-items:center;justify-content:center;min-width:17px;height:17px;padding:0 4px;font:600 10.5px/1 var(--sans);letter-spacing:0;border-radius:50%;color:var(--surface);background:var(--ink-2);box-shadow:0 0 0 1.5px var(--surface);vertical-align:middle;white-space:nowrap}
 .seq.j1907{background:var(--j1907)}.seq.j1908{background:var(--j1908);border-radius:2px}
@@ -174,6 +216,7 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
 .arrow path{stroke-width:1.5;stroke-linejoin:round}.arrow.j1907 path{stroke:var(--j1907);fill:var(--surface)}.arrow.j1908 path{stroke:var(--j1908);fill:var(--j1908)}
 .arrow.dim{opacity:.25}
 #panel .row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem;margin:.2rem 0}
+#panel .seg,#panel .steps{flex-wrap:wrap;max-width:100%}
 #panel .steps{display:inline-flex;align-items:center;gap:.2rem}
 #panel .steps button[disabled]{opacity:.4;cursor:default}
 #panel .frames{margin-top:.4rem}
@@ -181,8 +224,12 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
 .pill.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .stopcard{margin:.4rem 0 0;padding:.6rem .7rem;font-size:.86rem}
 .stopcard h4{margin:.2rem 0 .4rem;font-family:var(--serif);font-size:1rem;line-height:1.3}
-.stopcard .kv{grid-template-columns:6.4rem 1fr;gap:.2rem .6rem;font-size:.82rem}
+.stopcard .kv{grid-template-columns:6.4rem minmax(0,1fr);gap:.2rem .6rem;font-size:.82rem}
 .stopcard .phase{margin-bottom:.1rem}
+/* cards are inline-size containers: a narrow card stacks its key–value grid (the panel card only when text is enlarged) */
+.card{container-type:inline-size}
+@container (max-width:420px){.kv{grid-template-columns:1fr}}
+@container (max-width:240px){.stopcard .kv{grid-template-columns:1fr}}
 .stopcard.start p{margin:.3rem 0}
 ul.unlocated{list-style:none;margin:0;padding:0}
 ul.unlocated li{border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);padding:.5rem .6rem;margin:.4rem 0;font-size:.84rem}
@@ -191,7 +238,8 @@ ul.unlocated .head .draw{margin-left:auto;display:inline-flex;gap:.3rem;align-it
 ul.unlocated .block{margin:.35rem 0;padding:.3rem .6rem;font-size:.86rem}
 ul.unlocated .block.verbatim{font-size:.92rem}
 #panel label .sw.dashed{border-top:2px dashed var(--unlocated);height:0;background:none}
-#panelToggle{position:absolute;top:.6rem;left:0;z-index:950;background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-left:none;border-radius:0 var(--radius) var(--radius) 0;padding:.35rem .5rem;cursor:pointer;box-shadow:var(--shadow);transition:left .2s ease}
+#panelToggle{position:absolute;top:.6rem;left:var(--panel-w);z-index:950;background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-left:none;border-radius:0 var(--radius) var(--radius) 0;padding:.35rem .5rem;cursor:pointer;box-shadow:var(--shadow);transition:left .2s ease}
+#mapview.pcollapsed #panelToggle{left:0}
 #mapstage{flex:1;position:relative;background:var(--surface-2)}
 #leaflet{position:absolute;inset:0}
 #globe{position:absolute;inset:0;background:var(--paper)}
@@ -207,7 +255,12 @@ details.legend svg{flex:none}
 #panellegend{display:none;margin:0 0 1rem}
 #panellegend details.legend{box-shadow:none;opacity:1}
 #mapnote{position:absolute;left:.8rem;bottom:2.4rem;font-size:.72rem;color:var(--muted);z-index:800;background:var(--surface);opacity:.9;padding:.1rem .4rem;border-radius:3px;max-width:60%}
-.leaflet-container{font-family:var(--sans);background:#e3e9ee}
+.leaflet-container{font-family:var(--sans);background:var(--stage)}
+/* Leaflet's controls take the palette (the vendored stylesheet above keeps its own literals; these rules override the ones the eye meets) */
+.leaflet-bar{box-shadow:var(--shadow)}.leaflet-bar a,.leaflet-touch .leaflet-bar a{background-color:var(--surface);color:var(--ink);border-bottom-color:var(--rule)}.leaflet-bar a:hover,.leaflet-bar a:focus{background-color:var(--surface-2)}.leaflet-touch .leaflet-bar{border-color:var(--rule-2)}
+.leaflet-control-scale-line{background:var(--surface);color:var(--ink-2);border-color:var(--muted);text-shadow:none;opacity:.92}
+.leaflet-container .leaflet-control-attribution{background:var(--surface);color:var(--muted)}.leaflet-container .leaflet-control-attribution a{color:var(--j1907-text)}
+.leaflet-container a.leaflet-popup-close-button{color:var(--muted)}.leaflet-container a.leaflet-popup-close-button:hover{color:var(--ink)}
 .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--surface);color:var(--ink)}
 .leaflet-popup-content-wrapper{border-radius:var(--radius);box-shadow:var(--shadow);font-family:var(--sans)}
 .leaflet-popup-content{margin:.7rem .9rem;font-size:.88rem;line-height:1.45;min-width:220px}
@@ -216,7 +269,7 @@ details.legend svg{flex:none}
 .leaflet-popup-content ul{margin:.3rem 0;padding-left:1rem}
 .leaflet-control-attribution{font-size:.68rem}
 .lbl{background:transparent;border:none;box-shadow:none;font-family:var(--sans);font-size:.76rem;color:var(--ink-2);text-shadow:0 0 3px var(--paper),0 0 3px var(--paper),0 0 6px var(--paper);white-space:nowrap}
-.lbl.j1907{color:var(--j1907)}.lbl.j1908{color:var(--j1908)}.lbl.both{color:var(--ink)}.lbl.ctx{color:var(--model)}
+.lbl.j1907{color:var(--j1907-text)}.lbl.j1908{color:var(--j1908-text)}.lbl.both{color:var(--ink)}.lbl.ctx{color:var(--model-text)}
 .lbl.left{text-align:right}
 .lbl.active{background:var(--surface);border:1px solid var(--rule-2);border-radius:3px;padding:0 .3rem;text-shadow:none;color:var(--ink);font-weight:600;line-height:1.3}
 .lbl.ulbl{color:var(--unlocated);font-style:italic;cursor:pointer;font-size:.72rem}
@@ -238,6 +291,7 @@ details.legend svg{flex:none}
 #archive .reader{overflow:auto;padding:1.4rem 2rem 4rem}
 #archive .filters{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-bottom:.6rem}
 #archive .filters input[type=search]{grid-column:1/-1}
+#archive .filters select,#archive .filters input{min-width:0;width:100%}
 #doclist{list-style:none;margin:0;padding:0}
 #doclist li{padding:.4rem .5rem;border-radius:var(--radius);cursor:pointer;border-left:3px solid transparent;font-size:.86rem}
 #doclist li:hover{background:var(--surface-2)}#doclist li.active{background:var(--surface-2);border-left-color:var(--ink)}
@@ -257,6 +311,7 @@ details.legend svg{flex:none}
 #netcontrols .row>span,#netcontrols .row>label,#netcontrols .row>b{flex:none;white-space:nowrap}
 #netcontrols .row>span.muted{white-space:normal}
 #netcontrols .find{margin-left:auto}
+details.netmore>summary{display:none}
 #netcontrols .find input{min-width:12rem}
 #netviewhead{padding:.35rem .8rem;border-bottom:1px solid var(--rule);font-size:.84rem;background:var(--paper);display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem .6rem}
 #netviewhead .rule{color:var(--ink-2)}
@@ -273,6 +328,10 @@ details.legend svg{flex:none}
 .netedge.strand{stroke-opacity:.75}
 .netedge.dim,.netlabel.dim{stroke-opacity:.08;opacity:.25}.netnode.dim{opacity:.18}
 /* timeline */
+.yr-rail{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:.2rem .3rem;padding:.4rem 0;margin:0 0 .6rem;background:var(--paper);border-bottom:1px solid var(--rule);font-size:.84rem}
+.yr-rail a{padding:.1rem .55rem;border:1px solid var(--rule-2);border-radius:999px;color:var(--ink-2);background:var(--surface)}
+.yr-rail a:hover{background:var(--surface-2);text-decoration:none}
+.yr-rail .lbl-yr{color:var(--muted);margin-right:.3rem;align-self:center}
 .tl{position:relative;margin-left:.5rem;padding-left:1.6rem;border-left:2px solid var(--rule-2)}
 .tl .yr{position:relative;margin:1.6rem 0 .6rem;font-family:var(--serif);font-size:1.3rem}
 .tl .yr::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--ink)}
@@ -284,6 +343,7 @@ details.legend svg{flex:none}
 .tlentry .text{font-family:var(--serif);margin:.2rem 0 .4rem}
 .tlentry .links{display:flex;gap:.6rem;flex-wrap:wrap;font-size:.84rem}
 .tlentry .links a{padding:.1rem .45rem;border:1px solid var(--rule-2);border-radius:999px}
+.tlentry .links a.disc{border-color:var(--disputed);color:var(--disputed)}
 /* misc */
 .notice{border:1px dashed var(--rule-2);padding:.6rem .9rem;border-radius:var(--radius);background:var(--surface);font-size:.9rem}
 .toc{columns:2;column-gap:2rem;font-size:.92rem}
@@ -294,6 +354,14 @@ details.legend svg{flex:none}
 .footer-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule)}
 .footer-nav a{max-width:45%}
 .dl a{display:inline-block;margin:.2rem .6rem .2rem 0}
+table.glossary th:first-child{width:11rem}table.glossary tr:target td{background:var(--j1907-soft)}
+table.glossary td.k{white-space:nowrap}
+.reading-order{counter-reset:ro;list-style:none;padding:0;margin:.4rem 0 1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:.6rem}
+.reading-order li{counter-increment:ro;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);padding:.6rem .8rem;font-size:.9rem}
+.reading-order li::before{content:counter(ro);display:inline-block;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--ink);color:var(--paper);text-align:center;font-weight:600;font-size:.8rem;line-height:1.4rem;margin-right:.4rem}
+.reading-order li a{font-weight:600}
+.inputs td.sha{font-family:monospace;font-size:.78rem;word-break:break-all}
+.methodseg{max-width:100%}
 @media (max-width:900px){
   #archive,#network{grid-template-columns:1fr}
   #archive .list{max-height:40vh;border-right:none;border-bottom:1px solid var(--rule)}
@@ -304,32 +372,62 @@ details.legend svg{flex:none}
   #panellegend{display:block}
   .toc{columns:1}
   #topbar .brand span{display:none}
+  nav.tabs{flex-wrap:wrap;overflow:visible;margin-left:0}
+  details.netmore>summary{display:list-item;cursor:pointer;font-weight:600;font-size:.84rem;padding:.15rem 0}
+  #netcontrols .find{margin-left:0}
+}
+@media (max-width:700px){
+  /* the Method and Timeline segmented controls become one horizontally scrollable strip instead of wrapping into three-line buttons */
+  .methodseg{display:flex;overflow-x:auto;max-width:100%}
+  .methodseg button{flex:none;white-space:nowrap}
 }
 @media (max-width:600px){
   html{font-size:15px}
   .page{padding:1rem 1rem 3rem}
   .kv{grid-template-columns:1fr}
   .leaflet-top.leaflet-right .leaflet-control-zoom{margin-top:3.8rem}
+  /* the layer panel is a bottom sheet with a handle; collapsed by default on a phone */
+  #panel{position:absolute;top:auto;bottom:0;left:0;width:100%;max-height:55vh;border-top:1px solid var(--rule);border-right:none;transition:max-height .2s ease;z-index:1050}
+  #panel.collapsed{width:100%;max-height:2.4rem;border-right:none}
+  #panel .inner{height:auto;flex:1;min-height:0}
+  #panelHandle{display:flex;flex:none;height:2.4rem;align-items:center;justify-content:center;gap:.5rem;width:100%;border:none;border-bottom:1px solid var(--rule);border-radius:0;font-weight:600;font-size:.86rem;background:var(--surface);color:var(--ink-2)}
+  #panelHandle::before{content:"";width:2.2rem;height:.25rem;border-radius:2px;background:var(--rule-2)}
+  #panelToggle,#mapview.pcollapsed #panelToggle{left:0}
+  #mapnote{display:none}
+  #topbar{padding:.3rem .75rem}
+  #topbar .start{display:none}
+  #topbar .help{order:1;margin-left:auto}
+  nav.tabs{order:2;width:100%}
+  nav.tabs a{padding:.3rem .55rem;font-size:.9rem}
+  .pnum{position:static;margin-right:.4rem}
+  /* the story 'When' table stacks each row into labelled lines */
+  table.when,table.when tbody,table.when tr,table.when td{display:block;width:100%}
+  table.when thead{display:none}
+  table.when tr{border-bottom:2px solid var(--rule-2);padding:.3rem 0}
+  table.when td{border-bottom:none;padding:.2rem .3rem}
+  table.when td::before{content:attr(data-label);display:block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
 }
 </style>
 </head>
 <body>
 <header id="topbar">
   <div class="brand">The Quackenbush Journeys <span>1907–1908 · an evidence-based reconstruction</span></div>
+  <a class="start" href="#/about" id="startHere">Start here</a>
   <nav class="tabs" id="tabs">
     <a href="#/map" data-tab="map">Map</a>
     <a href="#/stories" data-tab="story">Story</a>
     <a href="#/network" data-tab="network">Network</a>
     <a href="#/archive" data-tab="archive">Archive</a>
     <a href="#/timeline" data-tab="timeline">Timeline</a>
-    <a href="#/published" data-tab="published">Published</a>
+    <a href="#/published" data-tab="published">Sources cited</a>
     <a href="#/method" data-tab="method">Method &amp; Data</a>
   </nav>
+  <a class="help" href="#/about" aria-label="How to read this site" title="How to read this site">?</a>
 </header>
 <main id="app">
   <section id="mapview" class="view">
     <button id="panelToggle" title="Show or hide the layer panel" aria-label="Toggle panel">☰</button>
-    <aside id="panel"><div class="inner" id="panelInner"></div></aside>
+    <aside id="panel"><button id="panelHandle" aria-controls="panelInner" aria-expanded="true">Stops &amp; layers</button><div class="inner" id="panelInner"></div></aside>
     <div id="mapstage">
       <div id="leaflet"></div>
       <div id="globe" class="hidden"></div>
@@ -361,7 +459,12 @@ const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov',
 function fmtDate(iso){ if(!iso) return 'undated'; const p=iso.split('-'); if(p.length===1) return p[0]; if(p.length===2) return MONTHS[+p[1]-1]+' '+p[0]; return (+p[2])+' '+MONTHS[+p[1]-1]+' '+p[0]; }
 function personLabel(id){ const p=IDX.person[id]; return p? p.label : id; }
 function journeyClass(j){ return j==='1907'?'j1907': j==='1908'?'j1908':''; }
-const JCOLOR = {'1907':'#1f6fa3','1908':'#c0603a'};
+/* journey colours as the stylesheet defines them, re-read when the colour scheme changes (no literal in the scripts) */
+const JCOLOR = {};
+function readColours(){ const cs=getComputedStyle(document.documentElement); JCOLOR['1907']=cs.getPropertyValue('--j1907').trim(); JCOLOR['1908']=cs.getPropertyValue('--j1908').trim(); }
+readColours();
+if(window.matchMedia){ try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', readColours); }catch(e){} }
+new MutationObserver(readColours).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
 const STATUS_TXT = D.meta.status_chips;
 
 /* ---------------- routing ---------------- */
@@ -370,37 +473,53 @@ const STATUS_TXT = D.meta.status_chips;
 const stack = [];
 function currentHash(){ return location.hash.replace(/^#/, '') || '/map'; }
 function go(route){ if(currentHash()===route){ render(route); return; } stack.push(route); location.hash=route; render(route); }
-function goBack(){ if(stack.length>1){ stack.pop(); const prev=stack[stack.length-1]; location.hash=prev; render(prev); } else { go('/map'); } }
-function prevTitle(){ if(stack.length<2) return 'Map'; return routeTitle(stack[stack.length-2]); }
+/* the page one level up in the site's hierarchy (story → Story index, archive item → Archive, …); null where a page is itself a top level */
+function upFor(r){
+  const seg=r.split('/').filter(Boolean); const t=seg[0]||'map';
+  if(t==='story') return ['Story index','/stories']; if(t==='archive'&&seg[1]) return ['Archive','/archive']; if(t==='person') return ['Network','/network'];
+  if(t==='place') return ['Map','/map']; if(t==='published'&&seg[1]) return ['Sources cited','/published']; if(t==='timeline'&&seg[1]) return ['Timeline','/timeline'];
+  if(t==='tale'||t==='cast') return ['Story index','/stories']; return null;
+}
+/* a shallow stack (the page was opened directly) goes up the hierarchy rather than to the map */
+function backTarget(){ if(stack.length>1) return stack[stack.length-2]; const up=upFor(currentHash()); return up? up[1] : '/map'; }
+function goBack(){ if(stack.length>1){ stack.pop(); const prev=stack[stack.length-1]; location.hash=prev; render(prev); } else { go(backTarget()); } }
+function prevTitle(){ return routeTitle(backTarget()); }
+const PHASE_LABEL={prologue:'Prologue', 'paper-trail':'Paper trail', 'journey-1907':'1907 reconnaissance', interlude:'Interlude', 'journey-1908':'1908 excavation', epilogue:'Epilogue'};
 function routeTitle(r){
   const seg=r.split('/').filter(Boolean);
   const t=seg[0]||'map';
   if(t==='map') return 'Map'; if(t==='stories') return 'Story index'; if(t==='story') return (IDX.story[seg[1]]||{}).title||'Story';
   if(t==='archive') return seg[1]? ((IDX.doc[seg[1]]||{}).title||'Document') : 'Archive';
-  if(t==='network') return 'Network'; if(t==='person') return personLabel(seg[1]); if(t==='timeline') return 'Timeline'; if(t==='published') return seg[1]? 'Published source':'Published sources';
+  if(t==='network') return 'Network'; if(t==='person') return personLabel(seg[1]); if(t==='timeline') return 'Timeline'; if(t==='published') return seg[1]? 'Source cited':'Sources cited';
   if(t==='method') return 'Method & Data'; if(t==='place') return (IDX.place[seg[1]]||{}).label||'Place'; if(t==='tale') return 'A Tale of Two Mammoths (full text)'; if(t==='cast') return 'Cast of Characters';
+  if(t==='about') return 'Start here';
   return t;
 }
 window.addEventListener('hashchange', ()=>{ const h=currentHash(); if(stack.length && stack[stack.length-1]===h) return; /* already handled by go()/goBack() */ if(stack.length>=2 && stack[stack.length-2]===h){ stack.pop(); } else { stack.push(h); } render(h); });
 
 const page = document.getElementById('pageview'), mapview=document.getElementById('mapview');
-function setTab(name){ document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('active', a.dataset.tab===name)); }
+function setTab(name){ document.querySelectorAll('#tabs a').forEach(a=>{ const on=a.dataset.tab===name; a.classList.toggle('active', on); if(on && a.scrollIntoView) a.scrollIntoView({inline:'nearest', block:'nearest'}); }); }
 function render(route){
   const seg=route.split('/').filter(Boolean); const t=seg[0]||'map';
   if(t==='map'){ page.classList.add('hidden'); mapview.classList.remove('hidden'); setTab('map'); MapView.show(seg[1], seg[2]); return; }
   mapview.classList.add('hidden'); page.classList.remove('hidden'); page.scrollTop=0;
-  const tabFor={stories:'story',story:'story',archive:'archive',network:'network',person:'network',timeline:'timeline',published:'published',method:'method',place:'map',tale:'story',cast:'network'};
+  const tabFor={stories:'story',story:'story',archive:'archive',network:'network',person:'network',timeline:'timeline',published:'published',method:'method',place:'map',tale:'story',cast:'network',about:''};
   setTab(tabFor[t]||'');
-  const fn={stories:Pages.storyIndex, story:Pages.story, archive:Pages.archive, network:Pages.network, person:Pages.person, timeline:Pages.timeline, published:Pages.published, method:Pages.method, place:Pages.place, tale:Pages.tale, cast:Pages.cast}[t];
+  const fn={stories:Pages.storyIndex, story:Pages.story, archive:Pages.archive, network:Pages.network, person:Pages.person, timeline:Pages.timeline, published:Pages.published, method:Pages.method, place:Pages.place, tale:Pages.tale, cast:Pages.cast, about:Pages.about}[t];
   if(fn) fn(seg.slice(1)); else page.innerHTML='<div class="page"><h1>Not found</h1></div>';
   if(window.MapView) MapView.pauseGlobe && MapView.pauseGlobe();
 }
-/* shared nav bar */
+/* shared nav bar: '← Back to <previous page>' (history) and '↑ <one level up>' (a plain link, omitted when it is where Back goes) */
 function navbar(opts={}){
   const back = `<button class="ghost" onclick="App.back()" title="Return to the previous page">← Back to ${esc(prevTitle())}</button>`;
-  const close = opts.close===false?'':`<button class="ghost" onclick="App.back()" title="Close and return to the previous page">✕ Close</button>`;
-  return `<div class="pagenav">${back}${opts.extra||''}<span class="spacer"></span>${opts.right||''}${close}</div>`;
+  const up = upFor(currentHash()); const tgt=backTarget();
+  const upLink = up && up[1]!==tgt ? `<a class="up" href="#${up[1]}" title="Up one level">↑ ${esc(up[0])}</a>` : '';
+  return `<div class="pagenav">${back}${upLink}${opts.extra||''}<span class="spacer"></span>${opts.right||''}</div>`;
 }
+/* breadcrumb line above a page title: the first crumb is a link to the section */
+function crumbs(cls, first, ...rest){ return `<nav class="phase ${esc(cls||'')}" aria-label="Breadcrumb"><a href="#${first[1]}">${esc(first[0])}</a>${rest.filter(Boolean).map(x=>' · '+x).join('')}</nav>`; }
+/* every table.data on a page sits in a horizontally scrollable wrapper (phones) */
+function wrapTables(html){ return html.replace(/<table class="data[^"]*"[\s\S]*?<\/table>/g, m=>`<div class="tablewrap">${m}</div>`); }
 function chip(status, text){ return `<span class="chip ${esc(status)}" title="${esc(STATUS_TXT[status]||'')}">${esc(text||status)}</span>`; }
 function personPill(id){ const p=IDX.person[id]; if(!p) return esc(id); const cls = p.kind==='office'? 'pill':(p.type==='institution'||id.startsWith('i_')||id.startsWith('v_'))?'pill inst':'pill person'; const href = id.startsWith('p_')||id.startsWith('o_') ? `#/person/${id}` : `#/person/${id}`; return `<a class="${cls}" href="${href}">${esc(p.label)}</a>`; }
 function docLink(id, text){ const d=IDX.doc[id]; if(!d) return esc(id); return `<a href="#/archive/${id}">${esc(text||d.title)}</a>`; }
@@ -410,7 +529,50 @@ function blockHTML(b){
   return `<div class="${cls}" id="${esc(b.id)}"><span class="who">${esc(b.speaker)}</span>${b.html}</div>`;
 }
 function modelBlock(text){ return `<div class="block model"><span class="who">model note — the model’s words, added for connection; not from the sources</span>${esc(text)}</div>`; }
-function piBlock(text, para){ const link = para? ` <a class="small" href="#/tale#${para}" onclick="event.preventDefault();App.go('/tale/${para}')">read in context ¶${para.replace('t','')}</a>`:''; return `<div class="block pi"><span class="who">principal investigator — Tale of Two Mammoths (2019), verbatim</span>${esc(text)}${link}</div>`; }
+/* a verbatim Tale excerpt; the PI's footnote markers that fall inside the excerpt are carried along (markers at the end, the notes beneath, each linking to the paragraph) */
+function piBlock(text, para, footnotes){
+  const fns=(footnotes||[]).filter(f=>f&&f.n!=null);
+  const marks = fns.length? `<sup class="fnmarks" aria-label="footnotes ${fns.map(f=>f.n).join(', ')}">${fns.map(f=>`<a href="#/tale/${para}" title="PI's footnote ${f.n}">${f.n}</a>`).join('')}</sup>`:'';
+  const link = para? ` <a class="small" href="#/tale#${para}" onclick="event.preventDefault();App.go('/tale/${para}')">read in context ¶${para.replace('t','')}</a>`:'';
+  const notes = fns.length? `<div class="fnotes">${fns.map(f=>`<div><span class="n">PI's footnote ${f.n}</span>${f.html} <a class="small" href="#/tale/${para}" aria-label="footnote ${f.n} in the Tale">¶${para.replace('t','')}</a></div>`).join('')}</div>`:'';
+  return `<div class="block pi"><span class="who">principal investigator — Tale of Two Mammoths (2019), verbatim</span>${esc(text)}${marks}${link}${notes}</div>`;
+}
+/* status glyphs matching the map symbology (ink, not hue: hue is reserved for the journeys); 10 px inline by default, 16 px in the legend */
+function glyphFor(kind, size=10){
+  const c='var(--ink-2)', s=`width="${size}" height="${size}" viewBox="0 0 16 16" aria-hidden="true" focusable="false" class="glyph" style="vertical-align:middle"`;
+  switch(kind){
+    case 'verified': case 'stated': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" stroke-width="2"/></svg>`;
+    case 'inferred': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" fill-opacity=".15" stroke-width="2.5"/></svg>`;
+    case 'approximate': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" fill-opacity=".1" stroke-width="2" stroke-dasharray="3 3"/></svg>`;
+    case 'disputed': return `<svg ${s}><rect x="4" y="4" width="8" height="8" style="fill:var(--surface);stroke:${c}" stroke-width="2" transform="rotate(45 8 8)"/></svg>`;
+    case 'unlocated': return `<svg ${s}><circle cx="8" cy="8" r="6" fill="none" style="stroke:var(--unlocated)" stroke-width="1.5" stroke-dasharray="2 4"/></svg>`;
+    case 'candidate': return `<svg ${s}><rect x="4.5" y="4.5" width="7" height="7" fill="none" style="stroke:var(--unlocated)" stroke-width="1.5"/></svg>`;
+    case 'halo': return `<svg ${s}><circle cx="8" cy="8" r="7" style="fill:${c};stroke:${c}" fill-opacity=".08" stroke-width="1" stroke-dasharray="3 3"/></svg>`;
+    case 'trail': return `<svg ${s}><circle cx="8" cy="8" r="4.5" style="fill:var(--surface);stroke:var(--paper-trail)" stroke-width="1.5"/></svg>`;
+    case 'both': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:var(--j1908);stroke:var(--j1907)" stroke-width="2.5"/></svg>`;
+    case 'naming': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" stroke-width="2"/><rect x="2" y="7" width="12" height="2" style="fill:var(--surface)"/></svg>`;
+    default: return '';
+  }
+}
+/* evidence legend line under a 'When' table: the glyphs and words used on that page, linking to the glossary */
+function evidenceLegend(statuses){
+  const used=[...new Set(statuses)].filter(k=>STATUS_TXT[k]);
+  return `<div class="evidence-legend"><span class="muted">Evidence:</span>${used.map(k=>`<span>${glyphFor(k)} ${esc(k)}</span>`).join('')}<a href="#/about#glossary-status" onclick="event.preventDefault();App.go('/about/glossary-status')">what the symbols mean</a></div>`;
+}
+/* first-visit help card, shown at the top of the map panel until dismissed (flag in localStorage, read and written inside try/catch) */
+const HELP_KEY='qj_help_dismissed';
+function helpDismissed(){ try{ return localStorage.getItem(HELP_KEY)==='1'; }catch(e){ return false; } }
+function dismissHelp(){ try{ localStorage.setItem(HELP_KEY,'1'); }catch(e){} const el=document.getElementById('helpcard'); if(el) el.remove(); }
+function helpCard(){
+  if(helpDismissed()) return '';
+  return `<section class="helpcard" id="helpcard" aria-labelledby="helpcard-h"><h2 id="helpcard-h">How to read this map</h2><button class="ghost dismiss" onclick="App.dismissHelp()" aria-label="Dismiss this help card">✕</button><ul>
+    <li><span class="seq j1907">7</span> <span class="seq j1908">7</span> Two journeys, two hues and two badge shapes: 1907 blue and round, 1908 sienna and square-cornered; the numeral is the stop's place in its journey.</li>
+    <li>${glyphFor('verified')} ${glyphFor('inferred')} ${glyphFor('approximate')} ${glyphFor('disputed')} Marker shape and fill show the <b>source status</b> of a place: verified, inferred, approximate, disputed.</li>
+    <li>${glyphFor('halo')} A halo is the uncertainty radius recorded for the place, in kilometres.</li>
+    <li>Connectors are schematic (no route was traced); the arrow gives the direction of travel.</li>
+    <li>Four typed voices on every page: the writer's words (serif), the PI's summary, her editorial note, an annotation; anything written by the model is labelled <span class="tag model">model</span>.</li>
+  </ul><div class="small"><a href="#/about">Start here: reading guide and glossary →</a></div></section>`;
+}
 function docCard(id, opts={}){
   const d=IDX.doc[id]; if(!d) return '';
   const firstV = d.blocks.find(b=>b.type==='verbatim') || d.blocks[0];
@@ -441,7 +603,7 @@ function placeCard(id){
     ${p.gnis_note?`<dt>Gazetteer note</dt><dd>${esc(p.gnis_note)}</dd>`:''}
     <dt>Why no point is drawn</dt><dd>${esc(p.why)}</dd></dl>
     ${(p.constraints||[]).length?`<h5 class="small caps" style="margin:.6rem 0 .2rem">Spatial statements in the sources — drawn as constraints, not as a point</h5>${p.constraints.map(c=>`<div class="block verbatim" style="margin:.3rem 0"><span class="who">${esc(c.speaker)} — verbatim · ${esc(c.kind)}${c.miles?` · ${c.miles} mi from ${esc((IDX.place[c.anchor]||{}).short_label||c.anchor)}`:` · anchor ${esc((IDX.place[c.anchor]||{}).short_label||c.anchor)}`} · ${refLinkShort(c.ref)}</span>“${esc(c.quote)}”</div>${modelBlock(c.model_note)}`).join('')}`:''}
-    ${(p.candidates||[]).length?`<h5 class="small caps" style="margin:.6rem 0 .2rem">Gazetteer records bearing the name — candidates, none asserted</h5><table class="data small"><thead><tr><th>GNIS id</th><th>Name</th><th>Class</th><th>County</th><th>Map</th><th>Lat, lon</th></tr></thead><tbody>${p.candidates.map(c=>`<tr><td><a href="${esc(c.url)}" rel="noopener">${esc(c.id)}</a></td><td>${esc(c.name)}</td><td>${esc(c.feature_class)}</td><td>${esc(c.county||'')}</td><td>${esc(c.map||'')}</td><td>${c.lat.toFixed(4)}, ${c.lon.toFixed(4)}${c.note?`<div class="muted">${esc(c.note)}</div>`:''}</td></tr>`).join('')}</tbody></table>${modelBlock(p.candidates_note)}`:''}
+    ${(p.candidates||[]).length?`<h5 class="small caps" style="margin:.6rem 0 .2rem">Gazetteer records bearing the name — candidates, none asserted</h5><div class="tablewrap"><table class="data small"><thead><tr><th>GNIS id</th><th>Name</th><th>Class</th><th>County</th><th>Map</th><th>Lat, lon</th></tr></thead><tbody>${p.candidates.map(c=>`<tr><td><a href="${esc(c.url)}" rel="noopener">${esc(c.id)}</a></td><td>${esc(c.name)}</td><td>${esc(c.feature_class)}</td><td>${esc(c.county||'')}</td><td>${esc(c.map||'')}</td><td>${c.lat.toFixed(4)}, ${c.lon.toFixed(4)}${c.note?`<div class="muted">${esc(c.note)}</div>`:''}</td></tr>`).join('')}</tbody></table></div>${modelBlock(p.candidates_note)}`:''}
     <div class="small">${drawn?`<a href="#/map/${id}">Show constraints on map</a> · `:''}<a href="#/place/${id}">Place record</a></div></div>`;
   }
   return `<div class="card"><h4>${esc(p.label)} ${chips}</h4>
@@ -456,7 +618,7 @@ function placeCard(id){
 }
 function findingCard(id){ const f=IDX.finding[id]; if(!f) return ''; return `<div class="finding ${esc(f.kind)}" id="fc-${esc(f.id)}"><span class="tag">${esc(f.kind)}</span> <b>${esc(f.title)}</b><div>${esc(f.text)}</div>${(f.refs||[]).length?`<div class="small muted">Refs: ${f.refs.map(refLinkShort).join('; ')}</div>`:''}${(f.related||[]).length?`<div class="small muted">See also: ${f.related.map(r=>IDX.finding[r]?`<a href="#/method/findings/${r}" onclick="event.preventDefault();App.go('/method/findings/${r}')">${esc(IDX.finding[r].title)}</a>`:esc(r)).join('; ')}</div>`:''}</div>`; }
 
-window.App = { go, back:goBack, expandDoc, D, IDX, esc, fmtDate, chip, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, refLinkShort, navbar, personLabel, journeyClass, JCOLOR, routeTitle };
+window.App = { go, back:goBack, expandDoc, D, IDX, esc, fmtDate, chip, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, refLinkShort, navbar, crumbs, wrapTables, glyphFor, evidenceLegend, helpCard, dismissHelp, personLabel, journeyClass, JCOLOR, routeTitle, upFor, PHASE_LABEL, stackDepth:()=>stack.length };
 window.Pages = {};
 document.addEventListener('DOMContentLoaded', ()=>{ const h=currentHash(); stack.push(h); render(h); });
 })();
@@ -481,9 +643,12 @@ const UNLOCATED_DEFAULT = D.places.filter(p=>!p.has_coords && !p.mentioned_only 
 const state = { mode:'flat', layers:{j1907:true, j1908:true, trail:true, halos:true, routes:true, labels:true, context:false, unlocated:true}, highlight:null, journey:'1907',
                 inited:false, legs:[], constraintCount:0, candidateCount:0, showUnlocated:new Set(UNLOCATED_DEFAULT), unlocatedOff:new Set(), frame:null };
 let map, tileFlat=null, tileFlatRef=null, tileRelief, tileLabels, groups={}, globe=null, labelList=[], badgeList=[], legLines=[], arrowMarkers=[], popup=null, pendingPopup=null;
-const panel=document.getElementById('panel'), toggle=document.getElementById('panelToggle'), leafletEl=document.getElementById('leaflet'), mapviewEl=document.getElementById('mapview');
-toggle.addEventListener('click', ()=>{ const c=panel.classList.toggle('collapsed'); toggle.style.left = c? '0':'330px'; toggle.setAttribute('aria-expanded', String(!c)); setTimeout(()=>{ if(map) map.invalidateSize(); if(globe) globe.resize(); }, 220); });
-toggle.style.left='330px'; toggle.setAttribute('aria-expanded','true');
+const panel=document.getElementById('panel'), toggle=document.getElementById('panelToggle'), handle=document.getElementById('panelHandle'), leafletEl=document.getElementById('leaflet'), mapviewEl=document.getElementById('mapview');
+/* the panel's open/closed state is a class on #panel and on #mapview (the toggle's position follows in CSS: --panel-w, or 0 when collapsed; a bottom sheet below 600 px) */
+function setPanel(collapsed){ panel.classList.toggle('collapsed', collapsed); mapviewEl.classList.toggle('pcollapsed', collapsed); toggle.setAttribute('aria-expanded', String(!collapsed)); if(handle) handle.setAttribute('aria-expanded', String(!collapsed)); setTimeout(()=>{ if(map) map.invalidateSize(); if(globe) globe.resize(); }, 220); }
+toggle.addEventListener('click', ()=>setPanel(!panel.classList.contains('collapsed')));
+if(handle) handle.addEventListener('click', ()=>setPanel(!panel.classList.contains('collapsed')));
+toggle.setAttribute('aria-expanded','true');
 
 /* ---------------------------------------------------------------- data helpers (also used by the story minimap) */
 const placesOf = (journey)=>{ const seen=new Map(); D.stops.filter(s=>s.journey===journey).forEach(s=>{ const p=IDX.place[s.place]; if(!p||!p.has_coords) return; if(!seen.has(p.id)) seen.set(p.id,{place:p, stops:[]}); seen.get(p.id).stops.push(s); }); return [...seen.values()]; };
@@ -529,23 +694,8 @@ function arrowFor(leg, latlngs, mapRef){
   const html=`<svg class="arrow ${jc(leg.journey)} ${leg.journey==='1907'?'open':'filled'}" viewBox="0 0 14 14" width="14" height="14" aria-hidden="true" style="transform:rotate(${deg.toFixed(1)}deg)"><path d="M2.5 2.5 L12 7 L2.5 11.5 Z"/></svg>`;
   return L.marker(latlngs[mi], {icon:L.divIcon({className:'arrowwrap', html, iconSize:[14,14], iconAnchor:[7,7]}), interactive:false, keyboard:false, zIndexOffset:300});
 }
-/* status glyphs for legend and popups (ink, not hue: hue is reserved for the journeys) */
-function glyph(kind){
-  const c='var(--ink-2)', s=`width="16" height="16" aria-hidden="true" style="vertical-align:middle"`;
-  switch(kind){
-    case 'verified': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" stroke-width="2"/></svg>`;
-    case 'inferred': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" fill-opacity=".15" stroke-width="2.5"/></svg>`;
-    case 'approximate': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" fill-opacity=".1" stroke-width="2" stroke-dasharray="3 3"/></svg>`;
-    case 'disputed': return `<svg ${s}><rect x="4" y="4" width="8" height="8" style="fill:var(--surface);stroke:${c}" stroke-width="2" transform="rotate(45 8 8)"/></svg>`;
-    case 'unlocated': return `<svg ${s}><circle cx="8" cy="8" r="6" fill="none" style="stroke:var(--unlocated)" stroke-width="1.5" stroke-dasharray="2 4"/></svg>`;
-    case 'candidate': return `<svg ${s}><rect x="4.5" y="4.5" width="7" height="7" fill="none" style="stroke:var(--unlocated)" stroke-width="1.5"/></svg>`;
-    case 'halo': return `<svg ${s}><circle cx="8" cy="8" r="7" style="fill:${c};stroke:${c}" fill-opacity=".08" stroke-width="1" stroke-dasharray="3 3"/></svg>`;
-    case 'trail': return `<svg ${s}><circle cx="8" cy="8" r="4.5" style="fill:var(--surface);stroke:var(--paper-trail)" stroke-width="1.5"/></svg>`;
-    case 'both': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:var(--j1908);stroke:var(--j1907)" stroke-width="2.5"/></svg>`;
-    case 'naming': return `<svg ${s}><circle cx="8" cy="8" r="5.5" style="fill:${c};stroke:${c}" stroke-width="2"/><rect x="2" y="7" width="12" height="2" style="fill:var(--surface)"/></svg>`;
-    default: return '';
-  }
-}
+/* status glyphs for legend and popups: the shared App.glyphFor at 16 px (the stop list, story tables and glossary use the 10 px size) */
+const glyph = kind=>App.glyphFor(kind, 16);
 const line = (color, dash, w=2.5)=>`<svg width="28" height="8" aria-hidden="true" style="vertical-align:middle"><line x1="0" y1="4" x2="28" y2="4" style="stroke:${color}" stroke-width="${w}" ${dash?`stroke-dasharray="${dash}"`:''}/></svg>`;
 const arrowGlyph = j=>`<svg class="arrow ${jc(j)} ${j==='1907'?'open':'filled'}" viewBox="0 0 14 14" width="14" height="14" aria-hidden="true" style="display:inline-block;vertical-align:middle"><path d="M2.5 2.5 L12 7 L2.5 11.5 Z"/></svg>`;
 
@@ -757,7 +907,7 @@ function setMode(mode){
 function stepTo(stopId, opts={}){
   const s=IDX.stop[stopId]; if(!s) return; const p=IDX.place[s.place];
   state.highlight=stopId; state.highlightPlace=s.place; state.journey=s.journey; state.focusUnlocated=null;
-  document.querySelectorAll('#stoplist li').forEach(li=>{ const on=li.dataset.stop===stopId; li.classList.toggle('active', on); li.setAttribute('aria-current', on?'true':'false'); if(on) li.scrollIntoView({block:'nearest'}); });
+  document.querySelectorAll('#stoplist a[data-stop]').forEach(a=>{ const on=a.dataset.stop===stopId; a.parentElement.classList.toggle('active', on); if(on) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); if(on) a.scrollIntoView({block:'nearest'}); });
   renderFollow(); renderStopCard(s); emphasise(stopId); updateLabelVisibility();
   if(!p||!p.has_coords) return;
   if(state.mode==='globe'){ if(opts.move!==false) globe.focus(p); return; }
@@ -768,7 +918,7 @@ function stepTo(stopId, opts={}){
   if(opts.popup!==false){ if(opts.move===false || same) openPopupFor(p, s.journey, s.id); else pendingPopup=()=>{ if(state.highlight===stopId) openPopupFor(p, s.journey, s.id); }; }
 }
 function highlightStop(stopId, fly=true){ stepTo(stopId, {move:fly, popup:fly}); }
-function clearStop(){ state.highlight=null; state.highlightPlace=null; document.querySelectorAll('#stoplist li.active').forEach(li=>{ li.classList.remove('active'); li.setAttribute('aria-current','false'); }); emphasise(null); updateLabelVisibility(); closePopup(); renderFollow(); const c=document.getElementById('stopcard'); if(c) c.innerHTML=startCard(); }
+function clearStop(){ state.highlight=null; state.highlightPlace=null; document.querySelectorAll('#stoplist a[aria-current]').forEach(a=>{ a.parentElement.classList.remove('active'); a.removeAttribute('aria-current'); }); emphasise(null); updateLabelVisibility(); closePopup(); renderFollow(); const c=document.getElementById('stopcard'); if(c) c.innerHTML=startCard(); }
 function step(dir){ const list=stopsOf(state.journey); let i=list.findIndex(s=>s.id===state.highlight); if(i<0) i = dir>0? -1 : list.length; i=Math.max(0, Math.min(list.length-1, i+dir)); stepTo(list[i].id); }
 function follow(journey){ state.journey=journey; const list=stopsOf(journey); const cur=IDX.stop[state.highlight]; if(cur && cur.journey===journey) { renderFollow(); return; } stepTo(list[0].id); }
 function renderFollow(){
@@ -815,8 +965,8 @@ function unlocatedCards(){
 }
 function renderPanel(){
   const el=document.getElementById('panelInner');
-  const stopsHTML = ['1907','1908'].map(j=>`<li class="grp ${jc(j)}" role="presentation">${j} journey</li>`+stopsOf(j).map(s=>`<li data-stop="${s.id}" class="${jc(j)}" onclick="MapView.stepTo('${s.id}')" title="${esc(s.date_text)}"><span class="d"><b class="seq ${jc(j)}">${s.seq}</b> ${esc(fmtDate(s.date_start))}</span><span>${esc(s.label)} ${chip(s.status,'')}${s.naming?chip('naming',''):''}</span></li>`).join('')).join('');
-  el.innerHTML=`
+  const stopsHTML = ['1907','1908'].map(j=>`<li class="grp ${jc(j)}" role="presentation">${j} journey</li>`+stopsOf(j).map(s=>`<li data-stop="${s.id}" class="${s.id===state.highlight?'active':''}"><a href="#/map/stop/${s.id}" data-stop="${s.id}" class="${jc(j)}"${s.id===state.highlight?' aria-current="true"':''}><span class="d"><b class="seq ${jc(j)}">${s.seq}</b> ${esc(fmtDate(s.date_start))}</span><span class="l">${esc(s.label)} ${App.glyphFor(s.status)}${s.naming?App.glyphFor('naming'):''}<span class="sr-only st">${esc(s.status)}${s.naming?', naming':''}</span></span></a></li>`).join('')).join('');
+  el.innerHTML=`${App.helpCard()}
    <div class="section follow"><h3>Follow the journey</h3>
      <div class="row"><div class="seg" id="followSeg" role="group" aria-label="Journey to follow"><button data-j="1907" class="active" aria-pressed="true" onclick="MapView.follow('1907')">1907</button><button data-j="1908" aria-pressed="false" onclick="MapView.follow('1908')">1908</button></div>
        <span class="steps"><button class="ghost" id="prevStop" onclick="MapView.step(-1)" aria-label="Previous stop">‹ Previous</button><span id="stepPos" class="small muted"></span><button class="ghost" id="nextStop" onclick="MapView.step(1)" aria-label="Next stop">Next ›</button></span></div>
@@ -934,6 +1084,8 @@ function initGlobe(){
 /* ---------------------------------------------------------------- routes: #/map, #/map/<placeId>, #/map/stop/<stopId> */
 function show(a, b){
   if(!state.inited){ state.inited=true; if(typeof L==='undefined'){ document.getElementById('leaflet').innerHTML='<div class="page notice">Leaflet could not be loaded from the CDN; the map requires network access. The Archive, Timeline, Network and Story tabs work offline.</div>'; return; } initMap(!a); renderPanel(); renderLegend(); }
+  // on a phone the sheet starts collapsed (once per narrowing of the window, so that a sheet the reader opened stays open across routes)
+  if(window.innerWidth<=600){ if(!state.narrow){ state.narrow=true; setPanel(true); } } else state.narrow=false;
   if(!map) return;
   map.invalidateSize(false);   // the container may have been hidden until this render; measure it before any flyTo
   setTimeout(()=>{ if(map) map.invalidateSize(); if(globe) globe.resize(); }, 30);
@@ -954,7 +1106,7 @@ window.MapView = { show, setMode, highlight:highlightStop, stepTo, step, follow,
    ============================================================================ */
 (function(){
 'use strict';
-const {D, IDX, esc, chip, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, navbar, fmtDate} = App;
+const {D, IDX, esc, chip, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, navbar, fmtDate, crumbs, wrapTables, glyphFor, evidenceLegend, PHASE_LABEL} = App;
 const page=document.getElementById('pageview');
 let minimap=null, miniTimer=null;
 function destroyMini(){ if(miniTimer){ clearTimeout(miniTimer); miniTimer=null; } if(minimap){ try{minimap.remove();}catch(e){} minimap=null; } }
@@ -962,7 +1114,7 @@ function destroyMini(){ if(miniTimer){ clearTimeout(miniTimer); miniTimer=null; 
 Pages.storyIndex = function(){
   destroyMini();
   const phases=[['prologue','Prologue (the PI’s framing)'],['paper-trail','The paper trail, 1898–July 1907'],['journey-1907','The 1907 reconnaissance'],['interlude','Interlude, winter 1907–08'],['journey-1908','The 1908 excavation'],['epilogue','Epilogue, 1909–1930']];
-  page.innerHTML=`<div class="page">${navbar({close:false})}<h1>Story</h1><p class="subtitle">Twenty-five pages built on the principal investigator’s narrative, enriched from the correspondence. Each page lists the people and documents behind it and states what is inferred.</p>
+  page.innerHTML=`<div class="page">${navbar()}<h1>Story index</h1><p class="subtitle">Twenty-five pages built on the principal investigator’s narrative, enriched from the correspondence. Each page lists the people and documents behind it and states what is inferred.</p>
    ${phases.map(([k,lab])=>`<h2>${esc(lab)}</h2><ol class="toc">${D.stories.filter(s=>s.phase===k).map(s=>`<li><a href="#/story/${s.id}">${esc(s.title)}</a>${s.stops.length?` <span class="muted small">(${s.stops.length} stop${s.stops.length>1?'s':''})</span>`:''}</li>`).join('')}</ol>`).join('')}
    <h2>Also</h2><p><a href="#/tale">Read the Tale of Two Mammoths in full</a> · <a href="#/cast">The PI’s Cast of Characters</a> · <a href="#/method">How this reconstruction was made</a></p></div>`;
 };
@@ -977,14 +1129,14 @@ Pages.story = function([id]){
   const sortedDocs=[...s.docs].filter(d=>IDX.doc[d]).sort((a,b)=>IDX.doc[a].order-IDX.doc[b].order);
   const mapLink = places.find(p=>p.has_coords);
   page.innerHTML=`<div class="page">
-    ${navbar({extra: `${s.prev?`<button class="ghost" onclick="App.go('/story/${s.prev}')">‹ Previous</button>`:''}${s.next?`<button class="ghost" onclick="App.go('/story/${s.next}')">Next ›</button>`:''}<a class="small" href="#/stories">Story index</a>`, right: mapLink?`<button onclick="App.go('/map/${mapLink.id}')">Open on map</button>`:''})}
-    <div class="phase ${esc(s.phase).replace('journey-','j')}">${esc(s.phase.replace('journey-','journey '))} · page ${s.order+1} of ${D.stories.length}</div>
+    ${navbar({extra: `${s.prev?`<button class="ghost" onclick="App.go('/story/${s.prev}')">‹ Previous</button>`:''}${s.next?`<button class="ghost" onclick="App.go('/story/${s.next}')">Next ›</button>`:''}`, right: mapLink?`<button onclick="App.go('/map/${mapLink.id}')">Open on map</button>`:''})}
+    ${crumbs(s.phase.replace('journey-','j'), ['Story','/stories'], esc(PHASE_LABEL[s.phase]||s.phase), `page ${s.order+1} of ${D.stories.length}`)}
     <h1>${esc(s.title)}</h1><p class="subtitle">${esc(s.subtitle)}${dateRange?` · <span class="muted">${esc(dateRange)}</span>`:''}</p>
     ${places.some(p=>p.has_coords)?`<div class="minimap" id="minimap"></div><p class="minimap-caption">Symbols as on the main map; see <a href="#/map">Legend</a>. Numerals are the stop's sequence in its journey; connectors are schematic.</p>`:''}
-    ${stops.length?`<h2>When</h2><table class="data"><thead><tr><th>Stop</th><th>Date as attested</th><th>Precision</th><th>Status</th><th>Sources</th></tr></thead><tbody>${stops.map(st=>`<tr><td><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span> <b class="seq ${App.journeyClass(st.journey)}">${st.seq}</b> ${esc(st.label)}<div class="small"><a href="#/map/stop/${st.id}">on the map</a></div></td><td>${esc(st.date_text)}</td><td><span class="chip plain ${esc(st.date_precision)}">${esc(st.date_precision)}</span></td><td>${chip(st.status)}${st.naming?' '+chip('naming'):''}</td><td class="small">${st.sources.map(sr=>`${IDX.doc[sr.ref]?docLink(sr.ref):IDX.pub[sr.ref]?`<a href="#/published/${sr.ref}">${esc(IDX.pub[sr.ref].short)}</a>`:esc(sr.ref)}: ${esc(sr.locator)}`).join('<br>')}<br><span class="muted">${esc(st.why)}</span></td></tr>`).join('')}</tbody></table>`:''}
-    ${places.length?`<h2>Where</h2><div class="grid2">${places.map(p=>placeCard(p.id)).join('')}</div>`:''}
+    ${stops.length?`<h2>When</h2>${wrapTables(`<table class="data when"><thead><tr><th>Stop</th><th>Date as attested</th><th>Evidence</th><th>Sources</th></tr></thead><tbody>${stops.map(st=>`<tr><td data-label="Stop"><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span> <b class="seq ${App.journeyClass(st.journey)}">${st.seq}</b> ${esc(st.label)}<div class="small"><a href="#/map/stop/${st.id}">on the map</a></div></td><td data-label="Date as attested">${esc(st.date_text)}</td><td data-label="Evidence">${glyphFor(st.status)} ${esc(st.status)}${st.naming?` · ${glyphFor('naming')} naming`:''}<div class="small muted">date ${esc(st.date_precision)}</div></td><td data-label="Sources" class="small">${st.sources.map(sr=>`${IDX.doc[sr.ref]?docLink(sr.ref):IDX.pub[sr.ref]?`<a href="#/published/${sr.ref}">${esc(IDX.pub[sr.ref].short)}</a>`:esc(sr.ref)}: ${esc(sr.locator)}`).join('<br>')}<br><span class="muted">${esc(st.why)}</span></td></tr>`).join('')}</tbody></table>`)}${evidenceLegend(stops.flatMap(st=>[st.status, ...(st.naming?['naming']:[])]))}`:''}
+    ${places.length?`<h2>Where</h2><div class="grid2 where">${places.map(p=>placeCard(p.id)).join('')}</div>`:''}
     <h2>The principal investigator’s narrative</h2>
-    ${s.tale_excerpts.length? s.tale_excerpts.map(e=>piBlock(e.text, e.para)).join('') : `<div class="notice">The Tale does not narrate this part of the journey. The page rests on the correspondence and the PI’s timeline alone.</div>`}
+    ${s.tale_excerpts.length? s.tale_excerpts.map(e=>piBlock(e.text, e.para, e.footnotes)).join('') : `<div class="notice">The Tale does not narrate this part of the journey. The page rests on the correspondence and the PI’s timeline alone.</div>`}
     ${s.model_note? `<h3>Model note</h3>${modelBlock(s.model_note)}`:''}
     ${sortedDocs.length?`<h2>From the correspondence <span class="muted small">(${sortedDocs.length} item${sortedDocs.length>1?'s':''}; blocks are typed: verbatim / researcher’s summary / editorial note)</span></h2>${sortedDocs.map(d=>docCard(d)).join('')}`:'<h2>From the correspondence</h2><div class="notice">No archival item in the transcription file bears directly on this stop. This is itself a finding: the stop is known only from the published itinerary as read by the PI.</div>'}
     <h2>People involved</h2><div>${people.map(personPill).join(' ')}</div>
@@ -1018,9 +1170,9 @@ Pages.place = function([id]){
   const stops=D.stops.filter(s=>s.place===id); const docs=D.documents.filter(d=>(d.place||'').toLowerCase().includes(p.label.split(' ')[0].toLowerCase()) );
   const drawable = p.has_coords || (p.constraints||[]).length || (p.candidates||[]).length;
   page.innerHTML=`<div class="page">${navbar({right: drawable?`<button onclick="App.go('/map/${id}')">${p.has_coords?'Show on map':'Show constraints on map'}</button>`:''})}
-    <div class="phase">place record · gazetteer tier ${p.has_coords? (p.tier||'—') : 'none'}${p.has_coords?'':' · unlocated: '+esc(p.unlocated_kind||'')}</div><h1>${esc(p.label)}</h1>
+    ${crumbs('', ['Map','/map'], 'place record', `gazetteer tier ${p.has_coords? (p.tier||'—') : 'none'}`, p.has_coords?'':'unlocated: '+esc(p.unlocated_kind||''))}<h1>${esc(p.label)}</h1>
     ${placeCard(id)}
-    ${stops.length?`<h2>Stops at this place</h2><table class="data"><thead><tr><th>Journey</th><th>Stop</th><th>Date as attested</th><th>Precision</th><th>Status</th><th>Story</th></tr></thead><tbody>${stops.map(st=>`<tr><td><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span></td><td>${esc(st.label)}</td><td>${esc(st.date_text)}</td><td><span class="chip plain ${esc(st.date_precision)}">${esc(st.date_precision)}</span></td><td>${chip(st.status)}</td><td>${storyLink(st.story)}</td></tr>`).join('')}</tbody></table>`:'<p class="notice">No itinerary stop is recorded at this place; it appears in the record as a correspondence node, a mention, or an unlocated reference.</p>'}
+    ${stops.length?`<h2>Stops at this place</h2>${wrapTables(`<table class="data"><thead><tr><th>Journey</th><th>Stop</th><th>Date as attested</th><th>Precision</th><th>Status</th><th>Story</th></tr></thead><tbody>${stops.map(st=>`<tr><td><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span></td><td>${esc(st.label)} <a class="small" href="#/map/stop/${st.id}">on the map</a></td><td>${esc(st.date_text)}</td><td><span class="chip plain ${esc(st.date_precision)}">${esc(st.date_precision)}</span></td><td>${chip(st.status)}${st.naming?' '+chip('naming'):''}</td><td>${storyLink(st.story)}</td></tr>`).join('')}</tbody></table>`)}`:'<p class="notice">No itinerary stop is recorded at this place; it appears in the record as a correspondence node, a mention, or an unlocated reference.</p>'}
     ${p.stories.length?`<h2>Story pages</h2><ul>${p.stories.map(s=>`<li>${storyLink(s)}</li>`).join('')}</ul>`:''}
     ${docs.length?`<h2>Letters written here</h2><ul>${docs.map(d=>`<li>${docLink(d.id)} <span class="muted small">${esc(d.date_text)}</span></li>`).join('')}</ul>`:''}
     ${D.findings.filter(f=>(f.places||[]).includes(id)).length?`<h2>Findings</h2>${D.findings.filter(f=>(f.places||[]).includes(id)).map(f=>findingCard(f.id)).join('')}`:''}
@@ -1030,10 +1182,10 @@ Pages.place = function([id]){
 Pages.tale = function([para]){
   destroyMini();
   let section=null;
-  page.innerHTML=`<div class="page">${navbar()}<div class="phase">principal investigator’s text · unpublished talk · quoted in full</div>
+  page.innerHTML=`<div class="page">${navbar()}${crumbs('', ['Story','/stories'], 'principal investigator’s text', 'unpublished talk', 'quoted in full')}
    <h1>Time, Temperature, and Tissue in the Circumpolar North: A Tale of Two Mammoths</h1><p class="subtitle">Rebecca Woods, University of Toronto · MIT Seminar in Agriculture and the Environment · 20 September 2019</p>
    <p class="notice">Reproduced verbatim from the file supplied by the lab (including the author’s bracketed notes, struck passages and footnotes). Paragraph numbers (¶) are added by the build for citation; they are not the author’s. Footnote numbers link to the notes at the end.</p>
-   <div class="serif" style="font-size:1.05rem">${D.tale.map(t=>{ let h=''; if(t.section!==section){ section=t.section; h+=`<h2 id="sec-${esc(section)}">${esc(section)}</h2>`; } return h+`<p id="${t.id}" style="position:relative"><span class="muted small" style="position:absolute;left:-3.2rem;font-family:var(--sans)">¶${t.id.replace('t','')}</span>${t.html}</p>`; }).join('')}</div>
+   <div class="serif" style="font-size:1.05rem">${D.tale.map(t=>{ let h=''; if(t.section!==section){ section=t.section; h+=`<h2 id="sec-${esc(section)}">${esc(section)}</h2>`; } return h+`<p id="${t.id}" style="position:relative"><span class="muted small pnum">¶${t.id.replace('t','')}</span>${t.html}</p>`; }).join('')}</div>
    <h2>Notes</h2><ol class="small serif">${D.tale_footnotes.map(f=>`<li id="fn${f.n}" value="${f.n}">${f.html}</li>`).join('')}</ol></div>`;
   page.querySelectorAll('sup.fnref').forEach(s=>s.addEventListener('click', ()=>{ const el=document.getElementById('fn'+s.dataset.fn); if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); el.style.background='var(--annotation-soft)'; setTimeout(()=>el.style.background='',1500);} }));
   if(para){ setTimeout(()=>{ const el=document.getElementById(para); if(el){ el.scrollIntoView({block:'center'}); el.style.background='var(--j1907-soft)'; } },50); }
@@ -1041,7 +1193,7 @@ Pages.tale = function([para]){
 Pages.cast = function(){
   destroyMini();
   const match = name=>{ const n=name.toLowerCase(); return D.people.find(p=>n.includes(p.sort.toLowerCase().split(',')[0]) || p.label.toLowerCase().includes(n.split(' ').pop().toLowerCase())); };
-  page.innerHTML=`<div class="page">${navbar()}<div class="phase">principal investigator — Cast of Characters: working notes (unpublished, 2019), quoted verbatim</div><h1>Cast of Characters</h1><p class="notice">The principal investigator’s working notes (unpublished, 2019): one-line characterisations in an informal register, reproduced exactly as written and verified against her file at build. They are her reading aids, not publication prose. Each name links to the prosopographical record built from the correspondence, where the line is quoted again, apart from the attested roles and offices.</p>
+  page.innerHTML=`<div class="page">${navbar()}${crumbs('', ['Story','/stories'], 'principal investigator — Cast of Characters: working notes (unpublished, 2019), quoted verbatim')}<h1>Cast of Characters</h1><p class="notice">The principal investigator’s working notes (unpublished, 2019): one-line characterisations in an informal register, reproduced exactly as written and verified against her file at build. They are her reading aids, not publication prose. Each name links to the prosopographical record built from the correspondence, where the line is quoted again, apart from the attested roles and offices.</p>
    <dl class="kv" style="grid-template-columns:200px 1fr">${D.cast.map(c=>{ const p=match(c.name); return `<dt><b>${p?`<a href="#/person/${p.id}">${esc(c.name)}</a>`:esc(c.name)}</b></dt><dd class="serif">${esc(c.text)}</dd>`; }).join('')}</dl></div>`;
 };
 })();
@@ -1052,9 +1204,10 @@ Pages.cast = function(){
    ============================================================================ */
 (function(){
 'use strict';
-const {D, IDX, esc, chip, personPill, docLink, storyLink, blockHTML, modelBlock, findingCard, navbar, fmtDate, personLabel} = App;
+const {D, IDX, esc, chip, personPill, docLink, storyLink, blockHTML, modelBlock, findingCard, navbar, fmtDate, personLabel, crumbs, wrapTables} = App;
 const page=document.getElementById('pageview');
 const AF = { q:'', folder:'', year:'', type:'', who:'' };
+const TRANSCRIPTION_FILE = ((D.meta.inputs||[]).find(i=>/LS_Quackenbush/i.test(i.file))||{}).file || 'the transcription file';
 const folders=[...new Set(D.documents.map(d=>d.archive).filter(Boolean))];
 const years=[...new Set(D.documents.map(d=>d.year).filter(Boolean))].sort();
 const correspondents=[...new Set(D.documents.flatMap(d=>[...(d.senders||[]),...(d.recipients||[])]))].map(id=>({id,label:personLabel(id)})).sort((a,b)=>a.label.localeCompare(b.label));
@@ -1094,7 +1247,7 @@ function renderList(active){
 }
 function renderReader(id){
   const r=document.getElementById('reader'); if(!r) return;
-  if(!id){ r.innerHTML=`<h1>Archive</h1><p class="subtitle">The correspondence of the Alaskan Mammoth Expeditions, 1906–1930, as transcribed by the principal investigator.</p>
+  if(!id){ r.innerHTML=`<h1>Archive</h1><p class="subtitle">The principal investigator’s transcription of the AMNH correspondence file on the Alaskan Mammoth Expeditions, 1906–1930 (<code>${esc(TRANSCRIPTION_FILE)}</code>): ${D.documents.length} items, read here block by block.</p>
     <div class="notice"><b>How to read a document.</b> The transcription file mixes three voices, and the reader keeps them apart typographically:
     <div class="block verbatim" style="margin:.5rem 0"><span class="who">historical writer (as transcribed by the PI)</span>Serif, with the PI’s marks preserved: <s>struck text</s>, <u>underlining</u>, <ins class="ms-insert">caret insertions</ins>, <span class="ed-inline">[sic]</span>, and <span class="pi-color pc-FF0000">her colour coding</span> (explained per document).</div>
     <div class="block summary" style="margin:.5rem 0"><span class="who">researcher’s summary (R. J. H. Woods)</span>Sans-serif on grey: the PI’s paraphrase of what a document says. Quotation marks inside a summary are hers.</div>
@@ -1105,12 +1258,12 @@ function renderReader(id){
     <h3>Collections</h3><ul>${folders.map(f=>`<li>${esc(f)} <span class="muted small">(${D.documents.filter(d=>d.archive===f).length})</span></li>`).join('')}</ul>`; return; }
   const d=IDX.doc[id]; if(!d){ r.innerHTML='<h1>Item not found</h1>'; return; }
   const idx=D.documents.findIndex(x=>x.id===id); const prev=D.documents[idx-1], next=D.documents[idx+1];
-  const legend = d.color_legend? `<div class="legend-colors">${Object.entries(d.color_legend).map(([c,t])=>`<span><i style="background:#${c}"></i>${esc(t)}</span>`).join('')}</div>`:'';
+  const legend = d.color_legend? `<div class="legend-colors">${Object.entries(d.color_legend).map(([c,t])=>`<span class="pc-${esc(c)}"><i aria-hidden="true"></i><span style="color:var(--ink)">${esc(t)}</span></span>`).join('')}</div>`:'';
   const related = [];
   if(d.enclosed_in) related.push(`Enclosed in ${docLink(d.enclosed_in)}`);
   (d.enclosures||[]).forEach(e=>related.push(`Enclosure: ${docLink(e)}`));
   r.innerHTML=`${navbar({extra:`${prev?`<button class="ghost" onclick="App.go('/archive/${prev.id}')">‹ Previous item</button>`:''}${next?`<button class="ghost" onclick="App.go('/archive/${next.id}')">Next item ›</button>`:''}`})}
-    <div class="phase">archival item ${idx+1} of ${D.documents.length} · ${esc(d.form)}</div>
+    ${crumbs('', ['Archive','/archive'], `item ${idx+1} of ${D.documents.length}`, esc(d.form))}
     <h1>${esc(d.title)}</h1>
     <div class="docmeta">
       <div><b>Date</b>${esc(d.date_text)} <span class="chip plain ${esc(d.precision)}">${esc(d.precision)}</span></div>
@@ -1160,8 +1313,8 @@ Pages.person = function([id]){
   const affiliatedInf = isInst? D.people.filter(q=>(q.institutions||[]).some(a=>a.id===id&&a.status==='inferred')) : [];
   const instStated=(p.institutions||[]).filter(a=>a.status==='stated'), instInf=(p.institutions||[]).filter(a=>a.status==='inferred');
   const fr=fundingRows(id);
-  page.innerHTML=`<div class="page">${navbar({right:`<button onclick="App.go('/network/focus/${id}')">Ego network</button>`})}
-   <div class="phase">${isInst? (p.kind||'institution') : 'prosopographical record · '+esc(p.kind)+' · scope: '+esc(p.scope)}</div>
+  page.innerHTML=wrapTables(`<div class="page">${navbar({right:`<button onclick="App.go('/network/focus/${id}')">Ego network</button>`})}
+   ${crumbs('', ['Network','/network'], isInst? esc(p.kind||'institution') : 'prosopographical record', isInst? '' : esc(p.kind), isInst? '' : 'scope: '+esc(p.scope))}
    <h1>${esc(p.label)}</h1>
    ${p.identity_note? modelBlock('Identity note: '+p.identity_note):''}
    ${p.pi_characterisation? `<div class="block pi"><span class="who">${PI_CAST_WHO}</span>${esc(p.pi_characterisation)}</div>`:''}
@@ -1190,7 +1343,7 @@ Pages.person = function([id]){
    ${fr.length?`<h2>Funding <span class="muted small">(sums stated in the file; amounts as written; no total is computed)</span></h2>${fundingTable(fr)}<p class="small"><a href="#/network/view/funding">Open the funding view</a></p>`:''}
    ${(p.findings||[]).length?`<h2>Discrepancies and absences concerning this record</h2>${p.findings.map(findingCard).join('')}`:''}
    ${p.stories&&p.stories.length?`<h2>Story pages</h2><ul>${p.stories.map(s=>`<li>${storyLink(s)}</li>`).join('')}</ul>`:''}
-  </div>`;
+  </div>`);
 };
 
 /* ---------------- network ---------------- */
@@ -1238,7 +1391,7 @@ Pages.network = function(seg){
      <div id="netcontrols">
        <div class="row"><button class="ghost" onclick="App.back()">← Back</button> <b>View</b> <div class="seg" role="group" aria-label="Network view">${VIEWS.map(x=>`<button class="${x.id===NS.view?'active':''}" aria-pressed="${x.id===NS.view}" onclick="App.go('/network/view/${x.id}')">${esc(x.label)}${x.derived?' <span class="tag model" style="font-size:.6rem">derived</span>':''}</button>`).join('')}</div>
          <span class="find"><input id="netfind" type="search" list="netnodes" aria-label="Find a node" placeholder="Find a node…" autocomplete="off"><datalist id="netnodes"></datalist></span></div>
-       ${rows}
+       <details class="netmore"${window.innerWidth<=900?'':' open'}><summary>Filters and legend</summary>${rows}</details>
        <div class="row small muted" id="netstat"></div>
      </div>
      <div id="netviewhead"><span class="tag ${v.derived?'model':''}">${v.derived?'derived':'asserted'}</span> <b>${esc(v.label)}</b> <span class="rule">${esc(v.rule)}</span>${(v.caveats||[]).length?` <span class="caveat muted">Caveat: ${esc(v.caveats[0])}</span>`:''}${(v.caveats||[]).length>1?` <a href="#/network/view/${v.id}" onclick="event.preventDefault();Pages._netCaveat()">all ${v.caveats.length} caveats</a>`:''}</div>
@@ -1517,32 +1670,38 @@ function sidePanel(id){
    ============================================================================ */
 (function(){
 'use strict';
-const {D, IDX, esc, chip, personPill, docLink, storyLink, modelBlock, findingCard, navbar, fmtDate, placeCard} = App;
+const {D, IDX, esc, chip, personPill, docLink, storyLink, modelBlock, piBlock, findingCard, navbar, fmtDate, placeCard, crumbs, wrapTables, glyphFor} = App;
 const page=document.getElementById('pageview');
-let tlStream='terse';
+let tlStream='terse'; const tlScroll={terse:0, itin:0};
 Pages.timeline = function([id]){
   const entries = tlStream==='terse'? D.timeline : D.itinerary;
-  let yr=null;
-  const rows = entries.map((e,i)=>{ const y=(e.date||'').slice(0,4)||'—'; let h=''; if(y!==yr){ yr=y; h+=`<div class="yr">${esc(y==='—'?'undated':y)}</div>`; }
+  let yr=null; const years=[]; const seenYr=new Map();   // the PI's order interleaves undated entries, so a year can head several blocks: the rail links to the first
+  const yrId = (y,k)=>`yr-${tlStream}-${y==='—'?'undated':y}${k>1?'-'+k:''}`;
+  const rows = entries.map((e,i)=>{ const y=(e.date||'').slice(0,4)||'—'; let h=''; if(y!==yr){ yr=y; const k=(seenYr.get(y)||0)+1; seenYr.set(y,k); if(k===1) years.push(y); h+=`<div class="yr" id="${yrId(y,k)}">${esc(y==='—'?'undated':y)}</div>`; }
     const stops=(e.stops||[]).map(s=>IDX.stop[s]).filter(Boolean);
-    const links = tlStream==='terse'? `${(e.docs||[]).map(d=>`<a href="#/archive/${d}" title="${esc(IDX.doc[d].title)}">Read the document${(e.docs.length>1)?' ('+esc(IDX.doc[d].date_text)+')':''}</a>`).join('')}${stops.map(s=>`<a href="#/map/${s.place}" title="${esc(s.label)}">On the map: ${esc(IDX.place[s.place].label.split(' (')[0].split(' — ')[0])}</a>`).join('')}${(e.stories||[]).map(s=>`<a href="#/story/${s}">In the story</a>`).join('')}${(e.findings||[]).map(f=>`<a href="#/method/findings/${f}" style="border-color:var(--disputed);color:var(--disputed)">Discrepancy</a>`).join('')}` : '';
+    // short pills; the full target stays in title and aria-label
+    const links = tlStream==='terse'? `${(e.docs||[]).map(d=>`<a href="#/archive/${d}" title="${esc('Read the document: '+IDX.doc[d].title)}" aria-label="${esc('Read the document: '+IDX.doc[d].title)}">Document${(e.docs.length>1)?' ('+esc(IDX.doc[d].date_text)+')':''}</a>`).join('')}${stops.map(s=>`<a href="#/map/stop/${s.id}" title="${esc('On the map: '+s.label)}" aria-label="${esc('On the map: '+s.label)}">Map${stops.length>1?' · '+esc(IDX.place[s.place].short_label):''}</a>`).join('')}${(e.stories||[]).map(s=>`<a href="#/story/${s}" title="${esc('In the story: '+((IDX.story[s]||{}).title||s))}" aria-label="${esc('In the story: '+((IDX.story[s]||{}).title||s))}">Story</a>`).join('')}${(e.findings||[]).map(f=>`<a href="#/method/findings/${f}" class="disc" title="${esc((IDX.finding[f]||{}).title||'')}" aria-label="${esc('Discrepancy: '+((IDX.finding[f]||{}).title||''))}">Discrepancy</a>`).join('')}` : '';
     return h+`<div class="tlentry ${e.stream&&e.stream.startsWith('itinerary')?'itin':''} ${e.id===id?'active':''}" id="${e.id}"><div class="d">${esc(e.date?fmtDate(e.date):'undated')} <span class="tag" style="margin-left:.4rem">${esc(tlStream==='terse'? (e.stream.startsWith('itinerary')?'itinerary (B.AMNH 26 via PI)':'PI summary') : 'itinerary digest · PI colour-coded purple')}</span></div>
-      <div class="text">${esc(e.text)}</div>${e.note?modelBlock(e.note):''}<div class="links">${links}${tlStream==='terse'?`<a href="#/timeline/${e.id}" class="muted">¶</a>`:''}</div></div>`; }).join('');
+      <div class="text">${esc(e.text)}</div>${e.note?modelBlock(e.note):''}<div class="links">${links}${tlStream==='terse'?`<a href="#/timeline/${e.id}" class="muted" title="Permalink to this entry" aria-label="Permalink to this entry">¶</a>`:''}</div></div>`; }).join('');
+  const rail = `<nav class="yr-rail" aria-label="Years"><span class="lbl-yr">Years</span>${years.map(y=>`<a href="#${yrId(y,1)}" onclick="event.preventDefault();Pages._tlYear('${yrId(y,1)}')">${esc(y==='—'?'undated':y)}</a>`).join('')}</nav>`;
   const cur = id? entries.findIndex(e=>e.id===id): -1;
   const prev = cur>0? entries[cur-1]: null, next = cur>=0&&cur<entries.length-1? entries[cur+1]: null;
-  page.innerHTML=`<div class="page">${navbar({close:false, extra: id?`${prev?`<button class="ghost" onclick="App.go('/timeline/${prev.id}')">‹ Previous entry</button>`:''}${next?`<button class="ghost" onclick="App.go('/timeline/${next.id}')">Next entry ›</button>`:''}`:''})}
+  page.innerHTML=`<div class="page">${navbar({extra: id?`${prev?`<button class="ghost" onclick="App.go('/timeline/${prev.id}')">‹ Previous entry</button>`:''}${next?`<button class="ghost" onclick="App.go('/timeline/${next.id}')">Next entry ›</button>`:''}`:''})}
     <h1>Timeline</h1><p class="subtitle">The principal investigator’s terse timeline, entry by entry and in her order, with every entry wired to the documents, stops and story pages it rests on.</p>
-    <div class="pagenav"><div class="seg"><button class="${tlStream==='terse'?'active':''}" onclick="Pages._tl('terse')">PI’s terse timeline (${D.timeline.length})</button><button class="${tlStream==='itin'?'active':''}" onclick="Pages._tl('itin')">Itinerary digest from B.AMNH 26 (${D.itinerary.length})</button></div><span class="spacer"></span><span class="small muted">${tlStream==='terse'?'Entries are the PI’s words; links and notes are the model’s.':'The purple-coded entries of the PI’s comprehensive timeline: her digest of Quackenbush’s published itinerary (pp. 88–91) and two letters.'}</span></div>
+    <div class="pagenav"><div class="seg methodseg" role="group" aria-label="Timeline stream"><button class="${tlStream==='terse'?'active':''}" aria-pressed="${tlStream==='terse'}" onclick="Pages._tl('terse')">PI’s terse timeline (${D.timeline.length})</button><button class="${tlStream==='itin'?'active':''}" aria-pressed="${tlStream==='itin'}" onclick="Pages._tl('itin')">Itinerary digest from B.AMNH 26 (${D.itinerary.length})</button></div><span class="spacer"></span><span class="small muted">${tlStream==='terse'?'Entries are the PI’s words; links and notes are the model’s.':'The purple-coded entries of the PI’s comprehensive timeline: her digest of Quackenbush’s published itinerary (pp. 88–91) and two letters.'}</span></div>
     ${tlStream==='terse'?`<div class="notice small">Two entries (20 and 22 July 1908) stand at the end of the PI’s file, out of date order; they are kept where she left them and flagged. Her 15 May 1907 entry for Bumpus’s letter to Meany disagrees with the 15 June date in her transcription (flagged).</div>`:''}
+    ${rail}
     <div class="tl">${rows}</div></div>`;
   if(id){ setTimeout(()=>{ const el=document.getElementById(id); if(el) el.scrollIntoView({block:'center'}); },30); }
 };
-Pages._tl = function(s){ tlStream=s; Pages.timeline([]); };
+/* switching streams keeps each stream's scroll position */
+Pages._tl = function(s){ tlScroll[tlStream]=page.scrollTop; tlStream=s; Pages.timeline([]); page.scrollTop=tlScroll[s]||0; };
+Pages._tlYear = function(id){ const el=document.getElementById(id); if(el) el.scrollIntoView({block:'start'}); };
 
 Pages.published = function([id]){
   if(id && IDX.pub[id]){ const p=IDX.pub[id]; const citedDocs=(p.cited_in||[]).filter(x=>IDX.doc[x]); const idx=D.published.findIndex(x=>x.id===id); const prev=D.published[idx-1], next=D.published[idx+1];
-    page.innerHTML=`<div class="page">${navbar({extra:`${prev?`<button class="ghost" onclick="App.go('/published/${prev.id}')">‹ Previous</button>`:''}${next?`<button class="ghost" onclick="App.go('/published/${next.id}')">Next ›</button>`:''}<a class="small" href="#/published">All published sources</a>`})}
-      <div class="phase">published / cited source · ${esc(p.type)}</div><h1>${esc(p.short)}</h1>
+    page.innerHTML=`<div class="page">${navbar({extra:`${prev?`<button class="ghost" onclick="App.go('/published/${prev.id}')">‹ Previous</button>`:''}${next?`<button class="ghost" onclick="App.go('/published/${next.id}')">Next ›</button>`:''}`})}
+      ${crumbs('', ['Sources cited','/published'], 'source cited', esc(p.type))}<h1>${esc(p.short)}</h1>
       <dl class="kv"><dt>Citation as given</dt><dd class="serif">${esc(p.citation_as_given)}</dd><dt>Author</dt><dd>${esc(p.author)}</dd><dt>Year</dt><dd>${esc(p.year)}</dd><dt>Full text provided?</dt><dd><span class="chip unlocated">no</span> only as cited and quoted in the supplied files</dd>
       <dt>Cited in</dt><dd>${(p.cited_in||[]).map(x=>IDX.doc[x]?docLink(x):x==='tale'?'<a href="#/tale">Tale of Two Mammoths</a>':x==='pi_timeline'?'<a href="#/timeline">PI timeline</a>':esc(x)).join('; ')}</dd>
       ${p.stories.length?`<dt>Story pages</dt><dd>${p.stories.map(s=>storyLink(s)).join('<br>')}</dd>`:''}</dl>
@@ -1550,11 +1709,12 @@ Pages.published = function([id]){
       ${p.excerpts.length?`<h2>Passages quoted in the supplied files</h2>${p.excerpts.map(e=>`<div class="block verbatim"><span class="who">quoted via the citing document · locator: ${esc(e.locator)}</span>${esc(e.text)}</div>`).join('')}`:'<p class="notice">No passage of this source is quoted in the supplied files; it is known here only as a citation.</p>'}
     </div>`; return; }
   const types=[...new Set(D.published.map(p=>p.type))];
-  page.innerHTML=`<div class="page">${navbar({close:false})}<h1>Published documents</h1><p class="subtitle">Every published or archival source cited in the supplied files, recorded exactly as cited. No record has been completed from outside knowledge; no full text was supplied, and none has been reconstructed.</p>
+  page.innerHTML=wrapTables(`<div class="page">${navbar()}<h1>Sources cited</h1><p class="subtitle">Every published or archival source cited in the supplied files, recorded exactly as cited. No record has been completed from outside knowledge; no full text was supplied, and none has been reconstructed.</p>
     <div class="notice small">Quackenbush’s own published account (Bulletin AMNH vol. 26, 1909) underlies the itinerary dates marked “via PI”; its title has deliberately not been supplied because it does not occur in the inputs. Historical maps for the geocoding hierarchy (tier 3) were likewise unavailable: the 1906 Post Route Map is cited but not provided.</div>
-    <table class="data"><thead><tr><th>Source (as cited)</th><th>Type</th><th>Year</th><th>Cited in</th><th>Quoted?</th></tr></thead><tbody>${D.published.map(p=>`<tr><td><a href="#/published/${p.id}">${esc(p.short)}</a></td><td class="small">${esc(p.type)}</td><td class="small">${esc(p.year)}</td><td class="small">${(p.cited_in||[]).map(x=>IDX.doc[x]?docLink(x,IDX.doc[x].date_text):x==='tale'?'Tale':x==='pi_timeline'?'PI timeline':esc(x)).join('; ')}</td><td class="small">${p.excerpts.length?`${p.excerpts.length} passage${p.excerpts.length>1?'s':''}`:'—'}</td></tr>`).join('')}</tbody></table></div>`;
+    <table class="data"><thead><tr><th>Source (as cited)</th><th>Type</th><th>Year</th><th>Cited in</th><th>Quoted?</th></tr></thead><tbody>${D.published.map(p=>`<tr><td><a href="#/published/${p.id}">${esc(p.short)}</a></td><td class="small">${esc(p.type)}</td><td class="small">${esc(p.year)}</td><td class="small">${(p.cited_in||[]).map(x=>IDX.doc[x]?docLink(x,IDX.doc[x].date_text):x==='tale'?'Tale':x==='pi_timeline'?'PI timeline':esc(x)).join('; ')}</td><td class="small">${p.excerpts.length?`${p.excerpts.length} passage${p.excerpts.length>1?'s':''}`:'—'}</td></tr>`).join('')}</tbody></table></div>`);
 };
 
+const SUPPLY_NEXT=['a_bulletin_text','a_ms_untranscribed','a_the_map','a_osborn_first_page','a_margin_note','a_no_enclosure','a_paper_granger','a_folders_unknown'];
 Pages.method = function(seg){
   const sub=seg[0]||'overview'; const anchor=seg[1];
   const tabs=[['overview','Approach & authorship'],['geocoding','Geocoding decisions'],['network','Network rules'],['findings','Discrepancies & absences'],['data','Data & downloads']];
@@ -1568,7 +1728,9 @@ Pages.method = function(seg){
       <li><b>Absences as findings.</b> Unnamed people, missing enclosures, a letter removed from the file in 1908 and never returned, conversations that never entered the file, an untranscribed manuscript, and the unprovided Bulletin are recorded in the <a href="#/method/findings">register</a> rather than silently filled.</li>
       <li><b>Contradictions left standing.</b> Where the PI’s own documents disagree (15 May vs 15 June 1907; 19 May vs “toward the end of May” 1908; Lane’s Landing vs Shelton; 86 vs “about 80” miles) both readings are shown and the record is chipped <span class="chip disputed">disputed</span>.</li>
       <li><b>Nominalist prosopography.</b> Names are recorded as written (Meany/Meaney, Startsman/Startson/Statesman, “C.W. Graham [sic]”) and identities are asserted only where a source asserts them; two attestations of a “Lucas” are kept as two records with a stated possibility of identity.</li></ul>
-     <h2>Design precedents consulted</h2><p class="small">The treatment of uncertainty follows published practice in historical GIS and digital humanities: semi-opaque circles around a centroid for approximate positions (as used by the Visualizing Emancipation project, University of Richmond), background rather than foreground treatment of uncertainty (Weixuan Li, <i>Journal for the History of Knowledge</i>, 2024), recording approximation in the dataset with a separate uncertainty column (St Olaf DH recipes), and the view of the interface itself as a scholarly argument (<i>DHQ</i> 18.1, 2024; <i>Digital Scholarly Editions as Interfaces</i>, SIDE 12). Typography follows long-form reading guidance: a serif for the historical text and the PI’s narrative, a sans for interface and summary, 16–17 px body, 1.55 line height, 60–75 characters per line.</p>
+     <h2>Design choices</h2>${modelBlock('Uncertainty is drawn as halos around a point, approximation is stored as a field in the data, and the interface is treated as part of the argument; these are the model’s design choices and cite no literature.')}
+     <h2>What the lab can supply next <span class="tag model">model</span></h2>${modelBlock('The model’s list, drawn from the register of absences: the items whose arrival would close a gap in this reconstruction. Each card links to the records it concerns; nothing here asserts what the missing item says.')}
+     ${SUPPLY_NEXT.map(id=>{ const f=IDX.finding[id]; if(!f) return ''; const also = id==='a_bulletin_text'? ['f_nome_five_days','f_departure_1908'].filter(x=>IDX.finding[x]) : []; return findingCard(id) + ((f.stories||[]).length||also.length? `<div class="small muted" style="margin:-.3rem 0 .6rem .9rem">${(f.stories||[]).length?`Story pages: ${f.stories.map(x=>storyLink(x)).join('; ')}`:''}${also.length?`${(f.stories||[]).length?' · ':''}The Bulletin’s own wording would also settle: ${also.map(x=>`<a href="#/method/findings/${x}" onclick="event.preventDefault();App.go('/method/findings/${x}')">${esc(IDX.finding[x].title)}</a>`).join('; ')}`:''}</div>`:''); }).join('')}
      <h2>Not received</h2><p class="small">The lab’s earlier map models and the previously designed primary-source interface were not among the supplied files and the repository was empty; the Archive tab was therefore designed afresh on the same typed-block logic and can be exchanged for the lab’s own interface, since it reads from <code>data/documents.json</code>.</p>`;
   } else if(sub==='geocoding'){
     body=`<h2>Hierarchy applied</h2><ol>${Object.entries(D.meta.geocoding_tiers).map(([k,v])=>`<li><b>Tier ${k}</b> — ${esc(v)}</li>`).join('')}</ol>
@@ -1603,9 +1765,70 @@ Pages.method = function(seg){
      <h2>Verified quotation classes</h2><dl class="kv">${Object.entries(D.meta.quotation_classes||{}).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
      <h2>Vocabularies</h2><h4>Block types</h4><dl class="kv">${Object.entries(D.meta.block_types).map(([k,v])=>`<dt><span class="tag ${k}">${k}</span></dt><dd>${esc(v)}</dd>`).join('')}</dl><h4>Status chips</h4><dl class="kv">${Object.entries(D.meta.status_chips).map(([k,v])=>`<dt>${chip(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`;
   }
-  page.innerHTML=`<div class="page wide">${navbar({close:false})}<h1>Method &amp; Data</h1>
-    <div class="pagenav"><div class="seg">${tabs.map(([k,l])=>`<button class="${k===sub?'active':''}" onclick="App.go('/method/${k}')">${esc(l)}</button>`).join('')}</div></div>${body}</div>`;
+  page.innerHTML=wrapTables(`<div class="page wide">${navbar()}<h1>Method &amp; Data</h1>
+    <div class="pagenav"><div class="seg methodseg" role="group" aria-label="Method sections">${tabs.map(([k,l])=>`<button class="${k===sub?'active':''}" aria-pressed="${k===sub}" onclick="App.go('/method/${k}')">${esc(l)}</button>`).join('')}</div></div>${body}</div>`);
   if(anchor){ setTimeout(()=>{ const el=document.getElementById(anchor); if(el){ el.scrollIntoView({block:'center'}); el.style.outline='2px solid var(--inferred)'; } },40); }
+};
+
+/* ---------------- Start here: abstract, inputs, reading order, one glossary ---------------- */
+const DATE_PRECISION={stated:'a provided source gives the day', window:'the sources bound the date between two days (date_start – date_end)', inferred:'the model placed the date from the sequence or the described route', disputed:'the provided sources disagree about the date'};
+const DOC_PRECISION={day:'the PI’s header gives the day', month:'the PI’s header gives the month only', bracketed:'the date is the PI’s, supplied in brackets', undated:'no date in the file; placed by its position in the PI’s file'};
+const MODE_STATUS={stated:'the mode of travel is named in a provided source (solid connector)', not_stated:'no source names the mode (long dashes)', inferred:'the model inferred the mode from the sequence (short dashes)'};
+const TAG_DEFS={model:'anything written by the model (notes, identifications, cross-references, this page) is labelled so; it is not from the sources', derived:'a relation computed from the asserted data or from name matching; it asserts no tie', letterhead:'a tie whose quotation is a printed letterhead officer list, not a sentence written by the signer', 'via PI':'an itinerary date known only through the PI’s digest of Quackenbush’s published account (B.AMNH 26)'};
+Pages.about = function([anchor]){
+  const M=D.meta, C=M.counts||{}; const plan=D.tale.filter(t=>t.section==='plan');
+  const row=(id, k, where, what)=>`<tr id="glossary-${esc(id)}"><td class="k">${k}</td><td class="small">${where}</td><td>${esc(what)}</td></tr>`;
+  const head=(id, text)=>`<tr id="glossary-${esc(id)}" class="grp"><th colspan="3" scope="colgroup">${esc(text)}</th></tr>`;
+  const rules=D.network.rules||{}, views=D.network.views||[];
+  const glossary = `<table class="data glossary"><thead><tr><th>Term</th><th>Where it appears</th><th>Meaning</th></tr></thead><tbody>
+    ${head('status','Source status of a place or stop (marker form on the map; chip in the tables)')}
+    ${Object.entries(M.status_chips).map(([k,v])=>row(k, `${chip(k)} ${glyphFor(k)}`, 'map markers, stop list, place and stop records, Method › Geocoding', v)).join('')}
+    ${head('date','Date precision of a stop')}
+    ${Object.entries(DATE_PRECISION).map(([k,v])=>row('date-'+k, `<span class="chip plain ${esc(k)}">${esc(k)}</span>`, 'story ‘When’ tables, selected-stop card, Method › Geocoding', v)).join('')}
+    ${head('docdate','Date precision of an archival item')}
+    ${Object.entries(DOC_PRECISION).map(([k,v])=>row('docdate-'+k, `<span class="chip plain ${esc(k)}">${esc(k)}</span>`, 'archive reader', v)).join('')}
+    ${head('mode','Mode of travel on a connector')}
+    ${Object.entries(MODE_STATUS).map(([k,v])=>row('mode-'+k, `<span class="tag">${esc(k.replace('_',' '))}</span>`, 'map connectors and tooltips, Method › Geocoding › Connectors', v)).join('')}
+    ${head('tier','Geocoding tiers (the hierarchy applied to every coordinate)')}
+    ${Object.entries(M.geocoding_tiers||{}).map(([k,v])=>row('tier-'+k, `<span class="tag">tier ${esc(k)}</span>`, 'place cards, Method › Geocoding', v)).join('')}
+    ${head('unlocated','Unlocated places: sub-kinds and the constraints drawn instead of a point')}
+    ${Object.entries(M.unlocated_kinds||{}).map(([k,v])=>row('unlocated-'+k, `<span class="tag">${esc(k)}</span>`, 'map panel, place records, Method › Geocoding', v)).join('')}
+    ${Object.entries(M.constraint_kinds||{}).map(([k,v])=>row('constraint-'+k, `<span class="tag">${esc(k)}</span>`, 'map (ring, leader, bracket), place records', v)).join('')}
+    ${head('blocks','Typed voices (block types) in the archive and on every page')}
+    ${Object.entries(M.block_types).map(([k,v])=>row('block-'+k, `<span class="tag ${esc(k)}">${esc(k)}</span>`, 'archive reader, story pages (document cards)', v)).join('')}
+    ${row('block-pi', '<span class="tag">PI</span>', 'story pages, person records, Cast', 'the principal investigator’s own prose (Tale of Two Mammoths, Cast of Characters), quoted verbatim and verified at build')}
+    ${row('block-model', '<span class="tag model">model</span>', 'every page', TAG_DEFS.model)}
+    ${head('network','Kinds of tie in the network (asserted only where a provided text asserts them)')}
+    ${['correspondence','stated','pi','affiliation'].filter(k=>rules[k]).map(k=>row('tie-'+k, `<span class="tag ${k==='pi'?'model':''}">${esc(k==='pi'?'PI':k)}</span>`, 'Network › Persons, person records, Method › Network', rules[k])).join('')}
+    ${rules.exclusions? row('tie-exclusions', '<span class="tag">exclusions</span>', 'Method › Network', rules.exclusions):''}
+    ${head('views','Network views and their rules')}
+    ${views.map(v=>row('view-'+v.id, `<a href="#/network/view/${esc(v.id)}">${esc(v.label)}</a> <span class="tag ${v.derived?'model':''}">${v.derived?'derived':'asserted'}</span>`, 'Network › View control; the same rule is printed in the view header', v.rule)).join('')}
+    ${head('tags','Other labels')}
+    ${row('tag-derived', '<span class="tag model">derived</span>', 'network views, person records (‘Named in’)', TAG_DEFS.derived)}
+    ${row('tag-letterhead', '<span class="tag">letterhead</span>', 'person records, network side panel, Method › Network', TAG_DEFS.letterhead)}
+    ${row('tag-via-pi', '<span class="tag">via PI</span>', 'timeline, stop sources', TAG_DEFS['via PI'])}
+  </tbody></table>`;
+  page.innerHTML=wrapTables(`<div class="page">${navbar()}
+    <nav class="phase" aria-label="Breadcrumb">Start here · how to read this site</nav><h1>Start here</h1>
+    <p class="subtitle">A reading guide to the reconstruction: what it is, what it was built from, in which order to read it, and what every symbol and label means.</p>
+    <h2>Abstract <span class="tag model">model</span></h2>
+    ${modelBlock(`The Quackenbush Journeys reconstructs L. S. Quackenbush’s two Alaskan expeditions for the American Museum of Natural History — the 1907 reconnaissance and the 1908 excavation — from five files supplied by the principal investigator, Rebecca J. H. Woods: her talk A Tale of Two Mammoths (2019), her transcription of the AMNH correspondence (${C.documents} items in ${C.blocks} typed blocks), her comprehensive and terse timelines, and her Cast of Characters. The site places ${C.stops} stops at ${C.places} places, joins them by ${C.segments} schematic connectors, and records ${C.edges} ties among ${C.people} persons, the unnamed offices and ${C.institutions} institutions. Every date, coordinate, quotation and tie is traced to one of the five files or to a named gazetteer record; where the record is silent, ambiguous or contradictory the interface says so and does not resolve it. Whatever the model itself wrote is labelled ‘model’.`)}
+    ${plan.length? `<h2>The principal investigator’s plan</h2><p class="small muted">The Tale’s own outline, quoted verbatim (¶${plan[0].id.replace('t','')}–${plan[plan.length-1].id.replace('t','')}); the third item is the part this site reconstructs.</p><div class="block pi"><span class="who">principal investigator — Tale of Two Mammoths (2019), verbatim</span>${plan.map(t=>t.html).join('<br>')} <a class="small" href="#/tale/${plan[0].id}" onclick="event.preventDefault();App.go('/tale/${plan[0].id}')">read in context ¶${plan[0].id.replace('t','')}</a></div>`:''}
+    <h2>The five inputs</h2><p class="small">Identified by SHA-256 so that a later build can be checked against the same files. Built ${esc(M.built)}.</p>
+    <table class="data inputs"><thead><tr><th>File</th><th>SHA-256</th><th>Bytes</th></tr></thead><tbody>${(M.inputs||[]).map(i=>`<tr><td>${esc(i.file)}</td><td class="sha">${esc(i.sha256)}</td><td class="small">${i.bytes}</td></tr>`).join('')}</tbody></table>
+    <h2>Suggested reading order <span class="tag model">model</span></h2>
+    <ol class="reading-order">
+      <li><a href="#/stories">Story</a><div class="small">${D.stories.length} pages in the PI’s order: her narrative verbatim, the stops with their evidence, the documents behind each page.</div></li>
+      <li><a href="#/map">Map</a><div class="small">Follow the journey stop by stop; marker form is the source status, halo the uncertainty, hue and badge shape the year.</div></li>
+      <li><a href="#/archive">Archive</a><div class="small">The ${C.documents} archival items as typed blocks: the writer’s words, the PI’s summary, her editorial note, annotations.</div></li>
+      <li><a href="#/network">Network</a><div class="small">Who wrote to whom and which relations a text states; funding, institutions and two derived views, each with its rule.</div></li>
+      <li><a href="#/method">Method &amp; Data</a><div class="small">Authorship, every geocoding decision, the network rules, the register of discrepancies and absences, and the data as JSON and CSV.</div></li>
+    </ol>
+    <p class="small">The <a href="#/timeline">Timeline</a> gives the PI’s terse chronology entry by entry; <a href="#/published">Sources cited</a> lists every published or archival source exactly as the files cite it.</p>
+    <h2 id="glossary">Glossary</h2><p class="small">One table for every vocabulary the site uses; chips and tags are rendered as they appear on the pages. Each row has an address (<code>#/about/glossary-&lt;term&gt;</code>).</p>
+    ${glossary}
+  </div>`);
+  if(anchor){ setTimeout(()=>{ const el=document.getElementById(anchor); if(el){ el.scrollIntoView({block:'center'}); el.style.outline='2px solid var(--inferred)'; setTimeout(()=>el.style.outline='',2000); } },40); }
 };
 })();
 </script>

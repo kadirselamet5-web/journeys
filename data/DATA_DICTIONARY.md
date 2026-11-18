@@ -107,7 +107,8 @@ Connectors between consecutive stops. `mode` as named in a source; `mode_status`
   g1907_10 (Candle → Keewalik → Elephant Point, stated), g1907_12 (Buckland mouth → Elephant Point → Keewalik, inferred).
 
 ### stories
-`phase`; `title`, `subtitle`; `places`, `stops`, `docs`, `people`, `published`, `findings`; `tale_excerpts[]` (verbatim PI prose with the Tale paragraph id);
+`phase`; `title`, `subtitle`; `places`, `stops`, `docs`, `people`, `published`, `findings`; `tale_excerpts[]` (`text` = verbatim PI prose, `para` = the Tale paragraph id,
+`speaker`, `footnotes[]` = the PI's footnotes `{n, html}` whose markers fall inside the excerpt, so that a quoted sentence keeps its note);
 `model_note` — the only model-written prose on a story page; `prev`, `next` — reading order.
 
 ### timeline

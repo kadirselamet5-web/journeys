@@ -6,7 +6,10 @@ by the principal investigator (Rebecca J. H. Woods): her talk text *A Tale of Tw
 transcription file of the AMNH correspondence, two timelines, and a Cast of Characters.
 
 Open `index.html` in a browser (it loads `data/bundle.js` and map libraries from CDNs).
-A single-file copy is in `dist/quackenbush-journeys-standalone.html`.
+A single-file copy is in `dist/quackenbush-journeys-standalone.html`. **Start here** (`#/about`, also the `?` in the
+top bar) gives the abstract, the five inputs with their SHA-256, a suggested reading order and one glossary of every
+chip, tag, status and rule the site uses (`#/about/glossary-<term>`); a dismissible help card on the map explains the
+symbology on a first visit (flag `qj_help_dismissed` in localStorage).
 
 ## What is where
 
@@ -16,9 +19,20 @@ A single-file copy is in `dist/quackenbush-journeys-standalone.html`.
 | Story | 25 pages; backbone = the PI's prose quoted verbatim; enrichment = typed correspondence blocks; people, documents, findings and sources cross-linked; previous/next navigation. |
 | Network | Five views over one nominalist data set, each with its evidence rule and caveat printed in the header, the side panel and Method › Network: **Persons** (correspondence · relation stated in a document · PI's writing · affiliation, told apart by hue and dash pattern; the Years filter dates correspondence and stated ties by their document), **Institutions** (person–institution bipartite graph; each affiliation carries one verified quotation and is *stated* or *inferred by the model*), **Funding** (every sum or promise of one that a provided text states, amounts exactly as written, no total computed), **Co-attestation** (derived: how many kinds of evidence attest each pair; a 'PI only' filter shows ties no document states) and **Mentions** (derived: sender → person named in the text, by name matching). Node search, ego views; letterhead-based ties are tagged; every tie carries its quotation. |
 | Archive | Primary-source reader: 99 archival items, 402 blocks typed verbatim / researcher's summary / editorial note / annotation, with the PI's marks and colour coding preserved. |
-| Timeline | The PI's terse timeline entry by entry, with "Read the document", "On the map" and "In the story" links. |
-| Published | Every source cited in the supplied files, recorded as cited; no full text was supplied. |
+| Timeline | The PI's terse timeline entry by entry, with a sticky year rail and Document / Map / Story / Discrepancy links on each entry (the full target in the link's label). |
+| Sources cited | Every source cited in the supplied files, recorded as cited; no full text was supplied. |
 | Method & Data | Authorship statement, geocoding decisions place by place, network rules, register of discrepancies and absences, downloads. |
+
+Every page carries `← Back to <previous page>` (the app's own history) and `↑ <one level up>` (story → Story index,
+archive item → Archive, person → Network, place → Map, source → Sources cited, timeline entry → Timeline); a page opened
+directly goes up rather than to the map. Record pages open with a breadcrumb (`Story · 1908 excavation · page 20 of 25`).
+Story pages carry the PI's footnotes with the excerpts that contain their markers (`tale_excerpts[].footnotes`), a four-column
+'When' table (Stop · Date · Evidence · Sources) with an evidence legend, and 'Where' cards that reflow by container width.
+Layout: the top bar wraps and the views follow it (200 % text works); below 600 px the map panel is a bottom sheet with a
+'Stops & layers' handle, tables scroll inside wrappers, the 'When' table stacks, and the network filters sit in a disclosure.
+Colours are tokens on `:root` with two dark-scheme blocks; text that sits on a soft background uses a `-text` variant
+(`--j1907-text`, `--inferred-text`, `--summary-text`, …) checked at ≥ 4.5:1, and the journey colours in the scripts are read
+from the stylesheet (`App.JCOLOR`), so no colour literal remains outside the token blocks and the vendored Leaflet CSS.
 
 ## Data (exported separately from the interface)
 
@@ -54,7 +68,8 @@ not an error, when absent). After editing an authored module in place, clear `sc
 file was restored with its old size and mtime, or Python may import stale bytecode.
 
 `tests/smoke.js` renders every route headlessly and asserts the behaviour of each feature (network views,
-filters, search, person pages, Method tables); it exits non-zero on any JavaScript error, crawl failure or
+filters, search, person pages, Method tables, the Start-here page and glossary, navigation, phone / 320 px / 200 %-text
+layouts, dark-scheme contrast of the typed blocks); it exits non-zero on any JavaScript error, crawl failure or
 failed assertion. `docs/REVIEW_REPORT.md` records the three reviews behind the current work packages and
 what each package implemented.
 

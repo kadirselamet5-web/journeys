@@ -417,6 +417,28 @@ def find_tale_para(excerpt):
         if ne in norm(tp['text']): return tp['id']
     return None
 
+fn_by_n = {f['n']: f for f in footnotes}
+def excerpt_footnotes(para_id, excerpt):
+    """The PI's footnote markers of the paragraph whose preceding text lies within the excerpt span, as [{n, html}]:
+    an excerpt that ends at '…before naming Quackenbush.' carries the marker that follows that full stop."""
+    tp = next((t for t in tale if t['id'] == para_id), None)
+    if not tp: return []
+    parts = re.split(r'<sup class="fnref" data-fn="(\d+)">\d+</sup>', tp['html'])   # [text0, n1, text1, n2, text2, …]
+    strip = lambda x: htmlmod.unescape(re.sub(r'<[^>]+>', '', x))
+    plain_all = norm(strip(''.join(parts[0::2])))
+    ne = norm(excerpt)
+    a = plain_all.find(ne)
+    if a < 0: return []
+    b = a + len(ne)
+    out, pre = [], ''
+    for i in range(1, len(parts), 2):
+        pre += strip(parts[i - 1])
+        p = len(norm(pre))                       # position of the marker in the normalised paragraph text
+        if a < p <= b + 1:                       # after the excerpt's start, at or just after its end
+            n = int(parts[i]); fn = fn_by_n.get(n)
+            if fn: out.append(dict(n=n, html=fn['html']))
+    return out
+
 # ----------------------------------------------------------------------------- 6. stories
 stories = []
 for s in ST.STORIES:
@@ -426,7 +448,7 @@ for s in ST.STORIES:
         pid_ = find_tale_para(e)
         if not pid_: err(f"story {s['id']}: Tale excerpt not found verbatim: {e[:80]}…")
         if e.rstrip()[-1:] not in tuple('.!?;:,”’"\')]'): err(f"story {s['id']}: Tale excerpt does not end at a sentence or quotation boundary: …{e.rstrip()[-40:]}")
-        ex.append(dict(text=e, para=pid_, speaker='principal investigator (Tale of Two Mammoths, 2019), verbatim'))
+        ex.append(dict(text=e, para=pid_, speaker='principal investigator (Tale of Two Mammoths, 2019), verbatim', footnotes=excerpt_footnotes(pid_, e) if pid_ else []))
     q['tale_excerpts'] = ex
     for d_ in s['docs']:
         if d_ not in doc_by_id: err(f"story {s['id']}: unknown doc {d_}")
@@ -914,7 +936,8 @@ Connectors between consecutive stops. `mode` as named in a source; `mode_status`
   g1907_10 (Candle → Keewalik → Elephant Point, stated), g1907_12 (Buckland mouth → Elephant Point → Keewalik, inferred).
 
 ### stories
-`phase`; `title`, `subtitle`; `places`, `stops`, `docs`, `people`, `published`, `findings`; `tale_excerpts[]` (verbatim PI prose with the Tale paragraph id);
+`phase`; `title`, `subtitle`; `places`, `stops`, `docs`, `people`, `published`, `findings`; `tale_excerpts[]` (`text` = verbatim PI prose, `para` = the Tale paragraph id,
+`speaker`, `footnotes[]` = the PI's footnotes `{{n, html}}` whose markers fall inside the excerpt, so that a quoted sentence keeps its note);
 `model_note` — the only model-written prose on a story page; `prev`, `next` — reading order.
 
 ### timeline
