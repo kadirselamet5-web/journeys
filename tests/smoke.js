@@ -28,6 +28,26 @@ const path = require('path');
   // WCAG contrast of an element's computed text colour against a computed background colour
   const contrastOf = (fgSel, bgSel) => page.evaluate(([f, b]) => { const p = s => (s.match(/[\d.]+/g) || []).map(Number); const lum = c => { const [r, g, bl] = p(c).slice(0, 3).map(v => v / 255).map(v => v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4); return .2126 * r + .7152 * g + .0722 * bl; }; const fe = document.querySelector(f), be = b ? document.querySelector(b) : fe; if (!fe || !be) return -1; const fg = getComputedStyle(fe).color, bg = getComputedStyle(be).backgroundColor; const x = lum(fg), y = lum(bg); return +((Math.max(x, y) + .05) / (Math.min(x, y) + .05)).toFixed(2); }, [fgSel, bgSel]);
 
+  // ---------------------------------------------------------------- A4 / A11: skip link first, landmarks, headings, legend before the map in the tab order
+  await page.evaluate(() => document.activeElement && document.activeElement.blur()); await page.keyboard.press('Tab');
+  check('Tab from a fresh load lands first on the skip link', await page.evaluate(() => document.activeElement.classList.contains('skip') && document.activeElement.textContent === 'Skip to content'));
+  check('document.title carries the route title', (await page.title()) === 'Map · The Quackenbush Journeys', await page.title());
+  check('#announce is a polite live region holding the route title', (await page.evaluate(() => { const a = document.getElementById('announce'); return a.getAttribute('aria-live') === 'polite' && a.textContent === 'Map'; })));
+  check('landmarks: #panel is a labelled section (not an aside inside main), #leaflet a labelled region, nav.tabs labelled', (await page.evaluate(() => document.querySelector('section#panel[aria-label]') && !document.querySelector('aside#panel') && document.querySelector('#leaflet[role="region"][aria-label]') && document.querySelector('nav.tabs[aria-label="Sections"]') && document.querySelector('#maplegend[role="region"][aria-label]') && document.querySelector('#mapnote[role="note"]') ? true : false)));
+  check('map has an sr-only h1 and the panel sections are h2', (await page.evaluate(() => document.querySelector('#mapview h1.sr-only') && document.querySelectorAll('#panel h2.panel-h').length >= 5 && document.querySelectorAll('#panel h3:not(.grp)').length === 1)));
+  check('legend summary precedes every Leaflet interactive element in the tab order (DOM order, both focusable)', (await page.evaluate(() => { const s = document.querySelector('#maplegend details.legend summary'), m = document.querySelector('#leaflet .leaflet-interactive[tabindex="0"]'); return !!s && !!m && !!(s.compareDocumentPosition(m) & Node.DOCUMENT_POSITION_FOLLOWING); })));
+  // ---------------------------------------------------------------- A2: markers and connectors are named, focusable buttons; labels, badges and arrows are not
+  const focusablePaths = await page.locator('#leaflet path.leaflet-interactive[tabindex="0"][aria-label][role="button"]').count();
+  check('≥ 49 map paths are focusable, named buttons', focusablePaths >= 49, focusablePaths);
+  check('no label, badge or arrow element is focusable', (await page.evaluate(() => [...document.querySelectorAll('#leaflet .lbl, #leaflet .seq, #leaflet .arrow, #leaflet .badgewrap, #leaflet .arrowwrap')].filter(e => e.tabIndex >= 0 || e.getAttribute('role') === 'button').length)) === 0);
+  check('marker name carries place, visits by year and status', /Nome — 1907: stops .*; 1908: stops .*; verified/.test(await page.evaluate(() => document.querySelector('#leaflet path[data-place="pl_nome"]').getAttribute('aria-label'))));
+  check('connector name carries from → to, mode status and schematic', /→ .*mode status (stated|not stated|inferred).*schematic/.test(await page.evaluate(() => document.querySelector('#leaflet path[data-seg]').getAttribute('aria-label'))));
+  await page.evaluate(() => document.querySelector('#leaflet path[data-place="pl_nome"]').focus()); await page.keyboard.press('Enter'); await page.waitForTimeout(500);
+  check('Enter on a focused marker opens its popup as a dialog named by its heading, and focuses it', (await page.evaluate(() => { const c = document.querySelector('.leaflet-popup-content'); return !!c && c.getAttribute('role') === 'dialog' && !!c.getAttribute('aria-labelledby') && document.activeElement === c && !!c.querySelector('h3'); })));
+  await page.screenshot({ path: 'tests/screenshots/review-after-a11y-map-popup-dialog.png' });
+  await page.keyboard.press('Escape'); await page.waitForTimeout(300);
+  check('Escape closes the popup and focus returns to the marker that opened it', (await page.evaluate(() => document.querySelectorAll('.leaflet-popup-content').length === 0 && document.activeElement.getAttribute('data-place') === 'pl_nome')));
+  await page.evaluate(() => MapView.clearStop());
   // ---------------------------------------------------------------- D1 / D2 / D6: top bar, help card, stop list as links
   check('#topbar links to #/about (Start here and ?)', (await page.locator('#topbar a[href="#/about"]').count()) >= 2);
   const tabsTxt = await text('#tabs');
@@ -42,9 +62,12 @@ const path = require('path');
   check('panel toggle not overlapped (1400×900, panel open)', await toggleFree());
   await page.click('#panelToggle', { timeout: 2000 }); await page.waitForTimeout(350);
   check('panel collapses on click', await page.evaluate(() => document.getElementById('panel').classList.contains('collapsed')));
+  check('#panelToggle: aria-expanded false and label "Show layer panel" when collapsed', (await page.evaluate(() => { const t = document.getElementById('panelToggle'); return t.getAttribute('aria-expanded') === 'false' && t.getAttribute('aria-label') === 'Show layer panel' && t.getAttribute('aria-controls') === 'panel'; })));
   check('panel toggle not overlapped (collapsed)', await toggleFree());
   await page.click('#panelToggle', { timeout: 2000 }); await page.waitForTimeout(350);
   check('panel re-opens on click', !(await page.evaluate(() => document.getElementById('panel').classList.contains('collapsed'))));
+  check('#panelToggle: aria-expanded true and label "Hide layer panel" when open', (await page.evaluate(() => { const t = document.getElementById('panelToggle'); return t.getAttribute('aria-expanded') === 'true' && t.getAttribute('aria-label') === 'Hide layer panel'; })));
+  check('every toggle button in the map\'s segmented controls carries aria-pressed (the globe + / − are momentary buttons)', (await page.evaluate(() => [...document.querySelectorAll('#panel .seg button')].filter(b => !b.closest('#globeZoom')).every(b => b.hasAttribute('aria-pressed')) && [...document.querySelectorAll('#globeZoom button')].every(b => !b.hasAttribute('aria-pressed') && b.getAttribute('aria-label')))));
   // ---------------------------------------------------------------- B9 frames (fresh load opens on Alaska)
   const z0 = await page.evaluate(() => MapView.zoom());
   const nomeVisible = await page.evaluate(() => { const m = document.querySelector('#leaflet path[data-place="pl_nome"]'); const r = m.getBoundingClientRect(), s = document.getElementById('leaflet').getBoundingClientRect(); return r.left > s.left && r.right < s.right && r.top > s.top && r.bottom < s.bottom; });
@@ -120,16 +143,34 @@ const path = require('path');
   await page.click('#stoplist a[data-stop="s1908_08"]'); await page.waitForTimeout(1600);
   check('stop link navigates to its #/map/stop address', (await page.evaluate(() => location.hash)) === '#/map/stop/s1908_08');
   const popup = await page.locator('.leaflet-popup-content').count(); console.log('popup open:', popup);
+  check('after clicking a stop the popup (a dialog) holds focus', (await page.evaluate(() => !!document.activeElement.closest('.leaflet-popup-content') && document.activeElement.closest('.leaflet-popup-content').getAttribute('role') === 'dialog')));
+  await page.evaluate(() => document.activeElement.blur()); await page.keyboard.press('Escape'); await page.waitForTimeout(300);
+  check('Escape with focus on body closes the popup and focus returns to the active stop link', (await page.evaluate(() => document.querySelectorAll('.leaflet-popup-content').length === 0 && document.activeElement.matches('#stoplist a[aria-current="true"][data-stop="s1908_08"]'))));
+  await page.evaluate(() => MapView.stepTo('s1908_08')); await page.waitForTimeout(600);
   await page.click('.leaflet-popup-content a:text("Open story")'); await page.waitForTimeout(800);
   console.log('route after popup click:', await page.evaluate(() => location.hash));
   await page.screenshot({ path: 'tests/screenshots/05-story.png', fullPage: false });
   // next / back navigation
-  await page.click('#pageview button:has-text("Next ›")'); await page.waitForTimeout(300);
+  await page.click('#pageview .pagenav button:has-text("Next")'); await page.waitForTimeout(300);
   const afterNext = await page.evaluate(() => location.hash);
   await page.evaluate(() => window.App.back()); await page.waitForTimeout(300);
   const afterBack = await page.evaluate(() => location.hash);
   console.log('next ->', afterNext, '| back ->', afterBack);
   check('story Back returns to the previous story', afterBack === '#/story/story_19_excavation');
+  // ---------------------------------------------------------------- A4 / A8 / A9 / A10 on the story page
+  await go('/map', 300); await go('/story/story_19_excavation', 400);
+  const storyFocus = await page.evaluate(() => ({ tag: document.activeElement.tagName, title: document.title, ann: document.getElementById('announce').textContent, route: App.routeTitle('/story/story_19_excavation'), label: document.getElementById('pageview').getAttribute('aria-label') }));
+  check('App.go to a story focuses its h1; document.title and #announce carry the story title', storyFocus.tag === 'H1' && storyFocus.title === storyFocus.route + ' · The Quackenbush Journeys' && storyFocus.ann === storyFocus.route && storyFocus.label === storyFocus.route, JSON.stringify(storyFocus));
+  await page.evaluate(() => App.back()); await page.waitForTimeout(200);
+  check('#announce says "Returned to …" after Back', /^Returned to /.test(await page.evaluate(() => document.getElementById('announce').textContent)));
+  await go('/story/story_19_excavation', 1800);
+  check('story: a link inside a PI block is underlined; tab links, pills and footer links are not', (await page.evaluate(() => { const a = document.querySelector('#pageview .block.pi a.small'); const t = document.querySelector('nav.tabs a'); const p = document.querySelector('#pageview .pill'); const f = document.querySelector('#pageview .footer-nav a'); const u = e => e && getComputedStyle(e).textDecorationLine; return u(a) === 'underline' && u(t) === 'none' && u(p) === 'none' && u(f) === 'none'; })));
+  check('story: every table.data has a caption and th[scope]; a "What the chips mean" disclosure precedes the When table', (await page.evaluate(() => [...document.querySelectorAll('#pageview table.data')].filter(t => !t.querySelector('caption') || t.querySelector('th:not([scope])')).length === 0 && document.querySelectorAll('#pageview details.chip-help').length === 1)));
+  check('story: #minimap is an image with a label and nothing focusable inside', (await page.evaluate(() => { const m = document.getElementById('minimap'); return m && m.getAttribute('role') === 'img' && /Map of \d+ places on this page/.test(m.getAttribute('aria-label')) && [...m.querySelectorAll('path, [tabindex]')].filter(e => e.tabIndex >= 0).length === 0; })));
+  check('story: document cards have h3 titles and an expand button with aria-expanded/aria-controls', (await page.evaluate(() => document.querySelectorAll('#pageview .doccard h3.title').length >= 1 && [...document.querySelectorAll('#pageview .doccard button[aria-controls]')].every(b => b.hasAttribute('aria-expanded')))));
+  await page.evaluate(() => document.querySelector('#pageview .doccard button[aria-controls]').click()); await page.waitForTimeout(100);
+  check('expandDoc toggles aria-expanded to true', (await page.evaluate(() => document.querySelector('#pageview .doccard button[aria-controls]').getAttribute('aria-expanded'))) === 'true');
+  check('chips point at definitions in the hidden #statusDefs list', (await page.evaluate(() => { const c = document.querySelector('#pageview .chip[aria-describedby]'); return !!c && !!document.querySelector('#statusDefs #' + c.getAttribute('aria-describedby')) && document.querySelectorAll('#statusDefs [id^="def-"]').length >= 20; })));
   // ---------------------------------------------------------------- D2 / D6 / D7 on the story page
   check('story page has no "✕ Close" and shows "↑ Story index" and a breadcrumb', !(await text('#pageview')).includes('✕ Close') && (await page.locator('#pageview .pagenav a.up:has-text("Story index")').count()) === 1 && (await page.locator('#pageview nav.phase[aria-label="Breadcrumb"] a[href="#/stories"]').count()) === 1);
   check('"When" table has exactly four columns (Stop · Date · Evidence · Sources)', (await page.locator('#pageview table.when thead th').count()) === 4);
@@ -162,13 +203,29 @@ const path = require('path');
   const mg = await text('#pageview');
   check('Method › Geocoding: Connectors table shows "via Keewalik"', /via Keewalik/.test(mg));
   check('Method › Geocoding: scale-bar sentence and constraints table', /scale bar on the map is Leaflet/.test(mg) && /constraints drawn and candidates listed/i.test(mg));
+  check('Method › Geocoding: every table.data has a caption and th[scope]', (await page.evaluate(() => [...document.querySelectorAll('#pageview table.data')].filter(t => !t.querySelector('caption') || t.querySelector('th:not([scope])')).length)) === 0);
+  check('Method › Geocoding: ≥ 100 elements described by a definition; no new-tab link without an sr-only warning', (await page.evaluate(() => [document.querySelectorAll('[aria-describedby^="def-"]').length, [...document.querySelectorAll('a[target="_blank"]')].filter(a => !a.querySelector('.sr-only')).length])).join() .match(/^(\d+),0$/) && (await page.locator('[aria-describedby^="def-"]').count()) >= 100);
+  await go('/method/geocoding', 300); await page.keyboard.press('Shift+Tab');
+  const ring = await page.evaluate(() => { const b = document.activeElement; const cs = getComputedStyle(b); const tok = getComputedStyle(document.documentElement).getPropertyValue('--j1907').trim(); const c = document.createElement('i'); c.style.color = tok; document.body.appendChild(c); const rgb = getComputedStyle(c).color; c.remove(); return { cls: b.className, style: cs.outlineStyle, width: cs.outlineWidth, color: cs.outlineColor, token: rgb }; });
+  check('a keyboard-focused .ghost button shows a 2px solid outline in --j1907', /ghost/.test(ring.cls) && ring.style === 'solid' && ring.width === '2px' && ring.color === ring.token, JSON.stringify(ring));
   await page.screenshot({ path: 'tests/screenshots/11-method.png' });
   // archive
   await go('/archive/d_19070416_osborn_bumpus', 300);
   const colored = await page.locator('#reader .pi-color').count(); console.log('colour-marked spans in Osborn 16 Apr 1907:', colored);
   await page.screenshot({ path: 'tests/screenshots/06-archive.png' });
+  check('archive: filters sit in a fieldset with a legend and every control is named', (await page.evaluate(() => document.querySelectorAll('#archive fieldset.filters > legend').length === 1 && ['afq', 'affolder', 'afyear', 'afwho', 'aftype'].every(i => document.getElementById(i).getAttribute('aria-label')))));
+  check('archive: rows are links, one aria-current, year groups are nested lists, #doccount is live', (await page.evaluate(() => document.querySelectorAll('#doclist > li.grp > ul > li > a[href^="#/archive/"]').length === 99 && document.querySelectorAll('#doclist a[aria-current="true"]').length === 1 && document.querySelectorAll('#doclist > :not(li)').length === 0 && document.getElementById('doccount').getAttribute('aria-live') === 'polite')));
+  check('archive: Connections is an h2 after the h1', (await page.evaluate(() => [...document.querySelectorAll('#reader h2')].some(h => h.textContent === 'Connections') && document.querySelectorAll('#reader h3').length === 0)));
   await page.fill('#afq', 'walrus'); await page.waitForTimeout(200);
-  console.log('archive search "walrus":', await page.locator('#doclist li').count(), 'items');
+  console.log('archive search "walrus":', await page.locator('#doclist a').count(), 'items');
+  await page.fill('#afq', ''); await page.waitForTimeout(200);
+  // keyboard path: skip link, then Tab through the filter controls to the first item link; Enter opens it
+  await page.goto('about:blank'); await page.goto(url + '#/archive', { waitUntil: 'load' }); await page.waitForFunction(() => window.App, null, { timeout: 15000 }); await page.waitForTimeout(400);
+  await page.keyboard.press('Tab'); const onSkip = await page.evaluate(() => document.activeElement.classList.contains('skip')); await page.keyboard.press('Enter'); await page.waitForTimeout(100);
+  let hops = 0; while (hops < 12 && !(await page.evaluate(() => !!document.activeElement.closest('#doclist')))) { await page.keyboard.press('Tab'); hops++; }
+  const hashBefore = await page.evaluate(() => location.hash); await page.keyboard.press('Enter'); await page.waitForTimeout(300);
+  check('archive (fresh load): Tab → skip link, Enter, then a #doclist link within 12 presses; Enter opens the item', onSkip && hops < 12 && hashBefore === '#/archive' && /^#\/archive\/d_/.test(await page.evaluate(() => location.hash)), hops + ' presses → ' + await page.evaluate(() => location.hash));
+  await page.goto('about:blank'); await page.goto(url + '#/map', { waitUntil: 'load' }); await page.waitForFunction(() => window.App && window.MapView, null, { timeout: 15000 }); await page.waitForTimeout(1500);
 
   // ---------------------------------------------------------------- network: persons view (C4, C8)
   await go('/network', 2500);
@@ -179,6 +236,18 @@ const path = require('path');
   check('persons header says asserted', /asserted/i.test(await text('#netviewhead')));
   check('rules sit in a disclosure', (await page.locator('#netside details.rules summary').count()) === 1);
   check('Years label covers stated ties', /correspondence and stated ties; PI ties are undated/.test(await text('#netcontrols')));
+  check('network: SVG is a named group with a <title>, described by the live status line; controls sit in fieldsets with legends', (await page.evaluate(() => { const s = document.getElementById('netsvg'); return s.getAttribute('role') === 'group' && !!s.querySelector(':scope > title#netTitle') && s.getAttribute('aria-labelledby') === 'netTitle' && s.getAttribute('aria-describedby') === 'netstat' && document.getElementById('netstat').getAttribute('aria-live') === 'polite' && [...document.querySelectorAll('#netcontrols fieldset > legend')].map(l => l.textContent).join() === 'Evidence,Nodes,Years,Labels' && ['nyMin', 'nyMax', 'nlab', 'netfind'].every(i => document.getElementById(i).getAttribute('aria-label')); })));
+  check('network: every .seg button carries aria-pressed; one tab is aria-current', (await page.evaluate(() => [...document.querySelectorAll('#netcontrols .seg button')].every(b => b.hasAttribute('aria-pressed')) && document.querySelectorAll('#tabs a[aria-current="page"]').length === 1)));
+  const nodeName = await page.evaluate(() => { const g = document.querySelector('#netsvg g.netnode[tabindex="0"][role="button"]'); g.focus(); return document.activeElement === g ? g.getAttribute('aria-label') : null; });
+  await page.keyboard.press('Enter'); await page.waitForTimeout(300);
+  check('network: a node is a focusable named button; Enter fills the side panel with its label', !!nodeName && /, (person|office|institution), \d+ attestation/.test(nodeName) && (await text('#netside')).includes(nodeName.split(',')[0]), nodeName);
+  await page.evaluate(() => document.querySelector('#netsvg path.netedge[tabindex="0"]').focus()); await page.keyboard.press('Enter'); await page.waitForTimeout(300);
+  check('network: a tie is a focusable named button; Enter opens its evidence', /^tie · /i.test(await text('#netside .phase')) && /attestation/.test(await page.evaluate(() => document.querySelector('#netsvg path.netedge[tabindex="0"]').getAttribute('aria-label'))), await text('#netside .phase'));
+  await page.click('#netTable'); await page.waitForTimeout(400);
+  const tblRows = await page.locator('#netside .tableview table.data tbody tr').count();
+  check('network: the Table toggle renders the filtered nodes and ties as captioned tables (≥ 40 rows)', tblRows >= 40 && (await page.locator('#netside .tableview table.data caption').count()) === 2 && (await page.evaluate(() => document.getElementById('netTable').getAttribute('aria-pressed'))) === 'true', tblRows + ' rows');
+  await page.screenshot({ path: 'tests/screenshots/review-after-a11y-network-table.png' });
+  await page.click('#netTable'); await page.waitForTimeout(200);
   await page.fill('#netfind', 'Bumpus'); await page.press('#netfind', 'Enter'); await page.waitForTimeout(600);
   check('node search "Bumpus" + Enter fills the side panel', /H\. C\. Bumpus/.test(await text('#netside')));
   await page.screenshot({ path: 'tests/screenshots/07-network.png' });
@@ -232,6 +301,7 @@ const path = require('path');
   check('Grant: f_travel_with_grant on the record', /Did Quackenbush travel with Grant/.test(grant));
   check('Grant: Cast heading says working notes', /working notes/i.test(grant));
   check('Grant: eugenicist is a characterisation, not a role', /Characterisations \(PI\)/.test(grant) && /notorious eugenicist/.test(grant));
+  check('Grant: every table.data has a caption and th[scope]; Sent/Received and tie kinds are h3 under h2', (await page.evaluate(() => [...document.querySelectorAll('#pageview table.data')].filter(t => !t.querySelector('caption') || t.querySelector('th:not([scope])')).length === 0 && document.querySelectorAll('#pageview h4').length === 0 && [...document.querySelectorAll('#pageview h3')].some(h => h.textContent === 'Sent'))));
   await page.screenshot({ path: 'tests/screenshots/08-person.png' });
   await go('/person/p_ripley', 300);
   check('Ripley: AMNH under "Affiliations inferred by the model"', /Affiliations inferred by the model/.test(await text('#pageview')));
@@ -289,19 +359,31 @@ const path = require('path');
   await page.evaluate(() => document.getElementById('glossary-status').scrollIntoView({ block: 'start' })); await page.waitForTimeout(100);
   await page.screenshot({ path: 'tests/screenshots/review-after-about-glossary.png' });
   check('timeline year rail lists each year once', await (async () => { await go('/timeline', 200); const ys = await page.evaluate(() => [...document.querySelectorAll('nav.yr-rail a')].map(a => a.textContent)); return new Set(ys).size === ys.length && ys.length >= 6; })());
+  check('timeline: stream buttons carry aria-pressed; the ¶ permalink is named', (await page.evaluate(() => [...document.querySelectorAll('#pageview .seg button')].every(b => b.hasAttribute('aria-pressed')) && document.querySelectorAll('.tlentry .links a[aria-label="Permalink to this entry"] [aria-hidden="true"]').length > 0)));
+  await go('/method/network', 200); check('Method: section buttons carry aria-pressed', (await page.evaluate(() => [...document.querySelectorAll('#pageview .seg button')].every(b => b.hasAttribute('aria-pressed')))));
   await go('/tale/t035', 300);
+  const fn = await page.evaluate(() => { const as = [...document.querySelectorAll('.fnref a[role="doc-noteref"]')]; return { n: as.length, minW: Math.min(...as.map(a => a.getBoundingClientRect().width)), minH: Math.min(...as.map(a => a.getBoundingClientRect().height)), back: document.querySelectorAll('.fnotes-list a[role="doc-backlink"]').length, lh: getComputedStyle(document.querySelector('#t035')).lineHeight }; });
+  check('Tale: ≥ 50 footnote references are 24 px doc-noteref links with backlinks in the notes', fn.n >= 50 && fn.minW >= 24 && fn.minH >= 24 && fn.back === fn.n, JSON.stringify(fn));
+  await page.evaluate(() => document.querySelector('.fnref a').click()); await page.waitForTimeout(500);
+  check('Tale: clicking a footnote reference keeps the route and moves focus to the note', (await page.evaluate(() => location.hash === '#/tale/t035' && /^fn\d+$/.test(document.activeElement.id))));
+  await page.screenshot({ path: 'tests/screenshots/review-after-a11y-tale-footnotes.png' });
   // integrity crawl: every route of every record renders without "not found"
   const routes = await page.evaluate(() => { const D = window.JOURNEYS_DATA; return [
     ...D.stories.map(s => '/story/' + s.id), ...D.documents.map(d => '/archive/' + d.id), ...D.people.map(p => '/person/' + p.id), ...D.institutions.map(i => '/person/' + i.id), ...D.offices.map(o => '/person/' + o.id),
     ...D.places.map(p => '/place/' + p.id), ...D.published.map(p => '/published/' + p.id), ...D.timeline.slice(0, 10).map(t => '/timeline/' + t.id), '/method/overview', '/method/network', '/method/findings', '/method/data', '/stories', '/cast', '/tale', '/network/focus/p_quackenbush', '/network/doc/d_19070325_matthew_bumpus', ...D.network.views.map(v => '/network/view/' + v.id)]; });
   routes.push('/about', '/about/glossary-status');
-  let bad = 0, closeBtns = 0, legendless = 0;
-  for (const r of routes) { await go(r); const [txt, hasClose, noLegend] = await page.evaluate(() => { const pv = document.getElementById('pageview'); return [pv.innerText.slice(0, 400), pv.innerText.includes('✕ Close'), !!pv.querySelector('table.when') && !pv.querySelector('.evidence-legend')]; }); if (/\b(story|record|item|place) not found\b/i.test(txt)) { bad++; console.log('NOT FOUND at', r); } if (hasClose) closeBtns++; if (noLegend) legendless++; }
+  let bad = 0, closeBtns = 0, legendless = 0, noCurrent = 0, noFocus = 0, badTables = 0, blankTargets = 0;
+  for (const r of routes) { await go(r); const [txt, hasClose, noLegend, cur, foc, tbl, bt] = await page.evaluate((r) => { const pv = document.getElementById('pageview'); const tab = document.querySelectorAll('#tabs a[aria-current="page"]').length; const expectTab = !/^\/about/.test(r); return [pv.innerText.slice(0, 400), pv.innerText.includes('✕ Close'), !!pv.querySelector('table.when') && !pv.querySelector('.evidence-legend'), expectTab ? tab === 1 : tab === 0, document.activeElement && (document.activeElement.tagName === 'H1' || document.activeElement.classList.contains('pagenav')), [...pv.querySelectorAll('table.data')].filter(t => !t.querySelector('caption') || t.querySelector('th:not([scope])')).length, [...pv.querySelectorAll('a[target="_blank"]')].filter(a => !a.querySelector('.sr-only')).length]; }, r); if (/\b(story|record|item|place) not found\b/i.test(txt)) { bad++; console.log('NOT FOUND at', r); } if (hasClose) closeBtns++; if (noLegend) legendless++; if (!cur) { noCurrent++; if (noCurrent < 4) console.log('aria-current wrong at', r); } if (!foc) { noFocus++; if (noFocus < 4) console.log('focus not on h1 at', r); } badTables += tbl; blankTargets += bt; }
   check('no page contains "✕ Close"', closeBtns === 0, closeBtns + ' pages');
+  check('every page route marks exactly one tab aria-current=page (none on Start here)', noCurrent === 0, noCurrent + ' routes');
+  check('every page route moves focus to its h1 (or its nav bar)', noFocus === 0, noFocus + ' routes');
+  check('every table.data on every page route has a caption and th[scope]', badTables === 0, badTables + ' tables');
+  check('no new-tab link anywhere lacks its sr-only warning', blankTargets === 0, blankTargets + ' links');
   check('every story page with a "When" table has an evidence legend', legendless === 0, legendless + ' pages without');
   // map routes: every stop and every place resolve on the map without error
-  const mapRoutes = await page.evaluate(() => { const D = window.JOURNEYS_DATA; return [...D.stops.map(s => '/map/stop/' + s.id), ...D.places.map(p => '/map/' + p.id)]; });
+  const mapRoutes = await page.evaluate(() => { const D = window.JOURNEYS_DATA; return ['/map/stop/s1908_08', ...D.stops.map(s => '/map/stop/' + s.id), ...D.places.map(p => '/map/' + p.id)]; });
   for (const r of mapRoutes) await go(r, 20);
+  check('#/map/stop/<id> keeps one tab current and focuses the current stop link', (await page.evaluate(() => { App.go('/map/stop/s1908_08'); return document.querySelectorAll('#tabs a[aria-current="page"]').length === 1; })) && (await page.evaluate(() => document.activeElement.matches('#stoplist a[aria-current="true"]'))));
   console.log('crawled', routes.length + mapRoutes.length, 'routes;', bad, 'failures');
   // dangling internal links on rendered story/archive pages
   await go('/stories'); const links = await page.evaluate(() => { const D = window.JOURNEYS_DATA; const ids = new Set([...D.stories.map(s=>'story/'+s.id), ...D.documents.map(d=>'archive/'+d.id), ...D.people.map(p=>'person/'+p.id), ...D.institutions.map(i=>'person/'+i.id), ...D.offices.map(o=>'person/'+o.id), ...D.places.map(p=>'place/'+p.id), ...D.published.map(p=>'published/'+p.id), ...D.timeline.map(t=>'timeline/'+t.id)]); const out=[]; D.stories.forEach(s=>{ s.docs.forEach(d=>{ if(!ids.has('archive/'+d)) out.push(s.id+' -> '+d); }); }); return out; });
@@ -360,6 +442,12 @@ const path = require('path');
   await go('/method/geocoding', 400);
   const chipC = await contrastOf('#pageview .chip.inferred', '#pageview .chip.inferred');
   check('light: .chip.inferred text ≥ 4.5:1 on its surface', chipC >= 4.5, chipC);
+  const tokenContrast = (p) => p.evaluate(() => { const cs = getComputedStyle(document.documentElement); const rgb = v => { const i = document.createElement('i'); i.style.color = v; document.body.appendChild(i); const c = getComputedStyle(i).color; i.remove(); return (c.match(/[\d.]+/g) || []).map(Number).slice(0, 3); }; const lum = c => { const [r, g, b] = c.map(v => v / 255).map(v => v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4); return .2126 * r + .7152 * g + .0722 * b; }; const x = lum(rgb(cs.getPropertyValue('--control-border').trim())), y = lum(rgb(cs.getPropertyValue('--surface').trim())); return +((Math.max(x, y) + .05) / (Math.min(x, y) + .05)).toFixed(2); });
+  const cbLight = await tokenContrast(page);
+  check('light: --control-border on --surface ≥ 3:1', cbLight >= 3, cbLight);
+  const cbSeg = await page.evaluate(() => { const cs = getComputedStyle(document.documentElement); const i = document.createElement('i'); i.style.color = cs.getPropertyValue('--control-border').trim(); document.body.appendChild(i); const tok = getComputedStyle(i).color; i.remove(); return getComputedStyle(document.querySelector('#pageview .seg')).borderTopColor === tok; });
+  await go('/archive', 300);
+  check('light: the segmented control, selects, the search box and pills take the control border', cbSeg && (await page.evaluate(() => { const cs = getComputedStyle(document.documentElement); const i = document.createElement('i'); i.style.color = cs.getPropertyValue('--control-border').trim(); document.body.appendChild(i); const tok = getComputedStyle(i).color; i.remove(); return ['#affolder', '#afq', '#reader .pill, #pageview .pill'].every(s => { const e = document.querySelector(s); return !e || getComputedStyle(e).borderTopColor === tok; }); })));
   await page.setViewportSize({ width: 1400, height: 900 });
 
   // ---------------------------------------------------------------- dark scheme: Esri dark-gray tiles, no CSS inversion
@@ -382,11 +470,29 @@ const path = require('path');
   await dpage.hover('#pageview table.data tbody tr:first-child td:first-child'); await dpage.waitForTimeout(100);
   const hoverBg = await dpage.evaluate(() => getComputedStyle(document.querySelector('#pageview table.data tbody tr:first-child td:first-child')).backgroundColor);
   check('dark: hovered table row background is rgb(38, 42, 47)', hoverBg === 'rgb(38, 42, 47)', hoverBg);
+  const cbDark = await tokenContrast(dpage);
+  check('dark: --control-border on --surface ≥ 3:1', cbDark >= 3, cbDark);
+  check('dark: links in table cells and running text are underlined', (await dpage.evaluate(() => ['#pageview td a', '#pageview p a'].every(s => { const e = document.querySelector(s); return !e || getComputedStyle(e).textDecorationLine === 'underline'; }))));
   await dpage.screenshot({ path: 'tests/screenshots/review-after-dark-method-table.png' });
   await dpage.evaluate(() => App.go('/story/story_05_newyork_deliberation')); await dpage.waitForTimeout(500);
   await dpage.screenshot({ path: 'tests/screenshots/review-after-dark-story.png' });
   await dctx.close();
 
+  // ---------------------------------------------------------------- A6 / A3: reduced motion — no fly-to, no running simulation, App.REDUCE exposed
+  const rctx = await browser.newContext({ viewport: { width: 1400, height: 900 }, ignoreHTTPSErrors: true, reducedMotion: 'reduce' });
+  const rpage = await rctx.newPage(); hook(rpage);
+  await rpage.goto(url + '#/map', { waitUntil: 'load' }); await rpage.waitForFunction(() => window.App && window.MapView, null, { timeout: 15000 }); await rpage.waitForTimeout(1500);
+  // highlight() under reduced motion uses setView(animate:false): the centre is Elephant Point at once (within pixel rounding, < 100 m) and the popup is open
+  const rmo = await rpage.evaluate(() => { MapView.highlight('s1908_08'); const p = JOURNEYS_DATA.places.find(x => x.id === 'pl_elephant_point'); return { reduce: App.REDUCE, distNow: Math.round(MapView.distTo(p.lat, p.lon)), popup: document.querySelectorAll('.leaflet-popup-content').length, target: [p.lat, p.lon] }; });
+  await rpage.waitForTimeout(50);
+  rmo.dist50 = await rpage.evaluate(t => Math.round(MapView.distTo(t[0], t[1])), rmo.target); rmo.centre = await rpage.evaluate(() => MapView.centre());
+  check('reduced motion: App.REDUCE is true, the map centre is Elephant Point at once and still within 50 ms of highlight (no animation) and the popup is open', rmo.reduce === true && rmo.distNow < 100 && rmo.dist50 < 100 && rmo.popup === 1, JSON.stringify(rmo));
+  await rpage.evaluate(() => App.go('/network')); await rpage.waitForTimeout(1000);
+  const pos1 = await rpage.evaluate(() => [...document.querySelectorAll('#netsvg g.netnode')].map(g => g.getAttribute('transform')).join('|'));
+  await rpage.waitForTimeout(500);
+  const pos2 = await rpage.evaluate(() => [...document.querySelectorAll('#netsvg g.netnode')].map(g => g.getAttribute('transform')).join('|'));
+  check('reduced motion: no network node moves between 1.0 s and 1.5 s after load (simulation settled in one pass)', pos1.length > 0 && pos1 === pos2);
+  await rctx.close();
   // ---------------------------------------------------------------- D1 help card dismissal persists; D2 fresh load of a story goes up to the index
   const fctx = await browser.newContext({ viewport: { width: 1400, height: 900 }, ignoreHTTPSErrors: true });
   const fpage = await fctx.newPage(); hook(fpage);

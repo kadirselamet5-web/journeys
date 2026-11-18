@@ -34,6 +34,36 @@ Colours are tokens on `:root` with two dark-scheme blocks; text that sits on a s
 (`--j1907-text`, `--inferred-text`, `--summary-text`, …) checked at ≥ 4.5:1, and the journey colours in the scripts are read
 from the stylesheet (`App.JCOLOR`), so no colour literal remains outside the token blocks and the vendored Leaflet CSS.
 
+## Accessibility (WCAG 2.2 AA)
+
+Everything is operable from the keyboard. A skip link is first in the tab order; every route change sets `document.title`,
+announces the page in a polite live region (`#announce`; 'Returned to …' after Back) and moves focus to the page's `h1`
+(on the map, to the selected stop or the 'Follow the journey' heading). On the map every stop marker and every connector
+is a named, focusable button (`aria-label` = place, visits by year, status; or from → to, mode and its status): Tab reaches
+them, Enter opens the popup, which is a dialog named by its heading and focused; Escape closes it and focus returns to the
+marker, link or button that opened it; ← → step through the journey; labels, badges and arrows are never focusable; the
+stop list and the Method › Geocoding tables carry the same information as text. In the network every node and tie is a
+focusable button (Enter = the same as a click), the SVG is a named group described by the live status line, and the
+**Table** toggle renders the nodes and ties drawn under the current filters as captioned tables in the side panel.
+Lists are lists (archive items and stops are links with `aria-current`, grouped as nested lists), every data table has a
+caption and `scope`d headers, every form control a name, tabs `aria-current="page"`, segmented controls `aria-pressed`,
+the panel toggle `aria-expanded`. Chips point (`aria-describedby`) at one hidden definitions list built from the data
+vocabularies, and a 'What the chips mean' disclosure sits above the tables that use them. Links inside text are underlined;
+control borders, the timeline spine and affiliation edges reach 3:1; a single `:focus-visible` ring (`--j1907`) covers
+everything, including SVG; the Tale's footnote references are 24 px `doc-noteref` links with `doc-backlink` returns.
+`prefers-reduced-motion` is honoured by one flag (`App.REDUCE`): no fly-to, no globe tween, no smooth scrolling, no CSS
+transitions, and the network simulation is settled in one pass. Decorative glyphs (arrows, ¶, bullets) are hidden from
+assistive technology and new-tab links say so.
+
+`tests/a11y/axe-run.js` audits thirteen rendered routes (light: WCAG 2.0/2.1/2.2 A+AA and best-practice rules; dark: the
+colour rules) with axe-core 4.10.2, writes `tests/a11y/axe-after.json`, prints a before/after table against the baseline
+`tests/a11y/axe-before.json` (commit `50a3c59`) and exits non-zero on any A/AA violation:
+
+```bash
+npm --prefix tests/a11y install      # axe-core (test dependency only; never loaded by the page)
+node tests/a11y/axe-run.js
+```
+
 ## Data (exported separately from the interface)
 
 `data/*.json`, `data/csv/*.csv`, `data/bundle.js` (same content, for the page), `data/DATA_DICTIONARY.md`.
@@ -69,8 +99,9 @@ file was restored with its old size and mtime, or Python may import stale byteco
 
 `tests/smoke.js` renders every route headlessly and asserts the behaviour of each feature (network views,
 filters, search, person pages, Method tables, the Start-here page and glossary, navigation, phone / 320 px / 200 %-text
-layouts, dark-scheme contrast of the typed blocks); it exits non-zero on any JavaScript error, crawl failure or
-failed assertion. `docs/REVIEW_REPORT.md` records the three reviews behind the current work packages and
+layouts, dark-scheme contrast of the typed blocks, keyboard operation of the map, the archive list and the network,
+focus management and live announcements, popup dialogs, table captions, and a reduced-motion context); it exits
+non-zero on any JavaScript error, crawl failure or failed assertion. `docs/REVIEW_REPORT.md` records the three reviews behind the current work packages and
 what each package implemented.
 
 ## Authorship

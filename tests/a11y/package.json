@@ -1,0 +1,8 @@
+{
+  "name": "quackenbush-journeys-a11y",
+  "private": true,
+  "description": "axe-core accessibility audit of index.html (node tests/a11y/axe-run.js); axe-core is a test dependency and never loaded by the page",
+  "devDependencies": {
+    "axe-core": "4.10.2"
+  }
+}
