@@ -7,6 +7,7 @@ html = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
 bundle = open(os.path.join(ROOT, 'data', 'bundle.js'), encoding='utf-8').read().replace('</script', '<\\/script')
 html = html.replace('<script src="data/bundle.js"></script>', '<script>\n' + bundle + '\n</script>')
 html = html.replace('href="data/', 'href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/')
+html = re.sub(r'\s+download(?=[\s>])', '', html)  # single-file build links to the repository instead of offering downloads
 os.makedirs(os.path.join(ROOT, 'dist'), exist_ok=True)
 out = os.path.join(ROOT, 'dist', 'quackenbush-journeys-standalone.html')
 open(out, 'w', encoding='utf-8').write(html)

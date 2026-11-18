@@ -161,15 +161,15 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
 #stoplist .d{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.8rem;padding-top:.1rem}
 #stoplist .grp{display:block;margin:.6rem 0 .2rem;font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
 #stoplist .grp.j1907{color:var(--j1907)}#stoplist .grp.j1908{color:var(--j1908)}
-#panelToggle{position:absolute;top:.6rem;left:0;z-index:950;background:var(--surface);border:1px solid var(--rule);border-left:none;border-radius:0 var(--radius) var(--radius) 0;padding:.35rem .5rem;cursor:pointer;box-shadow:var(--shadow);transition:left .2s ease}
+#panelToggle{position:absolute;top:.6rem;left:0;z-index:950;background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-left:none;border-radius:0 var(--radius) var(--radius) 0;padding:.35rem .5rem;cursor:pointer;box-shadow:var(--shadow);transition:left .2s ease}
 #mapstage{flex:1;position:relative;background:#e9eef2}
 #leaflet{position:absolute;inset:0}
 #globe{position:absolute;inset:0;background:var(--paper)}
 #globe svg{width:100%;height:100%;display:block;cursor:grab}
-#maplegend{position:absolute;right:.8rem;bottom:1.6rem;background:rgba(255,253,249,.94);border:1px solid var(--rule);border-radius:var(--radius);padding:.6rem .8rem;font-size:.78rem;z-index:800;max-width:260px;box-shadow:var(--shadow)}
+#maplegend{position:absolute;right:.8rem;bottom:1.6rem;background:var(--surface);opacity:.96;color:var(--ink);border:1px solid var(--rule);border-radius:var(--radius);padding:.6rem .8rem;font-size:.78rem;z-index:800;max-width:260px;box-shadow:var(--shadow)}
 #maplegend .row{display:flex;align-items:center;gap:.5rem;margin:.15rem 0}
 #maplegend svg{flex:none}
-#mapnote{position:absolute;left:.8rem;bottom:.6rem;font-size:.72rem;color:var(--muted);z-index:800;background:rgba(255,253,249,.8);padding:.1rem .4rem;border-radius:3px;max-width:60%}
+#mapnote{position:absolute;left:.8rem;bottom:.6rem;font-size:.72rem;color:var(--muted);z-index:800;background:var(--surface);opacity:.9;padding:.1rem .4rem;border-radius:3px;max-width:60%}
 .leaflet-container{font-family:var(--sans);background:#e3e9ee}
 .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--surface);color:var(--ink)}
 .leaflet-popup-content-wrapper{border-radius:var(--radius);box-shadow:var(--shadow);font-family:var(--sans)}
@@ -200,7 +200,7 @@ sup.fnref{color:var(--j1907);cursor:pointer;font-size:.7em;margin-left:1px}
 #network{display:grid;grid-template-columns:1fr 380px;height:100%}
 #netstage{position:relative;background:var(--surface)}
 #netstage svg{width:100%;height:100%;display:block}
-#netcontrols{position:absolute;top:.6rem;left:.6rem;background:rgba(255,253,249,.95);border:1px solid var(--rule);border-radius:var(--radius);padding:.6rem .8rem;font-size:.84rem;z-index:5;box-shadow:var(--shadow);max-width:330px}
+#netcontrols{position:absolute;top:.6rem;left:.6rem;background:var(--surface);opacity:.97;border:1px solid var(--rule);border-radius:var(--radius);padding:.6rem .8rem;font-size:.84rem;z-index:5;box-shadow:var(--shadow);max-width:330px}
 #netcontrols label{display:inline-flex;align-items:center;gap:.35rem;margin:.1rem .6rem .1rem 0}
 #netcontrols .row{margin:.2rem 0}
 #netside{border-left:1px solid var(--rule);overflow:auto;padding:1rem 1.1rem 3rem;background:var(--paper)}
@@ -886,7 +886,7 @@ function sidePanel(id){
     side.innerHTML=`<h2 style="margin-top:0">Network analysis</h2><p class="small">A nominalist network: a tie exists only where a provided text asserts it. Three kinds of evidence are kept apart and can be shown separately. Node size = number of attestations touching the node under the current filters. Click a node for its record, a tie for its evidence; double-click a node for the full prosopographical page.</p>
     <dl class="kv small"><dt><span style="color:var(--j1907)">■</span> correspondence</dt><dd>${esc(D.network.rules.correspondence)}</dd><dt><span style="color:var(--j1908)">■</span> stated</dt><dd>${esc(D.network.rules.stated)}</dd><dt><span style="color:var(--model)">■</span> PI’s writing</dt><dd>${esc(D.network.rules.pi)}</dd><dt><span style="color:#999">■</span> affiliation</dt><dd>${esc(D.network.rules.affiliation)}</dd><dt>exclusions</dt><dd>${esc(D.network.rules.exclusions)}</dd></dl>
     <h4>Most attested nodes (all evidence)</h4><table class="data"><thead><tr><th>Node</th><th>corr. out/in</th><th>stated</th><th>PI</th><th>total</th></tr></thead><tbody>${top.map(n=>`<tr><td><a href="#/person/${n.id}">${esc(n.label)}</a></td><td>${n.metrics.correspondence_out||0}/${n.metrics.correspondence_in||0}</td><td>${(n.metrics.stated_out||0)+(n.metrics.stated_in||0)}</td><td>${(n.metrics.pi_out||0)+(n.metrics.pi_in||0)}</td><td>${n.metrics.total||0}</td></tr>`).join('')}</tbody></table>
-    <p class="small"><a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/csv/network_edges.csv" download>Download edge list (CSV)</a> · <a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/network.json" download>network.json</a> · <a href="#/method/network">Rules in full</a></p>`; return; }
+    <p class="small"><a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/csv/network_edges.csv">Download edge list (CSV)</a> · <a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/network.json">network.json</a> · <a href="#/method/network">Rules in full</a></p>`; return; }
   const p=IDX.person[id]; const n=D.network.nodes.find(x=>x.id===id)||{metrics:{}};
   const edges=D.network.edges.filter(e=>e.source===id||e.target===id);
   side.innerHTML=`<div class="phase">${esc(n.type||'')}</div><h2 style="margin-top:0">${esc(p.label)}</h2>
@@ -975,9 +975,9 @@ Pages.method = function(seg){
     const csvs=['documents','document_blocks','places','stops','segments','people','institutions','network_edges','network_nodes','timeline','itinerary','stories','published','findings'];
     body=`<h2>Exports</h2><p>The data lives outside the interface. Each table is exported as JSON and CSV; <code>data/bundle.js</code> carries the same content for this page; <code>data/DATA_DICTIONARY.md</code> defines every field. Built ${esc(D.meta.built)} from these inputs:</p>
      <table class="data"><thead><tr><th>Input file</th><th>SHA-256</th><th>bytes</th></tr></thead><tbody>${D.meta.inputs.map(i=>`<tr><td>${esc(i.file)}</td><td class="small" style="font-family:monospace">${esc(i.sha256)}</td><td class="small">${i.bytes}</td></tr>`).join('')}</tbody></table>
-     <h3>JSON</h3><div class="dl">${files.map(f=>`<a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/${f}.json" download>${f}.json</a>`).join('')}</div>
-     <h3>CSV</h3><div class="dl">${csvs.map(f=>`<a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/csv/${f}.csv" download>${f}.csv</a>`).join('')}</div>
-     <h3>Data dictionary and pipeline</h3><p><a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/DATA_DICTIONARY.md" download>DATA_DICTIONARY.md</a> · <code>scripts/extract_docx.py</code> (Word → paragraphs with formatting) · <code>scripts/build_data.py</code> (typing, normalisation, cross-reference and quotation checks) · <code>scripts/authored/*.py</code> (hand-authored normalisation: document metadata, prosopography, gazetteer, stops, stories, ties, published sources, findings).</p>
+     <h3>JSON</h3><div class="dl">${files.map(f=>`<a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/${f}.json">${f}.json</a>`).join('')}</div>
+     <h3>CSV</h3><div class="dl">${csvs.map(f=>`<a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/csv/${f}.csv">${f}.csv</a>`).join('')}</div>
+     <h3>Data dictionary and pipeline</h3><p><a href="https://github.com/kadirselamet5-web/journeys/blob/claude/quackenbush-alaska-maps-f7gnj6/data/DATA_DICTIONARY.md">DATA_DICTIONARY.md</a> · <code>scripts/extract_docx.py</code> (Word → paragraphs with formatting) · <code>scripts/build_data.py</code> (typing, normalisation, cross-reference and quotation checks) · <code>scripts/authored/*.py</code> (hand-authored normalisation: document metadata, prosopography, gazetteer, stops, stories, ties, published sources, findings).</p>
      <h2>Counts</h2><dl class="kv">${Object.entries(D.meta.counts).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${v}</dd>`).join('')}</dl>
      <h2>Vocabularies</h2><h4>Block types</h4><dl class="kv">${Object.entries(D.meta.block_types).map(([k,v])=>`<dt><span class="tag ${k}">${k}</span></dt><dd>${esc(v)}</dd>`).join('')}</dl><h4>Status chips</h4><dl class="kv">${Object.entries(D.meta.status_chips).map(([k,v])=>`<dt>${chip(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`;
   }
