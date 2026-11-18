@@ -1,0 +1,1205 @@
+[
+ {
+  "id": "story_00_frame",
+  "phase": "prologue",
+  "title": "A Tale of Two Mammoths",
+  "subtitle": "The principal investigator's framing (MIT seminar, 20 September 2019)",
+  "places": [
+   "pl_lena_mouth",
+   "pl_elephant_point"
+  ],
+  "stops": [],
+  "docs": [],
+  "people": [
+   "p_woods_rebecca",
+   "p_quackenbush",
+   "p_adams"
+  ],
+  "published": [
+   "pub_bamnh26",
+   "pub_adams_1810",
+   "pub_pfizenmayer_1939"
+  ],
+  "findings": [
+   "a_who_is_speaking",
+   "a_bulletin_text"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "by focusing on two cases that span about a century: the Adams mammoth, so-called, collected in 1806; and the unnamed partial carcass collected by L.S. Quackenbush for the American Museum of Natural History in 1908.",
+    "para": "t008",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "All Quackenbush found were a hip bone and femur, some skull fragments and vertebrae, and a tail still encased in skin and fur, and perhaps as a result, this find has enjoyed barely a degree of the posthumous fame of the Adams mammoth. If the former is the opening act for frozen mammoths specifically and, often, for telling the story of the species, the latter has, until now, warranted little more than a footnote.",
+    "para": "t008",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "Although the Beresovka mammoth itself was widely known when Quackenbush set out for Alaska in 1907, complete accounts of its excavation were not yet available in English (first published 1939),",
+    "para": "t009",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "and so the Adams mammoth remained the primary point of reference for Quackenbush. It cast a long shadow over nineteenth- and early-twentieth-century “mammoth hunting,” and Quackenbush’s expedition was no exception.",
+    "para": "t009",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "This site reconstructs only the Alaskan half of the pairing as a journey; the Adams mammoth (Lena, 1799–1806) is kept as a context layer on the globe view because the PI's argument depends on it.",
+  "order": 0,
+  "prev": null,
+  "next": "story_01_adams"
+ },
+ {
+  "id": "story_01_adams",
+  "phase": "prologue",
+  "title": "Prologue: the Adams mammoth, found twice",
+  "subtitle": "Lena mouth, 1799–1806 (Tale §1)",
+  "places": [
+   "pl_lena_mouth",
+   "pl_yakutsk",
+   "pl_stpetersburg"
+  ],
+  "stops": [],
+  "docs": [],
+  "people": [
+   "p_schoumachoff",
+   "p_adams",
+   "p_popoff",
+   "p_boultonoff",
+   "p_cuvier",
+   "p_golovkin"
+  ],
+  "published": [
+   "pub_adams_1810",
+   "pub_adams_1807_jdn",
+   "pub_cuvier_1812",
+   "pub_memoires_1809"
+  ],
+  "findings": [],
+  "tale_excerpts": [
+   {
+    "text": "the Adams mammoth was found not once but at least twice: First by an Tungus hunter-herder named Ossip Schoumachoff, in 1799, and then again by Adams, for whom the mammoth is called, in 1806.",
+    "para": "t015",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "When he arrived in Yakutsk, a local figure (merchant in English, négociant",
+    "para": "t018",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "Adams hastened up the river, “anxious to save these precious remains, which might perhaps otherwise be lost,”",
+    "para": "t019",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "Adams carefully disengaged the “nerves of the joints,” collected the bones and bristles that lay about the carcass, and “three-fourths of its skin,” and prepared it for its long and arduous voyage back to St Petersburg, a distance of no less than 6,000 kilometres.",
+    "para": "t019",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "The multiple “findings” of the so-called Adams mammoth—Schoumachoff’s repeated sightings, and Adams’s expedition—collapsed into one singular event.",
+    "para": "t020",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Context only: no point in this prologue belongs to Quackenbush's itinerary. The three places are gazetteer points standing for regions the Tale names without coordinates.",
+  "order": 1,
+  "prev": "story_00_frame",
+  "next": "story_02_frozen_meat"
+ },
+ {
+  "id": "story_02_frozen_meat",
+  "phase": "prologue",
+  "title": "Prologue: frozen (mammoth) meat",
+  "subtitle": "The refrigeration debates (Tale §2)",
+  "places": [],
+  "stops": [],
+  "docs": [],
+  "people": [
+   "p_banks",
+   "p_cuvier"
+  ],
+  "published": [
+   "pub_adams_1807_philmag",
+   "pub_once_a_week_1869",
+   "pub_chambers_1852",
+   "pub_frasers_1852",
+   "pub_cold_1878",
+   "pub_queenslander_1881",
+   "pub_lillingston_1898"
+  ],
+  "findings": [
+   "f_chambers_date"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "The Adams mammoth was front and center for these debates. As mid-nineteenth-century refrigeration technology underwent improvement and refinement, commentators in the popular press drew on the Adams mammoth as proof of concept.",
+    "para": "t029",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "But the way in which this narrative took hold—the evolution of “des glacons” into a great translucent block of ice belied the reality of the conditions under which frozen mammoths were found, and this in turn held implications for collectors and paleontologists struggling to make scientific sense of the phenomenon. So, let us turn now to our second case: the Quackenbush mammoth. NB I’m the only one who calls it that.",
+    "para": "t032",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "No place. This page exists so that the PI's §3 argument about 'ice-cliff' (see the excavation page) has its antecedent.",
+  "order": 2,
+  "prev": "story_01_adams",
+  "next": "story_03_claim"
+ },
+ {
+  "id": "story_03_claim",
+  "phase": "paper-trail",
+  "title": "Nome, 1898–1906: a mammoth 'imbedded in a glacier'",
+  "subtitle": "The claim as it entered writing",
+  "places": [
+   "pl_nome",
+   "pl_reported_mammoth"
+  ],
+  "stops": [],
+  "docs": [
+   "d_19061018_reed_startsman",
+   "d_19061230_startsman_graham_reed",
+   "d_19070226_reed_chilberg"
+  ],
+  "people": [
+   "p_startsman",
+   "p_graham",
+   "p_old_indian",
+   "p_reed",
+   "p_chilberg"
+  ],
+  "published": [],
+  "findings": [
+   "a_location_withheld",
+   "f_reed_startsman_date",
+   "a_unnamed_people"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Among the materials Meany forwarded to Bumpus was a copy of a letter from J. Startsman to the “director of exploitation” for the Alaska-Pacific-Yukon Exposition (1909), describing how “an old Indian” had discovered “an extraordinary big” mammoth “imbedded in a glacier” sometime towards the close of the 19",
+    "para": "t034",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "In “1898 or 1899,” he took Startsman’s partner to see the animal, and Statesman, in turn, went to see it “in winter time in 1904.”",
+    "para": "t034",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "The only description of the animal is Startsman's, at one remove from Graham and two from the unnamed finder. Its location is a deliberate blank in the file.",
+  "order": 3,
+  "prev": "story_02_frozen_meat",
+  "next": "story_04_seattle_offer"
+ },
+ {
+  "id": "story_04_seattle_offer",
+  "phase": "paper-trail",
+  "title": "Seattle, October 1906 – March 1907: the Exposition passes the find to New York",
+  "subtitle": "Reed, Chilberg, Meany",
+  "places": [
+   "pl_seattle"
+  ],
+  "stops": [],
+  "docs": [
+   "d_19061018_reed_startsman",
+   "d_19070226_reed_chilberg",
+   "d_19070318_meany_bumpus",
+   "d_19070326_bumpus_meany"
+  ],
+  "people": [
+   "p_reed",
+   "p_chilberg",
+   "p_meany",
+   "p_bumpus",
+   "p_harlan_smith"
+  ],
+  "published": [],
+  "findings": [
+   "a_copies_provenance",
+   "a_conversations"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "a seemingly credible report of a full frozen mammoth brought to the Director, H.C. Bumpus, in March 1907, by Edmond S. Meany, a University of Washington professor hoping to entice the larger, more powerful and above all better-funded institution to secure the find.",
+    "para": "t034",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Meany's price for the information was exhibition rights for 1 April–15 October 1909.",
+  "order": 4,
+  "prev": "story_03_claim",
+  "next": "story_05_newyork_deliberation"
+ },
+ {
+  "id": "story_05_newyork_deliberation",
+  "phase": "paper-trail",
+  "title": "New York and Washington, March–April 1907: the Museum weighs the report",
+  "subtitle": "Matthew's valuation; Osborn's draft terms; Rathbun's 'pure fakes'",
+  "places": [
+   "pl_newyork",
+   "pl_washington"
+  ],
+  "stops": [],
+  "docs": [
+   "d_19070325_matthew_bumpus",
+   "d_19070416_osborn_bumpus",
+   "d_19070417_matthew_osborn",
+   "d_19070425_bumpus_rathbun",
+   "d_19070426_quackenbush_bumpus",
+   "d_19070430_rathbun_bumpus"
+  ],
+  "people": [
+   "p_matthew",
+   "p_osborn",
+   "p_bumpus",
+   "p_rathbun",
+   "p_quackenbush",
+   "p_sherwood",
+   "p_brown",
+   "p_granger",
+   "p_maddren",
+   "p_schubert",
+   "p_lucas_brooklyn_1907",
+   "p_jesup"
+  ],
+  "published": [
+   "pub_maddren",
+   "pub_pcss_folder"
+  ],
+  "findings": [
+   "a_margin_note",
+   "f_name_variants"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "The potential value of such a specimen—in the words of W.D. Matthew, a curator in the Division of Vertebrate Paleontology, “it would be worth whatever it cost, and would be I think the most valuable single addition we could make to our hall for exhibition…purposes—not even excepting the Warren mastodon or the Brontosaurus.”—was enough to entice the AMNH to take action (even though most such reports were “proved…pure fakes,” in the words of Richard Rathbun, Assistant Secretary of the NMNH),",
+    "para": "t035",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "Quackenbush, by contrast, was a kind of contractor—a “fossil hunter” and naturalist whom the AMNH had relied on only, it seems, reluctantly. Though Matthew’s original recommendation was strong—Quackenbush was “a man in whom we could place confidence” and who had experience collecting with the museum (in Wyoming, in 1903) and Matthew wrote that he “hardly [knew] of any other who knows enough about collecting a fossil skeleton and at the same time has the necessary experience in Arctic travel,” the Museum still would have preferred to send its own man—“[Barnum] Brown or Granger if they could be spared,” Matthew suggested before naming Quackenbush.",
+    "para": "t038",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Osborn's letter of 16 April contains a complete draft, in Bumpus's voice, of the terms to be offered to Seattle; the PI's colour marks (red = Bumpus, blue = Osborn) are preserved in the reader.",
+  "order": 5,
+  "prev": "story_04_seattle_offer",
+  "next": "story_06_anderson"
+ },
+ {
+  "id": "story_06_anderson",
+  "phase": "paper-trail",
+  "title": "April–June 1907: benched by an 'old intimate friend'",
+  "subtitle": "Anderson volunteers, then withdraws; Stone declines; Meany waits",
+  "places": [
+   "pl_newyork",
+   "pl_garrison",
+   "pl_nome",
+   "pl_seward_uncertain"
+  ],
+  "stops": [],
+  "docs": [
+   "d_19070427_bumpus_osborn",
+   "d_19070430_bumpus_quackenbush",
+   "d_19070430_bumpus_meany",
+   "d_19070506_asstsec_rathbun",
+   "d_19070512_meany_bumpus",
+   "d_19070615_bumpus_meany",
+   "d_19070620_osborn_bumpus",
+   "d_19070620_stone_bumpus",
+   "d_19070518_anderson_stone"
+  ],
+  "people": [
+   "p_anderson",
+   "p_osborn",
+   "p_bumpus",
+   "p_stone",
+   "p_meany",
+   "p_grant",
+   "p_gilmore",
+   "p_ripley"
+  ],
+  "published": [],
+  "findings": [
+   "f_bumpus_meany_date",
+   "a_osborn_first_page",
+   "f_grants_camp"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Indeed, Quackenbush was almost benched at the eleventh hour, when a friend of Madison Grant offered to ”examine the entire situation without expense” to the Museum.",
+    "para": "t038",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "When, at an even later hour, Anderson then bailed, writing most hastily that he found it “impossible…to visit Nome this year,”",
+    "para": "t038",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Bumpus's 30 April letter to Meany ('we have sent a man to the site') refers to Anderson, who never went; Meany was not told of the substitution in the surviving letters.",
+  "order": 6,
+  "prev": "story_05_newyork_deliberation",
+  "next": "story_07_funding"
+ },
+ {
+  "id": "story_07_funding",
+  "phase": "paper-trail",
+  "title": "June–July 1907: Grant, Pyne, Morgan and the instructions",
+  "subtitle": "$1,500, a 'free hand', and the paper trail of the money",
+  "places": [
+   "pl_newyork"
+  ],
+  "stops": [],
+  "docs": [
+   "d_19070621_bumpus_osborn",
+   "d_19070622_grant_bumpus",
+   "d_19070623_meany_bumpus",
+   "d_19070628_bumpus_jesup",
+   "d_19070629_bumpus_quackenbush_instructions",
+   "d_19070701_bumpus_grant",
+   "d_19070703_grant_bumpus",
+   "d_19070703_osborn_bumpus_excerpt",
+   "d_19070705_quackenbush_noaddressee",
+   "d_nd_note_morgan_acknowledgment",
+   "d_19070715_pyne_osborn",
+   "d_19070718_assttreas_pyne",
+   "d_19070722_osborn_bumpus",
+   "d_19070724_assttreas_osborn",
+   "d_19070724_assttreas_morgan",
+   "d_190707_unnamed_osborn_excerpt_631",
+   "d_19070702_removal_slip_quackenbush"
+  ],
+  "people": [
+   "p_grant",
+   "p_pyne_percy",
+   "p_morgan",
+   "p_osborn",
+   "p_bumpus",
+   "p_jesup",
+   "p_sherwood",
+   "p_sturgis",
+   "p_quackenbush"
+  ],
+  "published": [
+   "pub_measuring_worth"
+  ],
+  "findings": [
+   "a_no_enclosure",
+   "a_removal_slip",
+   "f_grants_camp"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Quackenbush left for Alaska in the company of Madison Grant, who was headed to his ranch near Nome (and, not incidentally, who was given a “free hand” to direct Quackenbush otherwise to his formal instructions if Grant thought the situation so dictated) on only two weeks notice.",
+    "para": "t038",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "Henry Fairfield Osborn, then Curator of Vertebrate Palaeontology (later Director of the Museum) went hat in hand to J.P. Morgan, Jr., and another wealthy financier Percy Pyne (whose brother was an intimate friend of Osborn) to fund the Alaska expeditions.",
+    "para": "t039",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "The instructions of 29 June are the one document where the Museum's expectations are written down; the pencil changes (red in the reader) replace 'Mastodon' with 'Mammoth' and re-aim the fallback reconnaissance at 'Mr. Grants camp on big bone beach'.",
+  "order": 7,
+  "prev": "story_06_anderson",
+  "next": "story_08_departure_1907"
+ },
+ {
+  "id": "story_08_departure_1907",
+  "phase": "journey-1907",
+  "title": "5 July 1907: New York to Seattle",
+  "subtitle": "Departure with a copy of the Startsman letter and 'the map'",
+  "places": [
+   "pl_newyork",
+   "pl_seattle"
+  ],
+  "stops": [
+   "s1907_01",
+   "s1907_02"
+  ],
+  "docs": [
+   "d_19070705_quackenbush_noaddressee",
+   "d_19070629_bumpus_quackenbush_instructions",
+   "d_19070426_quackenbush_bumpus"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_grant",
+   "p_bumpus"
+  ],
+  "published": [
+   "pub_bamnh26",
+   "pub_pcss_folder"
+  ],
+  "findings": [
+   "f_travel_with_grant",
+   "a_the_map"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "on 5 July 1907, L.S. Quackenbush, whom Matthew had recommended for the job, left for Nome, Alaska, by way of Seattle, arriving there a month later.",
+    "para": "t035",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Seattle is a way-point without dates; the connector from New York is drawn as a schematic line and the mode (rail) is implied by LSQ's fare inquiry, not stated.",
+  "order": 8,
+  "prev": "story_07_funding",
+  "next": "story_09_dawson"
+ },
+ {
+  "id": "story_09_dawson",
+  "phase": "journey-1907",
+  "title": "19 July 1907: Dawson",
+  "subtitle": "Three days on the upper Yukon",
+  "places": [
+   "pl_dawson"
+  ],
+  "stops": [
+   "s1907_03"
+  ],
+  "docs": [],
+  "people": [
+   "p_quackenbush"
+  ],
+  "published": [
+   "pub_bamnh26"
+  ],
+  "findings": [
+   "a_bulletin_text"
+  ],
+  "tale_excerpts": [],
+  "model_note": "The only provided attestation is the PI's one-line entry from the Bulletin (p.88). How Quackenbush travelled from Seattle to Dawson, and whether Grant was with him, is not in the provided material; the connector is schematic and the mode is 'unknown'.",
+  "order": 9,
+  "prev": "story_08_departure_1907",
+  "next": "story_10_fortgibbon_palisades"
+ },
+ {
+  "id": "story_10_fortgibbon_palisades",
+  "phase": "journey-1907",
+  "title": "25 July 1907: Fort Gibbon and the Palisades",
+  "subtitle": "Grant turns for Fairbanks; Quackenbush examines 'a high cut bank'",
+  "places": [
+   "pl_fortgibbon",
+   "pl_palisades",
+   "pl_fairbanks"
+  ],
+  "stops": [
+   "s1907_04",
+   "s1907_05"
+  ],
+  "docs": [],
+  "people": [
+   "p_quackenbush",
+   "p_grant"
+  ],
+  "published": [
+   "pub_bamnh26"
+  ],
+  "findings": [
+   "f_travel_with_grant"
+  ],
+  "tale_excerpts": [],
+  "model_note": "The Palisades is the one 1907 stop whose position can be checked against Quackenbush's own distance statement ('35 miles below mouth of Tanana'): the GNIS cliff lies about 60 km down the Yukon from Tanana.",
+  "order": 10,
+  "prev": "story_09_dawson",
+  "next": "story_11_stmichael_nome"
+ },
+ {
+  "id": "story_11_stmichael_nome",
+  "phase": "journey-1907",
+  "title": "29 July – 13 August 1907: St Michael, the tug to Nome, and claimants who would not show the body",
+  "subtitle": "'nothing in their various stories'",
+  "places": [
+   "pl_stmichael",
+   "pl_nome",
+   "pl_solomon_river",
+   "pl_reported_mammoth"
+  ],
+  "stops": [
+   "s1907_06",
+   "s1907_07",
+   "s1907_08"
+  ],
+  "docs": [
+   "d_19070623_meany_bumpus",
+   "d_19070628_bumpus_jesup",
+   "d_19070629_bumpus_quackenbush_instructions"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_grant",
+   "p_startsman",
+   "p_graham",
+   "p_chilberg"
+  ],
+  "published": [
+   "pub_bamnh26"
+  ],
+  "findings": [
+   "f_nome_five_days",
+   "a_location_withheld",
+   "a_letters_referenced_missing"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Finding that “there persons concerned in the reported mammoth find would make no reasonable agreement as to showing the body and feeling pretty well satisfied that there was nothing in their various stories,” LSQ tried to make lemonade with a trip to Eschscholtz Bay.",
+    "para": "t035",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "No letter from Nome survives in the file for 1907; what happened with Startsman and Graham is known only from the Bulletin sentence the PI quotes. The instructions had told LSQ to 'communicate ... by wire'; no telegram is in the file.",
+  "order": 11,
+  "prev": "story_10_fortgibbon_palisades",
+  "next": "story_12_keewalik_1907"
+ },
+ {
+  "id": "story_12_keewalik_1907",
+  "phase": "journey-1907",
+  "title": "13–24 August 1907: Keewalik, Candle, a waterlogged canoe and Jim Hoffman",
+  "subtitle": "'the final outfitting point'",
+  "places": [
+   "pl_keewalik",
+   "pl_candle",
+   "pl_keewalik_river",
+   "pl_kotzebue_sound"
+  ],
+  "stops": [
+   "s1907_09",
+   "s1907_10"
+  ],
+  "docs": [
+   "d_19080327_quackenbush_bumpus_plan"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_hoffman"
+  ],
+  "published": [
+   "pub_bamnh26"
+  ],
+  "findings": [
+   "f_keewalik_spelling",
+   "a_unnamed_people"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Concerned about the possibility of competition, Quackenbush kept this find close to the vest—concealing it even from his local assistant, Jim Hoffman—",
+    "para": "t035",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Hoffman enters the record here (Bulletin p.89, via PI): 'cook and helper', with a fishing boat and no centerboard. In Quackenbush's own letters he remains 'the man who was with me last summer'.",
+  "order": 12,
+  "prev": "story_11_stmichael_nome",
+  "next": "story_13_elephant_point_1907"
+ },
+ {
+  "id": "story_13_elephant_point_1907",
+  "phase": "journey-1907",
+  "title": "24 August – 19 September 1907: Elephant Point",
+  "subtitle": "'portions of a mammoth skeleton together with some skin and hair'",
+  "places": [
+   "pl_elephant_point",
+   "pl_eschscholtz_bay",
+   "pl_buckland_mouth"
+  ],
+  "stops": [
+   "s1907_11",
+   "s1907_12",
+   "s1907_13"
+  ],
+  "docs": [
+   "d_19080225_unsigned_osborn",
+   "d_19080228_osborn_mtpyne",
+   "d_19080228_osborn_morgan",
+   "d_19080327_quackenbush_bumpus_plan"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_hoffman"
+  ],
+  "published": [
+   "pub_bamnh26"
+  ],
+  "findings": [
+   "f_inventory"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Here he found “portions of a mammoth skeleton together with some skin and hair…embedded…in such a manner as to afford very good reasons for the belief that the entire skeleton, with a large part of the covering, would be found in place.”",
+    "para": "t035",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "What was taken out in 1907 is listed only retrospectively, in LSQ's 1908 report: 'an innominate bone and hind limb (minus some foot-bones) together with some flesh, skin, and hair'. The Buckland excursion of 1 September is drawn as a 15-mile spur.",
+  "order": 13,
+  "prev": "story_12_keewalik_1907",
+  "next": "story_14_return_1907"
+ },
+ {
+  "id": "story_14_return_1907",
+  "phase": "journey-1907",
+  "title": "September–November 1907: the Corwin to Nome, the first boat to Seattle, New York on 2 November",
+  "subtitle": "'owing to the inevitable delays in Alaskan travel'",
+  "places": [
+   "pl_keewalik",
+   "pl_nome",
+   "pl_seattle",
+   "pl_newyork"
+  ],
+  "stops": [
+   "s1907_13",
+   "s1907_14",
+   "s1907_15",
+   "s1907_16"
+  ],
+  "docs": [
+   "d_19071028_bumpus_quackenbush",
+   "d_19071113_osborn_bumpus",
+   "d_19071114_secretary_pyne_morgan"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_bumpus",
+   "p_osborn",
+   "p_pyne_percy",
+   "p_morgan"
+  ],
+  "published": [
+   "pub_bamnh26"
+  ],
+  "findings": [],
+  "tale_excerpts": [
+   {
+    "text": "and after he returned to New York in early November he, with the support of Madison Grant, then Sec’y to the NY Zoological Society and notorious eugenicist, petitioned Bumpus for a return visit.",
+    "para": "t035",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Bumpus's wire of 28 October to the Ranier Grande Hotel is the only dated fix for the homeward passage.",
+  "order": 14,
+  "prev": "story_13_elephant_point_1907",
+  "next": "story_15_interlude"
+ },
+ {
+  "id": "story_15_interlude",
+  "phase": "interlude",
+  "title": "Winter 1907–08: albums, hair samples, a paper 'not to be used for Bulletin', and a budget",
+  "subtitle": "New York, November 1907 – May 1908",
+  "places": [
+   "pl_newyork"
+  ],
+  "stops": [],
+  "docs": [
+   "d_190802_memorandum_1908_expedition",
+   "d_19080225_unsigned_osborn",
+   "d_19080228_osborn_mtpyne",
+   "d_19080228_osborn_morgan",
+   "d_19080302_morgan_osborn",
+   "d_19080325_osborn_bumpus",
+   "d_19080327_quackenbush_bumpus_plan",
+   "d_19080330_quackenbush_bumpus",
+   "d_19080406_quackenbush_bumpus",
+   "d_19080408_quackenbush_bumpus",
+   "d_190804_notes_corwin_dates",
+   "d_19080402_bumpus_quackenbush",
+   "d_19080417_bumpus_quackenbush",
+   "d_19080428_bumpus_quackenbush_commission",
+   "d_19080501_bumpus_matthew",
+   "d_nd_ms_mammoth_hunt_1907"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_grant",
+   "p_osborn",
+   "p_bumpus",
+   "p_morgan",
+   "p_pyne_mt",
+   "p_pyne_percy",
+   "p_matthew",
+   "p_granger",
+   "p_hoffman",
+   "p_maddren"
+  ],
+  "published": [
+   "pub_ms_mammoth_hunt_1907",
+   "pub_maddren"
+  ],
+  "findings": [
+   "a_paper_granger",
+   "a_ms_untranscribed",
+   "a_removal_slip"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Intent on beating any other collectors, he went overland across the Seward Peninsula (by train and then wagon) to reach Keewalik—the last outpost before Elephant Point—before the first boat from Nome.",
+    "para": "t036",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "LSQ's six-page plan of 27 March 1908 is the fullest statement of his method: get on the ground before the Corwin, use a canoe on the Buckland, and keep the find quiet because 'the man who was with me last summer knows that I found some mammoth hair'.",
+  "order": 15,
+  "prev": "story_14_return_1907",
+  "next": "story_16_permits_departure"
+ },
+ {
+  "id": "story_16_permits_departure",
+  "phase": "journey-1908",
+  "title": "May 1908: permits, walruses, and departure via Montreal",
+  "subtitle": "19 May 1908 — or 'toward the end of May'",
+  "places": [
+   "pl_newyork",
+   "pl_montreal",
+   "pl_washington"
+  ],
+  "stops": [
+   "s1908_01",
+   "s1908_02"
+  ],
+  "docs": [
+   "d_19080518_bumpus_merriam",
+   "d_19080518_bumpus_towhomitmayconcern",
+   "d_19080519_bumpus_quackenbush",
+   "d_19080519_quackenbush_bumpus",
+   "d_19080520_merriam_bumpus",
+   "d_19080521_bumpus_quackenbush_a",
+   "d_19080521_bumpus_quackenbush_b",
+   "d_19080520_permit_merriam",
+   "d_19080522_bumpus_merriam",
+   "d_19080522_bumpus_quackenbush"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_bumpus",
+   "p_merriam",
+   "p_eskimos"
+  ],
+  "published": [],
+  "findings": [
+   "f_departure_1908"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "On 19 May 1908, Quackenbush set off once again for Alaska in the high hope of excavating a frozen mammoth.",
+    "para": "t036",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "The permit forbids collecting on the Kenai Peninsula and must 'accompany the first consignment'; it was mailed to Nome, general delivery, and acknowledged from Lane's Landing.",
+  "order": 16,
+  "prev": "story_15_interlude",
+  "next": "story_17_seattle_umatilla"
+ },
+ {
+  "id": "story_17_seattle_umatilla",
+  "phase": "journey-1908",
+  "title": "3–21 June 1908: Seattle, the Umatilla, 'ten days' delay in the ice'",
+  "subtitle": "Seventeen days from Seattle to Nome",
+  "places": [
+   "pl_seattle",
+   "pl_nome"
+  ],
+  "stops": [
+   "s1908_03",
+   "s1908_04"
+  ],
+  "docs": [
+   "d_19080603_quackenbush_bumpus",
+   "d_19080624_quackenbush_bumpus",
+   "d_19081001_quackenbush_bumpus_report"
+  ],
+  "people": [
+   "p_quackenbush"
+  ],
+  "published": [
+   "pub_bamnh26"
+  ],
+  "findings": [],
+  "tale_excerpts": [],
+  "model_note": "The canoe 'sent by freight direct from the factory in Maine to Seattle' arrived 'in good condition though there was little left of the crate'; it went on to Keewalik by the first boat of the season, two weeks behind Quackenbush.",
+  "order": 17,
+  "prev": "story_16_permits_departure",
+  "next": "story_18_crossing"
+ },
+ {
+  "id": "story_18_crossing",
+  "phase": "journey-1908",
+  "title": "21 June – 1 July 1908: across the Seward Peninsula",
+  "subtitle": "Train to Lane's Landing, wagon to Candle, dory down the Keewalik River",
+  "places": [
+   "pl_nome",
+   "pl_lanes_landing",
+   "pl_candle",
+   "pl_keewalik_river",
+   "pl_keewalik"
+  ],
+  "stops": [
+   "s1908_04",
+   "s1908_05",
+   "s1908_06",
+   "s1908_07"
+  ],
+  "docs": [
+   "d_19080624_quackenbush_bumpus",
+   "d_19080701_quackenbush_bumpus",
+   "d_19080723_bumpus_quackenbush",
+   "d_19081001_quackenbush_bumpus_report"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_hoffman",
+   "p_settlements_unnamed"
+  ],
+  "published": [
+   "pub_bamnh26"
+  ],
+  "findings": [
+   "f_lanes_landing_shelton",
+   "f_crossing_days"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Intent on beating any other collectors, he went overland across the Seward Peninsula (by train and then wagon) to reach Keewalik—the last outpost before Elephant Point—before the first boat from Nome.",
+    "para": "t036",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Two names for the railhead, two durations for the crossing: both pairs are left standing in the data rather than reconciled.",
+  "order": 18,
+  "prev": "story_17_seattle_umatilla",
+  "next": "story_19_excavation"
+ },
+ {
+  "id": "story_19_excavation",
+  "phase": "journey-1908",
+  "title": "3 July – mid-July 1908: Elephant Point — 'unfortunately,' incomplete",
+  "subtitle": "Excavation by hand; the north-shore bluff near Choris Peninsula",
+  "places": [
+   "pl_elephant_point",
+   "pl_eschscholtz_bay",
+   "pl_choris_bluff"
+  ],
+  "stops": [
+   "s1908_08",
+   "s1908_09"
+  ],
+  "docs": [
+   "d_19081001_quackenbush_bumpus_report",
+   "d_19080701_quackenbush_bumpus",
+   "d_19080428_bumpus_quackenbush_commission"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_hoffman"
+  ],
+  "published": [
+   "pub_bamnh26",
+   "pub_adams_1807_jdn"
+  ],
+  "findings": [
+   "f_inventory"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Again with Jim Hoffman’s assistance, Quackenbush commenced excavation “with picks,” and within a few days could tell that the skeleton was, “unfortunately,” incomplete.",
+    "para": "t036",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "A hip and leg bones, lower jaw with teeth, two tusks, skull fragments, vertebrae, the tail, and “a small quantity of flesh, skin, hair and wool” were found “crowded together in an area about ten by seven feet.”",
+    "para": "t036",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "Quackenbush lamented this perversion. The “commonly used term ‘ice-cliff,’” which others employed to describe the high embankments in Eschscholtz Bay, was “obviously erroneous.” Calling directly on the Adams mammoth, with a footnote pointing to Adams’s original in the Journal du Nord, Quackenbush emphasized that “fossils have never been found imbedded in pure-ice-masses and the term is particularly misleading since it implies that preservation of flesh and hair is due to the ice.”",
+    "para": "t041",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "Bits of vegetation—spruce twigs and “blackened willow leaves” and “a small, thin sheet of chewed grass cut out of the frozen sandy silt close to the lower jaw,…as brilliantly green as on the day it grew”",
+    "para": "t041",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "And because what soft tissue remained, he found largely positioned below the hip and leg of the mammoth, Quackenbush suggested that it was the cradle of “muck” that enabled Pleistocene flesh to avert decay—to cheat death.",
+    "para": "t041",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "The Bulletin's geological argument (pp. 107–125) reaches this site only through the PI's quotations; the full stratigraphic description was not provided.",
+  "order": 19,
+  "prev": "story_18_crossing",
+  "next": "story_20_buckland"
+ },
+ {
+  "id": "story_20_buckland",
+  "phase": "journey-1908",
+  "title": "20 July – 5 August 1908: up the Buckland by canoe",
+  "subtitle": "'The Buckland was found to be much smaller than reports made it'",
+  "places": [
+   "pl_keewalik",
+   "pl_buckland_mouth",
+   "pl_buckland_8mi",
+   "pl_buckland_62mi",
+   "pl_buckland_86mi",
+   "pl_buckland_westfork"
+  ],
+  "stops": [
+   "s1908_10",
+   "s1908_11",
+   "s1908_12",
+   "s1908_13",
+   "s1908_14",
+   "s1908_15",
+   "s1908_16"
+  ],
+  "docs": [
+   "d_19081001_quackenbush_bumpus_report",
+   "d_19080327_quackenbush_bumpus_plan",
+   "d_190804_notes_corwin_dates"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_hoffman",
+   "p_prospectors",
+   "p_maddren"
+  ],
+  "published": [
+   "pub_bamnh26",
+   "pub_maddren"
+  ],
+  "findings": [
+   "f_buckland_miles"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "This, too, was a disappointment. Although miners had assured Quackenbush that the Buckland was navigable for 200 miles, extremely low waters made the going difficult, and Quackenbush and Hoffman turned back about 80 miles inland.",
+    "para": "t036",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Every upriver point is placed from Quackenbush's river-mile estimates along a schematic axis; the halos are wide on purpose. Maddren's map had promised 'elevated Pleistocene, lacustrine, silts' 50–75 miles up; LSQ found silt at 62 miles and lava at 90.",
+  "order": 20,
+  "prev": "story_19_excavation",
+  "next": "story_21_bay_survey"
+ },
+ {
+  "id": "story_21_bay_survey",
+  "phase": "journey-1908",
+  "title": "5–20 August 1908: Beechey's 'mud' banks, the south shore, Hotham Inlet and Selawik Lake",
+  "subtitle": "'almost barren of fossils'",
+  "places": [
+   "pl_eschscholtz_east_end",
+   "pl_elephant_point",
+   "pl_hotham_peninsula",
+   "pl_hotham_inlet",
+   "pl_selawik_lake",
+   "pl_keewalik"
+  ],
+  "stops": [
+   "s1908_16",
+   "s1908_17",
+   "s1908_18",
+   "s1908_19",
+   "s1908_20",
+   "s1908_21",
+   "s1908_22"
+  ],
+  "docs": [
+   "d_19081001_quackenbush_bumpus_report"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_hoffman",
+   "p_beechey"
+  ],
+  "published": [
+   "pub_beechey_1826",
+   "pub_bamnh26"
+  ],
+  "findings": [
+   "f_hotham_peninsula"
+  ],
+  "tale_excerpts": [],
+  "model_note": "This fortnight is absent from the Tale and from the PI's timelines; it is reconstructed entirely from one paragraph of LSQ's report.",
+  "order": 21,
+  "prev": "story_20_buckland",
+  "next": "story_22_return_1908"
+ },
+ {
+  "id": "story_22_return_1908",
+  "phase": "journey-1908",
+  "title": "29 August – 1 October 1908: 'the collection—though small—… at least some scientific value'",
+  "subtitle": "Keewalik, Nome, Seattle, New York; Grant's verdict",
+  "places": [
+   "pl_keewalik",
+   "pl_nome",
+   "pl_seattle",
+   "pl_newyork"
+  ],
+  "stops": [
+   "s1908_22",
+   "s1908_23",
+   "s1908_24",
+   "s1908_25"
+  ],
+  "docs": [
+   "d_19081001_quackenbush_bumpus_report",
+   "d_19081008_bumpus_grant",
+   "d_19081009_grant_bumpus",
+   "d_19081010_grant_bumpus"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_quinn",
+   "p_bumpus",
+   "p_grant",
+   "p_sherwood"
+  ],
+  "published": [
+   "pub_bamnh26",
+   "pub_report_1908"
+  ],
+  "findings": [
+   "a_conversations"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Overall, the expedition met with little success. “While the results of the expedition have not come up to my expectation,” Quackenbush wrote in his final report to Bumpus, “the collection—though small—and data accompanying it have at least some scientific value.”",
+    "para": "t036",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "Grant's two-sentence verdict ('an extremely barren narrative … a remarkable man, who does not do himself justice') is the only reader's response to the report in the file; its last clause is handwritten.",
+  "order": 22,
+  "prev": "story_21_bay_survey",
+  "next": "story_23_accounts"
+ },
+ {
+  "id": "story_23_accounts",
+  "phase": "epilogue",
+  "title": "January–February 1909: paying for the mammoth; the Post Route Map",
+  "subtitle": "$1,712.27, halved",
+  "places": [
+   "pl_newyork",
+   "pl_washington"
+  ],
+  "stops": [],
+  "docs": [
+   "d_nd_osborn_sherwood",
+   "d_19090115_sherwood_osborn",
+   "d_19090115_sherwood_pyne",
+   "d_19090121_sherwood_morgan",
+   "d_19090121_sherwood_pyne",
+   "d_19090121_pyne_sherwood",
+   "d_19090122_morgan_sherwood",
+   "d_19090123_sherwood_pyne",
+   "d_19090123_sherwood_morgan",
+   "d_19090217_quackenbush_sherwood",
+   "d_19090218_sherwood_quackenbush",
+   "d_19090218_sherwood_vonhaake",
+   "d_nd_note_quackenbush_name"
+  ],
+  "people": [
+   "p_sherwood",
+   "p_pyne_percy",
+   "p_morgan",
+   "p_osborn",
+   "p_quackenbush",
+   "p_vonhaake",
+   "p_lanier"
+  ],
+  "published": [
+   "pub_post_route_map_1906",
+   "pub_measuring_worth"
+  ],
+  "findings": [
+   "a_the_map"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "Over the two seasons (1907 and 1908), each chipped in just over $1,600 (present value conservatively estimated in the range of $20,000 today, with the total for both expeditions estimated in the range of $35,000-$40,000).",
+    "para": "t039",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "The Museum's request for the 1906 Post Route Map is the only trace of a map in the file after LSQ's 1907 note; it would be the tier-3 historical map for this reconstruction and was not available.",
+  "order": 23,
+  "prev": "story_22_return_1908",
+  "next": "story_24_afterlife"
+ },
+ {
+  "id": "story_24_afterlife",
+  "phase": "epilogue",
+  "title": "1910–1930: afterlives",
+  "subtitle": "A reference, a hair sample from Coffee Creek, 'the beautiful arrangement', and Grant's reminder",
+  "places": [
+   "pl_newyork",
+   "pl_coffee_creek",
+   "pl_maine_1914"
+  ],
+  "stops": [],
+  "docs": [
+   "d_19100509_hughsmith_bumpus",
+   "d_19100518_bumpus_hughsmith",
+   "d_19140802_quackenbush_grant",
+   "d_19140804_grant_osborn",
+   "d_19140806_lucas_grant",
+   "d_19140807_lucas_quackenbush",
+   "d_19140810_grant_lucas",
+   "d_19140811_quackenbush_lucas",
+   "d_19140812_lucas_grant",
+   "d_19160502_quackenbush_osborn",
+   "d_19160508_osborn_quackenbush",
+   "d_19300607_grant_osborn"
+  ],
+  "people": [
+   "p_quackenbush",
+   "p_bumpus",
+   "p_hugh_smith",
+   "p_andrews",
+   "p_grant",
+   "p_osborn",
+   "p_lucas",
+   "p_matthew",
+   "p_mathews_jf",
+   "p_gilmore",
+   "p_peale",
+   "p_nelson",
+   "p_macphee",
+   "p_bell"
+  ],
+  "published": [
+   "pub_osborn_natural_history_1930"
+  ],
+  "findings": [
+   "a_coffee_creek",
+   "a_folders_unknown"
+  ],
+  "tale_excerpts": [
+   {
+    "text": "However, not unlike the Adams mammoth, the tattered remains excavated by Quackenbush and Jim Hoffman did enjoy an exhibitionary afterlife. They remained on display among the Ice Age Mammals from at least 1916 until at least 1958.",
+    "para": "t043",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   },
+   {
+    "text": "Although Quackenbush thought himself unlucky, and his expeditions a failure, seen from another angle he was in fact lucky to find as much soft tissue as he did:",
+    "para": "t044",
+    "speaker": "principal investigator (Tale of Two Mammoths, 2019), verbatim"
+   }
+  ],
+  "model_note": "The 1914 hair from Coffee Creek, examined by Ross MacPhee in 2019, is the one physical specimen the PI handled in the file. Grant's 1930 slip calls the 1907 find 'the only mammoth ever found in the flesh in the Eastern Hemisphere' — as written.",
+  "order": 24,
+  "prev": "story_23_accounts",
+  "next": null
+ }
+]

@@ -1,0 +1,26 @@
+id,label,kind,place,attestations,note
+i_amnh,American Museum of Natural History (AMNH),museum,pl_newyork,"[""letterheads and signatures throughout Central Archives 590, Box 162""]",
+i_nmnh,United States National Museum / Smithsonian Institution,museum,pl_washington,"[""Bumpus to Rathbun 25 Apr 1907; Rathbun to Bumpus 30 Apr 1907; Osborn 20 June 1907 ('U.S. National Museum')""]","Called 'the National Museum', 'Smithsonian', 'NMNH' and 'SI' variously in the sources."
+i_ayp,Alaska-Yukon-Pacific Exposition (1909),exposition,pl_seattle,"[""Reed to Startsman 18 Oct 1906; Meany 18 Mar 1907 ('1 April to 15 Oct. 1909')""]",Spelled 'Alaska-Pacific-Yukon Exposition' in LSQ 27 Mar 1908 and in the Tale.
+i_uw,University of Washington,university,pl_seattle,"[""Meany to Bumpus 18 Mar 1907 ('the museum of this University')""]",
+i_nyzs,New York Zoological Society,society,pl_newyork,"[""Cast of Characters; 'NYZoo Soc letterhead' (Grant 3 July 1907); 'Zool. Soc. Exec Council' (Osborn 20 June 1907)""]",
+i_tcdc,Taylor Creek Ditch Company,company,pl_newyork,"[""letterhead of Stone to Bumpus 20 June 1907: 11 Wall Street, New York City""]","Officers on letterhead: Madison Grant (President), Andrew J. Stone (VP & GM), Benjamin Leach Allen (Treasurer, 66 Broadway), Robert T. Varnum (Secretary, struck through). The company's Alaskan operations are not located in the sources beyond 'Stone's camp'."
+i_pcss,Pacific Coast Steamship Co.,company,pl_seattle,"[""LSQ to Bumpus 26 Apr 1907 (enclosed folder re direct route Seattle to Nome)""]",
+i_nwss,Northwestern Steamship Co. (Seattle),company,pl_seattle,"[""letterhead of Anderson to Stone 18 May [1907]""]",
+i_cprr,Canadian Pacific Railway,company,,"[""LSQ to Bumpus 19 May 1908 ('via Montreal and the Canadian Pacific')""]",
+i_sprr,Seward Peninsula R.R.,company,pl_lanes_landing,"[""LSQ report 1 Oct 1908 ('the head of the Seward Peninsula R.R. at Lane's Landing')""]",
+i_usda,Department of Agriculture (permit authority),government,pl_washington,"[""Bumpus to LSQ 21 May 1908; Permit 20 May 1908 ('Act of May 11, 1908')""]",
+i_bof,"Bureau of Fisheries, Department of Commerce and Labor",government,pl_washington,"[""Hugh M. Smith to Bumpus 9 May 1910""]",
+i_pod,Post Office Department (Topographer),government,pl_washington,"[""Sherwood to von Haake 18 Feb 1909""]",
+i_yale,Yale Museum,museum,,"[""Osborn draft 16 Apr 1907 ('Mr. Schubert[?] of the Yale Museum')""]",
+i_brooklyn,Brooklyn Museum,museum,,"[""Osborn draft 16 Apr 1907 ('Mr. Lucas of the Brooklyn Museum')""]",
+i_columbia,Columbia (University),university,pl_newyork,"[""Bumpus to Hugh M. Smith 18 May 1910 ('a Columbia graduate'); Cast of Characters""]",
+i_keewalik_hotel,Keewalik Hotel (warehouse),business,pl_keewalik,"[""LSQ report 1 Oct 1908""]",
+i_rainier_hotel,"Rainier Grand Hotel, Seattle",business,pl_seattle,"[""Bumpus to LSQ 28 Oct 1907 ('Ranier Grande Hotel'); LSQ 3 June and 1 July 1908 letterheads ('Rainer Grand Hotel')""]",
+i_utoronto,University of Toronto,university,,"[""Tale title page""]",
+i_spb_academy,St Petersburg Academy of Science,academy,pl_stpetersburg,"[""Tale §1 and §3""]",
+v_corwin,'Corwin' (steamer),vessel,,"[""B.AMNH 26 p.89–90 via PI timeline; LSQ letters 1908 ('the Corwin is a very slow boat'; 'independent steamer')""]",
+v_umatilla,'Umatilla' (steamer),vessel,,"[""LSQ to Bumpus 19 May and 3 June 1908""]",
+v_hoffman_dory,Hoffman's fishing boat / dory,vessel,,"[""B.AMNH 26 p.89 via PI ('fishing boat hired for the coasting'; no centerboard); LSQ report 1908 ('his fishing dory')""]",
+v_canoe_1907,"borrowed canoe (1907): 'a clumsy, waterlogged canoe'",vessel,,"[""B.AMNH 26 p.89 via PI; LSQ 27 Mar 1908""]",
+v_canoe_1908,"canoe (1908), shipped from a factory in Maine",vessel,,"[""LSQ 3 June 1908; LSQ report 1 Oct 1908""]",

@@ -1,0 +1,1869 @@
+[
+ {
+  "id": "pl_newyork",
+  "label": "New York",
+  "attested": [
+   {
+    "form": "New York",
+    "source": "B.AMNH 26 p.88 via PI; letters"
+   },
+   {
+    "form": "NY",
+    "source": "PI timeline"
+   },
+   {
+    "form": "New York City",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "role": "origin/terminus of both journeys; seat of the AMNH",
+  "lat": 40.7128,
+  "lon": -74.0061,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 8,
+  "coord_source": {
+   "authority": "GeoNames",
+   "id": "5128581",
+   "name": "New York City",
+   "lat": 40.71427,
+   "lon": -74.00597,
+   "url": "https://www.geonames.org/5128581"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q60",
+    "name": "New York City",
+    "lat": 40.7128,
+    "lon": -74.0061,
+    "url": "https://www.wikidata.org/wiki/Q60"
+   }
+  ],
+  "gnis_note": "GNIS 975772 (Populated Place) and 2395220 (Civil) per Wikidata; coordinates here from GeoNames/Wikidata (city-level).",
+  "why": "LSQ's departures and returns are recorded only as 'New York'. The AMNH's own location is not given in the documents; the city centroid is used, not the museum.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_01",
+   "s1907_16",
+   "s1908_01",
+   "s1908_25"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation",
+   "story_06_anderson",
+   "story_07_funding",
+   "story_08_departure_1907",
+   "story_14_return_1907",
+   "story_15_interlude",
+   "story_16_permits_departure",
+   "story_22_return_1908",
+   "story_23_accounts",
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "pl_seattle",
+  "label": "Seattle",
+  "attested": [
+   {
+    "form": "Seattle",
+    "source": "letters; B.AMNH 26 via PI"
+   },
+   {
+    "form": "Ranier Grande Hotel, Seattle, Wash.",
+    "source": "Bumpus to LSQ 28 Oct 1907"
+   },
+   {
+    "form": "Rainer Grand Hotel",
+    "source": "LSQ letterheads 1908"
+   }
+  ],
+  "role": "rail/sea interchange, both journeys; seat of the A-Y-P Exposition",
+  "lat": 47.6062,
+  "lon": -122.3321,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 6,
+  "coord_source": {
+   "authority": "GeoNames",
+   "id": "5809844",
+   "name": "Seattle",
+   "lat": 47.60621,
+   "lon": -122.33207,
+   "url": "https://www.geonames.org/5809844"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q5083",
+    "name": "Seattle",
+    "lat": 47.605,
+    "lon": -122.33,
+    "url": "https://www.wikidata.org/wiki/Q5083"
+   }
+  ],
+  "gnis_note": "GNIS 1512650 (Populated Place) per Wikidata.",
+  "why": "Named as the port of departure for Nome (1907 'by way of Seattle'; 1908 'Umatilla' from Seattle). Hotel address not geocoded.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_02",
+   "s1907_15",
+   "s1908_03",
+   "s1908_24"
+  ],
+  "stories": [
+   "story_04_seattle_offer",
+   "story_08_departure_1907",
+   "story_14_return_1907",
+   "story_17_seattle_umatilla",
+   "story_22_return_1908"
+  ]
+ },
+ {
+  "id": "pl_montreal",
+  "label": "Montreal",
+  "attested": [
+   {
+    "form": "Montreal",
+    "source": "LSQ to Bumpus 19 May 1908"
+   },
+   {
+    "form": "Mtl",
+    "source": "PI timeline"
+   }
+  ],
+  "role": "1908 rail routing via the Canadian Pacific",
+  "lat": 45.5033,
+  "lon": -73.5868,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 8,
+  "coord_source": {
+   "authority": "Canadian Geographical Names Database (CGNDB)",
+   "id": "Montréal (CITY, Québec)",
+   "name": "Montréal",
+   "lat": null,
+   "lon": null,
+   "url": "https://geogratis.gc.ca/services/geoname/en/geonames?q=Montr%C3%A9al&concise=CITY",
+   "note": "CGNDB returns a polygon; point taken from GeoNames"
+  },
+  "crosscheck": [
+   {
+    "authority": "GeoNames",
+    "id": "6077243",
+    "name": "Montréal",
+    "lat": 45.50884,
+    "lon": -73.58781,
+    "url": "https://www.geonames.org/6077243"
+   },
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q340",
+    "name": "Montreal",
+    "lat": 45.5033,
+    "lon": -73.5868,
+    "url": "https://www.wikidata.org/wiki/Q340"
+   }
+  ],
+  "why": "LSQ: 'I leave this evening for Seattle via Montreal and the Canadian Pacific' (19 May 1908). Only the routing is attested; no stop duration.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1908_02"
+  ],
+  "stories": [
+   "story_16_permits_departure"
+  ]
+ },
+ {
+  "id": "pl_washington",
+  "label": "Washington, D.C.",
+  "attested": [
+   {
+    "form": "Smithsonian Institution, Washington, D.C.",
+    "source": "Bumpus to Rathbun 25 Apr 1907"
+   },
+   {
+    "form": "Gilmore of Washington",
+    "source": "Lucas 1914"
+   }
+  ],
+  "role": "correspondence node (Smithsonian; Department of Agriculture permit; Post Office Dept; Bureau of Fisheries)",
+  "lat": 38.895,
+  "lon": -77.0367,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 8,
+  "coord_source": {
+   "authority": "GeoNames",
+   "id": "4140963",
+   "name": "Washington",
+   "lat": 38.89511,
+   "lon": -77.03637,
+   "url": "https://www.geonames.org/4140963"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q61",
+    "name": "Washington, D.C.",
+    "lat": 38.895,
+    "lon": -77.0367,
+    "url": "https://www.wikidata.org/wiki/Q61"
+   }
+  ],
+  "why": "No journey stop; shown on the map as a correspondence node only. The Department of Agriculture and Bureau of Fisheries letters do not state a city; Washington is inferred for them from the Smithsonian letter only and marked accordingly in the documents.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_05_newyork_deliberation",
+   "story_16_permits_departure",
+   "story_23_accounts"
+  ]
+ },
+ {
+  "id": "pl_garrison",
+  "label": "Garrison on Hudson",
+  "attested": [
+   {
+    "form": "Garrison on Hudson",
+    "source": "Bumpus telegram [27 Apr 1907]"
+   },
+   {
+    "form": "Garrison",
+    "source": "Bumpus to HFO 21 June 1907; Osborn 3 July 1907"
+   }
+  ],
+  "role": "Osborn's address when away from the Museum",
+  "lat": 41.3839,
+  "lon": -73.9456,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 3,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "974279",
+   "name": "Garrison",
+   "feature_class": "Populated Place",
+   "lat": 41.3839,
+   "lon": -73.9456,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/974279",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q5524005",
+    "name": "Garrison (Putnam County, NY)",
+    "lat": 41.3839,
+    "lon": -73.9456,
+    "url": "https://www.wikidata.org/wiki/Q5524005"
+   },
+   {
+    "authority": "GeoNames",
+    "id": "5118289",
+    "name": "Garrison",
+    "lat": 41.3826,
+    "lon": -73.9471,
+    "url": "https://www.geonames.org/5118289"
+   }
+  ],
+  "why": "Correspondence node only. Identification of 'Garrison on Hudson' with GNIS Garrison, Putnam County, NY (on the Hudson) is a gazetteer match on the attested name.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_06_anderson"
+  ]
+ },
+ {
+  "id": "pl_dawson",
+  "label": "Dawson",
+  "attested": [
+   {
+    "form": "Dawson",
+    "source": "B.AMNH 26 p.88 via PI timeline"
+   }
+  ],
+  "role": "1907: arrived 19 July; three days",
+  "lat": 64.0608,
+  "lon": -139.4317,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 4,
+  "coord_source": {
+   "authority": "Canadian Geographical Names Database (CGNDB)",
+   "id": "Dawson (TOWN, Yukon, province code 60)",
+   "name": "Dawson",
+   "lat": null,
+   "lon": null,
+   "url": "https://geogratis.gc.ca/services/geoname/en/geonames?q=Dawson&province=60",
+   "note": "CGNDB returns a polygon; point taken from GeoNames"
+  },
+  "crosscheck": [
+   {
+    "authority": "GeoNames",
+    "id": "6943713",
+    "name": "Dawson City",
+    "lat": 64.0601,
+    "lon": -139.4332,
+    "url": "https://www.geonames.org/6943713"
+   },
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q372324",
+    "name": "Dawson City",
+    "lat": 64.0608,
+    "lon": -139.4317,
+    "url": "https://www.wikidata.org/wiki/Q372324"
+   }
+  ],
+  "why": "The route from Seattle to Dawson is NOT described in the provided documents (only arrival on 19 July 1907). The connector Seattle→Dawson is therefore schematic with mode unknown.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_03"
+  ],
+  "stories": [
+   "story_09_dawson"
+  ]
+ },
+ {
+  "id": "pl_fortgibbon",
+  "label": "Fort Gibbon",
+  "attested": [
+   {
+    "form": "Fort Gibbon",
+    "source": "B.AMNH 26 p.89 via PI timeline"
+   }
+  ],
+  "role": "1907: LSQ continues to Fort Gibbon, 25 July; Grant to Fairbanks",
+  "lat": 65.1714,
+  "lon": -152.0532,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 3,
+  "coord_source": {
+   "authority": "Wikidata (cross-check only)",
+   "id": "Q16981229",
+   "name": "Fort Gibbon",
+   "lat": 65.1714,
+   "lon": -152.0532,
+   "url": "https://www.wikidata.org/wiki/Q16981229"
+  },
+  "crosscheck": [
+   {
+    "authority": "USGS GNIS",
+    "id": "1410629",
+    "name": "Tanana",
+    "feature_class": "Populated Place",
+    "lat": 65.1719444,
+    "lon": -152.0788889,
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1410629",
+    "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+    "map": null
+   }
+  ],
+  "gnis_note": "No GNIS Domestic Name 'Fort Gibbon' found in the Alaska file; Wikidata Q16981229 supplies the point, which lies ~1 km from GNIS 'Tanana' (Populated Place). Used as the primary source for this one point and flagged.",
+  "why": "Only arrival is attested. Equivalence of Fort Gibbon with the settlement of Tanana is NOT asserted by the sources; the GNIS Tanana record is given as a cross-check only.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_04"
+  ],
+  "stories": [
+   "story_10_fortgibbon_palisades"
+  ]
+ },
+ {
+  "id": "pl_palisades",
+  "label": "The Palisades (Yukon)",
+  "attested": [
+   {
+    "form": "the Palisades",
+    "source": "PI timeline"
+   },
+   {
+    "form": "'a high cut bank' on the Yukon 35 miles below mouth of Tanana",
+    "source": "B.AMNH 26 p.89 as summarised by PI"
+   }
+  ],
+  "role": "1907: examined by LSQ, 25 July",
+  "lat": 65.1081,
+  "lon": -153.3378,
+  "tier": 2,
+  "precision": "feature-centroid",
+  "status": "verified",
+  "radius_km": 8,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1410830",
+   "name": "The Palisades",
+   "feature_class": "Cliff",
+   "lat": 65.1080556,
+   "lon": -153.3377778,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1410830",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": "Melozitna A-1 SW"
+  },
+  "crosscheck": [],
+  "distance_check": "GNIS point lies c. 60 km down the Yukon from Tanana, consistent with Quackenbush's '35 miles below mouth of Tanana' (tier 4 check).",
+  "why": "Gazetteer name matches the attested name and the described position; radius reflects the length of the cliff feature, not positional doubt.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_05"
+  ],
+  "stories": [
+   "story_10_fortgibbon_palisades"
+  ]
+ },
+ {
+  "id": "pl_stmichael",
+  "label": "St Michael",
+  "attested": [
+   {
+    "form": "St Michaels",
+    "source": "PI timeline (B.AMNH 26 p.89)"
+   },
+   {
+    "form": "St. Michaels",
+    "source": "Startsman and Graham 30 Dec 1906"
+   },
+   {
+    "form": "St Michael",
+    "source": "LSQ to Bumpus 26 Apr 1907"
+   }
+  ],
+  "role": "1907: steamed to, 29 July; tug to Nome 4 Aug",
+  "lat": 63.4781,
+  "lon": -162.0392,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 3,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1408977",
+   "name": "Saint Michael",
+   "feature_class": "Populated Place",
+   "lat": 63.4780556,
+   "lon": -162.0391667,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1408977",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q80160",
+    "name": "St. Michael",
+    "lat": 63.4711,
+    "lon": -162.0531,
+    "url": "https://www.wikidata.org/wiki/Q80160"
+   }
+  ],
+  "why": "Gazetteer match on the attested name (spelled 'Saint Michael' in GNIS).",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_06"
+  ],
+  "stories": [
+   "story_11_stmichael_nome"
+  ]
+ },
+ {
+  "id": "pl_nome",
+  "label": "Nome",
+  "attested": [
+   {
+    "form": "Nome",
+    "source": "throughout"
+   }
+  ],
+  "role": "both journeys: Alaskan port of entry/exit; home of Startsman and Graham",
+  "lat": 64.5011,
+  "lon": -165.4064,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 4,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1407125",
+   "name": "Nome",
+   "feature_class": "Populated Place",
+   "lat": 64.5011111,
+   "lon": -165.4063889,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1407125",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q79996",
+    "name": "Nome",
+    "lat": 64.5,
+    "lon": -165.4,
+    "url": "https://www.wikidata.org/wiki/Q79996"
+   },
+   {
+    "authority": "GeoNames",
+    "id": "5870133",
+    "name": "Nome",
+    "lat": 64.5011,
+    "lon": -165.4064,
+    "url": "https://www.geonames.org/5870133"
+   }
+  ],
+  "why": "Gazetteer match on the attested name.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_07",
+   "s1907_14",
+   "s1908_04",
+   "s1908_23"
+  ],
+  "stories": [
+   "story_03_claim",
+   "story_06_anderson",
+   "story_11_stmichael_nome",
+   "story_14_return_1907",
+   "story_17_seattle_umatilla",
+   "story_18_crossing",
+   "story_22_return_1908"
+  ]
+ },
+ {
+  "id": "pl_solomon_river",
+  "label": "Solomon River",
+  "attested": [
+   {
+    "form": "Solomon R., 30 mi to the east",
+    "source": "PI timeline (B.AMNH 26 p.89)"
+   }
+  ],
+  "role": "1907: short trip from Nome (dates not given; within 4–13 Aug)",
+  "lat": 64.5503,
+  "lon": -164.4111,
+  "tier": 2,
+  "precision": "river-mouth",
+  "status": "verified",
+  "radius_km": 15,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1409874",
+   "name": "Solomon River",
+   "feature_class": "Stream",
+   "lat": 64.5502778,
+   "lon": -164.4111111,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1409874",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q131344863",
+    "name": "Solomon River",
+    "lat": 64.5514,
+    "lon": -164.4136,
+    "url": "https://www.wikidata.org/wiki/Q131344863"
+   }
+  ],
+  "distance_check": "GNIS mouth lies c. 47 km (29 mi) east of Nome, matching '30 mi to the east' (tier 4 check).",
+  "why": "GNIS stream coordinates denote the mouth. How far up the river LSQ went is not stated; the halo covers the lower river.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_08"
+  ],
+  "stories": [
+   "story_11_stmichael_nome"
+  ]
+ },
+ {
+  "id": "pl_keewalik",
+  "label": "Keewalik ('the spit')",
+  "attested": [
+   {
+    "form": "Keewalik",
+    "source": "letters; PI timeline"
+   },
+   {
+    "form": "'the spit'",
+    "source": "B.AMNH 26 p.89 via PI"
+   },
+   {
+    "form": "Kiwalik",
+    "source": "GNIS modern spelling (not in sources)"
+   }
+  ],
+  "role": "both journeys: 'the final outfitting point' on Kotzebue Sound",
+  "lat": 66.0228,
+  "lon": -161.8419,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 3,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1413351",
+   "name": "Kiwalik",
+   "feature_class": "Populated Place",
+   "lat": 66.0227778,
+   "lon": -161.8419444,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1413351",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": "Selawik A-6 SW"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q3068117",
+    "name": "Kiwalik",
+    "lat": 66.0228,
+    "lon": -161.8419,
+    "url": "https://www.wikidata.org/wiki/Q3068117"
+   }
+  ],
+  "why": "Attested 'Keewalik' matched to GNIS 'Kiwalik' (Populated Place) at the eastern end of Kotzebue Sound, consistent with LSQ's description. The spelling equivalence is a model identification of an orthographic variant; no source states it.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_09",
+   "s1907_13",
+   "s1908_07",
+   "s1908_10",
+   "s1908_22"
+  ],
+  "stories": [
+   "story_12_keewalik_1907",
+   "story_14_return_1907",
+   "story_18_crossing",
+   "story_20_buckland",
+   "story_21_bay_survey",
+   "story_22_return_1908"
+  ]
+ },
+ {
+  "id": "pl_candle",
+  "label": "Candle",
+  "attested": [
+   {
+    "form": "Candle",
+    "source": "B.AMNH 26 p.89 via PI ('a few miles up Keewalik River'); LSQ 1908"
+   }
+  ],
+  "role": "1907 visited; 1908 wagon terminus, engaged Hoffman",
+  "lat": 65.9133,
+  "lon": -161.9244,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 3,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1412708",
+   "name": "Candle",
+   "feature_class": "Populated Place",
+   "lat": 65.9133333,
+   "lon": -161.9244444,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1412708",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": "Candle D-6 NW"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q2936297",
+    "name": "Candle",
+    "lat": 65.9133,
+    "lon": -161.924,
+    "url": "https://www.wikidata.org/wiki/Q2936297"
+   }
+  ],
+  "distance_check": "GNIS Candle lies c. 13 km up-valley from GNIS Kiwalik, consistent with 'a few miles up Keewalik River'.",
+  "why": "Gazetteer match on the attested name.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_10",
+   "s1908_06"
+  ],
+  "stories": [
+   "story_12_keewalik_1907",
+   "story_18_crossing"
+  ]
+ },
+ {
+  "id": "pl_keewalik_river",
+  "label": "Keewalik River",
+  "attested": [
+   {
+    "form": "Keewalik River",
+    "source": "B.AMNH 26 p.89 via PI; LSQ report 1908 ('rowed down the Keewalik River')"
+   }
+  ],
+  "role": "river between Candle and Keewalik",
+  "lat": 65.9411,
+  "lon": -161.8778,
+  "tier": 2,
+  "precision": "river-mouth",
+  "status": "verified",
+  "radius_km": 6,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1413353",
+   "name": "Kiwalik River",
+   "feature_class": "Stream",
+   "lat": 65.9411111,
+   "lon": -161.8777778,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1413353",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": "Candle D-6 NW"
+  },
+  "crosscheck": [],
+  "why": "Route feature, not a stop.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_12_keewalik_1907",
+   "story_18_crossing"
+  ]
+ },
+ {
+  "id": "pl_kotzebue_sound",
+  "label": "Kotzebue Sound",
+  "attested": [
+   {
+    "form": "Kotzebue Sound",
+    "source": "B.AMNH 26 via PI; LSQ letters"
+   }
+  ],
+  "role": "sea area crossed to Elephant Point",
+  "lat": 66.4929,
+  "lon": -162.9581,
+  "tier": 2,
+  "precision": "feature-centroid",
+  "status": "verified",
+  "radius_km": 60,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1413379",
+   "name": "Kotzebue Sound",
+   "feature_class": "Sea",
+   "lat": 66.4929469,
+   "lon": -162.9581036,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1413379",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q943234",
+    "name": "Kotzebue Sound",
+    "lat": 66.5461,
+    "lon": -162.7494,
+    "url": "https://www.wikidata.org/wiki/Q943234"
+   }
+  ],
+  "why": "Context feature (label only).",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_12_keewalik_1907"
+  ]
+ },
+ {
+  "id": "pl_elephant_point",
+  "label": "Elephant Point",
+  "attested": [
+   {
+    "form": "Elephant Point",
+    "source": "throughout"
+   },
+   {
+    "form": "the bluff at Elephant Point",
+    "source": "Tale"
+   }
+  ],
+  "role": "site of the mammoth remains (found 1907, excavated 1908)",
+  "lat": 66.2589,
+  "lon": -161.3347,
+  "tier": 2,
+  "precision": "feature-centroid",
+  "status": "verified",
+  "radius_km": 3,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1412975",
+   "name": "Elephant Point",
+   "feature_class": "Cape",
+   "lat": 66.2588889,
+   "lon": -161.3347222,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1412975",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": "Selawik B-5 SW"
+  },
+  "crosscheck": [
+   {
+    "authority": "USGS GNIS",
+    "id": "1412976",
+    "name": "Elephant Point",
+    "feature_class": "Populated Place",
+    "lat": 66.2597222,
+    "lon": -161.3461111,
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1412976",
+    "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+    "map": null
+   },
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q5359352",
+    "name": "Elephant Point",
+    "lat": 66.2589,
+    "lon": -161.3347,
+    "url": "https://www.wikidata.org/wiki/Q5359352"
+   }
+  ],
+  "why": "GNIS has both a Cape and a Populated Place of this name 0.5 km apart; the Cape (headland/bluff) is used because the sources speak of 'the bluff'. The exact excavation spot within the bluff ('an area about ten by seven feet') is not located in the sources.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_11",
+   "s1908_08",
+   "s1908_18"
+  ],
+  "stories": [
+   "story_00_frame",
+   "story_13_elephant_point_1907",
+   "story_19_excavation",
+   "story_21_bay_survey"
+  ]
+ },
+ {
+  "id": "pl_eschscholtz_bay",
+  "label": "Eschscholtz Bay",
+  "attested": [
+   {
+    "form": "Eschscholtz Bay",
+    "source": "throughout"
+   },
+   {
+    "form": "Eschholz [sic] Bay",
+    "source": "Bumpus 28 Apr 1908"
+   },
+   {
+    "form": "Exchscholtz Bay",
+    "source": "LSQ report (as transcribed)"
+   },
+   {
+    "form": "'big bone beach'",
+    "source": "Osborn 20 June 1907; Bumpus instructions 1907"
+   }
+  ],
+  "role": "bay containing Elephant Point; 'the well known fossil deposit'",
+  "lat": 66.2972,
+  "lon": -161.5001,
+  "tier": 2,
+  "precision": "feature-centroid",
+  "status": "verified",
+  "radius_km": 25,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1412993",
+   "name": "Eschscholtz Bay",
+   "feature_class": "Sea",
+   "lat": 66.2971849,
+   "lon": -161.5000533,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1412993",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": "Selawik B-6 SE"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q15216772",
+    "name": "Eschscholtz Bay",
+    "lat": 66.3081,
+    "lon": -161.3172,
+    "url": "https://www.wikidata.org/wiki/Q15216772"
+   }
+  ],
+  "why": "Context feature. Osborn's 'big bone beach' is equated with Eschscholtz Bay by Osborn himself ('Eschscholtz Bay—\"big bone beach\"').",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_13_elephant_point_1907",
+   "story_19_excavation"
+  ]
+ },
+ {
+  "id": "pl_choris_bluff",
+  "label": "Cut bluff near Choris Peninsula (north shore)",
+  "attested": [
+   {
+    "form": "'a cut bluff on the north side near Choris Peninsula'",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "role": "1908: fossils gathered after the excavation (date not given)",
+  "lat": 66.2847,
+  "lon": -161.8806,
+  "tier": 5,
+  "precision": "approximate",
+  "status": "approximate",
+  "radius_km": 12,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1412776",
+   "name": "Choris Peninsula",
+   "feature_class": "Cape",
+   "lat": 66.2847222,
+   "lon": -161.8805556,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1412776",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": "Selawik B-6 SE"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q5105071",
+    "name": "Choris Peninsula",
+    "lat": 66.2847,
+    "lon": -161.881,
+    "url": "https://www.wikidata.org/wiki/Q5105071"
+   }
+  ],
+  "why": "The bluff is described only relative to Choris Peninsula; the GNIS point for the peninsula is used with a 12 km halo. LSQ notes the silt deposit is 'continuous with that on Eschscholtz Bay near Choris Peninsula'.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1908_09"
+  ],
+  "stories": [
+   "story_19_excavation"
+  ]
+ },
+ {
+  "id": "pl_buckland_mouth",
+  "label": "Buckland River (mouth / estuary)",
+  "attested": [
+   {
+    "form": "Buckland R",
+    "source": "PI timeline"
+   },
+   {
+    "form": "the Buckland River",
+    "source": "LSQ 27 Mar 1908; report 1908"
+   },
+   {
+    "form": "Bukland River",
+    "source": "LSQ 27 Mar 1908 (as written)"
+   }
+  ],
+  "role": "1907: entered 1 Sept, 15 miles; 1908: 20 July–5 Aug",
+  "lat": 66.2433,
+  "lon": -161.0442,
+  "tier": 2,
+  "precision": "river-mouth",
+  "status": "verified",
+  "radius_km": 6,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1412685",
+   "name": "Buckland River",
+   "feature_class": "Stream",
+   "lat": 66.2433333,
+   "lon": -161.0441667,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1412685",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q2927472",
+    "name": "Buckland River",
+    "lat": 66.2433,
+    "lon": -161.0442,
+    "url": "https://www.wikidata.org/wiki/Q2927472"
+   }
+  ],
+  "why": "GNIS stream coordinates denote the mouth, which is where both ascents began.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1907_12",
+   "s1908_11",
+   "s1908_16"
+  ],
+  "stories": [
+   "story_13_elephant_point_1907",
+   "story_20_buckland"
+  ]
+ },
+ {
+  "id": "pl_buckland_8mi",
+  "label": "Dory anchorage, '8 miles up the river'",
+  "attested": [
+   {
+    "form": "'the dory was anchored 8 miles up the river and we took to the canoe'",
+    "source": "LSQ report 1 Oct 1908 (22 July 1908)"
+   }
+  ],
+  "role": "1908: 22 July",
+  "lat": 66.17,
+  "lon": -160.98,
+  "tier": 4,
+  "precision": "approximate",
+  "status": "approximate",
+  "radius_km": 8,
+  "coord_source": {
+   "authority": "Quackenbush's distance statement (river miles) projected along a schematic river axis from the GNIS mouth toward GNIS West Fork Buckland River",
+   "id": null,
+   "name": null,
+   "lat": null,
+   "lon": null,
+   "url": null
+  },
+  "why": "River miles are not straight-line distances and the river geometry was not traced in this build; the point is a schematic projection and the halo is deliberately generous.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "crosscheck": [],
+  "stops": [
+   "s1908_12"
+  ],
+  "stories": [
+   "story_20_buckland"
+  ]
+ },
+ {
+  "id": "pl_buckland_62mi",
+  "label": "Silt deposit, '62 miles up the river'",
+  "attested": [
+   {
+    "form": "'one such deposit at the lower end of a broad basin — 62 miles up the river — is fully one hundred feet thick'",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "role": "1908: between 22 and 28 July",
+  "lat": 65.78,
+  "lon": -160.55,
+  "tier": 4,
+  "precision": "approximate",
+  "status": "approximate",
+  "radius_km": 20,
+  "coord_source": {
+   "authority": "Quackenbush's distance statement (river miles) projected along a schematic river axis",
+   "id": null,
+   "name": null,
+   "lat": null,
+   "lon": null,
+   "url": null
+  },
+  "why": "Position inferred from LSQ's river-mile estimate only. Treat as 'somewhere in the middle Buckland'.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "crosscheck": [],
+  "stops": [
+   "s1908_13"
+  ],
+  "stories": [
+   "story_20_buckland"
+  ]
+ },
+ {
+  "id": "pl_buckland_86mi",
+  "label": "Turning point, 'estimated at 86 miles above the mouth'",
+  "attested": [
+   {
+    "form": "'On July 28th I reached a point estimated at 86 miles above the mouth of the river and could go no further with the canoe'",
+    "source": "LSQ report 1 Oct 1908"
+   },
+   {
+    "form": "about 80 miles inland",
+    "source": "Tale (PI)"
+   },
+   {
+    "form": "lava overlaps sedimentary rocks 'at a point 90 miles above the mouth'",
+    "source": "LSQ report"
+   }
+  ],
+  "role": "1908: 28 July; furthest point",
+  "lat": 65.6,
+  "lon": -160.35,
+  "tier": 4,
+  "precision": "approximate",
+  "status": "disputed",
+  "radius_km": 25,
+  "coord_source": {
+   "authority": "Quackenbush's distance statement (river miles) projected along a schematic river axis",
+   "id": null,
+   "name": null,
+   "lat": null,
+   "lon": null,
+   "url": null
+  },
+  "why": "LSQ himself writes 'estimated'; the Tale rounds to 'about 80 miles'. Marked disputed because the two provided sources give different figures and the point cannot be fixed.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "crosscheck": [],
+  "stops": [
+   "s1908_14"
+  ],
+  "stories": [
+   "story_20_buckland"
+  ]
+ },
+ {
+  "id": "pl_buckland_westfork",
+  "label": "West Fork (ascended 'a few miles')",
+  "attested": [
+   {
+    "form": "'On the return trip I ascended the West Fork a few miles'",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "role": "1908: between 28 July and 5 Aug",
+  "lat": 65.8183,
+  "lon": -160.6625,
+  "tier": 2,
+  "precision": "river-mouth",
+  "status": "approximate",
+  "radius_km": 15,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1414261",
+   "name": "West Fork Buckland River",
+   "feature_class": "Stream",
+   "lat": 65.8183333,
+   "lon": -160.6625,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1414261",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [],
+  "why": "Identification of LSQ's 'West Fork' with GNIS 'West Fork Buckland River' is a name match; the point is the fork's mouth per GNIS.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1908_15"
+  ],
+  "stories": [
+   "story_20_buckland"
+  ]
+ },
+ {
+  "id": "pl_eschscholtz_east_end",
+  "label": "Extreme eastern end of Eschscholtz Bay (Beechey's 'mud' banks)",
+  "attested": [
+   {
+    "form": "'a small stream where \"mud\" banks were reported by Beechey in 1826, but found sand bluffs and no fossils'",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "role": "1908: c. 5–10 Aug",
+  "lat": 66.27,
+  "lon": -160.9,
+  "tier": 5,
+  "precision": "approximate",
+  "status": "approximate",
+  "radius_km": 12,
+  "coord_source": {
+   "authority": "Approximate placement east of the Buckland estuary within GNIS Eschscholtz Bay",
+   "id": null,
+   "name": null,
+   "lat": null,
+   "lon": null,
+   "url": null
+  },
+  "why": "The stream is unnamed in the report; placed at the head of the bay with a wide halo.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "crosscheck": [],
+  "stops": [
+   "s1908_17"
+  ],
+  "stories": [
+   "story_21_bay_survey"
+  ]
+ },
+ {
+  "id": "pl_hotham_peninsula",
+  "label": "'Hotham Peninsula' (crossed on foot)",
+  "attested": [
+   {
+    "form": "'crossed Hotham Peninsula to Hotham Inlet'",
+    "source": "LSQ report 1 Oct 1908"
+   },
+   {
+    "form": "Baldwin Peninsula",
+    "source": "GNIS modern name — not in sources"
+   }
+  ],
+  "role": "1908: crossed 12 Aug and 17 Aug",
+  "lat": 66.42,
+  "lon": -161.85,
+  "tier": 2,
+  "precision": "inferred",
+  "status": "inferred",
+  "radius_km": 20,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1412570",
+   "name": "Baldwin Peninsula",
+   "feature_class": "Cape",
+   "lat": 66.5516667,
+   "lon": -161.9288889,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1412570",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q786427",
+    "name": "Baldwin Peninsula",
+    "lat": 66.5517,
+    "lon": -161.9289,
+    "url": "https://www.wikidata.org/wiki/Q786427"
+   }
+  ],
+  "why": "No GNIS feature is named 'Hotham Peninsula'. The land LSQ crossed on foot from the north shore of Eschscholtz Bay to Hotham Inlet is recorded in GNIS as Baldwin Peninsula; the identification is the model's inference from the described route. The point is set on the southern part of the peninsula, between the two shores named in the report.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1908_19",
+   "s1908_21"
+  ],
+  "stories": [
+   "story_21_bay_survey"
+  ]
+ },
+ {
+  "id": "pl_hotham_inlet",
+  "label": "Hotham Inlet",
+  "attested": [
+   {
+    "form": "Hotham Inlet",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "role": "1908: 12–16 Aug, southern and western shores examined",
+  "lat": 66.5646,
+  "lon": -161.7293,
+  "tier": 2,
+  "precision": "feature-centroid",
+  "status": "verified",
+  "radius_km": 30,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1413151",
+   "name": "Hotham Inlet",
+   "feature_class": "Sea",
+   "lat": 66.564576,
+   "lon": -161.7292924,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1413151",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": "Selawik C-6 SE"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q5912334",
+    "name": "Hotham Inlet",
+    "lat": 66.8197,
+    "lon": -161.965,
+    "url": "https://www.wikidata.org/wiki/Q5912334"
+   }
+  ],
+  "why": "Gazetteer match; the halo covers the shores examined ('many miles of cut silt bluffs').",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1908_20"
+  ],
+  "stories": [
+   "story_21_bay_survey"
+  ]
+ },
+ {
+  "id": "pl_selawik_lake",
+  "label": "Selawik Lake (south shore)",
+  "attested": [
+   {
+    "form": "'parts of the south shore of Selawik Lake'",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "role": "1908: within 12–16 Aug",
+  "lat": 66.6536,
+  "lon": -160.9375,
+  "tier": 2,
+  "precision": "feature-centroid",
+  "status": "verified",
+  "radius_km": 30,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1413932",
+   "name": "Selawik Lake",
+   "feature_class": "Lake",
+   "lat": 66.6535568,
+   "lon": -160.9374641,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1413932",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q3478053",
+    "name": "Selawik Lake",
+    "lat": 66.4942,
+    "lon": -160.6908,
+    "url": "https://www.wikidata.org/wiki/Q3478053"
+   }
+  ],
+  "why": "Gazetteer match on the lake; which parts of the south shore were examined is not stated.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_21_bay_survey"
+  ]
+ },
+ {
+  "id": "pl_lanes_landing",
+  "label": "Lane's Landing / Shelton (head of the Seward Peninsula R.R.)",
+  "attested": [
+   {
+    "form": "Lane's Landing",
+    "source": "LSQ to Bumpus 24 June 1908 ('the head of the railroad'); LSQ report 1908"
+   },
+   {
+    "form": "Shelton",
+    "source": "PI timeline summarising B.AMNH 26 p.90 ('train to Shelton')"
+   }
+  ],
+  "role": "1908: railhead reached from Nome, c. 24 June",
+  "lat": 65.2264,
+  "lon": -164.8181,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "disputed",
+  "radius_km": 10,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1409420",
+   "name": "Shelton (historical)",
+   "feature_class": "Populated Place",
+   "lat": 65.2263889,
+   "lon": -164.8180556,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1409420",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": "Bendeleben A-6 NW"
+  },
+  "crosscheck": [],
+  "gnis_note": "GNIS has 'Shelton (historical)' but no 'Lanes Landing' in the Alaska file.",
+  "why": "Two names are attested for the railhead by two provided sources (LSQ's letter: Lane's Landing; the Bulletin via the PI: Shelton). Whether they denote the same place is not stated in the provided material; the point uses the GNIS Shelton record and is flagged 'disputed' until the Bulletin text is checked.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [
+   "s1908_05"
+  ],
+  "stories": [
+   "story_18_crossing"
+  ]
+ },
+ {
+  "id": "pl_fairbanks",
+  "label": "Fairbanks",
+  "attested": [
+   {
+    "form": "Fairbanks",
+    "source": "PI timeline: 'Grant to Fairbanks' (B.AMNH 26 p.89)"
+   }
+  ],
+  "role": "1907: Madison Grant's destination when the two parted at Fort Gibbon (not an LSQ stop)",
+  "lat": 64.8378,
+  "lon": -147.7164,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 4,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1401958",
+   "name": "Fairbanks",
+   "feature_class": "Populated Place",
+   "lat": 64.8377778,
+   "lon": -147.7163889,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1401958",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [],
+  "why": "Shown as a secondary node (Grant's divergent route); Grant's movements are otherwise undocumented in the file.",
+  "has_coords": true,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_10_fortgibbon_palisades"
+  ]
+ },
+ {
+  "id": "pl_juneau",
+  "label": "Juneau (mentioned)",
+  "attested": [
+   {
+    "form": "'a whaling station near Juneau'",
+    "source": "Memorandum [Feb 1908]"
+   }
+  ],
+  "role": "mentioned only",
+  "lat": 58.3019,
+  "lon": -134.4197,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 4,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1404263",
+   "name": "Juneau",
+   "feature_class": "Populated Place",
+   "lat": 58.3019444,
+   "lon": -134.4197222,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1404263",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [],
+  "why": "Not visited; listed for completeness of attested place-names.",
+  "mentioned_only": true,
+  "has_coords": true,
+  "scope": "hunt",
+  "stops": [],
+  "stories": []
+ },
+ {
+  "id": "pl_norton_bay",
+  "label": "Norton Bay / Koyuk River (mentioned)",
+  "attested": [
+   {
+    "form": "'The Koyuk River, flowing into Norton Bay, is another promising locality'",
+    "source": "LSQ 27 Mar 1908"
+   }
+  ],
+  "role": "mentioned only; not visited",
+  "lat": 64.7061,
+  "lon": -161.2389,
+  "tier": 2,
+  "precision": "feature-centroid",
+  "status": "verified",
+  "radius_km": 25,
+  "coord_source": {
+   "authority": "USGS GNIS",
+   "id": "1407261",
+   "name": "Norton Bay",
+   "feature_class": "Bay",
+   "lat": 64.7061111,
+   "lon": -161.2388889,
+   "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1407261",
+   "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+   "map": null
+  },
+  "crosscheck": [
+   {
+    "authority": "USGS GNIS",
+    "id": "1404983",
+    "name": "Koyuk River",
+    "feature_class": "Stream",
+    "lat": 64.9291667,
+    "lon": -161.1341667,
+    "url": "https://edits.nationalmap.gov/apps/gaz-domestic/public/summary/1404983",
+    "file": "USGS GNIS Domestic Names, Alaska (DomesticNames_AK.txt), prd-tnm.s3.amazonaws.com, retrieved 2026-11-18",
+    "map": null
+   }
+  ],
+  "why": "Attested as a prospective locality only.",
+  "mentioned_only": true,
+  "has_coords": true,
+  "scope": "hunt",
+  "stops": [],
+  "stories": []
+ },
+ {
+  "id": "pl_reported_mammoth",
+  "label": "Site of the reported frozen mammoth (UNLOCATED)",
+  "attested": [
+   {
+    "form": "'imbedded in a glacier in a kind of cavern ... in the rocks in the hill side'; 'The country is heavily timbered'",
+    "source": "Startsman and Graham 30 Dec 1906"
+   },
+   {
+    "form": "'some two hundred miles up the Yukon River from Nome'",
+    "source": "Bumpus to Jesup 28 June 1907"
+   },
+   {
+    "form": "'you might feel that for the present at least you would not want to disclose the place'",
+    "source": "Reed to Startsman 18 Oct 1906"
+   }
+  ],
+  "role": "object of the 1907 reconnaissance; never shown to Quackenbush",
+  "lat": null,
+  "lon": null,
+  "tier": null,
+  "precision": "unlocated",
+  "status": "unlocated",
+  "radius_km": null,
+  "coord_source": null,
+  "why": "The location was deliberately withheld by the claimants and the AMNH offered to 'guarantee under bond ... not to reveal the locality'. No coordinate is possible or appropriate; the map shows a label, not a point.",
+  "has_coords": false,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "crosscheck": [],
+  "stops": [],
+  "stories": [
+   "story_03_claim",
+   "story_11_stmichael_nome"
+  ]
+ },
+ {
+  "id": "pl_stones_camp",
+  "label": "'Stone's camp' (UNLOCATED)",
+  "attested": [
+   {
+    "form": "'This locality [Eschscholtz Bay] is only 30 miles from Stone's camp'",
+    "source": "Osborn to Bumpus 20 June 1907"
+   },
+   {
+    "form": "'Mr. Grants camp on big bone beach'",
+    "source": "Bumpus instructions 29 June 1907 (pencil insertion)"
+   },
+   {
+    "form": "'his ranch near Nome'",
+    "source": "Tale (PI) on Grant"
+   }
+  ],
+  "role": "Taylor Creek Ditch Co. operation; Grant's destination",
+  "lat": null,
+  "lon": null,
+  "tier": null,
+  "precision": "unlocated",
+  "status": "disputed",
+  "radius_km": null,
+  "coord_source": null,
+  "why": "Three provided statements place Grant's/Stone's base differently (30 miles from Eschscholtz Bay; on 'big bone beach' itself; 'near Nome'). The company name matches a GNIS 'Taylor Creek' on the Seward Peninsula, but no source links them; not placed.",
+  "has_coords": false,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "crosscheck": [],
+  "stops": [],
+  "stories": []
+ },
+ {
+  "id": "pl_coffee_creek",
+  "label": "Coffee Creek, Alaska (1914 hair sample; UNLOCATED)",
+  "attested": [
+   {
+    "form": "'hairs of Mammoth | Coffee Creek Alaska'",
+    "source": "envelope with LSQ to Grant 2 Aug 1914"
+   },
+   {
+    "form": "'I know the location of Coffee Creek'",
+    "source": "Grant to Lucas 10 Aug 1914"
+   }
+  ],
+  "role": "source of the 1914 hair sample",
+  "lat": null,
+  "lon": null,
+  "tier": null,
+  "precision": "unlocated",
+  "status": "unlocated",
+  "radius_km": null,
+  "coord_source": null,
+  "gnis_note": "GNIS lists six streams named Coffee Creek in Alaska (Copper River; Matanuska-Susitna; Nome CA; Lake and Peninsula; Kenai Peninsula; Yukon-Koyukuk CA).",
+  "why": "The sources do not say which Coffee Creek; Grant 'know[s] the location' but does not state it. Not placed.",
+  "has_coords": false,
+  "scope": "hunt",
+  "mentioned_only": false,
+  "crosscheck": [],
+  "stops": [],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "pl_long_island",
+  "label": "Long Island (LSQ's summer home)",
+  "attested": [
+   {
+    "form": "'his summer home on Long Island'",
+    "source": "Matthew to Osborn [17 Apr 1907]"
+   }
+  ],
+  "role": "condition of LSQ's availability in 1907",
+  "lat": null,
+  "lon": null,
+  "tier": null,
+  "precision": "unlocated",
+  "status": "unlocated",
+  "radius_km": null,
+  "coord_source": null,
+  "why": "Region only; not geocoded.",
+  "mentioned_only": true,
+  "has_coords": false,
+  "scope": "hunt",
+  "crosscheck": [],
+  "stops": [],
+  "stories": []
+ },
+ {
+  "id": "pl_maine_1914",
+  "label": "Brassua Lake Camp / Tarratine / Somerset Junction, Maine (1914)",
+  "attested": [
+   {
+    "form": "Brassua Lake Camp, Maine",
+    "source": "LSQ to Grant 2 Aug 1914"
+   },
+   {
+    "form": "c/o A.H. Woods, Tarratine, Maine",
+    "source": "same"
+   },
+   {
+    "form": "telegraph to Somerset Junction",
+    "source": "same"
+   }
+  ],
+  "role": "LSQ's whereabouts, August 1914",
+  "lat": null,
+  "lon": null,
+  "tier": null,
+  "precision": "unlocated",
+  "status": "unlocated",
+  "radius_km": null,
+  "coord_source": null,
+  "why": "Outside the journey scope; not geocoded in this build (GNIS Maine file not downloaded).",
+  "mentioned_only": true,
+  "has_coords": false,
+  "scope": "hunt",
+  "crosscheck": [],
+  "stops": [],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "pl_seward_uncertain",
+  "label": "'Seward(?)' — Anderson's letter of 18 May [1907] (place uncertain)",
+  "attested": [
+   {
+    "form": "Seward(?)",
+    "source": "PI header for Anderson to Stone, 18 May; the query mark is the PI's"
+   }
+  ],
+  "role": "place of writing of Anderson's withdrawal (uncertain)",
+  "lat": null,
+  "lon": null,
+  "tier": null,
+  "precision": "unlocated",
+  "status": "disputed",
+  "radius_km": null,
+  "coord_source": null,
+  "gnis_note": "GNIS 1414598 'Seward' (Populated Place, Kenai Peninsula) exists, but the PI could not read the place-name with confidence; the letter is on Northwestern Steamship Co. (Seattle) letterhead.",
+  "why": "Not placed: the reading is uncertain and the letterhead points elsewhere.",
+  "mentioned_only": true,
+  "has_coords": false,
+  "scope": "hunt",
+  "crosscheck": [],
+  "stops": [],
+  "stories": [
+   "story_06_anderson"
+  ]
+ },
+ {
+  "id": "pl_lena_mouth",
+  "label": "Mouth of the Lena River (Adams mammoth, 1799–1806)",
+  "attested": [
+   {
+    "form": "'near the mouth of the Lena River in Siberia'",
+    "source": "Tale §1"
+   },
+   {
+    "form": "'a narrow peninsula'",
+    "source": "Tale §1"
+   }
+  ],
+  "role": "context: find-site of the Adams mammoth (Tale §1)",
+  "lat": 72.98,
+  "lon": 126.19,
+  "tier": 2,
+  "precision": "approximate",
+  "status": "approximate",
+  "radius_km": 120,
+  "coord_source": {
+   "authority": "GeoNames",
+   "id": "2056283",
+   "name": "Lena Delta",
+   "lat": 72.9648,
+   "lon": 126.1853,
+   "url": "https://www.geonames.org/2056283"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q2298744",
+    "name": "Lena Delta",
+    "lat": 72.9776,
+    "lon": 126.0681,
+    "url": "https://www.wikidata.org/wiki/Q2298744"
+   }
+  ],
+  "scope": "prologue",
+  "why": "The Tale gives no coordinates and names no peninsula; the GeoNames Lena Delta point stands for 'the mouth of the Lena' with a 120 km halo.",
+  "has_coords": true,
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_00_frame",
+   "story_01_adams"
+  ]
+ },
+ {
+  "id": "pl_yakutsk",
+  "label": "Yakutsk",
+  "attested": [
+   {
+    "form": "Yakutsk",
+    "source": "Tale §1"
+   }
+  ],
+  "role": "context: where Adams learned of the find (1806)",
+  "lat": 62.0272,
+  "lon": 129.7319,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 8,
+  "coord_source": {
+   "authority": "GeoNames",
+   "id": "2013159",
+   "name": "Yakutsk",
+   "lat": 62.0272,
+   "lon": 129.7319,
+   "url": "https://www.geonames.org/2013159"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q6610",
+    "name": "Yakutsk",
+    "lat": 62.0272,
+    "lon": 129.7319,
+    "url": "https://www.wikidata.org/wiki/Q6610"
+   }
+  ],
+  "scope": "prologue",
+  "why": "Gazetteer match.",
+  "has_coords": true,
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_01_adams"
+  ]
+ },
+ {
+  "id": "pl_stpetersburg",
+  "label": "St Petersburg",
+  "attested": [
+   {
+    "form": "St Petersburg",
+    "source": "Tale §1"
+   }
+  ],
+  "role": "context: destination of the Adams mammoth; Academy of Science",
+  "lat": 59.95,
+  "lon": 30.3167,
+  "tier": 2,
+  "precision": "settlement",
+  "status": "verified",
+  "radius_km": 10,
+  "coord_source": {
+   "authority": "GeoNames",
+   "id": "498817",
+   "name": "Saint Petersburg",
+   "lat": 59.9386,
+   "lon": 30.3141,
+   "url": "https://www.geonames.org/498817"
+  },
+  "crosscheck": [
+   {
+    "authority": "Wikidata (cross-check only)",
+    "id": "Q656",
+    "name": "Saint Petersburg",
+    "lat": 59.95,
+    "lon": 30.3167,
+    "url": "https://www.wikidata.org/wiki/Q656"
+   }
+  ],
+  "scope": "prologue",
+  "why": "Gazetteer match.",
+  "has_coords": true,
+  "mentioned_only": false,
+  "stops": [],
+  "stories": [
+   "story_01_adams"
+  ]
+ }
+]

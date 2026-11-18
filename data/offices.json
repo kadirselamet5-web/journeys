@@ -1,0 +1,44 @@
+[
+ {
+  "id": "o_amnh_asst_secretary",
+  "label": "Assistant Secretary, AMNH (unnamed signer)",
+  "kind": "office",
+  "institution": "i_amnh",
+  "note": "Sherwood is named as 'the Assistant Secretary' in Bumpus to LSQ 29 June 1907; the signer of the 6 May 1907 copy is not named."
+ },
+ {
+  "id": "o_amnh_asst_treasurer",
+  "label": "Assistant Treasurer, AMNH (unnamed signer)",
+  "kind": "office",
+  "institution": "i_amnh",
+  "note": "Signer of the July 1907 acknowledgment copies is not named. The PI's 1909 header calls Sherwood 'asst treasurer'."
+ },
+ {
+  "id": "o_amnh_secretary",
+  "label": "Secretary, AMNH (unnamed signer)",
+  "kind": "office",
+  "institution": "i_amnh",
+  "note": "Signer of the 14 Nov 1907 resolution copy is not named."
+ },
+ {
+  "id": "o_unnamed_author",
+  "label": "[author not named in transcription]",
+  "kind": "office",
+  "institution": null,
+  "note": "Used where the PI's header gives no sender."
+ },
+ {
+  "id": "o_unnamed_addressee",
+  "label": "[addressee not named]",
+  "kind": "office",
+  "institution": null,
+  "note": "LSQ's note of 5 July 1907 has no addressee."
+ },
+ {
+  "id": "o_to_whom_it_may_concern",
+  "label": "'To Whom it May Concern'",
+  "kind": "office",
+  "institution": null,
+  "note": "Open letter of introduction, 18 May 1908."
+ }
+]

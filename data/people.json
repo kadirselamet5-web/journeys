@@ -1,0 +1,2369 @@
+[
+ {
+  "id": "p_quackenbush",
+  "label": "L. S. Quackenbush",
+  "sort": "Quackenbush",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "L.S. Quackenbush",
+    "source": "signature, letters 1907–1916"
+   },
+   {
+    "form": "Mr. Quackenbush",
+    "source": "Matthew, Osborn, Bumpus letters"
+   },
+   {
+    "form": "Q.",
+    "source": "Osborn to Bumpus 20 June 1907"
+   },
+   {
+    "form": "LSQ",
+    "source": "PI abbreviation"
+   },
+   {
+    "form": "Lee [or See or Leo?] Schuyler Quackenbush",
+    "source": "undated note in 1908 folder; PI's uncertain reading"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Collector for the AMNH",
+    "source": "Cast of Characters"
+   },
+   {
+    "role": "'has been with our parties and done considerable exploring work on his own account'",
+    "source": "Matthew to Bumpus 25 Mar 1907"
+   },
+   {
+    "role": "'a Columbia graduate, and one that we have twice sent up to Alaska for Mammoth'",
+    "source": "Bumpus to Hugh M. Smith 18 May 1910"
+   },
+   {
+    "role": "experience collecting with the museum in Wyoming, 1903",
+    "source": "Tale (PI)"
+   }
+  ],
+  "addresses": [
+   {
+    "address": "142 West 57th St.",
+    "source": "LSQ to Bumpus 26 Apr 1907"
+   },
+   {
+    "address": "summer home on Long Island",
+    "source": "Matthew to Osborn [17 Apr 1907]"
+   },
+   {
+    "address": "27 W. 73rd St",
+    "source": "undated note; Bumpus 1910"
+   },
+   {
+    "address": "Brassua Lake Camp, Maine / c/o A.H. Woods, Tarratine, Maine",
+    "source": "LSQ 1914"
+   },
+   {
+    "address": "31 West 68th St.",
+    "source": "LSQ to HFO 2 May 1916"
+   }
+  ],
+  "pi_characterisation": "Collector for the AMNH. Columbia Graduate (CA 262, 1906-1912, Box 92)",
+  "institutions": [
+   "i_amnh",
+   "i_columbia"
+  ],
+  "sent": [
+   "d_19070426_quackenbush_bumpus",
+   "d_19070705_quackenbush_noaddressee",
+   "d_19080327_quackenbush_bumpus_plan",
+   "d_19080330_quackenbush_bumpus",
+   "d_19080406_quackenbush_bumpus",
+   "d_19080408_quackenbush_bumpus",
+   "d_nd_ms_mammoth_hunt_1907",
+   "d_19080519_quackenbush_bumpus",
+   "d_19080603_quackenbush_bumpus",
+   "d_19080624_quackenbush_bumpus",
+   "d_19080701_quackenbush_bumpus",
+   "d_19081001_quackenbush_bumpus_report",
+   "d_19090217_quackenbush_sherwood",
+   "d_19140802_quackenbush_grant",
+   "d_19140811_quackenbush_lucas",
+   "d_19160502_quackenbush_osborn"
+  ],
+  "received": [
+   "d_19070430_bumpus_quackenbush",
+   "d_19070629_bumpus_quackenbush_instructions",
+   "d_19070702_removal_slip_quackenbush",
+   "d_19071028_bumpus_quackenbush",
+   "d_19080402_bumpus_quackenbush",
+   "d_19080417_bumpus_quackenbush",
+   "d_19080428_bumpus_quackenbush_commission",
+   "d_19080519_bumpus_quackenbush",
+   "d_19080520_permit_merriam",
+   "d_19080521_bumpus_quackenbush_a",
+   "d_19080521_bumpus_quackenbush_b",
+   "d_19080522_bumpus_quackenbush",
+   "d_19080723_bumpus_quackenbush",
+   "d_19090218_sherwood_quackenbush",
+   "d_19140807_lucas_quackenbush",
+   "d_19160508_osborn_quackenbush"
+  ],
+  "mentioned_in": [
+   "d_19070325_matthew_bumpus",
+   "d_19070416_osborn_bumpus",
+   "d_19070417_matthew_osborn",
+   "d_19070620_osborn_bumpus",
+   "d_19070621_bumpus_osborn",
+   "d_19070623_meany_bumpus",
+   "d_19070628_bumpus_jesup",
+   "d_19070701_bumpus_grant",
+   "d_19070703_grant_bumpus",
+   "d_19070703_osborn_bumpus_excerpt",
+   "d_19071113_osborn_bumpus",
+   "d_190802_memorandum_1908_expedition",
+   "d_19080225_unsigned_osborn",
+   "d_19080228_osborn_morgan",
+   "d_19080518_bumpus_merriam",
+   "d_19080518_bumpus_towhomitmayconcern",
+   "d_19081010_grant_bumpus",
+   "d_19090115_sherwood_pyne",
+   "d_nd_note_quackenbush_name",
+   "d_19100518_bumpus_hughsmith",
+   "d_19140806_lucas_grant",
+   "d_19140810_grant_lucas",
+   "d_19140812_lucas_grant",
+   "d_19300607_grant_osborn"
+  ],
+  "stories": [
+   "story_00_frame",
+   "story_05_newyork_deliberation",
+   "story_07_funding",
+   "story_08_departure_1907",
+   "story_09_dawson",
+   "story_10_fortgibbon_palisades",
+   "story_11_stmichael_nome",
+   "story_12_keewalik_1907",
+   "story_13_elephant_point_1907",
+   "story_14_return_1907",
+   "story_15_interlude",
+   "story_16_permits_departure",
+   "story_17_seattle_umatilla",
+   "story_18_crossing",
+   "story_19_excavation",
+   "story_20_buckland",
+   "story_21_bay_survey",
+   "story_22_return_1908",
+   "story_23_accounts",
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_bumpus",
+  "label": "H. C. Bumpus",
+  "sort": "Bumpus",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Director",
+    "source": "letter copies signed 'Director'"
+   },
+   {
+    "form": "H.C.B.",
+    "source": "Osborn's draft 16 Apr 1907"
+   },
+   {
+    "form": "Dr. Bumpus",
+    "source": "correspondents"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Director, AMNH",
+    "source": "Cast of Characters; letterheads"
+   }
+  ],
+  "pi_characterisation": "Director AMNH",
+  "institutions": [
+   "i_amnh"
+  ],
+  "addresses": [],
+  "sent": [
+   "d_19070326_bumpus_meany",
+   "d_19070425_bumpus_rathbun",
+   "d_19070427_bumpus_osborn",
+   "d_19070430_bumpus_quackenbush",
+   "d_19070430_bumpus_meany",
+   "d_19070615_bumpus_meany",
+   "d_19070621_bumpus_osborn",
+   "d_19070628_bumpus_jesup",
+   "d_19070629_bumpus_quackenbush_instructions",
+   "d_19070701_bumpus_grant",
+   "d_19071028_bumpus_quackenbush",
+   "d_19080402_bumpus_quackenbush",
+   "d_19080417_bumpus_quackenbush",
+   "d_19080428_bumpus_quackenbush_commission",
+   "d_19080501_bumpus_matthew",
+   "d_19080518_bumpus_merriam",
+   "d_19080518_bumpus_towhomitmayconcern",
+   "d_19080519_bumpus_quackenbush",
+   "d_19080521_bumpus_quackenbush_a",
+   "d_19080521_bumpus_quackenbush_b",
+   "d_19080522_bumpus_merriam",
+   "d_19080522_bumpus_quackenbush",
+   "d_19080723_bumpus_quackenbush",
+   "d_19081008_bumpus_grant",
+   "d_19100518_bumpus_hughsmith"
+  ],
+  "received": [
+   "d_19070318_meany_bumpus",
+   "d_19070325_matthew_bumpus",
+   "d_19070416_osborn_bumpus",
+   "d_19070426_quackenbush_bumpus",
+   "d_19070430_rathbun_bumpus",
+   "d_19070512_meany_bumpus",
+   "d_19070620_osborn_bumpus",
+   "d_19070620_stone_bumpus",
+   "d_19070622_grant_bumpus",
+   "d_19070623_meany_bumpus",
+   "d_19070703_grant_bumpus",
+   "d_19070703_osborn_bumpus_excerpt",
+   "d_19070722_osborn_bumpus",
+   "d_19071113_osborn_bumpus",
+   "d_19080325_osborn_bumpus",
+   "d_19080327_quackenbush_bumpus_plan",
+   "d_19080330_quackenbush_bumpus",
+   "d_19080406_quackenbush_bumpus",
+   "d_19080408_quackenbush_bumpus",
+   "d_19080519_quackenbush_bumpus",
+   "d_19080520_merriam_bumpus",
+   "d_19080603_quackenbush_bumpus",
+   "d_19080624_quackenbush_bumpus",
+   "d_19080701_quackenbush_bumpus",
+   "d_19081001_quackenbush_bumpus_report",
+   "d_19081009_grant_bumpus",
+   "d_19081010_grant_bumpus",
+   "d_19100509_hughsmith_bumpus"
+  ],
+  "mentioned_in": [
+   "d_19070506_asstsec_rathbun"
+  ],
+  "stories": [
+   "story_04_seattle_offer",
+   "story_05_newyork_deliberation",
+   "story_06_anderson",
+   "story_07_funding",
+   "story_08_departure_1907",
+   "story_14_return_1907",
+   "story_15_interlude",
+   "story_16_permits_departure",
+   "story_22_return_1908",
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_osborn",
+  "label": "Henry Fairfield Osborn",
+  "sort": "Osborn",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "HFO",
+    "source": "PI abbreviation"
+   },
+   {
+    "form": "H.F.O.",
+    "source": "signature"
+   },
+   {
+    "form": "Professor Osborn",
+    "source": "1907 letters"
+   },
+   {
+    "form": "President Osborn",
+    "source": "1908–1916 letters"
+   },
+   {
+    "form": "Fairfield",
+    "source": "Morgan's salutation 2 Mar 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Curator of Vertebrate Palaeontology, AMNH",
+    "source": "Cast of Characters"
+   },
+   {
+    "role": "'President Osborn'",
+    "source": "letters from 25 Feb 1908"
+   },
+   {
+    "role": "later Director of the Museum",
+    "source": "Tale (PI)"
+   }
+  ],
+  "addresses": [
+   {
+    "address": "Garrison on Hudson",
+    "source": "Bumpus telegram [27 Apr 1907]; Osborn 3 July 1907"
+   }
+  ],
+  "pi_characterisation": "Curator of VP, AMNH.",
+  "institutions": [
+   "i_amnh"
+  ],
+  "sent": [
+   "d_19070416_osborn_bumpus",
+   "d_19070620_osborn_bumpus",
+   "d_19070703_osborn_bumpus_excerpt",
+   "d_19070722_osborn_bumpus",
+   "d_19071113_osborn_bumpus",
+   "d_19080228_osborn_mtpyne",
+   "d_19080228_osborn_morgan",
+   "d_19080325_osborn_bumpus",
+   "d_nd_osborn_sherwood",
+   "d_19160508_osborn_quackenbush"
+  ],
+  "received": [
+   "d_19070417_matthew_osborn",
+   "d_19070427_bumpus_osborn",
+   "d_19070621_bumpus_osborn",
+   "d_190707_unnamed_osborn_excerpt_631",
+   "d_19070715_pyne_osborn",
+   "d_19070724_assttreas_osborn",
+   "d_19080225_unsigned_osborn",
+   "d_19080302_morgan_osborn",
+   "d_19090115_sherwood_osborn",
+   "d_19140804_grant_osborn",
+   "d_19160502_quackenbush_osborn",
+   "d_19300607_grant_osborn"
+  ],
+  "mentioned_in": [
+   "d_19070326_bumpus_meany",
+   "d_19070430_bumpus_quackenbush",
+   "d_19070622_grant_bumpus",
+   "d_19070628_bumpus_jesup",
+   "d_19070629_bumpus_quackenbush_instructions",
+   "d_19070724_assttreas_morgan",
+   "d_190802_memorandum_1908_expedition",
+   "d_19090115_sherwood_pyne",
+   "d_19140806_lucas_grant",
+   "d_19140807_lucas_quackenbush"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation",
+   "story_06_anderson",
+   "story_07_funding",
+   "story_14_return_1907",
+   "story_15_interlude",
+   "story_23_accounts",
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_matthew",
+  "label": "W. D. Matthew",
+  "sort": "Matthew",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Dr. Matthew",
+    "source": "Osborn 16 Apr 1907"
+   },
+   {
+    "form": "Dr. Matthews",
+    "source": "Osborn to Bumpus 20 June 1907 (as written)"
+   },
+   {
+    "form": "Doctor Matthew, our Curator of Vertebrate Palaeontology",
+    "source": "Lucas to LSQ 7 Aug 1914"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Department of Vertebrate Paleontology, AMNH",
+    "source": "letterhead 25 Mar 1907"
+   },
+   {
+    "role": "Curator of Vertebrate Palaeontology",
+    "source": "Lucas 1914"
+   }
+  ],
+  "pi_characterisation": "Curator (?) in dept. of VP, AMNH. Reports on Startsman letters, recommends LSQ for job.",
+  "institutions": [
+   "i_amnh"
+  ],
+  "addresses": [],
+  "sent": [
+   "d_19070325_matthew_bumpus",
+   "d_19070417_matthew_osborn"
+  ],
+  "received": [
+   "d_19080501_bumpus_matthew"
+  ],
+  "mentioned_in": [
+   "d_19070416_osborn_bumpus",
+   "d_19070620_osborn_bumpus",
+   "d_19140807_lucas_quackenbush"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation",
+   "story_15_interlude",
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_grant",
+  "label": "Madison Grant",
+  "sort": "Grant",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr. Grant",
+    "source": "letters"
+   },
+   {
+    "form": "Madison Grant",
+    "source": "signature"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Secretary, New York Zoological Society",
+    "source": "Cast of Characters; 'NYZoo Soc letterhead' 3 July 1907"
+   },
+   {
+    "role": "President, Taylor Creek Ditch Company, 11 Wall Street",
+    "source": "letterhead of Stone to Bumpus 20 June 1907"
+   },
+   {
+    "role": "Attorney and Counsellor at Law, 11 Wall Street",
+    "source": "letterhead 4 Aug 1914"
+   },
+   {
+    "role": "'notorious eugenicist'",
+    "source": "Tale (PI characterisation)"
+   }
+  ],
+  "pi_characterisation": "Secretary, NY Zoological Society. Goes to Alaska with LSQ 1907, assists up to Nome. Also President of the Taylor Creek Ditch Company, whose VP/Gen Manager is Andrew J. Stone",
+  "institutions": [
+   "i_nyzs",
+   "i_tcdc"
+  ],
+  "addresses": [],
+  "sent": [
+   "d_19070622_grant_bumpus",
+   "d_19070703_grant_bumpus",
+   "d_19081009_grant_bumpus",
+   "d_19081010_grant_bumpus",
+   "d_19140804_grant_osborn",
+   "d_19140810_grant_lucas",
+   "d_19300607_grant_osborn"
+  ],
+  "received": [
+   "d_19070701_bumpus_grant",
+   "d_19081008_bumpus_grant",
+   "d_19140802_quackenbush_grant",
+   "d_19140806_lucas_grant",
+   "d_19140812_lucas_grant"
+  ],
+  "mentioned_in": [
+   "d_19070620_osborn_bumpus",
+   "d_19070620_stone_bumpus",
+   "d_19070621_bumpus_osborn",
+   "d_19070628_bumpus_jesup",
+   "d_19070629_bumpus_quackenbush_instructions",
+   "d_19070703_osborn_bumpus_excerpt",
+   "d_190802_memorandum_1908_expedition",
+   "d_19080225_unsigned_osborn",
+   "d_19140807_lucas_quackenbush"
+  ],
+  "stories": [
+   "story_06_anderson",
+   "story_07_funding",
+   "story_08_departure_1907",
+   "story_10_fortgibbon_palisades",
+   "story_11_stmichael_nome",
+   "story_15_interlude",
+   "story_22_return_1908",
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_meany",
+  "label": "Edmond S. Meany",
+  "sort": "Meany",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Edmond S. Meany",
+    "source": "signature 18 Mar 1907"
+   },
+   {
+    "form": "Meaney",
+    "source": "PI headers (variant spelling)"
+   },
+   {
+    "form": "3dmond [sic] S. Meany",
+    "source": "Osborn 16 Apr 1907 as transcribed"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Professor, University of Washington",
+    "source": "Cast; Bumpus to Rathbun 25 Apr 1907"
+   },
+   {
+    "role": "speaks for the Alaska-Yukon-Pacific Exposition",
+    "source": "Bumpus to Rathbun 25 Apr 1907"
+   }
+  ],
+  "pi_characterisation": "University of Washington professor, go-between for A-Y-P people and AMNH",
+  "institutions": [
+   "i_uw",
+   "i_ayp"
+  ],
+  "addresses": [],
+  "sent": [
+   "d_19070318_meany_bumpus",
+   "d_19070512_meany_bumpus",
+   "d_19070623_meany_bumpus"
+  ],
+  "received": [
+   "d_19070326_bumpus_meany",
+   "d_19070430_bumpus_meany",
+   "d_19070615_bumpus_meany"
+  ],
+  "mentioned_in": [
+   "d_19070416_osborn_bumpus",
+   "d_19070425_bumpus_rathbun"
+  ],
+  "stories": [
+   "story_04_seattle_offer",
+   "story_06_anderson"
+  ]
+ },
+ {
+  "id": "p_startsman",
+  "label": "J. H. Startsman",
+  "sort": "Startsman",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "J.H. Startsman",
+    "source": "Reed header 1906"
+   },
+   {
+    "form": "Startson",
+    "source": "Matthew to Osborn [17 Apr 1907]"
+   },
+   {
+    "form": "Statesman",
+    "source": "Tale (typographical variant)"
+   }
+  ],
+  "roles": [
+   {
+    "role": "of Nome; co-claimant of the reported mammoth",
+    "source": "Reed 18 Oct 1906; Bumpus to Rathbun 1907"
+   }
+  ],
+  "addresses": [
+   {
+    "address": "Nome",
+    "source": "Reed to Startsman 18 Oct 1906"
+   }
+  ],
+  "pi_characterisation": "Finder of purported mammoth, partner of E.W. Graham",
+  "institutions": [],
+  "sent": [
+   "d_19061230_startsman_graham_reed"
+  ],
+  "received": [
+   "d_19061018_reed_startsman"
+  ],
+  "mentioned_in": [
+   "d_19070226_reed_chilberg",
+   "d_19070325_matthew_bumpus",
+   "d_19070416_osborn_bumpus",
+   "d_19070417_matthew_osborn",
+   "d_19070425_bumpus_rathbun",
+   "d_19070518_anderson_stone",
+   "d_19070705_quackenbush_noaddressee"
+  ],
+  "stories": [
+   "story_03_claim",
+   "story_11_stmichael_nome"
+  ]
+ },
+ {
+  "id": "p_graham",
+  "label": "E. W. Graham",
+  "sort": "Graham",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "E.W. Graham",
+    "source": "Startsman letter; Osborn draft"
+   },
+   {
+    "form": "C.W. Graham [sic]",
+    "source": "Startsman and Graham to Reed 30 Dec 1906 (first mention)"
+   }
+  ],
+  "roles": [
+   {
+    "role": "partner of Startsman; taken to see the animal in 1898 and 1899",
+    "source": "Startsman and Graham to Reed 30 Dec 1906"
+   }
+  ],
+  "pi_characterisation": "Finder of purported mammoth, partner of J.H. Startsman",
+  "institutions": [],
+  "addresses": [],
+  "sent": [
+   "d_19061230_startsman_graham_reed"
+  ],
+  "received": [],
+  "mentioned_in": [
+   "d_19070416_osborn_bumpus",
+   "d_19070425_bumpus_rathbun"
+  ],
+  "stories": [
+   "story_03_claim",
+   "story_11_stmichael_nome"
+  ]
+ },
+ {
+  "id": "p_reed",
+  "label": "Henry E. Reed",
+  "sort": "Reed",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Henry E. Reed",
+    "source": "header 18 Oct 1906"
+   }
+  ],
+  "roles": [
+   {
+    "role": "'director of exploitation', Alaska-Yukon-Pacific Exposition",
+    "source": "Reed to Startsman 18 Oct 1906 (PI summary)"
+   }
+  ],
+  "pi_characterisation": "Director of exploitation for 1909 Alaska-Yukon-Pacific Exposition",
+  "institutions": [
+   "i_ayp"
+  ],
+  "addresses": [],
+  "sent": [
+   "d_19061018_reed_startsman",
+   "d_19070226_reed_chilberg"
+  ],
+  "received": [
+   "d_19061230_startsman_graham_reed"
+  ],
+  "mentioned_in": [
+   "d_19070416_osborn_bumpus",
+   "d_19070518_anderson_stone",
+   "d_19070705_quackenbush_noaddressee"
+  ],
+  "stories": [
+   "story_03_claim",
+   "story_04_seattle_offer"
+  ]
+ },
+ {
+  "id": "p_chilberg",
+  "label": "J. E. Chilberg",
+  "sort": "Chilberg",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Hon. J.E. Chilberg",
+    "source": "Reed to Startsman 18 Oct 1906"
+   },
+   {
+    "form": "President Chilberg",
+    "source": "same"
+   }
+  ],
+  "roles": [
+   {
+    "role": "President, Alaska-Yukon-Pacific Exposition",
+    "source": "Reed 18 Oct 1906"
+   },
+   {
+    "role": "'closely connected at Nome in banking and mining'",
+    "source": "Meany to Bumpus 23 June 1907"
+   }
+  ],
+  "pi_characterisation": "President of 1909 Alaska-Yukon-Pacific Exposition",
+  "institutions": [
+   "i_ayp"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [
+   "d_19070226_reed_chilberg"
+  ],
+  "mentioned_in": [
+   "d_19061018_reed_startsman",
+   "d_19070416_osborn_bumpus",
+   "d_19070518_anderson_stone",
+   "d_19070623_meany_bumpus"
+  ],
+  "stories": [
+   "story_03_claim",
+   "story_04_seattle_offer",
+   "story_11_stmichael_nome"
+  ]
+ },
+ {
+  "id": "p_anderson",
+  "label": "A. A. Anderson",
+  "sort": "Anderson",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "A.A. Anderson",
+    "source": "Bumpus telegram [27 Apr 1907]"
+   },
+   {
+    "form": "Your [??] Anderson",
+    "source": "signature, Anderson to Stone 18 May (PI could not read a word)"
+   }
+  ],
+  "roles": [
+   {
+    "role": "'old intimate friend' of Osborn",
+    "source": "Bumpus telegram [27 Apr 1907], reporting Anderson's own claim"
+   }
+  ],
+  "pi_characterisation": "An 'old intimate friend' of HFO, usurps LSQ's role by offering to go examine claim for free, then finds it impossible to get to Nome, allowing LSQ back off the bench.",
+  "institutions": [],
+  "addresses": [],
+  "sent": [
+   "d_19070518_anderson_stone"
+  ],
+  "received": [],
+  "mentioned_in": [
+   "d_19070427_bumpus_osborn",
+   "d_19070620_osborn_bumpus",
+   "d_19070628_bumpus_jesup"
+  ],
+  "stories": [
+   "story_06_anderson"
+  ]
+ },
+ {
+  "id": "p_stone",
+  "label": "Andrew J. Stone",
+  "sort": "Stone",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Andrew J. Stone",
+    "source": "signature 20 June 1907"
+   },
+   {
+    "form": "Stone[?]",
+    "source": "Osborn to Bumpus 20 June 1907 (PI uncertain reading)"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Vice-President and General Manager, Taylor Creek Ditch Company",
+    "source": "letterhead 20 June 1907"
+   }
+  ],
+  "addresses": [
+   {
+    "address": "Nome, Alaska",
+    "source": "Stone to Bumpus 20 June 1907"
+   },
+   {
+    "address": "'Stone's camp' (unlocated; 'only 30 miles' from Eschscholtz Bay)",
+    "source": "Osborn to Bumpus 20 June 1907"
+   }
+  ],
+  "pi_characterisation": "Colleague of Madison Grant; asked, but refuses, to deal with the mammoth 1907",
+  "institutions": [
+   "i_tcdc"
+  ],
+  "sent": [
+   "d_19070620_stone_bumpus"
+  ],
+  "received": [
+   "d_19070518_anderson_stone"
+  ],
+  "mentioned_in": [
+   "d_19070620_osborn_bumpus"
+  ],
+  "stories": [
+   "story_06_anderson"
+  ]
+ },
+ {
+  "id": "p_jesup",
+  "label": "Morris K. Jesup",
+  "sort": "Jesup",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr. Jesup",
+    "source": "Matthew 25 Mar 1907"
+   }
+  ],
+  "roles": [
+   {
+    "role": "President, AMNH",
+    "source": "Cast of Characters"
+   }
+  ],
+  "pi_characterisation": "Philanthropist and president of AMNH.",
+  "institutions": [
+   "i_amnh"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [
+   "d_19070628_bumpus_jesup"
+  ],
+  "mentioned_in": [
+   "d_19070325_matthew_bumpus"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation",
+   "story_07_funding"
+  ]
+ },
+ {
+  "id": "p_lucas",
+  "label": "F. A. Lucas",
+  "sort": "Lucas",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "F.A. Lucas",
+    "source": "PI header 11 Aug 1914"
+   },
+   {
+    "form": "Director",
+    "source": "signature of 1914 copies"
+   },
+   {
+    "form": "D. Lucas",
+    "source": "Grant 10 Aug 1914 salutation as transcribed"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Director, AMNH (1914 letters)",
+    "source": "Lucas to Grant 6 Aug 1914, signed 'Director'"
+   }
+  ],
+  "pi_characterisation": "Director AMNH after Bumpus.",
+  "institutions": [
+   "i_amnh"
+  ],
+  "identity_note": "A 'Mr. Lucas of the Brooklyn Museum' is named as a possible arbiter in Osborn's draft of 16 April 1907. The provided documents do not state whether this is the same person; the two attestations are kept as separate records (see p_lucas_brooklyn_1907).",
+  "addresses": [],
+  "sent": [
+   "d_19140806_lucas_grant",
+   "d_19140807_lucas_quackenbush",
+   "d_19140812_lucas_grant"
+  ],
+  "received": [
+   "d_19140810_grant_lucas",
+   "d_19140811_quackenbush_lucas"
+  ],
+  "mentioned_in": [
+   "d_19140804_grant_osborn"
+  ],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_lucas_brooklyn_1907",
+  "label": "'Mr. Lucas of the Brooklyn Museum' (1907 mention)",
+  "sort": "Lucas (Brooklyn)",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr. Lucas of the Brooklyn Museum",
+    "source": "Osborn to Bumpus 16 Apr 1907, draft text"
+   }
+  ],
+  "roles": [
+   {
+    "role": "proposed arbiter of specimen value",
+    "source": "Osborn draft 16 Apr 1907"
+   }
+  ],
+  "institutions": [
+   "i_brooklyn"
+  ],
+  "identity_note": "Possibly identical with F.A. Lucas (p_lucas); not stated in the sources.",
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070416_osborn_bumpus"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ]
+ },
+ {
+  "id": "p_rathbun",
+  "label": "Richard Rathbun",
+  "sort": "Rathbun",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Dr. Richard Rathbun",
+    "source": "Bumpus 25 Apr 1907"
+   }
+  ],
+  "roles": [
+   {
+    "role": "'Assistant Secretary in charge of National Museum', Smithsonian Institution",
+    "source": "signature 30 Apr 1907"
+   }
+  ],
+  "pi_characterisation": "SI NMNH muckety-muck.",
+  "institutions": [
+   "i_nmnh"
+  ],
+  "addresses": [],
+  "sent": [
+   "d_19070430_rathbun_bumpus"
+  ],
+  "received": [
+   "d_19070425_bumpus_rathbun",
+   "d_19070506_asstsec_rathbun"
+  ],
+  "mentioned_in": [],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ]
+ },
+ {
+  "id": "p_morgan",
+  "label": "J. P. Morgan, Jr.",
+  "sort": "Morgan",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "J. P. Morgan, Jr.",
+    "source": "Bumpus to Jesup 28 June 1907"
+   },
+   {
+    "form": "Jack Morgan",
+    "source": "Grant to Bumpus 22 June 1907"
+   },
+   {
+    "form": "My dear Jack",
+    "source": "Osborn's salutation 28 Feb 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "contributor: $750 (1907), $856.14 (1909)",
+    "source": "Asst. Treasurer 24 July 1907; Sherwood 21 Jan 1909"
+   }
+  ],
+  "addresses": [
+   {
+    "address": "Cor.[ner?] Wall + Broad, New York",
+    "source": "undated note"
+   }
+  ],
+  "pi_characterisation": "Paid for half of both 1907 and 1908 expeditions.",
+  "institutions": [],
+  "sent": [
+   "d_19080302_morgan_osborn",
+   "d_19090122_morgan_sherwood"
+  ],
+  "received": [
+   "d_19070724_assttreas_morgan",
+   "d_19071114_secretary_pyne_morgan",
+   "d_19080228_osborn_morgan",
+   "d_19090121_sherwood_morgan",
+   "d_19090123_sherwood_morgan"
+  ],
+  "mentioned_in": [
+   "d_19070622_grant_bumpus",
+   "d_19070628_bumpus_jesup",
+   "d_nd_note_morgan_acknowledgment",
+   "d_190707_unnamed_osborn_excerpt_631",
+   "d_19070722_osborn_bumpus",
+   "d_19070724_assttreas_osborn",
+   "d_nd_osborn_sherwood",
+   "d_19090115_sherwood_pyne"
+  ],
+  "stories": [
+   "story_07_funding",
+   "story_14_return_1907",
+   "story_15_interlude",
+   "story_23_accounts"
+  ]
+ },
+ {
+  "id": "p_pyne_percy",
+  "label": "Percy Pyne",
+  "sort": "Pyne, Percy",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Percy Pyne",
+    "source": "Osborn 20 June 1907"
+   },
+   {
+    "form": "Mr. Pyne",
+    "source": "Bumpus to Jesup"
+   }
+  ],
+  "roles": [
+   {
+    "role": "contributor: $750 (1907, 'although I did not wish to subscribe over $500'), share of 1908 costs (1909)",
+    "source": "Pyne to HFO 15 July 1907; Sherwood 1909"
+   },
+   {
+    "role": "'financially interested in the mining enterprise with Mr. Grant' (Bumpus's belief)",
+    "source": "Bumpus to Jesup 28 June 1907"
+   }
+  ],
+  "pi_characterisation": "Paid for half of both 1907 and 1908 expeditions.",
+  "institutions": [],
+  "addresses": [],
+  "sent": [
+   "d_19070715_pyne_osborn",
+   "d_19090121_pyne_sherwood"
+  ],
+  "received": [
+   "d_19070718_assttreas_pyne",
+   "d_19071114_secretary_pyne_morgan",
+   "d_19090115_sherwood_pyne",
+   "d_19090121_sherwood_pyne",
+   "d_19090123_sherwood_pyne"
+  ],
+  "mentioned_in": [
+   "d_19070620_osborn_bumpus",
+   "d_19070621_bumpus_osborn",
+   "d_19070628_bumpus_jesup",
+   "d_nd_osborn_sherwood",
+   "d_19090115_sherwood_osborn",
+   "d_19090121_sherwood_morgan"
+  ],
+  "stories": [
+   "story_07_funding",
+   "story_14_return_1907",
+   "story_15_interlude",
+   "story_23_accounts"
+  ]
+ },
+ {
+  "id": "p_pyne_mt",
+  "label": "M. T. Pyne ('Momo')",
+  "sort": "Pyne, M. T.",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "M.T. Pyne",
+    "source": "PI header 28 Feb 1908"
+   },
+   {
+    "form": "My dear Momo",
+    "source": "Osborn's salutation"
+   }
+  ],
+  "roles": [
+   {
+    "role": "brother of Percy Pyne ('your brother Percy')",
+    "source": "HFO to M.T. Pyne 28 Feb 1908"
+   },
+   {
+    "role": "'intimate friend of Osborn'",
+    "source": "Tale (PI)"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [
+   "d_19080228_osborn_mtpyne"
+  ],
+  "mentioned_in": [],
+  "stories": [
+   "story_15_interlude"
+  ]
+ },
+ {
+  "id": "p_sherwood",
+  "label": "Sherwood",
+  "sort": "Sherwood",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr Sherwood",
+    "source": "Matthew 25 Mar 1907"
+   },
+   {
+    "form": "Mr. Sherwood, the Assistant Secretary",
+    "source": "Bumpus to LSQ 29 June 1907"
+   },
+   {
+    "form": "Sherwood (asst treasurer)",
+    "source": "PI header, n.d. [1909]"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Assistant Secretary, AMNH",
+    "source": "Bumpus 29 June 1907"
+   },
+   {
+    "role": "'asst treasurer'",
+    "source": "PI header 1909"
+   }
+  ],
+  "institutions": [
+   "i_amnh"
+  ],
+  "identity_note": "First name not given anywhere in the provided material. Whether the unsigned 'Asst Sec'y' (1907) and 'Asst. Treasurer' (1907) copies were written by Sherwood is not stated.",
+  "addresses": [],
+  "sent": [
+   "d_19090115_sherwood_osborn",
+   "d_19090115_sherwood_pyne",
+   "d_19090121_sherwood_morgan",
+   "d_19090121_sherwood_pyne",
+   "d_19090123_sherwood_pyne",
+   "d_19090123_sherwood_morgan",
+   "d_19090218_sherwood_quackenbush",
+   "d_19090218_sherwood_vonhaake"
+  ],
+  "received": [
+   "d_nd_osborn_sherwood",
+   "d_19090121_pyne_sherwood",
+   "d_19090122_morgan_sherwood",
+   "d_19090217_quackenbush_sherwood"
+  ],
+  "mentioned_in": [
+   "d_19070325_matthew_bumpus",
+   "d_19070629_bumpus_quackenbush_instructions"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation",
+   "story_07_funding",
+   "story_22_return_1908",
+   "story_23_accounts"
+  ]
+ },
+ {
+  "id": "p_hoffman",
+  "label": "Jim Hoffman",
+  "sort": "Hoffman",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Jim Hoffman",
+    "source": "PI timeline quoting B.AMNH 26, p.89; Tale"
+   },
+   {
+    "form": "'the man who was with me last summer'",
+    "source": "LSQ to Bumpus 27 Mar 1908"
+   },
+   {
+    "form": "'a man to act as cook and assistant'",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "'cook and helper'; owner of the fishing boat hired for coasting (1907)",
+    "source": "B.AMNH 26, p.89 as quoted by PI"
+   },
+   {
+    "role": "cook and assistant; owner of the fishing dory (1908)",
+    "source": "LSQ report 1 Oct 1908"
+   },
+   {
+    "role": "local assistant from whom LSQ concealed the find",
+    "source": "Tale (PI)"
+   }
+  ],
+  "institutions": [],
+  "identity_note": "Never named in Quackenbush's letters as transcribed; the name comes from the published Bulletin (via the PI) and the Tale. 'he has written to me and asked to go again' (LSQ 27 Mar 1908): that letter is not in the file.",
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_12_keewalik_1907",
+   "story_13_elephant_point_1907",
+   "story_15_interlude",
+   "story_18_crossing",
+   "story_19_excavation",
+   "story_20_buckland",
+   "story_21_bay_survey"
+  ]
+ },
+ {
+  "id": "p_merriam",
+  "label": "C. Hart Merriam",
+  "sort": "Merriam",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "C. Hart Merriam",
+    "source": "PI headers May 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "issued the 1908 collecting permit ('just received from the Department of Agriculture')",
+    "source": "Bumpus to LSQ 21 May 1908"
+   }
+  ],
+  "institutions": [
+   "i_usda"
+  ],
+  "addresses": [],
+  "sent": [
+   "d_19080520_merriam_bumpus"
+  ],
+  "received": [
+   "d_19080518_bumpus_merriam",
+   "d_19080522_bumpus_merriam"
+  ],
+  "mentioned_in": [],
+  "stories": [
+   "story_16_permits_departure"
+  ]
+ },
+ {
+  "id": "p_hugh_smith",
+  "label": "Hugh M. Smith",
+  "sort": "Smith, Hugh M.",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Hugh M. Smith",
+    "source": "PI header 9 May 1910"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Dept Commerce and Labor, Bureau of Fisheries",
+    "source": "Hugh M. Smith to Bumpus 9 May 1910 (PI summary)"
+   }
+  ],
+  "institutions": [
+   "i_bof"
+  ],
+  "addresses": [],
+  "sent": [
+   "d_19100509_hughsmith_bumpus"
+  ],
+  "received": [
+   "d_19100518_bumpus_hughsmith"
+  ],
+  "mentioned_in": [],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_andrews",
+  "label": "Roy C. Andrews",
+  "sort": "Andrews",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr. Roy C. Andrews",
+    "source": "Hugh M. Smith 1910"
+   }
+  ],
+  "roles": [
+   {
+    "role": "AMNH; 'now in Japan' (1910)",
+    "source": "Bumpus to Hugh M. Smith 18 May 1910"
+   }
+  ],
+  "institutions": [
+   "i_amnh"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19100509_hughsmith_bumpus"
+  ],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_mathews_jf",
+  "label": "J. F. Matthews / Mathews (1914)",
+  "sort": "Matthews, J. F.",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr. J. F. Matthews",
+    "source": "Lucas to LSQ 7 Aug 1914"
+   },
+   {
+    "form": "Matthews'",
+    "source": "LSQ to Grant 2 Aug 1914"
+   },
+   {
+    "form": "Mathews",
+    "source": "Grant to Lucas 10 Aug 1914"
+   }
+  ],
+  "roles": [
+   {
+    "role": "writer of a 1914 letter from Alaska (Coffee Creek) with mammoth hair; 'in the employ of a company which I am heavily interested in' (Grant)",
+    "source": "Grant to Lucas 10 Aug 1914"
+   }
+  ],
+  "institutions": [],
+  "identity_note": "Distinct from W.D. Matthew of the AMNH; the letter itself is not in the file (returned to Grant).",
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19140802_quackenbush_grant",
+   "d_19140807_lucas_quackenbush",
+   "d_19140810_grant_lucas"
+  ],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_woods_ah",
+  "label": "A. H. Woods",
+  "sort": "Woods, A. H.",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "A.H. Woods, Tarratine, Maine",
+    "source": "LSQ to Grant 2 Aug 1914 (c/o address)"
+   }
+  ],
+  "roles": [
+   {
+    "role": "c/o address for Quackenbush, Tarratine, Maine",
+    "source": "LSQ 1914"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19140802_quackenbush_grant"
+  ],
+  "stories": []
+ },
+ {
+  "id": "p_quinn",
+  "label": "Ferdinand Quinn",
+  "sort": "Quinn",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr. Ferdinand Quinn (P.O. address Candle, Alaska)",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "left in charge of the canoe, tools and utensils at the Keewalik Hotel warehouse, with an order to sell the canoe",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "institutions": [
+   "i_keewalik_hotel"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19081001_quackenbush_bumpus_report"
+  ],
+  "stories": [
+   "story_22_return_1908"
+  ]
+ },
+ {
+  "id": "p_harlan_smith",
+  "label": "Harlan J. Smith",
+  "sort": "Smith, Harlan J.",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr. Harlan J. Smith of your staff",
+    "source": "Meany to Bumpus 18 Mar 1907"
+   }
+  ],
+  "roles": [
+   {
+    "role": "AMNH staff; Meany's reference",
+    "source": "Meany 18 Mar 1907"
+   }
+  ],
+  "institutions": [
+   "i_amnh"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070318_meany_bumpus"
+  ],
+  "stories": [
+   "story_04_seattle_offer"
+  ]
+ },
+ {
+  "id": "p_ripley",
+  "label": "Miss Ripley",
+  "sort": "Ripley",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Miss Ripley",
+    "source": "Osborn to Bumpus 20 June 1907"
+   }
+  ],
+  "roles": [
+   {
+    "role": "named as an intermediary to reach Quackenbush",
+    "source": "Osborn 20 June 1907"
+   }
+  ],
+  "institutions": [
+   "i_amnh"
+  ],
+  "identity_note": "Affiliation inferred only from context ('Through Dr. Matthews (or Miss Ripley)'); not stated.",
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070620_osborn_bumpus"
+  ],
+  "stories": [
+   "story_06_anderson"
+  ]
+ },
+ {
+  "id": "p_gilmore",
+  "label": "Gilmore",
+  "sort": "Gilmore",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Gilmore",
+    "source": "Osborn 20 June 1907"
+   },
+   {
+    "form": "Gilmore of Washington",
+    "source": "Lucas 6 Aug 1914"
+   }
+  ],
+  "roles": [
+   {
+    "role": "'going up from the U.S. National Museum' (1907)",
+    "source": "Osborn 20 June 1907"
+   },
+   {
+    "role": "'made a thorough reconnaissance for the National Museum'",
+    "source": "Lucas to Grant 6 Aug 1914"
+   }
+  ],
+  "institutions": [
+   "i_nmnh"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070620_osborn_bumpus",
+   "d_19140806_lucas_grant",
+   "d_19140812_lucas_grant"
+  ],
+  "stories": [
+   "story_06_anderson",
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_maddren",
+  "label": "A. G. Maddren",
+  "sort": "Maddren",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Maddren",
+    "source": "Matthew [17 Apr 1907]"
+   },
+   {
+    "form": "A. G. Maddren",
+    "source": "LSQ 27 Mar 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "author of 'Maddren's report to the Smithsonian' / 'Smithsonian Exploration in search of mammoth'",
+    "source": "Matthew [17 Apr 1907]; LSQ 27 Mar 1908"
+   },
+   {
+    "role": "collector sent to the region by the US National Museum in 1904",
+    "source": "Tale (PI)"
+   }
+  ],
+  "institutions": [
+   "i_nmnh"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070417_matthew_osborn",
+   "d_19080327_quackenbush_bumpus_plan"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation",
+   "story_15_interlude",
+   "story_20_buckland"
+  ]
+ },
+ {
+  "id": "p_brown",
+  "label": "Barnum Brown",
+  "sort": "Brown",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Brown",
+    "source": "Matthew 25 Mar 1907"
+   },
+   {
+    "form": "Barnum Brown",
+    "source": "Matthew [17 Apr 1907]"
+   }
+  ],
+  "roles": [
+   {
+    "role": "AMNH collector; alternative to Quackenbush",
+    "source": "Matthew 1907"
+   }
+  ],
+  "institutions": [
+   "i_amnh"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070325_matthew_bumpus",
+   "d_19070417_matthew_osborn"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ]
+ },
+ {
+  "id": "p_granger",
+  "label": "Granger",
+  "sort": "Granger",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Granger",
+    "source": "Matthew 25 Mar 1907"
+   },
+   {
+    "form": "Mr. Granger",
+    "source": "Osborn 25 Mar 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "AMNH; alternative to Quackenbush (1907); author of a letter about LSQ's paper (1908, not in file)",
+    "source": "Matthew 1907; Osborn 1908"
+   }
+  ],
+  "institutions": [
+   "i_amnh"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070325_matthew_bumpus",
+   "d_19080325_osborn_bumpus"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation",
+   "story_15_interlude"
+  ]
+ },
+ {
+  "id": "p_sturgis",
+  "label": "F. K. Sturgis",
+  "sort": "Sturgis",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "F.K. Sturgis",
+    "source": "Asst. Treasurer to HFO 24 July 1907"
+   }
+  ],
+  "roles": [
+   {
+    "role": "$250 'toward the field exploration fund of your Department'",
+    "source": "Asst. Treasurer 24 July 1907"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070724_assttreas_osborn"
+  ],
+  "stories": [
+   "story_07_funding"
+  ]
+ },
+ {
+  "id": "p_lanier",
+  "label": "Charles Lanier",
+  "sort": "Lanier",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr. Charles Lanier, Treasurer",
+    "source": "Sherwood to Morgan 21 Jan 1909"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Treasurer (AMNH)",
+    "source": "Sherwood 1909"
+   }
+  ],
+  "institutions": [
+   "i_amnh"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19090121_sherwood_morgan"
+  ],
+  "stories": [
+   "story_23_accounts"
+  ]
+ },
+ {
+  "id": "p_vonhaake",
+  "label": "A. von Haake",
+  "sort": "von Haake",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "A. von Haake, Topographer, Post Offcie Dept",
+    "source": "PI header 18 Feb 1909"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Topographer, Post Office Department",
+    "source": "Sherwood 18 Feb 1909"
+   }
+  ],
+  "institutions": [
+   "i_pod"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [
+   "d_19090218_sherwood_vonhaake"
+  ],
+  "mentioned_in": [],
+  "stories": [
+   "story_23_accounts"
+  ]
+ },
+ {
+  "id": "p_allen",
+  "label": "Benjamin Leach Allen",
+  "sort": "Allen",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Benjamin Leach Allen, Treasurer, 66 Broadway",
+    "source": "Taylor Creek Ditch Co. letterhead 1907"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Treasurer, Taylor Creek Ditch Company",
+    "source": "letterhead"
+   }
+  ],
+  "institutions": [
+   "i_tcdc"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070620_stone_bumpus"
+  ],
+  "stories": []
+ },
+ {
+  "id": "p_varnum",
+  "label": "Robert T. Varnum",
+  "sort": "Varnum",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Robert T. Varnum, Secretary (struck through)",
+    "source": "Taylor Creek Ditch Co. letterhead 1907"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Secretary, Taylor Creek Ditch Company (name struck through on letterhead)",
+    "source": "letterhead"
+   }
+  ],
+  "institutions": [
+   "i_tcdc"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070620_stone_bumpus"
+  ],
+  "stories": []
+ },
+ {
+  "id": "p_schubert",
+  "label": "'Mr. Schubert[?] of the Yale Museum'",
+  "sort": "Schubert",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Mr. Schubert[?]",
+    "source": "Osborn draft 16 Apr 1907; PI's uncertain reading"
+   }
+  ],
+  "roles": [
+   {
+    "role": "proposed arbiter of specimen value",
+    "source": "Osborn draft 16 Apr 1907"
+   }
+  ],
+  "institutions": [
+   "i_yale"
+  ],
+  "identity_note": "The PI marks the reading as uncertain. Not resolved here.",
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19070416_osborn_bumpus"
+  ],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ]
+ },
+ {
+  "id": "p_nelson",
+  "label": "Nelson",
+  "sort": "Nelson",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Nelson",
+    "source": "Lucas to Grant 12 Aug 1914"
+   }
+  ],
+  "roles": [
+   {
+    "role": "'the observations of Nelson' on Alaskan mammoth finds",
+    "source": "Lucas 12 Aug 1914"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19140812_lucas_grant"
+  ],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_peale",
+  "label": "Peale",
+  "sort": "Peale",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Peale",
+    "source": "Lucas to Grant 12 Aug 1914"
+   }
+  ],
+  "roles": [
+   {
+    "role": "'found hair of the mastodon when he dug it up back of Newburgh'",
+    "source": "Lucas 12 Aug 1914"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19140812_lucas_grant"
+  ],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_beechey",
+  "label": "Beechey",
+  "sort": "Beechey",
+  "scope": "hunt",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Beechey",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "reported 'mud' banks at the eastern end of Eschscholtz Bay in 1826",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19081001_quackenbush_bumpus_report"
+  ],
+  "stories": [
+   "story_21_bay_survey"
+  ]
+ },
+ {
+  "id": "p_old_indian",
+  "label": "'an old Indian' (unnamed discoverer)",
+  "sort": "~unnamed: old Indian",
+  "scope": "hunt",
+  "kind": "unnamed",
+  "variants": [
+   {
+    "form": "an old Indian",
+    "source": "Startsman and Graham to Reed 30 Dec 1906"
+   },
+   {
+    "form": "the Indian",
+    "source": "same"
+   },
+   {
+    "form": "an Indian who guided Mr. Graham",
+    "source": "Osborn draft 16 Apr 1907"
+   }
+  ],
+  "roles": [
+   {
+    "role": "discovered the reported mammoth 'several years ago' on a hunting trip; took Graham to it in 1898 and 1899; 'He died in 1900'",
+    "source": "Startsman and Graham 30 Dec 1906"
+   }
+  ],
+  "institutions": [],
+  "identity_note": "Never named in any document. His account reaches the file only through Startsman's letter.",
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19061230_startsman_graham_reed",
+   "d_19070416_osborn_bumpus"
+  ],
+  "stories": [
+   "story_03_claim"
+  ]
+ },
+ {
+  "id": "p_eskimos",
+  "label": "'the Eskimos' (collective, unnamed)",
+  "sort": "~unnamed: Eskimos",
+  "scope": "hunt",
+  "kind": "collective",
+  "variants": [
+   {
+    "form": "the Eskimos",
+    "source": "LSQ to Bumpus 19 May 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "potential sellers of walrus and other specimens",
+    "source": "LSQ 19 May 1908"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_16_permits_departure"
+  ]
+ },
+ {
+  "id": "p_prospectors",
+  "label": "prospectors / miners (collective, unnamed)",
+  "sort": "~unnamed: prospectors",
+  "scope": "hunt",
+  "kind": "collective",
+  "variants": [
+   {
+    "form": "Prospectors",
+    "source": "LSQ report 1 Oct 1908"
+   },
+   {
+    "form": "miners",
+    "source": "Tale (PI)"
+   },
+   {
+    "form": "the prospectors",
+    "source": "LSQ 27 Mar 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "asserted the Buckland River navigable for 150–200 miles; reported fossils",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_20_buckland"
+  ]
+ },
+ {
+  "id": "p_settlements_unnamed",
+  "label": "two settlements and two open camps (unnamed), Seward Peninsula crossing 1908",
+  "sort": "~unnamed: settlements",
+  "scope": "hunt",
+  "kind": "unnamed",
+  "variants": [
+   {
+    "form": "two stops were made at settlements and the remaining two in open camp",
+    "source": "LSQ report 1 Oct 1908"
+   }
+  ],
+  "roles": [
+   {
+    "role": "overnight stops between Lane's Landing and Candle",
+    "source": "LSQ report 1908"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19081001_quackenbush_bumpus_report"
+  ],
+  "stories": [
+   "story_18_crossing"
+  ]
+ },
+ {
+  "id": "p_woods_rebecca",
+  "label": "Rebecca J. H. Woods (principal investigator)",
+  "sort": "Woods, Rebecca",
+  "scope": "research",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "RJHW",
+    "source": "research notes 5/9/2019"
+   },
+   {
+    "form": "Rebecca Woods",
+    "source": "Tale title page"
+   }
+  ],
+  "roles": [
+   {
+    "role": "author of the Tale, timelines, Cast of Characters and the transcription file",
+    "source": "provided documents"
+   }
+  ],
+  "institutions": [
+   "i_utoronto"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_00_frame"
+  ]
+ },
+ {
+  "id": "p_macphee",
+  "label": "Ross MacPhee",
+  "sort": "MacPhee",
+  "scope": "research",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Ross MacPhee",
+    "source": "PI note 13 Aug 2019"
+   },
+   {
+    "form": "MAcPhee",
+    "source": "Tale fn 1"
+   }
+  ],
+  "roles": [
+   {
+    "role": "examined the 1914 hair sample ('a little short and blunt but likely'); selecting candidates for aDNA testing",
+    "source": "PI note in 1914 folder"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [
+   "d_19140802_quackenbush_grant"
+  ],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_bell",
+  "label": "Susan Bell",
+  "sort": "Bell",
+  "scope": "research",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Susan Bell, pers communication August 12 2019",
+    "source": "Tale fn 53"
+   }
+  ],
+  "roles": [
+   {
+    "role": "informant on exhibition history of the Quackenbush material",
+    "source": "Tale fn 53"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_24_afterlife"
+  ]
+ },
+ {
+  "id": "p_chu",
+  "label": "Pei-Yi Chu",
+  "sort": "Chu",
+  "scope": "research",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Pei-Yi Chu",
+    "source": "Tale §3"
+   }
+  ],
+  "roles": [
+   {
+    "role": "historian of the term 'permafrost', cited in the Tale",
+    "source": "Tale §3"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": []
+ },
+ {
+  "id": "p_adams",
+  "label": "Michael (Mikhail) Adams",
+  "sort": "Adams",
+  "scope": "prologue",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Michael Adams",
+    "source": "Tale §1"
+   },
+   {
+    "form": "Mikhail Adams",
+    "source": "Tale §3"
+   }
+  ],
+  "roles": [
+   {
+    "role": "adjunct in zoology, St Petersburg Academy of Science; collected the 'Adams mammoth' 1806",
+    "source": "Tale §1"
+   }
+  ],
+  "institutions": [
+   "i_spb_academy"
+  ],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_00_frame",
+   "story_01_adams"
+  ]
+ },
+ {
+  "id": "p_schoumachoff",
+  "label": "Ossip Schoumachoff",
+  "sort": "Schoumachoff",
+  "scope": "prologue",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Ossip Schoumachoff",
+    "source": "Tale §1"
+   },
+   {
+    "form": "Schomachoff",
+    "source": "Tale §1 quoting Adams"
+   },
+   {
+    "form": "Schumarov",
+    "source": "Digby, as quoted in Tale fn 28"
+   }
+  ],
+  "roles": [
+   {
+    "role": "Tungus hunter-herder who found the mammoth in 1799",
+    "source": "Tale §1"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_01_adams"
+  ]
+ },
+ {
+  "id": "p_popoff",
+  "label": "Popoff",
+  "sort": "Popoff",
+  "scope": "prologue",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Popoff",
+    "source": "Tale §1"
+   }
+  ],
+  "roles": [
+   {
+    "role": "merchant/négociant at Yakutsk who informed Adams of the find",
+    "source": "Tale §1"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_01_adams"
+  ]
+ },
+ {
+  "id": "p_boultonoff",
+  "label": "Boultonoff / Baltounoff",
+  "sort": "Boultonoff",
+  "scope": "prologue",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Baltounoff [Boultonoff]",
+    "source": "Tale §1 quoting Adams"
+   }
+  ],
+  "roles": [
+   {
+    "role": "merchant who bought the tusks for merchandise worth 50 roubles",
+    "source": "Tale §1"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_01_adams"
+  ]
+ },
+ {
+  "id": "p_cuvier",
+  "label": "Georges Cuvier",
+  "sort": "Cuvier",
+  "scope": "prologue",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Georges Cuvier",
+    "source": "Tale §1"
+   }
+  ],
+  "roles": [
+   {
+    "role": "naturalist; interpreted the Adams mammoth",
+    "source": "Tale §1"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_01_adams",
+   "story_02_frozen_meat"
+  ]
+ },
+ {
+  "id": "p_banks",
+  "label": "Joseph Banks",
+  "sort": "Banks",
+  "scope": "prologue",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Joseph Banks",
+    "source": "Tale §2"
+   }
+  ],
+  "roles": [
+   {
+    "role": "provided the English translation to the Philosophical Magazine",
+    "source": "Tale §2"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_02_frozen_meat"
+  ]
+ },
+ {
+  "id": "p_golovkin",
+  "label": "Count Fyodor Golovkin",
+  "sort": "Golovkin",
+  "scope": "prologue",
+  "kind": "person",
+  "variants": [
+   {
+    "form": "Count Fyodor Golovkin",
+    "source": "Tale §1"
+   }
+  ],
+  "roles": [
+   {
+    "role": "led the diplomatic mission to China to which Adams was attached",
+    "source": "Tale §1"
+   }
+  ],
+  "institutions": [],
+  "addresses": [],
+  "sent": [],
+  "received": [],
+  "mentioned_in": [],
+  "stories": [
+   "story_01_adams"
+  ]
+ }
+]

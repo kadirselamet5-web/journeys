@@ -1,0 +1,1517 @@
+[
+ {
+  "id": "tl002",
+  "para": 2,
+  "text": "1898 & 1899: “old Indian” takes E.W. Graham to see the mammoth",
+  "html": "1898 &amp; 1899: “old Indian” takes E.W. Graham to see the mammoth",
+  "date": "1898",
+  "docs": [
+   "d_19061230_startsman_graham_reed"
+  ],
+  "stops": [],
+  "stories": [
+   "story_03_claim"
+  ],
+  "findings": [],
+  "people": [
+   "p_old_indian",
+   "p_graham"
+  ],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1898-00",
+  "order": 0
+ },
+ {
+  "id": "tl004",
+  "para": 4,
+  "text": "1900: “old Indian” dies",
+  "html": "1900: “old Indian” dies",
+  "date": "1900",
+  "docs": [
+   "d_19061230_startsman_graham_reed"
+  ],
+  "stops": [],
+  "stories": [
+   "story_03_claim"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1900-00",
+  "order": 1
+ },
+ {
+  "id": "tl006",
+  "para": 6,
+  "text": "1904: Startsman goes to see the mammoth",
+  "html": "1904: Startsman goes to see the mammoth",
+  "date": "1904",
+  "docs": [
+   "d_19061230_startsman_graham_reed"
+  ],
+  "stops": [],
+  "stories": [
+   "story_03_claim"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1904-00",
+  "order": 2
+ },
+ {
+  "id": "tl008",
+  "para": 8,
+  "text": "30 Dec 1906: Startsman & E.W. Graham write to Reed with plan to excavate mammoth",
+  "html": "30 Dec 1906: Startsman &amp; E.W. Graham write to Reed with plan to excavate mammoth",
+  "date": "1906-12-30",
+  "docs": [
+   "d_19061230_startsman_graham_reed"
+  ],
+  "stops": [],
+  "stories": [
+   "story_03_claim"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1906-12-30",
+  "order": 3
+ },
+ {
+  "id": "tl010",
+  "para": 10,
+  "text": "18 October 1906: Reed indicates to Startsman that the A-Y-P Expo is interested in the mammoth.",
+  "html": "18 October 1906: Reed indicates to Startsman that the A-Y-P Expo is interested in the mammoth.",
+  "date": "1906-10-18",
+  "docs": [
+   "d_19061018_reed_startsman"
+  ],
+  "stops": [],
+  "stories": [
+   "story_03_claim"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1906-10-18",
+  "order": 4
+ },
+ {
+  "id": "tl012",
+  "para": 12,
+  "text": "26 February 1907: Reed sends all his correspondence with Startsman to Chilberg",
+  "html": "26 February 1907: Reed sends all his correspondence with Startsman to Chilberg",
+  "date": "1907-02-26",
+  "docs": [
+   "d_19070226_reed_chilberg"
+  ],
+  "stops": [],
+  "stories": [
+   "story_04_seattle_offer"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-02-26",
+  "order": 5
+ },
+ {
+  "id": "tl014",
+  "para": 14,
+  "text": "18 March 1907: Meaney sends Startsman letters to Bumpus, hopes to induce AMNH to take on the mammoth.",
+  "html": "18 March 1907: Meaney sends Startsman letters to Bumpus, hopes to induce AMNH to take on the mammoth.",
+  "date": "1907-03-18",
+  "docs": [
+   "d_19070318_meany_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_04_seattle_offer"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-03-18",
+  "order": 6
+ },
+ {
+  "id": "tl016",
+  "para": 16,
+  "text": "25 March 1907: Matthew reports on Startsman letters to Bumpus, suggests action despite questionable veracity of reports. Suggests sending Museum’s own expert—if (Barnum) Brown or Granger can’t be spared, recommends Quackenbush.",
+  "html": "25 March 1907: Matthew reports on Startsman letters to Bumpus, suggests action despite questionable veracity of reports. Suggests sending Museum’s own expert—if (Barnum) Brown or Granger can’t be spared, recommends Quackenbush.",
+  "date": "1907-03-25",
+  "docs": [
+   "d_19070325_matthew_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-03-25",
+  "order": 7
+ },
+ {
+  "id": "tl018",
+  "para": 18,
+  "text": "26 March 1907: Bumpus to Meaney. AMNH interested, waiting for HFO’s return to take the matter up with him.",
+  "html": "26 March 1907: Bumpus to Meaney. AMNH interested, waiting for HFO’s return to take the matter up with him.",
+  "date": "1907-03-26",
+  "docs": [
+   "d_19070326_bumpus_meany"
+  ],
+  "stops": [],
+  "stories": [
+   "story_04_seattle_offer"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-03-26",
+  "order": 8
+ },
+ {
+  "id": "tl020",
+  "para": 20,
+  "text": "16 April 1907: HFO gives Bumpus a strong endorsement and draft letter for Meaney stipulating lots of stuff about how to negotiate ownership.",
+  "html": "16 April 1907: HFO gives Bumpus a strong endorsement and draft letter for Meaney stipulating lots of stuff about how to negotiate ownership.",
+  "date": "1907-04-16",
+  "docs": [
+   "d_19070416_osborn_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-04-16",
+  "order": 9
+ },
+ {
+  "id": "tl022",
+  "para": 22,
+  "text": "[17 April 1907]: Matthew reports to HFO that LSQ is willing if he can rent his Long Island summer home; suggests plan for extraction; gives LSQ Maddren’s SI report.",
+  "html": "[17 April 1907]: Matthew reports to HFO that LSQ is willing if he can rent his Long Island summer home; suggests plan for extraction; gives LSQ Maddren’s SI report.",
+  "date": "1907-04-17",
+  "docs": [
+   "d_19070417_matthew_osborn"
+  ],
+  "stops": [],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-04-17",
+  "order": 10
+ },
+ {
+  "id": "tl024",
+  "para": 24,
+  "text": "25 April 1907: Bumpus writes to Rathbun politely inquiring if SI has heard of the mammoth and are they competing.",
+  "html": "25 April 1907: Bumpus writes to Rathbun politely inquiring if SI has heard of the mammoth and are they competing.",
+  "date": "1907-04-25",
+  "docs": [
+   "d_19070425_bumpus_rathbun"
+  ],
+  "stops": [],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-04-25",
+  "order": 11
+ },
+ {
+  "id": "tl026",
+  "para": 26,
+  "text": "26 April 1907: LSQ sends Bumpus logistical info about getting to Alaska, times and fares.",
+  "html": "26 April 1907: LSQ sends Bumpus logistical info about getting to Alaska, times and fares.",
+  "date": "1907-04-26",
+  "docs": [
+   "d_19070426_quackenbush_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-04-26",
+  "order": 12
+ },
+ {
+  "id": "tl028",
+  "para": 28,
+  "text": "[27 April 1907]: Bumpus telegraphs HFO that A.A. Anderson starts immediately for Nome, will examine situation and report without expense to AMNH.",
+  "html": "[27 April 1907]: Bumpus telegraphs HFO that A.A. Anderson starts immediately for Nome, will examine situation and report without expense to AMNH.",
+  "date": "1907-04-27",
+  "docs": [
+   "d_19070427_bumpus_osborn"
+  ],
+  "stops": [],
+  "stories": [
+   "story_06_anderson"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-04-27",
+  "order": 13
+ },
+ {
+  "id": "tl030",
+  "para": 30,
+  "text": "30 April 1907: Bumpus writes to LSQ, believes HFO has broken the news about AAA and hopes it “will not be a great disappointment”",
+  "html": "30 April 1907: Bumpus writes to LSQ, believes HFO has broken the news about AAA and hopes it “will not be a great disappointment”",
+  "date": "1907-04-30",
+  "docs": [
+   "d_19070430_bumpus_quackenbush"
+  ],
+  "stops": [],
+  "stories": [
+   "story_06_anderson"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-04-30",
+  "order": 14
+ },
+ {
+  "id": "tl032",
+  "para": 32,
+  "text": "30 April 1907: Rathbun replies, NMNH isn’t in the loop re the mammoth, and that the NM isn’t inclined to put stock in these stories, having been burned in the past.",
+  "html": "30 April 1907: Rathbun replies, NMNH isn’t in the loop re the mammoth, and that the NM isn’t inclined to put stock in these stories, having been burned in the past.",
+  "date": "1907-04-30",
+  "docs": [
+   "d_19070430_rathbun_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_05_newyork_deliberation"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-04-30",
+  "order": 15
+ },
+ {
+  "id": "tl034",
+  "para": 34,
+  "text": "30 April 1907: Bumpus tells Meany they have sent a man (presumably AAA)",
+  "html": "30 April 1907: Bumpus tells Meany they have sent a man (presumably AAA)",
+  "date": "1907-04-30",
+  "docs": [
+   "d_19070430_bumpus_meany"
+  ],
+  "stops": [],
+  "stories": [
+   "story_06_anderson"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-04-30",
+  "order": 16
+ },
+ {
+  "id": "tl036",
+  "para": 36,
+  "text": "12 May 1907: Meany anxious about AYP’s stake in the mammoth",
+  "html": "12 May 1907: Meany anxious about AYP’s stake in the mammoth",
+  "date": "1907-05-12",
+  "docs": [
+   "d_19070512_meany_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_06_anderson"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-05-12",
+  "order": 17
+ },
+ {
+  "id": "tl038",
+  "para": 38,
+  "text": "15 May 1907: Bumpus reassures Meany AMNH has every intention to share the mammoth but reluctant to make arrangements before genuineness of claim is determined.",
+  "html": "15 May 1907: Bumpus reassures Meany AMNH has every intention to share the mammoth but reluctant to make arrangements before genuineness of claim is determined.",
+  "date": "1907-05-15",
+  "docs": [
+   "d_19070615_bumpus_meany"
+  ],
+  "stops": [],
+  "stories": [
+   "story_06_anderson"
+  ],
+  "findings": [
+   "f_bumpus_meany_date"
+  ],
+  "people": [],
+  "note": "Dated 15 May here; the transcription file dates the letter 15 June 1907.",
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-05-15",
+  "order": 18
+ },
+ {
+  "id": "tl040",
+  "para": 40,
+  "text": "20 June 1907: Osborn to Bumpus—AAA has given up going to Alaska; Madison Grant leaves in a fortnight. Pls reach out to LSQ again. Grant can do the job “and get in ahead of Gilmore” who is going from the NMNH. Thinks Pyne will pony up for the expedition. *missing critical first page of the letter*",
+  "html": "20 June 1907: Osborn to Bumpus—AAA has given up going to Alaska; Madison Grant leaves in a fortnight. Pls reach out to LSQ again. Grant can do the job “and get in ahead of Gilmore” who is going from the NMNH. Thinks Pyne will pony up for the expedition. *missing critical first page of the letter*",
+  "date": "1907-06-20",
+  "docs": [
+   "d_19070620_osborn_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_06_anderson"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-06-20",
+  "order": 19
+ },
+ {
+  "id": "tl042",
+  "para": 42,
+  "text": "20 June 1907: Andrew J. Stone to Bumpus with enclosed from AAA, asking Stone to take over—Grant’s colleague in the Taylor Creek Ditch Co, Stone writes from Nome that he can’t take over.",
+  "html": "20 June 1907: Andrew J. Stone to Bumpus with enclosed from AAA, asking Stone to take over—Grant’s colleague in the Taylor Creek Ditch Co, Stone writes from Nome that he can’t take over.",
+  "date": "1907-06-20",
+  "docs": [
+   "d_19070620_stone_bumpus",
+   "d_19070518_anderson_stone"
+  ],
+  "stops": [],
+  "stories": [
+   "story_06_anderson"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-06-20",
+  "order": 20
+ },
+ {
+  "id": "tl044",
+  "para": 44,
+  "text": "21 June 1907: Bumpus to HFO, ask Pyne for 2k. Matthew is looking up LSQ.",
+  "html": "21 June 1907: Bumpus to HFO, ask Pyne for 2k. Matthew is looking up LSQ.",
+  "date": "1907-06-21",
+  "docs": [
+   "d_19070621_bumpus_osborn"
+  ],
+  "stops": [],
+  "stories": [
+   "story_07_funding"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-06-21",
+  "order": 21
+ },
+ {
+  "id": "tl046",
+  "para": 46,
+  "text": "22 June 1907: Grant tells Bumpus HFO also working on Morgan.",
+  "html": "22 June 1907: Grant tells Bumpus HFO also working on Morgan.",
+  "date": "1907-06-22",
+  "docs": [
+   "d_19070622_grant_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_07_funding"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-06-22",
+  "order": 22
+ },
+ {
+  "id": "tl048",
+  "para": 48,
+  "text": "23 June 1907: Meany thanks Bumpus, understands position re AYP. Emphasizes that Chilberg is closely connected in Nome and not likely to be mistaken re mammoth.",
+  "html": "23 June 1907: Meany thanks Bumpus, understands position re AYP. Emphasizes that Chilberg is closely connected in Nome and not likely to be mistaken re mammoth.",
+  "date": "1907-06-23",
+  "docs": [
+   "d_19070623_meany_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_07_funding"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-06-23",
+  "order": 23
+ },
+ {
+  "id": "tl050",
+  "para": 50,
+  "text": "28 June 1907: Bumpus writes to Jesup that the mammoth exped is back on, with Pyne and Morgan planning to pay, and LSQ to go under the direction of Grant. Bumpus thinks it “very improbable” that a complete mammoth exists, but worth checking.",
+  "html": "28 June 1907: Bumpus writes to Jesup that the mammoth exped is back on, with Pyne and Morgan planning to pay, and LSQ to go under the direction of Grant. Bumpus thinks it “very improbable” that a complete mammoth exists, but worth checking.",
+  "date": "1907-06-28",
+  "docs": [
+   "d_19070628_bumpus_jesup"
+  ],
+  "stops": [],
+  "stories": [
+   "story_07_funding"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-06-28",
+  "order": 24
+ },
+ {
+  "id": "tl052",
+  "para": 52,
+  "text": "29 June 1907: LSQ gets his marching orders.",
+  "html": "29 June 1907: LSQ gets his marching orders.",
+  "date": "1907-06-29",
+  "docs": [
+   "d_19070629_bumpus_quackenbush_instructions"
+  ],
+  "stops": [],
+  "stories": [
+   "story_07_funding"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-06-29",
+  "order": 25
+ },
+ {
+  "id": "tl054",
+  "para": 54,
+  "text": "1 July 1907: Grant gets LSQ’s marching orders; Bumpus highlights the “free hand” Grant has to direct LSQ otherwise.",
+  "html": "1 July 1907: Grant gets LSQ’s marching orders; Bumpus highlights the “free hand” Grant has to direct LSQ otherwise.",
+  "date": "1907-07-01",
+  "docs": [
+   "d_19070701_bumpus_grant"
+  ],
+  "stops": [],
+  "stories": [
+   "story_07_funding"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-07-01",
+  "order": 26
+ },
+ {
+  "id": "tl056",
+  "para": 56,
+  "text": "5 July 1907: LSQ takes a copy of the Startsman/Reed letter, and a map, leaves NY for Seattle (B.AMNH 26, p.88)",
+  "html": "5 July 1907: LSQ takes a copy of the Startsman/Reed letter, and a map, <span data-color=\"7030A0\"><b>leaves NY for Seattle</b></span><span data-color=\"7030A0\"><b> </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.88)</b></span>",
+  "date": "1907-07-05",
+  "docs": [
+   "d_19070705_quackenbush_noaddressee"
+  ],
+  "stops": [
+   "s1907_01"
+  ],
+  "stories": [
+   "story_08_departure_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-07-05",
+  "order": 27
+ },
+ {
+  "id": "tl058",
+  "para": 58,
+  "text": "15-18 July 1907: Pyne and Morgan pony up; Pyne notes only wanted to pay $500 though paying $750 (this is Morgan’s doing).",
+  "html": "15-18 July 1907: Pyne and Morgan pony up; Pyne notes only wanted to pay $500 though paying $750 (this is Morgan’s doing).",
+  "date": "1907-07-15",
+  "docs": [
+   "d_19070715_pyne_osborn",
+   "d_19070718_assttreas_pyne",
+   "d_19070722_osborn_bumpus",
+   "d_19070724_assttreas_osborn",
+   "d_19070724_assttreas_morgan"
+  ],
+  "stops": [],
+  "stories": [
+   "story_07_funding"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-07-15",
+  "order": 28
+ },
+ {
+  "id": "tl060",
+  "para": 60,
+  "text": "19 July 1907: LSQ arrives Dawson; spends three days there (B.AMNH 26, p.88)",
+  "html": "<span data-color=\"7030A0\"><b><u>19 July 1907</u></b></span><span data-color=\"7030A0\"><b>: </b></span><span data-color=\"7030A0\"><b>LSQ </b></span><span data-color=\"7030A0\"><b>arrives Dawson; spends three days there</b></span><span data-color=\"7030A0\"><b> (</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.88)</b></span>",
+  "date": "1907-07-19",
+  "docs": [],
+  "stops": [
+   "s1907_03"
+  ],
+  "stories": [
+   "story_09_dawson"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-07-19",
+  "order": 29
+ },
+ {
+  "id": "tl062",
+  "para": 62,
+  "text": "25 July 1907: LSQ continues on to Fort Gibbon; Grant to Fairbanks. LSQ examines the Palisades (“a high cut bank” on the Yukon 35 miles below mouth of Tanana) (B.AMNH 26, p.89)",
+  "html": "<span data-color=\"7030A0\"><b><u>25 July 1907</u></b></span><span data-color=\"7030A0\"><b>: </b></span><span data-color=\"7030A0\"><b>LSQ </b></span><span data-color=\"7030A0\"><b>continues on to Fort Gibbon; Grant to Fairbanks. LSQ examines the Palisades </b></span>(“a high cut bank” on the Yukon 35 miles below mouth of Tanana)<span data-color=\"7030A0\"><b> (</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.8</b></span><span data-color=\"7030A0\"><b>9</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1907-07-25",
+  "docs": [],
+  "stops": [
+   "s1907_04",
+   "s1907_05"
+  ],
+  "stories": [
+   "story_10_fortgibbon_palisades"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-07-25",
+  "order": 30
+ },
+ {
+  "id": "tl064",
+  "para": 64,
+  "text": "29 July 1907: LSQ steams to St Michaels (B.AMNH 26, p.89)",
+  "html": "<span data-color=\"7030A0\"><b><u>2</u></b></span><span data-color=\"7030A0\"><b><u>9</u></b></span><span data-color=\"7030A0\"><b><u> July 1907</u></b></span><span data-color=\"7030A0\"><b>: </b></span><span data-color=\"7030A0\"><b>LSQ </b></span><span data-color=\"7030A0\"><b>steams to St Michaels</b></span><span data-color=\"7030A0\"><b> (</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.8</b></span><span data-color=\"7030A0\"><b>9</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1907-07-29",
+  "docs": [],
+  "stops": [
+   "s1907_06"
+  ],
+  "stories": [
+   "story_11_stmichael_nome"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-07-29",
+  "order": 31
+ },
+ {
+  "id": "tl066",
+  "para": 66,
+  "text": "4 August 1907: LSQ leaves for Nome on a tug (takes 15 hours). Grant parts ways. LSQ in Nome for five days, makes short trip up Solomon R., 30 mi to the east. Can’t get any info out of Startsman/ Graham (B.AMNH 26, p.89)",
+  "html": "<span data-color=\"7030A0\"><b><u>4 August</u></b></span><span data-color=\"7030A0\"><b><u> 1907</u></b></span><span data-color=\"7030A0\"><b>: LSQ leaves for Nome on a tug (takes 15 hours). Grant parts ways. LSQ in Nome for five days, makes short trip up Solomon R., 30 mi to the east.</b></span><span data-color=\"7030A0\"><b> </b></span><span data-color=\"7030A0\"><b>Can’t get any info out of </b></span><span data-color=\"7030A0\"><b>Startsman</b></span><span data-color=\"7030A0\"><b>/ Graham </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.8</b></span><span data-color=\"7030A0\"><b>9</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1907-08-04",
+  "docs": [],
+  "stops": [
+   "s1907_07",
+   "s1907_08"
+  ],
+  "stories": [
+   "story_11_stmichael_nome"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-08-04",
+  "order": 32
+ },
+ {
+  "id": "tl068",
+  "para": 68,
+  "text": "13 August 1907: LSQ leaves Nome on “Corwin,”  “sailed to Keewalik at the eastern end of Kotzebue Sound,” visited Candle, “a few miles up Keewalik River,” and then returned “to ‘the spit.’”  (B.AMNH 26, p.89)",
+  "html": "<span data-color=\"7030A0\"><b><u>13 August</u></b></span><span data-color=\"7030A0\"><b><u> 1907</u></b></span><span data-color=\"7030A0\"><b>: LSQ leaves Nome on “Corwin</b></span><span data-color=\"7030A0\"><b>,”  </b></span>“sailed to Keewalik at the eastern end of Kotzebue Sound,” visited Candle, “a few miles up Keewalik River,” and then returned “to ‘the spit.’” <span data-color=\"7030A0\"><b> (</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.8</b></span><span data-color=\"7030A0\"><b>9</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1907-08-13",
+  "docs": [],
+  "stops": [
+   "s1907_09",
+   "s1907_10"
+  ],
+  "stories": [
+   "story_12_keewalik_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-08-13",
+  "order": 33
+ },
+ {
+  "id": "tl070",
+  "para": 70,
+  "text": "“Several unavoidable delays” (B.AMNH 26, p.89)",
+  "html": "<span data-color=\"7030A0\"><b>“Several unavoidable delays”</b></span><span data-color=\"7030A0\"><b><u> </u></b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.8</b></span><span data-color=\"7030A0\"><b>9</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": null,
+  "docs": [],
+  "stops": [
+   "s1907_09"
+  ],
+  "stories": [
+   "story_12_keewalik_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "0000-00",
+  "order": 34
+ },
+ {
+  "id": "tl072",
+  "para": 72,
+  "text": "24 August 1907: LSQ & Hoffman leave Keewalik and head to Elephant Point. (B.AMNH 26, p.89)",
+  "html": "<span data-color=\"7030A0\"><b><u>24 August</u></b></span><span data-color=\"7030A0\"><b><u> 1907</u></b></span><span data-color=\"7030A0\"><b>: LSQ &amp; Hoffman leave </b></span><span data-color=\"7030A0\"><b>Keewalik</b></span><span data-color=\"7030A0\"><b> and head to Elephant Point. </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.8</b></span><span data-color=\"7030A0\"><b>9</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1907-08-24",
+  "docs": [],
+  "stops": [
+   "s1907_11"
+  ],
+  "stories": [
+   "story_13_elephant_point_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-08-24",
+  "order": 35
+ },
+ {
+  "id": "tl074",
+  "para": 74,
+  "text": "1 September 1907: LSQ & Hoffman enter Buckland R, only go 15 mi due to unusually early fall. (B.AMNH 26, p.89)",
+  "html": "<span data-color=\"7030A0\"><b><u>1 September</u></b></span><span data-color=\"7030A0\"><b><u> 1907</u></b></span><span data-color=\"7030A0\"><b>: LSQ &amp; Hoffman enter Buckland R, only go 15 mi due to unusually early fall. </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.8</b></span><span data-color=\"7030A0\"><b>9</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1907-09-01",
+  "docs": [],
+  "stops": [
+   "s1907_12"
+  ],
+  "stories": [
+   "story_13_elephant_point_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-09-01",
+  "order": 36
+ },
+ {
+  "id": "tl076",
+  "para": 76,
+  "text": "19 September 1907:  “considerable ice around the edge of the Bay, the bluff had begun to freeze, and even the exposed clay flat was solid”. LSQ & Hoffman return to Keewalik, find mining operations in interior ceased and nothing else to do. (B.AMNH 26, p.90)",
+  "html": "<span data-color=\"7030A0\"><b><u>19 September</u></b></span><span data-color=\"7030A0\"><b><u> 1907</u></b></span><span data-color=\"7030A0\"><b>:  </b></span>“considerable ice around the edge of the Bay, the bluff had begun to freeze, and even the exposed clay flat was solid”.<span data-color=\"7030A0\"><b> LSQ &amp; Hoffman return to </b></span><span data-color=\"7030A0\"><b>Keewalik</b></span><span data-color=\"7030A0\"><b>, find mining operations in interior ceased and nothing else to do. </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>90</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1907-09-19",
+  "docs": [],
+  "stops": [
+   "s1907_13"
+  ],
+  "stories": [
+   "story_13_elephant_point_1907",
+   "story_14_return_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-09-19",
+  "order": 37
+ },
+ {
+  "id": "tl078",
+  "para": 78,
+  "text": "Takes Corwin back to Nome, and first boat to Seattle (B.AMNH 26, p.90)",
+  "html": "<span data-color=\"7030A0\"><b>Takes Corwin back to Nome, and first boat to Seattle </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>90</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": null,
+  "docs": [],
+  "stops": [
+   "s1907_14"
+  ],
+  "stories": [
+   "story_14_return_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "0000-00",
+  "order": 38
+ },
+ {
+  "id": "tl080",
+  "para": 80,
+  "text": "28 October 1907: Bumpus to LSQ, do you need more money?",
+  "html": "28 October 1907: Bumpus to LSQ, do you need more money?",
+  "date": "1907-10-28",
+  "docs": [
+   "d_19071028_bumpus_quackenbush"
+  ],
+  "stops": [
+   "s1907_15"
+  ],
+  "stories": [
+   "story_14_return_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-10-28",
+  "order": 39
+ },
+ {
+  "id": "tl082",
+  "para": 82,
+  "text": "2 November 1907: LSQ reaches NY late “owing to the inevitable delays in Alaskan travel”. (B.AMNH 26, p.90)",
+  "html": "<span data-color=\"7030A0\"><b><u>2 November </u></b></span><span data-color=\"7030A0\"><b><u>1907</u></b></span><span data-color=\"7030A0\"><b>: LSQ reaches NY late </b></span>“owing to the inevitable delays in Alaskan travel”<span data-color=\"7030A0\"><b>. </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>90</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1907-11-02",
+  "docs": [],
+  "stops": [
+   "s1907_16"
+  ],
+  "stories": [
+   "story_14_return_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1907-11-02",
+  "order": 40
+ },
+ {
+  "id": "tl084",
+  "para": 84,
+  "text": "13 Nov 1907: HFO to Bumpus, please pay LSQ",
+  "html": "13 Nov 1907: HFO to Bumpus, please pay LSQ",
+  "date": "1907-11-13",
+  "docs": [
+   "d_19071113_osborn_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_14_return_1907"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1907-11-13",
+  "order": 41
+ },
+ {
+  "id": "tl086",
+  "para": 86,
+  "text": "19 Feb 1908 or later: LSQ and Grant have called at Museum, discussed details of a return trip. Report made to HFO; 19 Feb HFO to write to LSQ. Fundraising to the tune of $1500.",
+  "html": "19 Feb 1908 or later: LSQ and Grant have called at Museum, discussed details of a return trip. Report made to HFO; 19 Feb HFO to write to LSQ. Fundraising to the tune of $1500.",
+  "date": "1908-02-19",
+  "docs": [
+   "d_190802_memorandum_1908_expedition"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-02-19",
+  "order": 42
+ },
+ {
+  "id": "tl088",
+  "para": 88,
+  "text": "25 Feb 1908: Someone writes to HFO in support of LSQ and Grant",
+  "html": "25 Feb 1908: Someone writes to HFO in support of LSQ and Grant",
+  "date": "1908-02-25",
+  "docs": [
+   "d_19080225_unsigned_osborn"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-02-25",
+  "order": 43
+ },
+ {
+  "id": "tl090",
+  "para": 90,
+  "text": "28 Feb 1908: HFO sends photo albums to JP Morgan and Pyne, and hair sample to Morgan.",
+  "html": "28 Feb 1908: HFO sends photo albums to JP Morgan and Pyne, and hair sample to Morgan.",
+  "date": "1908-02-28",
+  "docs": [
+   "d_19080228_osborn_mtpyne",
+   "d_19080228_osborn_morgan",
+   "d_19080302_morgan_osborn"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-02-28",
+  "order": 44
+ },
+ {
+  "id": "tl092",
+  "para": 92,
+  "text": "25 March 1908: HFO to Bumpus, look at LSQ’s paper, publish at this length?",
+  "html": "25 March 1908: HFO to Bumpus, look at LSQ’s paper, publish at this length?",
+  "date": "1908-03-25",
+  "docs": [
+   "d_19080325_osborn_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-03-25",
+  "order": 45
+ },
+ {
+  "id": "tl094",
+  "para": 94,
+  "text": "27 March 1908: LSQ sends Bumpus a very detailed plan and budget",
+  "html": "27 March 1908: LSQ sends Bumpus a very detailed plan and budget",
+  "date": "1908-03-27",
+  "docs": [
+   "d_19080327_quackenbush_bumpus_plan"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-03-27",
+  "order": 46
+ },
+ {
+  "id": "tl096",
+  "para": 96,
+  "text": "2 April 1908: Bumpus, when does LSQ want to leave NY?",
+  "html": "2 April 1908: Bumpus, when does LSQ want to leave NY?",
+  "date": "1908-04-02",
+  "docs": [
+   "d_19080402_bumpus_quackenbush"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-04-02",
+  "order": 47
+ },
+ {
+  "id": "tl098",
+  "para": 98,
+  "text": "6 April 1908: LSQ to Bumpus, suggests leaving NY in May",
+  "html": "6 April 1908: LSQ to Bumpus, suggests leaving NY in May",
+  "date": "1908-04-06",
+  "docs": [
+   "d_19080406_quackenbush_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-04-06",
+  "order": 48
+ },
+ {
+  "id": "tl100",
+  "para": 100,
+  "text": "17 April 1908: LSQ has up to 2k, pls call on Bumpus at Museum",
+  "html": "17 April 1908: LSQ has up to 2k, pls call on Bumpus at Museum",
+  "date": "1908-04-17",
+  "docs": [
+   "d_19080417_bumpus_quackenbush"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-04-17",
+  "order": 49
+ },
+ {
+  "id": "tl102",
+  "para": 102,
+  "text": "28 April 1908: LSQ gets his marching orders.",
+  "html": "28 April 1908: LSQ gets his marching orders.",
+  "date": "1908-04-28",
+  "docs": [
+   "d_19080428_bumpus_quackenbush_commission"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-04-28",
+  "order": 50
+ },
+ {
+  "id": "tl104",
+  "para": 104,
+  "text": "1 May 1908: Bumpus gives Matthew a copy of LSQ’s paper",
+  "html": "1 May 1908: Bumpus gives Matthew a copy of LSQ’s paper",
+  "date": "1908-05-01",
+  "docs": [
+   "d_19080501_bumpus_matthew"
+  ],
+  "stops": [],
+  "stories": [
+   "story_15_interlude"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-05-01",
+  "order": 51
+ },
+ {
+  "id": "tl106",
+  "para": 106,
+  "text": "18 May 1908: Bumpus requests a permit for LSQ",
+  "html": "18 May 1908: Bumpus requests a permit for LSQ",
+  "date": "1908-05-18",
+  "docs": [
+   "d_19080518_bumpus_merriam",
+   "d_19080518_bumpus_towhomitmayconcern"
+  ],
+  "stops": [],
+  "stories": [
+   "story_16_permits_departure"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-05-18",
+  "order": 52
+ },
+ {
+  "id": "tl108",
+  "para": 108,
+  "text": "19 May 1908: Bumpus to LSQ, please get some walruses. AMNH has asked for big game license as requested.",
+  "html": "19 May 1908: Bumpus to LSQ, please get some walruses. AMNH has asked for big game license as requested.",
+  "date": "1908-05-19",
+  "docs": [
+   "d_19080519_bumpus_quackenbush"
+  ],
+  "stops": [],
+  "stories": [
+   "story_16_permits_departure"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-05-19",
+  "order": 53
+ },
+ {
+  "id": "tl110",
+  "para": 110,
+  "text": "19 May 1908: LSQ thinks walruses will be gone, might be able to get Beluga and harbor seals. How much are walruses worth to the museum? Leaves for Seattle via Montreal on the Canadian Pacific RR.",
+  "html": "19 May 1908: LSQ thinks walruses will be gone, might be able to get Beluga and harbor seals. How much are walruses worth to the museum? Leaves for Seattle via Montreal on the Canadian Pacific RR.",
+  "date": "1908-05-19",
+  "docs": [
+   "d_19080519_quackenbush_bumpus"
+  ],
+  "stops": [
+   "s1908_01"
+  ],
+  "stories": [
+   "story_16_permits_departure"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-05-19",
+  "order": 54
+ },
+ {
+  "id": "tl112",
+  "para": 112,
+  "text": "20 May 1908: Bumpus receives LSQ’s permit.",
+  "html": "20 May 1908: Bumpus receives LSQ’s permit.",
+  "date": "1908-05-20",
+  "docs": [
+   "d_19080520_merriam_bumpus",
+   "d_19080520_permit_merriam"
+  ],
+  "stops": [],
+  "stories": [
+   "story_16_permits_departure"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-05-20",
+  "order": 55
+ },
+ {
+  "id": "tl114",
+  "para": 114,
+  "text": "21 May 1908: Bumpus writes to LSQ in Seattle, walruses worth $8-10; sends permit on to Nome",
+  "html": "21 May 1908: Bumpus writes to LSQ in Seattle, walruses worth $8-10; sends permit on to Nome",
+  "date": "1908-05-21",
+  "docs": [
+   "d_19080521_bumpus_quackenbush_a",
+   "d_19080521_bumpus_quackenbush_b",
+   "d_19080522_bumpus_quackenbush"
+  ],
+  "stops": [],
+  "stories": [
+   "story_16_permits_departure"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-05-21",
+  "order": 56
+ },
+ {
+  "id": "tl116",
+  "para": 116,
+  "text": "3 June 1908: LSQ writes from Seattle, leaving for Nome tomorrow with canoe.",
+  "html": "3 June 1908: LSQ writes from Seattle, leaving for Nome tomorrow with canoe.",
+  "date": "1908-06-03",
+  "docs": [
+   "d_19080603_quackenbush_bumpus"
+  ],
+  "stops": [
+   "s1908_03"
+  ],
+  "stories": [
+   "story_17_seattle_umatilla"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-06-03",
+  "order": 57
+ },
+ {
+  "id": "tl118",
+  "para": 118,
+  "text": "4 June 1908: scheduled to leave Seattle on the “Umatilla” (LSQ to Bumpus 19 May 1908: 590, Box 162, Folder: “Alaska Mammoth Exp. 1908”)",
+  "html": "<span data-color=\"7030A0\"><b><u>4 June 1908: </u></b></span><span data-color=\"7030A0\"><b>scheduled to leave Seattle on the “Umatilla” (LSQ to </b></span><span data-color=\"7030A0\"><b>Bumpus</b></span><span data-color=\"7030A0\"><b> 19 May 1908: 590, Box 162, Folder: “Alaska Mammoth Exp. 1908”)</b></span>",
+  "date": "1908-06-04",
+  "docs": [
+   "d_19080519_quackenbush_bumpus"
+  ],
+  "stops": [
+   "s1908_03"
+  ],
+  "stories": [
+   "story_17_seattle_umatilla"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-06-04",
+  "order": 58
+ },
+ {
+  "id": "tl120",
+  "para": 120,
+  "text": "21 June 1908: LSQ arrives Nome “after ten days’ delay in the ice.” Crosses Seward Pen by train to Shelton, wagon to Candle. Picks up Hoffman & boat, row to Keewalik (B.AMNH 26, p.90)",
+  "html": "<span data-color=\"7030A0\"><b><u>21 June 1908</u></b></span><span data-color=\"7030A0\"><b>: LSQ arrives Nome </b></span>“after ten days’ delay in the ice.”<span data-color=\"7030A0\"><b> Crosses Seward Pen by train to Shelton, wagon to Candle. Picks up Hoffman &amp; boat, row to </b></span><span data-color=\"7030A0\"><b>Keewalik</b></span><span data-color=\"7030A0\"><b> </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>90</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1908-06-21",
+  "docs": [],
+  "stops": [
+   "s1908_04",
+   "s1908_05",
+   "s1908_06",
+   "s1908_07"
+  ],
+  "stories": [
+   "story_17_seattle_umatilla",
+   "story_18_crossing"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1908-06-21",
+  "order": 59
+ },
+ {
+  "id": "tl122",
+  "para": 122,
+  "text": "24 June 1908: LSQ writes from Shelton, did not wait for Corwin, liable to be slow getting through Bering Straits. Thinks he will be first to Elephant Point.",
+  "html": "24 June 1908: LSQ writes from Shelton, did not wait for Corwin, liable to be slow getting through Bering Straits. Thinks he will be first to Elephant Point.",
+  "date": "1908-06-24",
+  "docs": [
+   "d_19080624_quackenbush_bumpus"
+  ],
+  "stops": [
+   "s1908_05"
+  ],
+  "stories": [
+   "story_18_crossing"
+  ],
+  "findings": [
+   "f_lanes_landing_shelton"
+  ],
+  "people": [],
+  "note": "The PI writes 'from Shelton'; the letter itself is headed 'Lane's Landing'.",
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-06-24",
+  "order": 60
+ },
+ {
+  "id": "tl124",
+  "para": 124,
+  "text": "1 July 1908: LSQ & Hoffman leave Keewalik. (B.AMNH 26, p.90)",
+  "html": "<span data-color=\"7030A0\"><b><u>1 July 1908</u></b></span><span data-color=\"7030A0\"><b>: LSQ &amp; Hoffman leave </b></span><span data-color=\"7030A0\"><b>Keewalik</b></span><span data-color=\"7030A0\"><b>. </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>90</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1908-07-01",
+  "docs": [
+   "d_19080701_quackenbush_bumpus"
+  ],
+  "stops": [
+   "s1908_07"
+  ],
+  "stories": [
+   "story_18_crossing"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1908-07-01",
+  "order": 61
+ },
+ {
+  "id": "tl126",
+  "para": 126,
+  "text": "3 July 1908: LSQ & Hoffman reach Elephant Point. (B.AMNH 26, p.90)",
+  "html": "<span data-color=\"7030A0\"><b><u>3 July 1908</u></b></span><span data-color=\"7030A0\"><b>: LSQ &amp; Hoffman reach Elephant Point. </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>90</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1908-07-03",
+  "docs": [],
+  "stops": [
+   "s1908_08"
+  ],
+  "stories": [
+   "story_19_excavation"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1908-07-03",
+  "order": 62
+ },
+ {
+  "id": "tl128",
+  "para": 128,
+  "text": "10 July 1908: Ice “finally” breaks up out of Eschscholtz Bay. Excavate mammoth by hand (B.AMNH 26, p.90)",
+  "html": "<span data-color=\"7030A0\"><b><u>10 July 1908</u></b></span><span data-color=\"7030A0\"><b>: Ice “finally” breaks up out of </b></span><span data-color=\"7030A0\"><b>Eschscholtz</b></span><span data-color=\"7030A0\"><b> Bay. Excavate mammoth by hand </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>90</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1908-07-10",
+  "docs": [],
+  "stops": [
+   "s1908_08"
+  ],
+  "stories": [
+   "story_19_excavation"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1908-07-10",
+  "order": 63
+ },
+ {
+  "id": "tl130",
+  "para": 130,
+  "text": "20 August 1908: LSQ & Hoffman sail back to Keewalik. (B.AMNH 26, p.91)",
+  "html": "<span data-color=\"7030A0\"><b><u>20 August 1908</u></b></span><span data-color=\"7030A0\"><b>: LSQ &amp; Hoffman sail back to </b></span><span data-color=\"7030A0\"><b>Keewalik</b></span><span data-color=\"7030A0\"><b>. </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>91</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1908-08-20",
+  "docs": [],
+  "stops": [
+   "s1908_22"
+  ],
+  "stories": [
+   "story_22_return_1908"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1908-08-20",
+  "order": 64
+ },
+ {
+  "id": "tl132",
+  "para": 132,
+  "text": "LSQ boats back to Nome, Seattle (B.AMNH 26, p.91)",
+  "html": "<span data-color=\"7030A0\"><b>LSQ boats back to Nome, Seattle </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>91</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": null,
+  "docs": [],
+  "stops": [
+   "s1908_23",
+   "s1908_24"
+  ],
+  "stories": [
+   "story_22_return_1908"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "0000-00",
+  "order": 65
+ },
+ {
+  "id": "tl134",
+  "para": 134,
+  "text": "23 September 1908: LSQ returns back to NY. (B.AMNH 26, p.91)",
+  "html": "<span data-color=\"7030A0\"><b><u>23 September 1908: </u></b></span><span data-color=\"7030A0\"><b>LSQ returns back to NY.</b></span><span data-color=\"7030A0\"><b> </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>91</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1908-09-23",
+  "docs": [],
+  "stops": [
+   "s1908_25"
+  ],
+  "stories": [
+   "story_22_return_1908"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1908-09-23",
+  "order": 66
+ },
+ {
+  "id": "tl136",
+  "para": 136,
+  "text": "1 October 1908: LSQ reports to Bumpus (LSQ  to Bumpus, New York 1 Oct  1908 Central Archives 590, Box 162. Folder: “Alaska Mammoth Exp. 1908” Handwritten “Report on Alaskan Mammoth Expedition, 1908.)",
+  "html": "<span data-color=\"7030A0\"><b><u>1 October 1908: </u></b></span><span data-color=\"7030A0\"><b>LSQ reports to </b></span><span data-color=\"7030A0\"><b>Bumpus</b></span><span data-color=\"7030A0\"><b> (</b></span><span data-color=\"7030A0\"><b>LSQ  to</b></span><span data-color=\"7030A0\"><b> </b></span><span data-color=\"7030A0\"><b>Bumpus</b></span><span data-color=\"7030A0\"><b>, New York 1 Oct  1908</b></span>",
+  "date": "1908-10-01",
+  "docs": [
+   "d_19081001_quackenbush_bumpus_report"
+  ],
+  "stops": [
+   "s1908_25"
+  ],
+  "stories": [
+   "story_22_return_1908"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-10-01",
+  "order": 67
+ },
+ {
+  "id": "tl140",
+  "para": 140,
+  "text": "8 October 1908: Bumpus gives Grant a copy of LSQ’s report",
+  "html": "8 October 1908: Bumpus gives Grant a copy of LSQ’s report",
+  "date": "1908-10-08",
+  "docs": [
+   "d_19081008_bumpus_grant",
+   "d_19081009_grant_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_22_return_1908"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-10-08",
+  "order": 68
+ },
+ {
+  "id": "tl142",
+  "para": 142,
+  "text": "10 October 1908: Grant deems it “an extremely barren narrative”",
+  "html": "10 October 1908: Grant deems it “an extremely barren narrative”",
+  "date": "1908-10-10",
+  "docs": [
+   "d_19081010_grant_bumpus"
+  ],
+  "stops": [],
+  "stories": [
+   "story_22_return_1908"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-10-10",
+  "order": 69
+ },
+ {
+  "id": "tl144",
+  "para": 144,
+  "text": "Payment, and all the thank yous, play out into Jan 1909.",
+  "html": "Payment, and all the thank yous, play out into Jan 1909.",
+  "date": null,
+  "docs": [
+   "d_nd_osborn_sherwood",
+   "d_19090115_sherwood_osborn",
+   "d_19090115_sherwood_pyne",
+   "d_19090121_sherwood_morgan",
+   "d_19090121_sherwood_pyne",
+   "d_19090121_pyne_sherwood",
+   "d_19090122_morgan_sherwood",
+   "d_19090123_sherwood_pyne",
+   "d_19090123_sherwood_morgan"
+  ],
+  "stops": [],
+  "stories": [
+   "story_23_accounts"
+  ],
+  "findings": [],
+  "people": [],
+  "note": null,
+  "stream": "correspondence / events (PI summary)",
+  "sort": "0000-00",
+  "order": 70
+ },
+ {
+  "id": "tl146",
+  "para": 146,
+  "text": "20 July 1908: LSQ & Hoffman leave Keewalik for Buckland R. Low water due to drought stymies plans. (B.AMNH 26, p.91)",
+  "html": "<span data-color=\"7030A0\"><b><u>20 July 1908</u></b></span><span data-color=\"7030A0\"><b>: LSQ &amp; Hoffman leave </b></span><span data-color=\"7030A0\"><b>Keewalik</b></span><span data-color=\"7030A0\"><b> for Buckland R. Low water due to drought stymies plans. </b></span><span data-color=\"7030A0\"><b>(</b></span><span data-color=\"7030A0\"><b>B.AMNH</b></span><span data-color=\"7030A0\"><b> 26, p.</b></span><span data-color=\"7030A0\"><b>91</b></span><span data-color=\"7030A0\"><b>)</b></span>",
+  "date": "1908-07-20",
+  "docs": [],
+  "stops": [
+   "s1908_10",
+   "s1908_11"
+  ],
+  "stories": [
+   "story_20_buckland"
+  ],
+  "findings": [],
+  "people": [],
+  "note": "Listed out of chronological order at the end of the PI's terse timeline (as found).",
+  "stream": "itinerary (from B.AMNH 26 via PI)",
+  "sort": "1908-07-20",
+  "order": 71
+ },
+ {
+  "id": "tl148",
+  "para": 148,
+  "text": "22 July 1908: LSQ & Hoffman anchor the dory 8 miles up the Buckland, “take to the canoe.” (LSQ, “Report on Alaskan Mammoth Expedition, 1908,” 590, Box 162. Folder “Alaska Mammoth Exp. 1908”)",
+  "html": "<span data-color=\"7030A0\"><b><u>22 July 1908</u></b></span><span data-color=\"7030A0\"><b>: LSQ &amp; Hoffman anchor the dory 8 miles up the Buckland, “take to the canoe.” (LSQ, “Report on Alaskan Mammoth Expedition, 1908,” 590, Box 162. Folder “Alaska Mammoth Exp. 1908”)</b></span>",
+  "date": "1908-07-22",
+  "docs": [
+   "d_19081001_quackenbush_bumpus_report"
+  ],
+  "stops": [
+   "s1908_12"
+  ],
+  "stories": [
+   "story_20_buckland"
+  ],
+  "findings": [],
+  "people": [],
+  "note": "Listed out of chronological order at the end of the PI's terse timeline (as found).",
+  "stream": "correspondence / events (PI summary)",
+  "sort": "1908-07-22",
+  "order": 72
+ }
+]

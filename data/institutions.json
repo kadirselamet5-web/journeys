@@ -1,0 +1,239 @@
+[
+ {
+  "id": "i_amnh",
+  "label": "American Museum of Natural History (AMNH)",
+  "kind": "museum",
+  "place": "pl_newyork",
+  "units": [
+   "Director's Office",
+   "Department of Vertebrate Paleontology",
+   "Board of Trustees",
+   "Executive Committee",
+   "Treasurer / Assistant Treasurer",
+   "Assistant Secretary"
+  ],
+  "attestations": [
+   "letterheads and signatures throughout Central Archives 590, Box 162"
+  ]
+ },
+ {
+  "id": "i_nmnh",
+  "label": "United States National Museum / Smithsonian Institution",
+  "kind": "museum",
+  "place": "pl_washington",
+  "attestations": [
+   "Bumpus to Rathbun 25 Apr 1907; Rathbun to Bumpus 30 Apr 1907; Osborn 20 June 1907 ('U.S. National Museum')"
+  ],
+  "note": "Called 'the National Museum', 'Smithsonian', 'NMNH' and 'SI' variously in the sources."
+ },
+ {
+  "id": "i_ayp",
+  "label": "Alaska-Yukon-Pacific Exposition (1909)",
+  "kind": "exposition",
+  "place": "pl_seattle",
+  "attestations": [
+   "Reed to Startsman 18 Oct 1906; Meany 18 Mar 1907 ('1 April to 15 Oct. 1909')"
+  ],
+  "note": "Spelled 'Alaska-Pacific-Yukon Exposition' in LSQ 27 Mar 1908 and in the Tale."
+ },
+ {
+  "id": "i_uw",
+  "label": "University of Washington",
+  "kind": "university",
+  "place": "pl_seattle",
+  "attestations": [
+   "Meany to Bumpus 18 Mar 1907 ('the museum of this University')"
+  ]
+ },
+ {
+  "id": "i_nyzs",
+  "label": "New York Zoological Society",
+  "kind": "society",
+  "place": "pl_newyork",
+  "attestations": [
+   "Cast of Characters; 'NYZoo Soc letterhead' (Grant 3 July 1907); 'Zool. Soc. Exec Council' (Osborn 20 June 1907)"
+  ]
+ },
+ {
+  "id": "i_tcdc",
+  "label": "Taylor Creek Ditch Company",
+  "kind": "company",
+  "place": "pl_newyork",
+  "attestations": [
+   "letterhead of Stone to Bumpus 20 June 1907: 11 Wall Street, New York City"
+  ],
+  "note": "Officers on letterhead: Madison Grant (President), Andrew J. Stone (VP & GM), Benjamin Leach Allen (Treasurer, 66 Broadway), Robert T. Varnum (Secretary, struck through). The company's Alaskan operations are not located in the sources beyond 'Stone's camp'."
+ },
+ {
+  "id": "i_pcss",
+  "label": "Pacific Coast Steamship Co.",
+  "kind": "company",
+  "place": "pl_seattle",
+  "attestations": [
+   "LSQ to Bumpus 26 Apr 1907 (enclosed folder re direct route Seattle to Nome)"
+  ]
+ },
+ {
+  "id": "i_nwss",
+  "label": "Northwestern Steamship Co. (Seattle)",
+  "kind": "company",
+  "place": "pl_seattle",
+  "attestations": [
+   "letterhead of Anderson to Stone 18 May [1907]"
+  ]
+ },
+ {
+  "id": "i_cprr",
+  "label": "Canadian Pacific Railway",
+  "kind": "company",
+  "place": null,
+  "attestations": [
+   "LSQ to Bumpus 19 May 1908 ('via Montreal and the Canadian Pacific')"
+  ]
+ },
+ {
+  "id": "i_sprr",
+  "label": "Seward Peninsula R.R.",
+  "kind": "company",
+  "place": "pl_lanes_landing",
+  "attestations": [
+   "LSQ report 1 Oct 1908 ('the head of the Seward Peninsula R.R. at Lane's Landing')"
+  ]
+ },
+ {
+  "id": "i_usda",
+  "label": "Department of Agriculture (permit authority)",
+  "kind": "government",
+  "place": "pl_washington",
+  "attestations": [
+   "Bumpus to LSQ 21 May 1908; Permit 20 May 1908 ('Act of May 11, 1908')"
+  ]
+ },
+ {
+  "id": "i_bof",
+  "label": "Bureau of Fisheries, Department of Commerce and Labor",
+  "kind": "government",
+  "place": "pl_washington",
+  "attestations": [
+   "Hugh M. Smith to Bumpus 9 May 1910"
+  ]
+ },
+ {
+  "id": "i_pod",
+  "label": "Post Office Department (Topographer)",
+  "kind": "government",
+  "place": "pl_washington",
+  "attestations": [
+   "Sherwood to von Haake 18 Feb 1909"
+  ]
+ },
+ {
+  "id": "i_yale",
+  "label": "Yale Museum",
+  "kind": "museum",
+  "place": null,
+  "attestations": [
+   "Osborn draft 16 Apr 1907 ('Mr. Schubert[?] of the Yale Museum')"
+  ]
+ },
+ {
+  "id": "i_brooklyn",
+  "label": "Brooklyn Museum",
+  "kind": "museum",
+  "place": null,
+  "attestations": [
+   "Osborn draft 16 Apr 1907 ('Mr. Lucas of the Brooklyn Museum')"
+  ]
+ },
+ {
+  "id": "i_columbia",
+  "label": "Columbia (University)",
+  "kind": "university",
+  "place": "pl_newyork",
+  "attestations": [
+   "Bumpus to Hugh M. Smith 18 May 1910 ('a Columbia graduate'); Cast of Characters"
+  ]
+ },
+ {
+  "id": "i_keewalik_hotel",
+  "label": "Keewalik Hotel (warehouse)",
+  "kind": "business",
+  "place": "pl_keewalik",
+  "attestations": [
+   "LSQ report 1 Oct 1908"
+  ]
+ },
+ {
+  "id": "i_rainier_hotel",
+  "label": "Rainier Grand Hotel, Seattle",
+  "kind": "business",
+  "place": "pl_seattle",
+  "attestations": [
+   "Bumpus to LSQ 28 Oct 1907 ('Ranier Grande Hotel'); LSQ 3 June and 1 July 1908 letterheads ('Rainer Grand Hotel')"
+  ]
+ },
+ {
+  "id": "i_utoronto",
+  "label": "University of Toronto",
+  "kind": "university",
+  "place": null,
+  "attestations": [
+   "Tale title page"
+  ]
+ },
+ {
+  "id": "i_spb_academy",
+  "label": "St Petersburg Academy of Science",
+  "kind": "academy",
+  "place": "pl_stpetersburg",
+  "attestations": [
+   "Tale §1 and §3"
+  ],
+  "scope": "prologue"
+ },
+ {
+  "id": "v_corwin",
+  "label": "'Corwin' (steamer)",
+  "kind": "vessel",
+  "place": null,
+  "attestations": [
+   "B.AMNH 26 p.89–90 via PI timeline; LSQ letters 1908 ('the Corwin is a very slow boat'; 'independent steamer')"
+  ]
+ },
+ {
+  "id": "v_umatilla",
+  "label": "'Umatilla' (steamer)",
+  "kind": "vessel",
+  "place": null,
+  "attestations": [
+   "LSQ to Bumpus 19 May and 3 June 1908"
+  ]
+ },
+ {
+  "id": "v_hoffman_dory",
+  "label": "Hoffman's fishing boat / dory",
+  "kind": "vessel",
+  "place": null,
+  "attestations": [
+   "B.AMNH 26 p.89 via PI ('fishing boat hired for the coasting'; no centerboard); LSQ report 1908 ('his fishing dory')"
+  ]
+ },
+ {
+  "id": "v_canoe_1907",
+  "label": "borrowed canoe (1907): 'a clumsy, waterlogged canoe'",
+  "kind": "vessel",
+  "place": null,
+  "attestations": [
+   "B.AMNH 26 p.89 via PI; LSQ 27 Mar 1908"
+  ]
+ },
+ {
+  "id": "v_canoe_1908",
+  "label": "canoe (1908), shipped from a factory in Maine",
+  "kind": "vessel",
+  "place": null,
+  "attestations": [
+   "LSQ 3 June 1908; LSQ report 1 Oct 1908"
+  ]
+ }
+]

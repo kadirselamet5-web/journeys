@@ -1,0 +1,548 @@
+[
+ {
+  "id": "g1907_01",
+  "journey": "1907",
+  "frm": "s1907_01",
+  "to": "s1907_02",
+  "mode": "rail (mode not stated)",
+  "mode_status": "not_stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "tale",
+   "locator": "'left for Nome, Alaska, by way of Seattle'"
+  },
+  "note": "Rail is implied by LSQ's 1907 fare inquiry ('Return RR fare to Seattle'), but the actual conveyance is not stated."
+ },
+ {
+  "id": "g1907_02",
+  "journey": "1907",
+  "frm": "s1907_02",
+  "to": "s1907_03",
+  "mode": "unknown",
+  "mode_status": "not_stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.88 via PI: arrives Dawson 19 July"
+  },
+  "note": "No provided source describes how LSQ reached Dawson from Seattle. Drawn as a schematic great-circle line only."
+ },
+ {
+  "id": "g1907_03",
+  "journey": "1907",
+  "frm": "s1907_03",
+  "to": "s1907_04",
+  "mode": "down the Yukon (conveyance not stated)",
+  "mode_status": "inferred",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.89 via PI: 'continues on to Fort Gibbon'"
+  },
+  "note": "Dawson and Fort Gibbon both lie on the Yukon; river travel is inferred from the sequence, not stated."
+ },
+ {
+  "id": "g1907_04",
+  "journey": "1907",
+  "frm": "s1907_04",
+  "to": "s1907_05",
+  "mode": "down the Yukon (conveyance not stated)",
+  "mode_status": "inferred",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.89 via PI"
+  },
+  "note": null
+ },
+ {
+  "id": "g1907_05",
+  "journey": "1907",
+  "frm": "s1907_05",
+  "to": "s1907_06",
+  "mode": "steamer",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.89 via PI: 'LSQ steams to St Michaels'"
+  },
+  "note": "The PI's verb 'steams' is taken as the mode."
+ },
+ {
+  "id": "g1907_06",
+  "journey": "1907",
+  "frm": "s1907_06",
+  "to": "s1907_07",
+  "mode": "tug (15 hours)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.89 via PI"
+  },
+  "note": null
+ },
+ {
+  "id": "g1907_07",
+  "journey": "1907",
+  "frm": "s1907_07",
+  "to": "s1907_08",
+  "mode": "not stated (side trip, 30 miles)",
+  "mode_status": "not_stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.89 via PI"
+  },
+  "note": "Return to Nome implied."
+ },
+ {
+  "id": "g1907_08",
+  "journey": "1907",
+  "frm": "s1907_08",
+  "to": "s1907_09",
+  "mode": "steamer 'Corwin' (from Nome)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.89 via PI: 'LSQ leaves Nome on \"Corwin\"'"
+  },
+  "note": "Drawn from the Solomon River side trip back through Nome schematically."
+ },
+ {
+  "id": "g1907_09",
+  "journey": "1907",
+  "frm": "s1907_09",
+  "to": "s1907_10",
+  "mode": "not stated ('a few miles up Keewalik River')",
+  "mode_status": "not_stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.89 via PI"
+  },
+  "note": "Return 'to the spit' implied."
+ },
+ {
+  "id": "g1907_10",
+  "journey": "1907",
+  "frm": "s1907_10",
+  "to": "s1907_11",
+  "mode": "Hoffman's fishing boat (sail, no centerboard) with canoe",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.89 via PI"
+  },
+  "note": "Coastal passage across Eschscholtz Bay; not traced."
+ },
+ {
+  "id": "g1907_11",
+  "journey": "1907",
+  "frm": "s1907_11",
+  "to": "s1907_12",
+  "mode": "boat / canoe (not specified)",
+  "mode_status": "not_stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.89 via PI: 'enter Buckland R, only go 15 mi'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1907_12",
+  "journey": "1907",
+  "frm": "s1907_12",
+  "to": "s1907_13",
+  "mode": "boat (return via Elephant Point implied)",
+  "mode_status": "inferred",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.90 via PI"
+  },
+  "note": "The 19 September description of ice around the Bay and the frozen bluff implies a return to Elephant Point before Keewalik; not drawn as a separate stop."
+ },
+ {
+  "id": "g1907_13",
+  "journey": "1907",
+  "frm": "s1907_13",
+  "to": "s1907_14",
+  "mode": "steamer 'Corwin'",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.90 via PI: 'Takes Corwin back to Nome'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1907_14",
+  "journey": "1907",
+  "frm": "s1907_14",
+  "to": "s1907_15",
+  "mode": "'first boat to Seattle'",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.90 via PI"
+  },
+  "note": null
+ },
+ {
+  "id": "g1907_15",
+  "journey": "1907",
+  "frm": "s1907_15",
+  "to": "s1907_16",
+  "mode": "not stated (rail implied)",
+  "mode_status": "not_stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.90 via PI: reaches NY 2 November"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_01",
+  "journey": "1908",
+  "frm": "s1908_01",
+  "to": "s1908_02",
+  "mode": "rail (Canadian Pacific via Montreal)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19080519_quackenbush_bumpus",
+   "locator": "'via Montreal and the Canadian Pacific'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_02",
+  "journey": "1908",
+  "frm": "s1908_02",
+  "to": "s1908_03",
+  "mode": "rail (Canadian Pacific)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19080519_quackenbush_bumpus",
+   "locator": "as above"
+  },
+  "note": "Great-circle line, not the railway alignment."
+ },
+ {
+  "id": "g1908_03",
+  "journey": "1908",
+  "frm": "s1908_03",
+  "to": "s1908_04",
+  "mode": "steamer 'Umatilla' (17 days; ice)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19080624_quackenbush_bumpus",
+   "locator": "'the trip from Seattle to Nome occupied seventeen days'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_04",
+  "journey": "1908",
+  "frm": "s1908_04",
+  "to": "s1908_05",
+  "mode": "train (Seward Peninsula R.R.)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'the head of the Seward Peninsula R.R. at Lane's Landing'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_05",
+  "journey": "1908",
+  "frm": "s1908_05",
+  "to": "s1908_06",
+  "mode": "wagon (two settlement stops, two open camps)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'crossed the peninsula by wagon to Candle'"
+  },
+  "note": "The 1908 plan (27 Mar) had anticipated 'rail and on horseback'; the report says wagon."
+ },
+ {
+  "id": "g1908_06",
+  "journey": "1908",
+  "frm": "s1908_06",
+  "to": "s1908_07",
+  "mode": "rowed down the Keewalik River (dory)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'On June 29th we rowed down the Keewalik River to Keewalik'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_07",
+  "journey": "1908",
+  "frm": "s1908_07",
+  "to": "s1908_08",
+  "mode": "dory through pack ice",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'Kotzebue Sound and Eschscholtz Bay were still packed with ice but we fortunately found a way through'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_08",
+  "journey": "1908",
+  "frm": "s1908_08",
+  "to": "s1908_09",
+  "mode": "boat (crossed Eschscholtz Bay)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'I crossed Eschscholtz Bay to a cut bluff on the north side'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_09",
+  "journey": "1908",
+  "frm": "s1908_09",
+  "to": "s1908_10",
+  "mode": "boat",
+  "mode_status": "inferred",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'I returned to Keewalik'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_10",
+  "journey": "1908",
+  "frm": "s1908_10",
+  "to": "s1908_11",
+  "mode": "dory with canoe in tow",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'with the canoe in tow, on July 20th'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_11",
+  "journey": "1908",
+  "frm": "s1908_11",
+  "to": "s1908_12",
+  "mode": "dory",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'the dory was anchored 8 miles up the river'"
+  },
+  "note": "Along the river, not traced."
+ },
+ {
+  "id": "g1908_12",
+  "journey": "1908",
+  "frm": "s1908_12",
+  "to": "s1908_13",
+  "mode": "canoe, with portaging",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'this necessitated much portaging and made progress slow'"
+  },
+  "note": "Positions of both ends approximate."
+ },
+ {
+  "id": "g1908_13",
+  "journey": "1908",
+  "frm": "s1908_13",
+  "to": "s1908_14",
+  "mode": "canoe; then 'a few miles' on foot",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "as above"
+  },
+  "note": "Positions approximate."
+ },
+ {
+  "id": "g1908_14",
+  "journey": "1908",
+  "frm": "s1908_14",
+  "to": "s1908_15",
+  "mode": "canoe (return; West Fork ascended)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'On the return trip I ascended the West Fork a few miles'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_15",
+  "journey": "1908",
+  "frm": "s1908_15",
+  "to": "s1908_16",
+  "mode": "canoe",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'on August 5th reached the mouth of the river'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_16",
+  "journey": "1908",
+  "frm": "s1908_16",
+  "to": "s1908_17",
+  "mode": "dory (crossed the Buckland estuary)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'crossed the Buckland estuary to the extreme eastern end of Eschscholtz Bay'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_17",
+  "journey": "1908",
+  "frm": "s1908_17",
+  "to": "s1908_18",
+  "mode": "dory (coastal cruise along the south shore)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'cruised along the south shore of Eschscholtz Bay'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_18",
+  "journey": "1908",
+  "frm": "s1908_18",
+  "to": "s1908_19",
+  "mode": "dory to the north shore, then on foot",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'On August 11th I crossed to the north shore ... set out on foot with light packs'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_19",
+  "journey": "1908",
+  "frm": "s1908_19",
+  "to": "s1908_20",
+  "mode": "on foot",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'crossed Hotham Peninsula to Hotham Inlet'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_20",
+  "journey": "1908",
+  "frm": "s1908_20",
+  "to": "s1908_21",
+  "mode": "on foot (recrossed)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'On August 17th we recrossed Hotham Peninsula to Eschscholtz Bay'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_21",
+  "journey": "1908",
+  "frm": "s1908_21",
+  "to": "s1908_22",
+  "mode": "dory (sail)",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.91 via PI: 'LSQ & Hoffman sail back to Keewalik'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_22",
+  "journey": "1908",
+  "frm": "s1908_22",
+  "to": "s1908_23",
+  "mode": "'the first boat for Nome'",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'took the first boat for Nome (on August 29th)'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_23",
+  "journey": "1908",
+  "frm": "s1908_23",
+  "to": "s1908_24",
+  "mode": "boat",
+  "mode_status": "stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "pub_bamnh26",
+   "locator": "p.91 via PI: 'LSQ boats back to Nome, Seattle'"
+  },
+  "note": null
+ },
+ {
+  "id": "g1908_24",
+  "journey": "1908",
+  "frm": "s1908_24",
+  "to": "s1908_25",
+  "mode": "not stated (rail implied)",
+  "mode_status": "not_stated",
+  "geometry": "schematic",
+  "source": {
+   "ref": "d_19081001_quackenbush_bumpus_report",
+   "locator": "'reached New York on September 23rd'"
+  },
+  "note": null
+ }
+]

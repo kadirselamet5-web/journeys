@@ -1,0 +1,24 @@
+[
+ {
+  "id": "ctx_lena_yakutsk",
+  "frm": "pl_lena_mouth",
+  "to": "pl_yakutsk",
+  "label": "Adams mammoth: Lena mouth → Yakutsk (1806)",
+  "source": {
+   "ref": "tale",
+   "locator": "'some 1300 kilometers to the north' ... 'Following the Lena River between the peninsula described by Adams and Yakutsk yields a distance of at least 1,300km' (PI, fn 18)"
+  },
+  "geometry": "schematic"
+ },
+ {
+  "id": "ctx_yakutsk_spb",
+  "frm": "pl_yakutsk",
+  "to": "pl_stpetersburg",
+  "label": "Adams mammoth: Yakutsk → St Petersburg",
+  "source": {
+   "ref": "tale",
+   "locator": "'its long and arduous voyage back to St Petersburg, a distance of no less than 6,000 kilometres' (fn 18: 'Yakutsk to St Petersburg as the crow flies is 4800km')"
+  },
+  "geometry": "schematic"
+ }
+]

@@ -1,0 +1,4158 @@
+{
+ "nodes": [
+  {
+   "id": "p_quackenbush",
+   "label": "L. S. Quackenbush",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 15,
+    "total": 53,
+    "correspondence_in": 16,
+    "stated_in": 6,
+    "stated_out": 5,
+    "pi_in": 7,
+    "pi_out": 2,
+    "affiliation_out": 2
+   }
+  },
+  {
+   "id": "p_bumpus",
+   "label": "H. C. Bumpus",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 28,
+    "total": 58,
+    "correspondence_out": 25,
+    "stated_out": 1,
+    "pi_in": 3,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_osborn",
+   "label": "Henry Fairfield Osborn",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 10,
+    "total": 37,
+    "correspondence_in": 12,
+    "stated_out": 7,
+    "stated_in": 2,
+    "pi_in": 3,
+    "pi_out": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_matthew",
+   "label": "W. D. Matthew",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 2,
+    "total": 10,
+    "correspondence_in": 1,
+    "stated_in": 2,
+    "stated_out": 3,
+    "pi_out": 1,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_grant",
+   "label": "Madison Grant",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 7,
+    "total": 27,
+    "correspondence_in": 5,
+    "stated_out": 6,
+    "stated_in": 2,
+    "pi_out": 5,
+    "affiliation_out": 2
+   }
+  },
+  {
+   "id": "p_meany",
+   "label": "Edmond S. Meany",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 3,
+    "total": 12,
+    "correspondence_in": 3,
+    "stated_out": 2,
+    "pi_out": 2,
+    "affiliation_out": 2
+   }
+  },
+  {
+   "id": "p_startsman",
+   "label": "J. H. Startsman",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 1,
+    "total": 5,
+    "correspondence_out": 1,
+    "stated_out": 1,
+    "stated_in": 1,
+    "pi_out": 1
+   }
+  },
+  {
+   "id": "p_graham",
+   "label": "E. W. Graham",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 1,
+    "total": 4,
+    "stated_in": 2,
+    "pi_in": 1
+   }
+  },
+  {
+   "id": "p_reed",
+   "label": "Henry E. Reed",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 2,
+    "total": 6,
+    "correspondence_in": 2,
+    "stated_out": 1,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_chilberg",
+   "label": "J. E. Chilberg",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 1,
+    "total": 5,
+    "stated_out": 1,
+    "stated_in": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_anderson",
+   "label": "A. A. Anderson",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 1,
+    "total": 5,
+    "stated_out": 2,
+    "pi_out": 2
+   }
+  },
+  {
+   "id": "p_stone",
+   "label": "Andrew J. Stone",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 1,
+    "total": 7,
+    "correspondence_out": 1,
+    "stated_in": 2,
+    "pi_in": 1,
+    "pi_out": 1,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_jesup",
+   "label": "Morris K. Jesup",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_lucas",
+   "label": "F. A. Lucas",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 3,
+    "total": 11,
+    "correspondence_in": 2,
+    "stated_out": 4,
+    "stated_in": 1,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_lucas_brooklyn_1907",
+   "label": "'Mr. Lucas of the Brooklyn Museum' (1907 mention)",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_out": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_rathbun",
+   "label": "Richard Rathbun",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 2,
+    "total": 4,
+    "correspondence_out": 1,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_morgan",
+   "label": "J. P. Morgan, Jr.",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 5,
+    "total": 11,
+    "correspondence_out": 2,
+    "stated_in": 2,
+    "pi_out": 1,
+    "pi_in": 1
+   }
+  },
+  {
+   "id": "p_pyne_percy",
+   "label": "Percy Pyne",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 2,
+    "total": 11,
+    "correspondence_in": 5,
+    "stated_in": 2,
+    "pi_out": 1,
+    "pi_in": 1
+   }
+  },
+  {
+   "id": "p_pyne_mt",
+   "label": "M. T. Pyne ('Momo')",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 1,
+    "total": 4,
+    "stated_in": 1,
+    "stated_out": 1,
+    "pi_out": 1
+   }
+  },
+  {
+   "id": "p_sherwood",
+   "label": "Sherwood",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 4,
+    "total": 15,
+    "correspondence_out": 8,
+    "stated_out": 1,
+    "stated_in": 1,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_hoffman",
+   "label": "Jim Hoffman",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 2,
+    "pi_in": 1
+   }
+  },
+  {
+   "id": "p_merriam",
+   "label": "C. Hart Merriam",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 2,
+    "total": 4,
+    "correspondence_out": 1,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_hugh_smith",
+   "label": "Hugh M. Smith",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 1,
+    "total": 4,
+    "correspondence_in": 1,
+    "stated_out": 1,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_andrews",
+   "label": "Roy C. Andrews",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_mathews_jf",
+   "label": "J. F. Matthews / Mathews (1914)",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 2,
+    "stated_out": 1
+   }
+  },
+  {
+   "id": "p_woods_ah",
+   "label": "A. H. Woods",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_quinn",
+   "label": "Ferdinand Quinn",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_harlan_smith",
+   "label": "Harlan J. Smith",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_ripley",
+   "label": "Miss Ripley",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_gilmore",
+   "label": "Gilmore",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 2,
+    "total": 3,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_maddren",
+   "label": "A. G. Maddren",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 3,
+    "pi_in": 1,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_brown",
+   "label": "Barnum Brown",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_granger",
+   "label": "Granger",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_sturgis",
+   "label": "F. K. Sturgis",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_out": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_lanier",
+   "label": "Charles Lanier",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_out": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_vonhaake",
+   "label": "A. von Haake",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_allen",
+   "label": "Benjamin Leach Allen",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_out": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_varnum",
+   "label": "Robert T. Varnum",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_out": 1,
+    "total": 2,
+    "affiliation_out": 1
+   }
+  },
+  {
+   "id": "p_schubert",
+   "label": "'Mr. Schubert[?] of the Yale Museum'",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_out": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_nelson",
+   "label": "Nelson",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_peale",
+   "label": "Peale",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_beechey",
+   "label": "Beechey",
+   "type": "person",
+   "kind": "person",
+   "scope": "hunt",
+   "metrics": {
+    "stated_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_old_indian",
+   "label": "'an old Indian' (unnamed discoverer)",
+   "type": "person",
+   "kind": "unnamed",
+   "scope": "hunt",
+   "metrics": {
+    "stated_out": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_eskimos",
+   "label": "'the Eskimos' (collective, unnamed)",
+   "type": "person",
+   "kind": "collective",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "p_prospectors",
+   "label": "prospectors / miners (collective, unnamed)",
+   "type": "person",
+   "kind": "collective",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "p_settlements_unnamed",
+   "label": "two settlements and two open camps (unnamed), Seward Peninsula crossing 1908",
+   "type": "person",
+   "kind": "unnamed",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "p_woods_rebecca",
+   "label": "Rebecca J. H. Woods (principal investigator)",
+   "type": "person",
+   "kind": "person",
+   "scope": "research",
+   "metrics": {
+    "affiliation_out": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_macphee",
+   "label": "Ross MacPhee",
+   "type": "person",
+   "kind": "person",
+   "scope": "research",
+   "metrics": {}
+  },
+  {
+   "id": "p_bell",
+   "label": "Susan Bell",
+   "type": "person",
+   "kind": "person",
+   "scope": "research",
+   "metrics": {}
+  },
+  {
+   "id": "p_chu",
+   "label": "Pei-Yi Chu",
+   "type": "person",
+   "kind": "person",
+   "scope": "research",
+   "metrics": {}
+  },
+  {
+   "id": "p_adams",
+   "label": "Michael (Mikhail) Adams",
+   "type": "person",
+   "kind": "person",
+   "scope": "prologue",
+   "metrics": {
+    "affiliation_out": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "p_schoumachoff",
+   "label": "Ossip Schoumachoff",
+   "type": "person",
+   "kind": "person",
+   "scope": "prologue",
+   "metrics": {}
+  },
+  {
+   "id": "p_popoff",
+   "label": "Popoff",
+   "type": "person",
+   "kind": "person",
+   "scope": "prologue",
+   "metrics": {}
+  },
+  {
+   "id": "p_boultonoff",
+   "label": "Boultonoff / Baltounoff",
+   "type": "person",
+   "kind": "person",
+   "scope": "prologue",
+   "metrics": {}
+  },
+  {
+   "id": "p_cuvier",
+   "label": "Georges Cuvier",
+   "type": "person",
+   "kind": "person",
+   "scope": "prologue",
+   "metrics": {}
+  },
+  {
+   "id": "p_banks",
+   "label": "Joseph Banks",
+   "type": "person",
+   "kind": "person",
+   "scope": "prologue",
+   "metrics": {}
+  },
+  {
+   "id": "p_golovkin",
+   "label": "Count Fyodor Golovkin",
+   "type": "person",
+   "kind": "person",
+   "scope": "prologue",
+   "metrics": {}
+  },
+  {
+   "id": "o_amnh_asst_secretary",
+   "label": "Assistant Secretary, AMNH (unnamed signer)",
+   "type": "office",
+   "kind": "office",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "o_amnh_asst_treasurer",
+   "label": "Assistant Treasurer, AMNH (unnamed signer)",
+   "type": "office",
+   "kind": "office",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 3,
+    "total": 3
+   }
+  },
+  {
+   "id": "o_amnh_secretary",
+   "label": "Secretary, AMNH (unnamed signer)",
+   "type": "office",
+   "kind": "office",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 2,
+    "total": 2
+   }
+  },
+  {
+   "id": "o_unnamed_author",
+   "label": "[author not named in transcription]",
+   "type": "office",
+   "kind": "office",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 3,
+    "total": 3
+   }
+  },
+  {
+   "id": "o_unnamed_addressee",
+   "label": "[addressee not named]",
+   "type": "office",
+   "kind": "office",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "o_to_whom_it_may_concern",
+   "label": "'To Whom it May Concern'",
+   "type": "office",
+   "kind": "office",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_amnh",
+   "label": "American Museum of Natural History (AMNH)",
+   "type": "institution",
+   "kind": "museum",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 13,
+    "total": 13
+   }
+  },
+  {
+   "id": "i_nmnh",
+   "label": "United States National Museum / Smithsonian Institution",
+   "type": "institution",
+   "kind": "museum",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 3,
+    "total": 3
+   }
+  },
+  {
+   "id": "i_ayp",
+   "label": "Alaska-Yukon-Pacific Exposition (1909)",
+   "type": "institution",
+   "kind": "exposition",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 3,
+    "total": 3
+   }
+  },
+  {
+   "id": "i_uw",
+   "label": "University of Washington",
+   "type": "institution",
+   "kind": "university",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_nyzs",
+   "label": "New York Zoological Society",
+   "type": "institution",
+   "kind": "society",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_tcdc",
+   "label": "Taylor Creek Ditch Company",
+   "type": "institution",
+   "kind": "company",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 4,
+    "total": 4
+   }
+  },
+  {
+   "id": "i_pcss",
+   "label": "Pacific Coast Steamship Co.",
+   "type": "institution",
+   "kind": "company",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "i_nwss",
+   "label": "Northwestern Steamship Co. (Seattle)",
+   "type": "institution",
+   "kind": "company",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "i_cprr",
+   "label": "Canadian Pacific Railway",
+   "type": "institution",
+   "kind": "company",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "i_sprr",
+   "label": "Seward Peninsula R.R.",
+   "type": "institution",
+   "kind": "company",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "i_usda",
+   "label": "Department of Agriculture (permit authority)",
+   "type": "institution",
+   "kind": "government",
+   "scope": "hunt",
+   "metrics": {
+    "correspondence_out": 1,
+    "total": 2,
+    "affiliation_in": 1
+   }
+  },
+  {
+   "id": "i_bof",
+   "label": "Bureau of Fisheries, Department of Commerce and Labor",
+   "type": "institution",
+   "kind": "government",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_pod",
+   "label": "Post Office Department (Topographer)",
+   "type": "institution",
+   "kind": "government",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_yale",
+   "label": "Yale Museum",
+   "type": "institution",
+   "kind": "museum",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_brooklyn",
+   "label": "Brooklyn Museum",
+   "type": "institution",
+   "kind": "museum",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_columbia",
+   "label": "Columbia (University)",
+   "type": "institution",
+   "kind": "university",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_keewalik_hotel",
+   "label": "Keewalik Hotel (warehouse)",
+   "type": "institution",
+   "kind": "business",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_rainier_hotel",
+   "label": "Rainier Grand Hotel, Seattle",
+   "type": "institution",
+   "kind": "business",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "i_utoronto",
+   "label": "University of Toronto",
+   "type": "institution",
+   "kind": "university",
+   "scope": "hunt",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "i_spb_academy",
+   "label": "St Petersburg Academy of Science",
+   "type": "institution",
+   "kind": "academy",
+   "scope": "prologue",
+   "metrics": {
+    "affiliation_in": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "v_corwin",
+   "label": "'Corwin' (steamer)",
+   "type": "institution",
+   "kind": "vessel",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "v_umatilla",
+   "label": "'Umatilla' (steamer)",
+   "type": "institution",
+   "kind": "vessel",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "v_hoffman_dory",
+   "label": "Hoffman's fishing boat / dory",
+   "type": "institution",
+   "kind": "vessel",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "v_canoe_1907",
+   "label": "borrowed canoe (1907): 'a clumsy, waterlogged canoe'",
+   "type": "institution",
+   "kind": "vessel",
+   "scope": "hunt",
+   "metrics": {}
+  },
+  {
+   "id": "v_canoe_1908",
+   "label": "canoe (1908), shipped from a factory in Maine",
+   "type": "institution",
+   "kind": "vessel",
+   "scope": "hunt",
+   "metrics": {}
+  }
+ ],
+ "edges": [
+  {
+   "source": "p_reed",
+   "target": "p_startsman",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1906-10-18",
+   "doc": "d_19061018_reed_startsman",
+   "evidence": [
+    {
+     "ref": "d_19061018_reed_startsman",
+     "quote": "Henry E. Reed to J.H. Startsman"
+    }
+   ],
+   "id": "e0000"
+  },
+  {
+   "source": "p_startsman",
+   "target": "p_reed",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1906-12-30",
+   "doc": "d_19061230_startsman_graham_reed",
+   "evidence": [
+    {
+     "ref": "d_19061230_startsman_graham_reed",
+     "quote": "Startsman and E.W. Graham to Reed"
+    }
+   ],
+   "id": "e0001"
+  },
+  {
+   "source": "p_graham",
+   "target": "p_reed",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1906-12-30",
+   "doc": "d_19061230_startsman_graham_reed",
+   "evidence": [
+    {
+     "ref": "d_19061230_startsman_graham_reed",
+     "quote": "Startsman and E.W. Graham to Reed"
+    }
+   ],
+   "id": "e0002"
+  },
+  {
+   "source": "p_reed",
+   "target": "p_chilberg",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-02-26",
+   "doc": "d_19070226_reed_chilberg",
+   "evidence": [
+    {
+     "ref": "d_19070226_reed_chilberg",
+     "quote": "Reed to Chilberg"
+    }
+   ],
+   "id": "e0003"
+  },
+  {
+   "source": "p_meany",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-03-18",
+   "doc": "d_19070318_meany_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070318_meany_bumpus",
+     "quote": "Edmond Meany (Univ Washington) to Bumpus (Dir. AMNH)"
+    }
+   ],
+   "id": "e0004"
+  },
+  {
+   "source": "p_matthew",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-03-25",
+   "doc": "d_19070325_matthew_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070325_matthew_bumpus",
+     "quote": "W.D. Matthew to Bumpus"
+    }
+   ],
+   "id": "e0005"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_meany",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-03-26",
+   "doc": "d_19070326_bumpus_meany",
+   "evidence": [
+    {
+     "ref": "d_19070326_bumpus_meany",
+     "quote": "Director [Bumpus] to Meaney"
+    }
+   ],
+   "id": "e0006"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-04-16",
+   "doc": "d_19070416_osborn_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070416_osborn_bumpus",
+     "quote": "H.F. Osborn to Bumpus"
+    }
+   ],
+   "id": "e0007"
+  },
+  {
+   "source": "p_matthew",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-04-17",
+   "doc": "d_19070417_matthew_osborn",
+   "evidence": [
+    {
+     "ref": "d_19070417_matthew_osborn",
+     "quote": "W.D. Matthew to Osborn"
+    }
+   ],
+   "id": "e0008"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_rathbun",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-04-25",
+   "doc": "d_19070425_bumpus_rathbun",
+   "evidence": [
+    {
+     "ref": "d_19070425_bumpus_rathbun",
+     "quote": "Bumpus to Rathbun (Smithsonian)"
+    }
+   ],
+   "id": "e0009"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-04-26",
+   "doc": "d_19070426_quackenbush_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070426_quackenbush_bumpus",
+     "quote": "Quackenbush to Bumpus"
+    }
+   ],
+   "id": "e0010"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-04-27",
+   "doc": "d_19070427_bumpus_osborn",
+   "evidence": [
+    {
+     "ref": "d_19070427_bumpus_osborn",
+     "quote": "Bumpus to Osborn (telegram)"
+    }
+   ],
+   "id": "e0011"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-04-30",
+   "doc": "d_19070430_bumpus_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19070430_bumpus_quackenbush",
+     "quote": "Bumpus to LSQ"
+    }
+   ],
+   "id": "e0012"
+  },
+  {
+   "source": "p_rathbun",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-04-30",
+   "doc": "d_19070430_rathbun_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070430_rathbun_bumpus",
+     "quote": "Rathbun to Bumpus"
+    }
+   ],
+   "id": "e0013"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_meany",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-04-30",
+   "doc": "d_19070430_bumpus_meany",
+   "evidence": [
+    {
+     "ref": "d_19070430_bumpus_meany",
+     "quote": "Director (Bumpus) to Meany"
+    }
+   ],
+   "id": "e0014"
+  },
+  {
+   "source": "o_amnh_asst_secretary",
+   "target": "p_rathbun",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-05-06",
+   "doc": "d_19070506_asstsec_rathbun",
+   "evidence": [
+    {
+     "ref": "d_19070506_asstsec_rathbun",
+     "quote": "Asst Sec'y to Rathbun"
+    }
+   ],
+   "id": "e0015"
+  },
+  {
+   "source": "p_meany",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-05-12",
+   "doc": "d_19070512_meany_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070512_meany_bumpus",
+     "quote": "Meany to Bumpus"
+    }
+   ],
+   "id": "e0016"
+  },
+  {
+   "source": "p_anderson",
+   "target": "p_stone",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-05-18",
+   "doc": "d_19070518_anderson_stone",
+   "evidence": [
+    {
+     "ref": "d_19070518_anderson_stone",
+     "quote": "A.A. Anderson to Andrew J. Stone (enclosure in Stone to Bumpus)"
+    }
+   ],
+   "id": "e0017"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_meany",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-06-15",
+   "doc": "d_19070615_bumpus_meany",
+   "evidence": [
+    {
+     "ref": "d_19070615_bumpus_meany",
+     "quote": "Bumpus to Meany"
+    }
+   ],
+   "id": "e0018"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-06-20",
+   "doc": "d_19070620_osborn_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070620_osborn_bumpus",
+     "quote": "Osborn to Bumpus"
+    }
+   ],
+   "id": "e0019"
+  },
+  {
+   "source": "p_stone",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-06-20",
+   "doc": "d_19070620_stone_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070620_stone_bumpus",
+     "quote": "Andrew J. Stone to Bumpus"
+    }
+   ],
+   "id": "e0020"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-06-21",
+   "doc": "d_19070621_bumpus_osborn",
+   "evidence": [
+    {
+     "ref": "d_19070621_bumpus_osborn",
+     "quote": "Bumpus to HFO"
+    }
+   ],
+   "id": "e0021"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-06-22",
+   "doc": "d_19070622_grant_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070622_grant_bumpus",
+     "quote": "Grant to Bumpus"
+    }
+   ],
+   "id": "e0022"
+  },
+  {
+   "source": "p_meany",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-06-23",
+   "doc": "d_19070623_meany_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070623_meany_bumpus",
+     "quote": "Meany to Bumpus"
+    }
+   ],
+   "id": "e0023"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_jesup",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-06-28",
+   "doc": "d_19070628_bumpus_jesup",
+   "evidence": [
+    {
+     "ref": "d_19070628_bumpus_jesup",
+     "quote": "Bumpus to Jesup (excerpt)"
+    }
+   ],
+   "id": "e0024"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-06-29",
+   "doc": "d_19070629_bumpus_quackenbush_instructions",
+   "evidence": [
+    {
+     "ref": "d_19070629_bumpus_quackenbush_instructions",
+     "quote": "Director (Bumpus) to LSQ: instructions for 1907"
+    }
+   ],
+   "id": "e0025"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_grant",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-01",
+   "doc": "d_19070701_bumpus_grant",
+   "evidence": [
+    {
+     "ref": "d_19070701_bumpus_grant",
+     "quote": "Bumpus to Madison Grant"
+    }
+   ],
+   "id": "e0026"
+  },
+  {
+   "source": "o_unnamed_author",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-02",
+   "doc": "d_19070702_removal_slip_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19070702_removal_slip_quackenbush",
+     "quote": "Removal slip for a letter to Quackenbush dated July 2 (taken 28 Apr 1908, not returned)"
+    }
+   ],
+   "id": "e0027"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-03",
+   "doc": "d_19070703_grant_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070703_grant_bumpus",
+     "quote": "Grant to Bumpus"
+    }
+   ],
+   "id": "e0028"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-03",
+   "doc": "d_19070703_osborn_bumpus_excerpt",
+   "evidence": [
+    {
+     "ref": "d_19070703_osborn_bumpus_excerpt",
+     "quote": "Osborn to Bumpus (excerpt)"
+    }
+   ],
+   "id": "e0029"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "o_unnamed_addressee",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-05",
+   "doc": "d_19070705_quackenbush_noaddressee",
+   "evidence": [
+    {
+     "ref": "d_19070705_quackenbush_noaddressee",
+     "quote": "LSQ, no addressee"
+    }
+   ],
+   "id": "e0030"
+  },
+  {
+   "source": "o_unnamed_author",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07",
+   "doc": "d_190707_unnamed_osborn_excerpt_631",
+   "evidence": [
+    {
+     "ref": "d_190707_unnamed_osborn_excerpt_631",
+     "quote": "[Unnamed] to Professor Osborn: acknowledgment of Morgan's $750 (typed excerpt)"
+    }
+   ],
+   "id": "e0031"
+  },
+  {
+   "source": "p_pyne_percy",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-15",
+   "doc": "d_19070715_pyne_osborn",
+   "evidence": [
+    {
+     "ref": "d_19070715_pyne_osborn",
+     "quote": "Percy Pyne to HFO"
+    }
+   ],
+   "id": "e0032"
+  },
+  {
+   "source": "o_amnh_asst_treasurer",
+   "target": "p_pyne_percy",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-18",
+   "doc": "d_19070718_assttreas_pyne",
+   "evidence": [
+    {
+     "ref": "d_19070718_assttreas_pyne",
+     "quote": "Asst. Treasurer to Pyne"
+    }
+   ],
+   "id": "e0033"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-22",
+   "doc": "d_19070722_osborn_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19070722_osborn_bumpus",
+     "quote": "HFO to Bumpus"
+    }
+   ],
+   "id": "e0034"
+  },
+  {
+   "source": "o_amnh_asst_treasurer",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-24",
+   "doc": "d_19070724_assttreas_osborn",
+   "evidence": [
+    {
+     "ref": "d_19070724_assttreas_osborn",
+     "quote": "Asst. Treasurer to HFO"
+    }
+   ],
+   "id": "e0035"
+  },
+  {
+   "source": "o_amnh_asst_treasurer",
+   "target": "p_morgan",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-07-24",
+   "doc": "d_19070724_assttreas_morgan",
+   "evidence": [
+    {
+     "ref": "d_19070724_assttreas_morgan",
+     "quote": "Asst. Treasurer to Morgan"
+    }
+   ],
+   "id": "e0036"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-10-28",
+   "doc": "d_19071028_bumpus_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19071028_bumpus_quackenbush",
+     "quote": "Bumpus to LSQ (Seattle)"
+    }
+   ],
+   "id": "e0037"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-11-13",
+   "doc": "d_19071113_osborn_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19071113_osborn_bumpus",
+     "quote": "HFO to Bumpus"
+    }
+   ],
+   "id": "e0038"
+  },
+  {
+   "source": "o_amnh_secretary",
+   "target": "p_pyne_percy",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-11-14",
+   "doc": "d_19071114_secretary_pyne_morgan",
+   "evidence": [
+    {
+     "ref": "d_19071114_secretary_pyne_morgan",
+     "quote": "Sec'y to Pyne / Morgan"
+    }
+   ],
+   "id": "e0039"
+  },
+  {
+   "source": "o_amnh_secretary",
+   "target": "p_morgan",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1907-11-14",
+   "doc": "d_19071114_secretary_pyne_morgan",
+   "evidence": [
+    {
+     "ref": "d_19071114_secretary_pyne_morgan",
+     "quote": "Sec'y to Pyne / Morgan"
+    }
+   ],
+   "id": "e0040"
+  },
+  {
+   "source": "o_unnamed_author",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-02-25",
+   "doc": "d_19080225_unsigned_osborn",
+   "evidence": [
+    {
+     "ref": "d_19080225_unsigned_osborn",
+     "quote": "[Unsigned] to President Osborn"
+    }
+   ],
+   "id": "e0041"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_pyne_mt",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-02-28",
+   "doc": "d_19080228_osborn_mtpyne",
+   "evidence": [
+    {
+     "ref": "d_19080228_osborn_mtpyne",
+     "quote": "HFO to M.T. Pyne ('Momo')"
+    }
+   ],
+   "id": "e0042"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_morgan",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-02-28",
+   "doc": "d_19080228_osborn_morgan",
+   "evidence": [
+    {
+     "ref": "d_19080228_osborn_morgan",
+     "quote": "HFO to JP Morgan ('Jack')"
+    }
+   ],
+   "id": "e0043"
+  },
+  {
+   "source": "p_morgan",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-03-02",
+   "doc": "d_19080302_morgan_osborn",
+   "evidence": [
+    {
+     "ref": "d_19080302_morgan_osborn",
+     "quote": "JP Morgan to HFO"
+    }
+   ],
+   "id": "e0044"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-03-25",
+   "doc": "d_19080325_osborn_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19080325_osborn_bumpus",
+     "quote": "HFO to Bumpus"
+    }
+   ],
+   "id": "e0045"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-03-27",
+   "doc": "d_19080327_quackenbush_bumpus_plan",
+   "evidence": [
+    {
+     "ref": "d_19080327_quackenbush_bumpus_plan",
+     "quote": "LSQ to Bumpus: plan and budget for 1908"
+    }
+   ],
+   "id": "e0046"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-03-30",
+   "doc": "d_19080330_quackenbush_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19080330_quackenbush_bumpus",
+     "quote": "LSQ to Bumpus"
+    }
+   ],
+   "id": "e0047"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-04-02",
+   "doc": "d_19080402_bumpus_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19080402_bumpus_quackenbush",
+     "quote": "Bumpus to LSQ"
+    }
+   ],
+   "id": "e0048"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-04-06",
+   "doc": "d_19080406_quackenbush_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19080406_quackenbush_bumpus",
+     "quote": "LSQ to Bumpus"
+    }
+   ],
+   "id": "e0049"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-04-08",
+   "doc": "d_19080408_quackenbush_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19080408_quackenbush_bumpus",
+     "quote": "LSQ to Bumpus"
+    }
+   ],
+   "id": "e0050"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-04-17",
+   "doc": "d_19080417_bumpus_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19080417_bumpus_quackenbush",
+     "quote": "Bumpus to LSQ"
+    }
+   ],
+   "id": "e0051"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-04-28",
+   "doc": "d_19080428_bumpus_quackenbush_commission",
+   "evidence": [
+    {
+     "ref": "d_19080428_bumpus_quackenbush_commission",
+     "quote": "Bumpus to LSQ: commission for 1908"
+    }
+   ],
+   "id": "e0052"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_matthew",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-01",
+   "doc": "d_19080501_bumpus_matthew",
+   "evidence": [
+    {
+     "ref": "d_19080501_bumpus_matthew",
+     "quote": "Bumpus to Matthew"
+    }
+   ],
+   "id": "e0053"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_merriam",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-18",
+   "doc": "d_19080518_bumpus_merriam",
+   "evidence": [
+    {
+     "ref": "d_19080518_bumpus_merriam",
+     "quote": "Bumpus to C. Hart Merriam"
+    }
+   ],
+   "id": "e0054"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "o_to_whom_it_may_concern",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-18",
+   "doc": "d_19080518_bumpus_towhomitmayconcern",
+   "evidence": [
+    {
+     "ref": "d_19080518_bumpus_towhomitmayconcern",
+     "quote": "Bumpus to Whom it May Concern"
+    }
+   ],
+   "id": "e0055"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-19",
+   "doc": "d_19080519_bumpus_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19080519_bumpus_quackenbush",
+     "quote": "Bumpus to LSQ"
+    }
+   ],
+   "id": "e0056"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-19",
+   "doc": "d_19080519_quackenbush_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19080519_quackenbush_bumpus",
+     "quote": "LSQ to Bumpus"
+    }
+   ],
+   "id": "e0057"
+  },
+  {
+   "source": "p_merriam",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-20",
+   "doc": "d_19080520_merriam_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19080520_merriam_bumpus",
+     "quote": "C. Hart Merriam to Bumpus"
+    }
+   ],
+   "id": "e0058"
+  },
+  {
+   "source": "i_usda",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-20",
+   "doc": "d_19080520_permit_merriam",
+   "evidence": [
+    {
+     "ref": "d_19080520_permit_merriam",
+     "quote": "Permit for Collecting Specimens for Scientific Purposes (enclosure)"
+    }
+   ],
+   "id": "e0059"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-21",
+   "doc": "d_19080521_bumpus_quackenbush_a",
+   "evidence": [
+    {
+     "ref": "d_19080521_bumpus_quackenbush_a",
+     "quote": "Bumpus to LSQ (general delivery, Seattle)"
+    }
+   ],
+   "id": "e0060"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-21",
+   "doc": "d_19080521_bumpus_quackenbush_b",
+   "evidence": [
+    {
+     "ref": "d_19080521_bumpus_quackenbush_b",
+     "quote": "Bumpus to LSQ (general delivery, Nome)"
+    }
+   ],
+   "id": "e0061"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_merriam",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-22",
+   "doc": "d_19080522_bumpus_merriam",
+   "evidence": [
+    {
+     "ref": "d_19080522_bumpus_merriam",
+     "quote": "Bumpus to C. Hart Merriam"
+    }
+   ],
+   "id": "e0062"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-05-22",
+   "doc": "d_19080522_bumpus_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19080522_bumpus_quackenbush",
+     "quote": "Bumpus to LSQ"
+    }
+   ],
+   "id": "e0063"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-06-03",
+   "doc": "d_19080603_quackenbush_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19080603_quackenbush_bumpus",
+     "quote": "LSQ to Bumpus (Seattle)"
+    }
+   ],
+   "id": "e0064"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-06-24",
+   "doc": "d_19080624_quackenbush_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19080624_quackenbush_bumpus",
+     "quote": "LSQ to Bumpus (Lane's Landing)"
+    }
+   ],
+   "id": "e0065"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-07-01",
+   "doc": "d_19080701_quackenbush_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19080701_quackenbush_bumpus",
+     "quote": "LSQ to Bumpus (Keewalik)"
+    }
+   ],
+   "id": "e0066"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-07-23",
+   "doc": "d_19080723_bumpus_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19080723_bumpus_quackenbush",
+     "quote": "Bumpus to LSQ"
+    }
+   ],
+   "id": "e0067"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-10-01",
+   "doc": "d_19081001_quackenbush_bumpus_report",
+   "evidence": [
+    {
+     "ref": "d_19081001_quackenbush_bumpus_report",
+     "quote": "LSQ to Bumpus: Report on Alaskan Mammoth Expedition, 1908"
+    }
+   ],
+   "id": "e0068"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_grant",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-10-08",
+   "doc": "d_19081008_bumpus_grant",
+   "evidence": [
+    {
+     "ref": "d_19081008_bumpus_grant",
+     "quote": "Bumpus to Grant"
+    }
+   ],
+   "id": "e0069"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-10-09",
+   "doc": "d_19081009_grant_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19081009_grant_bumpus",
+     "quote": "Grant to Bumpus"
+    }
+   ],
+   "id": "e0070"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1908-10-10",
+   "doc": "d_19081010_grant_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19081010_grant_bumpus",
+     "quote": "Grant to Bumpus"
+    }
+   ],
+   "id": "e0071"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_sherwood",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": null,
+   "doc": "d_nd_osborn_sherwood",
+   "evidence": [
+    {
+     "ref": "d_nd_osborn_sherwood",
+     "quote": "HFO to Sherwood (asst treasurer)"
+    }
+   ],
+   "id": "e0072"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-01-15",
+   "doc": "d_19090115_sherwood_osborn",
+   "evidence": [
+    {
+     "ref": "d_19090115_sherwood_osborn",
+     "quote": "Sherwood to HFO"
+    }
+   ],
+   "id": "e0073"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "p_pyne_percy",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-01-15",
+   "doc": "d_19090115_sherwood_pyne",
+   "evidence": [
+    {
+     "ref": "d_19090115_sherwood_pyne",
+     "quote": "Sherwood to Pyne"
+    }
+   ],
+   "id": "e0074"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "p_morgan",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-01-21",
+   "doc": "d_19090121_sherwood_morgan",
+   "evidence": [
+    {
+     "ref": "d_19090121_sherwood_morgan",
+     "quote": "Sherwood to Morgan"
+    }
+   ],
+   "id": "e0075"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "p_pyne_percy",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-01-21",
+   "doc": "d_19090121_sherwood_pyne",
+   "evidence": [
+    {
+     "ref": "d_19090121_sherwood_pyne",
+     "quote": "Sherwood to Pyne"
+    }
+   ],
+   "id": "e0076"
+  },
+  {
+   "source": "p_pyne_percy",
+   "target": "p_sherwood",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-01-21",
+   "doc": "d_19090121_pyne_sherwood",
+   "evidence": [
+    {
+     "ref": "d_19090121_pyne_sherwood",
+     "quote": "Pyne to Sherwood"
+    }
+   ],
+   "id": "e0077"
+  },
+  {
+   "source": "p_morgan",
+   "target": "p_sherwood",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-01-22",
+   "doc": "d_19090122_morgan_sherwood",
+   "evidence": [
+    {
+     "ref": "d_19090122_morgan_sherwood",
+     "quote": "Morgan to Sherwood"
+    }
+   ],
+   "id": "e0078"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "p_pyne_percy",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-01-23",
+   "doc": "d_19090123_sherwood_pyne",
+   "evidence": [
+    {
+     "ref": "d_19090123_sherwood_pyne",
+     "quote": "Sherwood to Pyne"
+    }
+   ],
+   "id": "e0079"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "p_morgan",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-01-23",
+   "doc": "d_19090123_sherwood_morgan",
+   "evidence": [
+    {
+     "ref": "d_19090123_sherwood_morgan",
+     "quote": "Sherwood to Morgan"
+    }
+   ],
+   "id": "e0080"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_sherwood",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-02-17",
+   "doc": "d_19090217_quackenbush_sherwood",
+   "evidence": [
+    {
+     "ref": "d_19090217_quackenbush_sherwood",
+     "quote": "LSQ to Sherwood"
+    }
+   ],
+   "id": "e0081"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-02-18",
+   "doc": "d_19090218_sherwood_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19090218_sherwood_quackenbush",
+     "quote": "Sherwood to LSQ"
+    }
+   ],
+   "id": "e0082"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "p_vonhaake",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1909-02-18",
+   "doc": "d_19090218_sherwood_vonhaake",
+   "evidence": [
+    {
+     "ref": "d_19090218_sherwood_vonhaake",
+     "quote": "Sherwood to A. von Haake, Topographer, Post Office Dept"
+    }
+   ],
+   "id": "e0083"
+  },
+  {
+   "source": "p_hugh_smith",
+   "target": "p_bumpus",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1910-05-09",
+   "doc": "d_19100509_hughsmith_bumpus",
+   "evidence": [
+    {
+     "ref": "d_19100509_hughsmith_bumpus",
+     "quote": "Hugh M. Smith to Bumpus"
+    }
+   ],
+   "id": "e0084"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_hugh_smith",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1910-05-18",
+   "doc": "d_19100518_bumpus_hughsmith",
+   "evidence": [
+    {
+     "ref": "d_19100518_bumpus_hughsmith",
+     "quote": "Bumpus to Hugh M. Smith"
+    }
+   ],
+   "id": "e0085"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_grant",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1914-08-02",
+   "doc": "d_19140802_quackenbush_grant",
+   "evidence": [
+    {
+     "ref": "d_19140802_quackenbush_grant",
+     "quote": "LSQ to Madison Grant (with mammoth-hair sample)"
+    }
+   ],
+   "id": "e0086"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1914-08-04",
+   "doc": "d_19140804_grant_osborn",
+   "evidence": [
+    {
+     "ref": "d_19140804_grant_osborn",
+     "quote": "Grant to Osborn"
+    }
+   ],
+   "id": "e0087"
+  },
+  {
+   "source": "p_lucas",
+   "target": "p_grant",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1914-08-06",
+   "doc": "d_19140806_lucas_grant",
+   "evidence": [
+    {
+     "ref": "d_19140806_lucas_grant",
+     "quote": "Lucas to Grant"
+    }
+   ],
+   "id": "e0088"
+  },
+  {
+   "source": "p_lucas",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1914-08-07",
+   "doc": "d_19140807_lucas_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19140807_lucas_quackenbush",
+     "quote": "Lucas to LSQ"
+    }
+   ],
+   "id": "e0089"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_lucas",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1914-08-10",
+   "doc": "d_19140810_grant_lucas",
+   "evidence": [
+    {
+     "ref": "d_19140810_grant_lucas",
+     "quote": "Grant to Lucas"
+    }
+   ],
+   "id": "e0090"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_lucas",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1914-08-11",
+   "doc": "d_19140811_quackenbush_lucas",
+   "evidence": [
+    {
+     "ref": "d_19140811_quackenbush_lucas",
+     "quote": "LSQ to F.A. Lucas"
+    }
+   ],
+   "id": "e0091"
+  },
+  {
+   "source": "p_lucas",
+   "target": "p_grant",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1914-08-12",
+   "doc": "d_19140812_lucas_grant",
+   "evidence": [
+    {
+     "ref": "d_19140812_lucas_grant",
+     "quote": "Lucas to Grant"
+    }
+   ],
+   "id": "e0092"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1916-05-02",
+   "doc": "d_19160502_quackenbush_osborn",
+   "evidence": [
+    {
+     "ref": "d_19160502_quackenbush_osborn",
+     "quote": "LSQ to HFO"
+    }
+   ],
+   "id": "e0093"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_quackenbush",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1916-05-08",
+   "doc": "d_19160508_osborn_quackenbush",
+   "evidence": [
+    {
+     "ref": "d_19160508_osborn_quackenbush",
+     "quote": "HFO to LSQ"
+    }
+   ],
+   "id": "e0094"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_osborn",
+   "kind": "correspondence",
+   "directed": true,
+   "label": "wrote to",
+   "date": "1930-06-07",
+   "doc": "d_19300607_grant_osborn",
+   "evidence": [
+    {
+     "ref": "d_19300607_grant_osborn",
+     "quote": "Madison Grant to HFO (form slip)"
+    }
+   ],
+   "id": "e0095"
+  },
+  {
+   "source": "p_startsman",
+   "target": "p_graham",
+   "kind": "stated",
+   "directed": false,
+   "label": "partner",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19061230_startsman_graham_reed",
+     "quote": "I immediately consulted my partner C.W. Graham [sic]"
+    }
+   ],
+   "id": "e0096"
+  },
+  {
+   "source": "p_old_indian",
+   "target": "p_graham",
+   "kind": "stated",
+   "directed": true,
+   "label": "guided to the animal (1898, 1899)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19061230_startsman_graham_reed",
+     "quote": "in 1898 and 1899 he took my partner E.W. Graham to see the animal"
+    }
+   ],
+   "id": "e0097"
+  },
+  {
+   "source": "p_chilberg",
+   "target": "p_startsman",
+   "kind": "stated",
+   "directed": true,
+   "label": "conferred at Nome (1906)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19061018_reed_startsman",
+     "quote": "has advised me of his conference with you respecting a mastodon"
+    }
+   ],
+   "id": "e0098"
+  },
+  {
+   "source": "p_reed",
+   "target": "p_chilberg",
+   "kind": "stated",
+   "directed": true,
+   "label": "acts at Chilberg's direction (A-Y-P)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19061018_reed_startsman",
+     "quote": "President Chilberg and myself today briefly discussed the uses to which the mastodon could be put"
+    }
+   ],
+   "id": "e0099"
+  },
+  {
+   "source": "p_meany",
+   "target": "p_chilberg",
+   "kind": "stated",
+   "directed": true,
+   "label": "first information came through Chilberg",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070623_meany_bumpus",
+     "quote": "The first information of the mammoth came to us through him"
+    }
+   ],
+   "id": "e0100"
+  },
+  {
+   "source": "p_meany",
+   "target": "p_harlan_smith",
+   "kind": "stated",
+   "directed": true,
+   "label": "names as reference",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070318_meany_bumpus",
+     "quote": "You may learn who I am from Mr. Harlan J. Smith of your staff at the Museum."
+    }
+   ],
+   "id": "e0101"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "p_matthew",
+   "kind": "stated",
+   "directed": true,
+   "label": "asked Matthew to report",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070325_matthew_bumpus",
+     "quote": "Mr Sherwood has asked me to report on the enclosed correspondence."
+    }
+   ],
+   "id": "e0102"
+  },
+  {
+   "source": "p_matthew",
+   "target": "p_quackenbush",
+   "kind": "stated",
+   "directed": true,
+   "label": "recommends; 'a man in whom we could place confidence'",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070325_matthew_bumpus",
+     "quote": "he is a man in whom we could place confidence"
+    },
+    {
+     "ref": "d_19070417_matthew_osborn",
+     "quote": "I have given him Maddren's report to the Smithsonian"
+    }
+   ],
+   "id": "e0103"
+  },
+  {
+   "source": "p_matthew",
+   "target": "p_brown",
+   "kind": "stated",
+   "directed": true,
+   "label": "alternative candidate",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070325_matthew_bumpus",
+     "quote": "Brown or Granger if they could be spared"
+    },
+    {
+     "ref": "d_19070417_matthew_osborn",
+     "quote": "In case Quackenbush cannot go, I should recommend Barnum Brown."
+    }
+   ],
+   "id": "e0104"
+  },
+  {
+   "source": "p_matthew",
+   "target": "p_granger",
+   "kind": "stated",
+   "directed": true,
+   "label": "alternative candidate",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070325_matthew_bumpus",
+     "quote": "Brown or Granger if they could be spared"
+    }
+   ],
+   "id": "e0105"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_quackenbush",
+   "kind": "stated",
+   "directed": true,
+   "label": "vouches: 'a perfectly honorable man'",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070416_osborn_bumpus",
+     "quote": "Mr. Quackenbush whom we have in mind is an experienced traveler and a perfectly honorable man"
+    }
+   ],
+   "id": "e0106"
+  },
+  {
+   "source": "p_anderson",
+   "target": "p_osborn",
+   "kind": "stated",
+   "directed": true,
+   "label": "claims 'old intimate friend'",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070427_bumpus_osborn",
+     "quote": "Says you are old intimate friend."
+    }
+   ],
+   "id": "e0107"
+  },
+  {
+   "source": "p_anderson",
+   "target": "p_stone",
+   "kind": "stated",
+   "directed": true,
+   "label": "asks Stone to investigate in his place",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070518_anderson_stone",
+     "quote": "Could you not make some investigations as to the reliability of the men"
+    }
+   ],
+   "id": "e0108"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_stone",
+   "kind": "stated",
+   "directed": false,
+   "label": "co-officers, Taylor Creek Ditch Company (President / VP & GM)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070620_stone_bumpus",
+     "quote": "Madison Grant, President"
+    },
+    {
+     "ref": "d_19070620_stone_bumpus",
+     "quote": "Andrew J. Stone, Vice-President and General Manager"
+    }
+   ],
+   "id": "e0109"
+  },
+  {
+   "source": "p_allen",
+   "target": "p_grant",
+   "kind": "stated",
+   "directed": false,
+   "label": "co-officer (Treasurer), Taylor Creek Ditch Company",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070620_stone_bumpus",
+     "quote": "Benjamin Leach Allen, Treasurer, 66 Broadway"
+    }
+   ],
+   "id": "e0110"
+  },
+  {
+   "source": "p_varnum",
+   "target": "p_grant",
+   "kind": "stated",
+   "directed": false,
+   "label": "co-officer (Secretary, name struck through)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070620_stone_bumpus",
+     "quote": "Robert T. Varnum, Secretary."
+    }
+   ],
+   "id": "e0111"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_pyne_percy",
+   "kind": "stated",
+   "directed": false,
+   "label": "Pyne 'largely interested' in Grant's project (Osborn's report of Grant)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070620_osborn_bumpus",
+     "quote": "Grant thinks that Percy Pyne—who is largely interested in the [??] project—will probably put up the money for Q. to go."
+    },
+    {
+     "ref": "d_19070628_bumpus_jesup",
+     "quote": "Mr. Pyne (who, I believe, is financially interested in the mining enterprise with Mr. Grant)"
+    }
+   ],
+   "id": "e0112"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_morgan",
+   "kind": "stated",
+   "directed": true,
+   "label": "asked Morgan to assist",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070628_bumpus_jesup",
+     "quote": "Mr. Grant asked Mr. J. P. Morgan, Jr., if he cared to assist"
+    },
+    {
+     "ref": "d_19070622_grant_bumpus",
+     "quote": "I believe that Prof. Osborn can arrange about the mammoth exploration fund with Jack Morgan, and have telegraphed him to that effect."
+    }
+   ],
+   "id": "e0113"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_quackenbush",
+   "kind": "stated",
+   "directed": true,
+   "label": "to direct LSQ in the field ('free hand'); travelling companion",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070701_bumpus_grant",
+     "quote": "a clause that will give you practically a free hand in case you think it wise for Mr. Quackenbush to act otherwise than directed"
+    },
+    {
+     "ref": "d_19070703_grant_bumpus",
+     "quote": "I am sure he will be a very attractive companion and I am delighted to have him with me."
+    }
+   ],
+   "id": "e0114"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_pyne_mt",
+   "kind": "stated",
+   "directed": true,
+   "label": "familiar address ('My dear Momo'); brother of Percy",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19080228_osborn_mtpyne",
+     "quote": "I take pleasure in sending to your brother Percy through you an album"
+    }
+   ],
+   "id": "e0115"
+  },
+  {
+   "source": "p_pyne_mt",
+   "target": "p_pyne_percy",
+   "kind": "stated",
+   "directed": false,
+   "label": "brothers",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19080228_osborn_mtpyne",
+     "quote": "your brother Percy"
+    }
+   ],
+   "id": "e0116"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_morgan",
+   "kind": "stated",
+   "directed": false,
+   "label": "familiar address ('My dear Jack' / 'My dear Fairfield')",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19080228_osborn_morgan",
+     "quote": "My dear Jack:"
+    },
+    {
+     "ref": "d_19080302_morgan_osborn",
+     "quote": "My dear Fairfield,"
+    }
+   ],
+   "id": "e0117"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_hoffman",
+   "kind": "stated",
+   "directed": true,
+   "label": "engaged as cook and assistant; hired his dory",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19081001_quackenbush_bumpus_report",
+     "quote": "At Candle I engaged a man to act as cook and assistant and also hired his fishing dory"
+    },
+    {
+     "ref": "d_19080327_quackenbush_bumpus_plan",
+     "quote": "he has written to me and asked to go again"
+    }
+   ],
+   "id": "e0118"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_quinn",
+   "kind": "stated",
+   "directed": true,
+   "label": "left outfit in Quinn's charge",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19081001_quackenbush_bumpus_report",
+     "quote": "left in charge of Mr. Ferdinand Quinn (P.O. address Candle, Alaska)"
+    }
+   ],
+   "id": "e0119"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_maddren",
+   "kind": "stated",
+   "directed": true,
+   "label": "uses Maddren's map/report",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19080327_quackenbush_bumpus_plan",
+     "quote": "A. G. Maddren (\"Smithsonian Exploration in search of mammoth\") marks on his map"
+    }
+   ],
+   "id": "e0120"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_beechey",
+   "kind": "stated",
+   "directed": true,
+   "label": "checks Beechey's 1826 report",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19081001_quackenbush_bumpus_report",
+     "quote": "\"mud\" banks were reported by Beechey in 1826"
+    }
+   ],
+   "id": "e0121"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_gilmore",
+   "kind": "stated",
+   "directed": true,
+   "label": "rival collector to be beaten",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070620_osborn_bumpus",
+     "quote": "get in ahead of Gilmore—who is going up from the U.S. National Museum"
+    }
+   ],
+   "id": "e0122"
+  },
+  {
+   "source": "p_lucas",
+   "target": "p_gilmore",
+   "kind": "stated",
+   "directed": true,
+   "label": "cites Gilmore's reconnaissance",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19140806_lucas_grant",
+     "quote": "Gilmore of Washington made a thorough reconnaissance for the National Museum"
+    }
+   ],
+   "id": "e0123"
+  },
+  {
+   "source": "p_lucas",
+   "target": "p_matthew",
+   "kind": "stated",
+   "directed": true,
+   "label": "consulted Matthew (1914)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19140806_lucas_grant",
+     "quote": "I have gone over the matter pretty carefully with Doctor Matthew"
+    }
+   ],
+   "id": "e0124"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_lucas",
+   "kind": "stated",
+   "directed": true,
+   "label": "forwarded Grant's letter to Lucas (1914)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19140806_lucas_grant",
+     "quote": "President Osborn has forwarded to me your letter enclosing that of Mr. Quackenbush."
+    },
+    {
+     "ref": "d_19140804_grant_osborn",
+     "quote": "To Director Lucas"
+    }
+   ],
+   "id": "e0125"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_mathews_jf",
+   "kind": "stated",
+   "directed": true,
+   "label": "Mathews writes at Grant's request; employee of Grant's company",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19140810_grant_lucas",
+     "quote": "Mathews who writes the letter to Quackenbush is in the employ of a company which I am heavily interested in, and he writes this at my request."
+    }
+   ],
+   "id": "e0126"
+  },
+  {
+   "source": "p_mathews_jf",
+   "target": "p_quackenbush",
+   "kind": "stated",
+   "directed": true,
+   "label": "wrote to LSQ from Alaska with hair sample (1914)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19140807_lucas_quackenbush",
+     "quote": "a communication from Mr. J. F. Matthews addressed to you"
+    }
+   ],
+   "id": "e0127"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_quackenbush",
+   "kind": "stated",
+   "directed": true,
+   "label": "'you can get no better man' (1914)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19140810_grant_lucas",
+     "quote": "I do not believe that you can get a better man that [sic] Quackenbush for this purpose."
+    }
+   ],
+   "id": "e0128"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "p_quackenbush",
+   "kind": "stated",
+   "directed": true,
+   "label": "recommends to Bureau of Fisheries (1910)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19100518_bumpus_hughsmith",
+     "quote": "He is a nice fellow, and we can give him an excellent recommendation."
+    }
+   ],
+   "id": "e0129"
+  },
+  {
+   "source": "p_hugh_smith",
+   "target": "p_andrews",
+   "kind": "stated",
+   "directed": true,
+   "label": "inquires about Andrews for the fur-seal islands post",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19100509_hughsmith_bumpus",
+     "quote": "Would \"Mr. Roy C. Andrews fill the bill\""
+    }
+   ],
+   "id": "e0130"
+  },
+  {
+   "source": "p_lucas",
+   "target": "p_peale",
+   "kind": "stated",
+   "directed": true,
+   "label": "cites Peale's Newburgh mastodon",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19140812_lucas_grant",
+     "quote": "Peale found hair of the mastodon when he dug it up back of Newburgh"
+    }
+   ],
+   "id": "e0131"
+  },
+  {
+   "source": "p_lucas",
+   "target": "p_nelson",
+   "kind": "stated",
+   "directed": true,
+   "label": "cites 'the observations of Nelson'",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19140812_lucas_grant",
+     "quote": "the observations of Nelson"
+    }
+   ],
+   "id": "e0132"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_ripley",
+   "kind": "stated",
+   "directed": true,
+   "label": "names Miss Ripley as intermediary to Quackenbush",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070620_osborn_bumpus",
+     "quote": "Through Dr. Matthews (or Miss Ripley) will you kindly communicate immediately with Mr. Quackenbush"
+    }
+   ],
+   "id": "e0133"
+  },
+  {
+   "source": "p_sturgis",
+   "target": "p_osborn",
+   "kind": "stated",
+   "directed": true,
+   "label": "$250 to the Department's field exploration fund",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19070724_assttreas_osborn",
+     "quote": "$250 from F.K. Sturgis"
+    }
+   ],
+   "id": "e0134"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_woods_ah",
+   "kind": "stated",
+   "directed": true,
+   "label": "c/o address, Tarratine, Maine",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_19140802_quackenbush_grant",
+     "quote": "writing c/o A.H. Woods, Tarratine, Maine"
+    }
+   ],
+   "id": "e0135"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_sherwood",
+   "kind": "stated",
+   "directed": true,
+   "label": "instructs on collecting Morgan's and Pyne's shares",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "d_nd_osborn_sherwood",
+     "quote": "Kindly take this up at once."
+    }
+   ],
+   "id": "e0136"
+  },
+  {
+   "source": "p_anderson",
+   "target": "p_quackenbush",
+   "kind": "pi",
+   "directed": true,
+   "label": "'usurps LSQ's role'",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "usurps LSQ’s role by offering to go examine claim for free"
+    }
+   ],
+   "id": "e0137"
+  },
+  {
+   "source": "p_anderson",
+   "target": "p_osborn",
+   "kind": "pi",
+   "directed": false,
+   "label": "'old intimate friend' of HFO",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "An “old intimate friend” of HFO"
+    }
+   ],
+   "id": "e0138"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_quackenbush",
+   "kind": "pi",
+   "directed": true,
+   "label": "goes to Alaska with LSQ 1907, assists up to Nome",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "Goes to Alaska with LSQ 1907, assists up to Nome."
+    },
+    {
+     "ref": "tale",
+     "quote": "Quackenbush left for Alaska in the company of Madison Grant"
+    }
+   ],
+   "id": "e0139"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_stone",
+   "kind": "pi",
+   "directed": false,
+   "label": "Stone is Grant's VP/Gen Manager; 'colleague'",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "whose VP/Gen Manager is Andrew J. Stone"
+    },
+    {
+     "ref": "cast",
+     "quote": "Colleague of Madison Grant"
+    }
+   ],
+   "id": "e0140"
+  },
+  {
+   "source": "p_matthew",
+   "target": "p_quackenbush",
+   "kind": "pi",
+   "directed": true,
+   "label": "recommends LSQ for job",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "Reports on Startsman letters, recommends LSQ for job."
+    }
+   ],
+   "id": "e0141"
+  },
+  {
+   "source": "p_meany",
+   "target": "p_bumpus",
+   "kind": "pi",
+   "directed": true,
+   "label": "go-between for A-Y-P and AMNH",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "go-between for A-Y-P people and AMNH"
+    }
+   ],
+   "id": "e0142"
+  },
+  {
+   "source": "p_morgan",
+   "target": "p_quackenbush",
+   "kind": "pi",
+   "directed": true,
+   "label": "paid for half of both expeditions",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "Paid for half of both 1907 and 1908 expeditions."
+    }
+   ],
+   "id": "e0143"
+  },
+  {
+   "source": "p_pyne_percy",
+   "target": "p_quackenbush",
+   "kind": "pi",
+   "directed": true,
+   "label": "paid for half of both expeditions",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "Paid for half of both 1907 and 1908 expeditions."
+    }
+   ],
+   "id": "e0144"
+  },
+  {
+   "source": "p_startsman",
+   "target": "p_graham",
+   "kind": "pi",
+   "directed": false,
+   "label": "partners; finders of purported mammoth",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "Finder of purported mammoth, partner of E.W. Graham"
+    }
+   ],
+   "id": "e0145"
+  },
+  {
+   "source": "p_stone",
+   "target": "p_quackenbush",
+   "kind": "pi",
+   "directed": true,
+   "label": "asked, but refuses, to deal with the mammoth 1907",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "cast",
+     "quote": "asked, but refuses, to deal with the mammoth 1907"
+    }
+   ],
+   "id": "e0146"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_morgan",
+   "kind": "pi",
+   "directed": true,
+   "label": "'went hat in hand' for funds",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "tale",
+     "quote": "went hat in hand to J.P. Morgan, Jr., and another wealthy financier Percy Pyne"
+    }
+   ],
+   "id": "e0147"
+  },
+  {
+   "source": "p_osborn",
+   "target": "p_pyne_percy",
+   "kind": "pi",
+   "directed": true,
+   "label": "'went hat in hand' for funds",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "tale",
+     "quote": "went hat in hand to J.P. Morgan, Jr., and another wealthy financier Percy Pyne"
+    }
+   ],
+   "id": "e0148"
+  },
+  {
+   "source": "p_pyne_mt",
+   "target": "p_osborn",
+   "kind": "pi",
+   "directed": false,
+   "label": "'intimate friend of Osborn'",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "tale",
+     "quote": "whose brother was an intimate friend of Osborn"
+    }
+   ],
+   "id": "e0149"
+  },
+  {
+   "source": "p_meany",
+   "target": "p_bumpus",
+   "kind": "pi",
+   "directed": true,
+   "label": "brought the report to the Director (March 1907)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "tale",
+     "quote": "brought to the Director, H.C. Bumpus, in March 1907, by Edmond S. Meany"
+    }
+   ],
+   "id": "e0150"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_hoffman",
+   "kind": "pi",
+   "directed": true,
+   "label": "concealed the find from his local assistant",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "tale",
+     "quote": "concealing it even from his local assistant, Jim Hoffman"
+    }
+   ],
+   "id": "e0151"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_bumpus",
+   "kind": "pi",
+   "directed": true,
+   "label": "petitioned Bumpus with LSQ for a return visit",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "tale",
+     "quote": "with the support of Madison Grant, then Sec’y to the NY Zoological Society and notorious eugenicist, petitioned Bumpus for a return visit"
+    }
+   ],
+   "id": "e0152"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_osborn",
+   "kind": "pi",
+   "directed": true,
+   "label": "Grant tells Bumpus HFO also working on Morgan",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "pi_timeline",
+     "quote": "Grant tells Bumpus HFO also working on Morgan."
+    }
+   ],
+   "id": "e0153"
+  },
+  {
+   "source": "p_grant",
+   "target": "p_quackenbush",
+   "kind": "pi",
+   "directed": true,
+   "label": "deems LSQ's 1908 report 'an extremely barren narrative'",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "pi_timeline",
+     "quote": "Grant deems it “an extremely barren narrative”"
+    }
+   ],
+   "id": "e0154"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "p_maddren",
+   "kind": "pi",
+   "directed": true,
+   "label": "given Maddren's SI report",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "pi_timeline",
+     "quote": "gives LSQ Maddren’s SI report"
+    }
+   ],
+   "id": "e0155"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Collector for the AMNH — Cast of Characters"
+    },
+    {
+     "ref": "roles",
+     "quote": "'has been with our parties and done considerable exploring work on his own account' — Matthew to Bumpus 25 Mar 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "'a Columbia graduate, and one that we have twice sent up to Alaska for Mammoth' — Bumpus to Hugh M. Smith 18 May 1910"
+    }
+   ],
+   "id": "e0156"
+  },
+  {
+   "source": "p_quackenbush",
+   "target": "i_columbia",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Collector for the AMNH — Cast of Characters"
+    },
+    {
+     "ref": "roles",
+     "quote": "'has been with our parties and done considerable exploring work on his own account' — Matthew to Bumpus 25 Mar 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "'a Columbia graduate, and one that we have twice sent up to Alaska for Mammoth' — Bumpus to Hugh M. Smith 18 May 1910"
+    }
+   ],
+   "id": "e0157"
+  },
+  {
+   "source": "p_bumpus",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Director, AMNH — Cast of Characters; letterheads"
+    }
+   ],
+   "id": "e0158"
+  },
+  {
+   "source": "p_osborn",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Curator of Vertebrate Palaeontology, AMNH — Cast of Characters"
+    },
+    {
+     "ref": "roles",
+     "quote": "'President Osborn' — letters from 25 Feb 1908"
+    },
+    {
+     "ref": "roles",
+     "quote": "later Director of the Museum — Tale (PI)"
+    }
+   ],
+   "id": "e0159"
+  },
+  {
+   "source": "p_matthew",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Department of Vertebrate Paleontology, AMNH — letterhead 25 Mar 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "Curator of Vertebrate Palaeontology — Lucas 1914"
+    }
+   ],
+   "id": "e0160"
+  },
+  {
+   "source": "p_grant",
+   "target": "i_nyzs",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Secretary, New York Zoological Society — Cast of Characters; 'NYZoo Soc letterhead' 3 July 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "President, Taylor Creek Ditch Company, 11 Wall Street — letterhead of Stone to Bumpus 20 June 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "Attorney and Counsellor at Law, 11 Wall Street — letterhead 4 Aug 1914"
+    }
+   ],
+   "id": "e0161"
+  },
+  {
+   "source": "p_grant",
+   "target": "i_tcdc",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Secretary, New York Zoological Society — Cast of Characters; 'NYZoo Soc letterhead' 3 July 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "President, Taylor Creek Ditch Company, 11 Wall Street — letterhead of Stone to Bumpus 20 June 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "Attorney and Counsellor at Law, 11 Wall Street — letterhead 4 Aug 1914"
+    }
+   ],
+   "id": "e0162"
+  },
+  {
+   "source": "p_meany",
+   "target": "i_uw",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Professor, University of Washington — Cast; Bumpus to Rathbun 25 Apr 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "speaks for the Alaska-Yukon-Pacific Exposition — Bumpus to Rathbun 25 Apr 1907"
+    }
+   ],
+   "id": "e0163"
+  },
+  {
+   "source": "p_meany",
+   "target": "i_ayp",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Professor, University of Washington — Cast; Bumpus to Rathbun 25 Apr 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "speaks for the Alaska-Yukon-Pacific Exposition — Bumpus to Rathbun 25 Apr 1907"
+    }
+   ],
+   "id": "e0164"
+  },
+  {
+   "source": "p_reed",
+   "target": "i_ayp",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "'director of exploitation', Alaska-Yukon-Pacific Exposition — Reed to Startsman 18 Oct 1906 (PI summary)"
+    }
+   ],
+   "id": "e0165"
+  },
+  {
+   "source": "p_chilberg",
+   "target": "i_ayp",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "President, Alaska-Yukon-Pacific Exposition — Reed 18 Oct 1906"
+    },
+    {
+     "ref": "roles",
+     "quote": "'closely connected at Nome in banking and mining' — Meany to Bumpus 23 June 1907"
+    }
+   ],
+   "id": "e0166"
+  },
+  {
+   "source": "p_stone",
+   "target": "i_tcdc",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Vice-President and General Manager, Taylor Creek Ditch Company — letterhead 20 June 1907"
+    }
+   ],
+   "id": "e0167"
+  },
+  {
+   "source": "p_jesup",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "President, AMNH — Cast of Characters"
+    }
+   ],
+   "id": "e0168"
+  },
+  {
+   "source": "p_lucas",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Director, AMNH (1914 letters) — Lucas to Grant 6 Aug 1914, signed 'Director'"
+    }
+   ],
+   "id": "e0169"
+  },
+  {
+   "source": "p_lucas_brooklyn_1907",
+   "target": "i_brooklyn",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "proposed arbiter of specimen value — Osborn draft 16 Apr 1907"
+    }
+   ],
+   "id": "e0170"
+  },
+  {
+   "source": "p_rathbun",
+   "target": "i_nmnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "'Assistant Secretary in charge of National Museum', Smithsonian Institution — signature 30 Apr 1907"
+    }
+   ],
+   "id": "e0171"
+  },
+  {
+   "source": "p_sherwood",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Assistant Secretary, AMNH — Bumpus 29 June 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "'asst treasurer' — PI header 1909"
+    }
+   ],
+   "id": "e0172"
+  },
+  {
+   "source": "p_merriam",
+   "target": "i_usda",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "issued the 1908 collecting permit ('just received from the Department of Agriculture') — Bumpus to LSQ 21 May 1908"
+    }
+   ],
+   "id": "e0173"
+  },
+  {
+   "source": "p_hugh_smith",
+   "target": "i_bof",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Dept Commerce and Labor, Bureau of Fisheries — Hugh M. Smith to Bumpus 9 May 1910 (PI summary)"
+    }
+   ],
+   "id": "e0174"
+  },
+  {
+   "source": "p_andrews",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "AMNH; 'now in Japan' (1910) — Bumpus to Hugh M. Smith 18 May 1910"
+    }
+   ],
+   "id": "e0175"
+  },
+  {
+   "source": "p_quinn",
+   "target": "i_keewalik_hotel",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "left in charge of the canoe, tools and utensils at the Keewalik Hotel warehouse, with an order to sell the canoe — LSQ report 1 Oct 1908"
+    }
+   ],
+   "id": "e0176"
+  },
+  {
+   "source": "p_harlan_smith",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "AMNH staff; Meany's reference — Meany 18 Mar 1907"
+    }
+   ],
+   "id": "e0177"
+  },
+  {
+   "source": "p_ripley",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "named as an intermediary to reach Quackenbush — Osborn 20 June 1907"
+    }
+   ],
+   "id": "e0178"
+  },
+  {
+   "source": "p_gilmore",
+   "target": "i_nmnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "'going up from the U.S. National Museum' (1907) — Osborn 20 June 1907"
+    },
+    {
+     "ref": "roles",
+     "quote": "'made a thorough reconnaissance for the National Museum' — Lucas to Grant 6 Aug 1914"
+    }
+   ],
+   "id": "e0179"
+  },
+  {
+   "source": "p_maddren",
+   "target": "i_nmnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "author of 'Maddren's report to the Smithsonian' / 'Smithsonian Exploration in search of mammoth' — Matthew [17 Apr 1907]; LSQ 27 Mar 1908"
+    },
+    {
+     "ref": "roles",
+     "quote": "collector sent to the region by the US National Museum in 1904 — Tale (PI)"
+    }
+   ],
+   "id": "e0180"
+  },
+  {
+   "source": "p_brown",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "AMNH collector; alternative to Quackenbush — Matthew 1907"
+    }
+   ],
+   "id": "e0181"
+  },
+  {
+   "source": "p_granger",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "AMNH; alternative to Quackenbush (1907); author of a letter about LSQ's paper (1908, not in file) — Matthew 1907; Osborn 1908"
+    }
+   ],
+   "id": "e0182"
+  },
+  {
+   "source": "p_lanier",
+   "target": "i_amnh",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Treasurer (AMNH) — Sherwood 1909"
+    }
+   ],
+   "id": "e0183"
+  },
+  {
+   "source": "p_vonhaake",
+   "target": "i_pod",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Topographer, Post Office Department — Sherwood 18 Feb 1909"
+    }
+   ],
+   "id": "e0184"
+  },
+  {
+   "source": "p_allen",
+   "target": "i_tcdc",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Treasurer, Taylor Creek Ditch Company — letterhead"
+    }
+   ],
+   "id": "e0185"
+  },
+  {
+   "source": "p_varnum",
+   "target": "i_tcdc",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "Secretary, Taylor Creek Ditch Company (name struck through on letterhead) — letterhead"
+    }
+   ],
+   "id": "e0186"
+  },
+  {
+   "source": "p_schubert",
+   "target": "i_yale",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "proposed arbiter of specimen value — Osborn draft 16 Apr 1907"
+    }
+   ],
+   "id": "e0187"
+  },
+  {
+   "source": "p_woods_rebecca",
+   "target": "i_utoronto",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "author of the Tale, timelines, Cast of Characters and the transcription file — provided documents"
+    }
+   ],
+   "id": "e0188"
+  },
+  {
+   "source": "p_adams",
+   "target": "i_spb_academy",
+   "kind": "affiliation",
+   "directed": true,
+   "label": "affiliated (as attested in roles)",
+   "date": null,
+   "doc": null,
+   "evidence": [
+    {
+     "ref": "roles",
+     "quote": "adjunct in zoology, St Petersburg Academy of Science; collected the 'Adams mammoth' 1806 — Tale §1"
+    }
+   ],
+   "id": "e0189"
+  }
+ ],
+ "rules": {
+  "correspondence": "One directed edge per archival item from each named sender to each named recipient. Copies, drafts, telegrams, excerpts, enclosures and form slips all count as attestations that A wrote to B. Offices (o_*) stand for unnamed signers.",
+  "stated": "A relation asserted inside a document by its writer (partner, friend, officer of the same company, familiar salutation, recommendation, request). Each edge carries the quotation that asserts it.",
+  "pi": "A relation asserted in the principal investigator's own writing (Cast of Characters, Tale §3, timeline summaries). Kept separate because it is interpretation, not attestation.",
+  "affiliation": "Person to institution, derived from the roles recorded in the prosopography (each role cites its source).",
+  "exclusions": "No tie is inferred from co-mention, shared location, or outside knowledge. Mentions are indexed per document but are not edges."
+ }
+}

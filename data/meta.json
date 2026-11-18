@@ -1,0 +1,72 @@
+{
+ "title": "The Quackenbush Journeys, 1907–1908: an evidence-based reconstruction",
+ "built": "2026-11-18",
+ "inputs": [
+  {
+   "file": "Cast_of_Characters.docx",
+   "sha256": "1fb904250ff7e858abf14b4823a94cd9d201c2271840fc4cbc4ba8906335b655",
+   "bytes": 14379
+  },
+  {
+   "file": "Alaska_Mammoth_Exped_timeline_TERSE.docx",
+   "sha256": "727c6e6f454ebe0f2a4c1ada83ff0dd8668a80501b209841741f988c9fb313b6",
+   "bytes": 24596
+  },
+  {
+   "file": "Tale_of_Two_Mammoths_18_Sept.docx",
+   "sha256": "3e653be088110f9f00486551bf1b05188f94c627feff341ecfc7d8b08bcea89c",
+   "bytes": 34514
+  },
+  {
+   "file": "LS_Quackenbush.docx",
+   "sha256": "d342241abbf908525c047de9bd1020d901f9aa73d7e79e4442dedeb6211ebdd9",
+   "bytes": 74508
+  },
+  {
+   "file": "Mammoth_Expeditions_TIMELINE.docx",
+   "sha256": "c34e6f5af57eae40f2f02d8549ae30b927552bccf7583258a7bcb9802eeadb43",
+   "bytes": 65119
+  }
+ ],
+ "authorship": {
+  "historical writers": "Verbatim blocks are the words of the historical correspondents as transcribed by the PI; her editorial marks ([sic], [?], [illeg], struck text, colour) are preserved.",
+  "principal investigator": "Rebecca J. H. Woods (University of Toronto): transcription file, comprehensive and terse timelines, Cast of Characters, and the talk text “Time, Temperature, and Tissue in the Circumpolar North: A Tale of Two Mammoths” (MIT, 20 Sept 2019). Her summaries and editorial notes are typed and rendered separately from verbatim text.",
+  "gazetteers": "USGS GNIS (Alaska domestic names file), Canadian Geographical Names Database, GeoNames; Wikidata as cross-check only.",
+  "model": "Claude (Anthropic) built the data model, typed the blocks, normalised names, geocoded against gazetteers, wrote the geocoding and network rules, selected and ordered quotations, and wrote the short connective notes labelled “model”. It added no fact, date, coordinate or quotation that is not in the inputs or the named gazetteers."
+ },
+ "counts": {
+  "documents": 99,
+  "blocks": 402,
+  "people": 57,
+  "institutions": 25,
+  "places": 40,
+  "stops": 41,
+  "segments": 39,
+  "stories": 25,
+  "timeline": 73,
+  "itinerary": 27,
+  "edges": 190,
+  "published": 35,
+  "findings": 32
+ },
+ "block_types": {
+  "verbatim": "words of the historical writer, as transcribed",
+  "summary": "the PI's paraphrase of a document",
+  "editorial": "the PI's description of the physical document, archival context, or dated research note",
+  "annotation": "a marginal or interlinear annotation on the original, as transcribed"
+ },
+ "status_chips": {
+  "verified": "attested name matched to an authoritative gazetteer record",
+  "inferred": "identification or date is a model inference from the described route or sequence",
+  "approximate": "placed from Quackenbush's distance/direction statements or a described relation to a named feature",
+  "disputed": "provided sources disagree",
+  "unlocated": "cannot be placed from the sources"
+ },
+ "geocoding_tiers": {
+  "1": "published coordinates in the sources — none exist",
+  "2": "authoritative gazetteers (GNIS, CGNDB, GeoNames; Wikidata cross-check)",
+  "3": "historical maps/charts — none available (1906 Post Route Map not provided)",
+  "4": "Quackenbush's distance/direction statements",
+  "5": "approximate placement with large uncertainty radius"
+ }
+}

@@ -1,0 +1,89 @@
+id,label,type,kind,scope,metrics
+p_quackenbush,L. S. Quackenbush,person,person,hunt,"{""correspondence_out"": 15, ""total"": 53, ""correspondence_in"": 16, ""stated_in"": 6, ""stated_out"": 5, ""pi_in"": 7, ""pi_out"": 2, ""affiliation_out"": 2}"
+p_bumpus,H. C. Bumpus,person,person,hunt,"{""correspondence_in"": 28, ""total"": 58, ""correspondence_out"": 25, ""stated_out"": 1, ""pi_in"": 3, ""affiliation_out"": 1}"
+p_osborn,Henry Fairfield Osborn,person,person,hunt,"{""correspondence_out"": 10, ""total"": 37, ""correspondence_in"": 12, ""stated_out"": 7, ""stated_in"": 2, ""pi_in"": 3, ""pi_out"": 2, ""affiliation_out"": 1}"
+p_matthew,W. D. Matthew,person,person,hunt,"{""correspondence_out"": 2, ""total"": 10, ""correspondence_in"": 1, ""stated_in"": 2, ""stated_out"": 3, ""pi_out"": 1, ""affiliation_out"": 1}"
+p_grant,Madison Grant,person,person,hunt,"{""correspondence_out"": 7, ""total"": 27, ""correspondence_in"": 5, ""stated_out"": 6, ""stated_in"": 2, ""pi_out"": 5, ""affiliation_out"": 2}"
+p_meany,Edmond S. Meany,person,person,hunt,"{""correspondence_out"": 3, ""total"": 12, ""correspondence_in"": 3, ""stated_out"": 2, ""pi_out"": 2, ""affiliation_out"": 2}"
+p_startsman,J. H. Startsman,person,person,hunt,"{""correspondence_in"": 1, ""total"": 5, ""correspondence_out"": 1, ""stated_out"": 1, ""stated_in"": 1, ""pi_out"": 1}"
+p_graham,E. W. Graham,person,person,hunt,"{""correspondence_out"": 1, ""total"": 4, ""stated_in"": 2, ""pi_in"": 1}"
+p_reed,Henry E. Reed,person,person,hunt,"{""correspondence_out"": 2, ""total"": 6, ""correspondence_in"": 2, ""stated_out"": 1, ""affiliation_out"": 1}"
+p_chilberg,J. E. Chilberg,person,person,hunt,"{""correspondence_in"": 1, ""total"": 5, ""stated_out"": 1, ""stated_in"": 2, ""affiliation_out"": 1}"
+p_anderson,A. A. Anderson,person,person,hunt,"{""correspondence_out"": 1, ""total"": 5, ""stated_out"": 2, ""pi_out"": 2}"
+p_stone,Andrew J. Stone,person,person,hunt,"{""correspondence_in"": 1, ""total"": 7, ""correspondence_out"": 1, ""stated_in"": 2, ""pi_in"": 1, ""pi_out"": 1, ""affiliation_out"": 1}"
+p_jesup,Morris K. Jesup,person,person,hunt,"{""correspondence_in"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_lucas,F. A. Lucas,person,person,hunt,"{""correspondence_out"": 3, ""total"": 11, ""correspondence_in"": 2, ""stated_out"": 4, ""stated_in"": 1, ""affiliation_out"": 1}"
+p_lucas_brooklyn_1907,'Mr. Lucas of the Brooklyn Museum' (1907 mention),person,person,hunt,"{""affiliation_out"": 1, ""total"": 1}"
+p_rathbun,Richard Rathbun,person,person,hunt,"{""correspondence_in"": 2, ""total"": 4, ""correspondence_out"": 1, ""affiliation_out"": 1}"
+p_morgan,"J. P. Morgan, Jr.",person,person,hunt,"{""correspondence_in"": 5, ""total"": 11, ""correspondence_out"": 2, ""stated_in"": 2, ""pi_out"": 1, ""pi_in"": 1}"
+p_pyne_percy,Percy Pyne,person,person,hunt,"{""correspondence_out"": 2, ""total"": 11, ""correspondence_in"": 5, ""stated_in"": 2, ""pi_out"": 1, ""pi_in"": 1}"
+p_pyne_mt,M. T. Pyne ('Momo'),person,person,hunt,"{""correspondence_in"": 1, ""total"": 4, ""stated_in"": 1, ""stated_out"": 1, ""pi_out"": 1}"
+p_sherwood,Sherwood,person,person,hunt,"{""correspondence_in"": 4, ""total"": 15, ""correspondence_out"": 8, ""stated_out"": 1, ""stated_in"": 1, ""affiliation_out"": 1}"
+p_hoffman,Jim Hoffman,person,person,hunt,"{""stated_in"": 1, ""total"": 2, ""pi_in"": 1}"
+p_merriam,C. Hart Merriam,person,person,hunt,"{""correspondence_in"": 2, ""total"": 4, ""correspondence_out"": 1, ""affiliation_out"": 1}"
+p_hugh_smith,Hugh M. Smith,person,person,hunt,"{""correspondence_out"": 1, ""total"": 4, ""correspondence_in"": 1, ""stated_out"": 1, ""affiliation_out"": 1}"
+p_andrews,Roy C. Andrews,person,person,hunt,"{""stated_in"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_mathews_jf,J. F. Matthews / Mathews (1914),person,person,hunt,"{""stated_in"": 1, ""total"": 2, ""stated_out"": 1}"
+p_woods_ah,A. H. Woods,person,person,hunt,"{""stated_in"": 1, ""total"": 1}"
+p_quinn,Ferdinand Quinn,person,person,hunt,"{""stated_in"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_harlan_smith,Harlan J. Smith,person,person,hunt,"{""stated_in"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_ripley,Miss Ripley,person,person,hunt,"{""stated_in"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_gilmore,Gilmore,person,person,hunt,"{""stated_in"": 2, ""total"": 3, ""affiliation_out"": 1}"
+p_maddren,A. G. Maddren,person,person,hunt,"{""stated_in"": 1, ""total"": 3, ""pi_in"": 1, ""affiliation_out"": 1}"
+p_brown,Barnum Brown,person,person,hunt,"{""stated_in"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_granger,Granger,person,person,hunt,"{""stated_in"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_sturgis,F. K. Sturgis,person,person,hunt,"{""stated_out"": 1, ""total"": 1}"
+p_lanier,Charles Lanier,person,person,hunt,"{""affiliation_out"": 1, ""total"": 1}"
+p_vonhaake,A. von Haake,person,person,hunt,"{""correspondence_in"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_allen,Benjamin Leach Allen,person,person,hunt,"{""stated_out"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_varnum,Robert T. Varnum,person,person,hunt,"{""stated_out"": 1, ""total"": 2, ""affiliation_out"": 1}"
+p_schubert,'Mr. Schubert[?] of the Yale Museum',person,person,hunt,"{""affiliation_out"": 1, ""total"": 1}"
+p_nelson,Nelson,person,person,hunt,"{""stated_in"": 1, ""total"": 1}"
+p_peale,Peale,person,person,hunt,"{""stated_in"": 1, ""total"": 1}"
+p_beechey,Beechey,person,person,hunt,"{""stated_in"": 1, ""total"": 1}"
+p_old_indian,'an old Indian' (unnamed discoverer),person,unnamed,hunt,"{""stated_out"": 1, ""total"": 1}"
+p_eskimos,"'the Eskimos' (collective, unnamed)",person,collective,hunt,{}
+p_prospectors,"prospectors / miners (collective, unnamed)",person,collective,hunt,{}
+p_settlements_unnamed,"two settlements and two open camps (unnamed), Seward Peninsula crossing 1908",person,unnamed,hunt,{}
+p_woods_rebecca,Rebecca J. H. Woods (principal investigator),person,person,research,"{""affiliation_out"": 1, ""total"": 1}"
+p_macphee,Ross MacPhee,person,person,research,{}
+p_bell,Susan Bell,person,person,research,{}
+p_chu,Pei-Yi Chu,person,person,research,{}
+p_adams,Michael (Mikhail) Adams,person,person,prologue,"{""affiliation_out"": 1, ""total"": 1}"
+p_schoumachoff,Ossip Schoumachoff,person,person,prologue,{}
+p_popoff,Popoff,person,person,prologue,{}
+p_boultonoff,Boultonoff / Baltounoff,person,person,prologue,{}
+p_cuvier,Georges Cuvier,person,person,prologue,{}
+p_banks,Joseph Banks,person,person,prologue,{}
+p_golovkin,Count Fyodor Golovkin,person,person,prologue,{}
+o_amnh_asst_secretary,"Assistant Secretary, AMNH (unnamed signer)",office,office,hunt,"{""correspondence_out"": 1, ""total"": 1}"
+o_amnh_asst_treasurer,"Assistant Treasurer, AMNH (unnamed signer)",office,office,hunt,"{""correspondence_out"": 3, ""total"": 3}"
+o_amnh_secretary,"Secretary, AMNH (unnamed signer)",office,office,hunt,"{""correspondence_out"": 2, ""total"": 2}"
+o_unnamed_author,[author not named in transcription],office,office,hunt,"{""correspondence_out"": 3, ""total"": 3}"
+o_unnamed_addressee,[addressee not named],office,office,hunt,"{""correspondence_in"": 1, ""total"": 1}"
+o_to_whom_it_may_concern,'To Whom it May Concern',office,office,hunt,"{""correspondence_in"": 1, ""total"": 1}"
+i_amnh,American Museum of Natural History (AMNH),institution,museum,hunt,"{""affiliation_in"": 13, ""total"": 13}"
+i_nmnh,United States National Museum / Smithsonian Institution,institution,museum,hunt,"{""affiliation_in"": 3, ""total"": 3}"
+i_ayp,Alaska-Yukon-Pacific Exposition (1909),institution,exposition,hunt,"{""affiliation_in"": 3, ""total"": 3}"
+i_uw,University of Washington,institution,university,hunt,"{""affiliation_in"": 1, ""total"": 1}"
+i_nyzs,New York Zoological Society,institution,society,hunt,"{""affiliation_in"": 1, ""total"": 1}"
+i_tcdc,Taylor Creek Ditch Company,institution,company,hunt,"{""affiliation_in"": 4, ""total"": 4}"
+i_pcss,Pacific Coast Steamship Co.,institution,company,hunt,{}
+i_nwss,Northwestern Steamship Co. (Seattle),institution,company,hunt,{}
+i_cprr,Canadian Pacific Railway,institution,company,hunt,{}
+i_sprr,Seward Peninsula R.R.,institution,company,hunt,{}
+i_usda,Department of Agriculture (permit authority),institution,government,hunt,"{""correspondence_out"": 1, ""total"": 2, ""affiliation_in"": 1}"
+i_bof,"Bureau of Fisheries, Department of Commerce and Labor",institution,government,hunt,"{""affiliation_in"": 1, ""total"": 1}"
+i_pod,Post Office Department (Topographer),institution,government,hunt,"{""affiliation_in"": 1, ""total"": 1}"
+i_yale,Yale Museum,institution,museum,hunt,"{""affiliation_in"": 1, ""total"": 1}"
+i_brooklyn,Brooklyn Museum,institution,museum,hunt,"{""affiliation_in"": 1, ""total"": 1}"
+i_columbia,Columbia (University),institution,university,hunt,"{""affiliation_in"": 1, ""total"": 1}"
+i_keewalik_hotel,Keewalik Hotel (warehouse),institution,business,hunt,"{""affiliation_in"": 1, ""total"": 1}"
+i_rainier_hotel,"Rainier Grand Hotel, Seattle",institution,business,hunt,{}
+i_utoronto,University of Toronto,institution,university,hunt,"{""affiliation_in"": 1, ""total"": 1}"
+i_spb_academy,St Petersburg Academy of Science,institution,academy,prologue,"{""affiliation_in"": 1, ""total"": 1}"
+v_corwin,'Corwin' (steamer),institution,vessel,hunt,{}
+v_umatilla,'Umatilla' (steamer),institution,vessel,hunt,{}
+v_hoffman_dory,Hoffman's fishing boat / dory,institution,vessel,hunt,{}
+v_canoe_1907,"borrowed canoe (1907): 'a clumsy, waterlogged canoe'",institution,vessel,hunt,{}
+v_canoe_1908,"canoe (1908), shipped from a factory in Maine",institution,vessel,hunt,{}
