@@ -243,6 +243,22 @@ sup.fnref a:hover,sup.fnref a:focus-visible{background:var(--j1907-soft);text-de
 .arrow{display:block;width:14px;height:14px;transform-origin:50% 50%;transition:opacity .2s}
 .arrow path{stroke-width:1.5;stroke-linejoin:round}.arrow.j1907 path{stroke:var(--j1907);fill:var(--surface)}.arrow.j1908 path{stroke:var(--j1908);fill:var(--j1908)}
 .arrow.dim{opacity:.25}
+/* journey selector and cluster discs */
+#panel .seg.jm button{display:inline-flex;align-items:center;gap:.3rem}
+#panel .seg.jm .sub{font-size:.72rem;opacity:.75;font-weight:400}
+#panel .seg.jm button.active .sub{opacity:.85}
+#panel .seg.jm .sw{width:10px;height:10px;border-radius:50%;display:inline-block}
+#panel .seg.jm button[data-jm="1908"] .sw{border-radius:2px}
+#followPick{display:inline-flex;align-items:center;gap:.35rem}
+.clusterwrap{background:none;border:none;width:0;height:0;pointer-events:none}
+.cluster{position:absolute;top:0;left:0;display:inline-flex;align-items:center;gap:.4rem;padding:.2rem .55rem .2rem .25rem;background:var(--surface);border:1px solid var(--rule-2);border-radius:999px;box-shadow:var(--shadow);font:600 .74rem/1.2 var(--sans);color:var(--ink);white-space:nowrap;pointer-events:auto;cursor:pointer}
+.cluster.left{flex-direction:row-reverse;padding:.2rem .25rem .2rem .55rem;text-align:right}
+.cluster .n{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:var(--ink-2);color:var(--surface);font-size:.78rem}
+.cluster.j1907 .n{background:var(--j1907)}.cluster.j1908 .n{background:var(--j1908);border-radius:4px}
+.cluster .t{display:flex;flex-direction:column;line-height:1.15}
+.cluster .t small{font-weight:400;color:var(--muted);font-size:.66rem}
+.clusterdisc{cursor:pointer}
+.clusterdisc:focus-visible{outline:none;stroke-width:3px;stroke:var(--j1907)}
 #panel .row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem;margin:.2rem 0}
 #panel .seg,#panel .steps{flex-wrap:wrap;max-width:100%}
 #panel .steps{display:inline-flex;align-items:center;gap:.2rem}
@@ -274,8 +290,9 @@ ul.unlocated .block.verbatim{font-size:.92rem}
 #globe svg{width:100%;height:100%;display:block;cursor:grab}
 #globe svg:focus-visible{outline:2px solid var(--j1907);outline-offset:-2px}
 /* legend: one disclosure, top-right under the zoom control; below 900 px the same HTML sits at the end of the panel */
-#maplegend{position:absolute;top:4.8rem;right:.8rem;max-height:calc(100% - 7.5rem);overflow:auto;z-index:800;max-width:300px} /* top clears the zoom control (10 px margin + two 26 px buttons) */
+#maplegend{position:absolute;top:4.8rem;right:.8rem;z-index:800;max-width:300px} /* top clears the zoom control (10 px margin + two 26 px buttons) */
 details.legend{background:var(--surface);opacity:.97;color:var(--ink);border:1px solid var(--rule);border-radius:var(--radius);padding:.4rem .65rem .45rem;font-size:.74rem;box-shadow:var(--shadow)}
+#maplegend details.legend{max-height:min(calc(100vh - 12rem),58vh);overflow:auto;box-sizing:border-box} /* a long legend scrolls inside its box instead of covering the lower half of the stage */
 details.legend summary{cursor:pointer;font-weight:600;font-size:.76rem;color:var(--ink-2);list-style-position:inside}
 details.legend .row{display:flex;align-items:center;gap:.4rem;margin:.12rem 0;line-height:1.25}
 details.legend .row b{margin-top:.25rem}
@@ -361,6 +378,9 @@ details.netmore>summary{display:none}
 .netedge.funding{stroke:var(--ink-2);stroke-opacity:.7}.netedge.funding.pi{stroke:var(--model)}
 .netedge.strand{stroke-opacity:.75}
 .netedge.dim,.netlabel.dim{stroke-opacity:.08;opacity:.25}.netnode.dim{opacity:.18}
+.netedge.mixed{stroke:var(--net-node);stroke-opacity:.28;stroke-linecap:round}
+.netedge.mixed.hl{stroke-opacity:.75}
+.netnode.hl text{display:inline;font-weight:600}
 /* timeline */
 .yr-rail{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:.2rem .3rem;padding:.4rem 0;margin:0 0 .6rem;background:var(--paper);border-bottom:1px solid var(--rule);font-size:.84rem}
 .yr-rail a{padding:.1rem .55rem;border:1px solid var(--rule-2);border-radius:999px;color:var(--ink-2);background:var(--surface)}
@@ -642,7 +662,8 @@ function dismissHelp(){ try{ localStorage.setItem(HELP_KEY,'1'); }catch(e){} con
 function helpCard(){
   if(helpDismissed()) return '';
   return `<section class="helpcard" id="helpcard" aria-labelledby="helpcard-h"><h2 id="helpcard-h">How to read this map</h2><button class="ghost dismiss" onclick="App.dismissHelp()" aria-label="Dismiss this help card">✕</button><ul>
-    <li><span class="seq j1907">7</span> <span class="seq j1908">7</span> Two journeys, two hues and two badge shapes: 1907 blue and round, 1908 sienna and square-cornered; the numeral is the stop's place in its journey.</li>
+    <li><span class="seq j1907">7</span> <span class="seq j1908">7</span> One journey is drawn at a time; choose <b>1907</b>, <b>1908</b> or <b>Both</b> under “Journey shown”. Two hues and two badge shapes: 1907 blue and round, 1908 sienna and square-cornered; the numeral is the stop's place in its journey.</li>
+    <li>Where several stops crowd together at a low zoom they are drawn as one disc with a count; click it to open them.</li>
     <li>${glyphFor('verified')} ${glyphFor('inferred')} ${glyphFor('approximate')} ${glyphFor('disputed')} Marker shape and fill show the <b>source status</b> of a place: verified, inferred, approximate, disputed.</li>
     <li>${glyphFor('halo')} A halo is the uncertainty radius recorded for the place, in kilometres.</li>
     <li>Connectors are schematic (no route was traced); the arrow gives the direction of travel.</li>
@@ -717,9 +738,10 @@ const TOP8 = ['pl_newyork','pl_seattle','pl_nome','pl_dawson','pl_elephant_point
 const TRAIL_PLACES = ['pl_newyork','pl_seattle','pl_washington','pl_garrison'];
 const CTX_PLACES = ['pl_lena_mouth','pl_yakutsk','pl_stpetersburg'];
 const UNLOCATED_DEFAULT = D.places.filter(p=>!p.has_coords && !p.mentioned_only && ((p.constraints||[]).length || (p.candidates||[]).length)).map(p=>p.id);
-const state = { mode:'flat', layers:{j1907:true, j1908:true, trail:true, halos:true, routes:true, labels:true, context:false, unlocated:true}, highlight:null, journey:'1907',
-                inited:false, legs:[], constraintCount:0, candidateCount:0, showUnlocated:new Set(UNLOCATED_DEFAULT), unlocatedOff:new Set(), frame:null };
-let map, tileFlat=null, tileFlatRef=null, tileRelief, tileLabels, groups={}, globe=null, labelList=[], badgeList=[], legLines=[], arrowMarkers=[], popup=null, pendingPopup=null, popupOpener=null, popupSeq=0;
+/* one journey is shown at a time by default (journeyMode '1907' | '1908' | 'both'); 'both' overlays the two for comparison */
+const state = { mode:'flat', journeyMode:'1907', layers:{j1907:true, j1908:false, trail:true, halos:true, routes:true, labels:true, context:false, unlocated:true, clusters:true}, highlight:null, journey:'1907',
+                inited:false, legs:[], constraintCount:0, candidateCount:0, clusterCount:0, clusters:[], showUnlocated:new Set(UNLOCATED_DEFAULT), unlocatedOff:new Set(), frame:null };
+let map, tileFlat=null, tileFlatRef=null, tileRelief, tileLabels, groups={}, globe=null, labelList=[], badgeList=[], markerList=[], haloList=[], legLines=[], arrowMarkers=[], clusterOf=new Map(), popup=null, pendingPopup=null, popupOpener=null, popupSeq=0;
 const panel=document.getElementById('panel'), toggle=document.getElementById('panelToggle'), handle=document.getElementById('panelHandle'), leafletEl=document.getElementById('leaflet'), mapviewEl=document.getElementById('mapview');
 /* the panel's open/closed state is a class on #panel and on #mapview (the toggle's position follows in CSS: --panel-w, or 0 when collapsed; a bottom sheet below 600 px) */
 function setPanel(collapsed){ panel.classList.toggle('collapsed', collapsed); mapviewEl.classList.toggle('pcollapsed', collapsed); toggle.setAttribute('aria-expanded', String(!collapsed)); toggle.setAttribute('aria-label', collapsed? 'Show layer panel' : 'Hide layer panel'); if(handle) handle.setAttribute('aria-expanded', String(!collapsed)); setTimeout(()=>{ if(map) map.invalidateSize(); if(globe) globe.resize(); }, 220); }
@@ -813,7 +835,7 @@ function initMap(openOnAlaska){
   tileRelief = L.tileLayer(ESRI+'World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {attribution:'Relief: Esri, USGS, NOAA', maxZoom:13});
   tileLabels = L.tileLayer(ESRI+'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {maxZoom:13, pane:'shadowPane', opacity:.8});
   tileFlat.addTo(map);
-  groups = { halos:L.layerGroup().addTo(map), constraints:L.layerGroup().addTo(map), candidates:L.layerGroup().addTo(map), routes:L.layerGroup().addTo(map), arrows:L.layerGroup().addTo(map), markers:L.layerGroup().addTo(map), badges:L.layerGroup().addTo(map), labels:L.layerGroup().addTo(map), context:L.layerGroup() };
+  groups = { halos:L.layerGroup().addTo(map), constraints:L.layerGroup().addTo(map), candidates:L.layerGroup().addTo(map), routes:L.layerGroup().addTo(map), arrows:L.layerGroup().addTo(map), clusters:L.layerGroup().addTo(map), markers:L.layerGroup().addTo(map), badges:L.layerGroup().addTo(map), labels:L.layerGroup().addTo(map), context:L.layerGroup() };
   drawAll();
   if(openOnAlaska) setFrame('alaska');
   map.on('zoomend', ()=>{ drawRoutes(); drawUnlocated(); syncReference(); updateLabelVisibility(); });
@@ -853,11 +875,11 @@ function focusCard(){ const c=document.getElementById('stopcard'); if(!c) return
 
 /* ---------------------------------------------------------------- drawing */
 function drawAll(){
-  Object.values(groups).forEach(g=>g.clearLayers()); labelList=[]; badgeList=[];
+  Object.values(groups).forEach(g=>g.clearLayers()); labelList=[]; badgeList=[]; markerList=[]; haloList=[]; clusterOf=new Map();
   const drawn=new Map();          // placeId -> {place, byJ:{1907:[stops],1908:[stops]}}
   ['1907','1908'].forEach(j=>{ if(!state.layers['j'+j]) return;
     placesOf(j).forEach(({place, stops})=>{ if(!drawn.has(place.id)) drawn.set(place.id,{place, byJ:{}}); drawn.get(place.id).byJ[j]=stops;
-      if(state.layers.halos && place.radius_km && place.status!=='verified') groups.halos.addLayer(L.circle([place.lat,place.lon], {className:'halo '+jc(j), radius:place.radius_km*1000, color:JVAR[j], weight:1, opacity:.5, fillColor:JVAR[j], fillOpacity:.08, dashArray:'4 4', interactive:false}));
+      if(state.layers.halos && place.radius_km && place.status!=='verified'){ const h=L.circle([place.lat,place.lon], {className:'halo '+jc(j), radius:place.radius_km*1000, color:JVAR[j], weight:1, opacity:.5, fillColor:JVAR[j], fillOpacity:.08, dashArray:'4 4', interactive:false}); groups.halos.addLayer(h); haloList.push({layer:h, placeId:place.id}); }
     });
   });
   drawn.forEach(({place, byJ})=>{
@@ -873,7 +895,7 @@ function drawAll(){
     a11y(m, name, open);
     m.on('click', open);
     m.bindTooltip(esc(place.label), {direction:'top', offset:[0,-8], className:'lbl tip'});
-    groups.markers.addLayer(m);
+    groups.markers.addLayer(m); markerList.push({m, place, byJ, js, key});
     js.forEach((j,slot)=>{ const b=badge(place, j, byJ[j], slot, js.length); b._placeId=place.id; groups.badges.addLayer(b); badgeList.push(b); });
     if(state.layers.labels){ const lab=L.marker([place.lat,place.lon],{icon:L.divIcon({className:'lbl '+(key==='both'?'both':jc(key)), html:esc(place.short_label), iconSize:null, iconAnchor:[-9,8]}), interactive:false, keyboard:false});
       lab._minZoom=labelTier(place); lab._prio=[js.reduce((n,j)=>n+byJ[j].length,0), place.status==='verified'?1:0]; lab._placeId=place.id; groups.labels.addLayer(lab); labelList.push(lab); }
@@ -952,17 +974,88 @@ function drawUnlocated(){
         <ul class="small">${p.candidates.map(c=>`<li>GNIS <a href="${esc(c.url)}" rel="noopener">${esc(c.id)}</a> · ${esc(c.name)} (${esc(c.feature_class)}) · ${esc(c.county||'')} · ${c.lat.toFixed(4)}, ${c.lon.toFixed(4)}${c.note?` <span class="muted">— ${esc(c.note)}</span>`:''}</li>`).join('')}</ul>
         ${App.modelBlock(p.candidates_note)}<div class="small"><a href="#/place/${p.id}">Place record</a>${finding?` · <a href="#/method/findings/${finding.id}">Finding</a>`:''}</div>`;
       p.candidates.forEach(c=>{ const m=L.marker([c.lat,c.lon],{icon:L.divIcon({className:'candwrap', html:`<div class="cand" data-place="${esc(p.id)}" data-gnis="${esc(c.id)}"></div>`, iconSize:[24,24], iconAnchor:[12,12]}), keyboard:true, title:`${p.short_label} — GNIS ${c.id}, ${c.county||c.feature_class}: candidate, not asserted`}); m.bindPopup(shared,{maxWidth:380}); m.on('add', ()=>{ const el=m.getElement(); if(el) el.setAttribute('aria-label', `${p.label}: gazetteer candidate GNIS ${c.id}, ${c.name} (${c.feature_class}), ${c.county||''}; not asserted`); }); m._placeId=p.id; groups.candidates.addLayer(m); state.candidateCount++;
-        const lab=L.marker([c.lat,c.lon],{icon:L.divIcon({className:'lbl ulbl candlbl', html:esc(`${p.short_label} — GNIS ${c.id}, ${c.county||c.feature_class}`), iconSize:null, iconAnchor:[-7,8]}), keyboard:false}); lab._minZoom=4; lab._prio=[-1,0]; lab._unloc=true; lab._placeId=p.id; lab.bindPopup(shared,{maxWidth:380}); groups.candidates.addLayer(lab); labelList.push(lab); });
+        // candidate labels from zoom 6 (the squares are drawn at every zoom); at the Alaska frame they would only add noise around the journey
+        const lab=L.marker([c.lat,c.lon],{icon:L.divIcon({className:'lbl ulbl candlbl', html:esc(`${p.short_label} — GNIS ${c.id}, ${c.county||c.feature_class}`), iconSize:null, iconAnchor:[-7,8]}), keyboard:false}); lab._minZoom= state.focusUnlocated===p.id? 0 : 6; lab._prio=[-1,0]; lab._unloc=true; lab._placeId=p.id; lab.bindPopup(shared,{maxWidth:380}); groups.candidates.addLayer(lab); labelList.push(lab); });
     }
   });
 }
 /* bounds of everything drawn for one unlocated place (rings, leaders, candidates) */
 function unlocatedBounds(placeId){ let b=null; const add=l=>{ const bb = l.getBounds? l.getBounds() : (l.getLatLng? L.latLngBounds([l.getLatLng()]) : null); if(!bb) return; b = b? b.extend(bb) : L.latLngBounds(bb); }; groups.constraints.eachLayer(l=>{ if(l._placeId===placeId) add(l); }); groups.candidates.eachLayer(l=>{ if(l._placeId===placeId) add(l); }); return b; }
+/* ---------------------------------------------------------------- clusters: crowded places collapsed at low zoom
+   Stop places whose markers would sit within a few pixels of one another (single linkage, threshold by zoom) are drawn
+   as one disc with a count and the sequence range of each journey; their markers, badges, labels, halos and the legs
+   between them are hidden until the reader zooms in (click or Enter on the disc). The cluster asserts nothing: its
+   centre is the mean of its members' coordinates and its name is its most-visited member. The selected stop's cluster
+   stays open. */
+function clusterThreshold(z){ if(!state.layers.clusters) return 0; return z<=4? 44 : z===5? 40 : z===6? 30 : 0; }
+function clusterMembersAt(items, z, R){
+  const pts=items.map(x=>map.project([x.place.lat,x.place.lon], z));
+  const par=items.map((_,i)=>i); const find=i=>par[i]===i? i : (par[i]=find(par[i]));
+  for(let i=0;i<items.length;i++) for(let j=i+1;j<items.length;j++){ if(pts[i].distanceTo(pts[j])<R){ par[find(i)]=find(j); } }
+  const g=new Map(); items.forEach((x,i)=>{ const r=find(i); if(!g.has(r)) g.set(r,[]); g.get(r).push(x); });
+  return [...g.values()];
+}
+/* the smallest zoom at which no two members of a cluster still fall within the threshold (always ≤ 7, where the threshold is 0) */
+function expandZoom(arr){ const b=L.latLngBounds(arr.map(x=>[x.place.lat,x.place.lon])); const cur=map.getZoom(); let z=cur+1; for(; z<9; z++){ const R=clusterThreshold(z); if(!R) break; if(clusterMembersAt(arr, z, R).every(c=>c.length<3)) break; } return Math.max(cur+1, Math.min(z, map.getBoundsZoom(b.pad(.25)), 9)); }
+function openCluster(arr){ const b=L.latLngBounds(arr.map(x=>[x.place.lat,x.place.lon])); closePopup(); map.setView(b.getCenter(), expandZoom(arr), {animate:!REDUCE}); }
+function updateClusters(){
+  const z=map.getZoom(); const R=clusterThreshold(z);
+  const items=markerList.filter(x=>x.js.length);          // stop places only; paper-trail nodes are never clustered
+  let found=[];
+  if(R){ const pts=items.map(x=>map.latLngToContainerPoint([x.place.lat,x.place.lon]));
+    const par=items.map((_,i)=>i); const find=i=>par[i]===i? i : (par[i]=find(par[i]));
+    for(let i=0;i<items.length;i++) for(let j=i+1;j<items.length;j++){ if(pts[i].distanceTo(pts[j])<R){ par[find(i)]=find(j); } }
+    const g=new Map(); items.forEach((x,i)=>{ const r=find(i); if(!g.has(r)) g.set(r,[]); g.get(r).push(x); });
+    // three places make a cluster at the continental zooms, four from zoom 5 (so that Nome and its two neighbours stay apart at the Alaska frame)
+    const minSize = z<=4? 3 : 4;
+    found=[...g.values()].filter(arr=>arr.length>=minSize && !arr.some(x=>x.place.id===state.highlightPlace));
+  }
+  const sig = z+':'+found.map(arr=>arr.map(x=>x.place.id).sort().join(',')).sort().join(';');
+  if(sig!==state.clusterSig){
+    state.clusterSig=sig; groups.clusters.clearLayers(); clusterOf=new Map(); state.clusters=[];
+    found.forEach(arr=>{
+      const lat=arr.reduce((s,x)=>s+x.place.lat,0)/arr.length, lon=arr.reduce((s,x)=>s+x.place.lon,0)/arr.length; const centre=L.latLng(lat,lon);
+      const cpt=map.latLngToContainerPoint(centre); const ext=Math.max(...arr.map(x=>cpt.distanceTo(map.latLngToContainerPoint([x.place.lat,x.place.lon]))));
+      const rpx=Math.max(16, Math.round(ext+10));
+      const prio=x=>[Object.values(x.byJ).reduce((n,s)=>n+s.length,0), TOP8.includes(x.place.id)?1:0, x.place.status==='verified'?1:0];
+      const top=[...arr].sort((a,b)=>{ const pa=prio(a), pb=prio(b); return (pb[0]-pa[0])||(pb[1]-pa[1])||(pb[2]-pa[2]); })[0];
+      const js=[...new Set(arr.flatMap(x=>x.js))].sort(); const key = js.length===2? 'both' : js[0];
+      const range=js.map(j=>{ const seqs=arr.flatMap(x=>(x.byJ[j]||[]).map(s=>s.seq)); return {j, min:Math.min(...seqs), max:Math.max(...seqs), n:seqs.length}; });
+      const rangeTxt=range.map(r=>`${r.j}: stops ${r.min===r.max? r.min : r.min+'–'+r.max}`).join(' · ');
+      const name=`${top.place.short_label} & ${arr.length-1} other place${arr.length>2?'s':''}`;
+      const members=arr.map(x=>`${x.place.short_label} (${x.js.map(j=>j+': '+x.byJ[j].map(s=>s.seq).join(', ')).join('; ')})`).join('; ');
+      const col = key==='both'? 'var(--ink-2)' : JVAR[key];
+      const disc=L.circleMarker(centre, {className:'clusterdisc '+(key==='both'?'both':jc(key)), radius:rpx, color:col, weight:1.2, dashArray:'3 3', fillColor:col, fillOpacity:.1, opacity:.8});
+      disc.bindTooltip(`<b>${esc(arr.length)} places drawn as one at this zoom</b><br>${esc(members)}<br><span class="small">click to open — the disc asserts nothing; its centre is the mean of the members' coordinates</span>`, {sticky:true, className:'lbl tip'});
+      const open=()=>openCluster(arr);
+      a11y(disc, `${arr.length} places drawn as one at this zoom: ${members}; press Enter to zoom in`, open); disc.on('click', open);
+      disc.on('add', ()=>{ const el=disc.getElement(); if(el) el.setAttribute('data-cluster', arr.map(x=>x.place.id).join(' ')); });
+      groups.clusters.addLayer(disc);
+      const pill=L.marker(centre, {icon:L.divIcon({className:'clusterwrap', html:`<div class="cluster ${key==='both'?'both':jc(key)}" style="margin-left:${rpx+6}px"><span class="n">${arr.length}</span><span class="t">${esc(name)}<small>${esc(rangeTxt)} · click to open</small></span></div>`, iconSize:null, iconAnchor:[0,14]}), interactive:true, keyboard:false, zIndexOffset:450});
+      // the pill sits to the right of the disc; when that would run under the legend or the zoom control, or off the stage, it moves to the left
+      pill.on('click', open); pill.on('add', ()=>{ const el=pill.getElement(); if(!el) return; el.setAttribute('aria-hidden','true'); const box=el.querySelector('.cluster'); if(!box) return;
+        const obstacles=['#maplegend details','.leaflet-control-zoom'].map(q=>document.querySelector(q)).filter(e=>e && e.offsetParent!==null).map(e=>e.getBoundingClientRect());
+        const stage=leafletEl.getBoundingClientRect(); const r=box.getBoundingClientRect();
+        const hit = r.right>stage.right || obstacles.some(q=>!(r.right<=q.left||r.left>=q.right||r.bottom<=q.top||r.top>=q.bottom));
+        if(hit){ box.style.marginLeft=''; box.style.right=`${rpx+6}px`; box.style.left='auto'; box.classList.add('left'); } });
+      groups.clusters.addLayer(pill);
+      const c={arr, disc, pill, ids:arr.map(x=>x.place.id)}; arr.forEach(x=>clusterOf.set(x.place.id, c)); state.clusters.push({ids:c.ids, zoom:z, name, range:rangeTxt});
+    });
+    state.clusterCount=found.length;
+    document.querySelectorAll('.legend .clusterrow').forEach(e=>e.classList.toggle('hidden', !found.length));
+  }
+  // members: markers, halos, intra-cluster legs and their arrows hidden; short legs lose their arrow at any zoom
+  markerList.forEach(x=>{ const el=x.m.getElement(); if(el) el.style.display = clusterOf.has(x.place.id)? 'none' : ''; });
+  haloList.forEach(h=>{ const el=h.layer.getElement(); if(el) el.style.display = clusterOf.has(h.placeId)? 'none' : ''; });
+  legLines.forEach(l=>{ const ca=clusterOf.get(l.a.id), cb=clusterOf.get(l.b.id); const intra = ca && ca===cb; const el=l.line.getElement(); if(el) el.style.display = intra? 'none' : '';
+    const ae=l.arrow.getElement(); if(ae){ const d=map.latLngToContainerPoint([l.a.lat,l.a.lon]).distanceTo(map.latLngToContainerPoint([l.b.lat,l.b.lon])); ae.style.display = (intra || d<36)? 'none' : ''; } });
+}
 /* labels: zoom tiers, then a greedy collision pass in priority order (stop count desc, verified first); a label that collides is tried on the left of its point, then hidden */
 function updateLabelVisibility(){
   if(!map) return; const z=map.getZoom();
-  // the legend, the zoom control, the scale bar and the panel toggle are obstacles: no label is placed under them
-  const placed=['#maplegend details','.leaflet-control-zoom','.leaflet-control-scale','#panelToggle'].map(q=>document.querySelector(q)).filter(e=>e && e.offsetParent!==null).map(e=>e.getBoundingClientRect()).filter(r=>r.width);
+  updateClusters();
+  // the legend, the zoom control, the scale bar, the panel toggle and the cluster pills are obstacles: no label is placed under them
+  const placed=['#maplegend details','.leaflet-control-zoom','.leaflet-control-scale','#panelToggle', ...document.querySelectorAll('#leaflet .cluster')].map(q=>typeof q==='string'? document.querySelector(q) : q).filter(e=>e && e.offsetParent!==null).map(e=>e.getBoundingClientRect()).filter(r=>r.width);
   const hit=(r)=>placed.some(q=>!(r.right<=q.left||r.left>=q.right||r.bottom<=q.top||r.top>=q.bottom));
   const order=[...labelList].sort((a,b)=> (b._prio[0]-a._prio[0]) || (b._prio[1]-a._prio[1]) || (a._minZoom-b._minZoom));
   // the selected stop's label, or the labels of the unlocated place whose constraints were asked for, are placed first
@@ -972,7 +1065,7 @@ function updateLabelVisibility(){
   // a place's badges are reserved together with its label, so a neighbour's numeral never covers a placed label
   const badgesOf=new Map(); badgeList.forEach(b=>{ if(!badgesOf.has(b._placeId)) badgesOf.set(b._placeId,[]); badgesOf.get(b._placeId).push(b); });
   order.forEach(l=>{ const el=l.getElement(); if(!el) return;
-    const on = (l._unloc || state.layers.labels) && (l._minZoom==null || z>=l._minZoom);
+    const on = (l._unloc || state.layers.labels) && (l._minZoom==null || z>=l._minZoom) && !clusterOf.has(l._placeId);
     el.classList.toggle('active', !!state.highlightPlace && l._placeId===state.highlightPlace && !l._unloc);
     if(!on){ el.style.display='none'; return; }
     const bEls = (!l._unloc && z>=5)? (badgesOf.get(l._placeId)||[]).map(b=>b.getElement()).filter(Boolean) : [];
@@ -986,7 +1079,31 @@ function updateLabelVisibility(){
     placed.push(r, ...bRects); if(!l._unloc) shown.add(l._placeId);
   });
   // badges from zoom 5; below zoom 7 only where the place's label could be placed (or labels are off), so that a cluster does not pile numerals
-  badgeList.forEach(b=>{ const el=b.getElement(); if(!el) return; const on = z>=5 && (z>=7 || !state.layers.labels || shown.has(b._placeId) || b._placeId===state.highlightPlace); el.style.display = on? '' : 'none'; });
+  badgeList.forEach(b=>{ const el=b.getElement(); if(!el) return; const on = z>=5 && !clusterOf.has(b._placeId) && (z>=7 || !state.layers.labels || shown.has(b._placeId) || b._placeId===state.highlightPlace); el.style.display = on? '' : 'none'; });
+}
+/* ---------------------------------------------------------------- journey mode: one journey at a time, or both overlaid */
+function journeyNote(mode){
+  if(mode==='both') return 'Both journeys overlaid for comparison: 1907 blue and round, 1908 sienna and square-cornered; coincident connectors are drawn side by side.';
+  const list=stopsOf(mode); const a=list[0], b=list[list.length-1];
+  return `${list.length} stops, ${fmtDate(a.date_start)} – ${fmtDate(b.date_end||b.date_start)} (dates as attested; see each stop). Only this journey is drawn; choose the other year or Both to compare.`;
+}
+function setJourneyMode(mode, opts={}){
+  if(!['1907','1908','both'].includes(mode)) return;
+  state.journeyMode=mode; state.layers.j1907 = mode!=='1908'; state.layers.j1908 = mode!=='1907';
+  if(mode!=='both') state.journey=mode;
+  document.querySelectorAll('#journeySeg button').forEach(b=>{ const on=b.dataset.jm===mode; b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on)); });
+  const note=document.getElementById('jmNote'); if(note) note.textContent=journeyNote(mode);
+  const pick=document.getElementById('followPick'); if(pick) pick.classList.toggle('hidden', mode!=='both');
+  const cur=IDX.stop[state.highlight];
+  if(cur && mode!=='both' && cur.journey!==mode){ state.highlight=null; state.highlightPlace=null; closePopup(); const c=document.getElementById('stopcard'); if(c) c.innerHTML=startCard(); }
+  renderStopList(); renderFollow(); renderLegend();
+  state.clusterSig=null; drawAll(); if(globe) globe.draw();
+  if(opts.announce!==false){ const a=document.getElementById('announce'); if(a) a.textContent = mode==='both'? 'Both journeys shown' : `${mode} journey shown`; }
+}
+function renderStopList(){
+  const el=document.getElementById('stoplist'); if(!el) return;
+  const js = state.journeyMode==='both'? ['1907','1908'] : [state.journeyMode];
+  el.innerHTML = js.map(j=>`<li class="grp ${jc(j)}"><span class="grp">${j} journey</span><ul aria-label="${j} journey, stops in order">`+stopsOf(j).map(s=>`<li data-stop="${s.id}" class="${s.id===state.highlight?'active':''}"><a href="#/map/stop/${s.id}" data-stop="${s.id}" class="${jc(j)}"${s.id===state.highlight?' aria-current="true"':''}><span class="d"><b class="seq ${jc(j)}">${s.seq}</b> ${esc(fmtDate(s.date_start))}</span><span class="l">${esc(s.label)} ${App.glyphFor(s.status)}${s.naming?App.glyphFor('naming'):''}<span class="sr-only st">${esc(s.status)}${s.naming?', naming':''}</span></span></a></li>`).join('')+'</ul></li>').join('');
 }
 
 function setMode(mode){
@@ -1005,6 +1122,8 @@ function setMode(mode){
 /* ---------------------------------------------------------------- step-through: 'Follow the journey' */
 function stepTo(stopId, opts={}){
   const s=IDX.stop[stopId]; if(!s) return; const p=IDX.place[s.place];
+  // a stop of the journey that is not shown switches the map to its journey (single-journey modes only)
+  if(state.journeyMode!=='both' && state.journeyMode!==s.journey) setJourneyMode(s.journey, {announce:false});
   state.highlight=stopId; state.highlightPlace=s.place; state.journey=s.journey; state.focusUnlocated=null;
   document.querySelectorAll('#stoplist a[data-stop]').forEach(a=>{ const on=a.dataset.stop===stopId; a.parentElement.classList.toggle('active', on); if(on) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); if(on) a.scrollIntoView({block:'nearest', behavior: REDUCE?'auto':'smooth'}); });
   renderFollow(); renderStopCard(s); emphasise(stopId); updateLabelVisibility();
@@ -1027,7 +1146,7 @@ function renderFollow(){
   const pos=document.getElementById('stepPos'); if(pos) pos.textContent = i>=0? `Stop ${i+1} of ${list.length}` : `${list.length} stops`;
   const prev=document.getElementById('prevStop'), next=document.getElementById('nextStop'); if(prev) prev.disabled = i<=0; if(next) next.disabled = i>=list.length-1;
 }
-function startCard(){ return `<div class="card stopcard start"><h3>Follow the journey</h3><p class="small">Choose 1907 or 1908 and step through the stops with <b>Next ›</b> (or the ← → keys while the panel or the map has focus). Each step selects the stop, moves the map to it, thickens the connector that leads into it, and shows its evidence here. The sequence numerals on the map match the stop list; 1907 badges are round, 1908 badges square-cornered.</p><p class="small muted">The paper-trail part of each journey (New York, Montreal, Seattle) lies outside the Alaska frame; the <b>Whole route</b> frame shows it.</p></div>`; }
+function startCard(){ return `<div class="card stopcard start"><h3>Follow the journey</h3><p class="small">Step through the stops of the journey shown with <b>Next ›</b> (or the ← → keys while the panel or the map has focus). Each step selects the stop, moves the map to it, thickens the connector that leads into it, and shows its evidence here. The sequence numerals on the map match the stop list; 1907 badges are round, 1908 badges square-cornered.</p><p class="small muted">The paper-trail part of each journey (New York, Montreal, Seattle) lies outside the Alaska frame; the <b>Whole route</b> frame shows it.</p></div>`; }
 function renderStopCard(s){
   const el=document.getElementById('stopcard'); if(!el) return; const p=IDX.place[s.place]; const list=stopsOf(s.journey); const i=list.indexOf(s);
   const inc=D.segments.filter(g=>g.to===s.id); const visits=D.stops.filter(x=>x.place===s.place);
@@ -1065,31 +1184,34 @@ function unlocatedCards(){
 }
 function renderPanel(){
   const el=document.getElementById('panelInner');
-  // one nested list per journey (a plain-text group label, then the stops), so the outer list has only list items
-  const stopsHTML = ['1907','1908'].map(j=>`<li class="grp ${jc(j)}"><span class="grp">${j} journey</span><ul aria-label="${j} journey, stops in order">`+stopsOf(j).map(s=>`<li data-stop="${s.id}" class="${s.id===state.highlight?'active':''}"><a href="#/map/stop/${s.id}" data-stop="${s.id}" class="${jc(j)}"${s.id===state.highlight?' aria-current="true"':''}><span class="d"><b class="seq ${jc(j)}">${s.seq}</b> ${esc(fmtDate(s.date_start))}</span><span class="l">${esc(s.label)} ${App.glyphFor(s.status)}${s.naming?App.glyphFor('naming'):''}<span class="sr-only st">${esc(s.status)}${s.naming?', naming':''}</span></span></a></li>`).join('')+'</ul></li>').join('');
+  const jm=state.journeyMode;
+  const jmBtn=(m,label,sub)=>`<button data-jm="${m}" class="${jm===m?'active':''}" aria-pressed="${jm===m}" onclick="MapView.setJourneyMode('${m}')">${m==='both'?'':`<span class="sw" style="background:var(--${jc(m)})" aria-hidden="true"></span>`}${label}${sub?` <span class="sub">${sub}</span>`:''}</button>`;
   el.innerHTML=`${App.helpCard()}
+   <div class="section journey"><h2 class="panel-h">Journey shown</h2>
+     <div class="seg jm" id="journeySeg" role="group" aria-label="Journey shown on the map">${jmBtn('1907','1907','reconnaissance')}${jmBtn('1908','1908','excavation')}${jmBtn('both','Both','overlaid')}</div>
+     <p class="small muted" id="jmNote">${esc(journeyNote(jm))}</p></div>
    <div class="section follow"><h2 class="panel-h">Follow the journey</h2>
-     <div class="row"><div class="seg" id="followSeg" role="group" aria-label="Journey to follow"><button data-j="1907" class="active" aria-pressed="true" onclick="MapView.follow('1907')">1907</button><button data-j="1908" aria-pressed="false" onclick="MapView.follow('1908')">1908</button></div>
+     <div class="row"><span id="followPick" class="${jm==='both'?'':'hidden'}"><span class="small muted">Step through</span> <div class="seg" id="followSeg" role="group" aria-label="Journey to step through"><button data-j="1907" class="active" aria-pressed="true" onclick="MapView.follow('1907')">1907</button><button data-j="1908" aria-pressed="false" onclick="MapView.follow('1908')">1908</button></div></span>
        <span class="steps"><button class="ghost" id="prevStop" onclick="MapView.step(-1)" aria-label="Previous stop"><span aria-hidden="true">‹ </span>Previous</button><span id="stepPos" class="small muted" aria-live="polite"></span><button class="ghost" id="nextStop" onclick="MapView.step(1)" aria-label="Next stop">Next<span aria-hidden="true"> ›</span></button></span></div>
      <div id="stopcard">${startCard()}</div></div>
    <div class="section"><h2 class="panel-h">View</h2><div class="row"><div class="seg" id="modeSeg" role="group" aria-label="Map mode"><button data-mode="flat" class="active" aria-pressed="true" onclick="MapView.setMode('flat')">Flat</button><button data-mode="relief" aria-pressed="false" onclick="MapView.setMode('relief')">Relief</button><button data-mode="globe" aria-pressed="false" onclick="MapView.setMode('globe')">Globe</button></div>
      <span id="globeZoom" class="seg hidden" role="group" aria-label="Globe zoom"><button onclick="MapView.globeZoom(1.25)" aria-label="Zoom the globe in">+</button><button onclick="MapView.globeZoom(0.8)" aria-label="Zoom the globe out">−</button></span></div>
      <div class="frames" id="frames">${FRAMES.map(f=>`<button class="pill ${f.id===state.frame?'active':''}" data-frame="${f.id}" onclick="MapView.setFrame('${f.id}')">${esc(f.label)}</button>`).join('')}</div></div>
    <div class="section"><h2 class="panel-h">Layers</h2>
-     <label><input type="checkbox" data-layer="j1907" checked><span class="sw" style="background:var(--j1907)"></span>1907 reconnaissance (Yukon route)</label>
-     <label><input type="checkbox" data-layer="j1908" checked><span class="sw" style="background:var(--j1908)"></span>1908 excavation (overland route)</label>
      <label><input type="checkbox" data-layer="trail" checked><span class="sw" style="background:var(--paper-trail)"></span>Paper-trail nodes (New York, Seattle, Washington, Garrison)</label>
      <label><input type="checkbox" data-layer="routes" checked>Route connectors (schematic) with arrows</label>
      <label><input type="checkbox" data-layer="halos" checked>Uncertainty halos</label>
      <label><input type="checkbox" data-layer="labels" checked>Place labels</label>
+     <label><input type="checkbox" data-layer="clusters" checked>Collapse crowded places at low zoom (click a disc to open it)</label>
      <label><input type="checkbox" data-layer="unlocated" checked><span class="sw dashed"></span>Unlocated — constraints and candidates (no point asserted)</label>
      <label><input type="checkbox" data-layer="context"><span class="sw" style="background:var(--model)"></span>Context: Adams mammoth, Lena → St Petersburg (Tale §1)</label>
    </div>
+   <div class="section"><h2 class="panel-h" id="stoplist-h">Chronological stops</h2><ul id="stoplist" aria-labelledby="stoplist-h"></ul></div>
    <div class="section"><h2 class="panel-h">Unlocated — constraints drawn, no point asserted</h2><ul class="unlocated">${unlocatedCards()}</ul></div>
-   <div class="section"><h2 class="panel-h" id="stoplist-h">Chronological stops</h2><ul id="stoplist" aria-labelledby="stoplist-h">${stopsHTML}</ul></div>
    <div id="panellegend"></div>
    <div class="section small muted">Marker style encodes source status; hue and badge shape encode the journey; halos show the uncertainty radius recorded for each place. Click a stop for its evidence and story.</div>`;
-  el.querySelectorAll('input[data-layer]').forEach(cb=>cb.addEventListener('change', ()=>{ state.layers[cb.dataset.layer]=cb.checked; drawAll(); if(globe) globe.draw(); }));
+  renderStopList();
+  el.querySelectorAll('input[data-layer]').forEach(cb=>cb.addEventListener('change', ()=>{ state.layers[cb.dataset.layer]=cb.checked; state.clusterSig=null; drawAll(); if(globe) globe.draw(); }));
   el.querySelectorAll('input[data-unloc]').forEach(cb=>cb.addEventListener('change', ()=>{ if(cb.checked) state.unlocatedOff.delete(cb.dataset.unloc); else state.unlocatedOff.add(cb.dataset.unloc); drawUnlocated(); updateLabelVisibility(); }));
   renderFollow();
 }
@@ -1097,11 +1219,12 @@ function renderPanel(){
 function renderLegend(){
   const relief = state.mode==='relief', globeMode = state.mode==='globe';
   const html=`<details class="legend" open><summary>Legend — connectors are schematic; no route was traced</summary>
-    <div class="row"><b>Journeys</b> <span class="muted">(hue, badge shape, arrowhead)</span></div>
-    <div class="row">${line('var(--j1907)')} <span class="seq j1907">7</span> ${arrowGlyph('1907')} 1907 reconnaissance — round badge, open arrowhead</div>
-    <div class="row">${line('var(--j1908)')} <span class="seq j1908">7</span> ${arrowGlyph('1908')} 1908 excavation — square badge, filled arrowhead</div>
-    <div class="row">${glyph('both')} visited in both years — ring 1907, disc 1908; both badges stacked</div>
+    <div class="row"><b>Journey${state.journeyMode==='both'?'s':''}</b> <span class="muted">(hue, badge shape, arrowhead${state.journeyMode==='both'?'':'; the other year is hidden'})</span></div>
+    ${state.layers.j1907?`<div class="row">${line('var(--j1907)')} <span class="seq j1907">7</span> ${arrowGlyph('1907')} 1907 reconnaissance — round badge, open arrowhead</div>`:''}
+    ${state.layers.j1908?`<div class="row">${line('var(--j1908)')} <span class="seq j1908">7</span> ${arrowGlyph('1908')} 1908 excavation — square badge, filled arrowhead</div>`:''}
+    ${state.journeyMode==='both'?`<div class="row">${glyph('both')} visited in both years — ring 1907, disc 1908; both badges stacked</div>`:''}
     <div class="row">${glyph('trail')} paper-trail node — correspondence only, no stop</div>
+    <div class="row clusterrow ${state.clusterCount?'':'hidden'}"><svg width="18" height="18" aria-hidden="true" style="flex:none"><circle cx="9" cy="9" r="7.5" style="fill:var(--ink-2);fill-opacity:.1;stroke:var(--ink-2)" stroke-dasharray="3 3" stroke-width="1.2"/></svg> crowded places drawn as one disc at this zoom — click it to open; the disc asserts nothing</div>
     <div class="row"><b>Source status of a place</b> <span class="muted">(marker form)</span></div>
     <div class="row">${glyph('verified')} verified — gazetteer match on the attested name</div>
     <div class="row">${glyph('inferred')} inferred — identification inferred from the described route</div>
@@ -1191,12 +1314,13 @@ function show(a, b){
   map.invalidateSize(false);   // the container may have been hidden until this render; measure it before any flyTo
   setTimeout(()=>{ if(map) map.invalidateSize(); if(globe) globe.resize(); }, 30);
   if(a==='stop' && b && IDX.stop[b]){ stepTo(b); return; }
+  if(a==='1907'||a==='1908'||a==='both'){ if(state.journeyMode!==a) setJourneyMode(a); return; }   // #/map/1907, #/map/1908, #/map/both
   if(a && IDX.place[a]){ const p=IDX.place[a];
     if(p.has_coords){ const s=D.stops.find(x=>x.place===a); if(s) stepTo(s.id); else { closePopup(); if(REDUCE) map.setView([p.lat,p.lon], 6); else map.flyTo([p.lat,p.lon], 6); pendingPopup=()=>openPopupFor(p, null, null); } }
     else { closePopup(); state.focusUnlocated=a; state.showUnlocated.add(a); if(!state.layers.unlocated){ state.layers.unlocated=true; const cb=document.querySelector('input[data-layer="unlocated"]'); if(cb) cb.checked=true; } drawUnlocated(); const bb=unlocatedBounds(a); if(bb && bb.isValid()) map.fitBounds(bb.pad(.15), {animate:!REDUCE, maxZoom:8}); updateLabelVisibility(); }
   }
 }
-window.MapView = { show, setMode, highlight:highlightStop, stepTo, step, follow, clearStop, setFrame, styleFor, gcPath, badge, badgeHTML, arrowFor, legsOf, labelTier, glyph, popupJourney, focusCard,
+window.MapView = { show, setMode, setJourneyMode, openCluster(ids){ const arr=markerList.filter(x=>ids.includes(x.place.id)); if(arr.length) openCluster(arr); }, highlight:highlightStop, stepTo, step, follow, clearStop, setFrame, styleFor, gcPath, badge, badgeHTML, arrowFor, legsOf, labelTier, glyph, popupJourney, focusCard,
   zoom(){ return map? map.getZoom() : null; }, setView(ll, z){ if(map){ closePopup(); map.setView(ll, z, {animate:false}); } },
   centre(){ if(!map) return null; const c=map.getCenter(); return [c.lat, c.lng]; }, distTo(lat, lon){ return map? map.getCenter().distanceTo(L.latLng(lat, lon)) : null; },
   globeZoom(f){ if(globe) globe.zoomBy(f); }, globeScale(){ return globe? globe.scale() : null; }, pauseGlobe(){}, state, FRAMES };
@@ -1462,7 +1586,9 @@ Pages.person = function([id]){
    are labelled so. Each view's rule and caveats come from D.network.views, the same strings Method › Network prints. */
 const VIEWS = D.network.views || [];
 const viewById = Object.fromEntries(VIEWS.map(v=>[v.id,v]));
-const NS = { view:'persons', kinds:{correspondence:true, stated:true, pi:true, affiliation:false}, types:{person:true, office:true, institution:true}, focus:null, doc:null, yearMin:1906, yearMax:1930, labels:'auto', sel:null, coFilter:'all', coSort:'n_kinds', graph:null, table:false };
+/* detail 'simple' draws one straight line per pair of nodes (all kinds merged, width = attestations); 'kinds' draws every kind apart with its dash and hue.
+   minDeg 2 hides nodes that touch a single attestation (their count is reported); hovering a node highlights its neighbourhood until a click pins one. */
+const NS = { view:'persons', detail:'simple', minDeg:1, kinds:{correspondence:true, stated:true, pi:true, affiliation:false}, types:{person:true, office:true, institution:true}, focus:null, doc:null, yearMin:1906, yearMax:1930, labels:'auto', sel:null, coFilter:'all', coSort:'n_kinds', graph:null, table:false };
 const REDUCE = App.REDUCE;
 let sim=null;
 const KIND_LABEL={correspondence:'correspondence (solid, arrow)', stated:'stated in a document (dash 7 3)', pi:'PI’s writing (dash 4 3)', affiliation:'affiliation (dash 1 3; inferred faint)'};
@@ -1486,8 +1612,9 @@ Pages.network = function(seg){
   const yearOpts=(sel,ys)=>ys.map(y=>`<option ${y===sel?'selected':''}>${y}</option>`).join('');
   let rows='';
   if(NS.view==='persons'){
-    rows=`<fieldset class="row"><legend>Evidence</legend> ${['correspondence','stated','pi','affiliation'].map(k=>`<label><input type="checkbox" data-k="${k}" ${NS.kinds[k]?'checked':''}>${swatch(KIND_DASH[k],KIND_COLOR[k])} ${KIND_LABEL[k]}</label>`).join('')}</fieldset>
-      <div class="row"><fieldset class="grp"><legend>Nodes</legend> <label><input type="checkbox" data-t="person" ${NS.types.person?'checked':''}>persons</label><label><input type="checkbox" data-t="office" ${NS.types.office?'checked':''}>unnamed offices</label><label><input type="checkbox" data-t="institution" ${NS.types.institution?'checked':''}>institutions</label></fieldset>
+    rows=`<div class="row"><b id="netdetail-lab">Ties</b> <div class="seg" role="group" aria-labelledby="netdetail-lab"><button data-detail="simple" class="${NS.detail==='simple'?'active':''}" aria-pressed="${NS.detail==='simple'}" onclick="Pages._netDetail('simple')">one line per pair</button><button data-detail="kinds" class="${NS.detail==='kinds'?'active':''}" aria-pressed="${NS.detail==='kinds'}" onclick="Pages._netDetail('kinds')">by kind of evidence</button></div> <span class="muted">${NS.detail==='simple'?'line width = attestations of every kind between the two; click a line for the ties behind it':'dash pattern and hue carry the kind; parallel curves are different kinds'}</span></div>
+      <fieldset class="row"><legend>Evidence</legend> ${['correspondence','stated','pi','affiliation'].map(k=>`<label><input type="checkbox" data-k="${k}" ${NS.kinds[k]?'checked':''}>${swatch(KIND_DASH[k],KIND_COLOR[k])} ${KIND_LABEL[k]}</label>`).join('')}</fieldset>
+      <div class="row"><fieldset class="grp"><legend>Nodes</legend> <label><input type="checkbox" data-t="person" ${NS.types.person?'checked':''}>persons</label><label><input type="checkbox" data-t="office" ${NS.types.office?'checked':''}>unnamed offices</label><label><input type="checkbox" data-t="institution" ${NS.types.institution?'checked':''}>institutions</label><label><input type="checkbox" id="nmindeg" ${NS.minDeg>1?'checked':''}>hide single-attestation nodes</label></fieldset>
         <fieldset class="grp"><legend>Years</legend> <select id="nyMin" aria-label="Earliest year of correspondence">${yearOpts(NS.yearMin,[1906,1907,1908,1909,1910,1914,1916,1930])}</select> – <select id="nyMax" aria-label="Latest year of correspondence">${yearOpts(NS.yearMax,[1907,1908,1909,1910,1914,1916,1930])}</select> <span class="muted">(correspondence and stated ties; PI ties are undated)</span></fieldset>
         <fieldset class="grp"><legend>Labels</legend> ${labelSelect()}</fieldset>
         ${NS.focus?`<span class="tag">ego: ${esc(personLabel(NS.focus))}</span> <button class="ghost small" onclick="App.go('/network')">clear</button>`:''}${NS.doc?`<span class="tag">item: ${esc((IDX.doc[NS.doc]||{}).title||NS.doc)}</span> <button class="ghost small" onclick="App.go('/network')">clear</button>`:''}</div>`;
@@ -1514,6 +1641,7 @@ Pages.network = function(seg){
   const on=(id,ev,fn)=>{ const el=document.getElementById(id); if(el) el.addEventListener(ev,fn); };
   on('nyMin','change', e=>{NS.yearMin=+e.target.value; drawNet();});
   on('nyMax','change', e=>{NS.yearMax=+e.target.value; drawNet();});
+  on('nmindeg','change', e=>{NS.minDeg=e.target.checked?2:1; drawNet();});
   on('nlab','change', e=>{NS.labels=e.target.value; drawNet();});
   on('ncofilter','change', e=>{NS.coFilter=e.target.value; drawNet(); sidePanel(null);});
   const find=document.getElementById('netfind');
@@ -1522,6 +1650,7 @@ Pages.network = function(seg){
   drawNet(); sidePanel(NS.focus||null);
 };
 Pages._netTable=function(){ NS.table=!NS.table; const b=document.getElementById('netTable'); if(b) b.setAttribute('aria-pressed', String(NS.table)); NS.sel=null; if(NS.graph) NS.graph.highlight(null); sidePanel(NS.table? null : (NS.focus||null)); };
+Pages._netDetail=function(d){ NS.detail=d; document.querySelectorAll('#netcontrols button[data-detail]').forEach(b=>{ const on=b.dataset.detail===d; b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on)); }); const note=document.querySelector('#netdetail-lab ~ span.muted'); if(note) note.textContent = d==='simple'? 'line width = attestations of every kind between the two; click a line for the ties behind it' : 'dash pattern and hue carry the kind; parallel curves are different kinds'; NS.sel=null; drawNet(); sidePanel(NS.focus||null); };
 function netTitle(v){ return `${v.label}: network of ${v.derived?'derived relations':'attested ties'} under the current filters`; }
 Pages._netCaveat=function(){ sidePanel(null); const det=document.querySelector('#netside details.rules'); if(det) det.open=true; const el=document.getElementById('netcaveats'); if(el){ el.scrollIntoView({block:'start'}); el.style.outline='2px solid var(--inferred)'; setTimeout(()=>el.style.outline='',1600);} };
 
@@ -1539,13 +1668,23 @@ function netData(){
   if(NS.doc) edges=edges.filter(e=>e.doc===NS.doc || (e.kind!=='correspondence' && e.evidence.some(v=>v.ref===NS.doc)));
   const agg=new Map();
   edges.forEach(e=>{ const key=[e.kind, e.directed?e.source+'>'+e.target: [e.source,e.target].sort().join('|')].join('#'); if(!agg.has(key)) agg.set(key,{...e, weight:0, items:[]}); const a=agg.get(key); a.weight++; a.items.push(e); });
-  const E=[...agg.values()];
+  let E=[...agg.values()];
+  const degOf=(edges)=>{ const d=new Map(); edges.forEach(e=>{ d.set(e.source,(d.get(e.source)||0)+e.weight); d.set(e.target,(d.get(e.target)||0)+e.weight); }); return d; };
+  let hidden=0;
+  if(NS.minDeg>1 && !NS.focus && !NS.doc){ const d=degOf(E); const drop=new Set([...d.entries()].filter(([,v])=>v<NS.minDeg).map(([k])=>k)); hidden=drop.size; E=E.filter(e=>!drop.has(e.source)&&!drop.has(e.target)); }
   const ids=new Set(E.flatMap(e=>[e.source,e.target]));
   const N=D.network.nodes.filter(n=>ids.has(n.id)).map(n=>({...n}));
-  const deg=new Map(); E.forEach(e=>{ deg.set(e.source,(deg.get(e.source)||0)+e.weight); deg.set(e.target,(deg.get(e.target)||0)+e.weight); });
+  const deg=degOf(E);
   N.forEach(n=>n.deg=deg.get(n.id)||0);
-  return {N,E};
+  return {N,E,hidden};
 }
+/* one line per unordered pair: every kind merged; the items keep their kind for the side panel and the table */
+function mergePairs(E){
+  const m=new Map();
+  E.forEach(e=>{ const k=[e.source,e.target].sort().join('|'); if(!m.has(k)) m.set(k,{source:e.source, target:e.target, kind:'mixed', directed:false, weight:0, items:[], byKind:{}}); const p=m.get(k); p.weight+=e.weight; p.items.push(...e.items); p.byKind[e.kind]=(p.byKind[e.kind]||0)+e.weight; });
+  return [...m.values()];
+}
+const kindsText = p=>['correspondence','stated','pi','affiliation'].filter(k=>p.byKind[k]).map(k=>`${p.byKind[k]} ${k==='pi'?'PI':k}`).join(', ');
 function drawNet(){
   const svgEl=document.getElementById('netsvg'); if(!svgEl) return;
   if(sim){ sim.stop(); sim=null; }
@@ -1571,29 +1710,42 @@ function edgeA11y(link, nameFn, onEnter){ link.attr('tabindex',0).attr('role','b
 function nodeBehaviour(node, simRef, nameFn){
   const pick=(ev,d)=>{ ev.stopPropagation(); NS.sel=d.id; if(d.id.startsWith('x_')) sideFundNode(d.id); else sidePanel(d.id); NS.graph.highlight(d.id); };
   node.on('click', pick).on('dblclick',(ev,d)=>{ if(!d.id.startsWith('x_')) App.go('/person/'+d.id); });
+  // hovering (or focusing) a node previews its neighbourhood while nothing is pinned; a click pins, a click on the background unpins
+  node.on('mouseenter', (ev,d)=>{ if(!NS.sel && NS.graph) NS.graph.highlight(d.id, true); }).on('mouseleave', ()=>{ if(!NS.sel && NS.graph) NS.graph.highlight(null); })
+      .on('focus', (ev,d)=>{ if(!NS.sel && NS.graph) NS.graph.highlight(d.id, true); }).on('blur', ()=>{ if(!NS.sel && NS.graph) NS.graph.highlight(null); });
   node.attr('tabindex',0).attr('role','button').attr('aria-label', nameFn||(d=>`${d.label}, ${d.type}`)).on('keydown', (ev,d)=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); pick(ev,d); } });
   if(simRef) node.call(d3.drag().on('start',(ev,d)=>{ simRef().alphaTarget(.3).restart(); d.fx=d.x; d.fy=d.y; }).on('drag',(ev,d)=>{ d.fx=ev.x; d.fy=ev.y; }).on('end',(ev,d)=>{ simRef().alphaTarget(0); d.fx=null; d.fy=null; }));
 }
 function labelVisible(d, N){ return NS.labels==='none'?'none': NS.labels==='all'?null: (d.deg>=4||N.length<=30?null:'none'); }
 function neighbourHighlight(node, link, E){
-  return function(id){ if(!id){ link.classed('dim',false); node.classed('dim',false); return; } const nb=new Set([id]); E.forEach(e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; if(s===id) nb.add(t); if(t===id) nb.add(s); }); node.classed('dim', d=>!nb.has(d.id)); link.classed('dim', e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; return s!==id&&t!==id; }); };
+  // the neighbourhood of one node: everything else recedes, the neighbours' labels appear whatever the label setting
+  return function(id){ if(!id){ link.classed('dim',false).classed('hl',false); node.classed('dim',false).classed('hl',false); return; } const nb=new Set([id]); E.forEach(e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; if(s===id) nb.add(t); if(t===id) nb.add(s); }); node.classed('dim', d=>!nb.has(d.id)).classed('hl', d=>nb.has(d.id)); link.classed('dim', e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; return s!==id&&t!==id; }).classed('hl', e=>{ const s=e.source.id||e.source, t=e.target.id||e.target; return s===id||t===id; }); };
 }
 function curvePath(d, rTarget, off){ const sx=d.source.x, sy=d.source.y, tx=d.target.x, ty=d.target.y; const dx=tx-sx, dy=ty-sy, dr=Math.hypot(dx,dy)||1; const rt=rTarget+2; const ex=tx-dx/dr*rt, ey=ty-dy/dr*rt; if(!off) return `M${sx},${sy}L${ex},${ey}`; const mx=(sx+ex)/2 - dy/dr*off, my=(sy+ey)/2 + dx/dr*off; return `M${sx},${sy}Q${mx},${my} ${ex},${ey}`; }
 
 function drawPersons(g,W,H){
-  const {N,E}=netData();
-  netstat(`${N.length} nodes · ${E.length} ties (${E.reduce((s,e)=>s+e.weight,0)} attestations) · asserted ties only · rules: Method & Data › Network`);
-  const link=g.append('g').selectAll('path').data(E).join('path').attr('class', d=>'netedge '+d.kind+(d.affiliation_status==='inferred'?' inferred':'')).attr('stroke-width', d=>Math.min(1+Math.sqrt(d.weight)*1.1, 7)).attr('marker-end', d=>d.kind==='correspondence'&&d.directed?'url(#arrow)':null).style('cursor','pointer').on('click',(ev,d)=>{ ev.stopPropagation(); sideEdge(d); });
-  const edgeName=d=>`${personLabel(d.source.id||d.source)} ${d.directed?'→':'↔'} ${personLabel(d.target.id||d.target)}, ${d.kind}${d.evidence_kind?' ('+d.evidence_kind+')':''}${d.affiliation_status?' ('+d.affiliation_status+')':''}, ${d.weight} attestation${d.weight>1?'s':''}`;
-  link.append('title').text(edgeName); edgeA11y(link, edgeName, (ev,d)=>sideEdge(d));
-  NS.graph.tableData={degLabel:'Attestations', nodes:N.map(n=>({id:n.id,label:n.label,type:n.type,deg:n.deg})), edges:E.map(e=>({a:personLabel(e.source), b:personLabel(e.target), dir:e.directed?'→':'↔', kind:e.kind+(e.affiliation_status?' ('+e.affiliation_status+')':''), weight:e.weight, detail:`${esc(e.label)}${e.date?' <span class="muted">('+esc(fmtDate(e.date))+')</span>':''}`}))};
+  const {N,E:E0,hidden}=netData();
+  const simple = NS.detail==='simple';
+  const E = simple? mergePairs(E0) : E0;
+  const att=E0.reduce((s,e)=>s+e.weight,0);
+  netstat(`${N.length} nodes · ${simple? `${E.length} pairs (${E0.length} ties, ${att} attestations; one line per pair)` : `${E.length} ties (${att} attestations)`}${hidden?` · ${hidden} single-attestation node${hidden>1?'s':''} hidden`:''} · asserted ties only · rules: Method & Data › Network`);
+  const link=g.append('g').selectAll('path').data(E).join('path').attr('class', d=>'netedge '+d.kind+(d.affiliation_status==='inferred'?' inferred':'')).attr('stroke-width', d=>Math.min(1+Math.sqrt(d.weight)*(simple?1.3:1.1), 8)).attr('marker-end', d=>!simple&&d.kind==='correspondence'&&d.directed?'url(#arrow)':null).style('cursor','pointer').on('click',(ev,d)=>{ ev.stopPropagation(); if(simple) sideMixed(d); else sideEdge(d); });
+  const edgeName=d=> simple? `${personLabel(d.source.id||d.source)} ↔ ${personLabel(d.target.id||d.target)}, ${d.weight} attestation${d.weight>1?'s':''} (${kindsText(d)})`
+    : `${personLabel(d.source.id||d.source)} ${d.directed?'→':'↔'} ${personLabel(d.target.id||d.target)}, ${d.kind}${d.evidence_kind?' ('+d.evidence_kind+')':''}${d.affiliation_status?' ('+d.affiliation_status+')':''}, ${d.weight} attestation${d.weight>1?'s':''}`;
+  link.append('title').text(edgeName); edgeA11y(link, edgeName, (ev,d)=>{ if(simple) sideMixed(d); else sideEdge(d); });
+  NS.graph.tableData={degLabel:'Attestations', nodes:N.map(n=>({id:n.id,label:n.label,type:n.type,deg:n.deg})), edges: simple
+    ? E.map(e=>({a:personLabel(e.source), b:personLabel(e.target), dir:'↔', kind:kindsText(e), weight:e.weight, detail:e.items.slice(0,4).map(it=>esc(it.label)).join('; ')+(e.items.length>4?` <span class="muted">… ${e.items.length-4} more</span>`:'')}))
+    : E.map(e=>({a:personLabel(e.source), b:personLabel(e.target), dir:e.directed?'→':'↔', kind:e.kind+(e.affiliation_status?' ('+e.affiliation_status+')':''), weight:e.weight, detail:`${esc(e.label)}${e.date?' <span class="muted">('+esc(fmtDate(e.date))+')</span>':''}`}))};
   const r=d=>4+Math.sqrt(d.deg)*2.2;
   const node=g.append('g').selectAll('g').data(N).join('g').attr('class','netnode');
   node.append('circle').attr('r',r).style('fill', d=>d.type==='institution'?'var(--surface)':d.type==='office'?'var(--surface-2)':'var(--net-node)').style('stroke','var(--net-node)').attr('stroke-width', d=>d.type==='institution'?2:1).attr('stroke-dasharray', d=>d.type==='office'?'2 2':null);
   node.append('text').attr('dx', d=>r(d)+3).attr('dy',4).text(d=>shortLabel(d.label)).attr('display', d=>labelVisible(d,N));
   node.append('title').text(d=>`${d.label}\n${d.type} · degree ${d.deg}\nclick: details · double-click: full record`);
-  runSim(d3.forceSimulation(N).force('link', d3.forceLink(E).id(d=>d.id).distance(d=>60+Math.max(0,30-d.weight*4)).strength(.4)).force('charge', d3.forceManyBody().strength(-220)).force('center', d3.forceCenter(W/2,H/2)).force('collide', d3.forceCollide(d=>r(d)+6)),
-    ()=>{ link.attr('d', d=>curvePath(d, r(d.target), d.kind==='pi'? 16 : d.kind==='stated'? -14 : 0)); node.attr('transform', d=>`translate(${d.x},${d.y})`); });
+  // more room between nodes in the simple view: stronger repulsion, longer links, a mild pull to the centre keeps the leaves in frame
+  const charge = simple? -320 : -220, dist = simple? (d=>80+Math.max(0,40-d.weight*4)) : (d=>60+Math.max(0,30-d.weight*4));
+  const s=d3.forceSimulation(N).force('link', d3.forceLink(E).id(d=>d.id).distance(dist).strength(simple?.35:.4)).force('charge', d3.forceManyBody().strength(charge)).force('center', d3.forceCenter(W/2,H/2)).force('collide', d3.forceCollide(d=>r(d)+(simple?12:6)));
+  if(simple){ s.force('x', d3.forceX(W/2).strength(.05)).force('y', d3.forceY(H/2).strength(.07)); }
+  runSim(s, ()=>{ link.attr('d', d=>curvePath(d, r(d.target), simple? 0 : d.kind==='pi'? 16 : d.kind==='stated'? -14 : 0)); node.attr('transform', d=>`translate(${d.x},${d.y})`); });
   nodeBehaviour(node, ()=>sim, d=>`${d.label}, ${d.type}, ${d.deg} attestation${d.deg===1?'':'s'}`);
   NS.graph.nodes=N; NS.graph.highlight=neighbourHighlight(node, link, E);
   if(NS.sel) NS.graph.highlight(NS.sel);
@@ -1610,8 +1762,9 @@ function drawInstitutions(g,W,H){
   const edgeName=d=>`${personLabel(d.source.id||d.source)} → ${personLabel(d.target.id||d.target)}, affiliation (${d.affiliation_status})${d.evidence_kind?', '+d.evidence_kind:''}`;
   link.append('title').text(edgeName); edgeA11y(link, edgeName, (ev,d)=>sideEdge(d));
   NS.graph.tableData={degLabel:'Persons attested (institutions) / affiliations (persons)', nodes:N.map(n=>({id:n.id,label:n.label,type:n.type,deg:n.deg})), edges:E.map(e=>({a:personLabel(e.source), b:personLabel(e.target), dir:'→', kind:'affiliation ('+e.affiliation_status+')', weight:1, detail:e.affiliation_status==='stated'? `<span class="serif">“${esc(e.evidence[0].quote)}”</span>` : '<span class="tag model">inferred by the model</span>'}))};
-  // role labels on every edge would overprint in the AMNH cluster: 'main nodes' shows them only for small institutions, 'all' for every edge
-  const lbl=g.append('g').selectAll('text').data(E).join('text').attr('class','netlabel').text(d=>d.affiliation_status==='stated'? (d.evidence[0].quote.length>34? d.evidence[0].quote.slice(0,32)+'…':d.evidence[0].quote) : 'inferred (model)').attr('display', d=>NS.labels==='none'?'none': NS.labels==='all'?null: ((cnt.get(d.target)||0)<=3?null:'none')).attr('text-anchor','middle');
+  // role labels on every edge would overprint: they appear for the hovered or selected node's edges, or for every edge when Labels = all
+  const lblOn = d=> NS.labels==='all'? null : 'none';
+  const lbl=g.append('g').selectAll('text').data(E).join('text').attr('class','netlabel').text(d=>d.affiliation_status==='stated'? (d.evidence[0].quote.length>34? d.evidence[0].quote.slice(0,32)+'…':d.evidence[0].quote) : 'inferred (model)').attr('display', lblOn).attr('text-anchor','middle');
   const size=d=>d.type==='institution'? 9+Math.sqrt(d.deg)*5 : 5;
   const node=g.append('g').selectAll('g').data(N).join('g').attr('class','netnode');
   node.filter(d=>d.type==='institution').append('rect').attr('x',d=>-size(d)).attr('y',d=>-size(d)).attr('width',d=>2*size(d)).attr('height',d=>2*size(d)).style('fill','var(--surface)').style('stroke','var(--net-node)').attr('stroke-width',2);
@@ -1621,7 +1774,7 @@ function drawInstitutions(g,W,H){
   runSim(d3.forceSimulation(N).force('link', d3.forceLink(E).id(d=>d.id).distance(90).strength(.5)).force('charge', d3.forceManyBody().strength(-260)).force('x', d3.forceX(d=>d.type==='institution'? W*.68 : W*.3).strength(.12)).force('y', d3.forceY(H/2).strength(.05)).force('collide', d3.forceCollide(d=>size(d)+8)),
     ()=>{ link.attr('d', d=>`M${d.source.x},${d.source.y}L${d.target.x},${d.target.y}`); lbl.attr('x', d=>(d.source.x+d.target.x)/2).attr('y', d=>(d.source.y+d.target.y)/2-3); node.attr('transform', d=>`translate(${d.x},${d.y})`); });
   nodeBehaviour(node, ()=>sim, d=>`${d.label}, ${d.type}, ${d.type==='institution'? d.deg+' person'+(d.deg===1?'':'s')+' attested' : d.deg+' affiliation'+(d.deg===1?'':'s')}`);
-  NS.graph.nodes=N; const hl=neighbourHighlight(node, link, E); NS.graph.highlight=id=>{ hl(id); lbl.classed('dim', d=>id && d.source.id!==id && d.target.id!==id); };
+  NS.graph.nodes=N; const hl=neighbourHighlight(node, link, E); NS.graph.highlight=id=>{ hl(id); lbl.classed('dim', d=>id && d.source.id!==id && d.target.id!==id).attr('display', d=> id? ((d.source.id===id||d.target.id===id)? null : 'none') : lblOn(d)); };
 }
 function drawFunding(g,W,H){
   const nodes=FUND.nodes.map(n=>({...n})); const byId=Object.fromEntries(nodes.map(n=>[n.id,n]));
@@ -1696,6 +1849,7 @@ function drawMentions(g,W,H){
 
 /* ---------------- side panel ---------------- */
 function ruleBlock(v){ return `<div id="netcaveats" class="card"><div class="small"><span class="tag ${v.derived?'model':''}">${v.derived?'derived':'asserted'}</span> <b>Rule.</b> ${esc(v.rule)}</div>${(v.caveats||[]).length?`<div class="small" style="margin-top:.4rem"><b>Caveat${v.caveats.length>1?'s':''}.</b><ul style="margin:.2rem 0 0;padding-left:1.1rem">${v.caveats.map(c=>`<li>${esc(c)}</li>`).join('')}</ul></div>`:''}</div>`; }
+function tieCard(it){ return `<div class="card"><b>${esc(it.label)}</b>${it.date?` <span class="muted small">${esc(fmtDate(it.date))}</span>`:' <span class="muted small">undated</span>'}<ul class="small">${(it.evidence||[]).map(v=>`<li>${refLink(v.ref)}${v.quote&&it.kind!=='correspondence'?`: <span class="serif">“${esc(v.quote)}”</span>`:''}</li>`).join('')}</ul>${it.note&&it.affiliation_status!=='inferred'?`<div class="small muted">${esc(it.note)}</div>`:''}${it.affiliation_status==='inferred'?`<div class="block model" style="margin:.3rem 0 0"><span class="who">model note — inferred affiliation</span>${esc(it.note||'Read from context; no provided text names the person in this institution.')}</div>`:''}</div>`; }
 function sideEdge(e){
   const side=document.getElementById('netside'); if(!side) return;
   const items=e.items||[e];
@@ -1704,7 +1858,17 @@ function sideEdge(e){
     ${e.evidence_kind?`<p class="small"><span class="tag">letterhead</span> The quotation is a printed letterhead officer list, not a sentence written by the signer.</p>`:''}
     ${e.affiliation_status==='inferred'?`<div class="block model" style="margin:.4rem 0"><span class="who">model note — inferred affiliation</span>${esc(e.note||'Read from context; no provided text names the person in this institution.')}</div>`:''}
     <h3>${items.length} attestation${items.length>1?'s':''}</h3>
-    ${items.map(it=>`<div class="card"><b>${esc(it.label)}</b>${it.date?` <span class="muted small">${esc(fmtDate(it.date))}</span>`:' <span class="muted small">undated</span>'}<ul class="small">${(it.evidence||[]).map(v=>`<li>${refLink(v.ref)}${v.quote&&it.kind!=='correspondence'?`: <span class="serif">“${esc(v.quote)}”</span>`:''}</li>`).join('')}</ul>${it.note&&it.affiliation_status!=='inferred'?`<div class="small muted">${esc(it.note)}</div>`:''}</div>`).join('')}`;
+    ${items.map(tieCard).join('')}`;
+}
+/* one line per pair: the ties of every kind between two nodes, grouped by kind, each with its evidence */
+function sideMixed(e){
+  const side=document.getElementById('netside'); if(!side) return;
+  const a=e.source.id||e.source, b=e.target.id||e.target; const byKind={}; e.items.forEach(it=>{ (byKind[it.kind]=byKind[it.kind]||[]).push(it); });
+  const kinds=['correspondence','stated','pi','affiliation'].filter(k=>byKind[k]);
+  side.innerHTML=`<div class="phase">tie · one line per pair · ${e.weight} attestation${e.weight>1?'s':''} · ${kinds.length} kind${kinds.length>1?'s':''} of evidence</div><h2 style="margin-top:0">${esc(personLabel(a))} ↔ ${esc(personLabel(b))}</h2>
+    <p class="small muted">The line merges every tie between these two nodes; the ties are listed below by kind, each with its evidence. “Ties: by kind of evidence” draws them apart.</p>
+    ${kinds.map(k=>`<h3>${swatch(KIND_DASH[k],KIND_COLOR[k])} ${k==='pi'?'PI’s writing':k} (${byKind[k].length})</h3><p class="small muted">${esc(D.network.rules[k]||'')}</p>${byKind[k].map(it=>`${it.evidence_kind?`<p class="small"><span class="tag">letterhead</span> printed letterhead officer list, not a sentence by the signer</p>`:''}${tieCard(it)}`).join('')}`).join('')}
+    <p><a href="#/person/${a}">${esc(personLabel(a))}</a> · <a href="#/person/${b}">${esc(personLabel(b))}</a></p>`;
 }
 function sideFunding(e){
   const side=document.getElementById('netside'); if(!side) return;

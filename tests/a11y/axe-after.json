@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T17:13:59.241Z",
+ "generated": "2026-11-18T22:44:30.274Z",
  "axe_version": "4.10.2",
  "tags": [
   "wcag2a",
@@ -16,7 +16,7 @@
  "light": {
   "/map": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T17:14:06.064Z",
+   "timestamp": "2026-11-18T22:44:36.573Z",
    "violations": [],
    "incomplete": [
     {
@@ -79,7 +79,7 @@
        "html > body > main:nth-child(4) > section:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div > a:nth-child(1)"
       ],
       "nodeIndexes": [
-       1554
+       1082
       ],
       "fromFrame": false
      },
@@ -101,27 +101,27 @@
     {
      "id": "aria-allowed-attr",
      "impact": null,
-     "nodes": 106
+     "nodes": 63
     },
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 82
+     "nodes": 50
     },
     {
      "id": "aria-command-name",
      "impact": null,
-     "nodes": 74
+     "nodes": 31
     },
     {
      "id": "aria-conditional-attr",
      "impact": null,
-     "nodes": 106
+     "nodes": 63
     },
     {
      "id": "aria-deprecated-role",
      "impact": null,
-     "nodes": 81
+     "nodes": 38
     },
     {
      "id": "aria-hidden-body",
@@ -131,42 +131,42 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 167
+     "nodes": 99
     },
     {
      "id": "aria-prohibited-attr",
      "impact": null,
-     "nodes": 106
+     "nodes": 63
     },
     {
      "id": "aria-required-attr",
      "impact": null,
-     "nodes": 81
+     "nodes": 38
     },
     {
      "id": "aria-roles",
      "impact": null,
-     "nodes": 81
+     "nodes": 38
     },
     {
      "id": "aria-valid-attr-value",
      "impact": null,
-     "nodes": 106
+     "nodes": 63
     },
     {
      "id": "aria-valid-attr",
      "impact": null,
-     "nodes": 106
+     "nodes": 63
     },
     {
      "id": "avoid-inline-spacing",
      "impact": null,
-     "nodes": 79
+     "nodes": 45
     },
     {
      "id": "button-name",
      "impact": null,
-     "nodes": 13
+     "nodes": 14
     },
     {
      "id": "bypass",
@@ -196,17 +196,17 @@
     {
      "id": "empty-heading",
      "impact": null,
-     "nodes": 8
+     "nodes": 9
     },
     {
      "id": "form-field-multiple-labels",
      "impact": null,
-     "nodes": 11
+     "nodes": 10
     },
     {
      "id": "heading-order",
      "impact": null,
-     "nodes": 8
+     "nodes": 9
     },
     {
      "id": "html-has-lang",
@@ -231,12 +231,12 @@
     {
      "id": "label-title-only",
      "impact": null,
-     "nodes": 11
+     "nodes": 10
     },
     {
      "id": "label",
      "impact": null,
-     "nodes": 11
+     "nodes": 10
     },
     {
      "id": "landmark-banner-is-top-level",
@@ -271,17 +271,17 @@
     {
      "id": "link-name",
      "impact": null,
-     "nodes": 63
+     "nodes": 38
     },
     {
      "id": "list",
      "impact": null,
-     "nodes": 5
+     "nodes": 4
     },
     {
      "id": "listitem",
      "impact": null,
-     "nodes": 51
+     "nodes": 26
     },
     {
      "id": "meta-viewport-large",
@@ -296,7 +296,7 @@
     {
      "id": "nested-interactive",
      "impact": null,
-     "nodes": 101
+     "nodes": 58
     },
     {
      "id": "page-has-heading-one",
@@ -311,7 +311,7 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 724
+     "nodes": 485
     },
     {
      "id": "scrollable-region-focusable",
@@ -331,12 +331,12 @@
     {
      "id": "tabindex",
      "impact": null,
-     "nodes": 78
+     "nodes": 35
     },
     {
      "id": "target-size",
      "impact": null,
-     "nodes": 86
+     "nodes": 60
     }
    ],
    "inapplicable": [
@@ -384,7 +384,7 @@
   },
   "/stories": {
    "url": "file:///home/user/journeys/index.html#/stories",
-   "timestamp": "2026-11-18T17:14:07.344Z",
+   "timestamp": "2026-11-18T22:44:37.603Z",
    "violations": [],
    "incomplete": [
     {
@@ -437,7 +437,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 82
+     "nodes": 50
     },
     {
      "id": "aria-conditional-attr",
@@ -452,7 +452,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 168
+     "nodes": 100
     },
     {
      "id": "aria-prohibited-attr",
@@ -673,7 +673,7 @@
   },
   "/story/story_19_excavation": {
    "url": "file:///home/user/journeys/index.html#/story/story_19_excavation",
-   "timestamp": "2026-11-18T17:14:08.435Z",
+   "timestamp": "2026-11-18T22:44:38.694Z",
    "violations": [],
    "incomplete": [
     {
@@ -687,7 +687,7 @@
      },
      "errorNode": {
       "selector": [
-       ".of1.slot0.badgewrap:nth-child(1) > .seq.j1908[data-place=\"pl_elephant_point\"]"
+       ".j1908.seq[data-place=\"pl_elephant_point\"]"
       ],
       "source": "<span class=\"seq j1908\" data-place=\"pl_elephant_point\">8</span>",
       "xpath": [
@@ -697,7 +697,7 @@
        "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > span"
       ],
       "nodeIndexes": [
-       1637
+       1165
       ],
       "fromFrame": false
      },
@@ -725,7 +725,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 83
+     "nodes": 51
     },
     {
      "id": "aria-conditional-attr",
@@ -745,7 +745,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 188
+     "nodes": 120
     },
     {
      "id": "aria-prohibited-attr",
@@ -1016,7 +1016,7 @@
   },
   "/archive/d_19070416_osborn_bumpus": {
    "url": "file:///home/user/journeys/index.html#/archive/d_19070416_osborn_bumpus",
-   "timestamp": "2026-11-18T17:14:09.714Z",
+   "timestamp": "2026-11-18T22:44:40.002Z",
    "violations": [],
    "incomplete": [
     {
@@ -1111,7 +1111,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 82
+     "nodes": 50
     },
     {
      "id": "aria-conditional-attr",
@@ -1126,7 +1126,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 176
+     "nodes": 108
     },
     {
      "id": "aria-prohibited-attr",
@@ -1371,7 +1371,7 @@
   },
   "/network": {
    "url": "file:///home/user/journeys/index.html#/network",
-   "timestamp": "2026-11-18T17:14:12.787Z",
+   "timestamp": "2026-11-18T22:44:42.923Z",
    "violations": [],
    "incomplete": [
     {
@@ -1418,6 +1418,81 @@
          "id": "color-contrast",
          "data": {
           "contrastRatio": 0,
+          "fontSize": "8.6pt (11.52px)",
+          "fontWeight": "normal",
+          "messageKey": "bgOverlap",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because it is overlapped by another element"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span class=\"tag \">asserted</span>",
+       "target": [
+        "#netviewhead > .tag"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "10.1pt (13.44px)",
+          "fontWeight": "bold",
+          "messageKey": "bgOverlap",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because it is overlapped by another element"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<b>Persons</b>",
+       "target": [
+        "#netviewhead > b"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "10.1pt (13.44px)",
+          "fontWeight": "normal",
+          "messageKey": "bgOverlap",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because it is overlapped by another element"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span class=\"rule\">A tie exists only where a provided text asserts it; the four kinds of evidence are kept apart and can be shown separately.</span>",
+       "target": [
+        ".rule"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
           "fontSize": "10.1pt (13.44px)",
           "fontWeight": "normal",
           "messageKey": "bgOverlap",
@@ -1450,7 +1525,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1477,19 +1552,12 @@
           "contrastRatio": 0,
           "fontSize": "8.3pt (11px)",
           "fontWeight": "normal",
-          "messageKey": "imgNode",
+          "messageKey": "bgOverlap",
           "expectedContrastRatio": "4.5:1"
          },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
+         "relatedNodes": [],
          "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
+         "message": "Element's background color could not be determined because it is overlapped by another element"
         }
        ],
        "all": [],
@@ -1499,7 +1567,7 @@
        "target": [
         "text[dx=\"23.60963575759565\"]"
        ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
       },
       {
        "any": [
@@ -1514,7 +1582,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1546,7 +1614,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1578,7 +1646,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1610,7 +1678,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1642,7 +1710,71 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
+           "target": [
+            "#netsvg"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because element contains an image node"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<text dx=\"11.919349550499538\" dy=\"4\">J. H. Startsman</text>",
+       "target": [
+        ".netnode:nth-child(7) > text[dx=\"11.919349550499538\"]"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.3pt (11px)",
+          "fontWeight": "normal",
+          "messageKey": "imgNode",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
+           "target": [
+            "#netsvg"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because element contains an image node"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<text dx=\"11.4\" dy=\"4\">E. W. Graham</text>",
+       "target": [
+        ".netnode:nth-child(8) > text[dx=\"11.4\"]"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.3pt (11px)",
+          "fontWeight": "normal",
+          "messageKey": "imgNode",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1674,7 +1806,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1706,7 +1838,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1738,7 +1870,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1765,12 +1897,19 @@
           "contrastRatio": 0,
           "fontSize": "8.3pt (11px)",
           "fontWeight": "normal",
-          "messageKey": "bgOverlap",
+          "messageKey": "imgNode",
           "expectedContrastRatio": "4.5:1"
          },
-         "relatedNodes": [],
+         "relatedNodes": [
+          {
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
+           "target": [
+            "#netsvg"
+           ]
+          }
+         ],
          "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
+         "message": "Element's background color could not be determined because element contains an image node"
         }
        ],
        "all": [],
@@ -1780,7 +1919,7 @@
        "target": [
         ".netnode:nth-child(14) > text[dx=\"13.957010852370436\"]"
        ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
       {
        "any": [
@@ -1795,7 +1934,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1827,7 +1966,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1859,7 +1998,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1891,7 +2030,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -1917,27 +2056,27 @@
     {
      "id": "aria-allowed-attr",
      "impact": null,
-     "nodes": 173
+     "nodes": 139
     },
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 239
+     "nodes": 171
     },
     {
      "id": "aria-command-name",
      "impact": null,
-     "nodes": 155
+     "nodes": 118
     },
     {
      "id": "aria-conditional-attr",
      "impact": null,
-     "nodes": 173
+     "nodes": 139
     },
     {
      "id": "aria-deprecated-role",
      "impact": null,
-     "nodes": 157
+     "nodes": 121
     },
     {
      "id": "aria-hidden-body",
@@ -1947,32 +2086,32 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 176
+     "nodes": 108
     },
     {
      "id": "aria-prohibited-attr",
      "impact": null,
-     "nodes": 173
+     "nodes": 139
     },
     {
      "id": "aria-required-attr",
      "impact": null,
-     "nodes": 157
+     "nodes": 121
     },
     {
      "id": "aria-roles",
      "impact": null,
-     "nodes": 157
+     "nodes": 121
     },
     {
      "id": "aria-valid-attr-value",
      "impact": null,
-     "nodes": 173
+     "nodes": 139
     },
     {
      "id": "aria-valid-attr",
      "impact": null,
-     "nodes": 173
+     "nodes": 139
     },
     {
      "id": "autocomplete-valid",
@@ -1982,12 +2121,12 @@
     {
      "id": "avoid-inline-spacing",
      "impact": null,
-     "nodes": 151
+     "nodes": 118
     },
     {
      "id": "button-name",
      "impact": null,
-     "nodes": 7
+     "nodes": 9
     },
     {
      "id": "bypass",
@@ -1997,7 +2136,7 @@
     {
      "id": "color-contrast",
      "impact": "serious",
-     "nodes": 113
+     "nodes": 115
     },
     {
      "id": "definition-list",
@@ -2017,7 +2156,7 @@
     {
      "id": "duplicate-id-aria",
      "impact": null,
-     "nodes": 13
+     "nodes": 14
     },
     {
      "id": "empty-heading",
@@ -2032,7 +2171,7 @@
     {
      "id": "form-field-multiple-labels",
      "impact": null,
-     "nodes": 11
+     "nodes": 12
     },
     {
      "id": "heading-order",
@@ -2052,12 +2191,12 @@
     {
      "id": "label-title-only",
      "impact": null,
-     "nodes": 11
+     "nodes": 12
     },
     {
      "id": "label",
      "impact": null,
-     "nodes": 8
+     "nodes": 9
     },
     {
      "id": "landmark-banner-is-top-level",
@@ -2107,7 +2246,7 @@
     {
      "id": "nested-interactive",
      "impact": null,
-     "nodes": 188
+     "nodes": 154
     },
     {
      "id": "page-has-heading-one",
@@ -2117,7 +2256,7 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 676
+     "nodes": 610
     },
     {
      "id": "scope-attr-valid",
@@ -2147,7 +2286,7 @@
     {
      "id": "tabindex",
      "impact": null,
-     "nodes": 157
+     "nodes": 120
     },
     {
      "id": "table-duplicate-name",
@@ -2157,7 +2296,7 @@
     {
      "id": "target-size",
      "impact": null,
-     "nodes": 41
+     "nodes": 44
     },
     {
      "id": "td-headers-attr",
@@ -2214,7 +2353,7 @@
   },
   "/person/p_grant": {
    "url": "file:///home/user/journeys/index.html#/person/p_grant",
-   "timestamp": "2026-11-18T17:14:13.894Z",
+   "timestamp": "2026-11-18T22:44:43.939Z",
    "violations": [],
    "incomplete": [
     {
@@ -2267,7 +2406,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 82
+     "nodes": 50
     },
     {
      "id": "aria-conditional-attr",
@@ -2282,7 +2421,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 181
+     "nodes": 113
     },
     {
      "id": "aria-prohibited-attr",
@@ -2527,7 +2666,7 @@
   },
   "/timeline": {
    "url": "file:///home/user/journeys/index.html#/timeline",
-   "timestamp": "2026-11-18T17:14:15.211Z",
+   "timestamp": "2026-11-18T22:44:45.115Z",
    "violations": [],
    "incomplete": [
     {
@@ -2673,7 +2812,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 83
+     "nodes": 51
     },
     {
      "id": "aria-conditional-attr",
@@ -2693,7 +2832,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 241
+     "nodes": 173
     },
     {
      "id": "aria-prohibited-attr",
@@ -2917,7 +3056,7 @@
   },
   "/published": {
    "url": "file:///home/user/journeys/index.html#/published",
-   "timestamp": "2026-11-18T17:14:16.349Z",
+   "timestamp": "2026-11-18T22:44:46.158Z",
    "violations": [],
    "incomplete": [
     {
@@ -2970,7 +3109,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 82
+     "nodes": 50
     },
     {
      "id": "aria-conditional-attr",
@@ -2985,7 +3124,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 168
+     "nodes": 100
     },
     {
      "id": "aria-prohibited-attr",
@@ -3222,7 +3361,7 @@
   },
   "/method/geocoding": {
    "url": "file:///home/user/journeys/index.html#/method/geocoding",
-   "timestamp": "2026-11-18T17:14:18.234Z",
+   "timestamp": "2026-11-18T22:44:47.556Z",
    "violations": [],
    "incomplete": [
     {
@@ -3275,7 +3414,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 83
+     "nodes": 51
     },
     {
      "id": "aria-conditional-attr",
@@ -3295,7 +3434,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 207
+     "nodes": 139
     },
     {
      "id": "aria-prohibited-attr",
@@ -3551,7 +3690,7 @@
   },
   "/about": {
    "url": "file:///home/user/journeys/index.html#/about",
-   "timestamp": "2026-11-18T17:14:19.386Z",
+   "timestamp": "2026-11-18T22:44:48.557Z",
    "violations": [],
    "incomplete": [
     {
@@ -3682,7 +3821,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 82
+     "nodes": 50
     },
     {
      "id": "aria-conditional-attr",
@@ -3697,7 +3836,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 174
+     "nodes": 106
     },
     {
      "id": "aria-prohibited-attr",
@@ -3938,7 +4077,7 @@
   },
   "/network/view/funding": {
    "url": "file:///home/user/journeys/index.html#/network/view/funding",
-   "timestamp": "2026-11-18T17:14:22.259Z",
+   "timestamp": "2026-11-18T22:44:51.431Z",
    "violations": [],
    "incomplete": [
     {
@@ -3962,7 +4101,7 @@
        "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(2) > div:nth-child(5) > table > thead:nth-child(2) > tr > th:nth-child(1)"
       ],
       "nodeIndexes": [
-       1949
+       1477
       ],
       "fromFrame": false
      },
@@ -3990,7 +4129,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 123
+     "nodes": 91
     },
     {
      "id": "aria-command-name",
@@ -4015,7 +4154,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 176
+     "nodes": 108
     },
     {
      "id": "aria-prohibited-attr",
@@ -4277,7 +4416,7 @@
   },
   "/map/stop/s1908_08": {
    "url": "file:///home/user/journeys/index.html#/map/stop/s1908_08",
-   "timestamp": "2026-11-18T17:14:24.475Z",
+   "timestamp": "2026-11-18T22:44:53.627Z",
    "violations": [],
    "incomplete": [
     {
@@ -4340,7 +4479,7 @@
        "html > body > main:nth-child(4) > section:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div > div:nth-child(1) > div > div:nth-child(4) > a"
       ],
       "nodeIndexes": [
-       1687
+       1383
       ],
       "fromFrame": false
      },
@@ -4362,27 +4501,27 @@
     {
      "id": "aria-allowed-attr",
      "impact": null,
-     "nodes": 112
+     "nodes": 89
     },
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 125
+     "nodes": 103
     },
     {
      "id": "aria-command-name",
      "impact": null,
-     "nodes": 74
+     "nodes": 51
     },
     {
      "id": "aria-conditional-attr",
      "impact": null,
-     "nodes": 112
+     "nodes": 89
     },
     {
      "id": "aria-deprecated-role",
      "impact": null,
-     "nodes": 83
+     "nodes": 60
     },
     {
      "id": "aria-dialog-name",
@@ -4397,42 +4536,42 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 178
+     "nodes": 130
     },
     {
      "id": "aria-prohibited-attr",
      "impact": null,
-     "nodes": 112
+     "nodes": 89
     },
     {
      "id": "aria-required-attr",
      "impact": null,
-     "nodes": 83
+     "nodes": 60
     },
     {
      "id": "aria-roles",
      "impact": null,
-     "nodes": 83
+     "nodes": 60
     },
     {
      "id": "aria-valid-attr-value",
      "impact": null,
-     "nodes": 112
+     "nodes": 89
     },
     {
      "id": "aria-valid-attr",
      "impact": null,
-     "nodes": 112
+     "nodes": 89
     },
     {
      "id": "avoid-inline-spacing",
      "impact": null,
-     "nodes": 90
+     "nodes": 102
     },
     {
      "id": "button-name",
      "impact": null,
-     "nodes": 13
+     "nodes": 14
     },
     {
      "id": "bypass",
@@ -4462,17 +4601,17 @@
     {
      "id": "empty-heading",
      "impact": null,
-     "nodes": 9
+     "nodes": 10
     },
     {
      "id": "form-field-multiple-labels",
      "impact": null,
-     "nodes": 11
+     "nodes": 10
     },
     {
      "id": "heading-order",
      "impact": null,
-     "nodes": 9
+     "nodes": 10
     },
     {
      "id": "html-has-lang",
@@ -4487,22 +4626,22 @@
     {
      "id": "image-alt",
      "impact": null,
-     "nodes": 55
+     "nodes": 60
     },
     {
      "id": "image-redundant-alt",
      "impact": null,
-     "nodes": 55
+     "nodes": 60
     },
     {
      "id": "label-title-only",
      "impact": null,
-     "nodes": 11
+     "nodes": 10
     },
     {
      "id": "label",
      "impact": null,
-     "nodes": 11
+     "nodes": 10
     },
     {
      "id": "landmark-banner-is-top-level",
@@ -4537,17 +4676,17 @@
     {
      "id": "link-name",
      "impact": null,
-     "nodes": 77
+     "nodes": 61
     },
     {
      "id": "list",
      "impact": null,
-     "nodes": 6
+     "nodes": 5
     },
     {
      "id": "listitem",
      "impact": null,
-     "nodes": 53
+     "nodes": 37
     },
     {
      "id": "meta-viewport-large",
@@ -4562,7 +4701,7 @@
     {
      "id": "nested-interactive",
      "impact": null,
-     "nodes": 102
+     "nodes": 79
     },
     {
      "id": "page-has-heading-one",
@@ -4572,12 +4711,12 @@
     {
      "id": "presentation-role-conflict",
      "impact": null,
-     "nodes": 55
+     "nodes": 60
     },
     {
      "id": "region",
      "impact": null,
-     "nodes": 837
+     "nodes": 698
     },
     {
      "id": "scrollable-region-focusable",
@@ -4597,12 +4736,12 @@
     {
      "id": "tabindex",
      "impact": null,
-     "nodes": 79
+     "nodes": 56
     },
     {
      "id": "target-size",
      "impact": null,
-     "nodes": 88
+     "nodes": 72
     }
    ],
    "inapplicable": [
@@ -4649,7 +4788,7 @@
   },
   "/map@globe": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T17:14:27.573Z",
+   "timestamp": "2026-11-18T22:44:56.550Z",
    "violations": [],
    "incomplete": [
     {
@@ -4687,6 +4826,27 @@
        "html": "<span aria-hidden=\"true\">☰</span>",
        "target": [
         "#panelToggle > span[aria-hidden=\"true\"]"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "messageKey": "nonBmp"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element content contains only non-text characters"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<button onclick=\"MapView.globeZoom(0.8)\" aria-label=\"Zoom the globe out\">−</button>",
+       "target": [
+        "button[onclick=\"MapView.globeZoom(0.8)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
       },
@@ -4760,7 +4920,7 @@
        "all": [],
        "none": [],
        "impact": "serious",
-       "html": "<b>Journeys</b>",
+       "html": "<b>Journey</b>",
        "target": [
         "#maplegend > .legend > .row:nth-child(2) > b"
        ],
@@ -4798,7 +4958,7 @@
        "all": [],
        "none": [],
        "impact": "serious",
-       "html": "<span class=\"muted\">(hue, badge shape, arrowhead)</span>",
+       "html": "<span class=\"muted\">(hue, badge shape, arrowhead; the other year is hidden)</span>",
        "target": [
         "#maplegend > .legend > .row:nth-child(2) > .muted"
        ],
@@ -4834,31 +4994,6 @@
         {
          "id": "color-contrast",
          "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.9pt (11.84px)",
-          "fontWeight": "normal",
-          "messageKey": "elmPartiallyObscuring",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it partially overlaps other elements"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<div class=\"row\">",
-       "target": [
-        "#maplegend > .legend > .row:nth-child(4)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
           "fgColor": "#fdf8f3",
           "bgColor": "#c2643f",
           "contrastRatio": 3.83,
@@ -4871,7 +5006,7 @@
           {
            "html": "<span class=\"seq j1908\">7</span>",
            "target": [
-            "#maplegend > .legend > .row:nth-child(4) > .seq.j1908"
+            "#maplegend > .legend > .row:nth-child(3) > .seq.j1908"
            ]
           }
          ],
@@ -4884,7 +5019,7 @@
        "impact": "serious",
        "html": "<span class=\"seq j1908\">7</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(4) > .seq.j1908"
+        "#maplegend > .legend > .row:nth-child(3) > .seq.j1908"
        ],
        "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
       },
@@ -4922,45 +5057,7 @@
        "impact": "serious",
        "html": "<div class=\"row\">",
        "target": [
-        "#maplegend > .legend > .row:nth-child(5)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.9pt (11.84px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<details class=\"legend\" open=\"\">",
-           "target": [
-            "#maplegend > .legend"
-           ]
-          },
-          {
-           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
-           "target": [
-            "svg[role=\"img\"]"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<div class=\"row\">",
-       "target": [
-        "#maplegend > .legend > .row:nth-child(6)"
+        "#maplegend > .legend > .row:nth-child(4)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -4998,7 +5095,7 @@
        "impact": "serious",
        "html": "<b>Source status of a place</b>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(7) > b"
+        "#maplegend > .legend > .row:nth-child(6) > b"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5036,7 +5133,45 @@
        "impact": "serious",
        "html": "<span class=\"muted\">(marker form)</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(7) > .muted"
+        "#maplegend > .legend > .row:nth-child(6) > .muted"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.9pt (11.84px)",
+          "fontWeight": "normal",
+          "messageKey": "imgNode",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<details class=\"legend\" open=\"\">",
+           "target": [
+            "#maplegend > .legend"
+           ]
+          },
+          {
+           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
+           "target": [
+            "svg[role=\"img\"]"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because element contains an image node"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<div class=\"row\">",
+       "target": [
+        "#maplegend > .legend > .row:nth-child(7)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5313,44 +5448,6 @@
          "data": {
           "contrastRatio": 0,
           "fontSize": "8.9pt (11.84px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<details class=\"legend\" open=\"\">",
-           "target": [
-            "#maplegend > .legend"
-           ]
-          },
-          {
-           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
-           "target": [
-            "svg[role=\"img\"]"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<div class=\"row\">",
-       "target": [
-        "#maplegend > .legend > .row:nth-child(15)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.9pt (11.84px)",
           "fontWeight": "bold",
           "messageKey": "imgNode",
           "expectedContrastRatio": "4.5:1"
@@ -5378,7 +5475,7 @@
        "impact": "serious",
        "html": "<b>Connectors</b>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(16) > b"
+        "#maplegend > .legend > .row:nth-child(15) > b"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5416,7 +5513,7 @@
        "impact": "serious",
        "html": "<span class=\"muted\">(all schematic; the arrow gives the direction of travel)</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(16) > .muted"
+        "#maplegend > .legend > .row:nth-child(15) > .muted"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5454,7 +5551,7 @@
        "impact": "serious",
        "html": "<div class=\"row\"><svg width=\"28\" height=\"8\" aria-hidden=\"true\" style=\"vertical-align:middle\"><line x1=\"0\" y1=\"4\" x2=\"28\" y2=\"4\" style=\"stroke:var(--ink-2)\" stroke-width=\"2.5\"></line></svg> mode stated in a source</div>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(17)"
+        "#maplegend > .legend > .row:nth-child(16)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5492,7 +5589,7 @@
        "impact": "serious",
        "html": "<div class=\"row\"><svg width=\"28\" height=\"8\" aria-hidden=\"true\" style=\"vertical-align:middle\"><line x1=\"0\" y1=\"4\" x2=\"28\" y2=\"4\" style=\"stroke:var(--ink-2)\" stroke-width=\"2.5\" stroke-dasharray=\"8 6\"></line></svg> mode not stated</div>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(18)"
+        "#maplegend > .legend > .row:nth-child(17)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5530,7 +5627,7 @@
        "impact": "serious",
        "html": "<div class=\"row\"><svg width=\"28\" height=\"8\" aria-hidden=\"true\" style=\"vertical-align:middle\"><line x1=\"0\" y1=\"4\" x2=\"28\" y2=\"4\" style=\"stroke:var(--ink-2)\" stroke-width=\"2.5\" stroke-dasharray=\"2 6\"></line></svg> mode inferred from the sequence</div>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(19)"
+        "#maplegend > .legend > .row:nth-child(18)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5568,7 +5665,7 @@
        "impact": "serious",
        "html": "<div class=\"row\">",
        "target": [
-        "#maplegend > .legend > .row:nth-child(20)"
+        "#maplegend > .legend > .row:nth-child(19)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5606,7 +5703,7 @@
        "impact": "serious",
        "html": "<div class=\"row\"><svg width=\"28\" height=\"8\" aria-hidden=\"true\" style=\"vertical-align:middle\"><line x1=\"0\" y1=\"4\" x2=\"28\" y2=\"4\" style=\"stroke:var(--model)\" stroke-width=\"1.5\" stroke-dasharray=\"6 6\"></line></svg> context arc — Adams mammoth (Tale §1)</div>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(21)"
+        "#maplegend > .legend > .row:nth-child(20)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5669,7 +5766,7 @@
        "impact": "serious",
        "html": "<a href=\"#/method/geocoding\">All stops and connectors as tables<span aria-hidden=\"true\"> →</span> (Method › Geocoding)</a>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"]"
+        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
       },
@@ -5690,7 +5787,7 @@
        "impact": "serious",
        "html": "<span aria-hidden=\"true\"> →</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
+        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
       },
@@ -5715,7 +5812,32 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">New York</text>",
        "target": [
-        ".pt:nth-child(51) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(32) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.3pt (11px)",
+          "fontWeight": "normal",
+          "messageKey": "bgOverlap",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because it is overlapped by another element"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Montreal</text>",
+       "target": [
+        ".pt:nth-child(33) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
       },
@@ -5747,71 +5869,7 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Seattle</text>",
        "target": [
-        ".pt:nth-child(52) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
-           "target": [
-            "svg[role=\"img\"]"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Dawson</text>",
-       "target": [
-        ".pt:nth-child(53) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
-           "target": [
-            "svg[role=\"img\"]"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">St Michael</text>",
-       "target": [
-        ".pt:nth-child(56) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(34) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5843,7 +5901,7 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Nome</text>",
        "target": [
-        ".pt:nth-child(57) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(35) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5868,7 +5926,7 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Keewalik</text>",
        "target": [
-        ".pt:nth-child(59) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(38) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
       },
@@ -5900,34 +5958,9 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Elephant Point</text>",
        "target": [
-        ".pt:nth-child(61) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(39) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Montreal</text>",
-       "target": [
-        ".pt:nth-child(63) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
       },
       {
        "any": [
@@ -6037,7 +6070,7 @@
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 124
+     "nodes": 102
     },
     {
      "id": "aria-conditional-attr",
@@ -6057,7 +6090,7 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 175
+     "nodes": 127
     },
     {
      "id": "aria-prohibited-attr",
@@ -6087,12 +6120,12 @@
     {
      "id": "avoid-inline-spacing",
      "impact": null,
-     "nodes": 109
+     "nodes": 80
     },
     {
      "id": "button-name",
      "impact": null,
-     "nodes": 15
+     "nodes": 16
     },
     {
      "id": "bypass",
@@ -6102,7 +6135,7 @@
     {
      "id": "color-contrast",
      "impact": "serious",
-     "nodes": 55
+     "nodes": 43
     },
     {
      "id": "definition-list",
@@ -6127,17 +6160,17 @@
     {
      "id": "empty-heading",
      "impact": null,
-     "nodes": 8
+     "nodes": 9
     },
     {
      "id": "form-field-multiple-labels",
      "impact": null,
-     "nodes": 11
+     "nodes": 10
     },
     {
      "id": "heading-order",
      "impact": null,
-     "nodes": 8
+     "nodes": 9
     },
     {
      "id": "html-has-lang",
@@ -6152,12 +6185,12 @@
     {
      "id": "label-title-only",
      "impact": null,
-     "nodes": 11
+     "nodes": 10
     },
     {
      "id": "label",
      "impact": null,
-     "nodes": 11
+     "nodes": 10
     },
     {
      "id": "landmark-banner-is-top-level",
@@ -6190,19 +6223,24 @@
      "nodes": 7
     },
     {
+     "id": "link-in-text-block",
+     "impact": "serious",
+     "nodes": 3
+    },
+    {
      "id": "link-name",
      "impact": null,
-     "nodes": 69
+     "nodes": 53
     },
     {
      "id": "list",
      "impact": null,
-     "nodes": 5
+     "nodes": 4
     },
     {
      "id": "listitem",
      "impact": null,
-     "nodes": 51
+     "nodes": 35
     },
     {
      "id": "meta-viewport-large",
@@ -6227,7 +6265,7 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 922
+     "nodes": 701
     },
     {
      "id": "scrollable-region-focusable",
@@ -6257,7 +6295,7 @@
     {
      "id": "target-size",
      "impact": null,
-     "nodes": 80
+     "nodes": 64
     }
    ],
    "inapplicable": [
@@ -6310,7 +6348,7 @@
  "dark": {
   "/map": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T17:14:32.933Z",
+   "timestamp": "2026-11-18T22:45:02.307Z",
    "violations": [],
    "incomplete": [
     {
@@ -6408,7 +6446,7 @@
        "html > body > main:nth-child(4) > section:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div > a:nth-child(1)"
       ],
       "nodeIndexes": [
-       1554
+       1082
       ],
       "fromFrame": false
      },
@@ -6431,7 +6469,7 @@
   },
   "/stories": {
    "url": "file:///home/user/journeys/index.html#/stories",
-   "timestamp": "2026-11-18T17:14:33.946Z",
+   "timestamp": "2026-11-18T22:45:03.244Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -6885,7 +6923,7 @@
   },
   "/story/story_19_excavation": {
    "url": "file:///home/user/journeys/index.html#/story/story_19_excavation",
-   "timestamp": "2026-11-18T17:14:34.961Z",
+   "timestamp": "2026-11-18T22:45:04.218Z",
    "violations": [],
    "incomplete": [
     {
@@ -6899,7 +6937,7 @@
      },
      "errorNode": {
       "selector": [
-       ".of1.slot0.badgewrap:nth-child(1) > .seq.j1908[data-place=\"pl_elephant_point\"]"
+       ".j1908.seq[data-place=\"pl_elephant_point\"]"
       ],
       "source": "<span class=\"seq j1908\" data-place=\"pl_elephant_point\">8</span>",
       "xpath": [
@@ -6909,7 +6947,7 @@
        "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > span"
       ],
       "nodeIndexes": [
-       1637
+       1165
       ],
       "fromFrame": false
      },
@@ -6934,7 +6972,7 @@
      },
      "errorNode": {
       "selector": [
-       ".of1.slot0.badgewrap:nth-child(1) > .seq.j1908[data-place=\"pl_elephant_point\"]"
+       ".j1908.seq[data-place=\"pl_elephant_point\"]"
       ],
       "source": "<span class=\"seq j1908\" data-place=\"pl_elephant_point\">8</span>",
       "xpath": [
@@ -6944,7 +6982,7 @@
        "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > span"
       ],
       "nodeIndexes": [
-       1637
+       1165
       ],
       "fromFrame": false
      },
@@ -6974,7 +7012,7 @@
   },
   "/archive/d_19070416_osborn_bumpus": {
    "url": "file:///home/user/journeys/index.html#/archive/d_19070416_osborn_bumpus",
-   "timestamp": "2026-11-18T17:14:36.086Z",
+   "timestamp": "2026-11-18T22:45:05.343Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -7937,7 +7975,7 @@
        "impact": "serious",
        "html": "<b>PI header (verbatim)</b>",
        "target": [
-        "div:nth-child(6) > b"
+        ".docmeta > div:nth-child(6) > b"
        ],
        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 7:1"
       },
@@ -7971,7 +8009,7 @@
        "impact": "serious",
        "html": "<b>Also named in the text</b>",
        "target": [
-        ".docmeta > div:nth-child(7) > b"
+        "div:nth-child(7) > b"
        ],
        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 7:1"
       },
@@ -8195,7 +8233,7 @@
   },
   "/network": {
    "url": "file:///home/user/journeys/index.html#/network",
-   "timestamp": "2026-11-18T17:14:38.935Z",
+   "timestamp": "2026-11-18T22:45:08.089Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -8272,6 +8310,40 @@
        "all": [],
        "none": [],
        "impact": "serious",
+       "html": "<span class=\"muted\">line width = attestations of every kind between the two; click a line for the ties behind it</span>",
+       "target": [
+        ".netmore > .row:nth-child(2) > .muted"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.1pt (13.44px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#9a958b",
+          "bgColor": "#1c1f23",
+          "contrastRatio": 5.54,
+          "fontSize": "10.1pt (13.44px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<div id=\"netcontrols\">",
+           "target": [
+            "#netcontrols"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.1pt (13.44px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
        "html": "<span class=\"muted\">(correspondence and stated ties; PI ties are undated)</span>",
        "target": [
         "fieldset:nth-child(2) > .muted"
@@ -8306,7 +8378,7 @@
        "all": [],
        "none": [],
        "impact": "serious",
-       "html": "<div class=\"row small muted\" id=\"netstat\" aria-live=\"polite\">46 nodes · 109 ties (153 attestations) · asserted ties only · rules: Method &amp; Data › Network</div>",
+       "html": "<div class=\"row small muted\" id=\"netstat\" aria-live=\"polite\">46 nodes · 72 pairs (109 ties, 153 attestations; one line per pair) · asserted ties only · rules: Method &amp; Data › Network</div>",
        "target": [
         "#netstat"
        ],
@@ -8396,6 +8468,81 @@
          "id": "color-contrast",
          "data": {
           "contrastRatio": 0,
+          "fontSize": "8.6pt (11.52px)",
+          "fontWeight": "normal",
+          "messageKey": "bgOverlap",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because it is overlapped by another element"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span class=\"tag \">asserted</span>",
+       "target": [
+        "#netviewhead > .tag"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "10.1pt (13.44px)",
+          "fontWeight": "bold",
+          "messageKey": "bgOverlap",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because it is overlapped by another element"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<b>Persons</b>",
+       "target": [
+        "#netviewhead > b"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "10.1pt (13.44px)",
+          "fontWeight": "normal",
+          "messageKey": "bgOverlap",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because it is overlapped by another element"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span class=\"rule\">A tie exists only where a provided text asserts it; the four kinds of evidence are kept apart and can be shown separately.</span>",
+       "target": [
+        ".rule"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
           "fontSize": "10.1pt (13.44px)",
           "fontWeight": "normal",
           "messageKey": "bgOverlap",
@@ -8428,7 +8575,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8455,19 +8602,12 @@
           "contrastRatio": 0,
           "fontSize": "8.3pt (11px)",
           "fontWeight": "normal",
-          "messageKey": "imgNode",
+          "messageKey": "bgOverlap",
           "expectedContrastRatio": "4.5:1"
          },
-         "relatedNodes": [
-          {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
-           "target": [
-            "#netsvg"
-           ]
-          }
-         ],
+         "relatedNodes": [],
          "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
+         "message": "Element's background color could not be determined because it is overlapped by another element"
         }
        ],
        "all": [],
@@ -8477,7 +8617,7 @@
        "target": [
         "text[dx=\"23.60963575759565\"]"
        ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
       },
       {
        "any": [
@@ -8492,7 +8632,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8524,7 +8664,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8556,7 +8696,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8588,7 +8728,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8620,7 +8760,71 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
+           "target": [
+            "#netsvg"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because element contains an image node"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<text dx=\"11.919349550499538\" dy=\"4\">J. H. Startsman</text>",
+       "target": [
+        ".netnode:nth-child(7) > text[dx=\"11.919349550499538\"]"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.3pt (11px)",
+          "fontWeight": "normal",
+          "messageKey": "imgNode",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
+           "target": [
+            "#netsvg"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because element contains an image node"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<text dx=\"11.4\" dy=\"4\">E. W. Graham</text>",
+       "target": [
+        ".netnode:nth-child(8) > text[dx=\"11.4\"]"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.3pt (11px)",
+          "fontWeight": "normal",
+          "messageKey": "imgNode",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8652,7 +8856,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8684,7 +8888,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8716,7 +8920,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8743,12 +8947,19 @@
           "contrastRatio": 0,
           "fontSize": "8.3pt (11px)",
           "fontWeight": "normal",
-          "messageKey": "bgOverlap",
+          "messageKey": "imgNode",
           "expectedContrastRatio": "4.5:1"
          },
-         "relatedNodes": [],
+         "relatedNodes": [
+          {
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
+           "target": [
+            "#netsvg"
+           ]
+          }
+         ],
          "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
+         "message": "Element's background color could not be determined because element contains an image node"
         }
        ],
        "all": [],
@@ -8758,7 +8969,7 @@
        "target": [
         ".netnode:nth-child(14) > text[dx=\"13.957010852370436\"]"
        ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
       {
        "any": [
@@ -8773,7 +8984,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8805,7 +9016,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8837,7 +9048,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8869,7 +9080,7 @@
          },
          "relatedNodes": [
           {
-           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 609\">",
+           "html": "<svg id=\"netsvg\" role=\"group\" aria-labelledby=\"netTitle\" aria-describedby=\"netstat\" viewBox=\"0 0 1020 582\">",
            "target": [
             "#netsvg"
            ]
@@ -8895,12 +9106,12 @@
     {
      "id": "color-contrast-enhanced",
      "impact": "serious",
-     "nodes": 126
+     "nodes": 132
     },
     {
      "id": "color-contrast",
      "impact": "serious",
-     "nodes": 113
+     "nodes": 115
     }
    ],
    "inapplicable": [
@@ -8909,7 +9120,7 @@
   },
   "/person/p_grant": {
    "url": "file:///home/user/journeys/index.html#/person/p_grant",
-   "timestamp": "2026-11-18T17:14:39.900Z",
+   "timestamp": "2026-11-18T22:45:09.039Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -9230,7 +9441,7 @@
   },
   "/timeline": {
    "url": "file:///home/user/journeys/index.html#/timeline",
-   "timestamp": "2026-11-18T17:14:40.914Z",
+   "timestamp": "2026-11-18T22:45:10.000Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -9632,7 +9843,7 @@
   },
   "/published": {
    "url": "file:///home/user/journeys/index.html#/published",
-   "timestamp": "2026-11-18T17:14:41.984Z",
+   "timestamp": "2026-11-18T22:45:10.928Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -9783,7 +9994,7 @@
   },
   "/method/geocoding": {
    "url": "file:///home/user/journeys/index.html#/method/geocoding",
-   "timestamp": "2026-11-18T17:14:43.091Z",
+   "timestamp": "2026-11-18T22:45:12.036Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -10002,7 +10213,7 @@
   },
   "/about": {
    "url": "file:///home/user/journeys/index.html#/about",
-   "timestamp": "2026-11-18T17:14:44.091Z",
+   "timestamp": "2026-11-18T22:45:12.979Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -10318,7 +10529,7 @@
   },
   "/network/view/funding": {
    "url": "file:///home/user/journeys/index.html#/network/view/funding",
-   "timestamp": "2026-11-18T17:14:46.811Z",
+   "timestamp": "2026-11-18T22:45:15.626Z",
    "violations": [],
    "incomplete": [
     {
@@ -10342,7 +10553,7 @@
        "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(2) > div:nth-child(5) > table > thead:nth-child(2) > tr > th:nth-child(1)"
       ],
       "nodeIndexes": [
-       1949
+       1477
       ],
       "fromFrame": false
      },
@@ -10377,7 +10588,7 @@
        "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(2) > div:nth-child(5) > table > thead:nth-child(2) > tr > th:nth-child(1)"
       ],
       "nodeIndexes": [
-       1949
+       1477
       ],
       "fromFrame": false
      },
@@ -10403,7 +10614,7 @@
   },
   "/map/stop/s1908_08": {
    "url": "file:///home/user/journeys/index.html#/map/stop/s1908_08",
-   "timestamp": "2026-11-18T17:14:48.774Z",
+   "timestamp": "2026-11-18T22:45:17.659Z",
    "violations": [],
    "incomplete": [
     {
@@ -10501,7 +10712,7 @@
        "html > body > main:nth-child(4) > section:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div > div:nth-child(1) > div > div:nth-child(4) > a"
       ],
       "nodeIndexes": [
-       1692
+       1383
       ],
       "fromFrame": false
      },
@@ -10524,7 +10735,7 @@
   },
   "/map@globe": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T17:14:51.656Z",
+   "timestamp": "2026-11-18T22:45:20.378Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -10581,6 +10792,142 @@
           "fgColor": "#9a958b",
           "bgColor": "#1c1f23",
           "contrastRatio": 5.54,
+          "fontSize": "9.8pt (13.12px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<div class=\"card stopcard\">",
+           "target": [
+            ".stopcard"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.8pt (13.12px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<dt>Arrived by</dt>",
+       "target": [
+        "dt:nth-child(9)"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.8pt (13.12px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#9a958b",
+          "bgColor": "#1c1f23",
+          "contrastRatio": 5.54,
+          "fontSize": "9.8pt (13.12px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<div class=\"card stopcard\">",
+           "target": [
+            ".stopcard"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.8pt (13.12px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<dt>Sources</dt>",
+       "target": [
+        "dt:nth-child(11)"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.8pt (13.12px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#6fb0e0",
+          "bgColor": "#1d3446",
+          "contrastRatio": 5.49,
+          "fontSize": "8.6pt (11.52px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<span class=\"tag j1907\">1907</span>",
+           "target": [
+            ".j1907.tag"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.49 (foreground color: #6fb0e0, background color: #1d3446, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span class=\"tag j1907\">1907</span>",
+       "target": [
+        ".j1907.tag"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.49 (foreground color: #6fb0e0, background color: #1d3446, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#e8956e",
+          "bgColor": "#46281d",
+          "contrastRatio": 5.66,
+          "fontSize": "8.6pt (11.52px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<span class=\"tag j1908\">1908</span>",
+           "target": [
+            "div:nth-child(3) > .tag.j1908"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.66 (foreground color: #e8956e, background color: #46281d, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span class=\"tag j1908\">1908</span>",
+       "target": [
+        "div:nth-child(3) > .tag.j1908"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.66 (foreground color: #e8956e, background color: #46281d, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#9a958b",
+          "bgColor": "#1c1f23",
+          "contrastRatio": 5.54,
           "fontSize": "11.4pt (15.2px)",
           "fontWeight": "normal",
           "messageKey": null,
@@ -10601,9 +10948,9 @@
        "all": [],
        "none": [],
        "impact": "serious",
-       "html": "<h2 class=\"panel-h\" id=\"stoplist-h\">Chronological stops</h2>",
+       "html": "<h2 class=\"panel-h\">View</h2>",
        "target": [
-        "#stoplist-h"
+        ".section:nth-child(4) > .panel-h"
        ],
        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 11.4pt (15.2px), font weight: normal). Expected contrast ratio of 7:1"
       },
@@ -10615,7 +10962,7 @@
           "fgColor": "#9a958b",
           "bgColor": "#1c1f23",
           "contrastRatio": 5.54,
-          "fontSize": "9.6pt (12.8px)",
+          "fontSize": "11.4pt (15.2px)",
           "fontWeight": "normal",
           "messageKey": null,
           "expectedContrastRatio": "7:1"
@@ -10629,289 +10976,17 @@
           }
          ],
          "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 11.4pt (15.2px), font weight: normal). Expected contrast ratio of 7:1"
         }
        ],
        "all": [],
        "none": [],
        "impact": "serious",
-       "html": "<span class=\"d\"><b class=\"seq j1907\">1</b> 5 Jul 1907</span>",
+       "html": "<h2 class=\"panel-h\">Layers</h2>",
        "target": [
-        "a[href$=\"#/map/stop/s1907_01\"] > .d"
+        ".section:nth-child(5) > .panel-h"
        ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "9.6pt (12.8px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<section id=\"panel\" aria-label=\"Map layers and chronological stops\">",
-           "target": [
-            "#panel"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"d\"><b class=\"seq j1907\">2</b> 6 Jul 1907</span>",
-       "target": [
-        "a[href$=\"#/map/stop/s1907_02\"] > .d"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "9.6pt (12.8px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<section id=\"panel\" aria-label=\"Map layers and chronological stops\">",
-           "target": [
-            "#panel"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"d\"><b class=\"seq j1907\">3</b> 19 Jul 1907</span>",
-       "target": [
-        "a[href$=\"#/map/stop/s1907_03\"] > .d"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "9.6pt (12.8px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<section id=\"panel\" aria-label=\"Map layers and chronological stops\">",
-           "target": [
-            "#panel"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"d\"><b class=\"seq j1907\">4</b> 25 Jul 1907</span>",
-       "target": [
-        "a[href$=\"#/map/stop/s1907_04\"] > .d"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "9.6pt (12.8px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<section id=\"panel\" aria-label=\"Map layers and chronological stops\">",
-           "target": [
-            "#panel"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"d\"><b class=\"seq j1907\">5</b> 25 Jul 1907</span>",
-       "target": [
-        "a[href$=\"#/map/stop/s1907_05\"] > .d"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "9.6pt (12.8px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<section id=\"panel\" aria-label=\"Map layers and chronological stops\">",
-           "target": [
-            "#panel"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"d\"><b class=\"seq j1907\">6</b> 29 Jul 1907</span>",
-       "target": [
-        "a[href$=\"#/map/stop/s1907_06\"] > .d"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "9.6pt (12.8px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<section id=\"panel\" aria-label=\"Map layers and chronological stops\">",
-           "target": [
-            "#panel"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"d\"><b class=\"seq j1907\">7</b> 4 Aug 1907</span>",
-       "target": [
-        "a[href$=\"#/map/stop/s1907_07\"] > .d"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "9.6pt (12.8px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<section id=\"panel\" aria-label=\"Map layers and chronological stops\">",
-           "target": [
-            "#panel"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"d\"><b class=\"seq j1907\">8</b> 5 Aug 1907</span>",
-       "target": [
-        "a[href$=\"#/map/stop/s1907_08\"] > .d"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "9.6pt (12.8px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<section id=\"panel\" aria-label=\"Map layers and chronological stops\">",
-           "target": [
-            "#panel"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"d\"><b class=\"seq j1907\">9</b> 13 Aug 1907</span>",
-       "target": [
-        "a[href$=\"#/map/stop/s1907_09\"] > .d"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 7:1"
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 11.4pt (15.2px), font weight: normal). Expected contrast ratio of 7:1"
       }
      ]
     }
@@ -10956,34 +11031,21 @@
         {
          "id": "color-contrast-enhanced",
          "data": {
-          "fgColor": "#1e2328",
-          "bgColor": "#6cabda",
-          "contrastRatio": 6.39,
-          "fontSize": "7.9pt (10.5px)",
-          "fontWeight": "normal",
-          "messageKey": "shortTextContent",
-          "expectedContrastRatio": "7:1"
+          "messageKey": "nonBmp"
          },
-         "relatedNodes": [
-          {
-           "html": "<span class=\"seq j1907\">7</span>",
-           "target": [
-            "#maplegend > .legend > .row:nth-child(3) > .seq.j1907"
-           ]
-          }
-         ],
+         "relatedNodes": [],
          "impact": "serious",
-         "message": "Element content is too short to determine if it is actual text content"
+         "message": "Element content contains only non-text characters"
         }
        ],
        "all": [],
        "none": [],
        "impact": "serious",
-       "html": "<span class=\"seq j1907\">7</span>",
+       "html": "<button onclick=\"MapView.globeZoom(0.8)\" aria-label=\"Zoom the globe out\">−</button>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(3) > .seq.j1907"
+        "button[onclick=\"MapView.globeZoom(0.8)\"]"
        ],
-       "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+       "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
       },
       {
        "any": [
@@ -11002,7 +11064,7 @@
           {
            "html": "<span class=\"seq j1908\">7</span>",
            "target": [
-            "#maplegend > .legend > .row:nth-child(4) > .seq.j1908"
+            "#maplegend > .legend > .row:nth-child(3) > .seq.j1908"
            ]
           }
          ],
@@ -11015,7 +11077,7 @@
        "impact": "serious",
        "html": "<span class=\"seq j1908\">7</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(4) > .seq.j1908"
+        "#maplegend > .legend > .row:nth-child(3) > .seq.j1908"
        ],
        "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
       },
@@ -11036,7 +11098,7 @@
        "impact": "serious",
        "html": "<span aria-hidden=\"true\"> →</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
+        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
       }
@@ -11077,6 +11139,27 @@
        "html": "<span aria-hidden=\"true\">☰</span>",
        "target": [
         "#panelToggle > span[aria-hidden=\"true\"]"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "messageKey": "nonBmp"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element content contains only non-text characters"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<button onclick=\"MapView.globeZoom(0.8)\" aria-label=\"Zoom the globe out\">−</button>",
+       "target": [
+        "button[onclick=\"MapView.globeZoom(0.8)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
       },
@@ -11150,7 +11233,7 @@
        "all": [],
        "none": [],
        "impact": "serious",
-       "html": "<b>Journeys</b>",
+       "html": "<b>Journey</b>",
        "target": [
         "#maplegend > .legend > .row:nth-child(2) > b"
        ],
@@ -11188,7 +11271,7 @@
        "all": [],
        "none": [],
        "impact": "serious",
-       "html": "<span class=\"muted\">(hue, badge shape, arrowhead)</span>",
+       "html": "<span class=\"muted\">(hue, badge shape, arrowhead; the other year is hidden)</span>",
        "target": [
         "#maplegend > .legend > .row:nth-child(2) > .muted"
        ],
@@ -11227,12 +11310,25 @@
           "contrastRatio": 0,
           "fontSize": "8.9pt (11.84px)",
           "fontWeight": "normal",
-          "messageKey": "elmPartiallyObscuring",
+          "messageKey": "imgNode",
           "expectedContrastRatio": "4.5:1"
          },
-         "relatedNodes": [],
+         "relatedNodes": [
+          {
+           "html": "<details class=\"legend\" open=\"\">",
+           "target": [
+            "#maplegend > .legend"
+           ]
+          },
+          {
+           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
+           "target": [
+            "svg[role=\"img\"]"
+           ]
+          }
+         ],
          "impact": "serious",
-         "message": "Element's background color could not be determined because it partially overlaps other elements"
+         "message": "Element's background color could not be determined because element contains an image node"
         }
        ],
        "all": [],
@@ -11241,82 +11337,6 @@
        "html": "<div class=\"row\">",
        "target": [
         "#maplegend > .legend > .row:nth-child(4)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.9pt (11.84px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<details class=\"legend\" open=\"\">",
-           "target": [
-            "#maplegend > .legend"
-           ]
-          },
-          {
-           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
-           "target": [
-            "svg[role=\"img\"]"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<div class=\"row\">",
-       "target": [
-        "#maplegend > .legend > .row:nth-child(5)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.9pt (11.84px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<details class=\"legend\" open=\"\">",
-           "target": [
-            "#maplegend > .legend"
-           ]
-          },
-          {
-           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
-           "target": [
-            "svg[role=\"img\"]"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<div class=\"row\">",
-       "target": [
-        "#maplegend > .legend > .row:nth-child(6)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -11354,7 +11374,7 @@
        "impact": "serious",
        "html": "<b>Source status of a place</b>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(7) > b"
+        "#maplegend > .legend > .row:nth-child(6) > b"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -11392,7 +11412,45 @@
        "impact": "serious",
        "html": "<span class=\"muted\">(marker form)</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(7) > .muted"
+        "#maplegend > .legend > .row:nth-child(6) > .muted"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.9pt (11.84px)",
+          "fontWeight": "normal",
+          "messageKey": "imgNode",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<details class=\"legend\" open=\"\">",
+           "target": [
+            "#maplegend > .legend"
+           ]
+          },
+          {
+           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
+           "target": [
+            "svg[role=\"img\"]"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because element contains an image node"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<div class=\"row\">",
+       "target": [
+        "#maplegend > .legend > .row:nth-child(7)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -11669,44 +11727,6 @@
          "data": {
           "contrastRatio": 0,
           "fontSize": "8.9pt (11.84px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<details class=\"legend\" open=\"\">",
-           "target": [
-            "#maplegend > .legend"
-           ]
-          },
-          {
-           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
-           "target": [
-            "svg[role=\"img\"]"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<div class=\"row\">",
-       "target": [
-        "#maplegend > .legend > .row:nth-child(15)"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.9pt (11.84px)",
           "fontWeight": "bold",
           "messageKey": "imgNode",
           "expectedContrastRatio": "4.5:1"
@@ -11734,7 +11754,7 @@
        "impact": "serious",
        "html": "<b>Connectors</b>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(16) > b"
+        "#maplegend > .legend > .row:nth-child(15) > b"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -11772,7 +11792,7 @@
        "impact": "serious",
        "html": "<span class=\"muted\">(all schematic; the arrow gives the direction of travel)</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(16) > .muted"
+        "#maplegend > .legend > .row:nth-child(15) > .muted"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -11810,7 +11830,7 @@
        "impact": "serious",
        "html": "<div class=\"row\"><svg width=\"28\" height=\"8\" aria-hidden=\"true\" style=\"vertical-align:middle\"><line x1=\"0\" y1=\"4\" x2=\"28\" y2=\"4\" style=\"stroke:var(--ink-2)\" stroke-width=\"2.5\"></line></svg> mode stated in a source</div>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(17)"
+        "#maplegend > .legend > .row:nth-child(16)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -11848,7 +11868,7 @@
        "impact": "serious",
        "html": "<div class=\"row\"><svg width=\"28\" height=\"8\" aria-hidden=\"true\" style=\"vertical-align:middle\"><line x1=\"0\" y1=\"4\" x2=\"28\" y2=\"4\" style=\"stroke:var(--ink-2)\" stroke-width=\"2.5\" stroke-dasharray=\"8 6\"></line></svg> mode not stated</div>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(18)"
+        "#maplegend > .legend > .row:nth-child(17)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -11886,7 +11906,7 @@
        "impact": "serious",
        "html": "<div class=\"row\"><svg width=\"28\" height=\"8\" aria-hidden=\"true\" style=\"vertical-align:middle\"><line x1=\"0\" y1=\"4\" x2=\"28\" y2=\"4\" style=\"stroke:var(--ink-2)\" stroke-width=\"2.5\" stroke-dasharray=\"2 6\"></line></svg> mode inferred from the sequence</div>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(19)"
+        "#maplegend > .legend > .row:nth-child(18)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -11924,7 +11944,7 @@
        "impact": "serious",
        "html": "<div class=\"row\">",
        "target": [
-        "#maplegend > .legend > .row:nth-child(20)"
+        "#maplegend > .legend > .row:nth-child(19)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -11962,7 +11982,7 @@
        "impact": "serious",
        "html": "<div class=\"row\"><svg width=\"28\" height=\"8\" aria-hidden=\"true\" style=\"vertical-align:middle\"><line x1=\"0\" y1=\"4\" x2=\"28\" y2=\"4\" style=\"stroke:var(--model)\" stroke-width=\"1.5\" stroke-dasharray=\"6 6\"></line></svg> context arc — Adams mammoth (Tale §1)</div>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(21)"
+        "#maplegend > .legend > .row:nth-child(20)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -12025,7 +12045,7 @@
        "impact": "serious",
        "html": "<a href=\"#/method/geocoding\">All stops and connectors as tables<span aria-hidden=\"true\"> →</span> (Method › Geocoding)</a>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"]"
+        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
       },
@@ -12046,7 +12066,7 @@
        "impact": "serious",
        "html": "<span aria-hidden=\"true\"> →</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
+        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
       },
@@ -12071,7 +12091,32 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">New York</text>",
        "target": [
-        ".pt:nth-child(51) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(32) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.3pt (11px)",
+          "fontWeight": "normal",
+          "messageKey": "bgOverlap",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because it is overlapped by another element"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Montreal</text>",
+       "target": [
+        ".pt:nth-child(33) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
       },
@@ -12103,71 +12148,7 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Seattle</text>",
        "target": [
-        ".pt:nth-child(52) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
-           "target": [
-            "svg[role=\"img\"]"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Dawson</text>",
-       "target": [
-        ".pt:nth-child(53) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "imgNode",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
-           "target": [
-            "svg[role=\"img\"]"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because element contains an image node"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">St Michael</text>",
-       "target": [
-        ".pt:nth-child(56) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(34) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -12199,7 +12180,7 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Nome</text>",
        "target": [
-        ".pt:nth-child(57) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(35) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -12224,7 +12205,7 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Keewalik</text>",
        "target": [
-        ".pt:nth-child(59) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(38) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
       },
@@ -12256,34 +12237,9 @@
        "impact": "serious",
        "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Elephant Point</text>",
        "target": [
-        ".pt:nth-child(61) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
+        ".pt:nth-child(39) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast",
-         "data": {
-          "contrastRatio": 0,
-          "fontSize": "8.3pt (11px)",
-          "fontWeight": "normal",
-          "messageKey": "bgOverlap",
-          "expectedContrastRatio": "4.5:1"
-         },
-         "relatedNodes": [],
-         "impact": "serious",
-         "message": "Element's background color could not be determined because it is overlapped by another element"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<text x=\"8\" y=\"4\" font-size=\"11\" font-family=\"var(--sans)\" paint-order=\"stroke\" stroke-width=\"3\" style=\"fill: var(--ink-2); stroke: var(--paper);\">Montreal</text>",
-       "target": [
-        ".pt:nth-child(63) > text[x=\"8\"][font-size=\"11\"][font-family=\"var(--sans)\"]"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
       },
       {
        "any": [
@@ -12388,12 +12344,17 @@
     {
      "id": "color-contrast-enhanced",
      "impact": "serious",
-     "nodes": 79
+     "nodes": 68
     },
     {
      "id": "color-contrast",
      "impact": "serious",
-     "nodes": 56
+     "nodes": 44
+    },
+    {
+     "id": "link-in-text-block",
+     "impact": "serious",
+     "nodes": 3
     }
    ],
    "inapplicable": []

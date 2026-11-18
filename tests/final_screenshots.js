@@ -17,8 +17,11 @@ const path = require('path');
     await page.goto(url + '#/map', { waitUntil: 'load' });
     await page.waitForFunction(() => window.App && window.MapView, null, { timeout: 20000 });
     await page.waitForTimeout(3000);
-    await shot('map-flat');
-    // Kotzebue Sound frame: the dense part of the journey
+    await shot('map-flat');   // the default: the 1907 journey alone at the Alaska frame, crowded places collapsed
+    // the 1908 journey alone, then both overlaid (the comparison mode)
+    await page.click('#journeySeg button[data-jm="1908"]'); await page.waitForTimeout(1200); await shot('map-1908');
+    await page.click('#journeySeg button[data-jm="both"]'); await page.waitForTimeout(1200); await shot('map-both');
+    // Kotzebue Sound frame: the dense part of the journey (both journeys, clusters open at this zoom)
     await page.click('#frames .pill[data-frame="kotzebue"]'); await page.waitForTimeout(2000); await shot('map-kotzebue');
     // an unlocated place opened: constraint rings, leader labels, candidate squares
     await go('/map/pl_stones_camp', 2200); await shot('map-unlocated');

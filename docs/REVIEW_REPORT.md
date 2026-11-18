@@ -686,3 +686,22 @@ Three defects found in the captures and fixed:
 Files touched by this pass: `scripts/authored/findings.py`, `people.py`, `funding.py`; `data/*` (rebuilt); `index.html` (two
 corrections); `tests/final_screenshots.js` (new) and the 32 `final-*` captures (the smoke run also re-took a few of its own
 captures); `tests/a11y/axe-after.json`; `README.md`; this file; `dist/`.
+
+
+## Implemented: legibility pass after the lab's reading of the delivered site (map overprint, network density)
+
+The lab's feedback on the delivered version: the map around Nome and Kotzebue Sound is "very tangled" at the frames the site
+opens on, the large (Persons) network looks too complex, and the two journeys might be shown entirely apart. Changes, all in
+`index.html` and `tests/smoke.js`; no data file changed.
+
+| Item | What changed | Rule kept |
+|---|---|---|
+| Journey shown | A three-way control at the top of the panel (**1907** · **1908** · **Both**) replaces the two journey layer checkboxes. One journey is drawn at a time; `Both` overlays them as before (offset coincident legs, two-year glyph). The stop list, the legend rows and the 'Step through' picker follow the mode; routes `#/map/1907`, `#/map/1908`, `#/map/both`; a stop of the hidden journey (`#/map/stop/<id>`, a story's 'on the map' link, a popup's 'also visited in …') switches the map to its year. Default: 1907. | No fact added; the mode is presentation. The note under the control derives its stop count and date span from the stop records (`dates as attested`). |
+| Clusters at low zoom | Stop places whose markers fall within 44 px (zoom ≤ 4), 40 px (zoom 5) or 30 px (zoom 6) of one another (single linkage) are drawn as one dashed disc with a count pill (`Keewalik & 11 other places · 1907: stops 9–13 · 1908: stops 6–22 · click to open`). Members, their badges, labels and halos, and the legs between members are hidden; legs into the cluster keep their true endpoints. Click or Enter opens the cluster at the smallest zoom at which no cluster of three remains. The selected stop's cluster is never collapsed. Layer toggle `Collapse crowded places at low zoom`; legend row appears only while a cluster is drawn. | The disc asserts nothing: centre = mean of the members' coordinates, name = the most-visited member; the tooltip and the accessible name list every member with its stops. Paper-trail nodes and unlocated constraints are never clustered. |
+| Arrows | A leg shorter than 36 px on screen loses its arrow (it would cover the leg). | — |
+| Candidate labels | The 'Coffee Creek? — GNIS …' labels appear from zoom 6 (or when the place record is opened); the hollow squares stay at every zoom. | The candidates remain drawn and listed; only the label tier moved. |
+| Network: one line per pair | The Persons view opens with every kind of tie between two nodes merged into one straight grey line, width = attestations (72 pairs instead of 109 typed curves). Clicking a line lists the ties by kind, each with its evidence (`sideMixed`); the Table view lists pairs with their kinds. `Ties: by kind of evidence` restores the typed drawing (hue, dash, arrows, parallel curves). | The merge is drawing only: `netData()` and the edge records are unchanged, the kinds are named on every line's accessible name and in the side panel. |
+| Network: preview on hover | Hovering or focusing a node highlights its neighbourhood (others recede, neighbours' labels appear); a click pins, a click on the background unpins. | — |
+| Network: pruning | `hide single-attestation nodes` removes nodes with one attestation under the current filters and prints how many were hidden in the status line. Off by default. | The pruned nodes remain in the data, the Table view (when the box is unticked) and every other view. |
+| Network: layout | Stronger repulsion, longer links and a mild pull to the centre in the simple view. Institutions view: the role quotations on the edges are shown for the hovered or selected node's edges (or all, with Labels = all) instead of for every small institution. | — |
+| Tests | `tests/smoke.js`: default mode and legend rows; cluster disc present at the Alaska frame, focusable, named, Enter opens it; 1908 mode counts; a 1907 stop opened from 1908 mode switches the map; Both restores 41 links and two clusters; network: default `.mixed` edges, hover highlight and labels, pruning count, by-kind dash, institutions labels hidden until hover. New capture `tests/screenshots/20-map-both-clusters.png`. | — |
