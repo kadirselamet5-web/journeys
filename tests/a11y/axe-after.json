@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T22:44:30.274Z",
+ "generated": "2026-11-19T09:13:39.409Z",
  "axe_version": "4.10.2",
  "tags": [
   "wcag2a",
@@ -16,7 +16,7 @@
  "light": {
   "/map": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T22:44:36.573Z",
+   "timestamp": "2026-11-19T09:13:45.682Z",
    "violations": [],
    "incomplete": [
     {
@@ -79,7 +79,7 @@
        "html > body > main:nth-child(4) > section:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div > a:nth-child(1)"
       ],
       "nodeIndexes": [
-       1082
+       1091
       ],
       "fromFrame": false
      },
@@ -281,7 +281,7 @@
     {
      "id": "listitem",
      "impact": null,
-     "nodes": 26
+     "nodes": 27
     },
     {
      "id": "meta-viewport-large",
@@ -311,12 +311,12 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 485
+     "nodes": 488
     },
     {
      "id": "scrollable-region-focusable",
      "impact": null,
-     "nodes": 1
+     "nodes": 2
     },
     {
      "id": "skip-link",
@@ -384,7 +384,7 @@
   },
   "/stories": {
    "url": "file:///home/user/journeys/index.html#/stories",
-   "timestamp": "2026-11-18T22:44:37.603Z",
+   "timestamp": "2026-11-19T09:13:46.740Z",
    "violations": [],
    "incomplete": [
     {
@@ -673,7 +673,7 @@
   },
   "/story/story_19_excavation": {
    "url": "file:///home/user/journeys/index.html#/story/story_19_excavation",
-   "timestamp": "2026-11-18T22:44:38.694Z",
+   "timestamp": "2026-11-19T09:13:47.795Z",
    "violations": [],
    "incomplete": [
     {
@@ -694,10 +694,10 @@
        "/div[@id='minimap']/div/div[4]/div/span"
       ],
       "ancestry": [
-       "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > span"
+       "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > span"
       ],
       "nodeIndexes": [
-       1165
+       1209
       ],
       "fromFrame": false
      },
@@ -720,7 +720,7 @@
     {
      "id": "aria-allowed-attr",
      "impact": null,
-     "nodes": 21
+     "nodes": 26
     },
     {
      "id": "aria-allowed-role",
@@ -730,7 +730,7 @@
     {
      "id": "aria-conditional-attr",
      "impact": null,
-     "nodes": 21
+     "nodes": 26
     },
     {
      "id": "aria-deprecated-role",
@@ -745,12 +745,12 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 120
+     "nodes": 125
     },
     {
      "id": "aria-prohibited-attr",
      "impact": null,
-     "nodes": 21
+     "nodes": 26
     },
     {
      "id": "aria-required-attr",
@@ -765,12 +765,12 @@
     {
      "id": "aria-valid-attr-value",
      "impact": null,
-     "nodes": 21
+     "nodes": 26
     },
     {
      "id": "aria-valid-attr",
      "impact": null,
-     "nodes": 21
+     "nodes": 26
     },
     {
      "id": "avoid-inline-spacing",
@@ -780,7 +780,7 @@
     {
      "id": "button-name",
      "impact": null,
-     "nodes": 7
+     "nodes": 9
     },
     {
      "id": "bypass",
@@ -805,12 +805,12 @@
     {
      "id": "duplicate-id-aria",
      "impact": null,
-     "nodes": 17
+     "nodes": 18
     },
     {
      "id": "empty-heading",
      "impact": null,
-     "nodes": 15
+     "nodes": 16
     },
     {
      "id": "empty-table-header",
@@ -820,7 +820,7 @@
     {
      "id": "heading-order",
      "impact": null,
-     "nodes": 15
+     "nodes": 16
     },
     {
      "id": "html-has-lang",
@@ -870,7 +870,7 @@
     {
      "id": "landmark-unique",
      "impact": null,
-     "nodes": 5
+     "nodes": 6
     },
     {
      "id": "link-in-text-block",
@@ -880,7 +880,7 @@
     {
      "id": "link-name",
      "impact": null,
-     "nodes": 52
+     "nodes": 57
     },
     {
      "id": "list",
@@ -905,7 +905,7 @@
     {
      "id": "nested-interactive",
      "impact": null,
-     "nodes": 9
+     "nodes": 11
     },
     {
      "id": "page-has-heading-one",
@@ -920,7 +920,7 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 407
+     "nodes": 476
     },
     {
      "id": "role-img-alt",
@@ -960,7 +960,7 @@
     {
      "id": "target-size",
      "impact": null,
-     "nodes": 29
+     "nodes": 35
     },
     {
      "id": "td-headers-attr",
@@ -1016,7 +1016,7 @@
   },
   "/archive/d_19070416_osborn_bumpus": {
    "url": "file:///home/user/journeys/index.html#/archive/d_19070416_osborn_bumpus",
-   "timestamp": "2026-11-18T22:44:40.002Z",
+   "timestamp": "2026-11-19T09:13:48.983Z",
    "violations": [],
    "incomplete": [
     {
@@ -1106,17 +1106,22 @@
     {
      "id": "aria-allowed-attr",
      "impact": null,
-     "nodes": 23
+     "nodes": 24
     },
     {
      "id": "aria-allowed-role",
      "impact": null,
-     "nodes": 50
+     "nodes": 51
     },
     {
      "id": "aria-conditional-attr",
      "impact": null,
-     "nodes": 23
+     "nodes": 24
+    },
+    {
+     "id": "aria-deprecated-role",
+     "impact": null,
+     "nodes": 1
     },
     {
      "id": "aria-hidden-body",
@@ -1126,22 +1131,32 @@
     {
      "id": "aria-hidden-focus",
      "impact": null,
-     "nodes": 108
+     "nodes": 110
     },
     {
      "id": "aria-prohibited-attr",
      "impact": null,
-     "nodes": 23
+     "nodes": 24
+    },
+    {
+     "id": "aria-required-attr",
+     "impact": null,
+     "nodes": 1
+    },
+    {
+     "id": "aria-roles",
+     "impact": null,
+     "nodes": 1
     },
     {
      "id": "aria-valid-attr-value",
      "impact": null,
-     "nodes": 23
+     "nodes": 24
     },
     {
      "id": "aria-valid-attr",
      "impact": null,
-     "nodes": 23
+     "nodes": 24
     },
     {
      "id": "avoid-inline-spacing",
@@ -1151,7 +1166,7 @@
     {
      "id": "button-name",
      "impact": null,
-     "nodes": 4
+     "nodes": 6
     },
     {
      "id": "bypass",
@@ -1161,7 +1176,7 @@
     {
      "id": "color-contrast",
      "impact": "serious",
-     "nodes": 75
+     "nodes": 78
     },
     {
      "id": "definition-list",
@@ -1171,7 +1186,7 @@
     {
      "id": "dlitem",
      "impact": null,
-     "nodes": 72
+     "nodes": 74
     },
     {
      "id": "document-title",
@@ -1256,7 +1271,7 @@
     {
      "id": "link-name",
      "impact": null,
-     "nodes": 130
+     "nodes": 133
     },
     {
      "id": "list",
@@ -1281,7 +1296,7 @@
     {
      "id": "nested-interactive",
      "impact": null,
-     "nodes": 57
+     "nodes": 59
     },
     {
      "id": "page-has-heading-one",
@@ -1291,7 +1306,7 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 848
+     "nodes": 879
     },
     {
      "id": "scrollable-region-focusable",
@@ -1316,7 +1331,7 @@
     {
      "id": "target-size",
      "impact": null,
-     "nodes": 137
+     "nodes": 142
     }
    ],
    "inapplicable": [
@@ -1324,15 +1339,12 @@
     "area-alt",
     "aria-braille-equivalent",
     "aria-command-name",
-    "aria-deprecated-role",
     "aria-dialog-name",
     "aria-input-field-name",
     "aria-meter-name",
     "aria-progressbar-name",
-    "aria-required-attr",
     "aria-required-children",
     "aria-required-parent",
-    "aria-roles",
     "aria-text",
     "aria-toggle-field-name",
     "aria-tooltip-name",
@@ -1371,7 +1383,7 @@
   },
   "/network": {
    "url": "file:///home/user/journeys/index.html#/network",
-   "timestamp": "2026-11-18T22:44:42.923Z",
+   "timestamp": "2026-11-19T09:13:51.926Z",
    "violations": [],
    "incomplete": [
     {
@@ -2353,7 +2365,7 @@
   },
   "/person/p_grant": {
    "url": "file:///home/user/journeys/index.html#/person/p_grant",
-   "timestamp": "2026-11-18T22:44:43.939Z",
+   "timestamp": "2026-11-19T09:13:52.985Z",
    "violations": [],
    "incomplete": [
     {
@@ -2666,7 +2678,7 @@
   },
   "/timeline": {
    "url": "file:///home/user/journeys/index.html#/timeline",
-   "timestamp": "2026-11-18T22:44:45.115Z",
+   "timestamp": "2026-11-19T09:13:54.054Z",
    "violations": [],
    "incomplete": [
     {
@@ -3056,7 +3068,7 @@
   },
   "/published": {
    "url": "file:///home/user/journeys/index.html#/published",
-   "timestamp": "2026-11-18T22:44:46.158Z",
+   "timestamp": "2026-11-19T09:13:55.086Z",
    "violations": [],
    "incomplete": [
     {
@@ -3361,7 +3373,7 @@
   },
   "/method/geocoding": {
    "url": "file:///home/user/journeys/index.html#/method/geocoding",
-   "timestamp": "2026-11-18T22:44:47.556Z",
+   "timestamp": "2026-11-19T09:13:56.434Z",
    "violations": [],
    "incomplete": [
     {
@@ -3690,7 +3702,7 @@
   },
   "/about": {
    "url": "file:///home/user/journeys/index.html#/about",
-   "timestamp": "2026-11-18T22:44:48.557Z",
+   "timestamp": "2026-11-19T09:13:57.487Z",
    "violations": [],
    "incomplete": [
     {
@@ -4077,7 +4089,7 @@
   },
   "/network/view/funding": {
    "url": "file:///home/user/journeys/index.html#/network/view/funding",
-   "timestamp": "2026-11-18T22:44:51.431Z",
+   "timestamp": "2026-11-19T09:14:00.415Z",
    "violations": [],
    "incomplete": [
     {
@@ -4101,7 +4113,7 @@
        "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(2) > div:nth-child(5) > table > thead:nth-child(2) > tr > th:nth-child(1)"
       ],
       "nodeIndexes": [
-       1477
+       1486
       ],
       "fromFrame": false
      },
@@ -4416,7 +4428,7 @@
   },
   "/map/stop/s1908_08": {
    "url": "file:///home/user/journeys/index.html#/map/stop/s1908_08",
-   "timestamp": "2026-11-18T22:44:53.627Z",
+   "timestamp": "2026-11-19T09:14:02.570Z",
    "violations": [],
    "incomplete": [
     {
@@ -4479,7 +4491,7 @@
        "html > body > main:nth-child(4) > section:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div > div:nth-child(1) > div > div:nth-child(4) > a"
       ],
       "nodeIndexes": [
-       1383
+       1391
       ],
       "fromFrame": false
      },
@@ -4686,7 +4698,7 @@
     {
      "id": "listitem",
      "impact": null,
-     "nodes": 37
+     "nodes": 38
     },
     {
      "id": "meta-viewport-large",
@@ -4716,7 +4728,7 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 698
+     "nodes": 699
     },
     {
      "id": "scrollable-region-focusable",
@@ -4788,7 +4800,7 @@
   },
   "/map@globe": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T22:44:56.550Z",
+   "timestamp": "2026-11-19T09:14:05.466Z",
    "violations": [],
    "incomplete": [
     {
@@ -4972,12 +4984,25 @@
           "contrastRatio": 0,
           "fontSize": "8.9pt (11.84px)",
           "fontWeight": "normal",
-          "messageKey": "elmPartiallyObscuring",
+          "messageKey": "imgNode",
           "expectedContrastRatio": "4.5:1"
          },
-         "relatedNodes": [],
+         "relatedNodes": [
+          {
+           "html": "<details class=\"legend\" open=\"\">",
+           "target": [
+            "#maplegend > .legend"
+           ]
+          },
+          {
+           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
+           "target": [
+            "svg[role=\"img\"]"
+           ]
+          }
+         ],
          "impact": "serious",
-         "message": "Element's background color could not be determined because it partially overlaps other elements"
+         "message": "Element's background color could not be determined because element contains an image node"
         }
        ],
        "all": [],
@@ -4987,7 +5012,7 @@
        "target": [
         "#maplegend > .legend > .row:nth-child(3)"
        ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
       {
        "any": [
@@ -5741,7 +5766,7 @@
        "impact": "serious",
        "html": "<div class=\"row muted\">Globe: the same stops and connectors on an orthographic projection; drag to rotate, + / − to zoom.</div>",
        "target": [
-        "#maplegend > .legend > .muted.row"
+        "#maplegend > .legend > .muted.row:nth-child(21)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -5753,12 +5778,63 @@
           "contrastRatio": 0,
           "fontSize": "8.9pt (11.84px)",
           "fontWeight": "normal",
-          "messageKey": "elmPartiallyObscuring",
+          "messageKey": "imgNode",
           "expectedContrastRatio": "4.5:1"
          },
-         "relatedNodes": [],
+         "relatedNodes": [
+          {
+           "html": "<details class=\"legend\" open=\"\">",
+           "target": [
+            "#maplegend > .legend"
+           ]
+          },
+          {
+           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
+           "target": [
+            "svg[role=\"img\"]"
+           ]
+          }
+         ],
          "impact": "serious",
-         "message": "Element's background color could not be determined because it partially overlaps other elements"
+         "message": "Element's background color could not be determined because element contains an image node"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<div class=\"row muted\">Basemap: modern Esri tiles — coastlines and names are a century later than the journey; no period map was supplied.</div>",
+       "target": [
+        "#maplegend > .legend > .muted.row:nth-child(22)"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.9pt (11.84px)",
+          "fontWeight": "normal",
+          "messageKey": "imgNode",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<details class=\"legend\" open=\"\">",
+           "target": [
+            "#maplegend > .legend"
+           ]
+          },
+          {
+           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
+           "target": [
+            "svg[role=\"img\"]"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because element contains an image node"
         }
        ],
        "all": [],
@@ -5766,9 +5842,9 @@
        "impact": "serious",
        "html": "<a href=\"#/method/geocoding\">All stops and connectors as tables<span aria-hidden=\"true\"> →</span> (Method › Geocoding)</a>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"]"
+        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"]"
        ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
       {
        "any": [
@@ -5787,7 +5863,7 @@
        "impact": "serious",
        "html": "<span aria-hidden=\"true\"> →</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
+        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
       },
@@ -6240,7 +6316,7 @@
     {
      "id": "listitem",
      "impact": null,
-     "nodes": 35
+     "nodes": 36
     },
     {
      "id": "meta-viewport-large",
@@ -6265,12 +6341,12 @@
     {
      "id": "region",
      "impact": null,
-     "nodes": 701
+     "nodes": 703
     },
     {
      "id": "scrollable-region-focusable",
      "impact": null,
-     "nodes": 1
+     "nodes": 2
     },
     {
      "id": "skip-link",
@@ -6348,7 +6424,7 @@
  "dark": {
   "/map": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T22:45:02.307Z",
+   "timestamp": "2026-11-19T09:14:11.105Z",
    "violations": [],
    "incomplete": [
     {
@@ -6446,7 +6522,7 @@
        "html > body > main:nth-child(4) > section:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div > a:nth-child(1)"
       ],
       "nodeIndexes": [
-       1082
+       1091
       ],
       "fromFrame": false
      },
@@ -6469,7 +6545,7 @@
   },
   "/stories": {
    "url": "file:///home/user/journeys/index.html#/stories",
-   "timestamp": "2026-11-18T22:45:03.244Z",
+   "timestamp": "2026-11-19T09:14:12.037Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -6923,7 +6999,7 @@
   },
   "/story/story_19_excavation": {
    "url": "file:///home/user/journeys/index.html#/story/story_19_excavation",
-   "timestamp": "2026-11-18T22:45:04.218Z",
+   "timestamp": "2026-11-19T09:14:12.989Z",
    "violations": [],
    "incomplete": [
     {
@@ -6944,10 +7020,10 @@
        "/div[@id='minimap']/div/div[4]/div/span"
       ],
       "ancestry": [
-       "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > span"
+       "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > span"
       ],
       "nodeIndexes": [
-       1165
+       1209
       ],
       "fromFrame": false
      },
@@ -6979,10 +7055,10 @@
        "/div[@id='minimap']/div/div[4]/div/span"
       ],
       "ancestry": [
-       "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > span"
+       "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > span"
       ],
       "nodeIndexes": [
-       1165
+       1209
       ],
       "fromFrame": false
      },
@@ -7012,7 +7088,7 @@
   },
   "/archive/d_19070416_osborn_bumpus": {
    "url": "file:///home/user/journeys/index.html#/archive/d_19070416_osborn_bumpus",
-   "timestamp": "2026-11-18T22:45:05.343Z",
+   "timestamp": "2026-11-19T09:14:13.997Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -7094,6 +7170,210 @@
         "#doccount"
        ],
        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.3pt (13.76px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#9a958b",
+          "bgColor": "#1c1f23",
+          "contrastRatio": 5.54,
+          "fontSize": "9.1pt (12.16px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<div class=\"list\">",
+           "target": [
+            ".list"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span class=\"muted\">Who is speaking:</span>",
+       "target": [
+        ".provkey > .muted"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#9a958b",
+          "bgColor": "#1c1f23",
+          "contrastRatio": 5.54,
+          "fontSize": "9.1pt (12.16px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<div class=\"list\">",
+           "target": [
+            ".list"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span><i class=\"verbatim\"></i>verbatim</span>",
+       "target": [
+        ".provkey > span:nth-child(2)"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#9a958b",
+          "bgColor": "#1c1f23",
+          "contrastRatio": 5.54,
+          "fontSize": "9.1pt (12.16px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<div class=\"list\">",
+           "target": [
+            ".list"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span><i class=\"summary\"></i>PI’s summary</span>",
+       "target": [
+        ".provkey > span:nth-child(3)"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#9a958b",
+          "bgColor": "#1c1f23",
+          "contrastRatio": 5.54,
+          "fontSize": "9.1pt (12.16px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<div class=\"list\">",
+           "target": [
+            ".list"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span><i class=\"editorial\"></i>editorial</span>",
+       "target": [
+        ".provkey > span:nth-child(4)"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#9a958b",
+          "bgColor": "#1c1f23",
+          "contrastRatio": 5.54,
+          "fontSize": "9.1pt (12.16px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<div class=\"list\">",
+           "target": [
+            ".list"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span><i class=\"annotation\"></i>annotation</span>",
+       "target": [
+        ".provkey > span:nth-child(5)"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast-enhanced",
+         "data": {
+          "fgColor": "#9a958b",
+          "bgColor": "#1c1f23",
+          "contrastRatio": 5.54,
+          "fontSize": "9.1pt (12.16px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "7:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<div class=\"list\">",
+           "target": [
+            ".list"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<span><i class=\"model\"></i>model</span>",
+       "target": [
+        ".provkey > span:nth-child(6)"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 9.1pt (12.16px), font weight: normal). Expected contrast ratio of 7:1"
       },
       {
        "any": [
@@ -7645,74 +7925,6 @@
          "id": "color-contrast-enhanced",
          "data": {
           "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "10.3pt (13.76px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<div class=\"list\">",
-           "target": [
-            ".list"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.3pt (13.76px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"d\">[17 April 1907]</span>",
-       "target": [
-        "li[data-id=\"d_19070417_matthew_osborn\"] > a > .d"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.3pt (13.76px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
-          "bgColor": "#1c1f23",
-          "contrastRatio": 5.54,
-          "fontSize": "10.3pt (13.76px)",
-          "fontWeight": "normal",
-          "messageKey": null,
-          "expectedContrastRatio": "7:1"
-         },
-         "relatedNodes": [
-          {
-           "html": "<div class=\"list\">",
-           "target": [
-            ".list"
-           ]
-          }
-         ],
-         "impact": "serious",
-         "message": "Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.3pt (13.76px), font weight: normal). Expected contrast ratio of 7:1"
-        }
-       ],
-       "all": [],
-       "none": [],
-       "impact": "serious",
-       "html": "<span class=\"small muted\">original · 1 editorial, 12 verbatim</span>",
-       "target": [
-        "li[data-id=\"d_19070417_matthew_osborn\"] > a > .muted.small"
-       ],
-       "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.54 (foreground color: #9a958b, background color: #1c1f23, font size: 10.3pt (13.76px), font weight: normal). Expected contrast ratio of 7:1"
-      },
-      {
-       "any": [
-        {
-         "id": "color-contrast-enhanced",
-         "data": {
-          "fgColor": "#9a958b",
           "bgColor": "#15171a",
           "contrastRatio": 6.02,
           "fontSize": "9.0pt (12px)",
@@ -8216,12 +8428,12 @@
     {
      "id": "color-contrast-enhanced",
      "impact": "serious",
-     "nodes": 45
+     "nodes": 44
     },
     {
      "id": "color-contrast",
      "impact": "serious",
-     "nodes": 75
+     "nodes": 78
     },
     {
      "id": "link-in-text-block",
@@ -8233,7 +8445,7 @@
   },
   "/network": {
    "url": "file:///home/user/journeys/index.html#/network",
-   "timestamp": "2026-11-18T22:45:08.089Z",
+   "timestamp": "2026-11-19T09:14:16.809Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -9120,7 +9332,7 @@
   },
   "/person/p_grant": {
    "url": "file:///home/user/journeys/index.html#/person/p_grant",
-   "timestamp": "2026-11-18T22:45:09.039Z",
+   "timestamp": "2026-11-19T09:14:17.761Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -9441,7 +9653,7 @@
   },
   "/timeline": {
    "url": "file:///home/user/journeys/index.html#/timeline",
-   "timestamp": "2026-11-18T22:45:10.000Z",
+   "timestamp": "2026-11-19T09:14:18.726Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -9843,7 +10055,7 @@
   },
   "/published": {
    "url": "file:///home/user/journeys/index.html#/published",
-   "timestamp": "2026-11-18T22:45:10.928Z",
+   "timestamp": "2026-11-19T09:14:19.703Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -9994,7 +10206,7 @@
   },
   "/method/geocoding": {
    "url": "file:///home/user/journeys/index.html#/method/geocoding",
-   "timestamp": "2026-11-18T22:45:12.036Z",
+   "timestamp": "2026-11-19T09:14:20.769Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -10213,7 +10425,7 @@
   },
   "/about": {
    "url": "file:///home/user/journeys/index.html#/about",
-   "timestamp": "2026-11-18T22:45:12.979Z",
+   "timestamp": "2026-11-19T09:14:21.704Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -10529,7 +10741,7 @@
   },
   "/network/view/funding": {
    "url": "file:///home/user/journeys/index.html#/network/view/funding",
-   "timestamp": "2026-11-18T22:45:15.626Z",
+   "timestamp": "2026-11-19T09:14:24.352Z",
    "violations": [],
    "incomplete": [
     {
@@ -10553,7 +10765,7 @@
        "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(2) > div:nth-child(5) > table > thead:nth-child(2) > tr > th:nth-child(1)"
       ],
       "nodeIndexes": [
-       1477
+       1486
       ],
       "fromFrame": false
      },
@@ -10588,7 +10800,7 @@
        "html > body > main:nth-child(4) > section:nth-child(2) > div > div:nth-child(2) > div:nth-child(5) > table > thead:nth-child(2) > tr > th:nth-child(1)"
       ],
       "nodeIndexes": [
-       1477
+       1486
       ],
       "fromFrame": false
      },
@@ -10614,7 +10826,7 @@
   },
   "/map/stop/s1908_08": {
    "url": "file:///home/user/journeys/index.html#/map/stop/s1908_08",
-   "timestamp": "2026-11-18T22:45:17.659Z",
+   "timestamp": "2026-11-19T09:14:26.326Z",
    "violations": [],
    "incomplete": [
     {
@@ -10712,7 +10924,7 @@
        "html > body > main:nth-child(4) > section:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div > div:nth-child(1) > div > div:nth-child(4) > a"
       ],
       "nodeIndexes": [
-       1383
+       1391
       ],
       "fromFrame": false
      },
@@ -10735,7 +10947,7 @@
   },
   "/map@globe": {
    "url": "file:///home/user/journeys/index.html#/map",
-   "timestamp": "2026-11-18T22:45:20.378Z",
+   "timestamp": "2026-11-19T09:14:29.070Z",
    "violations": [
     {
      "id": "color-contrast-enhanced",
@@ -11098,7 +11310,7 @@
        "impact": "serious",
        "html": "<span aria-hidden=\"true\"> →</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
+        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
       }
@@ -11285,12 +11497,25 @@
           "contrastRatio": 0,
           "fontSize": "8.9pt (11.84px)",
           "fontWeight": "normal",
-          "messageKey": "elmPartiallyObscuring",
+          "messageKey": "imgNode",
           "expectedContrastRatio": "4.5:1"
          },
-         "relatedNodes": [],
+         "relatedNodes": [
+          {
+           "html": "<details class=\"legend\" open=\"\">",
+           "target": [
+            "#maplegend > .legend"
+           ]
+          },
+          {
+           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
+           "target": [
+            "svg[role=\"img\"]"
+           ]
+          }
+         ],
          "impact": "serious",
-         "message": "Element's background color could not be determined because it partially overlaps other elements"
+         "message": "Element's background color could not be determined because element contains an image node"
         }
        ],
        "all": [],
@@ -11300,7 +11525,7 @@
        "target": [
         "#maplegend > .legend > .row:nth-child(3)"
        ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
       {
        "any": [
@@ -12020,7 +12245,7 @@
        "impact": "serious",
        "html": "<div class=\"row muted\">Globe: the same stops and connectors on an orthographic projection; drag to rotate, + / − to zoom.</div>",
        "target": [
-        "#maplegend > .legend > .muted.row"
+        "#maplegend > .legend > .muted.row:nth-child(21)"
        ],
        "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
@@ -12032,12 +12257,63 @@
           "contrastRatio": 0,
           "fontSize": "8.9pt (11.84px)",
           "fontWeight": "normal",
-          "messageKey": "elmPartiallyObscuring",
+          "messageKey": "imgNode",
           "expectedContrastRatio": "4.5:1"
          },
-         "relatedNodes": [],
+         "relatedNodes": [
+          {
+           "html": "<details class=\"legend\" open=\"\">",
+           "target": [
+            "#maplegend > .legend"
+           ]
+          },
+          {
+           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
+           "target": [
+            "svg[role=\"img\"]"
+           ]
+          }
+         ],
          "impact": "serious",
-         "message": "Element's background color could not be determined because it partially overlaps other elements"
+         "message": "Element's background color could not be determined because element contains an image node"
+        }
+       ],
+       "all": [],
+       "none": [],
+       "impact": "serious",
+       "html": "<div class=\"row muted\">Basemap: modern Esri tiles — coastlines and names are a century later than the journey; no period map was supplied.</div>",
+       "target": [
+        "#maplegend > .legend > .muted.row:nth-child(22)"
+       ],
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+      },
+      {
+       "any": [
+        {
+         "id": "color-contrast",
+         "data": {
+          "contrastRatio": 0,
+          "fontSize": "8.9pt (11.84px)",
+          "fontWeight": "normal",
+          "messageKey": "imgNode",
+          "expectedContrastRatio": "4.5:1"
+         },
+         "relatedNodes": [
+          {
+           "html": "<details class=\"legend\" open=\"\">",
+           "target": [
+            "#maplegend > .legend"
+           ]
+          },
+          {
+           "html": "<svg role=\"img\" tabindex=\"0\" aria-label=\"Orthographic globe of the same stops\">",
+           "target": [
+            "svg[role=\"img\"]"
+           ]
+          }
+         ],
+         "impact": "serious",
+         "message": "Element's background color could not be determined because element contains an image node"
         }
        ],
        "all": [],
@@ -12045,9 +12321,9 @@
        "impact": "serious",
        "html": "<a href=\"#/method/geocoding\">All stops and connectors as tables<span aria-hidden=\"true\"> →</span> (Method › Geocoding)</a>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"]"
+        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"]"
        ],
-       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+       "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
       },
       {
        "any": [
@@ -12066,7 +12342,7 @@
        "impact": "serious",
        "html": "<span aria-hidden=\"true\"> →</span>",
        "target": [
-        "#maplegend > .legend > .row:nth-child(22) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
+        "#maplegend > .legend > .row:nth-child(23) > a[href$=\"#/method/geocoding\"] > span[aria-hidden=\"true\"]"
        ],
        "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
       },
@@ -12344,7 +12620,7 @@
     {
      "id": "color-contrast-enhanced",
      "impact": "serious",
-     "nodes": 68
+     "nodes": 69
     },
     {
      "id": "color-contrast",

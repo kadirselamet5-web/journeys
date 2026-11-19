@@ -705,3 +705,26 @@ opens on, the large (Persons) network looks too complex, and the two journeys mi
 | Network: pruning | `hide single-attestation nodes` removes nodes with one attestation under the current filters and prints how many were hidden in the status line. Off by default. | The pruned nodes remain in the data, the Table view (when the box is unticked) and every other view. |
 | Network: layout | Stronger repulsion, longer links and a mild pull to the centre in the simple view. Institutions view: the role quotations on the edges are shown for the hovered or selected node's edges (or all, with Labels = all) instead of for every small institution. | — |
 | Tests | `tests/smoke.js`: default mode and legend rows; cluster disc present at the Alaska frame, focusable, named, Enter opens it; 1908 mode counts; a 1907 stop opened from 1908 mode switches the map; Both restores 41 links and two clusters; network: default `.mixed` edges, hover highlight and labels, pruning count, by-kind dash, institutions labels hidden until hover. New capture `tests/screenshots/20-map-both-clusters.png`. | — |
+
+
+## Implemented: features adopted from the lab's `mammoth_journey_map_v10.html`, in this site's own idiom
+
+The lab shared an earlier prototype (`mammoth_journey_map_v10.html`: MapLibre, Spectral/Mulish/Courier Prime, a full-screen story view per
+stop, a two-pane primary-source reader with a provenance key and postmark, a timeline overlay, numbered 'seal' markers). Its data is the
+prototype's own authored prose and is **not** imported: nothing in it was supplied as a source, so no sentence, date or coordinate from it
+enters this site. What was adopted is its reading design, rebuilt on this site's tokens (Source Serif / Source Sans, the status glyphs,
+the typed voices) and fed only from the verified records.
+
+| Prototype feature | Here | Fidelity rule |
+|---|---|---|
+| Story view with a hero (stop number, leg, place, chips) | `header.hero` on every story page: journey-coloured rule, breadcrumb, title, subtitle, chips for date as attested (+precision), arrival mode (+status), place status (+halo), position (+precision), stop count | every chip reads a stop, place or segment record |
+| 'In the field' narrative first, then 'From the record' exhibit | reading order: the PI's words (Tale, verbatim) → exhibit → When → Where → people → correspondence → findings → sources → cite | the exhibit is the earliest-dated item on the page with verbatim text, its first verbatim block of 120 characters or more (a bare salutation is skipped), truncated at 700 characters with a link to the whole item; its voice label and block counts are printed; the kicker says the choice is the model's |
+| 'Who is involved here' cards with roles | `a.conn` cards: name + first attested role with its source (Cast of Characters, letterhead, a letter) | roles come from `people[].roles`, each with its source |
+| 'Related correspondence' chips | dated index (date · sender → recipient · form) above the typed document cards | — |
+| 'Cite this stop' + copy, link copy, toast | cite box on story pages and archive items; `App.copyText` (clipboard API with a textarea fallback), `#toast` is a polite live region; a local file omits the address | the citation names the PI's works and the transcription file |
+| Footer: previous / next named, return to the map | footer cards; 'Back to the map at stop n, place' opens `#/map/stop/<id>` | — |
+| Keyboard: ← → steps, Escape back | core handler on `[data-step]` buttons/links (stories, archive items); Escape = Back; never inside a form field, a popup dialog or the map | — |
+| Primary sources: 'Who is speaking' key, provenance & citation box, 'On the map: stop n' | archive list pane key (five voices); `.provbox` with archive, the PI's header verbatim, block counts, citation, previous/next by date; 'On the map' lists the stops whose `sources[].ref` is the item | the postmark stamp was not adopted (decorative, and the place of writing is often 'not stated') |
+| Hover on a seal | hover card on every stop marker: status, each visit (sequence, year, date, label), the story it opens | tooltip text built from the stop records only |
+| Basemap caveat ('every base layer here is modern') | one line in the help card and the legend | a statement about the tiles, not about the sources |
+| Not adopted | MapLibre/3-D terrain, sepia 'archival' filter, numbered seals replacing status-coded markers, 'Play the season' (CSS only in the prototype, no script), editor's prose per stop | would either lower contrast, drop the status channel, or require prose the sources do not contain |

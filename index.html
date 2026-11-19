@@ -195,6 +195,82 @@ sup.fnref a:hover,sup.fnref a:focus-visible{background:var(--j1907-soft);text-de
 .doccard{border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);margin:.6rem 0;padding:.7rem .9rem}
 .doccard .head{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:baseline;font-size:.92rem}
 .doccard .head .date{font-variant-numeric:tabular-nums;color:var(--muted);min-width:7.5rem}
+/* story page: hero band, kickers, exhibit, people cards, document chips, cite box, footer cards (restrained: tokens only, no gradients) */
+.hero{position:relative;margin:.2rem 0 1.2rem;padding:1.1rem 1.3rem 1.1rem 1.5rem;background:var(--surface);border:1px solid var(--rule);border-left:6px solid var(--ink-2);border-radius:var(--radius)}
+.hero.j1907{border-left-color:var(--j1907)}.hero.j1908{border-left-color:var(--j1908)}.hero.prologue,.hero.epilogue,.hero.interlude,.hero.paper-trail{border-left-color:var(--model)}
+.hero .phase{margin-bottom:.2rem}
+.hero h1{margin:.1rem 0 .3rem;font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.15}
+.hero .subtitle{margin:0 0 .6rem}
+.hero .chiprow{display:flex;flex-wrap:wrap;gap:.35rem .5rem;align-items:center;font-size:.82rem;color:var(--ink-2)}
+.hero .chiprow .hc{display:inline-flex;flex-wrap:wrap;align-items:center;gap:.2rem .35rem;padding:.2rem .55rem;border:1px solid var(--rule-2);border-radius:var(--radius);background:var(--paper);max-width:100%;min-width:0;overflow-wrap:anywhere}
+.hero .chiprow .hc b{font-weight:600;color:var(--muted);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+.kicker{display:flex;align-items:center;gap:.6rem;margin:2rem 0 .7rem;font-family:var(--sans);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
+.kicker::before{content:"";width:1.6rem;height:2px;background:var(--ink-2);flex:none}
+.kicker.j1907{color:var(--j1907-text)}.kicker.j1907::before{background:var(--j1907)}
+.kicker.j1908{color:var(--j1908-text)}.kicker.j1908::before{background:var(--j1908)}
+.kicker .muted{letter-spacing:0;text-transform:none;font-weight:400;font-size:.8rem}
+.kicker-hint{font-size:.86rem;color:var(--muted);margin:-.3rem 0 .6rem}
+/* the exhibit: one verbatim passage from the page's correspondence, set as a sheet with a ruled margin */
+.exhibit{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);padding:1rem 1.2rem 1rem 1.2rem;box-shadow:var(--shadow)}
+.exhibit .ex-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.3rem 1rem;align-items:baseline;border-bottom:1px solid var(--ink-2);padding-bottom:.35rem;margin-bottom:.7rem;font-family:var(--sans);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.exhibit .ex-head .ex-from{font-weight:600;color:var(--ink)}
+.exhibit .ex-body{font-family:var(--serif);font-size:1.08rem;line-height:1.62;color:var(--ink);padding-left:1rem;border-left:2px solid var(--verbatim)}
+.exhibit .ex-body.summary{font-family:var(--sans);font-size:.95rem;border-left-color:var(--summary);color:var(--summary-text)}
+.exhibit .ex-body.editorial{font-family:var(--sans);font-size:.92rem;font-style:italic;border-left-color:var(--editorial);color:var(--editorial-text)}
+.exhibit .ex-caption{font-family:var(--serif);font-style:italic;color:var(--ink-2);margin:.8rem 0 0;font-size:.98rem}
+.exhibit .ex-note{font-size:.82rem;color:var(--muted);margin:.5rem 0 0;padding-top:.5rem;border-top:1px solid var(--rule);line-height:1.5}
+/* people at this stop: name and attested role */
+.conn-wrap{display:flex;flex-wrap:wrap;gap:.5rem}
+.conn{display:inline-flex;align-items:flex-start;gap:.5rem;padding:.5rem .75rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);color:var(--ink);text-decoration:none;max-width:22rem;min-width:0}
+.conn:hover{background:var(--surface-2);text-decoration:none;border-color:var(--rule-2)}
+.conn .cn{font-weight:600;font-size:.92rem;line-height:1.3}
+.conn .ct{display:block;font-size:.78rem;color:var(--muted);line-height:1.35;margin-top:.1rem}
+.conn .cdot{width:9px;height:9px;border-radius:50%;background:var(--ink-2);flex:none;margin-top:.35rem}
+.conn.inst .cdot{border-radius:2px;background:var(--paper-trail)}
+/* related correspondence as a dated index: date · sender → recipient */
+.docchips{display:flex;flex-wrap:wrap;gap:.4rem}
+.docchip{display:inline-flex;flex-wrap:wrap;align-items:center;gap:.2rem .5rem;padding:.35rem .75rem .35rem .6rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);color:var(--ink);text-decoration:none;font-size:.86rem;max-width:100%;min-width:0}
+.docchip:hover{background:var(--surface-2);text-decoration:none;border-color:var(--rule-2)}
+.docchip .dc-d{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.docchip .dc-n{font-family:var(--serif);min-width:0;overflow-wrap:anywhere}
+.docchip .dc-k{font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+/* cite box */
+.citebox{background:var(--surface-2);border:1px solid var(--rule);border-radius:var(--radius);padding:.8rem 1rem;margin-top:1.2rem}
+.citebox .ct-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.4rem;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.citebox .ct-txt{font-family:var(--serif);font-size:.95rem;line-height:1.5;color:var(--ink-2)}
+.citebox .ct-txt a{color:inherit}
+/* footer: previous / next as cards naming their page, and the way back to the map */
+.footer-cards,.footer-nav.footer-cards{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1.6rem;padding-top:1rem;border-top:1px solid var(--rule)}
+.footer-nav.footer-cards a{max-width:none}
+.footer-cards a{display:block;padding:.75rem .9rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);color:var(--ink);text-decoration:none;min-width:0}
+.footer-cards a:hover{background:var(--surface-2);text-decoration:none}
+.footer-cards a .k{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.footer-cards a .v{display:block;font-family:var(--serif);font-weight:600;font-size:1rem;line-height:1.3}
+.footer-cards a.next{text-align:right}
+.footer-cards a.tomap{grid-column:1/-1;text-align:center;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.footer-cards a.tomap .k{color:var(--paper);opacity:.75}
+.footer-cards a.tomap:hover{background:var(--ink-2)}
+@media (max-width:600px){.footer-cards{grid-template-columns:1fr}.footer-cards a.next{text-align:left}}
+/* toast for copy actions */
+#toast{position:fixed;left:50%;bottom:1.4rem;transform:translateX(-50%) translateY(.6rem);z-index:3000;background:var(--ink);color:var(--paper);font-size:.84rem;padding:.4rem .8rem;border-radius:var(--radius);box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* map hover card: a stop place summarised without opening it */
+.lbl.tip.stoptip{padding:.45rem .6rem .5rem;width:min(290px,70vw);max-width:none;line-height:1.35} /* Leaflet's tooltip pane has no width, so a wrapping tooltip needs one of its own */
+.stoptip .st-h{font-family:var(--serif);font-weight:600;font-size:.98rem;margin-bottom:.15rem}
+.stoptip .st-r{font-size:.78rem;color:var(--ink-2);margin:.1rem 0}
+.stoptip .st-r .seq{margin-right:.15rem}
+.stoptip .st-s{font-size:.78rem;color:var(--muted);margin-top:.3rem;border-top:1px solid var(--rule);padding-top:.3rem}
+.stoptip .st-s i{color:var(--ink-2)}
+/* archive: who is speaking key and provenance box */
+.provkey{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .6rem;font-size:.76rem;color:var(--muted);margin:.2rem 0 .6rem}
+.provkey span{display:inline-flex;align-items:center;gap:.3rem}
+.provkey i{display:inline-block;width:10px;height:10px;border-left:3px solid var(--rule-2);background:var(--surface)}
+.provkey i.verbatim{border-left-color:var(--verbatim)}.provkey i.summary{border-left-color:var(--summary);background:var(--summary-soft)}.provkey i.editorial{border-left-color:var(--editorial);background:var(--editorial-soft)}.provkey i.annotation{border-left-color:var(--annotation);border-left-style:dashed;background:var(--annotation-soft)}.provkey i.model{border-left-color:var(--model);background:var(--model-soft)}
+.provbox{margin-top:1.4rem;border-top:1px solid var(--rule);padding-top:.8rem}
+.provbox .pb-k{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.provbox .pb-v{font-size:.9rem;line-height:1.55;margin:0 0 .5rem}
+.provbox .pb-jump{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.provbox .pb-jump a,.provbox .pb-jump button{font-size:.84rem}
 .doccard .head .title{font-weight:600;font-family:inherit;font-size:inherit;margin:0;line-height:inherit}
 .doccard .preview{margin:.4rem 0 .2rem}
 .doccard .actions{display:flex;gap:.6rem;flex-wrap:wrap;font-size:.86rem;margin-top:.3rem}
@@ -606,6 +682,25 @@ function navbar(opts={}){
   const upLink = up && up[1]!==tgt ? `<a class="up" href="#${up[1]}"><span aria-hidden="true">↑ </span><span class="sr-only">Up to </span>${esc(up[0])}</a>` : '';
   return `<div class="pagenav">${back}${upLink}${opts.extra||''}<span class="spacer"></span>${opts.right||''}</div>`;
 }
+/* copy to the clipboard with a short confirmation (navigator.clipboard where allowed, a hidden textarea otherwise) */
+function toast(msg){ let t=document.getElementById('toast'); if(!t){ t=document.createElement('div'); t.id='toast'; t.setAttribute('role','status'); t.setAttribute('aria-live','polite'); document.body.appendChild(t); } t.textContent=msg; t.classList.add('show'); clearTimeout(t._tm); t._tm=setTimeout(()=>t.classList.remove('show'), 1600); }
+function copyText(text, msg){
+  const done=()=>toast(msg||'Copied'), fail=()=>toast('Copy failed — select the text and copy it by hand');
+  const legacy=()=>{ try{ const ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); const ok=document.execCommand('copy'); document.body.removeChild(ta); ok? done() : fail(); }catch(e){ fail(); } };
+  if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, legacy); else legacy();
+}
+function copyFrom(id, msg){ const el=document.getElementById(id); if(el) copyText(el.innerText.trim(), msg); }
+/* keyboard: ← → step through stories, archive items and timeline entries; Escape goes back (never inside a form field, a dialog or the map, which has its own keys) */
+document.addEventListener('keydown', e=>{
+  const t=e.target; if(t && /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName)) return;
+  if(e.altKey||e.ctrlKey||e.metaKey) return;
+  const h=currentHash(); if(/^\/map/.test(h)) return;
+  if(document.querySelector('#mapview:not(.hidden) .leaflet-popup-content[role="dialog"]')) return;   // a popup left open in the hidden map must not swallow the keys
+  if(e.key==='Escape'){ e.preventDefault(); goBack(); return; }
+  if(e.key!=='ArrowLeft' && e.key!=='ArrowRight') return;
+  const sel = e.key==='ArrowRight'? '#pageview [data-step="next"]' : '#pageview [data-step="prev"]';
+  const a=document.querySelector(sel); if(a && !a.hasAttribute('disabled')){ e.preventDefault(); const href=a.getAttribute('data-href')||a.getAttribute('href'); if(href && href.startsWith('#')) go(href.slice(1)); else a.click(); }
+});
 /* breadcrumb line above a page title: the first crumb is a link to the section */
 function crumbs(cls, first, ...rest){ return `<nav class="phase ${esc(cls||'')}" aria-label="Breadcrumb"><a href="#${first[1]}">${esc(first[0])}</a>${rest.filter(Boolean).map(x=>' · '+x).join('')}</nav>`; }
 /* every table.data on a page sits in a horizontally scrollable wrapper (phones) */
@@ -667,6 +762,7 @@ function helpCard(){
     <li>${glyphFor('verified')} ${glyphFor('inferred')} ${glyphFor('approximate')} ${glyphFor('disputed')} Marker shape and fill show the <b>source status</b> of a place: verified, inferred, approximate, disputed.</li>
     <li>${glyphFor('halo')} A halo is the uncertainty radius recorded for the place, in kilometres.</li>
     <li>Connectors are schematic (no route was traced); the arrow gives the direction of travel.</li>
+    <li>The basemap is modern (Esri tiles): coastlines, names and the Buckland shoreline are a century later than the journey; no period map was supplied.</li>
     <li>Four typed voices on every page: the writer's words (serif), the PI's summary, her editorial note, an annotation; anything written by the model is labelled <span class="tag model">model</span>.</li>
   </ul><div class="small"><a href="#/about">Start here: reading guide and glossary${glyph(' →')}</a></div></section>`;
 }
@@ -717,7 +813,7 @@ function placeCard(id){
 function newTab(){ return '<span class="sr-only"> (opens in new tab)</span>'; }
 function findingCard(id){ const f=IDX.finding[id]; if(!f) return ''; return `<div class="finding ${esc(f.kind)}" id="fc-${esc(f.id)}"><span class="tag">${esc(f.kind)}</span> <b>${esc(f.title)}</b><div>${esc(f.text)}</div>${(f.refs||[]).length?`<div class="small muted">Refs: ${f.refs.map(refLinkShort).join('; ')}</div>`:''}${(f.related||[]).length?`<div class="small muted">See also: ${f.related.map(r=>IDX.finding[r]?`<a href="#/method/findings/${r}" onclick="event.preventDefault();App.go('/method/findings/${r}')">${esc(IDX.finding[r].title)}</a>`:esc(r)).join('; ')}</div>`:''}</div>`; }
 
-window.App = { go, back:goBack, expandDoc, D, IDX, esc, fmtDate, chip, pchip, table, glyph, newTab, chipHelp, REDUCE, VOCAB, announce, focusHeading, skipToContent, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, refLinkShort, navbar, crumbs, wrapTables, glyphFor, evidenceLegend, helpCard, dismissHelp, personLabel, journeyClass, JCOLOR, routeTitle, upFor, PHASE_LABEL, stackDepth:()=>stack.length };
+window.App = { go, back:goBack, expandDoc, D, IDX, esc, fmtDate, chip, pchip, table, glyph, newTab, chipHelp, REDUCE, VOCAB, announce, focusHeading, skipToContent, toast, copyText, copyFrom, trunc, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, refLinkShort, navbar, crumbs, wrapTables, glyphFor, evidenceLegend, helpCard, dismissHelp, personLabel, journeyClass, JCOLOR, routeTitle, upFor, PHASE_LABEL, stackDepth:()=>stack.length };
 window.Pages = {};
 document.addEventListener('DOMContentLoaded', ()=>{ buildStatusDefs(); const h=currentHash(); stack.push(h); render(h); });
 })();
@@ -787,6 +883,12 @@ function a11y(layer, label, onEnter){
   layer.on('add', ()=>{ const el=layer.getElement(); if(!el) return; el.setAttribute('tabindex','0'); el.setAttribute('role','button'); el.setAttribute('aria-label', label); });
   if(onEnter) layer.on('keydown', e=>{ const k=e.originalEvent && e.originalEvent.key; if(k==='Enter'||k===' '){ e.originalEvent.preventDefault(); popupOpener=layer.getElement(); onEnter(e); } });
 }
+/* hover card for a stop place: name, status, every visit with its date and the story it opens; nothing beyond the records */
+function hoverCard(place, byJ, js){
+  const rows = js.map(j=>byJ[j].map(s=>`<div class="st-r"><span class="seq ${jc(j)}">${s.seq}</span> <span class="tag ${jc(j)}">${j}</span> ${esc(fmtDate(s.date_start))} — ${esc(s.label)}</div>`).join('')).join('');
+  const story = IDX.story[(byJ[js[0]]||[])[0]?.story];
+  return `<div class="st-h">${esc(place.label)}</div><div class="st-r">${glyph(place.status)} ${esc(place.status)}${place.naming?` · ${glyph('naming')} naming`:''}${place.radius_km&&place.status!=='verified'?` · halo ${place.radius_km} km`:''}</div>${rows}<div class="st-s">${story?`Story: <i>${esc(story.title)}</i> · `:''}click to select, then <i>Open story</i></div>`;
+}
 /* sequence badge for one (place, journey): several visits by one journey → '3·7'; 1907 round, 1908 square-cornered */
 function badgeHTML(stops, journey, placeId){ return `<span class="seq ${jc(journey)}" data-place="${esc(placeId)}">${stops.map(s=>s.seq).join('·')}</span>`; }
 /* the badge sits wholly to the left of the point (CSS anchors its right edge), so it never covers the label that starts to the right; two badges stack */
@@ -843,7 +945,8 @@ function initMap(openOnAlaska){
   map.on('moveend', ()=>{ const f=pendingPopup; pendingPopup=null; if(f) f(); updateLabelVisibility(); });
   map.on('popupclose', ()=>{ popup=null; returnFocus(); });
   // a popup is a dialog: named by its heading, focused when it opens; focus goes back to what opened it when it closes
-  map.on('popupopen', e=>{ const root=e.popup.getElement(); const el=root && root.querySelector('.leaflet-popup-content'); if(!el) return; el.setAttribute('role','dialog'); const h=el.querySelector('h3'); if(h){ if(!h.id) h.id='popup-h-'+(++popupSeq); el.setAttribute('aria-labelledby', h.id); } else el.setAttribute('aria-label','Map popup'); el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); });
+  // a popup takes focus only when a reader's action opened it (a marker, a stop link, a step button); one opened by a route or a move leaves focus where the router put it
+  map.on('popupopen', e=>{ const root=e.popup.getElement(); const el=root && root.querySelector('.leaflet-popup-content'); if(!el) return; el.setAttribute('role','dialog'); const h=el.querySelector('h3'); if(h){ if(!h.id) h.id='popup-h-'+(++popupSeq); el.setAttribute('aria-labelledby', h.id); } else el.setAttribute('aria-label','Map popup'); el.setAttribute('tabindex','-1'); if(popupOpener) el.focus({preventScroll:true}); });
   if(window.matchMedia){ try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', schemeChanged); }catch(e){} }
   new MutationObserver(schemeChanged).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
 }
@@ -894,7 +997,7 @@ function drawAll(){
     m.on('add', ()=>{ const el=m.getElement(); if(el){ el.setAttribute('data-place', place.id); } });
     a11y(m, name, open);
     m.on('click', open);
-    m.bindTooltip(esc(place.label), {direction:'top', offset:[0,-8], className:'lbl tip'});
+    m.bindTooltip(hoverCard(place, byJ, js), {direction:'top', offset:[0,-10], className:'lbl tip stoptip', opacity:1});
     groups.markers.addLayer(m); markerList.push({m, place, byJ, js, key});
     js.forEach((j,slot)=>{ const b=badge(place, j, byJ[j], slot, js.length); b._placeId=place.id; groups.badges.addLayer(b); badgeList.push(b); });
     if(state.layers.labels){ const lab=L.marker([place.lat,place.lon],{icon:L.divIcon({className:'lbl '+(key==='both'?'both':jc(key)), html:esc(place.short_label), iconSize:null, iconAnchor:[-9,8]}), interactive:false, keyboard:false});
@@ -1241,6 +1344,7 @@ function renderLegend(){
     <div class="row"><svg width="28" height="8" aria-hidden="true" style="vertical-align:middle"><line x1="0" y1="4" x2="28" y2="4" style="stroke:var(--ink-2)" stroke-width="2.5"/><circle cx="14" cy="4" r="3" style="fill:var(--surface);stroke:var(--ink-2)" stroke-width="1.5"/></svg> out-and-back — side trip drawn through its return place</div>
     <div class="row">${line('var(--model)','6 6',1.5)} context arc — Adams mammoth (Tale §1)</div>
     ${relief?'<div class="row muted">Relief: Esri shaded relief with reference labels.</div>':''}${globeMode?'<div class="row muted">Globe: the same stops and connectors on an orthographic projection; drag to rotate, + / − to zoom.</div>':''}
+    <div class="row muted">Basemap: modern Esri tiles — coastlines and names are a century later than the journey; no period map was supplied.</div>
     <div class="row"><a href="#/method/geocoding">All stops and connectors as tables<span aria-hidden="true"> →</span> (Method › Geocoding)</a></div></details>`;
   const a=document.getElementById('maplegend'), b=document.getElementById('panellegend'); if(a) a.innerHTML=html; if(b) b.innerHTML=html;
 }
@@ -1332,11 +1436,13 @@ window.MapView = { show, setMode, setJourneyMode, openCluster(ids){ const arr=ma
    ============================================================================ */
 (function(){
 'use strict';
-const {D, IDX, esc, chip, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, navbar, fmtDate, crumbs, wrapTables, glyphFor, evidenceLegend, PHASE_LABEL, pchip, table, chipHelp, REDUCE} = App;
+const {D, IDX, esc, chip, personPill, docLink, storyLink, blockHTML, modelBlock, piBlock, docCard, placeCard, findingCard, navbar, fmtDate, crumbs, wrapTables, glyphFor, evidenceLegend, PHASE_LABEL, pchip, table, chipHelp, REDUCE, personLabel, trunc, glyph} = App;
+const TRANSCRIPTION_FILE = ((D.meta.inputs||[]).find(i=>/LS_Quackenbush/i.test(i.file))||{}).file || 'the transcription file';
 const page=document.getElementById('pageview');
 let minimap=null, miniTimer=null;
-const prevBtn=(route, what)=>`<button class="ghost" onclick="App.go('${route}')"><span aria-hidden="true">‹ </span>Previous<span class="sr-only"> ${what}</span></button>`;
-const nextBtn=(route, what)=>`<button class="ghost" onclick="App.go('${route}')">Next<span class="sr-only"> ${what}</span><span aria-hidden="true"> ›</span></button>`;
+/* data-step lets the ← → keys find the previous and next page (core keyboard handler) */
+const prevBtn=(route, what)=>`<button class="ghost" data-step="prev" data-href="#${route}" onclick="App.go('${route}')"><span aria-hidden="true">‹ </span>Previous<span class="sr-only"> ${what}</span></button>`;
+const nextBtn=(route, what)=>`<button class="ghost" data-step="next" data-href="#${route}" onclick="App.go('${route}')">Next<span class="sr-only"> ${what}</span><span aria-hidden="true"> ›</span></button>`;
 function destroyMini(){ if(miniTimer){ clearTimeout(miniTimer); miniTimer=null; } if(minimap){ try{minimap.remove();}catch(e){} minimap=null; } }
 
 Pages.storyIndex = function(){
@@ -1356,21 +1462,60 @@ Pages.story = function([id]){
   const people=[...new Set(s.people.concat(...s.docs.map(d=>(IDX.doc[d]||{}).senders||[]), ...s.docs.map(d=>(IDX.doc[d]||{}).recipients||[])))].filter(p=>IDX.person[p]);
   const sortedDocs=[...s.docs].filter(d=>IDX.doc[d]).sort((a,b)=>IDX.doc[a].order-IDX.doc[b].order);
   const mapLink = places.find(p=>p.has_coords);
+  const jcls = s.phase.replace('journey-','j');
+  const kicker = (txt, hint)=>`<h2 class="kicker ${jcls}">${txt}${hint?` <span class="muted">· ${hint}</span>`:''}</h2>`;
+  // hero chips: everything on them comes from the first stop's record and its incoming connector
+  const first = stops[0], firstPlace = first? IDX.place[first.place] : null, incoming = first? D.segments.find(g=>g.to===first.id) : null;
+  const chips = [
+    first? `<span class="hc"><b>Date</b>${esc(first.date_text)} ${pchip('date', first.date_precision)}</span>` : '',
+    incoming? `<span class="hc"><b>Arrived by</b>${esc(incoming.mode)} ${pchip('mode', incoming.mode_status)}</span>` : '',
+    firstPlace? `<span class="hc"><b>Place</b>${glyphFor(firstPlace.status)} ${chip(firstPlace.status)}${first.naming?` ${chip('naming')}`:''}${firstPlace.radius_km&&firstPlace.status!=='verified'?` · halo ${firstPlace.radius_km} km`:''}</span>` : '',
+    firstPlace? (firstPlace.has_coords? `<span class="hc"><b>Position</b>${firstPlace.lat.toFixed(3)}, ${firstPlace.lon.toFixed(3)} <span class="muted">${esc(firstPlace.precision)}</span></span>` : `<span class="hc"><b>Position</b>no point asserted</span>`) : '',
+    stops.length>1? `<span class="hc"><b>Stops on this page</b>${stops.length}</span>` : ''
+  ].filter(Boolean).join('');
+  // the exhibit: the earliest-dated item on this page that carries verbatim text, its first verbatim block (else the earliest item's first block, typed as it is)
+  const byDate=[...sortedDocs].map(d=>IDX.doc[d]).sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999'));
+  const exDoc = byDate.find(d=>d.blocks.some(b=>b.type==='verbatim')) || byDate[0] || null;
+  const textLen = b=>{ const t=document.createElement('div'); t.innerHTML=b.html; return (t.textContent||'').trim().length; };
+  // the first verbatim block longer than a greeting (≥ 120 characters), else the first verbatim block, else the item's first block
+  const exBlock = exDoc? (exDoc.blocks.find(b=>b.type==='verbatim' && textLen(b)>=120) || exDoc.blocks.find(b=>b.type==='verbatim') || exDoc.blocks[0]) : null;
+  const who = d=>`${(d.senders||[]).map(personLabel).join(', ')||'—'} → ${(d.recipients||[]).map(personLabel).join(', ')||'—'}`;
+  const counts = d=>Object.entries(d.block_counts||{}).map(([k,v])=>`${v} ${k}`).join(' · ');
+  const exhibit = exBlock? `${kicker('From the record', 'one passage, chosen by the model: the earliest-dated item on this page with verbatim text, its first verbatim block longer than a greeting')}
+    <figure class="exhibit" aria-label="Exhibit: a passage from ${esc(exDoc.title)}">
+      <div class="ex-head"><span class="ex-from">${esc(who(exDoc))}</span><span>${esc(exDoc.date_text)} · ${esc(exDoc.form)}</span></div>
+      <blockquote class="ex-body ${esc(exBlock.type)}">${trunc(exBlock.html, 700)}</blockquote>
+      <figcaption class="ex-caption">${esc(exDoc.title)}</figcaption>
+      <div class="ex-note"><b>Source</b> — ${esc(exDoc.archive||'')} · voice: ${esc(exBlock.speaker)} · this item: ${esc(counts(exDoc))} · <a href="#/archive/${exDoc.id}">Read the whole item${glyph(' →')}</a></div>
+    </figure>` : '';
+  const roleOf = id=>{ const p=IDX.person[id]; const r=(p&&p.roles&&p.roles[0])||null; return r? {role: r.role||r.text||String(r), src: r.source||''} : null; };
+  const connCard = id=>{ const p=IDX.person[id]; if(!p) return ''; const inst = p.kind==='institution'||id.startsWith('i_')||id.startsWith('v_'); const r=roleOf(id); return `<a class="conn ${inst?'inst':''}" href="#/person/${id}"><span class="cdot" aria-hidden="true"></span><span><span class="cn">${esc(p.label)}</span>${r?`<span class="ct">${esc(r.role)}${r.src?` <span class="muted">(${esc(r.src)})</span>`:''}</span>`:`<span class="ct muted">${esc(p.kind||'')}${p.kind==='office'?' — unnamed office':''}</span>`}</span></a>`; };
+  const docChips = byDate.map(d=>`<a class="docchip" href="#/archive/${d.id}"><span class="dc-d">${esc(d.date_text)}</span><span class="dc-n">${esc(who(d))}</span><span class="dc-k">${esc(d.form)}</span></a>`).join('');
+  const siteUrl = location.protocol==='file:'? '' : location.href.split('#')[0];   // a local file has no citable address; the route alone is given
+  const citeTxt = `“${s.title}.” The Quackenbush Journeys, 1907–1908: an evidence-based reconstruction (Mammoth History Lab), story page ${s.order+1} of ${D.stories.length}, ${siteUrl}#/story/${s.id}. Built from R. J. H. Woods, ‘A Tale of Two Mammoths’ (2019) and her transcription of AMNH Central Archives 590, Box 162 (file ${TRANSCRIPTION_FILE}); accessed ${new Date().toISOString().slice(0,10)}.`;
+  const toMap = first? `/map/stop/${first.id}` : (mapLink? `/map/${mapLink.id}` : '/map');
   page.innerHTML=`<div class="page">
-    ${navbar({extra: `${s.prev?prevBtn('/story/'+s.prev,'story'):''}${s.next?nextBtn('/story/'+s.next,'story'):''}`, right: mapLink?`<button onclick="App.go('/map/${mapLink.id}')">Open on map</button>`:''})}
-    ${crumbs(s.phase.replace('journey-','j'), ['Story','/stories'], esc(PHASE_LABEL[s.phase]||s.phase), `page ${s.order+1} of ${D.stories.length}`)}
-    <h1>${esc(s.title)}</h1><p class="subtitle">${esc(s.subtitle)}${dateRange?` · <span class="muted">${esc(dateRange)}</span>`:''}</p>
+    ${navbar({extra: `${s.prev?prevBtn('/story/'+s.prev,'story'):''}${s.next?nextBtn('/story/'+s.next,'story'):''}`, right: mapLink?`<button onclick="App.go('${toMap}')">Open on map</button>`:''})}
+    <header class="hero ${jcls}">
+      ${crumbs(jcls, ['Story','/stories'], esc(PHASE_LABEL[s.phase]||s.phase), `page ${s.order+1} of ${D.stories.length}`)}
+      <h1>${esc(s.title)}</h1><p class="subtitle">${esc(s.subtitle)}${dateRange?` · <span class="muted">${esc(dateRange)}</span>`:''}</p>
+      ${chips?`<div class="chiprow">${chips}</div>`:''}
+    </header>
     ${places.some(p=>p.has_coords)?`<div class="minimap" id="minimap"></div><p class="minimap-caption">Symbols as on the main map; see <a href="#/map">Legend</a>. Numerals are the stop's sequence in its journey; connectors are schematic.</p>`:''}
-    ${stops.length?`<h2>When</h2>${chipHelp()}${wrapTables(table(`Stops of this page: date as attested, evidence status and sources`, ['Stop','Date as attested','Evidence','Sources'], stops.map(st=>`<tr><td data-label="Stop"><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span> <b class="seq ${App.journeyClass(st.journey)}">${st.seq}</b> ${esc(st.label)}<div class="small"><a href="#/map/stop/${st.id}">on the map<span class="sr-only">: ${esc(st.label)}</span></a></div></td><td data-label="Date as attested">${esc(st.date_text)}</td><td data-label="Evidence">${glyphFor(st.status)} ${chip(st.status)}${st.naming?` · ${glyphFor('naming')} ${chip('naming')}`:''}<div class="small muted">date ${pchip('date', st.date_precision)}</div></td><td data-label="Sources" class="small">${st.sources.map(sr=>`${IDX.doc[sr.ref]?docLink(sr.ref):IDX.pub[sr.ref]?`<a href="#/published/${sr.ref}">${esc(IDX.pub[sr.ref].short)}</a>`:esc(sr.ref)}: ${esc(sr.locator)}`).join('<br>')}<br><span class="muted">${esc(st.why)}</span></td></tr>`).join(''), 'when'))}${evidenceLegend(stops.flatMap(st=>[st.status, ...(st.naming?['naming']:[])]))}`:''}
-    ${places.length?`<h2>Where</h2><div class="grid2 where">${places.map(p=>placeCard(p.id)).join('')}</div>`:''}
-    <h2>The principal investigator’s narrative</h2>
+    ${kicker('In the principal investigator’s words', 'Tale of Two Mammoths (2019), verbatim')}
     ${s.tale_excerpts.length? s.tale_excerpts.map(e=>piBlock(e.text, e.para, e.footnotes)).join('') : `<div class="notice">The Tale does not narrate this part of the journey. The page rests on the correspondence and the PI’s timeline alone.</div>`}
     ${s.model_note? `<h3>Model note</h3>${modelBlock(s.model_note)}`:''}
-    ${sortedDocs.length?`<h2>From the correspondence <span class="muted small">(${sortedDocs.length} item${sortedDocs.length>1?'s':''}; blocks are typed: verbatim / researcher’s summary / editorial note)</span></h2>${sortedDocs.map(d=>docCard(d)).join('')}`:'<h2>From the correspondence</h2><div class="notice">No archival item in the transcription file bears directly on this stop. This is itself a finding: the stop is known only from the published itinerary as read by the PI.</div>'}
-    <h2>People involved</h2><div>${people.map(personPill).join(' ')}</div>
-    ${s.findings.length?`<h2>Discrepancies and absences</h2>${s.findings.map(findingCard).join('')}`:''}
-    ${s.published.length?`<h2>Published sources cited</h2><ul>${s.published.map(p=>`<li><a href="#/published/${p}">${esc(IDX.pub[p].short)}</a> <span class="muted small">— ${esc(IDX.pub[p].type)}; full text not provided</span></li>`).join('')}</ul>`:''}
-    <div class="footer-nav">${s.prev?`<a href="#/story/${s.prev}"><span aria-hidden="true">‹ </span><span class="sr-only">Previous: </span>${esc(IDX.story[s.prev].title)}</a>`:'<span></span>'}${s.next?`<a href="#/story/${s.next}" style="text-align:right"><span class="sr-only">Next: </span>${esc(IDX.story[s.next].title)}<span aria-hidden="true"> ›</span></a>`:'<span></span>'}</div>
+    ${exhibit}
+    ${stops.length?`${kicker('When', 'date as attested, evidence status, sources')}${chipHelp()}${wrapTables(table(`Stops of this page: date as attested, evidence status and sources`, ['Stop','Date as attested','Evidence','Sources'], stops.map(st=>`<tr><td data-label="Stop"><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span> <b class="seq ${App.journeyClass(st.journey)}">${st.seq}</b> ${esc(st.label)}<div class="small"><a href="#/map/stop/${st.id}">on the map<span class="sr-only">: ${esc(st.label)}</span></a></div></td><td data-label="Date as attested">${esc(st.date_text)}</td><td data-label="Evidence">${glyphFor(st.status)} ${chip(st.status)}${st.naming?` · ${glyphFor('naming')} ${chip('naming')}`:''}<div class="small muted">date ${pchip('date', st.date_precision)}</div></td><td data-label="Sources" class="small">${st.sources.map(sr=>`${IDX.doc[sr.ref]?docLink(sr.ref):IDX.pub[sr.ref]?`<a href="#/published/${sr.ref}">${esc(IDX.pub[sr.ref].short)}</a>`:esc(sr.ref)}: ${esc(sr.locator)}`).join('<br>')}<br><span class="muted">${esc(st.why)}</span></td></tr>`).join(''), 'when'))}${evidenceLegend(stops.flatMap(st=>[st.status, ...(st.naming?['naming']:[])]))}`:''}
+    ${places.length?`${kicker('Where', 'the place, and how we know where it is')}<div class="grid2 where">${places.map(p=>placeCard(p.id)).join('')}</div>`:''}
+    ${kicker('Who is involved here', 'name and attested role; opens the person’s record')}
+    ${people.length?`<div class="conn-wrap">${people.map(connCard).join('')}</div>`:'<p class="muted">No person is named for this page.</p>'}
+    ${kicker('Related correspondence', sortedDocs.length? `${sortedDocs.length} item${sortedDocs.length>1?'s':''}, in date order; blocks are typed: verbatim / researcher’s summary / editorial note` : '')}
+    ${sortedDocs.length?`<div class="docchips">${docChips}</div>${sortedDocs.map(d=>docCard(d)).join('')}`:'<div class="notice">No archival item in the transcription file bears directly on this stop. This is itself a finding: the stop is known only from the published itinerary as read by the PI.</div>'}
+    ${s.findings.length?`${kicker('Discrepancies and absences')}${s.findings.map(findingCard).join('')}`:''}
+    ${s.published.length?`${kicker('Published sources cited')}<ul>${s.published.map(p=>`<li><a href="#/published/${p}">${esc(IDX.pub[p].short)}</a> <span class="muted small">— ${esc(IDX.pub[p].type)}; full text not provided</span></li>`).join('')}</ul>`:''}
+    <div class="citebox"><div class="ct-h"><span>Cite this page</span><span><button class="ghost small" onclick="App.copyFrom('cite-txt','Citation copied')">Copy citation</button> <button class="ghost small" onclick="App.copyText('${siteUrl}#/story/${s.id}','Link copied')">Copy link</button></span></div><div class="ct-txt" id="cite-txt">${esc(citeTxt)}</div></div>
+    <nav class="footer-nav footer-cards" aria-label="Previous and next story">${s.prev?`<a class="prev" data-step="prev" href="#/story/${s.prev}"><span class="k"><span aria-hidden="true">‹ </span>Previous</span><span class="v">${esc(IDX.story[s.prev].title)}</span></a>`:'<span></span>'}${s.next?`<a class="next" data-step="next" href="#/story/${s.next}"><span class="k">Next<span aria-hidden="true"> ›</span></span><span class="v">${esc(IDX.story[s.next].title)}</span></a>`:'<span></span>'}<a class="tomap" href="#${toMap}"><span class="k">Return</span><span class="v">${first?`Back to the map at stop ${first.seq}, ${esc(IDX.place[first.place].short_label)}`:'Back to the map'}</span></a></nav>
   </div>`;
   if(places.some(p=>p.has_coords) && typeof L!=='undefined'){
     // the minimap reuses the main map's symbology (MapView.styleFor, gcPath, badge, legsOf) so that it cannot contradict the legend
@@ -1461,6 +1606,7 @@ Pages.archive = function([id]){
         <select id="afwho" aria-label="Filter by correspondent"><option value="">Any correspondent</option>${correspondents.map(c=>`<option value="${c.id}" ${AF.who===c.id?'selected':''}>${esc(c.label)}</option>`).join('')}</select>
         <select id="aftype" aria-label="Filter by form"><option value="">Any form</option><option value="verbatim" ${AF.type==='verbatim'?'selected':''}>has verbatim text</option><option value="summary-only" ${AF.type==='summary-only'?'selected':''}>summary only (no verbatim)</option><option value="copy" ${AF.type==='copy'?'selected':''}>copies, drafts, telegrams, excerpts</option><option value="enclosure" ${AF.type==='enclosure'?'selected':''}>enclosures</option></select>
       </fieldset>
+      <div class="provkey" role="note" aria-label="Who is speaking in each block"><span class="muted">Who is speaking:</span><span><i class="verbatim"></i>verbatim</span><span><i class="summary"></i>PI’s summary</span><span><i class="editorial"></i>editorial</span><span><i class="annotation"></i>annotation</span><span><i class="model"></i>model</span><a href="#/archive" title="How to read a document">?</a></div>
       <ul id="doclist" aria-label="Archive items"></ul></div><div class="reader" id="reader"></div></div>`;
     document.getElementById('afq').addEventListener('input', e=>{AF.q=e.target.value; renderList();});
     [['affolder','folder'],['afyear','year'],['afwho','who'],['aftype','type']].forEach(([el,k])=>document.getElementById(el).addEventListener('change', e=>{AF[k]=e.target.value; renderList();}));
@@ -1494,7 +1640,11 @@ function renderReader(id){
   const related = [];
   if(d.enclosed_in) related.push(`Enclosed in ${docLink(d.enclosed_in)}`);
   (d.enclosures||[]).forEach(e=>related.push(`Enclosure: ${docLink(e)}`));
-  r.innerHTML=`${navbar({extra:`${prev?`<button class="ghost" onclick="App.go('/archive/${prev.id}')"><span aria-hidden="true">‹ </span>Previous item</button>`:''}${next?`<button class="ghost" onclick="App.go('/archive/${next.id}')">Next item<span aria-hidden="true"> ›</span></button>`:''}`})}
+  const onMap = D.stops.filter(st=>st.sources.some(sr=>sr.ref===d.id));
+  const siteUrl = location.protocol==='file:'? '' : location.href.split('#')[0];
+  const citeTxt = `${(d.senders||[]).map(personLabel).join(', ')||'[unsigned]'} to ${(d.recipients||[]).map(personLabel).join(', ')||'[unaddressed]'}, ${d.date_text}${d.place?', '+d.place:''}. ${d.archive||''} Transcribed by R. J. H. Woods (${TRANSCRIPTION_FILE}); read in The Quackenbush Journeys (Mammoth History Lab), ${siteUrl}#/archive/${d.id}, accessed ${new Date().toISOString().slice(0,10)}.`;
+  const countsTxt = Object.entries(d.block_counts||{}).map(([k,v])=>`${v} ${k}`).join(' · ');
+  r.innerHTML=`${navbar({extra:`${prev?`<button class="ghost" data-step="prev" data-href="#/archive/${prev.id}" onclick="App.go('/archive/${prev.id}')"><span aria-hidden="true">‹ </span>Previous item</button>`:''}${next?`<button class="ghost" data-step="next" data-href="#/archive/${next.id}" onclick="App.go('/archive/${next.id}')">Next item<span aria-hidden="true"> ›</span></button>`:''}`})}
     ${crumbs('', ['Archive','/archive'], `item ${idx+1} of ${D.documents.length}`, esc(d.form))}
     <h1>${esc(d.title)}</h1>
     <div class="docmeta">
@@ -1516,7 +1666,13 @@ function renderReader(id){
       <dt>In the timeline</dt><dd>${d.timeline.length? d.timeline.map(t=>`<a href="#/timeline/${t}">${esc(IDX.tl[t].text.slice(0,90))}…</a>`).join('<br>'):'<span class="muted">no terse-timeline entry</span>'}</dd>
       <dt>Findings</dt><dd>${d.findings.length? d.findings.map(f=>`<a href="#/method/findings#${f}" onclick="event.preventDefault();App.go('/method/findings/${f}')">${esc(IDX.finding[f].title)}</a>`).join('<br>'):'—'}</dd>
       <dt>Network</dt><dd>${(d.senders||[]).length&&(d.recipients||[]).length?`correspondence tie${(d.senders.length*d.recipients.length)>1?'s':''}: ${d.senders.map(s=>d.recipients.map(t=>`${esc(personLabel(s))} → ${esc(personLabel(t))}`).join('; ')).join('; ')} · <a href="#/network/doc/${d.id}">show in network</a>`:'<span class="muted">no sender→recipient tie (unaddressed or unsigned item)</span>'}</dd>
+      <dt>On the map</dt><dd>${onMap.length? onMap.map(st=>`<a href="#/map/stop/${st.id}"><span class="tag ${App.journeyClass(st.journey)}">${st.journey}</span> stop ${st.seq} · ${esc(st.label)}</a>`).join('<br>') : '<span class="muted">no stop cites this item as a source</span>'}</dd>
     </dl>
+    <div class="provbox"><div class="pb-k">Provenance and citation</div>
+      <p class="pb-v"><b>Archive:</b> ${esc(d.archive||'not stated')}${d.header_raw?`<br><b>PI’s header, verbatim:</b> <span class="serif">${esc(d.header_raw)}</span>`:''}<br><b>This item:</b> ${esc(countsTxt||'no blocks')} — as typed in the PI’s transcription; the model added only the record fields above (date normalisation, identifications, cross-references) and says so where it did.</p>
+      <div class="ct-txt" id="cite-txt">${esc(citeTxt)}</div>
+      <div class="pb-jump"><button class="ghost small" onclick="App.copyFrom('cite-txt','Citation copied')">Copy citation</button><button class="ghost small" onclick="App.copyText('${siteUrl}#/archive/${d.id}','Link copied')">Copy link</button>${prev?`<a class="pill" href="#/archive/${prev.id}"><span aria-hidden="true">‹ </span>${esc(prev.date_text)}</a>`:''}${next?`<a class="pill" href="#/archive/${next.id}">${esc(next.date_text)}<span aria-hidden="true"> ›</span></a>`:''}</div>
+    </div>
     <div class="footer-nav">${prev?`<a href="#/archive/${prev.id}"><span aria-hidden="true">‹ </span>${esc(prev.title)}</a>`:'<span></span>'}${next?`<a href="#/archive/${next.id}" style="text-align:right">${esc(next.title)}<span aria-hidden="true"> ›</span></a>`:'<span></span>'}</div>`;
   r.scrollTop=0;
 }
